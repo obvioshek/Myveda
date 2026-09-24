@@ -60,6 +60,10 @@
       "model": "Draft",
       "namespace": "public"
     },
+    "earlyListEntry": {
+      "model": "EarlyListEntry",
+      "namespace": "public"
+    },
     "expertise": {
       "model": "Expertise",
       "namespace": "public"
@@ -1851,6 +1855,77 @@
               },
               "namespaceId": "public",
               "table": "draft"
+            }
+          },
+          "EarlyListEntry": {
+            "fields": {
+              "confirmSentAt": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
+              "confirmedAt": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
+              "createdAt": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
+              "email": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              },
+              "token": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {},
+            "storage": {
+              "fields": {
+                "confirmSentAt": {
+                  "column": "confirmSentAt"
+                },
+                "confirmedAt": {
+                  "column": "confirmedAt"
+                },
+                "createdAt": {
+                  "column": "createdAt"
+                },
+                "email": {
+                  "column": "email"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "token": {
+                  "column": "token"
+                }
+              },
+              "namespaceId": "public",
+              "table": "earlyListEntry"
             }
           },
           "Expertise": {
@@ -6262,6 +6337,253 @@
     "namespaces": {
       "public": {
         "entries": {
+          "rls": {
+            "answer": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "answer"
+            },
+            "article": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "article"
+            },
+            "articleCorrection": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "articleCorrection"
+            },
+            "articleParagraph": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "articleParagraph"
+            },
+            "articleSource": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "articleSource"
+            },
+            "block": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "block"
+            },
+            "bookmark": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "bookmark"
+            },
+            "collection": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "collection"
+            },
+            "collectionItem": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "collectionItem"
+            },
+            "community": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "community"
+            },
+            "communityThread": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "communityThread"
+            },
+            "communityTopic": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "communityTopic"
+            },
+            "correctionSuggestion": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "correctionSuggestion"
+            },
+            "draft": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "draft"
+            },
+            "earlyListEntry": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "earlyListEntry"
+            },
+            "expertise": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "expertise"
+            },
+            "feedItem": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "feedItem"
+            },
+            "feedSession": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "feedSession"
+            },
+            "follow": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "follow"
+            },
+            "helpful": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "helpful"
+            },
+            "hide": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "hide"
+            },
+            "membership": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "membership"
+            },
+            "message": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "message"
+            },
+            "messageThread": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "messageThread"
+            },
+            "mute": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "mute"
+            },
+            "note": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "note"
+            },
+            "notification": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "notification"
+            },
+            "organization": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "organization"
+            },
+            "pollOption": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "pollOption"
+            },
+            "pollVote": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "pollVote"
+            },
+            "post": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "post"
+            },
+            "postSeen": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "postSeen"
+            },
+            "question": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "question"
+            },
+            "questionFollow": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "questionFollow"
+            },
+            "reaction": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "reaction"
+            },
+            "readEvent": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "readEvent"
+            },
+            "reel": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "reel"
+            },
+            "reply": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "reply"
+            },
+            "report": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "report"
+            },
+            "response": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "response"
+            },
+            "restatement": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "restatement"
+            },
+            "room": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "room"
+            },
+            "roomMessage": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "roomMessage"
+            },
+            "save": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "save"
+            },
+            "sourceCheck": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "sourceCheck"
+            },
+            "spoilerUnlock": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "spoilerUnlock"
+            },
+            "topic": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "topic"
+            },
+            "topicFollow": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "topicFollow"
+            },
+            "user": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "user"
+            }
+          },
           "table": {
             "answer": {
               "columns": {
@@ -7444,6 +7766,72 @@
                 ]
               },
               "uniques": []
+            },
+            "earlyListEntry": {
+              "columns": {
+                "confirmSentAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "nativeType": "timestamptz",
+                  "nullable": true
+                },
+                "confirmedAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "nativeType": "timestamptz",
+                  "nullable": true
+                },
+                "createdAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "default": {
+                    "expression": "now()",
+                    "kind": "function"
+                  },
+                  "nativeType": "timestamptz",
+                  "nullable": false
+                },
+                "email": {
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
+                  "nullable": false
+                },
+                "token": {
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [
+                {
+                  "columns": [
+                    "createdAt"
+                  ],
+                  "name": "earlyListEntry_createdAt_idx_9575dbd7",
+                  "prefix": "earlyListEntry_createdAt_idx",
+                  "unique": false
+                }
+              ],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "email"
+                  ]
+                },
+                {
+                  "columns": [
+                    "token"
+                  ]
+                }
+              ]
             },
             "expertise": {
               "columns": {
@@ -10802,10 +11190,10 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "e733cd3e8a9371b11df3e36297a0c3aae5f3f315b6783588eec8dbb8e970d805"
+    "storageHash": "15e3d459e087a6b9c3caddd76b77a688c98494a3784866713897e9f281d36ad1"
   },
   "execution": {
-    "executionHash": "6e26ccf01311225674858c27f9c75daacd797979379d85fd3fb25074a7d08f55",
+    "executionHash": "a0213c66c7908007acfbd4de2d33d6fb10f0038b885bd028503849ee873c4720",
     "mutations": {
       "defaults": [
         {
@@ -10916,6 +11304,17 @@
             "column": "id",
             "namespace": "public",
             "table": "draft"
+          }
+        },
+        {
+          "onCreate": {
+            "id": "uuidv4",
+            "kind": "generator"
+          },
+          "ref": {
+            "column": "id",
+            "namespace": "public",
+            "table": "earlyListEntry"
           }
         },
         {

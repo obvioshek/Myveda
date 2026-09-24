@@ -1,65 +1,50 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { siteUrl } from "@/lib/site";
-import "../styles/mvv.css";        // FROZEN — never edit
-import "../styles/app-additions.css"; // new rules only, tokens only
+import "./landing.css";
+
+const title = "My Veda Verse — social media without the scoreboard";
+const description = "A social platform opening in stages. Share moments, ask real questions and talk them through. Posts say what they rest on, reactions stay private, and your feed ends when you're caught up.";
 
 export const viewport: Viewport = {
-  themeColor: "#161022",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#EEEFEA" },
+    { media: "(prefers-color-scheme: dark)", color: "#17161A" },
+  ],
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
-  title: "My Veda Verse — a social platform built for better conversations",
-  description: "Share everyday moments, ask questions, and follow the people, topics, and communities you care about — with context on replies, no public like counts, and a feed that ends. Express thoughtfully. Engage meaningfully. Share responsibly.",
-  alternates: {
-    canonical: "/",
-  },
+  title,
+  description,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "My Veda Verse",
-    description: "A social platform built for better conversations. Express thoughtfully. Engage meaningfully. Share responsibly.",
+    title,
+    description: "Share moments, ask real questions and talk them through. Posts say what they rest on, reactions stay private, and the feed ends.",
     url: "/",
     siteName: "My Veda Verse",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "My Veda Verse",
-    description: "A social platform built for better conversations. Express thoughtfully. Engage meaningfully. Share responsibly.",
+    title,
+    description: "Posts say what they rest on, reactions stay private, and the feed ends when you're caught up.",
   },
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23161022'/%3E%3Cpath d='M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9' fill='none' stroke='%23F8C94F' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.3' r='2.5' fill='%23F8C94F'/%3E%3C/svg%3E",
-  }
+    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%234A2548'/%3E%3Cpath d='M7.9 16c0 9.9 16.2 9.9 16.2 0' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='9.3' r='3' fill='white'/%3E%3C/svg%3E",
+  },
 };
 
-import SpriteSheet from "@/components/SpriteSheet";
-import CosmosCanvas from "@/components/CosmosCanvas";
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-IN">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Karla:wght@400;500;600;700&family=Anek+Latin:wght@500;600;700&display=swap" rel="stylesheet" />
-        <script
-          id="mvv-watchdog"
-          dangerouslySetInnerHTML={{
-            __html: `document.documentElement.classList.add("has-js");setTimeout(function(){if(!window.__mvvOK)document.documentElement.classList.remove("has-js")},3500)`
-          }}
-        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- this layout is the landing page's root */}
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet" />
       </head>
-      <body>
-        <SpriteSheet />
-        <a className="skip" href="#main">Skip to the content</a>
-        <CosmosCanvas />
-        {children}
-        <Script src="/engine.js" strategy="afterInteractive" />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -48,6 +48,7 @@ model User {
   actedNotifications Notification[] @relation("actor")
   drafts          Draft[]
   collections     Collection[]
+  @@rls
 }
 
 model Organization {
@@ -57,6 +58,7 @@ model Organization {
   kind      String
   createdAt DateTime @default(now())
   posts     Post[]
+  @@rls
 }
 
 model Topic {
@@ -70,6 +72,7 @@ model Topic {
   questions   Question[]
   articles    Article[]
   communities CommunityTopic[]
+  @@rls
 }
 
 model Post {
@@ -110,6 +113,7 @@ model Post {
   feedItems    FeedItem[]
   seenBy       PostSeen[]
   restatements Restatement[]
+  @@rls
 }
 
 model Reply {
@@ -131,6 +135,7 @@ model Reply {
   reactions Reaction[]
   restatements  Restatement[] @relation("restatedReply")
   createdAt DateTime @default(now())
+  @@rls
 }
 
 model Restatement {
@@ -154,6 +159,7 @@ model Restatement {
   expiresAt     DateTime?
 
   reply         Reply?
+  @@rls
 }
 
 model Reaction {
@@ -169,6 +175,7 @@ model Reaction {
 
   @@unique([postId, userId, kind])
   @@unique([replyId, userId, kind])
+  @@rls
 }
 
 model Save {
@@ -181,6 +188,7 @@ model Save {
   createdAt DateTime @default(now())
 
   @@unique([postId, userId])
+  @@rls
 }
 
 model PollOption {
@@ -190,6 +198,7 @@ model PollOption {
   text      String
   votes     Int    @default(0)
   pollVotes PollVote[]
+  @@rls
 }
 
 model PollVote {
@@ -201,6 +210,7 @@ model PollVote {
   createdAt DateTime @default(now())
 
   @@unique([optionId, userId]) // one vote per option per user
+  @@rls
 }
 
 model Reel {
@@ -209,6 +219,7 @@ model Reel {
   subtitle  String
   duration  String
   createdAt DateTime @default(now())
+  @@rls
 }
 
 model TopicFollow {
@@ -220,6 +231,7 @@ model TopicFollow {
   createdAt DateTime @default(now())
 
   @@unique([userId, topicId])
+  @@rls
 }
 
 model FeedSession {
@@ -230,6 +242,7 @@ model FeedSession {
   itemCount     Int
   openedAt      DateTime   @default(now())
   items         FeedItem[]
+  @@rls
 }
 
 model FeedItem {
@@ -241,12 +254,14 @@ model FeedItem {
   position  Int
   isOrg     Boolean
   reason    String
+  @@rls
 }
 
 model MessageThread {
   id           String    @id @default(uuid())
   participants String[]
   lastActivity DateTime  @default(now())
+  @@rls
 }
 
 model Message {
@@ -271,6 +286,7 @@ model Message {
 
   @@index([recipientId, state, scheduledFor])
   @@index([threadId, createdAt])
+  @@rls
 }
 
 model PostSeen {
@@ -282,6 +298,7 @@ model PostSeen {
   seenAt    DateTime @default(now())
 
   @@unique([userId, postId])
+  @@rls
 }
 
 model Community {
@@ -308,6 +325,7 @@ model Community {
   threads   CommunityThread[]
   notes     Note[]
   questions Question[]
+  @@rls
 }
 
 model Room {
@@ -334,6 +352,7 @@ model Room {
   messages    RoomMessage[]
   
   @@unique([communityId, key])
+  @@rls
 }
 
 model Membership {
@@ -347,6 +366,7 @@ model Membership {
   status      String    @default("member")
   
   @@id([userId, communityId])
+  @@rls
 }
 
 model RoomMessage {
@@ -362,6 +382,7 @@ model RoomMessage {
   
   @@index([roomId, createdAt])
   @@index([expiresAt])
+  @@rls
 }
 
 
@@ -379,6 +400,7 @@ model Expertise {
   topic   Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
   @@id([userId, topicId])
+  @@rls
 }
 
 model CommunityTopic {
@@ -388,6 +410,7 @@ model CommunityTopic {
   topic       Topic     @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
   @@id([communityId, topicId])
+  @@rls
 }
 
 model CommunityThread {
@@ -408,6 +431,7 @@ model CommunityThread {
   unlocks     SpoilerUnlock[]
 
   @@index([communityId])
+  @@rls
 }
 
 model SpoilerUnlock {
@@ -417,6 +441,7 @@ model SpoilerUnlock {
   createdAt DateTime @default(now())
 
   @@id([userId, threadId])
+  @@rls
 }
 
 // A shared post, in public under a topic or inside a community thread.
@@ -450,6 +475,7 @@ model Note {
   @@index([communityId])
   @@index([threadId])
   @@index([createdAt])
+  @@rls
 }
 
 model Question {
@@ -472,6 +498,7 @@ model Question {
   @@index([askerId])
   @@index([topicId])
   @@index([createdAt])
+  @@rls
 }
 
 model Answer {
@@ -495,6 +522,7 @@ model Answer {
 
   @@index([questionId])
   @@index([authorId])
+  @@rls
 }
 
 model QuestionFollow {
@@ -507,6 +535,7 @@ model QuestionFollow {
   createdAt  DateTime @default(now())
 
   @@id([userId, questionId])
+  @@rls
 }
 
 // A piece written and edited by the house, with its record and its lore
@@ -535,6 +564,7 @@ model Article {
   responses   Response[]
 
   @@index([topicId])
+  @@rls
 }
 
 model ArticleParagraph {
@@ -546,6 +576,7 @@ model ArticleParagraph {
   sourceNumber Int?
 
   @@index([articleId])
+  @@rls
 }
 
 model ArticleSource {
@@ -560,6 +591,7 @@ model ArticleSource {
   checks    SourceCheck[]
 
   @@unique([articleId, number])
+  @@rls
 }
 
 model ArticleCorrection {
@@ -570,6 +602,7 @@ model ArticleCorrection {
   createdAt DateTime @default(now())
 
   @@index([articleId])
+  @@rls
 }
 
 model CorrectionSuggestion {
@@ -582,6 +615,7 @@ model CorrectionSuggestion {
   createdAt DateTime @default(now())
 
   @@index([articleId])
+  @@rls
 }
 
 // A reader's verdict on one source: Supports it | Partly | Doesn't | Can't access
@@ -593,6 +627,7 @@ model SourceCheck {
   createdAt DateTime @default(now())
 
   @@id([userId, sourceId])
+  @@rls
 }
 
 // A reply to a note or an article, grouped by how it relates.
@@ -617,6 +652,7 @@ model Response {
 
   @@index([noteId])
   @@index([articleId])
+  @@rls
 }
 
 model Follow {
@@ -628,6 +664,7 @@ model Follow {
 
   @@id([followerId, followeeId])
   @@index([followeeId])
+  @@rls
 }
 
 model Mute {
@@ -636,6 +673,7 @@ model Mute {
   createdAt DateTime @default(now())
 
   @@id([userId, mutedId])
+  @@rls
 }
 
 model Block {
@@ -644,6 +682,7 @@ model Block {
   createdAt DateTime @default(now())
 
   @@id([userId, blockedId])
+  @@rls
 }
 
 // "Not interested" — hides one item from this member's feed.
@@ -654,6 +693,7 @@ model Hide {
   createdAt  DateTime @default(now())
 
   @@id([userId, targetType, targetId])
+  @@rls
 }
 
 // Private: the author is told, nobody sees a total.
@@ -665,6 +705,7 @@ model Helpful {
 
   @@id([userId, targetType, targetId])
   @@index([targetType, targetId])
+  @@rls
 }
 
 model Bookmark {
@@ -675,6 +716,7 @@ model Bookmark {
   createdAt  DateTime @default(now())
 
   @@id([userId, targetType, targetId])
+  @@rls
 }
 
 model Collection {
@@ -688,6 +730,7 @@ model Collection {
   items      CollectionItem[]
 
   @@index([ownerId])
+  @@rls
 }
 
 model CollectionItem {
@@ -698,6 +741,7 @@ model CollectionItem {
   addedAt      DateTime   @default(now())
 
   @@id([collectionId, targetType, targetId])
+  @@rls
 }
 
 model Draft {
@@ -716,6 +760,7 @@ model Draft {
   updatedAt     DateTime @default(now())
 
   @@index([userId])
+  @@rls
 }
 
 model ReadEvent {
@@ -727,6 +772,7 @@ model ReadEvent {
 
   @@id([userId, targetType, targetId])
   @@index([userId, readAt])
+  @@rls
 }
 
 model Report {
@@ -740,6 +786,7 @@ model Report {
   createdAt   DateTime @default(now())
 
   @@index([status])
+  @@rls
 }
 
 // The Inbox. Answers, builds-on, mentions and thanks arrive right away
@@ -764,4 +811,19 @@ model Notification {
 
   @@index([userId, deliverAt])
   @@index([digestKey])
+  @@rls
+}
+
+// The early list on the landing page. An address counts once its owner
+// confirms from their inbox; unconfirmed ones are deleted after 30 days.
+model EarlyListEntry {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  token         String    @unique
+  confirmedAt   DateTime?
+  confirmSentAt DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@index([createdAt])
+  @@rls
 }
