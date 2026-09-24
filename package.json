@@ -23,6 +23,7 @@
     "@supabase/supabase-js": "^2.116.0",
     "dotenv": "^17.4.2",
     "next": "16.3.5",
+    "pg": "8.22.0",
     "postgres": "^3.4.9",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@prisma/cli-engine": "^0.4.0",
     "@types/node": "^20",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

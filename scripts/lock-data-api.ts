@@ -6,7 +6,7 @@
 //
 // Runs on every deploy (see "vercel-build"). Does nothing outside Supabase.
 import "dotenv/config";
-import postgres from "postgres";
+import pg from "pg";
 
 const url = process.env.DATABASE_URL;
 if (!url) {
@@ -14,18 +14,20 @@ if (!url) {
   process.exit(0);
 }
 
-const sql = postgres(url, { max: 1 });
+// pg, like Prisma and the site, so sslmode in the URL means the same here
+const client = new pg.Client({ connectionString: url });
+await client.connect();
 try {
-  const [{ supabase }] = await sql`select exists (select 1 from pg_roles where rolname = 'anon') as supabase`;
+  const { rows: [{ supabase }] } = await client.query("select exists (select 1 from pg_roles where rolname = 'anon') as supabase");
   if (!supabase) {
     console.log("[lock-data-api] not a Supabase database; skipped");
   } else {
-    const open = await sql`
+    const { rows: open } = await client.query<{ name: string }>(`
       select c.relname as name from pg_class c join pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public' and c.relkind in ('r', 'p') and not c.relrowsecurity`;
-    for (const { name } of open) await sql`alter table ${sql("public." + name)} enable row level security`;
+      where n.nspname = 'public' and c.relkind in ('r', 'p') and not c.relrowsecurity`);
+    for (const { name } of open) await client.query(`alter table public.${pg.escapeIdentifier(name)} enable row level security`);
     console.log(`[lock-data-api] row level security on for ${open.length} more table(s); the Data API is closed`);
   }
 } finally {
-  await sql.end();
+  await client.end();
 }
