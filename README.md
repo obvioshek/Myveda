@@ -22,6 +22,8 @@ npm run dev
 
 The landing page also works with no configuration at all: without a database it shows its built-in demo content. The product needs the database.
 
+To put the site live on [myvedaverse.in](https://myvedaverse.in), follow [DEPLOY.md](DEPLOY.md). It covers hosting, database, sign-in email and DNS records.
+
 ## Configuration
 
 Copy `.env.example` to `.env`. Use `.env` rather than `.env.local`, because the Prisma CLI and the seed script read it too.
@@ -30,7 +32,7 @@ Copy `.env.example` to `.env`. Use `.env` rather than `.env.local`, because the 
 | --- | --- |
 | `DATABASE_URL` | PostgreSQL 15 or newer. Required for the product; optional for the landing page. |
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Email magic-link sign-in. A member's profile is created the first time they sign in, and they start with onboarding. |
-| `NEXT_PUBLIC_SITE_URL` | The origin used in the sign-in email link (defaults to `http://localhost:3000`). |
+| `NEXT_PUBLIC_SITE_URL` | The site's public address, used in the sign-in email link, canonical and share tags, `robots.txt` and the sitemap. Defaults to `https://myvedaverse.in` in production and `http://localhost:3000` in development. |
 | `DEMO_LOGIN` | `1` allows signing in as a seeded member without email; `0` turns it off. It is on by default in development and off in production. **Never enable it on a real deployment**, because it lets anyone act as any member. |
 
 ## The product
@@ -74,7 +76,8 @@ These live in the server actions in `actions/app/`, not just in the UI:
 
 ```bash
 npm run db:migrate          # apply migrations (reads DATABASE_URL from .env)
-npm run db:seed             # product sample data; safe to re-run
+npm run db:seed             # product sample data; safe to re-run, refuses once real members exist
+npm run db:seed:topics      # only the topic list; use this on the live database
 npm run db:seed:landing     # the landing page's demo feed tables
 ```
 
@@ -89,3 +92,4 @@ After changing the contract, run `npm run contract:emit`, then `npx prisma migra
 | `npm run lint` | ESLint |
 | `npm run gate` | Checks that the frozen landing stylesheet is unchanged |
 | `npm run db:migrate` / `npm run db:seed` | Apply migrations / load the product's sample data |
+| `npm run db:seed:topics` | Load only the topic list (for a real deployment) |

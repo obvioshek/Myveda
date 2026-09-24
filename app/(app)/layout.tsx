@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./product.css";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
   title: { default: "Veda Verse", template: "%s · Veda Verse" },
   description: "Questions, lived experience and documented knowledge, each labelled for what it rests on. No public counts, and a daily Edition that ends.",
   icons: {

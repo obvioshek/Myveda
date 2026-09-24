@@ -2,7 +2,11 @@
 // pieces from the product design. Safe to re-run: it clears the product's own
 // tables (never the landing page's) and writes everything again.
 //
-//   npm run db:seed
+//   npm run db:seed          sample data, for development and previews
+//   npm run db:seed:topics   only the topic list, for a real deployment
+//
+// Clearing the tables would also delete real members' posts, so the full seed
+// refuses to run once anyone other than the sample people has signed up.
 import { db } from "../src/prisma/db";
 import { instantAt } from "../lib/app/time";
 
@@ -45,16 +49,34 @@ async function wipe() {
   await o.Membership.where(m => m.userId.in(ids)).deleteAndCount();
 }
 
+async function seedTopics() {
+  const topic: Record<string, string> = {};
+  for (const name of TOPICS) {
+    const t = (await db.orm.public.Topic.where({ name }).first()) ?? (await db.orm.public.Topic.create({ name }));
+    topic[name] = t.id;
+  }
+  return topic;
+}
+
 async function main() {
+  if (process.argv.includes("--topics-only")) {
+    await seedTopics();
+    console.log(`Topics ready: ${TOPICS.join(", ")}.`);
+    return;
+  }
+  const sample = new Set(PEOPLE.map(p => p.id));
+  // members who signed in by email; the landing page's demo users have none
+  const real = (await db.orm.public.User.all().toArray()).filter(u => u.email && !sample.has(u.id));
+  if (real.length) {
+    console.error(`Not seeding: ${real.length} real member(s) have signed up, and the sample seed would delete their posts. Use npm run db:seed:topics instead.`);
+    process.exitCode = 1;
+    return;
+  }
+
   console.log("Seeding Veda Verse…");
   await wipe();
   const o = db.orm.public;
-
-  const topic: Record<string, string> = {};
-  for (const name of TOPICS) {
-    const t = (await o.Topic.where({ name }).first()) ?? (await o.Topic.create({ name }));
-    topic[name] = t.id;
-  }
+  const topic = await seedTopics();
 
   for (const p of PEOPLE) {
     const data = {
