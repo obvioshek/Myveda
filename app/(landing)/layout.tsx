@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import "./styles/mvv.css";        // FROZEN — never edit
-import "./styles/app-additions.css"; // new rules only, tokens only
+import "../styles/mvv.css";        // FROZEN — never edit
+import "../styles/app-additions.css"; // new rules only, tokens only
 
 export const viewport: Viewport = {
   themeColor: "#161022",
