@@ -1,0 +1,313 @@
+
+model User {
+  id              String     @id @default(uuid())
+  name            String
+  avatar          String?
+  timezone        String?
+  deliveryWindows Int[]
+  createdAt       DateTime   @default(now())
+  posts           Post[]
+  reactions       Reaction[]
+  saves           Save[]
+  replies         Reply[]
+  topicFollows    TopicFollow[]
+  feedSessions    FeedSession[]
+  seenPosts       PostSeen[]
+  restatements    Restatement[] @relation("restater")
+
+  sentMessages    Message[]     @relation("sender")
+  receivedMessages Message[]    @relation("recipient")
+  
+  memberships     Membership[]
+  roomMessages    RoomMessage[]
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  mark      String
+  kind      String
+  createdAt DateTime @default(now())
+  posts     Post[]
+}
+
+model Topic {
+  id    String @id @default(uuid())
+  name  String @unique
+  posts   Post[]
+  follows TopicFollow[]
+}
+
+model Post {
+  id           String        @id @default(uuid())
+  title        String?
+  body         String?
+  type         String        // "Text", "Image", "Poll", "Video", "Link", "Question"
+  kind         String?       // "q", "fact", "ctx", "exp", "int", "trad", "bel", "spec"
+  topicId      String
+  topic        Topic         @relation(fields: [topicId], references: [id])
+  
+  // Relations: A post can belong to a User OR an Organization
+  userId       String?
+  user         User?         @relation(fields: [userId], references: [id])
+  orgId        String?
+  org          Organization? @relation(fields: [orgId], references: [id])
+  
+  // Additional fields for specific post types/features
+  art          String?
+  cap          String?
+  sgi          Boolean       @default(false)
+  src          String?       // Used by facts/links
+  why          String?       // Used by organization posts
+  likesCount   Int           @default(0) // The 'n' metric (e.g. 2.3K) mapped to Int for real data
+
+  aiAssisted   Boolean       @default(false)
+  aiAssistedNote String?
+
+  discussGateOn Boolean      @default(false)
+  gateReasonHint String?
+
+  createdAt    DateTime      @default(now())
+  
+  reactions    Reaction[]
+  saves        Save[]
+  replies      Reply[]
+  pollOptions  PollOption[]
+  feedItems    FeedItem[]
+  seenBy       PostSeen[]
+  restatements Restatement[]
+}
+
+model Reply {
+  id        String   @id @default(uuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  parentReplyId String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  kind      String
+  body      String
+
+  restatementId String?      @unique
+  restatement   Restatement? @relation(fields: [restatementId], references: [id])
+  state         String       @default("SEALED") // SEALED, PUBLISHED, RETRACTED
+  publishedAt   DateTime?
+  sourceId      String?
+
+  reactions Reaction[]
+  restatements  Restatement[] @relation("restatedReply")
+  createdAt DateTime @default(now())
+}
+
+model Restatement {
+  id            String   @id @default(uuid())
+  parentPostId  String?
+  parentReplyId String?
+  parentPost    Post?    @relation(fields: [parentPostId], references: [id])
+  parentReply   Reply?   @relation("restatedReply", fields: [parentReplyId], references: [id])
+
+  restaterId    String
+  restater      User     @relation("restater", fields: [restaterId], references: [id])
+
+  text          String
+  wordCount     Int
+  state         String   @default("DRAFT") // DRAFT, PENDING, ACCEPTED, RETURNED, WITHDRAWN, EXPIRED
+
+  submittedAt   DateTime?
+  decidedAt     DateTime?
+  decidedById   String?
+  returnNote    String?
+  expiresAt     DateTime?
+
+  reply         Reply?
+}
+
+model Reaction {
+  id        String   @id @default(uuid())
+  postId    String?
+  post      Post?    @relation(fields: [postId], references: [id])
+  replyId   String?
+  reply     Reply?   @relation(fields: [replyId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  kind      String   // "HELPFUL", "RELATABLE", "CHANGED_MY_MIND", "WELL_SOURCED"
+  createdAt DateTime @default(now())
+
+  @@unique([postId, userId, kind])
+  @@unique([replyId, userId, kind])
+}
+
+model Save {
+  id        String   @id @default(uuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  folder    String   @default("Read later")
+  createdAt DateTime @default(now())
+
+  @@unique([postId, userId])
+}
+
+model PollOption {
+  id        String @id @default(uuid())
+  postId    String
+  post      Post   @relation(fields: [postId], references: [id])
+  text      String
+  votes     Int    @default(0)
+  pollVotes PollVote[]
+}
+
+model PollVote {
+  id        String   @id @default(uuid())
+  optionId  String
+  option    PollOption @relation(fields: [optionId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([optionId, userId]) // one vote per option per user
+}
+
+model Reel {
+  id        String   @id @default(uuid())
+  title     String
+  subtitle  String
+  duration  String
+  createdAt DateTime @default(now())
+}
+
+model TopicFollow {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  topicId   String
+  topic     Topic    @relation(fields: [topicId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, topicId])
+}
+
+model FeedSession {
+  id            String     @id @default(uuid())
+  userId        String
+  user          User       @relation(fields: [userId], references: [id])
+  highWaterMark DateTime
+  itemCount     Int
+  openedAt      DateTime   @default(now())
+  items         FeedItem[]
+}
+
+model FeedItem {
+  id        String      @id @default(uuid())
+  sessionId String
+  session   FeedSession @relation(fields: [sessionId], references: [id])
+  postId    String
+  post      Post        @relation(fields: [postId], references: [id])
+  position  Int
+  isOrg     Boolean
+  reason    String
+}
+
+model MessageThread {
+  id           String    @id @default(uuid())
+  participants String[]
+  lastActivity DateTime  @default(now())
+}
+
+model Message {
+  id             String    @id @default(uuid())
+  threadId       String
+  senderId       String
+  recipientId    String
+  sender         User      @relation("sender", fields: [senderId], references: [id])
+  recipient      User      @relation("recipient", fields: [recipientId], references: [id])
+
+  body           String
+  attachedPostId String?
+
+  state          String    @default("QUEUED") // QUEUED, DELIVERED, READ, WITHDRAWN
+  createdAt      DateTime  @default(now())
+
+  scheduledFor   DateTime
+  deliveredAt    DateTime?
+  readAt         DateTime?
+  sentNow        Boolean   @default(false)
+  heldByQuiet    Boolean   @default(false)
+
+  @@index([recipientId, state, scheduledFor])
+  @@index([threadId, createdAt])
+}
+
+model PostSeen {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  seenAt    DateTime @default(now())
+
+  @@unique([userId, postId])
+}
+
+model Community {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique
+  blurb     String?
+  createdAt DateTime @default(now())
+  rooms     Room[]
+  members   Membership[]
+}
+
+model Room {
+  id          String   @id @default(uuid())
+  communityId String
+  community   Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+
+  name        String
+  key         String
+  iconSymbol  String
+  accentToken String
+
+  speech      String
+  memory      String
+  pace        String
+  whoSpeaks   String
+  modeLabel   String
+  ruleNote    String
+  invitation  String?
+
+  retentionHours Int?
+  createdAt   DateTime @default(now())
+
+  messages    RoomMessage[]
+  
+  @@unique([communityId, key])
+}
+
+model Membership {
+  userId      String
+  communityId String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  community   Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  isSteward   Boolean   @default(false)
+  joinedAt    DateTime  @default(now())
+  
+  @@id([userId, communityId])
+}
+
+model RoomMessage {
+  id        String   @id @default(uuid())
+  roomId    String
+  room      Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  body      String
+  refLabel  String?
+  createdAt DateTime @default(now())
+  expiresAt DateTime?
+  
+  @@index([roomId, createdAt])
+  @@index([expiresAt])
+}

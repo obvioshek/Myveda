@@ -1,0 +1,746 @@
+[
+  {
+    "id": "table.restatement",
+    "label": "Create table \"restatement\"",
+    "summary": "Creates table \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"restatement\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"restatement\"",
+        "sql": "CREATE TABLE \"public\".\"restatement\" (\n  \"decidedAt\" timestamptz,\n  \"decidedById\" text,\n  \"expiresAt\" timestamptz,\n  \"id\" text NOT NULL,\n  \"parentPostId\" text,\n  \"parentReplyId\" text,\n  \"restaterId\" text NOT NULL,\n  \"returnNote\" text,\n  \"state\" text DEFAULT 'DRAFT' NOT NULL,\n  \"submittedAt\" timestamptz,\n  \"text\" text NOT NULL,\n  \"wordCount\" int4 NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"restatement\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.post.aiAssisted",
+    "label": "Add column \"aiAssisted\" to \"post\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "aiAssisted",
+        "table": "post"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"aiAssisted\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "aiAssisted"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"aiAssisted\"",
+        "sql": "ALTER TABLE \"public\".\"post\" ADD COLUMN \"aiAssisted\" bool DEFAULT false NOT NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"aiAssisted\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "aiAssisted"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.post.aiAssistedNote",
+    "label": "Add column \"aiAssistedNote\" to \"post\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "aiAssistedNote",
+        "table": "post"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"aiAssistedNote\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "aiAssistedNote"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"aiAssistedNote\"",
+        "sql": "ALTER TABLE \"public\".\"post\" ADD COLUMN \"aiAssistedNote\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"aiAssistedNote\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "aiAssistedNote"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.post.discussGateOn",
+    "label": "Add column \"discussGateOn\" to \"post\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "discussGateOn",
+        "table": "post"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"discussGateOn\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "discussGateOn"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"discussGateOn\"",
+        "sql": "ALTER TABLE \"public\".\"post\" ADD COLUMN \"discussGateOn\" bool DEFAULT false NOT NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"discussGateOn\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "discussGateOn"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.post.gateReasonHint",
+    "label": "Add column \"gateReasonHint\" to \"post\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "gateReasonHint",
+        "table": "post"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"gateReasonHint\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "gateReasonHint"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"gateReasonHint\"",
+        "sql": "ALTER TABLE \"public\".\"post\" ADD COLUMN \"gateReasonHint\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"gateReasonHint\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "post",
+          "gateReasonHint"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.reply.parentReplyId",
+    "label": "Add column \"parentReplyId\" to \"reply\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "parentReplyId",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"parentReplyId\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "parentReplyId"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"parentReplyId\"",
+        "sql": "ALTER TABLE \"public\".\"reply\" ADD COLUMN \"parentReplyId\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"parentReplyId\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "parentReplyId"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.reply.publishedAt",
+    "label": "Add column \"publishedAt\" to \"reply\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "publishedAt",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"publishedAt\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "publishedAt"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"publishedAt\"",
+        "sql": "ALTER TABLE \"public\".\"reply\" ADD COLUMN \"publishedAt\" timestamptz"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"publishedAt\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "publishedAt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.reply.restatementId",
+    "label": "Add column \"restatementId\" to \"reply\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "restatementId",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"restatementId\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "restatementId"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"restatementId\"",
+        "sql": "ALTER TABLE \"public\".\"reply\" ADD COLUMN \"restatementId\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"restatementId\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "restatementId"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.reply.sourceId",
+    "label": "Add column \"sourceId\" to \"reply\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "sourceId",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"sourceId\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "sourceId"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"sourceId\"",
+        "sql": "ALTER TABLE \"public\".\"reply\" ADD COLUMN \"sourceId\" text"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"sourceId\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "sourceId"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column.public.reply.state",
+    "label": "Add column \"state\" to \"reply\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "column",
+        "name": "state",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure column \"state\" is missing",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "state"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add column \"state\"",
+        "sql": "ALTER TABLE \"public\".\"reply\" ADD COLUMN \"state\" text DEFAULT 'SEALED' NOT NULL"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify column \"state\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"information_schema\".\"columns\" WHERE (\"table_schema\" = $1 AND \"table_name\" = $2 AND \"column_name\" = $3)) AS \"result\"",
+        "params": [
+          "public",
+          "reply",
+          "state"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.reply.reply_restatementId_key",
+    "label": "Add unique constraint on \"reply\" (restatementId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "reply_restatementId_key",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"reply_restatementId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "reply_restatementId_key",
+          "public",
+          "\"public\".\"reply\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"reply_restatementId_key\"",
+        "sql": "ALTER TABLE \"public\".\"reply\" ADD CONSTRAINT \"reply_restatementId_key\" UNIQUE (\"restatementId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"reply_restatementId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "reply_restatementId_key",
+          "public",
+          "\"public\".\"reply\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.restatement.restatement_parentPostId_idx_da6a5319",
+    "label": "Create index \"restatement_parentPostId_idx_da6a5319\" on \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "restatement_parentPostId_idx_da6a5319",
+        "table": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"restatement_parentPostId_idx_da6a5319\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement_parentPostId_idx_da6a5319\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"restatement_parentPostId_idx_da6a5319\"",
+        "sql": "CREATE INDEX \"restatement_parentPostId_idx_da6a5319\" ON \"public\".\"restatement\" (\"parentPostId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"restatement_parentPostId_idx_da6a5319\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement_parentPostId_idx_da6a5319\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.restatement.restatement_parentReplyId_idx_dd1373de",
+    "label": "Create index \"restatement_parentReplyId_idx_dd1373de\" on \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "restatement_parentReplyId_idx_dd1373de",
+        "table": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"restatement_parentReplyId_idx_dd1373de\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement_parentReplyId_idx_dd1373de\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"restatement_parentReplyId_idx_dd1373de\"",
+        "sql": "CREATE INDEX \"restatement_parentReplyId_idx_dd1373de\" ON \"public\".\"restatement\" (\"parentReplyId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"restatement_parentReplyId_idx_dd1373de\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement_parentReplyId_idx_dd1373de\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.restatement.restatement_restaterId_idx_edcf02ed",
+    "label": "Create index \"restatement_restaterId_idx_edcf02ed\" on \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "restatement_restaterId_idx_edcf02ed",
+        "table": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"restatement_restaterId_idx_edcf02ed\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement_restaterId_idx_edcf02ed\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"restatement_restaterId_idx_edcf02ed\"",
+        "sql": "CREATE INDEX \"restatement_restaterId_idx_edcf02ed\" ON \"public\".\"restatement\" (\"restaterId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"restatement_restaterId_idx_edcf02ed\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"restatement_restaterId_idx_edcf02ed\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.restatement.restatement_parentPostId_fkey",
+    "label": "Add foreign key \"restatement_parentPostId_fkey\" on \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "restatement_parentPostId_fkey",
+        "table": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"restatement_parentPostId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "restatement_parentPostId_fkey",
+          "public",
+          "\"public\".\"restatement\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"restatement_parentPostId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"restatement\"\nADD CONSTRAINT \"restatement_parentPostId_fkey\"\nFOREIGN KEY (\"parentPostId\")\nREFERENCES \"public\".\"post\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"restatement_parentPostId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "restatement_parentPostId_fkey",
+          "public",
+          "\"public\".\"restatement\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.restatement.restatement_parentReplyId_fkey",
+    "label": "Add foreign key \"restatement_parentReplyId_fkey\" on \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "restatement_parentReplyId_fkey",
+        "table": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"restatement_parentReplyId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "restatement_parentReplyId_fkey",
+          "public",
+          "\"public\".\"restatement\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"restatement_parentReplyId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"restatement\"\nADD CONSTRAINT \"restatement_parentReplyId_fkey\"\nFOREIGN KEY (\"parentReplyId\")\nREFERENCES \"public\".\"reply\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"restatement_parentReplyId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "restatement_parentReplyId_fkey",
+          "public",
+          "\"public\".\"restatement\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.restatement.restatement_restaterId_fkey",
+    "label": "Add foreign key \"restatement_restaterId_fkey\" on \"restatement\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "restatement_restaterId_fkey",
+        "table": "restatement"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"restatement_restaterId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "restatement_restaterId_fkey",
+          "public",
+          "\"public\".\"restatement\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"restatement_restaterId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"restatement\"\nADD CONSTRAINT \"restatement_restaterId_fkey\"\nFOREIGN KEY (\"restaterId\")\nREFERENCES \"public\".\"user\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"restatement_restaterId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "restatement_restaterId_fkey",
+          "public",
+          "\"public\".\"restatement\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.reply.reply_restatementId_fkey",
+    "label": "Add foreign key \"reply_restatementId_fkey\" on \"reply\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "reply_restatementId_fkey",
+        "table": "reply"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"reply_restatementId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "reply_restatementId_fkey",
+          "public",
+          "\"public\".\"reply\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"reply_restatementId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"reply\"\nADD CONSTRAINT \"reply_restatementId_fkey\"\nFOREIGN KEY (\"restatementId\")\nREFERENCES \"public\".\"restatement\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"reply_restatementId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "reply_restatementId_fkey",
+          "public",
+          "\"public\".\"reply\""
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,320 @@
+[
+  {
+    "id": "table.message",
+    "label": "Create table \"message\"",
+    "summary": "Creates table \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"message\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"message\"",
+        "sql": "CREATE TABLE \"public\".\"message\" (\n  \"attachedPostId\" text,\n  \"body\" text NOT NULL,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"deliveredAt\" timestamptz,\n  \"heldByQuiet\" bool DEFAULT false NOT NULL,\n  \"id\" text NOT NULL,\n  \"readAt\" timestamptz,\n  \"recipientId\" text NOT NULL,\n  \"scheduledFor\" timestamptz NOT NULL,\n  \"senderId\" text NOT NULL,\n  \"sentNow\" bool DEFAULT false NOT NULL,\n  \"state\" text DEFAULT 'QUEUED' NOT NULL,\n  \"threadId\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"message\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.messageThread",
+    "label": "Create table \"messageThread\"",
+    "summary": "Creates table \"messageThread\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "messageThread"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"messageThread\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"messageThread\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"messageThread\"",
+        "sql": "CREATE TABLE \"public\".\"messageThread\" (\n  \"id\" text NOT NULL,\n  \"lastActivity\" timestamptz DEFAULT (now()) NOT NULL,\n  \"participants\" text[] NOT NULL,\n  PRIMARY KEY (\"id\"),\n  CONSTRAINT \"messageThread_participants_elem_not_null_c6eea17d\" CHECK (array_position(\"participants\", NULL) IS NULL)\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"messageThread\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"messageThread\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.message.message_recipientId_idx_c9527cf8",
+    "label": "Create index \"message_recipientId_idx_c9527cf8\" on \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "message_recipientId_idx_c9527cf8",
+        "table": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"message_recipientId_idx_c9527cf8\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_recipientId_idx_c9527cf8\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"message_recipientId_idx_c9527cf8\"",
+        "sql": "CREATE INDEX \"message_recipientId_idx_c9527cf8\" ON \"public\".\"message\" (\"recipientId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"message_recipientId_idx_c9527cf8\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_recipientId_idx_c9527cf8\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.message.message_recipientId_state_scheduledFor_idx_d8fa9523",
+    "label": "Create index \"message_recipientId_state_scheduledFor_idx_d8fa9523\" on \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "message_recipientId_state_scheduledFor_idx_d8fa9523",
+        "table": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"message_recipientId_state_scheduledFor_idx_d8fa9523\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_recipientId_state_scheduledFor_idx_d8fa9523\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"message_recipientId_state_scheduledFor_idx_d8fa9523\"",
+        "sql": "CREATE INDEX \"message_recipientId_state_scheduledFor_idx_d8fa9523\" ON \"public\".\"message\" (\"recipientId\", \"state\", \"scheduledFor\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"message_recipientId_state_scheduledFor_idx_d8fa9523\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_recipientId_state_scheduledFor_idx_d8fa9523\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.message.message_senderId_idx_4689c490",
+    "label": "Create index \"message_senderId_idx_4689c490\" on \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "message_senderId_idx_4689c490",
+        "table": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"message_senderId_idx_4689c490\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_senderId_idx_4689c490\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"message_senderId_idx_4689c490\"",
+        "sql": "CREATE INDEX \"message_senderId_idx_4689c490\" ON \"public\".\"message\" (\"senderId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"message_senderId_idx_4689c490\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_senderId_idx_4689c490\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.message.message_threadId_createdAt_idx_9edadbce",
+    "label": "Create index \"message_threadId_createdAt_idx_9edadbce\" on \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "message_threadId_createdAt_idx_9edadbce",
+        "table": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"message_threadId_createdAt_idx_9edadbce\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_threadId_createdAt_idx_9edadbce\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"message_threadId_createdAt_idx_9edadbce\"",
+        "sql": "CREATE INDEX \"message_threadId_createdAt_idx_9edadbce\" ON \"public\".\"message\" (\"threadId\", \"createdAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"message_threadId_createdAt_idx_9edadbce\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"message_threadId_createdAt_idx_9edadbce\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.message.message_senderId_fkey",
+    "label": "Add foreign key \"message_senderId_fkey\" on \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "message_senderId_fkey",
+        "table": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"message_senderId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "message_senderId_fkey",
+          "public",
+          "\"public\".\"message\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"message_senderId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"message\"\nADD CONSTRAINT \"message_senderId_fkey\"\nFOREIGN KEY (\"senderId\")\nREFERENCES \"public\".\"user\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"message_senderId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "message_senderId_fkey",
+          "public",
+          "\"public\".\"message\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.message.message_recipientId_fkey",
+    "label": "Add foreign key \"message_recipientId_fkey\" on \"message\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "message_recipientId_fkey",
+        "table": "message"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"message_recipientId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "message_recipientId_fkey",
+          "public",
+          "\"public\".\"message\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"message_recipientId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"message\"\nADD CONSTRAINT \"message_recipientId_fkey\"\nFOREIGN KEY (\"recipientId\")\nREFERENCES \"public\".\"user\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"message_recipientId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "message_recipientId_fkey",
+          "public",
+          "\"public\".\"message\""
+        ]
+      }
+    ]
+  }
+]

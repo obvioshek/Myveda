@@ -1,0 +1,809 @@
+[
+  {
+    "id": "table.feedItem",
+    "label": "Create table \"feedItem\"",
+    "summary": "Creates table \"feedItem\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "feedItem"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"feedItem\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedItem\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"feedItem\"",
+        "sql": "CREATE TABLE \"public\".\"feedItem\" (\n  \"id\" text NOT NULL,\n  \"isOrg\" bool NOT NULL,\n  \"position\" int4 NOT NULL,\n  \"postId\" text NOT NULL,\n  \"reason\" text NOT NULL,\n  \"sessionId\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"feedItem\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedItem\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.feedSession",
+    "label": "Create table \"feedSession\"",
+    "summary": "Creates table \"feedSession\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "feedSession"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"feedSession\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedSession\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"feedSession\"",
+        "sql": "CREATE TABLE \"public\".\"feedSession\" (\n  \"highWaterMark\" timestamptz NOT NULL,\n  \"id\" text NOT NULL,\n  \"itemCount\" int4 NOT NULL,\n  \"openedAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"userId\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"feedSession\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedSession\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.postSeen",
+    "label": "Create table \"postSeen\"",
+    "summary": "Creates table \"postSeen\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "postSeen"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"postSeen\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"postSeen\"",
+        "sql": "CREATE TABLE \"public\".\"postSeen\" (\n  \"id\" text NOT NULL,\n  \"postId\" text NOT NULL,\n  \"seenAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"userId\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"postSeen\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.topicFollow",
+    "label": "Create table \"topicFollow\"",
+    "summary": "Creates table \"topicFollow\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "topicFollow"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"topicFollow\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"topicFollow\"",
+        "sql": "CREATE TABLE \"public\".\"topicFollow\" (\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"id\" text NOT NULL,\n  \"topicId\" text NOT NULL,\n  \"userId\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"topicFollow\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.postSeen.postSeen_userId_postId_key",
+    "label": "Add unique constraint on \"postSeen\" (userId, postId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "postSeen_userId_postId_key",
+        "table": "postSeen"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"postSeen_userId_postId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "postSeen_userId_postId_key",
+          "public",
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"postSeen_userId_postId_key\"",
+        "sql": "ALTER TABLE \"public\".\"postSeen\" ADD CONSTRAINT \"postSeen_userId_postId_key\" UNIQUE (\"userId\", \"postId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"postSeen_userId_postId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "postSeen_userId_postId_key",
+          "public",
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.topicFollow.topicFollow_userId_topicId_key",
+    "label": "Add unique constraint on \"topicFollow\" (userId, topicId)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "topicFollow_userId_topicId_key",
+        "table": "topicFollow"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"topicFollow_userId_topicId_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "topicFollow_userId_topicId_key",
+          "public",
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"topicFollow_userId_topicId_key\"",
+        "sql": "ALTER TABLE \"public\".\"topicFollow\" ADD CONSTRAINT \"topicFollow_userId_topicId_key\" UNIQUE (\"userId\", \"topicId\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"topicFollow_userId_topicId_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "topicFollow_userId_topicId_key",
+          "public",
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.feedItem.feedItem_postId_idx_a7a72715",
+    "label": "Create index \"feedItem_postId_idx_a7a72715\" on \"feedItem\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "feedItem_postId_idx_a7a72715",
+        "table": "feedItem"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"feedItem_postId_idx_a7a72715\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedItem_postId_idx_a7a72715\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"feedItem_postId_idx_a7a72715\"",
+        "sql": "CREATE INDEX \"feedItem_postId_idx_a7a72715\" ON \"public\".\"feedItem\" (\"postId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"feedItem_postId_idx_a7a72715\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedItem_postId_idx_a7a72715\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.feedItem.feedItem_sessionId_idx_29f415d4",
+    "label": "Create index \"feedItem_sessionId_idx_29f415d4\" on \"feedItem\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "feedItem_sessionId_idx_29f415d4",
+        "table": "feedItem"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"feedItem_sessionId_idx_29f415d4\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedItem_sessionId_idx_29f415d4\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"feedItem_sessionId_idx_29f415d4\"",
+        "sql": "CREATE INDEX \"feedItem_sessionId_idx_29f415d4\" ON \"public\".\"feedItem\" (\"sessionId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"feedItem_sessionId_idx_29f415d4\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedItem_sessionId_idx_29f415d4\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.feedSession.feedSession_userId_idx_a489d58a",
+    "label": "Create index \"feedSession_userId_idx_a489d58a\" on \"feedSession\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "feedSession_userId_idx_a489d58a",
+        "table": "feedSession"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"feedSession_userId_idx_a489d58a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedSession_userId_idx_a489d58a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"feedSession_userId_idx_a489d58a\"",
+        "sql": "CREATE INDEX \"feedSession_userId_idx_a489d58a\" ON \"public\".\"feedSession\" (\"userId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"feedSession_userId_idx_a489d58a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"feedSession_userId_idx_a489d58a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.postSeen.postSeen_postId_idx_a7a72715",
+    "label": "Create index \"postSeen_postId_idx_a7a72715\" on \"postSeen\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "postSeen_postId_idx_a7a72715",
+        "table": "postSeen"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"postSeen_postId_idx_a7a72715\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"postSeen_postId_idx_a7a72715\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"postSeen_postId_idx_a7a72715\"",
+        "sql": "CREATE INDEX \"postSeen_postId_idx_a7a72715\" ON \"public\".\"postSeen\" (\"postId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"postSeen_postId_idx_a7a72715\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"postSeen_postId_idx_a7a72715\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.postSeen.postSeen_userId_idx_a489d58a",
+    "label": "Create index \"postSeen_userId_idx_a489d58a\" on \"postSeen\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "postSeen_userId_idx_a489d58a",
+        "table": "postSeen"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"postSeen_userId_idx_a489d58a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"postSeen_userId_idx_a489d58a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"postSeen_userId_idx_a489d58a\"",
+        "sql": "CREATE INDEX \"postSeen_userId_idx_a489d58a\" ON \"public\".\"postSeen\" (\"userId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"postSeen_userId_idx_a489d58a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"postSeen_userId_idx_a489d58a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.topicFollow.topicFollow_topicId_idx_6f05808f",
+    "label": "Create index \"topicFollow_topicId_idx_6f05808f\" on \"topicFollow\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "topicFollow_topicId_idx_6f05808f",
+        "table": "topicFollow"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"topicFollow_topicId_idx_6f05808f\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"topicFollow_topicId_idx_6f05808f\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"topicFollow_topicId_idx_6f05808f\"",
+        "sql": "CREATE INDEX \"topicFollow_topicId_idx_6f05808f\" ON \"public\".\"topicFollow\" (\"topicId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"topicFollow_topicId_idx_6f05808f\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"topicFollow_topicId_idx_6f05808f\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.topicFollow.topicFollow_userId_idx_a489d58a",
+    "label": "Create index \"topicFollow_userId_idx_a489d58a\" on \"topicFollow\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "topicFollow_userId_idx_a489d58a",
+        "table": "topicFollow"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"topicFollow_userId_idx_a489d58a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"topicFollow_userId_idx_a489d58a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"topicFollow_userId_idx_a489d58a\"",
+        "sql": "CREATE INDEX \"topicFollow_userId_idx_a489d58a\" ON \"public\".\"topicFollow\" (\"userId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"topicFollow_userId_idx_a489d58a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"topicFollow_userId_idx_a489d58a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.feedItem.feedItem_sessionId_fkey",
+    "label": "Add foreign key \"feedItem_sessionId_fkey\" on \"feedItem\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "feedItem_sessionId_fkey",
+        "table": "feedItem"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"feedItem_sessionId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "feedItem_sessionId_fkey",
+          "public",
+          "\"public\".\"feedItem\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"feedItem_sessionId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"feedItem\"\nADD CONSTRAINT \"feedItem_sessionId_fkey\"\nFOREIGN KEY (\"sessionId\")\nREFERENCES \"public\".\"feedSession\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"feedItem_sessionId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "feedItem_sessionId_fkey",
+          "public",
+          "\"public\".\"feedItem\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.feedItem.feedItem_postId_fkey",
+    "label": "Add foreign key \"feedItem_postId_fkey\" on \"feedItem\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "feedItem_postId_fkey",
+        "table": "feedItem"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"feedItem_postId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "feedItem_postId_fkey",
+          "public",
+          "\"public\".\"feedItem\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"feedItem_postId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"feedItem\"\nADD CONSTRAINT \"feedItem_postId_fkey\"\nFOREIGN KEY (\"postId\")\nREFERENCES \"public\".\"post\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"feedItem_postId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "feedItem_postId_fkey",
+          "public",
+          "\"public\".\"feedItem\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.feedSession.feedSession_userId_fkey",
+    "label": "Add foreign key \"feedSession_userId_fkey\" on \"feedSession\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "feedSession_userId_fkey",
+        "table": "feedSession"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"feedSession_userId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "feedSession_userId_fkey",
+          "public",
+          "\"public\".\"feedSession\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"feedSession_userId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"feedSession\"\nADD CONSTRAINT \"feedSession_userId_fkey\"\nFOREIGN KEY (\"userId\")\nREFERENCES \"public\".\"user\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"feedSession_userId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "feedSession_userId_fkey",
+          "public",
+          "\"public\".\"feedSession\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.postSeen.postSeen_userId_fkey",
+    "label": "Add foreign key \"postSeen_userId_fkey\" on \"postSeen\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "postSeen_userId_fkey",
+        "table": "postSeen"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"postSeen_userId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "postSeen_userId_fkey",
+          "public",
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"postSeen_userId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"postSeen\"\nADD CONSTRAINT \"postSeen_userId_fkey\"\nFOREIGN KEY (\"userId\")\nREFERENCES \"public\".\"user\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"postSeen_userId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "postSeen_userId_fkey",
+          "public",
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.postSeen.postSeen_postId_fkey",
+    "label": "Add foreign key \"postSeen_postId_fkey\" on \"postSeen\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "postSeen_postId_fkey",
+        "table": "postSeen"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"postSeen_postId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "postSeen_postId_fkey",
+          "public",
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"postSeen_postId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"postSeen\"\nADD CONSTRAINT \"postSeen_postId_fkey\"\nFOREIGN KEY (\"postId\")\nREFERENCES \"public\".\"post\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"postSeen_postId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "postSeen_postId_fkey",
+          "public",
+          "\"public\".\"postSeen\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.topicFollow.topicFollow_userId_fkey",
+    "label": "Add foreign key \"topicFollow_userId_fkey\" on \"topicFollow\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "topicFollow_userId_fkey",
+        "table": "topicFollow"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"topicFollow_userId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "topicFollow_userId_fkey",
+          "public",
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"topicFollow_userId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"topicFollow\"\nADD CONSTRAINT \"topicFollow_userId_fkey\"\nFOREIGN KEY (\"userId\")\nREFERENCES \"public\".\"user\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"topicFollow_userId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "topicFollow_userId_fkey",
+          "public",
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.topicFollow.topicFollow_topicId_fkey",
+    "label": "Add foreign key \"topicFollow_topicId_fkey\" on \"topicFollow\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "topicFollow_topicId_fkey",
+        "table": "topicFollow"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"topicFollow_topicId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "topicFollow_topicId_fkey",
+          "public",
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"topicFollow_topicId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"topicFollow\"\nADD CONSTRAINT \"topicFollow_topicId_fkey\"\nFOREIGN KEY (\"topicId\")\nREFERENCES \"public\".\"topic\" (\"id\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"topicFollow_topicId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "topicFollow_topicId_fkey",
+          "public",
+          "\"public\".\"topicFollow\""
+        ]
+      }
+    ]
+  }
+]

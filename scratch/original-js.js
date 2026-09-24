@@ -1,0 +1,3955 @@
+document.documentElement.classList.add("has-js");setTimeout(function(){if(!window.__mvvOK)document.documentElement.classList.remove("has-js")},3500)</script>
+<title>My Veda Verse — a social platform built for better conversations</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Share everyday moments, ask questions, and follow the people, topics, and communities you care about — with context on replies, no public like counts, and a feed that ends. Express thoughtfully. Engage meaningfully. Share responsibly.">
+<meta name="theme-color" content="#161022">
+<meta property="og:title" content="My Veda Verse">
+<meta property="og:description" content="A social platform built for better conversations. Express thoughtfully. Engage meaningfully. Share responsibly.">
+<meta property="og:url" content="https://myvedaverse.in">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://myvedaverse.in/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="My Veda Verse — a calm social space for ideas, experiences, questions, and conversations.">
+<meta property="og:site_name" content="My Veda Verse">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My Veda Verse">
+<meta name="twitter:description" content="A social platform built for better conversations. Express thoughtfully. Engage meaningfully. Share responsibly.">
+<meta name="twitter:image" content="https://myvedaverse.in/og.png">
+<link rel="canonical" href="https://myvedaverse.in">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Three families, down from thirteen. The nine Indic script fonts went with
+     the paired glosses they existed to set: one language per label now. -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Karla:wght@400;500;600;700&family=Anek+Latin:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23161022'/%3E%3Cpath d='M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9' fill='none' stroke='%23F8C94F' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.3' r='2.5' fill='%23F8C94F'/%3E%3C/svg%3E">
+
+<style>
+/* ══════════════════════════════════════════════════════════════════════════
+   MY VEDA VERSE — myvedaverse.in
+
+   ONE SKY, AND A VEIL OVER IT.
+   The page travels one continuous night. Every colour below is a LIVE variable
+   rewritten from the scroll position, so the whole visible page always sits in
+   one moment of one dawn and a section change is a cross-fade rather than a
+   step. The morning it arrives at is the house palette read in order —
+   terracotta, gerua, turmeric, parchment — because those five tones ARE a
+   sunrise if you lay them out in sequence.
+
+   Content never trades readability for that. Every section sits on a veil, and
+   the veil keeps its ground dark and its ink light the whole way down. The
+   morning is let through only where there is nothing left to read.
+
+   ONE LANGUAGE PER LABEL.
+   Nowhere on this page does a Sanskrit word sit beside its English translation
+   inside the same control. Setting "Prithvi / Earth" in one breath quietly
+   makes one of them the real name and the other the help text — and choosing
+   Devanagari as the partner script would privilege one modern language over
+   the dozen others that inherit this material equally. So terms appear once,
+   transliterated, and the meaning is carried by the sentence underneath.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ── THE FIVE REGISTERS ─────────────────────────────────────────
+     Every colour here does one job, and no colour does two.
+
+       the lamp        --accent   attention, action, the live thing. The only
+                                  register that MOVES: rewritten from scroll
+                                  position, so it is the lamp in this moment
+                                  of this night rather than a fixed yellow.
+       heat            --gerua    contention, prohibition, the hot end of any
+                       --terra    scale. Never an alarm — nothing here is red.
+       the machine     --indigo   software did this, not a person.
+       the checkable   --leaf     evidence, the record, and a person's yes.
+       the withheld    --ink-3    set down, kept back, deliberately not said.
+                       --parchment
+
+     In a SET of swatches — four schools, five rooms, two sides of an argument
+     — a colour is one of several and carries no register at all. Registers
+     apply to colour used alone.
+     ──────────────────────────────────────────────────────────── */
+  --turmeric:#F8C94F;      /* the pigment. --accent is the live role it fills. */
+  --gerua:#E07A2F;         /* fire and action */
+  --gerua-lit:#F09A55;     /* the same fire by lamplight */
+  --terra:#B44B2A;         /* fired clay */
+  --terra-lit:#D98A5F;
+  --parchment:#F5E9D6;
+  --indigo:#A3B0EE;        /* the machine, and nothing else */
+  --leaf:#A8C58C;          /* sap green. The one hue in the room that is not
+                              lamplight, and the only relief the eye gets over
+                              eleven warm rooms. 10.0:1 at night, 6.8:1 at
+                              dawn, so it can carry small text anywhere. */
+  --leaf-ink:#344C2B;      /* the same register on parchment — 4.8:1 there,
+                              where the light rendition would read 1.5:1.
+                              Every register needs both: a colour that only
+                              works on one ground is not a register, it is a
+                              swatch that happens to fit. */
+  --umber:#2A1F19;
+
+  /* live, rewritten from scroll. Pre-dawn values, and the no-script fallback. */
+  --void:#161022;
+  --scrim:rgba(17,12,22,.70);
+  --scrim-soft:rgba(17,12,22,.58);
+  --scrim-thin:rgba(17,12,22,.32);
+  --scrim-thinner:rgba(17,12,22,.14);
+  --chrome:rgba(17,12,22,.80);
+  --well:rgba(0,0,0,.22);
+  --warm:0;               /* live — 0..1, how far into the dawn. Drives how wide
+                              the lit lamp’s halo spreads: a flame throws further
+                              in the dark than it does at daybreak. */
+  --breath:.5;             /* live — 0..1, one shared lung */
+
+  --ink:#F5E9D6;
+  --ink-2:#E0D0BE;
+  --ink-3:#C9B79B;
+  --accent:var(--turmeric);   /* the role. The scroll rewrites this, never the pigment. */
+  /* the lamp at the alphas the page actually glows at. Written from JS on
+     every sky change so a halo is always the colour of the thing it surrounds
+     — as plain rgba, because making CSS re-resolve a color-mix() per element
+     per change measured 2.4x the style-recalc cost of handing it the answer. */
+  --a30:rgba(248,201,79,.3);
+  --a35:rgba(248,201,79,.35);
+  --a40:rgba(248,201,79,.4);
+  --a42:rgba(248,201,79,.42);
+  --a45:rgba(248,201,79,.45);
+  --a50:rgba(248,201,79,.5);
+  --a65:rgba(248,201,79,.65);
+  --a70:rgba(248,201,79,.7);
+  --a80:rgba(248,201,79,.8);
+  --a85:rgba(248,201,79,.85);
+  --a90:rgba(248,201,79,.9);
+  --on-accent:#2A1F19;
+
+  --line:rgba(186,150,168,.26);
+  --line-2:rgba(186,150,168,.13);
+  --panel:rgba(245,233,214,.045);
+  --panel-2:rgba(245,233,214,.075);
+
+  --display:"Fraunces",Georgia,serif;
+  --body:"Karla","Segoe UI",system-ui,sans-serif;
+  --label:"Anek Latin","Karla",system-ui,sans-serif;
+
+  --r-sm:8px; --r-md:16px; --r-lg:16px; --r-xl:28px; --r-pill:999px;   /* three sizes and a pill */
+
+  --ease:cubic-bezier(.22,1,.28,1);
+  --spring:cubic-bezier(.34,1.4,.5,1);
+  --slow:.6s;
+  --max:1140px;
+
+  --lift:0 18px 44px -28px rgba(12,6,2,.95), 0 2px 10px -6px rgba(12,6,2,.6);
+  --lift-lg:0 40px 90px -50px rgba(12,6,2,1), 0 4px 16px -8px rgba(12,6,2,.55);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--void);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-feature-settings:"kern","liga","calt";
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+p{margin:0;text-wrap:pretty}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:-.02em;text-wrap:balance;font-variation-settings:"SOFT" 22}
+a{color:var(--accent);text-underline-offset:3px}
+button,input{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+::selection{background:var(--terra);color:var(--parchment)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* an unglazed surface, not a screen */
+body::after{
+  content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@property --breath{syntax:"<number>";inherits:true;initial-value:.5}
+@keyframes breath{0%,100%{--breath:0}50%{--breath:1}}
+@media (prefers-reduced-motion:no-preference){
+  :root:not(.still) :is(.end .mark,.feed-end svg,.reel-end svg,#tone[aria-pressed="true"] .bars i){animation:breath 5.5s ease-in-out infinite}
+}
+/* the journey layer: singularity → field → chandrabindu → morning */
+#cosmos{position:fixed;inset:0;z-index:0;pointer-events:none;display:block}
+
+/* ── the shared lung ─────────────────────────────────────────────────────
+   Anything that pulses reads --breath. Nothing owns a keyframe timer, so
+   nothing ever drifts out of phase with anything else. */
+.breathe{opacity:calc(.55 + var(--breath) * .45)}
+
+/* ── layout ─────────────────────────────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.sec{position:relative;z-index:1;padding:clamp(80px,10vw,128px) 0;scroll-margin-top:70px;
+  background:var(--scrim)}
+.eyebrow{
+  font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.75em;margin-bottom:1.25em;
+}
+.eyebrow::before{content:"";width:7px;height:7px;background:currentColor;border-radius:1.5px;flex:none;
+  transform:rotate(45deg) scale(0);transition:transform .8s var(--spring) .05s}
+.lit .eyebrow::before,.eyebrow.lit::before{transform:rotate(45deg) scale(1)}
+.eyebrow::after{content:"";flex:1;height:1px;min-width:2em;border-radius:1px;
+  background:linear-gradient(90deg,currentColor,color-mix(in srgb,currentColor 34%,transparent) 58%,transparent 97%);
+  opacity:.55;transform-origin:0 50%;transition:transform 1.4s var(--ease) .12s}
+/* the line draws itself out across the page as the room is lit, left to right,
+   a beat after the diamond — so a section opens like a page being ruled */
+.has-js .eyebrow::after{transform:scaleX(0)}
+.has-js .lit .eyebrow::after,.has-js .eyebrow.lit::after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.eyebrow::after{transition:none}}
+h2.big{font-size:clamp(2.05rem,5.1vw,3.5rem);max-width:17ch;font-weight:500}
+@media (min-width:1040px){
+  .sec>.wrap{display:grid;grid-template-columns:1.1fr .9fr;column-gap:clamp(30px,4.4vw,66px)}
+  .sec>.wrap>*{grid-column:1/-1;min-width:0}
+  .sec>.wrap>h2.big{grid-column:1;grid-row:2;max-width:none;align-self:start}
+  .sec>.wrap>h2.big+.deck{grid-column:2;grid-row:2;align-self:start;margin-top:0;
+    max-width:44ch;padding-bottom:.55em;
+    border-left:1px solid var(--line-2);padding-left:clamp(18px,2vw,28px)}
+  .leaf{display:grid;grid-template-columns:1.1fr .9fr;column-gap:clamp(30px,4.4vw,60px)}
+  .leaf>*{grid-column:1/-1;min-width:0}
+  .leaf>h2.big{grid-column:1;grid-row:2;max-width:none;align-self:start}
+  .leaf>h2.big+.deck{grid-column:2;grid-row:2;align-self:start;margin-top:0;max-width:42ch;
+    border-left:1px solid rgba(74,48,32,.2);padding-left:clamp(18px,2vw,28px)}
+}
+h2.big em{font-style:italic;color:var(--accent);font-weight:400}
+.deck{font-size:clamp(1.04rem,1.5vw,1.19rem);color:var(--ink-2);max-width:56ch;margin-top:1em;line-height:1.58}
+.small{font-size:.87rem;color:var(--ink-3);line-height:1.55}
+.sub{font-family:var(--display);font-weight:600;font-size:1.08rem;letter-spacing:-.01em;margin-bottom:.5em}
+
+/* ── reveal: things are not slid in, they are lit ───────────────────────── */
+.has-js .rv{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.has-js .rv.lit{opacity:1;transform:none}
+.has-js .stag>*{opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.has-js .stag.lit>*{opacity:1;transform:none}
+.stag.lit>*:nth-child(2){transition-delay:.06s}
+.stag.lit>*:nth-child(3){transition-delay:.12s}
+.stag.lit>*:nth-child(4){transition-delay:.18s}
+.stag.lit>*:nth-child(5){transition-delay:.24s}
+.stag.lit>*:nth-child(6){transition-delay:.30s}
+@media (prefers-reduced-motion:reduce){.has-js .rv,.has-js .stag>*{opacity:1;transform:none;transition:none}}
+
+/* ══ TOUCH ════════════════════════════════════════════════════════════════
+   Every surface answers the pointer. Hover and press only — nothing tracks
+   the cursor as it travels, because a light that follows you around reads as
+   a torch sweeping the page, not as calm. */
+.t{position:relative;overflow:hidden;transition:transform var(--slow) var(--ease),border-color var(--slow) var(--ease),box-shadow var(--slow) var(--ease),background-color var(--slow) var(--ease)}
+.t:hover,.t:focus-within{border-color:var(--a50);box-shadow:var(--lift);background:var(--panel-2)}
+.t-lift:hover,.t-lift:focus-within{transform:translateY(-4px)}
+.t:active{transform:translateY(-1px) scale(.996)}
+@media (prefers-reduced-motion:reduce){.t:hover,.t:active{transform:none}}
+/* ── chrome ─────────────────────────────────────────────────────────────── */
+header.top{
+  position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:11px clamp(16px,5vw,56px);
+  background:var(--chrome);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);
+  border-bottom:1px solid var(--line-2);
+}
+.brand{display:flex;align-items:center;gap:.55em;text-decoration:none;color:var(--ink);position:relative}
+.brand svg{flex:none;display:block;transition:transform .7s var(--spring)}
+.brand b{font-family:var(--display);font-weight:600;font-size:1.06rem;letter-spacing:-.025em;white-space:nowrap}
+.brand i{display:block;font-style:normal;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin-top:-2px}
+.top nav{display:flex;gap:.3em;font-family:var(--label);font-weight:500;font-size:.83rem}
+.top nav a{color:var(--ink-3);text-decoration:none;padding:.4em .8em;border-radius:var(--r-pill);
+  transition:color .35s var(--ease),background-color .35s var(--ease)}
+.top nav a:hover{color:var(--ink);background:rgba(245,233,214,.07)}
+@media (max-width:980px){.top nav{display:none}}
+
+/* ── buttons ────────────────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;padding:.85em 1.6em;border-radius:var(--r-pill);
+  font-family:var(--label);font-weight:600;font-size:.9rem;letter-spacing:.02em;
+  text-decoration:none;border:1px solid transparent;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;
+  transition:transform .5s var(--spring),background-color var(--slow) var(--ease),border-color var(--slow) var(--ease),box-shadow var(--slow) var(--ease),color var(--slow) var(--ease);
+}
+.btn>*{position:relative;z-index:3}
+.btn-p{background:var(--accent);color:var(--on-accent);box-shadow:0 4px 18px -10px var(--a80)}
+/* a disabled control has to look disabled, or the gate reads as broken */
+.btn:disabled{opacity:.42;cursor:not-allowed;box-shadow:none;filter:saturate(.6)}
+.btn:disabled:hover{transform:none;box-shadow:none}
+.btn-p:hover{transform:translateY(-1px);box-shadow:0 16px 34px -14px var(--a85)}
+.btn-p:active{transform:translateY(-1px) scale(.985)}
+.btn-g{border-color:var(--line);color:var(--ink);background:var(--panel)}
+.btn-g:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);background:var(--panel-2)}
+.btn-g:active{transform:translateY(-1px) scale(.985)}
+.btn .arw{transition:transform .5s var(--spring)}
+.btn:hover .arw{transform:translateX(3px)}
+.btn:hover .arw.dn{transform:translateY(3px)}
+@media (prefers-reduced-motion:reduce){.btn:hover,.btn:active{transform:none}}
+
+/* ── segmented pickers, with a sliding thumb rather than a jumping fill ─── */
+.pick{position:relative;display:flex;flex-wrap:wrap;gap:.35em;margin-bottom:1.4em}
+.pick button{
+  border:1px solid var(--line);background:transparent;color:var(--ink-2);
+  padding:.52em 1.05em;border-radius:var(--r-pill);cursor:pointer;
+  font-family:var(--label);font-weight:600;font-size:.82rem;letter-spacing:.02em;
+  transition:color .45s var(--ease),border-color .45s var(--ease),background-color .45s var(--ease),transform .45s var(--spring);
+  position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.5em;
+}
+.pick button:hover{border-color:var(--accent);color:var(--ink)}
+.pick button:active{transform:translateY(0) scale(.97)}
+.pick button[aria-pressed="true"],.pick button[aria-selected="true"]{
+  background:var(--accent);border-color:var(--accent);color:var(--on-accent);
+  box-shadow:0 6px 20px -12px var(--a90)}
+.pick button svg{flex:none}
+@media (prefers-reduced-motion:reduce){.pick button:hover{transform:none}}
+.hint{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.9em}
+.hint::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);
+  margin-right:.8em;vertical-align:middle;opacity:.8}
+.demo{border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(20px,3.4vw,36px);background:var(--panel);margin-top:2.2em;box-shadow:var(--lift);position:relative;overflow:hidden}
+.demo>*{position:relative;z-index:1}
+</style>
+<style>
+/* ══ FOUR MOVES ═════════════════════════════════════════════════════════ */
+.steps{margin-top:2.2em}
+.bar{height:2px;background:var(--line-2);border-radius:2px;overflow:hidden;margin:0 0 2em}
+.bar i{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--terra-lit),var(--accent));border-radius:2px;transition:width .8s var(--ease)}
+.pane{display:none;grid-template-columns:1.2fr .8fr;gap:clamp(22px,4vw,48px);align-items:center}
+.pane.on{display:grid;animation:fadein .7s var(--ease)}
+@media (prefers-reduced-motion:reduce){.pane.on{animation:none}}
+@keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (max-width:780px){.pane.on{grid-template-columns:1fr}.pane figure{order:-1;max-width:180px;margin:0 auto}}
+.pane figure{margin:0}
+.pane h3{font-size:clamp(1.35rem,3vw,1.9rem);font-weight:500;margin:.3em 0 .45em}
+.pane p{color:var(--ink-2);font-size:.99rem}
+.kicker{font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.reveal-box{margin-top:1.1em;padding:.95em 1.15em;border-left:2px solid var(--accent);background:rgba(248,201,79,.06);border-radius:0 var(--r-md) var(--r-md) 0;font-size:.93rem;color:var(--ink)}
+.reveal-box b{color:var(--accent);display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4em}
+.nav-b{display:flex;gap:.6em;margin-top:1.8em;padding-top:1.3em;border-top:1px solid var(--line-2)}
+.nav-b button{background:transparent;border:1px solid var(--line);color:var(--ink-2);padding:.5em 1.1em;border-radius:var(--r-pill);cursor:pointer;font-family:var(--label);font-weight:600;font-size:.8rem;transition:all .4s var(--ease)}
+.nav-b button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.nav-b button:disabled{opacity:.3;cursor:not-allowed}
+
+/* ══ CIRCLES ════════════════════════════════════════════════════════════ */
+.room{position:relative;border:1px solid color-mix(in srgb,var(--rc) 42%,transparent);border-radius:var(--r-xl);overflow:hidden;background:rgba(0,0,0,.2);
+  transition:border-color .8s var(--ease),box-shadow .8s var(--ease);box-shadow:inset 0 0 60px -30px var(--rc)}
+#amb{position:absolute;inset:0;pointer-events:none;z-index:0}
+.room-head{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:1em;padding:1em 1.35em;border-bottom:1px solid var(--line-2);flex-wrap:wrap}
+.room-head .nm{display:flex;align-items:center;gap:.65em;font-family:var(--display);font-weight:600;font-size:1.16rem}
+.room-head .mt{font-family:var(--label);font-size:.75rem;letter-spacing:.08em;color:var(--ink-3)}
+.room-body{position:relative;z-index:1;padding:1.35em;min-height:216px;display:flex;flex-direction:column;gap:.8em;justify-content:flex-end}
+/* Pangat: every message block is identical. No sizing by author, ever. */
+.msg{display:flex;gap:.8em;align-items:flex-start;animation:msgin .6s var(--ease)}
+@keyframes msgin{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.msg .av{width:34px;height:34px;border-radius:50%;flex:none;overflow:hidden;border:1px solid var(--line-2);background:rgba(0,0,0,.3)}
+.msg .av svg{width:100%;height:100%;display:block}
+.msg .bd{flex:1;min-width:0}
+.msg .nmx{font-family:var(--label);font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:.6em;align-items:center}
+.msg .tx{font-size:.94rem;color:var(--ink);margin-top:.12em;line-height:1.5}
+.msg .ix{font-family:var(--label);font-size:.75rem;color:var(--rc);letter-spacing:.1em}
+.msg.fading{transition:opacity 2.6s linear,filter 2.6s linear;opacity:.07;filter:blur(2px)}
+.room-foot{position:relative;z-index:1;display:flex;gap:1em;justify-content:space-between;flex-wrap:wrap;padding:.9em 1.35em;border-top:1px solid var(--line-2);font-size:.84rem;color:var(--ink-3);background:rgba(0,0,0,.16)}
+.room-foot .lock{font-family:var(--label);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;color:var(--rc)}
+.saybar{display:flex;align-items:center;gap:.65em;margin-top:.9em;padding:.72em 1.15em;border-radius:var(--r-pill);
+  border:1px solid var(--line-2);background:rgba(0,0,0,.22);font-size:.87rem;color:var(--ink-3)}
+.saybar.mute{border-style:dashed}
+.saybar svg{flex:none;color:var(--rc)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.7em;margin-top:1.4em}
+.rules div{border:1px solid var(--line-2);border-radius:var(--r-md);padding:.8em .95em;transition:border-color .5s var(--ease),background-color .5s var(--ease)}
+.rules div:hover{border-color:var(--a35);background:rgba(248,201,79,.04)}
+.rules b{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.28em}
+.rules span{font-size:.88rem;color:var(--ink)}
+
+/* the bowl */
+.flamewrap{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(22px,4vw,44px);align-items:start;margin-top:1.8em}
+@media (max-width:820px){.flamewrap{grid-template-columns:1fr}}
+.thread{display:flex;flex-direction:column;gap:.7em;margin-bottom:1.05em}
+.bub{padding:.8em 1.1em;border:1px solid var(--line-2);border-radius:var(--r-md);background:var(--panel);font-size:.93rem;line-height:1.5;animation:msgin .55s var(--ease)}
+.bub.mine{border-color:var(--a35);background:rgba(248,201,79,.07)}
+.bub .by{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.28em}
+.composer{display:flex;gap:.55em}
+.composer input{flex:1;min-width:0;background:rgba(0,0,0,.24);border:1px solid var(--line);border-radius:var(--r-pill);padding:.75em 1.2em;color:var(--ink);outline:none;transition:border-color .4s,box-shadow .4s}
+.composer input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(248,201,79,.13)}
+.composer input::placeholder{color:var(--ink-3)}
+.composer.hide{display:none}
+.cool{display:none;gap:1.1em;align-items:center;padding:1em 1.2em;border:1px solid var(--a30);border-radius:var(--r-lg);background:rgba(248,201,79,.05)}
+.cool.on{display:flex;animation:fadein .6s var(--ease)}
+.bowlsvg{flex:none;width:74px;height:74px;overflow:visible}
+.bowlsvg .trk{fill:none;stroke:rgba(245,233,214,.14);stroke-width:5}
+.bowlsvg .fil{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;filter:drop-shadow(0 0 6px var(--a65))}
+.cool .cd b{display:block;font-family:var(--display);font-size:1.04rem;font-weight:600;margin-bottom:.22em}
+.cool .cd{font-size:.89rem;color:var(--ink-2);line-height:1.5}
+.cool .cd i{font-style:normal;color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* ══ PRESENCE ═══════════════════════════════════════════════════════════ */
+.avatar{width:56px;height:56px;border-radius:50%;flex:none;position:relative;overflow:hidden;border:1.5px solid var(--st)}
+.avatar svg{width:100%;height:100%;display:block}
+.avatar::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--st);opacity:.3}
+.who{font-family:var(--display);font-weight:600;font-size:1.05rem}
+.state{font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--st);margin-top:.18em;font-weight:600}
+.eff{font-size:.91rem;color:var(--ink-2);margin-top:.55em;line-height:1.5}
+.gnote{font-size:.95rem;color:var(--ink-2)}
+/* ══ THE FIVE SHEATHS ═══════════════════════════════════════════════════ */
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,54px);align-items:center;margin-top:2.4em}
+@media (max-width:900px){.kgrid{grid-template-columns:1fr}}
+.klist{display:flex;flex-direction:column;gap:.3em;list-style:none;padding:0;margin:0}
+.klist li{padding:.85em 1em;border-radius:var(--r-md);border:1px solid transparent;cursor:pointer;transition:all .5s var(--ease);position:relative;overflow:hidden}
+.klist li:hover{background:var(--panel)}
+.klist li.on{background:var(--panel-2);border-color:var(--a35)}
+.klist .kn{font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.klist li.on .kn{color:var(--accent)}
+.klist h3{font-size:1.06rem;font-weight:600;margin:.16em 0 .22em}
+.klist p{font-size:.89rem;color:var(--ink-2);line-height:1.5}
+.klist .seen{display:inline-block;margin-top:.5em;font-family:var(--label);font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);background:rgba(245,233,214,.07);padding:.25em .75em;border-radius:var(--r-pill)}
+.klist li.on .seen{color:var(--accent);background:rgba(248,201,79,.14)}
+.stage{position:relative;aspect-ratio:1;width:100%;max-width:450px;margin:0 auto;display:grid;place-items:center;touch-action:none}
+.ring{position:absolute;border-radius:50%;border:1px solid var(--line);background:rgba(18,11,7,.34);-webkit-backdrop-filter:blur(1.5px);backdrop-filter:blur(1.5px);transition:all .55s var(--ease)}
+.ring[data-k="1"]{border-color:rgba(201,183,155,.24)}
+.ring[data-k="2"]{border-color:rgba(201,183,155,.3)}
+.ring[data-k="3"]{border-color:rgba(201,183,155,.37)}
+.ring[data-k="4"]{border-color:var(--a42);background:rgba(248,201,79,.035)}
+.ring.on{border-color:var(--accent);box-shadow:0 0 0 1px rgba(248,201,79,.22),0 0 40px -8px var(--a45);background:rgba(248,201,79,.05)}
+.ring.in{background:rgba(14,8,5,.5);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.ringlab{position:absolute;left:50%;transform:translateX(-50%);top:6px;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);pointer-events:none;white-space:nowrap}
+.ring.on .ringlab{color:var(--accent)}
+.ring[data-k="0"] .ringlab{top:-18px;color:var(--accent)}
+.ring[data-k="4"] .ringlab{top:auto;bottom:-19px}
+#node{position:relative;z-index:5;cursor:grab;touch-action:none;user-select:none;
+  padding:.65em 1.15em;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);
+  font-family:var(--label);font-weight:700;font-size:.79rem;letter-spacing:.02em;
+  box-shadow:0 10px 30px -12px var(--a85),0 0 0 6px rgba(248,201,79,.09);
+  transition:box-shadow .4s var(--ease),filter .4s var(--ease);white-space:nowrap}
+#node:active{cursor:grabbing}
+#node.deep{filter:saturate(.8) brightness(.92)}
+.readout{margin-top:1.25em;padding:1.05em 1.2em;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel)}
+.readout b{display:block;font-family:var(--display);font-size:1.06rem;font-weight:600;margin-bottom:.25em}
+.readout span{font-size:.9rem;color:var(--ink-2)}
+.readout .cnt{color:var(--accent);font-weight:700}
+
+/* ══ SUTRA ══════════════════════════════════════════════════════════════ */
+.pipe{display:flex;align-items:stretch;gap:.5em;margin-top:2.2em;flex-wrap:wrap}
+.pipe>div{flex:1;min-width:152px;border:1px solid var(--line);border-radius:var(--r-md);padding:1em 1.1em;transition:transform .5s var(--spring),box-shadow .5s var(--ease)}
+.pipe>div:hover{box-shadow:var(--lift)}
+.pipe .ai{border-color:color-mix(in srgb,var(--indigo) 45%,transparent);background:rgba(163,176,238,.07)}
+.pipe .hum{border-color:var(--a50);background:rgba(248,201,79,.08)}
+.pipe b{display:block;font-family:var(--display);font-size:1.02rem;font-weight:600}
+.pipe span{font-size:.84rem;color:var(--ink-2);display:block;margin-top:.22em}
+.pipe em{font-style:normal;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.4em}
+.pipe .ai em{color:var(--indigo)}
+.pipe .hum em{color:var(--accent)}
+.pipe .arw2{flex:0 0 22px;min-width:0;border:0;padding:0;display:grid;place-items:center;color:var(--ink-3)}
+.pipe .arw2:hover{transform:none;box-shadow:none}
+@media (max-width:760px){.pipe .arw2{display:none}}
+
+/* ══ THE LEAF: parchment. The part that is written down. ════════════════ */
+.leaf{
+  --ink:#2A1F19;--ink-2:#4A382A;--ink-3:#544131;--accent:#7A2911;
+  --line:rgba(42,31,25,.16);--line-2:rgba(42,31,25,.09);
+  background:var(--parchment);color:var(--ink);
+  border-radius:var(--r-xl);padding:clamp(28px,5vw,62px);
+  box-shadow:var(--lift-lg);position:relative;overflow:hidden;
+}
+.leaf::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(120% 90% at 80% 0%,rgba(224,122,47,.1),transparent 60%),
+             radial-gradient(90% 70% at 0% 100%,rgba(180,75,42,.08),transparent 60%)}
+.leaf>*{position:relative}
+.leaf h2.big em{color:var(--accent)}
+.leaf .eyebrow{color:var(--accent)}
+.laws{list-style:none;padding:0;margin:2.1em 0 0}
+.laws li{display:flex;gap:1.15em;padding:1.25em 0;border-top:1px solid var(--line-2)}
+.laws li:first-child{border-top:0}
+.laws .n{font-family:var(--display);font-size:1.45rem;font-weight:400;color:var(--accent);flex:none;width:1.6em;line-height:1;font-variant-numeric:tabular-nums}
+.laws h3{font-size:1.2rem;font-weight:600;letter-spacing:-.015em}
+.laws p{margin-top:.38em;color:var(--ink-2);font-size:.95rem;line-height:1.58;max-width:62ch}
+
+/* ══ THE END ════════════════════════════════════════════════════════════
+   Inverting the closing ink is unfixable, not fiddly: there is a band of sky
+   luminance the sunrise spends real time inside where NEITHER parchment nor
+   umber clears 4.5:1, and cross-fading lands the ink in the middle of that
+   band exactly when the ground is too. So the ending stops trying. The
+   sunrise gets the full width, and the words sit on a dark card floating in
+   it — the exact inverse of the parchment leaf above. */
+.end{text-align:center;padding:clamp(64px,9vw,110px) 0 clamp(44px,6vw,74px);position:relative;z-index:1;
+  min-height:78vh;display:flex;flex-direction:column;justify-content:center;background:transparent}
+.end::before{content:"";position:absolute;left:0;right:0;top:0;height:min(30vh,220px);pointer-events:none;
+  background:linear-gradient(var(--scrim),transparent)}
+.night{max-width:43rem;margin:0 auto;padding:clamp(24px,3.6vw,42px) clamp(20px,3.4vw,42px) clamp(20px,2.6vw,30px);
+  border-radius:var(--r-xl);background:rgba(24,15,11,.80);-webkit-backdrop-filter:blur(8px) saturate(1.1);backdrop-filter:blur(8px) saturate(1.1);
+  border:1px solid rgba(248,201,79,.16);box-shadow:var(--lift-lg)}
+.end .mark{font-size:clamp(2rem,5.5vw,3.2rem);color:var(--accent);line-height:1;opacity:calc(.55 + var(--breath)*.45);display:block;
+  font-family:var(--display);font-weight:400;font-style:italic;letter-spacing:.02em}
+.end h2{font-size:clamp(1.5rem,3.6vw,2.3rem);font-weight:400;margin-top:.3em;font-style:italic}
+.end p{color:var(--ink-2);max-width:46ch;margin:.9em auto 0;font-size:.97rem}
+.end p b{color:var(--ink)}
+.end .backup{margin-top:1.1em;font-family:var(--label);font-size:.76rem;letter-spacing:.05em;color:var(--ink-3)}
+.end .backup a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .4s var(--ease)}
+.end .backup a:hover{border-bottom-color:var(--accent)}
+.end .backup a+a{color:var(--ink-3)}
+.end .backup a+a:hover{border-bottom-color:var(--ink-3)}
+footer{margin-top:clamp(20px,2.8vw,32px);padding-top:clamp(16px,2.2vw,24px);border-top:1px solid var(--line-2);text-align:center}
+footer p{font-size:.79rem;color:var(--ink-3);max-width:58ch;margin:0 auto;line-height:1.55}
+footer .sig{display:flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--display);font-size:1.15rem;font-weight:600;margin-top:.85em;color:var(--ink-2);letter-spacing:-.02em}
+footer .dom{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:.5em}
+
+/* ══ SOUND ═════════════════════════════════════════════════════════════ */
+.msg{border-radius:var(--r-md);padding:.15em .4em;margin:-.15em -.4em;transition:background-color .5s var(--ease)}
+.msg:hover{background:rgba(245,233,214,.035)}
+.bub{transition:border-color .5s var(--ease),transform .5s var(--spring)}
+.bub:hover{border-color:var(--a30)}
+.saybar{transition:border-color .5s var(--ease),background-color .5s var(--ease)}
+.saybar:hover{border-color:rgba(248,201,79,.28);background:rgba(0,0,0,.3)}
+.reveal-box{transition:background-color .5s var(--ease)}
+.reveal-box:hover{background:rgba(248,201,79,.09)}
+.post-f .act button:active,.chips button:active{transform:translateY(0) scale(.96)}
+/* a keyboard user should be able to skip the whole frieze */
+.skip{position:absolute;left:12px;top:-60px;z-index:400;padding:.7em 1.2em;border-radius:var(--r-pill);
+  background:var(--accent);color:var(--umber);font-family:var(--label);font-weight:700;font-size:.82rem;
+  text-decoration:none;transition:top .3s var(--ease)}
+.skip:focus{top:12px}
+#tone,#still{display:inline-flex;align-items:center;gap:.6em;
+  padding:.55em 1em .55em .8em;border-radius:var(--r-pill);cursor:pointer;
+  border:1px solid var(--line);background:rgba(20,13,9,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  color:var(--ink-3);font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;
+  transition:all .45s var(--ease)}
+#tone:hover,#still:hover{border-color:var(--accent);color:var(--ink)}
+#tone[aria-pressed="true"],#still[aria-pressed="true"]{color:var(--accent);border-color:var(--a50);box-shadow:0 0 30px -10px var(--accent)}
+#tone .bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+#tone .bars i{width:2px;background:currentColor;border-radius:1px;height:3px;opacity:.65;transition:height .4s var(--ease)}
+#tone[aria-pressed="true"] .bars i{opacity:1}
+#tone[aria-pressed="true"] .bars i:nth-child(1){height:calc(4px + var(--breath)*7px)}
+#tone[aria-pressed="true"] .bars i:nth-child(2){height:calc(11px - var(--breath)*6px)}
+#tone[aria-pressed="true"] .bars i:nth-child(3){height:calc(5px + var(--breath)*6px)}
+
+</style>
+<style>
+/* ══ THE FEED ═══════════════════════════════════════════════════════════
+   Pangat, enforced by the stylesheet rather than by a policy. Every post is
+   one width and one weight. There is no "featured" variant to write, no
+   promoted state, and no rule anywhere that can make one person's block
+   bigger than another's. */
+.feedwrap{display:grid;grid-template-columns:1fr 322px;gap:clamp(20px,3vw,36px);align-items:start;margin-top:1.6em}
+@media (max-width:900px){.feedwrap{grid-template-columns:1fr}}
+.feed{display:flex;flex-direction:column;gap:.8em}
+.post{border:1px solid var(--line-2);border-radius:var(--r-lg);padding:1.1em 1.25em;background:var(--well);
+  transition:border-color .5s var(--ease),transform .5s var(--spring),background-color .5s var(--ease)}
+.post:hover{border-color:rgba(248,201,79,.28);background:rgba(0,0,0,.28)}
+.post-h{display:flex;align-items:center;gap:.7em}
+.post-h .av{width:38px;height:38px;border-radius:50%;flex:none;overflow:hidden;border:1px solid var(--line-2)}
+.post-h .av svg{width:100%;height:100%;display:block}
+.post-h .who{font-family:var(--label);font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--ink)}
+.post-h .mt{font-family:var(--label);font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-top:.1em}
+.post .body{margin-top:.75em;font-size:.96rem;line-height:1.55;color:var(--ink)}
+.post .art{margin-top:.85em;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line-2);aspect-ratio:16/9;background:#0d0a12}
+.post .art svg{width:100%;height:100%;display:block}
+.post-f{display:flex;align-items:center;gap:.8em;margin-top:.9em;padding-top:.75em;border-top:1px solid var(--line-2);flex-wrap:wrap}
+.reacted{display:flex;align-items:center}
+.reacted i{width:22px;height:22px;border-radius:50%;overflow:hidden;border:1.5px solid var(--void);margin-left:-7px;display:block}
+.reacted i:first-child{margin-left:0}
+.reacted i svg{width:100%;height:100%;display:block}
+.post-f .said{font-family:var(--label);font-size:.75rem;letter-spacing:.08em;color:var(--ink-3)}
+.post-f .act{margin-left:auto;display:flex;gap:.4em}
+.post-f .act :is(a,button){display:inline-flex;align-items:center;min-height:32px;border:1px solid var(--line-2);background:transparent;color:var(--ink-3);cursor:pointer;
+  padding:.3em .85em;border-radius:var(--r-pill);font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.03em;text-decoration:none;
+  transition:border-color .3s var(--ease),color .3s var(--ease),background-color .3s var(--ease)}
+.post-f .act :is(a,button):hover{border-color:var(--accent);color:var(--accent)}
+.post-f .act button[aria-pressed="true"]{border-color:var(--a50);color:var(--accent);background:rgba(248,201,79,.07)}
+/* the numbers only exist in the "usual way" comparison, and they are fake */
+.metric{display:none;font-family:var(--label);font-size:.75rem;letter-spacing:.08em;color:var(--gerua-lit);font-weight:700}
+.feed.counts .metric{display:inline}
+.feed.counts .said{display:none}
+.feed-end{border:1px dashed var(--line);border-radius:var(--r-lg);padding:1.4em;text-align:center;background:rgba(248,201,79,.04)}
+.feed-end svg{color:var(--accent);margin:0 auto .5em;display:block;opacity:calc(.55 + var(--breath)*.45)}
+.feed-end b{display:block;font-family:var(--display);font-size:1.1rem;font-weight:600}
+.feed-end span{font-size:.88rem;color:var(--ink-3);display:block;margin-top:.25em}
+.aside{border:1px solid var(--line-2);border-radius:var(--r-lg);padding:1.15em 1.25em;background:var(--well)}
+.aside h4{font-family:var(--display);font-size:1.02rem;font-weight:600;margin-bottom:.5em}
+.aside p{font-size:.87rem;color:var(--ink-2);line-height:1.55}
+.aside ul{list-style:none;margin:.9em 0 0;padding:0;display:grid;gap:.55em}
+.aside li{position:relative;padding-left:1.2em;font-size:.85rem;color:var(--ink-2);line-height:1.5}
+.aside li::before{content:"";position:absolute;left:0;top:.56em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+/* ══ WATCH ══════════════════════════════════════════════════════════════ */
+.watch{display:grid;grid-template-columns:1fr 268px;gap:clamp(20px,3.4vw,40px);align-items:start;margin-top:1.6em}
+@media (max-width:880px){.watch{grid-template-columns:1fr}.reelphone{margin:0 auto}}
+.vid{border:1px solid var(--line-2);border-radius:var(--r-lg);overflow:hidden;background:var(--well)}
+.vid .screen{aspect-ratio:16/9;background:#0c0910;position:relative}
+.vid .screen svg{width:100%;height:100%;display:block}
+.vid .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.vid .play i{width:54px;height:54px;border-radius:50%;background:rgba(24,15,11,.7);border:1px solid var(--a50);
+  display:grid;place-items:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:transform .6s var(--spring)}
+.vid .play svg{width:18px;height:18px;color:var(--accent)}
+/* chapters, not a watch-time bar: the marks are where the argument turns */
+.scrub{display:flex;gap:2px;padding:0 1.1em;margin-top:-9px;position:relative;z-index:2}
+.scrub i{height:5px;flex:1;border-radius:3px;background:rgba(245,233,214,.16);transition:background-color .5s var(--ease),transform .4s var(--spring);cursor:pointer;transform-origin:50% 100%}
+.scrub i:hover{transform:scaleY(1.9)}
+.scrub i.seen{background:var(--accent)}
+.vid .meta{padding:1em 1.15em 1.15em}
+.vid .meta b{display:block;font-family:var(--display);font-size:1.06rem;font-weight:600;line-height:1.3}
+.vid .meta>span{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:.45em}
+.chapters li span{font-size:.87rem;line-height:1.45}
+.chapters{list-style:none;margin:.9em 0 0;padding:.9em 0 0;border-top:1px solid var(--line-2);display:grid;gap:.5em}
+.chapters li{display:grid;grid-template-columns:3.6rem 1fr;gap:.7em;font-size:.87rem;color:var(--ink-2);
+  padding:.28em .4em;margin:-.28em -.4em;border-radius:var(--r-sm);cursor:pointer;transition:background-color .4s var(--ease),color .4s var(--ease)}
+.chapters li:hover{background:rgba(248,201,79,.06);color:var(--ink)}
+.chapters li i{font-style:normal;font-family:var(--label);font-size:.75rem;color:var(--accent);letter-spacing:.06em}
+
+/* the reel stack — vertical, finite, and it tells you how finite */
+.reelphone{width:268px;max-width:100%;border-radius:30px;border:1px solid var(--line);background:#0b0810;
+  padding:9px;box-shadow:var(--lift-lg);position:relative}
+.reel{aspect-ratio:9/16;border-radius:22px;overflow:hidden;position:relative;background:#0c0910}
+.reel svg.scene{width:100%;height:100%;display:block}
+.reel .cap{position:absolute;left:0;right:0;bottom:0;padding:1em .9em .95em;
+  background:linear-gradient(transparent,rgba(8,5,10,.88) 55%)}
+.reel .cap b{display:block;font-family:var(--display);font-size:.98rem;font-weight:600;line-height:1.28}
+.reel .cap span{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-top:.4em}
+.reel .stack{position:absolute;top:.8em;left:.8em;right:.8em;display:flex;gap:3px}
+.reel .stack i{height:3px;flex:1;border-radius:2px;background:rgba(245,233,214,.22);transition:background-color .5s var(--ease)}
+.reel .stack i.on{background:var(--accent)}
+.reelbar{display:flex;align-items:center;justify-content:space-between;gap:.6em;margin-top:.85em;padding:0 .3em}
+.reelbar span{font-family:var(--label);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.reelbar button{border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;transition:all .4s var(--spring)}
+.reelbar button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.reelbar button:disabled{opacity:.3;cursor:not-allowed}
+.reel-end{position:absolute;inset:0;display:none;place-items:center;text-align:center;padding:2em 1.4em;
+  background:linear-gradient(180deg,rgba(12,8,14,.92),rgba(24,15,11,.96))}
+.reel-end.on{display:grid}
+.reel-end b{display:block;font-family:var(--display);font-size:1.15rem;font-weight:600;margin-bottom:.4em}
+.reel-end p{font-size:.84rem;color:var(--ink-2);line-height:1.5}
+.reel-end svg{color:var(--accent);margin:0 auto .7em;display:block;opacity:calc(.55 + var(--breath)*.45)}
+
+/* ══ THE LEAF, made thin ════════════════════════════════════════════════
+   It was an opaque block, and an opaque block sitting in a moving sky reads
+   as a hole cut in it — the field visibly stops at the edge and starts again
+   on the other side. So the parchment is now thin enough to hold up to the
+   light: the sky keeps moving underneath it, and the edge feathers out
+   instead of ending. Dark ink on this still measures better than 9:1. */
+.leaf{
+  background:linear-gradient(rgba(245,233,214,.78),rgba(245,233,214,.72));
+  border:1px solid rgba(245,233,214,.22);
+  box-shadow:0 0 150px 64px rgba(238,214,178,.055), var(--lift-lg);
+}
+.leaf::after{
+  content:"";position:absolute;inset:-1px;pointer-events:none;border-radius:inherit;
+  box-shadow:inset 0 0 46px 16px rgba(245,233,214,.40);
+}
+</style>
+<!-- ═══ ICONOGRAPHY ══════════════════════════════════════════════════════
+     Five of these are not invented. Prithvi, Jal, Agni, Vayu and Akash are
+     drawn from the tattva yantras — the square, the crescent, the upward
+     triangle, the six-pointed circle and the open ring — forms these five
+     elements have carried for a very long time. The square is the only square
+     in the whole system, because earth is the thing that does not move.
+     ══════════════════════════════════════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8.5a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8Z" fill="currentColor"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16.5 14.4c2.2 0 3.7 1.3 4.2 3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6.5 3.8h11v16.6L12 16.6l-5.5 3.8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 1.8h-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-reply" viewBox="0 0 24 24"><path d="M20 18.5c-1-4.6-4.3-7-9-7H6.5M10 7.5 6 11.5l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-repost" viewBox="0 0 24 24"><path d="M6.5 12.5V9a1.5 1.5 0 0 1 1.5-1.5h10.5M16 5l2.5 2.5L16 10M17.5 11.5V15a1.5 1.5 0 0 1-1.5 1.5H5.5M8 19l-2.5-2.5L8 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 17.5h6M10 20.5h4M12 3.5a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2v.7h5.2v-.7c0-.8.4-1.5 1-2A6 6 0 0 0 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-thought" viewBox="0 0 24 24"><path d="M4.5 6.5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H11l-4 3.5v-3.5h-.5a2 2 0 0 1-2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-prithvi" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-jal" viewBox="0 0 24 24"><path d="M4 8.5 A10 10 0 1 0 20 8.5 A12.5 12.5 0 0 1 4 8.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-agni" viewBox="0 0 24 24"><path d="M12 3.4 21 19.6H3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-vayu" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="2.6" r="1.3"/><circle cx="20.3" cy="7.3" r="1.3"/><circle cx="20.3" cy="16.7" r="1.3"/><circle cx="12" cy="21.4" r="1.3"/><circle cx="3.7" cy="16.7" r="1.3"/><circle cx="3.7" cy="7.3" r="1.3"/></g></symbol>
+  <symbol id="i-akash" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.6 4.2" stroke-linecap="round"/><circle cx="12" cy="12" r="2.1" fill="currentColor"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 9.5C3 18 21 18 21 9.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 21h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-level" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></g></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".6"/><circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".3"/></symbol>
+  <symbol id="i-breath" viewBox="0 0 24 24"><path d="M2 15c3.5 0 3.5-9 7-9s3.5 9 7 9 3.2-4.5 6-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-panch" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="3.6" r="2.1"/><circle cx="20" cy="9.4" r="2.1"/><circle cx="16.9" cy="18.8" r="2.1"/><circle cx="7.1" cy="18.8" r="2.1"/><circle cx="4" cy="9.4" r="2.1"/></g></symbol>
+  <symbol id="i-zero" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6.4" ry="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20.5 18.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-7.1 7-12A7 7 0 0 0 5 10c0 4.9 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 16 20"><path d="M8 .8C8 6 13.4 7.2 13.4 12.6c0 4-2.5 6.7-5.4 6.7S2.6 16.6 2.6 12.6C2.6 9.2 5 8.2 5.5 5.2 6.5 7.2 8 7.6 8 .8Z"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 3a2 2 0 0 0 0 4h3M9 11h7M9 15h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-bridge" viewBox="0 0 24 24"><path d="M2 15c4 0 5-7 10-7s6 7 10 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2 15v4M22 15v4M8.5 11.6V19M15.5 11.6V19" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-calm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 14c1.6 1.8 3.2 2.7 5 2.7s3.4-.9 5-2.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-lamp" viewBox="0 0 24 24"><path d="M12 3.2c0 3 3.4 3.8 3.4 7.1a3.4 3.4 0 0 1-6.8 0c0-2.2 1.8-2.6 2.2-4.6.6 1.2 1.2 1.5 1.2-2.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16c0 4 16 4 16 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 20 6v6.2c0 4.6-3.3 8.1-8 9.3-4.7-1.2-8-4.7-8-9.3V6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5 19 12 8 18.5Z" fill="currentColor"/></symbol>
+  <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/><g stroke="currentColor" stroke-width="1.2" opacity=".8"><path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6 9.9 9.9M14.1 14.1l4.3 4.3M18.4 5.6 14.1 9.9M9.9 14.1 5.6 18.4"/></g></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M12 21c-4.4 0-8-3.4-8-7.6V9.2a1.7 1.7 0 0 1 3.4 0V6a1.7 1.7 0 0 1 3.4 0v-.8a1.7 1.7 0 0 1 3.4 0V7a1.7 1.7 0 0 1 3.4 0v6.4C17.6 17.6 15.7 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15.5 4 18.5 5.6 20 8 20c6.5 0 12-5.4 12-16Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M17 7 7 17" stroke="currentColor" stroke-width="1.2" opacity=".7"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 6.6v5.7l3.6 2.1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-mauna" viewBox="0 0 24 24"><path d="M5 15V9h3.5L13 5v14l-4.5-4H5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M17 9.5 21.5 14M21.5 9.5 17 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.8 5.8 18.2 18.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 11.4V4.5A1.5 1.5 0 0 1 4.5 3h6.9a2 2 0 0 1 1.4.6l8 8a2 2 0 0 1 0 2.8l-6.4 6.4a2 2 0 0 1-2.8 0l-8-8a2 2 0 0 1-.6-1.4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7.8" cy="7.8" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-kara" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></symbol>
+</defs></svg>
+
+<a class="skip" href="#main">Skip to the content</a>
+<canvas id="cosmos" aria-hidden="true"></canvas>
+
+
+
+<style>
+/* ══ A STANDING DOOR IN THE HEADER ═══════════════════════════════ */
+.top .join{display:inline-flex;align-items:center;min-height:38px;padding:.4em 1.15em;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);
+  text-decoration:none;font-family:var(--label);font-weight:700;font-size:.83rem;transition:box-shadow .3s var(--ease)}
+.top .join:hover{box-shadow:0 8px 22px -10px var(--a85)}
+
+/* ══ THE THREE QUESTIONS ═══════════════════════════════════════
+   Asked in the words people actually use, not in the words we would prefer
+   they used. Each one is the reason somebody closes the tab. */
+.faq3{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-2);
+  border:1px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden;margin-top:1.7em}
+@media (max-width:860px){.faq3{grid-template-columns:1fr}}
+.faq3{grid-template-rows:repeat(4,auto)}
+.faq3>div{background:var(--well);padding:1.25em 1.35em;transition:background-color .5s var(--ease);
+  display:grid;grid-template-rows:subgrid;grid-row:span 2;align-content:start}
+@supports not (grid-template-rows:subgrid){.faq3>div{display:block}}
+.faq3>div:hover{background:rgba(248,201,79,.045)}
+.faq3 h4{font-family:var(--display);font-size:1.06rem;font-weight:600;line-height:1.3;color:var(--ink)}
+.faq3 h4::before{content:"“"}
+.faq3 h4::after{content:"”"}
+.faq3 p{font-size:.9rem;color:var(--ink-2);line-height:1.6;margin-top:.6em}
+.faq3 p b{color:var(--ink);font-weight:600}
+
+/* ══ THE DOOR ══════════════════════════════════════════════════
+   The one place on this page that asks for something. It is built the way
+   the product promises everything else will be: one field, no name, and the
+   terms stated before you type rather than after. */
+.joinbox{margin-top:1.9em;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;
+  background:linear-gradient(150deg,rgba(248,201,79,.075),transparent 55%),var(--panel)}
+.joinbox .ji{padding:clamp(1.4em,3vw,2.1em) clamp(1.4em,3vw,2.2em);
+  display:block}
+.joinbox h3{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.85rem);font-weight:500;
+  letter-spacing:-.022em;line-height:1.25;max-width:22ch}
+.joinbox h3 em{font-style:italic;color:var(--accent);font-weight:300}
+.joinbox>.ji>p{color:var(--ink-2);font-size:.95rem;line-height:1.65;margin-top:.7em;max-width:54ch}
+.joinform{display:flex;gap:.5em;flex-wrap:wrap;margin-top:1.3em;max-width:32em}
+.joinform input{flex:1;min-width:min(100%,15em);background:rgba(0,0,0,.28);border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:.82em 1.25em;color:var(--ink);outline:none;font-family:var(--body);
+  font-size:.93rem;transition:border-color .45s var(--ease),box-shadow .45s var(--ease),background-color .45s var(--ease)}
+.joinform input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(248,201,79,.13);background:rgba(0,0,0,.36)}
+.joinform input::placeholder{color:var(--ink-3)}
+.jterms{list-style:none;margin:1.4em 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.55em 1.6em;max-width:46em}
+@media (max-width:620px){.jterms{grid-template-columns:1fr}}
+.jterms li{position:relative;padding-left:1.5em;font-size:.87rem;color:var(--ink-2);line-height:1.5}
+.jterms li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;
+  background:var(--leaf);opacity:.85}
+.jterms li.no::before{background:transparent;border:1px solid var(--ink-3);opacity:.6}
+.jsay{display:block;margin-top:1.1em;font-family:var(--label);font-size:.75rem;letter-spacing:.06em;
+  color:var(--ink-3);line-height:1.7;max-width:52ch;opacity:0;transform:translateY(-4px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease),color .6s var(--ease)}
+.jsay.on{opacity:1;transform:none}
+.jsay.ok{color:var(--leaf)}
+.jfoot{padding:.95em clamp(1.4em,3vw,2.2em);border-top:1px solid var(--line-2);background:rgba(0,0,0,.18);
+  font-family:var(--label);font-size:.75rem;letter-spacing:.05em;color:var(--ink-3);line-height:1.7}
+.jfoot b{color:var(--ink-2);font-weight:600}
+</style>
+
+<style>
+/* ══ THE REEL FOLLOWS YOUR THUMB ═════════════════════════════════
+   pan-y keeps the page scrollable through the card: only the horizontal
+   axis is taken. The card tracks the pointer 1:1 in the middle and goes
+   heavy at both ends, so the first and last reel are felt, not just
+   reported by a disabled button. */
+.reel{touch-action:pan-y}
+.reel .scene,.reel .cap{transform:translateX(var(--dx,0px));opacity:var(--dop,1);will-change:transform}
+.reel.settling .scene,.reel.settling .cap{
+  transition:transform .42s var(--spring),opacity .3s var(--ease)}
+.reel.dragging{cursor:grabbing}
+.reel:focus-visible{outline:2.5px solid var(--accent);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){
+  .reel .scene,.reel .cap{transform:none;opacity:1}
+  .reel.settling .scene,.reel.settling .cap{transition:none}
+}
+/* the hint says it once, and goes quiet the first time you use the gesture */
+.reelphone .swipehint{display:block;text-align:center;margin-top:.5em;
+  font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);pointer-events:none;transition:opacity .6s var(--ease)}
+.reelphone.used .swipehint{opacity:0}
+</style>
+
+<style>
+/* ══ AUDIT PASS: new pieces ═══════════════════════════════════ */
+.h3s{font-size:clamp(1.4rem,3.2vw,2rem);margin-top:2.6em;font-weight:500}
+#still .dotm{width:9px;height:9px;border-radius:50%;border:1.5px solid currentColor}
+#still[aria-pressed="true"] .dotm{background:currentColor}
+
+/* the bottom of the feed offers three doors */
+.fe-go{display:flex;flex-wrap:wrap;justify-content:center;gap:.45em;margin-top:1em}
+.fe-go button{min-height:40px;border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;
+  padding:.4em 1em;border-radius:var(--r-pill);font-family:var(--label);font-weight:600;font-size:.8rem;transition:all .4s var(--ease)}
+.fe-go button:hover{border-color:var(--accent);color:var(--accent)}
+.fe-say{display:block;min-height:1.4em;margin-top:.7em;font-size:.87rem;color:var(--leaf)}
+
+.exits{margin-top:1.3em}
+.legal{margin-top:1.1em;max-width:70ch}
+.jlab{display:block;margin-top:1.3em;font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.joinbox .joinform{margin-top:.55em}
+.joinform input[aria-invalid="true"]{border-color:var(--terra-lit)}
+
+.never li:last-child:nth-child(odd){grid-column:1/-1}
+
+/* ══ STOPS ON A PHONE ═════════════════════════════════════════ */
+.stopbtn{display:none}
+@media (max-width:980px){
+  .stopbtn{display:inline-flex;flex-direction:column;justify-content:center;align-items:stretch;gap:5px;min-height:44px;min-width:76px;
+    padding:6px 14px;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--panel);color:var(--ink);
+    font-family:var(--label);font-weight:600;font-size:.8rem;cursor:pointer}
+  .stopbtn .segbar{display:flex;gap:2px;height:3px}
+}
+.sheet{position:fixed;inset:0;z-index:500;display:flex;align-items:flex-end}
+.sheet[hidden]{display:none}
+.sheet-scrim{position:absolute;inset:0;background:rgba(8,5,10,.64)}
+.sheet-in{position:relative;width:100%;max-height:88vh;overflow:auto;background:#1B1320;border-top:1px solid rgba(186,150,168,.3);
+  border-radius:28px 28px 0 0;padding:12px 18px calc(18px + env(safe-area-inset-bottom))}
+@media (prefers-reduced-motion:no-preference){.sheet-in{animation:sheetup .45s var(--ease)}}
+@keyframes sheetup{from{transform:translateY(48px);opacity:0}}
+.sheet-h{display:flex;align-items:center;justify-content:space-between;padding:4px 4px 10px}
+.sheet-h b{font-family:var(--display);font-size:1.15rem;font-weight:600;color:#F5E9D6}
+.sheet-x{width:44px;height:44px;border-radius:50%;border:1px solid rgba(186,150,168,.3);background:transparent;color:#F5E9D6;font-size:1.5rem;line-height:1;cursor:pointer}
+.sheet-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px;counter-reset:st}
+.sheet-l a{display:flex;align-items:center;gap:.65em;min-height:48px;padding:.4em .9em;border-radius:var(--r-md);border:1px solid rgba(186,150,168,.16);
+  color:#F5E9D6;text-decoration:none;font-family:var(--label);font-weight:600;font-size:.9rem;counter-increment:st}
+.sheet-l a::before{content:counter(st,decimal-leading-zero);color:#C9B79B;font-size:.75rem}
+.sheet-l a.on{border-color:#F8C94F;color:#F8C94F}
+.sheet-l li:last-child a{background:#F8C94F;border-color:#F8C94F;color:#2A1F19}
+.sheet-l li:last-child a::before{color:inherit}
+.sheet-ctl{display:flex;gap:8px;margin-top:12px}
+.sheet-ctl button{flex:1;min-height:44px;border-radius:var(--r-pill);border:1px solid rgba(186,150,168,.3);background:transparent;color:#E0D0BE;
+  font-family:var(--label);font-weight:600;font-size:.8rem;cursor:pointer}
+.sheet-ctl button[aria-pressed="true"]{border-color:#F8C94F;color:#F8C94F}
+@media (max-width:760px){
+  /* blur is the expensive thing to composite while scrolling a phone */
+  header.top,.locked .veil,.night,.vid .play i{-webkit-backdrop-filter:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  header.top{background:rgba(17,12,22,.95)}
+  .locked .veil{background:rgba(16,10,14,.9)}
+  .night{background:rgba(24,15,11,.93)}
+}
+</style>
+
+<style>
+/* ══ V1 — THE SOCIAL PLATFORM, FIRST ═══════════════════════════════
+   The first screen shows a post, not a symbol: a person, an idea, its
+   context and sources, and replies that build on it. The night sky, the
+   lamp and the type stay; they frame the product instead of standing in
+   front of it. */
+.hero{position:relative;z-index:1;padding:clamp(34px,6vw,76px) 0 clamp(52px,7vw,92px);background:var(--scrim-thin);overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:920px){.hero-in{grid-template-columns:1fr}}
+.kick{display:inline-flex;align-items:center;gap:.6em;margin-bottom:1.1em;font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.kick::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.hero h1{font-size:clamp(2.2rem,4.1vw,3.2rem);font-weight:400;letter-spacing:-.03em;max-width:15ch;font-variation-settings:"SOFT" 40,"WONK" 1}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:300}
+.hero .deck{margin-top:1.1em;max-width:48ch}
+.cta{display:flex;gap:.7em;flex-wrap:wrap;margin-top:1.8em}
+.hero-demo{margin:0;position:relative;isolation:isolate}
+.hero-demo::before{content:"";position:absolute;inset:-14% -10%;z-index:-1;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(248,201,79,.07),transparent 72%)}
+.tag{display:inline-flex;align-items:center;gap:.45em;padding:.3em .75em;border-radius:var(--r-pill);border:1px solid var(--line);
+  font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.02em}
+.tag svg{width:13px;height:13px;flex:none}
+.tag.ctx{color:var(--ink-2);background:var(--panel)}
+.tag.src{color:var(--leaf);border-color:color-mix(in srgb,var(--leaf) 40%,transparent);background:color-mix(in srgb,var(--leaf) 8%,transparent)}
+.post-ctx{display:flex;flex-wrap:wrap;gap:.4em;margin-top:.8em}
+.hero-demo figcaption{margin-top:.85em;font-size:.86rem;color:var(--ink-3);text-align:center}
+
+/* the header carries the finite progression now: one line that fills */
+.hprog{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none;overflow:hidden}
+.hprog i{display:block;height:100%;background:linear-gradient(90deg,var(--terra-lit),var(--accent));transform-origin:0 50%;transform:scaleX(0)}
+.top nav a.on{color:var(--ink);background:rgba(245,233,214,.07)}
+
+/* discover: every suggestion shows its reason */
+.why3{list-style:none;margin:1.8em 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.7em}
+@media (max-width:820px){.why3{grid-template-columns:1fr}}
+.why3 li{display:flex;gap:.8em;align-items:flex-start;padding:.95em 1.05em;border:1px solid var(--line-2);border-radius:var(--r-md);background:var(--well)}
+.w-i{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:var(--accent);background:rgba(248,201,79,.08);border:1px solid rgba(248,201,79,.22)}
+.w-i svg{width:17px;height:17px}
+.why3 b{display:block;font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.why3 div span{display:block;font-size:.92rem;color:var(--ink);margin-top:.2em;line-height:1.45}
+.aside li b{color:var(--ink);font-weight:600}
+
+/* why it is different */
+.vs-wrap{margin-top:2em;border:1px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden}
+.vs{width:100%;border-collapse:collapse}
+.vs th{padding:1em 1.3em;text-align:left;font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);background:var(--well);border-bottom:1px solid var(--line-2)}
+.vs th+th{color:var(--accent)}
+.vs td{padding:.95em 1.3em;border-top:1px solid var(--line-2);vertical-align:top;background:rgba(0,0,0,.14)}
+.vs tbody tr:first-child td{border-top:0}
+.vs td:first-child{width:36%;font-size:.95rem;color:var(--ink-3)}
+.vs td+td{background:rgba(248,201,79,.04)}
+.vs td b{display:block;font-family:var(--display);font-size:1.06rem;font-weight:600;color:var(--ink)}
+.vs td span{display:block;margin-top:.15em;font-size:.88rem;color:var(--ink-2)}
+@media (max-width:560px){.vs th,.vs td{padding:.8em .85em}.vs td:first-child{font-size:.86rem}.vs td b{font-size:.98rem}}
+
+/* the profile card */
+.idcard{border:1px solid color-mix(in srgb,var(--st) 45%,transparent);border-radius:var(--r-xl);background:var(--panel-2);
+  padding:clamp(18px,2.6vw,28px);box-shadow:0 0 44px -22px var(--st);transition:border-color .7s var(--ease),box-shadow .7s var(--ease)}
+.id-top{display:flex;gap:1em;align-items:center}
+.id-name b{display:block;font-family:var(--display);font-size:1.3rem;font-weight:600}
+.id-name span{display:block;font-size:.87rem;color:var(--ink-3)}
+.id-name .state{margin-top:.35em}
+.id-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1em 1.6em;margin-top:1.3em;padding-top:1.2em;border-top:1px solid var(--line-2)}
+.id-wide{grid-column:1/-1}
+@media (max-width:640px){.id-grid{grid-template-columns:1fr}}
+.id-grid h4{margin-bottom:.55em;font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35em}
+.tags li{padding:.3em .8em;border-radius:var(--r-pill);border:1px solid var(--line);font-size:.86rem;color:var(--ink)}
+.ledger{list-style:none;margin:0;padding:0;display:grid;gap:.45em}
+.ledger li{position:relative;padding-left:1.3em;font-size:.94rem;color:var(--ink)}
+.ledger li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--leaf)}
+.thanks{font-size:.94rem;color:var(--ink-2)}
+.idcard[data-view="them"] .me,.idcard[data-view="me"] .them{display:none}
+.id-rule{margin-top:1.2em;padding-top:1em;border-top:1px dashed var(--line);font-family:var(--label);font-weight:600;font-size:.82rem;color:var(--ink-3)}
+.id-today{margin-top:1.4em}
+.id-today .pick{margin-bottom:.5em}
+/* trust: policies, not slogans */
+.leaf-h{font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:500;letter-spacing:-.02em;line-height:1.15}
+.leaf-h em{font-style:italic;color:var(--accent);font-weight:400}
+.policies{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin:1.6em 0 .4em}
+@media (max-width:820px){.policies{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.policies{grid-template-columns:1fr}}
+.policies div{border:1px solid var(--line-2);border-radius:var(--r-md);padding:.9em 1em;transition:border-color .5s var(--ease),background-color .5s var(--ease)}
+.policies div:hover{border-color:rgba(154,61,32,.4);background:rgba(154,61,32,.05)}
+.policies div:last-child:nth-child(3n+1){grid-column:1/-1}
+.policies b{display:block;font-family:var(--display);font-size:1.05rem;font-weight:600;color:var(--ink)}
+.policies p{margin-top:.25em;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+</style>
+
+<style>
+/* ══ V2 — EXPRESS, ENGAGE, SHARE ═════════════════════════════════
+   Every reply carries a small word for what kind of statement it is.
+   It is the one piece of structure this network asks for, so it gets its
+   own colours — and none of them is red. */
+.chips{display:flex;gap:.4em;flex-wrap:wrap;margin-top:.9em}
+.chips button{min-height:36px;background:transparent;border:1px dashed var(--line);color:var(--ink-2);padding:.3em .95em;border-radius:var(--r-pill);
+  cursor:pointer;font-family:var(--label);font-weight:600;font-size:.8rem;transition:all .4s var(--ease)}
+.chips button:hover{border-style:solid;border-color:var(--accent);color:var(--ink)}
+.chips button[aria-pressed="true"]{border-style:solid;border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.kind{display:inline-flex;align-items:center;vertical-align:.1em;margin-right:.45em;padding:0 .6em;border-radius:var(--r-pill);
+  border:1px solid color-mix(in srgb,var(--kc) 50%,transparent);background:color-mix(in srgb,var(--kc) 10%,transparent);color:var(--kc);
+  font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.03em;line-height:1.7;white-space:nowrap}
+.k-q{--kc:var(--accent)}.k-int{--kc:var(--gerua-lit)}.k-ctx,.k-fact{--kc:var(--leaf)}.k-exp{--kc:var(--terra-lit)}
+.k-trad{--kc:#E6C9A2}.k-bel{--kc:#E2BFD2}.k-spec{--kc:var(--ink-3);border-style:dashed}
+.kinds8{display:flex;flex-wrap:wrap;gap:.35em;margin-top:.8em}
+.kinds8 .kind{margin-right:0}
+
+/* hero */
+.ees{list-style:none;margin:clamp(40px,6vw,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line-2);border:1px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden}
+@media (max-width:760px){.ees{grid-template-columns:1fr}}
+.ees li{background:var(--well);padding:1.2em 1.3em;display:grid;grid-template-columns:auto 1fr;column-gap:.9em;align-items:start}
+.ee-i{grid-row:span 2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--accent);background:rgba(248,201,79,.08);border:1px solid rgba(248,201,79,.22)}
+.ee-i svg{width:20px;height:20px}
+.ee-h{display:block;font-family:var(--display);font-size:1.2rem;font-weight:600}
+.ees p{margin-top:.15em;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+
+/* feed */
+.feedbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6em 1.2em}
+.feedbar .pick{margin-bottom:0}
+.feedbar .chips{margin-top:0}
+.post .ptitle{display:block;margin-top:.7em;font-family:var(--display);font-size:1.12rem;font-weight:600;line-height:1.3;color:var(--ink)}
+.post .ptitle+.body{margin-top:.35em}
+.post .ptitle .kind{vertical-align:.18em}
+.ptype{color:var(--ink-2)}
+.pcap{display:block;margin-top:.45em;font-family:var(--label);font-size:.75rem;color:var(--ink-3)}
+.post[hidden]{display:none}
+.replies{margin-top:.85em;display:grid;gap:.55em;padding-left:.9em;border-left:2px solid var(--line-2)}
+.rp{display:flex;gap:.55em;align-items:flex-start}
+.rp .av{width:24px;height:24px;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2)}
+.rp .av svg{width:100%;height:100%;display:block}
+.rp p{font-size:.89rem;color:var(--ink-2);line-height:1.45}
+.rp p b{color:var(--ink);font-weight:600;margin-right:.35em}
+.poll{margin-top:.8em;display:grid;gap:.4em}
+.poll button{position:relative;display:flex;justify-content:space-between;gap:1em;width:100%;min-height:42px;padding:.5em .85em;overflow:hidden;
+  text-align:left;border:1px solid var(--line);border-radius:var(--r-md);background:transparent;color:var(--ink);cursor:pointer;font:inherit;font-size:.92rem}
+.poll button:hover{border-color:var(--a50)}
+.poll button i{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(248,201,79,.13);transition:width .8s var(--ease)}
+.poll button span,.poll button em{position:relative}
+.poll button em{font-style:normal;font-family:var(--label);font-weight:600;color:var(--ink-2);visibility:hidden}
+.poll.voted button em{visibility:visible}
+.poll button[aria-pressed="true"]{border-color:var(--accent)}
+.poll-n{font-family:var(--label);font-size:.78rem;color:var(--ink-3)}
+
+/* post composer */
+.cgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(18px,3vw,36px);align-items:start;margin-top:.4em}
+@media (max-width:880px){.cgrid{grid-template-columns:1fr}}
+.clab{display:block;margin:1.05em 0 .45em;font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.clab span{text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink-3)}
+.cform>.clab:first-child{margin-top:0}
+.cin{width:100%;background:rgba(0,0,0,.24);border:1px solid var(--line);border-radius:var(--r-md);padding:.75em 1em;color:var(--ink);outline:none;
+  font-family:var(--body);font-size:.95rem;line-height:1.5;transition:border-color .4s,box-shadow .4s}
+textarea.cin{resize:vertical;min-height:84px}
+.cin:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(248,201,79,.13)}
+.cin::placeholder{color:var(--ink-3)}
+.cextra{display:grid;gap:.45em;margin-top:.6em}
+.cextra:empty{display:none}
+.cdrop{border:1px dashed var(--line);border-radius:var(--r-md);padding:1.1em;text-align:center;color:var(--ink-3);font-size:.9rem}
+.ckinds{margin-bottom:0}
+.ckinds button{font-size:.8rem}
+.cprev .post{margin-top:.1em}
+
+/* share */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,36px);align-items:start;margin-top:.4em}
+@media (max-width:880px){.sgrid{grid-template-columns:1fr}}
+.sgrid .clab:first-child{margin-top:0}
+.qpost{margin-top:.8em;border:1px solid var(--line);border-radius:var(--r-md);padding:.8em 1em;background:rgba(0,0,0,.18)}
+.qpost .ptitle{margin-top:.55em}
+.qpost p{margin-top:.3em;font-size:.88rem;color:var(--ink-2)}
+
+/* profile */
+.asked{list-style:none;margin:0;padding:0;display:grid;gap:.4em}
+.asked li{position:relative;padding-left:1.1em;font-family:var(--display);font-size:1.02rem;font-weight:500;color:var(--ink)}
+.asked li::before{content:"?";position:absolute;left:0;color:var(--accent);font-family:var(--label);font-weight:700}
+
+/* sound and stillness sit quietly in the footer; on a phone the menu has them too */
+header.top nav{margin-left:auto}
+.ctl{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+
+/* the end, without a word nobody here was asked to learn */
+.end svg.mark{margin:0 auto .3em;width:56px;height:56px}
+.end h2 em{color:var(--accent)}
+</style>
+
+<header class="top">
+  <a class="brand" href="#top">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M1.8 10.6C1.8 21.4 22.2 21.4 22.2 10.6" fill="none" stroke="var(--terra)" stroke-width="1.1" opacity=".75"/>
+      <path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round"/>
+      <circle cx="12" cy="6.3" r="2.5" fill="var(--accent)"/>
+    </svg>
+    <span><b>My Veda Verse</b></span>
+  </a>
+  <nav aria-label="Main">
+    <a href="#explore">Explore</a>
+    <a href="#how">How it works</a>
+    <a href="#communities">Communities</a>
+    <a href="#house">From the house</a>
+    <a href="#principles">Principles</a>
+  </nav>
+  <div class="acct">
+    <button class="signin" id="signin" type="button" aria-expanded="false" aria-controls="signinPop">Sign in</button>
+    <a class="join" href="#join">Join</a>
+  </div>
+  <button class="stopbtn" id="stopBtn" type="button" aria-expanded="false" aria-controls="sheet">
+    <span class="segbar" id="segbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <span id="stopNow">Menu</span>
+  </button>
+  <span class="hprog" aria-hidden="true"><i id="hprog"></i></span>
+  <div class="signpop" id="signinPop" role="region" aria-label="Sign in" hidden>
+    <p><b>Sign-in opens with the first invitations.</b> People on the early list receive theirs first.</p>
+    <a class="btn btn-p" href="#join"><span>Join the early list</span></a>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetT" hidden>
+  <div class="sheet-scrim" data-close></div>
+  <div class="sheet-in">
+    <div class="sheet-h"><b id="sheetT">My Veda Verse</b><button class="sheet-x" type="button" data-close aria-label="Close the menu">×</button></div>
+    <ol class="sheet-l">
+      <li><a href="#explore">Explore</a></li>
+      <li><a href="#why">Why we are building this</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#communities">Communities</a></li>
+      <li><a href="#house">From the house of Veda Verse</a></li>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#join">Join</a></li>
+    </ol>
+    <p class="sheet-note">Sign-in opens with the first invitations. People on the early list receive theirs first.</p>
+    <div class="sheet-ctl">
+      <button type="button" id="sheetTone" aria-pressed="false">Sound: off</button>
+      <button type="button" id="sheetStill" aria-pressed="false">Motion: on</button>
+    </div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero" id="top" aria-labelledby="h-top">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kick">Express thoughtfully. Engage meaningfully. Share responsibly.</p>
+      <h1 id="h-top">A social platform built for <em>better conversations.</em></h1>
+      <p class="deck">Share moments from your day, ask questions, and follow the people, topics, and communities you care about — without like counts, follower scoreboards, or a feed that never ends.</p>
+      <p class="hero-name">Open to everyone, for everyday conversation. The name comes from an old Indian idea — that knowledge grows when people think together. No religious or cultural background needed.</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#join"><span>Join the early list</span><span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-g" href="#how"><span>See how it works</span></a>
+      </div>
+      <p class="cta-note">Free to join · Member-supported · Opening in stages</p>
+    </div>
+
+    <figure class="hero-demo">
+      <div class="app">
+        <div class="app-bar" aria-hidden="true">
+          <span class="app-dots"><i></i><i></i><i></i></span>
+          <span class="app-search"><svg><use href="#i-search"/></svg>Search people, topics, communities</span>
+          <span class="app-bell"><svg><use href="#i-bell"/></svg><i>2</i></span>
+          <span class="av app-me" data-av="Ananya Krishnan"></span>
+        </div>
+        <div class="app-body">
+          <ul class="app-rail" aria-hidden="true">
+            <li class="on"><svg><use href="#i-home"/></svg>Home</li>
+            <li><svg><use href="#i-compass"/></svg>Explore</li>
+            <li><svg><use href="#i-people"/></svg>Communities</li>
+            <li><svg><use href="#i-bookmark"/></svg>Saved</li>
+            <li><svg><use href="#i-bell"/></svg>Notifications</li>
+          </ul>
+          <div class="app-main">
+            <div class="app-tabs" aria-hidden="true"><span>Following</span><span class="on">From the house</span><span>Everyday life</span><span>Books</span><span>Food</span></div>
+            <article class="apost house" aria-label="From the house of Veda Verse: why rangoli was drawn with rice flour">
+              <div class="apost-h"><span class="hm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg></span><div class="am"><b>From the house of Veda Verse</b><span>Everyday life · 6 min read</span></div><span class="kind k-trad">Tradition</span></div>
+              <p class="apost-t">Why was rangoli traditionally drawn with rice flour?</p>
+              <p class="apost-b">Before bright powders, many homes drew it with rice or wheat flour. By noon, ants, sparrows, and squirrels had eaten the edges — a small share left at the door for other lives.</p>
+              <div class="apost-img"><svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A rice-flour rangoli at a doorstep, with a line of ants carrying grains away"><defs><linearGradient id="klA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3830"/><stop offset="1" stop-color="#2B201B"/></linearGradient></defs><rect width="320" height="120" fill="url(#klA)"/><rect y="108" width="320" height="12" fill="#57443A"/><g fill="none" stroke="#F3EBDD" stroke-width="2" stroke-linecap="round" stroke-opacity=".92"><path d="M160 20 198 58 160 96 122 58Z"/><path d="M160 32 186 58 160 84 134 58Z"/><circle cx="160" cy="58" r="8"/><path d="M122 58c-18-18-18 18 0 0M198 58c18-18 18 18 0 0M160 20c-18-16 18-16 0 0M160 96c-18 16 18 16 0 0"/></g><g fill="#F3EBDD"><circle cx="141" cy="39" r="2.2"/><circle cx="179" cy="39" r="2.2"/><circle cx="141" cy="77" r="2.2"/><circle cx="179" cy="77" r="2.2"/><circle cx="160" cy="58" r="2.2"/><circle cx="206" cy="74" r=".9" fill-opacity=".7"/><circle cx="210" cy="71" r=".8" fill-opacity=".6"/></g><g fill="#140F0C"><ellipse cx="214" cy="79.0" rx="2.4" ry="1.4"/><ellipse cx="217" cy="79.6" rx="1.8" ry="1.2"/><ellipse cx="228" cy="84.0" rx="2.4" ry="1.4"/><ellipse cx="231" cy="84.6" rx="1.8" ry="1.2"/><ellipse cx="242" cy="89.0" rx="2.4" ry="1.4"/><ellipse cx="245" cy="89.6" rx="1.8" ry="1.2"/><ellipse cx="256" cy="93.5" rx="2.4" ry="1.4"/><ellipse cx="259" cy="94.1" rx="1.8" ry="1.2"/><ellipse cx="270" cy="98.0" rx="2.4" ry="1.4"/><ellipse cx="273" cy="98.6" rx="1.8" ry="1.2"/><ellipse cx="284" cy="102.0" rx="2.4" ry="1.4"/><ellipse cx="287" cy="102.6" rx="1.8" ry="1.2"/></g><g fill="#F3EBDD"><circle cx="219.4" cy="77.4" r="1"/><circle cx="247.4" cy="87.4" r="1"/><circle cx="275.4" cy="96.4" r="1"/></g></svg></div>
+              <div class="apost-f" aria-hidden="true">
+                <span class="rx on"><svg><use href="#i-bulb"/></svg>Helpful</span>
+                <span class="rx"><svg><use href="#i-reply"/></svg>Reply</span>
+                <span class="rx"><svg><use href="#i-repost"/></svg>Share</span>
+                <span class="rx sv on"><svg><use href="#i-bookmark"/></svg>Saved</span>
+              </div>
+              <p class="apost-who">Harleen, Ezra and 14 others replied</p>
+            </article>
+            <article class="apost house" aria-label="From the house of Veda Verse: did India's independence wait for midnight?">
+              <div class="apost-h"><span class="hm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg></span><div class="am"><b>From the house of Veda Verse</b><span>History · 5 min read</span></div><span class="kind k-ctx">Context</span></div>
+              <p class="apost-t">Did India's independence wait for midnight because of the stars?</p>
+              <p class="apost-b">The date came from a law and a viceroy; the hour, many say, from astrologers. And one country freed by the same Act did not wait for the clock. Can you guess which?</p>
+              <div class="apost-r"><span class="av" data-av="Ezra Samson"></span><p><b>Ezra</b><span class="kind k-q">Question</span>I have a guess. Which parts are recorded, and which are only told?</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="app-toast"><span class="av" data-av="Meera Iyer"></span><p><b>Meera</b> replied to your question: “Should we teach financial literacy in school?”</p></div>
+      <figcaption>A preview of the app: reads from the house of Veda Verse in their own tab, replies that say what they are, and no like counts.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════════════ EXPLORE ══════════════════ -->
+<section class="sec" id="explore" aria-labelledby="h-explore">
+  <div class="wrap">
+    <span class="eyebrow rv">01 — Explore</span>
+    <h2 id="h-explore" class="big rv">See what people <em>are sharing.</em></h2>
+    <p class="deck rv">Everyday moments, photos, questions, and polls from the people and topics you follow. Filter by topic, vote in a poll, or turn on counts to see how a scoreboard changes the same feed.</p>
+
+    <div class="demo rv">
+      <span class="hint">Compare the same feed with and without public counts</span>
+      <div class="feedbar">
+        <div class="pick" id="feedPick">
+          <button aria-pressed="true" data-f="off">Without counts</button>
+          <button aria-pressed="false" data-f="on">With counts</button>
+        </div>
+        <div class="chips topicf" id="topicF" role="group" aria-label="Filter the feed by topic">
+          <button type="button" aria-pressed="true" data-t="all">All</button>
+          <button type="button" aria-pressed="false" data-t="Food">Food</button>
+          <button type="button" aria-pressed="false" data-t="Cities">Cities</button>
+          <button type="button" aria-pressed="false" data-t="Education">Education</button>
+          <button type="button" aria-pressed="false" data-t="Books">Books</button>
+          <button type="button" aria-pressed="false" data-t="Everyday life">Everyday life</button>
+        </div>
+      </div>
+
+      <div class="feedwrap">
+        <div>
+          <div class="feed" id="feedList"></div>
+          <div class="orgfeed" id="orgFeed" role="region" aria-labelledby="orgT">
+            <div class="org-h">
+              <h4 id="orgT">From pages you follow</h4>
+              <p>Companies, news channels, brands, and public institutions post here — kept apart from people, clearly labelled, and never able to pay for reach. Follow or mute any page.</p>
+            </div>
+            <div class="feed" id="orgList"></div>
+          </div>
+          <div class="feed-end" style="margin-top:.8em">
+            <svg width="26" height="26" aria-hidden="true"><use href="#i-bowl"/></svg>
+            <b>You're all caught up.</b>
+            <span>That is everything from the people and topics you follow. New posts will be here tomorrow.</span>
+            <div class="fe-go" id="feGo">
+              <button type="button" data-k="path">Continue a discussion</button>
+              <button type="button" data-k="hello">Welcome someone new</button>
+              <button type="button" data-k="close">Close the app</button>
+            </div>
+            <span class="fe-say" id="feSay" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="aside">
+          <h4>Every post and reply says what it is</h4>
+          <p>One of eight labels, chosen with one tap, so readers know what they are reading. A fact always needs a source.</p>
+          <div class="kinds8"><span class="kind k-q">Question</span><span class="kind k-fact">Fact</span><span class="kind k-ctx">Context</span><span class="kind k-exp">Experience</span><span class="kind k-int">Interpretation</span><span class="kind k-trad">Tradition</span><span class="kind k-bel">Belief</span><span class="kind k-spec">Speculation</span></div>
+          <ul>
+            <li><b>A topic</b>, so it reaches people who care about it</li>
+            <li><b>Replies by people</b> — who contributed, not how many reacted</li>
+            <li><b>Save</b>, a private bookmark that never becomes a public count</li>
+          </ul>
+        </div>
+        <div class="aside" style="margin-top:.8em">
+          <h4>Not here</h4>
+          <p>Left out from the start, not hidden in a settings menu.</p>
+          <ul>
+            <li>Public like and follower counts</li>
+            <li>Infinite scroll and autoplay</li>
+            <li>A trending leaderboard</li>
+            <li>Brands paying for reach</li>
+            <li>Read receipts and typing indicators</li>
+            <li>Unlabelled AI-generated media</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WHY ══════════════════ -->
+<section class="sec" id="why" aria-labelledby="h-why">
+  <div class="wrap">
+    <span class="eyebrow rv">02 — Why we are building this</span>
+    <h2 id="h-why" class="big rv">Social media got loud. <em>It does not have to stay that way.</em></h2>
+    <p class="deck rv">Most feeds are designed to keep you scrolling, and what spreads fastest is often what makes people angriest. The good parts of being online — sharing, learning, meeting people — deserve a better place.</p>
+
+    <ul class="probs stag" aria-label="What goes wrong today">
+      <li><span>Rewards time spent</span><b>Noise</b><p>Endless feeds, autoplay, and alerts compete for every spare minute.</p></li>
+      <li><span>Rewards numbers</span><b>Performance</b><p>Likes and follower counts turn sharing into keeping score.</p></li>
+      <li><span>Rewards reactions</span><b>Outrage</b><p>The sharpest reply travels furthest, so conversations turn into contests.</p></li>
+    </ul>
+
+    <h3 class="h3s rv">A better way <em>to be online.</em></h3>
+    <ol class="ees stag" aria-label="How we hope people take part">
+      <li><span class="ee-i"><svg aria-hidden="true"><use href="#i-hand"/></svg></span><b class="ee-h">Express thoughtfully</b><p>Post what you mean, with a little context, so people know what they are reading.</p></li>
+      <li><span class="ee-i"><svg aria-hidden="true"><use href="#i-bridge"/></svg></span><b class="ee-h">Engage meaningfully</b><p>Reply to understand, ask a follow-up, and disagree without making it personal.</p></li>
+      <li><span class="ee-i"><svg aria-hidden="true"><use href="#i-panch"/></svg></span><b class="ee-h">Share responsibly</b><p>Pass things on with your own take, and keep the original context attached.</p></li>
+    </ol>
+
+    <div class="vs-wrap rv">
+      <table class="vs">
+        <caption class="vh">How My Veda Verse is built differently</caption>
+        <thead><tr><th scope="col">Most social platforms</th><th scope="col">My Veda Verse</th></tr></thead>
+        <tbody>
+          <tr><td>Built to hold your attention</td><td><b>Built around useful contributions</b><span>Success means people found what they came for</span></td></tr>
+          <tr><td>A feed that never ends</td><td><b>A feed with a natural end</b><span>When you are caught up, it tells you so</span></td></tr>
+          <tr><td>Opinion and fact look the same</td><td><b>Posts and replies say what they are</b><span>A fact with a source, an experience, an interpretation, or a question</span></td></tr>
+          <tr><td>The most reactive posts travel furthest</td><td><b>Helpful replies travel further</b><span>Especially when people who usually disagree both find them useful</span></td></tr>
+          <tr><td>Resharing strips context</td><td><b>Sharing keeps the original</b><span>Your take travels with the post, not instead of it</span></td></tr>
+          <tr><td>Likes and follower counts</td><td><b>Reputation through contribution</b><span>What you have helped people with, not how many follow you</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ HOW IT WORKS ══════════════════ -->
+<section class="sec" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <span class="eyebrow rv">03 — How it works</span>
+    <h2 id="h-how" class="big rv">What you already do online, <em>made a little better.</em></h2>
+    <p class="deck rv">Post, discover, read, respond, discuss, share, and message. Each works the way you would expect, with one small change that makes conversations better. Try them below.</p>
+
+    <ol class="flow stag" aria-label="The seven steps">
+      <li><a href="#post"><i>1</i><b>Post</b><span>Say what you think, with context</span></a></li>
+      <li><a href="#discover"><i>2</i><b>Discover</b><span>Follow topics and people you choose</span></a></li>
+      <li><a href="#read"><i>3</i><b>Read</b><span>Threads that show who said what</span></a></li>
+      <li><a href="#respond"><i>4</i><b>Respond</b><span>A moment to think when it heats up</span></a></li>
+      <li><a href="#discuss"><i>5</i><b>Discuss</b><span>Understand first, then disagree</span></a></li>
+      <li><a href="#share"><i>6</i><b>Share</b><span>Pass it on with your take</span></a></li>
+      <li><a href="#message"><i>7</i><b>Message</b><span>Private messages, on your schedule</span></a></li>
+    </ol>
+
+    <div class="step" id="post">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">1</span><div><h3>Post</h3><p>Ask a question, share a photo or a moment, start a poll, or add a link. One extra tap says what kind of post it is — and a fact needs a source.</p></div></div>
+    <div class="demo rv">
+      <div class="pick" id="ptype" role="tablist" aria-label="Type of post">
+        <button role="tab" aria-selected="true" data-p="question">Question</button>
+        <button role="tab" aria-selected="false" data-p="text">Text</button>
+        <button role="tab" aria-selected="false" data-p="image">Image</button>
+        <button role="tab" aria-selected="false" data-p="poll">Poll</button>
+        <button role="tab" aria-selected="false" data-p="video">Video</button>
+        <button role="tab" aria-selected="false" data-p="link">Link</button>
+      </div>
+      <div class="cgrid" id="composeForm" role="tabpanel">
+        <div class="cform">
+          <label class="clab" for="ctitle">Your post</label>
+          <input id="ctitle" class="cin" type="text" maxlength="120" autocomplete="off" placeholder="What is one local problem your city should fix?">
+          <label class="clab" for="cbody">Details <span>— optional</span></label>
+          <textarea id="cbody" class="cin" rows="3" placeholder="What made you think of it?"></textarea>
+          <div class="cextra" id="cextra"></div>
+          <span class="clab" id="kindLab">What kind of contribution is this?</span>
+          <div class="pick ckinds" id="ckind" role="group" aria-labelledby="kindLab">
+            <button type="button" aria-pressed="false" data-k="q">Question</button>
+            <button type="button" aria-pressed="false" data-k="fact">Fact</button>
+            <button type="button" aria-pressed="false" data-k="ctx">Context</button>
+            <button type="button" aria-pressed="false" data-k="exp">Experience</button>
+            <button type="button" aria-pressed="false" data-k="int">Interpretation</button>
+            <button type="button" aria-pressed="false" data-k="trad">Tradition</button>
+            <button type="button" aria-pressed="false" data-k="bel">Belief</button>
+            <button type="button" aria-pressed="false" data-k="spec">Speculation</button>
+          </div>
+          <div class="csrc" id="csrc" hidden>
+            <label class="clab" for="csrcin">Where is this from?</label>
+            <input id="csrcin" class="cin" type="text" autocomplete="off" placeholder="A book, article, paper, or person">
+          </div>
+          <span class="clab" id="topicLab">Topic</span>
+          <div class="chips" id="ctopic" role="group" aria-labelledby="topicLab">
+            <button type="button" aria-pressed="true" data-t="Everyday life">Everyday life</button>
+            <button type="button" aria-pressed="false" data-t="Food">Food</button>
+            <button type="button" aria-pressed="false" data-t="Books">Books</button>
+            <button type="button" aria-pressed="false" data-t="Cities">Cities</button>
+            <button type="button" aria-pressed="false" data-t="Education">Education</button>
+            <button type="button" aria-pressed="false" data-t="Ideas">Ideas</button>
+          </div>
+          <div class="gbar">
+            <button class="btn btn-p" id="cgo" type="button" disabled><span>Post</span></button>
+            <span class="cnt" id="chint" aria-live="polite">Start with a clear title</span>
+          </div>
+        </div>
+        <div class="cprev">
+          <span class="hint">Preview</span>
+          <article class="post" id="cprev" aria-live="polite"></article>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="discover">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">2</span><div><h3>Discover</h3><p>Follow topics and people. Every suggestion tells you why it is there, and every set of recommendations has an end.</p></div></div>
+    <div class="demo rv">
+      <span class="hint">Follow a few topics</span>
+      <div class="chips topics" id="topics" role="group" aria-label="Topics to follow">
+        <button type="button" aria-pressed="true">Everyday life</button>
+        <button type="button" aria-pressed="false">Food</button>
+        <button type="button" aria-pressed="true">Books &amp; writing</button>
+        <button type="button" aria-pressed="true">Cities</button>
+        <button type="button" aria-pressed="false">Education</button>
+        <button type="button" aria-pressed="false">Work</button>
+        <button type="button" aria-pressed="false">Photography</button>
+        <button type="button" aria-pressed="false">Science</button>
+        <button type="button" aria-pressed="false">Technology</button>
+        <button type="button" aria-pressed="false">Relationships</button>
+        <button type="button" aria-pressed="false">Culture</button>
+        <button type="button" aria-pressed="false">Ideas</button>
+      </div>
+      <p class="small" id="topicSay" aria-live="polite" style="margin-top:1em">Following 3 topics.</p>
+    </div>
+
+    <ul class="why3 stag" aria-label="Why this was suggested">
+      <li><span class="w-i"><svg aria-hidden="true"><use href="#i-scroll"/></svg></span><div><b>Because you follow Cities</b><span>A civil engineer on why so many footpaths end halfway down the road</span></div></li>
+      <li><span class="w-i"><svg aria-hidden="true"><use href="#i-panch"/></svg></span><div><b>From someone you follow</b><span>Meera: the one question I ask before replying to anyone</span></div></li>
+      <li><span class="w-i"><svg aria-hidden="true"><use href="#i-bridge"/></svg></span><div><b>A perspective you have not met</b><span>A schoolteacher on which money lessons children actually remember</span></div></li>
+    </ul>
+
+    <div class="demo rv">
+      <div class="watch">
+        <div class="vid">
+          <div class="screen">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <defs><linearGradient id="vg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A1D2E"/><stop offset="100%" stop-color="#7A3B24"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#vg1)"/>
+              <circle cx="214" cy="80" r="44" fill="#F8C94F" fill-opacity=".12"/>
+              <circle cx="214" cy="80" r="22" fill="#F8C94F" fill-opacity=".72"/>
+              <path d="M0 132h34v-24h22v14h18v-32h28v42h20v-18h26v18h14v-38h30v38h18v-14h24v14h22v-26h26v26h38v48H0Z" fill="#150E16" fill-opacity=".92"/>
+              <g fill="#F8C94F" fill-opacity=".5"><rect x="80" y="96" width="4" height="5"/><rect x="176" y="106" width="4" height="5"/><rect x="250" y="120" width="4" height="5"/></g>
+            </svg>
+            <div class="play"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></i></div>
+          </div>
+          <div class="scrub" id="scrub" aria-hidden="true"></div>
+          <div class="meta">
+            <b>How to take better photos on an everyday walk</b>
+            <span>Photography · Video · 15 min · four chapters</span>
+            <ul class="chapters">
+              <li><i>00:00</i><span>Light in the first hour of the morning</span></li>
+              <li><i>03:10</i><span>Framing an ordinary street</span></li>
+              <li><i>07:35</i><span>Photographing people, with their permission</span></li>
+              <li><i>11:02</i><span>Editing without overdoing it</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="reelphone">
+            <div class="reel" id="reel" tabindex="0" role="group" aria-label="Short-video set—swipe or use the arrow keys">
+              <svg class="scene" id="reelScene" viewBox="0 0 180 320" aria-hidden="true"></svg>
+              <div class="stack" id="reelStack" aria-hidden="true"></div>
+              <div class="cap" id="reelCap"></div>
+              <div class="reel-end" id="reelEnd">
+                <div>
+                  <svg width="28" height="28" aria-hidden="true"><use href="#i-bowl"/></svg>
+                  <b>That is the set.</b>
+                  <p>Twelve for today, the size you chose. Nothing extra is waiting underneath.</p>
+                </div>
+              </div>
+            </div>
+            <div class="reelbar">
+              <button id="reelPrev" type="button" aria-label="Previous item" disabled><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6 9 12l6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <span id="reelCount" aria-live="polite">1 of 12</span>
+              <button id="reelNext" type="button" aria-label="Next item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+            <span class="swipehint" aria-hidden="true">Swipe, or use ← →</span>
+          </div>
+          <p class="small" style="margin-top:1.1em">The bar at the top shows the whole set, so you always know where it ends.</p>
+        </div>
+      </div>
+
+      <div class="rules" style="margin-top:1.6em">
+        <div><b>Autoplay</b><span>Never</span></div>
+        <div><b>Next item</b><span>You choose it</span></div>
+        <div><b>Set size</b><span>Yours: 5, 12, or 20</span></div>
+        <div><b>Designed for</b><span>Finishing, not minutes watched</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="read">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">3</span><div><h3>Read</h3><p>Threads show who replied and what kind of reply it is. React in words, save posts for later, and get notifications when you choose.</p></div></div>
+    <div class="demo rv">
+      <div class="rgrid">
+        <article class="post tcard" aria-labelledby="tcT">
+          <div class="post-h"><div class="av" data-av="Devika Menon"></div><div><div class="who">Devika Menon</div><div class="mt">Ideas · <span class="ptype">Text</span> · 3 hours ago</div></div></div>
+          <b class="ptitle" id="tcT"><span class="kind k-exp">Experience</span>Sometimes listening is more useful than winning an argument.</b>
+          <div class="body">My brother told me he was leaving his job, and I spent a week arguing with him. Then I asked what he was hoping for. Ten minutes later we were planning it together.</div>
+          <div class="rxbar" role="group" aria-label="React to this post">
+            <button type="button" aria-pressed="true" data-toggle><svg aria-hidden="true"><use href="#i-bulb"/></svg>Helpful</button>
+            <button type="button" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-thought"/></svg>Made me think</button>
+            <button type="button" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-calm"/></svg>Relatable</button>
+            <button type="button" class="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span class="tl">Save</span></button>
+          </div>
+          <span class="rxnote">Reactions reach Devika privately. Nobody sees a total.</span>
+          <div class="replies">
+            <div class="rp"><div class="av" data-av="Arjan Singh Gill"></div><p><b>Arjan</b><span class="kind k-exp">Experience</span>Same with my manager. Our meetings got shorter the day I asked what worried her most.</p></div>
+            <div class="rp nest"><div class="av" data-av="Devika Menon"></div><p><b>Devika</b><span class="kind k-q">Question</span>Did you tell her afterwards what changed for you?</p></div>
+            <div class="rp"><div class="av" data-av="Sarah Penkar"></div><p><b>Sarah</b><span class="kind k-int">Interpretation</span>Listening is not the same as agreeing. It just makes sure you are replying to what was actually said.</p></div>
+            <div class="rp"><div class="av" data-av="Siddharth Kamble"></div><p><b>Siddharth</b><span class="kind k-q">Question</span>What do you do when the other person is not listening back?</p></div>
+          </div>
+          <div class="post-f">
+            <span class="said">Arjan, Sarah, Siddharth and 3 others replied</span>
+            <span class="act"><a href="#respond">Reply</a><a href="#share">Share with your take</a></span>
+          </div>
+        </article>
+
+        <div class="rside">
+          <div class="notes">
+            <h4>Notifications <span>Delivered at 6:00 pm</span></h4>
+            <ul>
+              <li><div class="av" data-av="Arjan Singh Gill"></div><p><b>Arjan</b> replied to your post about listening<span class="nt">2 hours ago</span></p></li>
+              <li><div class="av" data-av="Meera Iyer"></div><p><b>Meera</b> thanked you for your answer on financial literacy<span class="nt">4 hours ago</span></p></li>
+              <li><div class="av" data-av="Lakshmi Rao"></div><p><b>Reading Circle</b> has new notes on chapter six<span class="nt">Today</span></p></li>
+            </ul>
+            <p class="nfoot">No red badges. Notifications arrive together, at times you choose.</p>
+          </div>
+          <div class="notes">
+            <h4>Saved <span>Only you</span></h4>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-bookmark"/></svg><p>What is one local problem your city should fix?<span class="nt">Cities · Karan Mehta</span></p></li>
+              <li><svg aria-hidden="true"><use href="#i-bookmark"/></svg><p>Finally finished this book. Here's what stayed with me.<span class="nt">Books · Daniel Kolet</span></p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="respond">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">4</span><div><h3>Respond</h3><p>Reply the way you normally would. If a thread heats up and you post several replies in a row, you get a short pause before the next one. Nothing is deleted.</p></div></div>
+    <div class="demo rv">
+      <div class="flamewrap" style="margin-top:0">
+        <div>
+          <div class="thread" id="thread">
+            <div class="bub"><span class="by">Ira</span>Remote work made informal mentorship harder. Newer colleagues can miss the small lessons that once happened between meetings.</div>
+            <div class="bub"><span class="by">Devika</span>Or it showed that mentorship was too dependent on proximity. Maybe the answer is to design more deliberate ways to learn from each other.</div>
+          </div>
+          <div class="composer" id="composer">
+            <input id="cin" type="text" placeholder="Write a reply…" aria-label="Message" autocomplete="off">
+            <button class="btn btn-p" id="cpost" type="button"><span>Post</span></button>
+          </div>
+          <div class="cool" id="cool" role="status">
+            <svg class="bowlsvg" viewBox="0 0 80 80" aria-hidden="true">
+              <circle class="trk" cx="40" cy="40" r="33"/>
+              <circle class="fil" id="fil" cx="40" cy="40" r="33" stroke-dasharray="207.3" stroke-dashoffset="207.3"/>
+            </svg>
+            <div class="cd">
+              <b>A short pause. <i id="ctime">15s</i></b>
+              Nothing was deleted. Your draft is still there, waiting for you.
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="sub">Why a pause, not a block</p>
+          <p class="gnote">A hard stop can feel like punishment. A brief pause creates room to reconsider without taking the conversation away. Same moment of friction, a different invitation.</p>
+          <p class="small" style="margin-top:1.2em">Try it: post three replies quickly. The pause here is shortened to fifteen seconds so you can watch it finish.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="discuss">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">5</span><div><h3>Discuss</h3><p>To disagree, first put the other person's view in your own words. Once they agree it is fair, your reply opens. The argument stays about the idea.</p></div></div>
+    <div class="demo rv">
+      <span class="hint">Try it—you are about to disagree with Devika</span>
+      <div class="gate">
+        <div>
+          <div class="gstep done" id="gs1">
+            <div class="gn"><i>1</i>Her position</div>
+            <h4>Devika Menon</h4>
+            <p class="quote">In my family, our Sunday meal was never just about food. It was a weekly pause, a way to catch up, share recipes, and make sure everyone had a seat at the table. Calling it simply a “tradition” misses why it mattered.</p>
+          </div>
+
+          <div class="gstep now" id="gs2">
+            <div class="gn"><i>2</i>Say it back</div>
+            <h4>Put her case as fairly as she would</h4>
+            <p>Not a summary and not a caricature. If she would not recognise her own point in it, it does not count.</p>
+            <textarea id="pvText" rows="3" placeholder="Their position, in your own words…" aria-label="State the other view"></textarea>
+            <div class="gbar">
+              <button class="btn btn-p" id="pvAsk" type="button" disabled><span>Ask Devika if this is fair</span><span class="arw" aria-hidden="true">→</span></button>
+              <span class="cnt" id="pvCnt">0 words · 12 to go</span>
+            </div>
+          </div>
+
+          <div class="gstep wait" id="gs3">
+            <div class="gn"><i>3</i>Her call</div>
+            <h4 id="gs3h">Waiting for Devika</h4>
+            <p id="gs3p">She sees your restatement before your reply. She can accept it, or send it back with a note.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="gstep locked" id="rebutBox">
+            <div class="veil">
+              <div>
+                <svg width="26" height="26" aria-hidden="true"><use href="#i-lock"/></svg>
+                <span>Your reply opens once the restatement is accepted</span>
+              </div>
+            </div>
+            <div class="gn"><i>4</i>Your reply</div>
+            <h4>Now add your perspective</h4>
+            <p>Her position is already there in the words she accepted. Build from it.</p>
+            <textarea id="rbText" rows="4" placeholder="Your reply…" aria-label="Your reply"></textarea>
+            <div class="gbar">
+              <button class="btn btn-p" id="rbPost" type="button"><span>Publish</span></button>
+              <span class="cnt" id="rbNote">Both parts publish together, in order.</span>
+            </div>
+          </div>
+          <p class="small" style="margin-top:1.1em">The point is simple: understanding the other side should happen before the rebuttal, not after the damage is done.</p>
+        </div>
+      </div>
+
+      <div class="rules exits">
+        <div><b>Only rebuttals pause</b><span>Questions and clarifications never do</span></div>
+        <div><b>Sent back twice</b><span>A neutral restatement can be suggested for you</span></div>
+        <div><b>No answer in 48 hours</b><span>You can still move on—silence cannot stall the conversation</span></div>
+        <div><b>Still stuck?</b><span>Publish anyway, labelled "restatement not yet accepted"</span></div>
+      </div>
+
+    </div>
+    </div>
+
+    <div class="step" id="share">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">6</span><div><h3>Share</h3><p>Add your take, quote a line, send it to a friend, or save it privately. The original post always travels with it.</p></div></div>
+    <div class="demo rv">
+      <div class="pick" id="shareOpt">
+        <button type="button" aria-pressed="true" data-s="take">Share with your take</button>
+        <button type="button" aria-pressed="false" data-s="quote">Quote a line</button>
+        <button type="button" aria-pressed="false" data-s="send">Send to a friend</button>
+        <button type="button" aria-pressed="false" data-s="save">Save for later</button>
+      </div>
+      <div class="sgrid">
+        <div>
+          <label class="clab" for="stake" id="stakeLab">Your take</label>
+          <textarea id="stake" class="cin" rows="3" placeholder="What do you think—and why is it useful to share?"></textarea>
+          <div class="gbar">
+            <button class="btn btn-p" id="sgo" type="button" disabled><span id="sgoTx">Share</span></button>
+            <span class="cnt" id="shint" aria-live="polite">Add a few words of your own</span>
+          </div>
+        </div>
+        <div class="sprev">
+          <span class="hint" id="sprevH">What others see</span>
+          <article class="post shared">
+            <div class="post-h"><div class="av" data-av="Ananya Krishnan"></div><div><div class="who" id="sprevWho">Ananya Krishnan shared</div><div class="mt">Work · just now</div></div></div>
+            <div class="body" id="sprevTake">Your words appear here, above the original.</div>
+            <div class="qpost">
+              <div class="post-h"><div class="av" data-av="Karan Mehta"></div><div><div class="who">Karan Mehta</div><div class="mt">Work · Question</div></div></div>
+              <b class="ptitle"><span class="kind k-q">Question</span>What helps a team stay steady when work gets stressful?</b>
+              <p>I have found that focusing on the next useful action helps a team more than obsessing over the final outcome. What has worked for you in a high-pressure workplace?</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="message">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">7</span><div><h3>Message</h3><p>Talk to someone privately. Messages arrive in delivery windows the recipient chooses, senders can see when theirs will land, read receipts are off, and anything urgent can still go through now.</p></div></div>
+    <div class="demo rv">
+      <div class="inbox">
+        <div class="inbox-h">
+          <b>Messages</b>
+          <span class="win"><svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>Next delivery window <i id="winAt">6:00 pm</i> · in <i id="winIn">2h 14m</i></span>
+        </div>
+        <div class="inbox-b" id="inboxBody">
+          <div class="held"><div class="av" data-av="Aarav Doshi"></div><div class="bd"><div class="who">Aarav Doshi · waiting</div><div class="tx">Sent you the updated reading list—no rush to reply.</div></div></div>
+          <div class="held"><div class="av" data-av="Pema Lhamo"></div><div class="bd"><div class="who">Pema Lhamo · waiting</div><div class="tx">Are you joining the Thursday session? Tomorrow is fine.</div></div></div>
+          <div class="mauna" id="mauna">
+            <svg width="17" height="17" aria-hidden="true"><use href="#i-mauna"/></svg>
+            <span id="maunaTx">Quiet mode is off—messages arrive at the next window</span>
+            <button class="sw" id="maunaSw" type="button" role="switch" aria-checked="false" aria-label="Quiet mode"></button>
+          </div>
+        </div>
+        <div class="inbox-f">
+          <button type="button" id="sendNow">Send mine now</button>
+          <button type="button" id="keepBatched">Keep it for the next window</button>
+          <span class="why" id="inboxWhy">Read receipts are off by design. There is no pressure to be instantly available.</span>
+        </div>
+      </div>
+      <p class="small" style="margin-top:1.2em"><b style="color:var(--ink)">A calmer rhythm, not silence.</b> Predictable delivery makes it easier to focus without disconnecting.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMMUNITIES ══════════════════ -->
+<section class="sec" id="communities" aria-labelledby="h-communities">
+  <div class="wrap">
+    <span class="eyebrow rv">04 — Communities</span>
+    <h2 id="h-communities" class="big rv">Find your people <em>around what you care about.</em></h2>
+    <p class="deck rv">Reading groups, neighbourhoods, young founders, language learners. Join the ones you care about, or start your own. Each community decides its pace, what it keeps, and how it welcomes new members.</p>
+
+    <div class="demo rv">
+      <span class="hint">Visit a community</span>
+      <div class="pick" id="roomPick">
+        <button aria-pressed="true" data-r="prithvi"><svg width="15" height="15" aria-hidden="true"><use href="#i-prithvi"/></svg>Reading Circle</button>
+        <button aria-pressed="false" data-r="jal"><svg width="15" height="15" aria-hidden="true"><use href="#i-jal"/></svg>Local Community</button>
+        <button aria-pressed="false" data-r="vayu"><svg width="15" height="15" aria-hidden="true"><use href="#i-vayu"/></svg>Young Founders</button>
+        <button aria-pressed="false" data-r="akash"><svg width="15" height="15" aria-hidden="true"><use href="#i-akash"/></svg>Language & Culture</button>
+      </div>
+
+      <div class="room" id="room" data-el="prithvi" style="--rc:var(--terra-lit)">
+        <canvas id="amb" aria-hidden="true"></canvas>
+        <div class="room-head">
+          <div class="nm"><svg width="19" height="19" style="color:var(--rc)" aria-hidden="true"><use href="#i-prithvi" id="rIconUse"/></svg><span id="rName">Reading Circle</span></div>
+          <div class="mt" id="rMeta">Reading Circle · kept over time · 2,140 notes</div>
+        </div>
+        <div class="room-body" id="rBody"></div>
+        <div class="room-foot"><span class="lock" id="rMode">Shared record</span><span id="rNote">Useful contributions stay easy to find and build on.</span></div>
+      </div>
+
+      <div class="rules">
+        <div><b>Format</b><span id="rSpeech">Written, searchable</span></div>
+        <div><b>Memory</b><span id="rMem">Kept over time</span></div>
+        <div><b>Pace</b><span id="rPace">Thoughtful by design</span></div>
+        <div><b>Who can contribute</b><span id="rWho">Everyone in the community</span></div>
+      </div>
+    </div>
+
+    <h3 class="h3s rv">How communities <em>work.</em></h3>
+    <div class="rules cwork stag">
+      <div><b>Joining</b><span>Open communities take one tap. Some ask a short question first, so members know why you are there.</span></div>
+      <div><b>Starting one</b><span>Any member can propose a community. It opens once a few people agree to steward it.</span></div>
+      <div><b>Open or closed</b><span>Each community chooses: open to read, open to join, or members only. You see the choice before you join.</span></div>
+      <div><b>In your feed</b><span>Posts from communities you join appear in your feed, marked with the community's name. Mute any community at any time.</span></div>
+    </div>
+
+    <div class="rules roles stag">
+      <div><b>Stewards</b><span>A few rotating members help keep the space healthy; the role carries responsibility, not status</span></div>
+      <div><b>Welcomers</b><span>New members are welcomed with a real response</span></div>
+      <div><b>Beginner's thread</b><span>A standing place for basic questions and first steps</span></div>
+      <div><b>Community reviewers</b><span>Difficult community decisions are explained openly</span></div>
+    </div>
+
+
+    <h3 class="h3s rv">Profiles show what you add, <em>not your numbers.</em></h3>
+    <p class="deck rv">No follower count and no public like total. A profile shows what someone is curious about, where they take part, and how they help.</p>
+
+    <div class="demo rv">
+      <div class="pick" id="viewPick">
+        <button type="button" aria-pressed="true" data-v="them">As others see it</button>
+        <button type="button" aria-pressed="false" data-v="me">As you see it</button>
+      </div>
+      <div class="idcard" id="gprofile" data-view="them" style="--st:var(--indigo)">
+        <div class="id-top">
+          <div class="avatar" id="gav" aria-hidden="true"></div>
+          <div class="id-name"><b>Ananya Krishnan</b><span>Product designer · joined recently</span><span class="state" id="gstate">Reflective</span></div>
+        </div>
+        <div class="id-grid">
+          <div><h4>Curious about</h4><ul class="tags"><li>Psychology</li><li>Work and leadership</li><li>Food and family traditions</li></ul></div>
+          <div><h4>Communities</h4><ul class="tags"><li>First-time managers</li><li>Family recipes</li><li>Everyday science</li></ul></div>
+          <div class="id-wide"><h4>Recently asked</h4>
+            <ul class="asked"><li>Why do some families have different ways of greeting elders?</li><li>What makes a healthy work ethic without burning out?</li></ul>
+          </div>
+          <div class="id-wide"><h4>How Ananya takes part</h4>
+            <ul class="ledger">
+              <li><span class="them">Asks questions that help people think together</span><span class="me">4 questions helped start discussions this month</span></li>
+              <li><span class="them">Adds context other people can use</span><span class="me">Added useful sources to 12 replies</span></li>
+              <li><span class="them">Shows understanding before disagreeing</span><span class="me">3 restatements accepted by people who initially disagreed</span></li>
+            </ul>
+          </div>
+          <div class="id-wide"><h4>Thanks received</h4>
+            <p class="thanks"><span class="them">Private. Only Ananya sees who sent thanks, and what for.</span><span class="me">“Your question helped me have a better conversation with my mother.” — Meera</span></p>
+          </div>
+        </div>
+        <p class="id-rule">Private numbers can help you understand your own participation. Publicly, your profile tells the story through words and contributions.</p>
+      </div>
+      <div class="id-today">
+        <span class="hint">Today, I am…</span>
+        <div class="pick" id="gunaPick">
+          <button aria-pressed="true" data-g="sattva">Reflective</button>
+          <button aria-pressed="false" data-g="rajas">Building</button>
+          <button aria-pressed="false" data-g="tamas">Taking a break</button>
+          <button aria-pressed="false" data-g="chardi">Here to help</button>
+        </div>
+        <p class="eff" id="geff">Open to a thoughtful conversation. Slower conversations can be surfaced without pretending everything is urgent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FROM THE HOUSE ══════════════════ -->
+<section class="sec" id="house" aria-labelledby="h-house">
+  <div class="wrap">
+    <span class="eyebrow rv">05 — From the house of Veda Verse</span>
+    <h2 id="h-house" class="big rv">Old ideas, <em>read for the way we live now.</em></h2>
+    <p class="deck rv">Short, sourced reads from our editors on Indian culture — where a practice came from, what it asked of people, and what is still worth carrying today.</p>
+
+    <div class="hgrid">
+      <article class="hread rv" aria-labelledby="hr1">
+        <div class="hread-art"><svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A rice-flour rangoli at a doorstep, with a line of ants carrying grains away"><defs><linearGradient id="klB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3830"/><stop offset="1" stop-color="#2B201B"/></linearGradient></defs><rect width="320" height="120" fill="url(#klB)"/><rect y="108" width="320" height="12" fill="#57443A"/><g fill="none" stroke="#F3EBDD" stroke-width="2" stroke-linecap="round" stroke-opacity=".92"><path d="M160 20 198 58 160 96 122 58Z"/><path d="M160 32 186 58 160 84 134 58Z"/><circle cx="160" cy="58" r="8"/><path d="M122 58c-18-18-18 18 0 0M198 58c18-18 18 18 0 0M160 20c-18-16 18-16 0 0M160 96c-18 16 18 16 0 0"/></g><g fill="#F3EBDD"><circle cx="141" cy="39" r="2.2"/><circle cx="179" cy="39" r="2.2"/><circle cx="141" cy="77" r="2.2"/><circle cx="179" cy="77" r="2.2"/><circle cx="160" cy="58" r="2.2"/><circle cx="206" cy="74" r=".9" fill-opacity=".7"/><circle cx="210" cy="71" r=".8" fill-opacity=".6"/></g><g fill="#140F0C"><ellipse cx="214" cy="79.0" rx="2.4" ry="1.4"/><ellipse cx="217" cy="79.6" rx="1.8" ry="1.2"/><ellipse cx="228" cy="84.0" rx="2.4" ry="1.4"/><ellipse cx="231" cy="84.6" rx="1.8" ry="1.2"/><ellipse cx="242" cy="89.0" rx="2.4" ry="1.4"/><ellipse cx="245" cy="89.6" rx="1.8" ry="1.2"/><ellipse cx="256" cy="93.5" rx="2.4" ry="1.4"/><ellipse cx="259" cy="94.1" rx="1.8" ry="1.2"/><ellipse cx="270" cy="98.0" rx="2.4" ry="1.4"/><ellipse cx="273" cy="98.6" rx="1.8" ry="1.2"/><ellipse cx="284" cy="102.0" rx="2.4" ry="1.4"/><ellipse cx="287" cy="102.6" rx="1.8" ry="1.2"/></g><g fill="#F3EBDD"><circle cx="219.4" cy="77.4" r="1"/><circle cx="247.4" cy="87.4" r="1"/><circle cx="275.4" cy="96.4" r="1"/></g></svg></div>
+        <div class="hread-in">
+          <div class="hmeta"><span class="kind k-trad">Tradition</span>Everyday life · 6 min read</div>
+          <h3 id="hr1">Why rangoli was drawn with rice flour</h3>
+          <p class="hdek">A doorway drawing that was meant to disappear.</p>
+          <p class="hb">In many homes — especially in the south, where it is called kolam — the morning drawing at the threshold was made with rice flour, and in some homes wheat flour. It was never meant to last. By midday, ants had carried off the fine lines, and sparrows and squirrels had picked at the rest.</p>
+          <div class="hsplit">
+            <div class="doc"><b>Documented</b><p>Flour designs at the doorway are drawn across much of India, and ants, birds, and squirrels do eat them.</p></div>
+            <div class="told"><b>Told</b><p>That the drawing began as a daily meal left for small creatures. Many families explain it this way; the practice is older than the records that could confirm it.</p></div>
+          </div>
+          <p class="htake"><span>Worth carrying</span>Begin the day by leaving something for someone who can never thank you.</p>
+          <div class="rxbar"><button type="button" class="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save to read later"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span class="tl">Save to read later</span></button></div>
+        </div>
+      </article>
+
+      <article class="hread rv" aria-labelledby="hr2">
+        <div class="hread-art"><svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A clock at midnight, between 14 and 15 August"><defs><linearGradient id="mnS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1530"/><stop offset="1" stop-color="#3A2438"/></linearGradient></defs><rect width="320" height="120" fill="url(#mnS)"/><g fill="#F5E9D6" fill-opacity=".5"><circle cx="40" cy="22" r="1.2"/><circle cx="92" cy="14" r="1"/><circle cx="262" cy="20" r="1.3"/><circle cx="294" cy="46" r="1"/><circle cx="24" cy="74" r="1"/><circle cx="300" cy="96" r="1.1"/></g><circle cx="160" cy="60" r="36" fill="#241C30" stroke="#F8C94F" stroke-opacity=".75" stroke-width="2"/><path d="M160 29v6M160 85v6M129 60h6M185 60h6" stroke="#F5E9D6" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/><path d="M160 60V33" stroke="#F8C94F" stroke-width="2.6" stroke-linecap="round"/><path d="M160 60V43" stroke="#F5E9D6" stroke-width="3.4" stroke-linecap="round"/><circle cx="160" cy="60" r="3.2" fill="#F8C94F"/><g font-family="Anek Latin, sans-serif" font-weight="600" font-size="13" letter-spacing="1.5" fill="#F5E9D6" fill-opacity=".8"><text x="76" y="65" text-anchor="middle">14 AUG</text><text x="244" y="65" text-anchor="middle">15 AUG</text></g></svg></div>
+        <div class="hread-in">
+          <div class="hmeta"><span class="kind k-ctx">Context</span>History · 5 min read</div>
+          <h3 id="hr2">Why did India's freedom arrive at midnight?</h3>
+          <p class="hdek">And which country, freed by the same law, did not wait for the clock?</p>
+          <p class="hb">The date came from a law and a viceroy. The hour, many people say, came from the stars. Both halves of the story are worth knowing — and worth keeping apart.</p>
+          <div class="hsplit">
+            <div class="doc"><b>Documented</b><p>The Indian Independence Act 1947 set 15 August as the day two new dominions, India and Pakistan, came into being. Mountbatten had chosen the date: the second anniversary of Japan's surrender.</p></div>
+            <div class="told"><b>Told</b><p>That astrologers found the 15th inauspicious, and midnight — a moment belonging to neither day — became the compromise for the handover in Delhi. The story is widely retold; how far it decided the hour is still debated.</p></div>
+          </div>
+          <details class="hans"><summary>Show the answer</summary><p>Pakistan. Its handover ceremony was held in Karachi on 14 August, and it celebrates its independence on that day.</p></details>
+          <div class="post-ctx"><span class="tag src">Sources: Indian Independence Act 1947 · published accounts of the transfer of power</span></div>
+          <p class="htake"><span>Worth carrying</span>Tell the good story — and label it. Keep what is recorded and what is remembered side by side, not blended.</p>
+          <div class="rxbar"><button type="button" class="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save to read later"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span class="tl">Save to read later</span></button></div>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="h3s rv">More from <em>the house.</em></h3>
+    <ul class="hmore stag">
+      <li><div class="hmeta"><span class="kind k-ctx">Context</span>Ideas · 7 min</div><h4>Make their case before you answer it</h4><p>In classical Indian debate, a writer first set out the opposing view as strongly as its own holders would, and only then replied. It is the idea behind the Discuss step here.</p><p class="ht">Earn the right to disagree.</p><a class="hlink" href="#discuss">See it in Discuss →</a></li>
+      <li><div class="hmeta"><span class="kind k-fact">Fact</span>History · 5 min</div><h4>Stepwells were water tanks — and public squares</h4><p>Across Gujarat and Rajasthan, stepwells stored water, stayed cool through summer, and gave people a shaded place to meet. Rani-ki-Vav in Patan is a World Heritage Site.</p><span class="tag src">Source: UNESCO World Heritage List</span><p class="ht">Build useful things that are generous to strangers.</p></li>
+      <li><div class="hmeta"><span class="kind k-trad">Tradition</span>Everyday life · 3 min</div><h4>A bowl of water on the roof in May</h4><p>Many households still leave clay bowls of water out for birds through the summer heat. It costs almost nothing, and it asks you to notice who else shares your street.</p><p class="ht">Small care, repeated, becomes a practice.</p></li>
+      <li><div class="hmeta"><span class="kind k-trad">Tradition</span>Food · 4 min</div><h4>Recipes handed down without measurements</h4><p>A grandmother who cooks by estimate is not being vague. She is teaching attention: the smell of the tempering, the feel of the dough, the look of the dal when it is ready.</p><p class="ht">Learn by paying attention, not only by following steps.</p></li>
+    </ul>
+
+    <div class="hcarry rv">
+      <h3>Worth carrying <em>into today.</em></h3>
+      <ol>
+        <li>Leave something at the door for someone who can never thank you.</li>
+        <li>Make their case before you answer it.</li>
+        <li>Tell the story you love, and label what is recorded and what is remembered.</li>
+        <li>Build useful things that are generous to strangers.</li>
+        <li>In the summer heat, a bowl of water is enough.</li>
+        <li>Learn by paying attention, not only by following steps.</li>
+      </ol>
+    </div>
+    <p class="hrule rv"><b>How we write these.</b> Our editors write every piece, attach its sources, and mark what is documented, what is tradition, and what is only told. We never tell anyone what to believe. Question any claim in the replies — corrections are published and stay attached to the piece. Follow the house to get new reads in their own tab; they are never ranked above what people share.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ PRINCIPLES ══════════════════ -->
+<section class="sec" id="principles" aria-labelledby="h-principles">
+  <div class="wrap">
+    <span class="eyebrow rv">06 — Principles</span>
+    <h2 id="h-principles" class="big rv">Principles you can <em>see in the product.</em></h2>
+    <p class="deck rv">Good intentions are easy to write down. These are the commitments behind the design, and the places you would notice them.</p>
+
+    <div class="leaf rv">
+      <span class="eyebrow">In plain words</span>
+      <h3 class="leaf-h">Seven principles <em>we build by.</em></h3>
+
+      <div class="policies">
+        <div><b>Agency</b><p>You choose what reaches you and when. No autoplay, no infinite scroll, and no ranking built around keeping you scrolling.</p></div>
+        <div><b>Context</b><p>Posts and replies carry context. Sources can stay attached, and sharing adds your perspective instead of stripping the original.</p></div>
+        <div><b>Plurality</b><p>No single viewpoint is treated as the default. People can contribute different experiences and perspectives, and useful ideas can travel across disagreement.</p></div>
+        <div><b>Contribution</b><p>Recognition comes from what you add to a conversation and the people you help—not from likes or follower totals.</p></div>
+        <div><b>Calm</b><p>Messages can arrive in windows you choose. Heated conversations can slow down without turning every pause into a penalty.</p></div>
+        <div><b>Privacy</b><p>Collect as little as practical. No ads and no data sales. When you ask for deletion, we tell you what can be removed and what a legal requirement prevents.</p></div>
+        <div><b>Community responsibility</b><p>Community standards are applied with accountable human review. Serious legal requests have a separate process and a transparency record.</p></div>
+      </div>
+
+      <ol class="laws">
+        <li><span class="n">01</span><div><h3>Question ideas, respect people</h3><p>People bring different backgrounds, values, and experiences. Challenge an idea without turning the person behind it into the target.</p></div></li>
+        <li><span class="n">02</span><div><h3>No status scoring. Not anywhere.</h3><p>No hidden social score, class, or popularity tier shapes what people can see or how they are treated.</p></div></li>
+        <li><span class="n">03</span><div><h3>The product should stay accountable to its purpose</h3><p>The long-term model should protect the product from quietly becoming an attention business. The goal is to be funded by people who want the platform to exist, not by selling their attention or data.</p></div></li>
+      </ol>
+
+      <div class="wrong">
+        <h3>And here is what could prove us wrong.</h3>
+        <p>Good intentions are not evidence. Here are three product claims we would test—and the results that would make us change the design.</p>
+        <ol>
+          <li><div><b>The claim</b><p>A feed with a clear end can feel better than a feed with no end.</p></div><div><b>What would change it</b><p>If sustained use falls because the feed ends, we revisit the design rather than pretending the measure is wrong.</p></div></li>
+          <li><div><b>The claim</b><p>Restating someone's view before replying improves understanding.</p></div><div><b>What would change it</b><p>If independent reviewers cannot distinguish the restatements from a control, we remove the gate.</p></div></li>
+          <li><div><b>The claim</b><p>Predictable message windows can reduce distraction without reducing contribution.</p></div><div><b>What would change it</b><p>If contribution drops materially, we change the delivery model rather than defending the friction.</p></div></li>
+        </ol>
+        <p class="small" style="margin-top:1.2em;color:var(--ink-3)">When the product is tested, participants should consent, know the purpose, and receive the results. Findings should be published clearly, including outcomes that go against the design.</p>
+      </div>
+
+    </div>
+
+
+    <h3 class="h3s rv">Privacy you can <em>see and set.</em></h3>
+    <p class="deck rv">Choose who sees each thing you share. Move an item inward and fewer people can see it.</p>
+
+    <div class="kgrid">
+      <div>
+        <span class="hint rv">Drag the label—or focus it and use ← →</span>
+        <ul class="klist rv" id="klist">
+          <li class="on" data-k="0" tabindex="0"><span class="kn">Layer 01 · public</span><h3>Your public profile</h3><p>Your name, photo, and a short introduction. Enough for people to recognise your contribution, without exposing more than necessary.</p><span class="seen">Anyone</span></li>
+          <li data-k="1" tabindex="0"><span class="kn">Layer 02 · availability</span><h3>Your availability</h3><p>Whether you have room to talk right now — declared by you, never inferred about you.</p><span class="seen">People you have met</span></li>
+          <li data-k="2" tabindex="0"><span class="kn">Layer 03 · posts & communities</span><h3>Your posts and communities</h3><p>Your posts, interests, and communities. Visibility is something you choose, not a default you inherit.</p><span class="seen">Your communities · 23 people</span></li>
+          <li data-k="3" tabindex="0"><span class="kn">Layer 04 · drafts</span><h3>Your drafts & working notes</h3><p>Early ideas and unfinished thoughts you are not ready to share widely.</p><span class="seen">4 people</span></li>
+          <li data-k="4" tabindex="0"><span class="kn">Layer 05 · private</span><h3>Your private space</h3><p>Private reflections, plans, and notes stay yours unless you choose to share them.</p><span class="seen">You alone</span></li>
+        </ul>
+        <div class="readout rv" id="readout" aria-live="polite">
+          <b>Your public profile—the outermost layer</b>
+          <span>“Weekend cooking notes” is visible to <span class="cnt">anyone</span>.</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="stage" id="stage" role="group" aria-label="Privacy sandbox">
+          <div class="ring" data-k="0" style="width:98%;height:98%"><span class="ringlab">Anyone</span></div>
+          <div class="ring" data-k="1" style="width:79%;height:79%"><span class="ringlab">People you have met</span></div>
+          <div class="ring" data-k="2" style="width:59%;height:59%"><span class="ringlab">Your communities</span></div>
+          <div class="ring" data-k="3" style="width:39%;height:39%"><span class="ringlab">A small group</span></div>
+          <div class="ring" data-k="4" style="width:20%;height:20%"><span class="ringlab">You</span></div>
+          <div id="node" tabindex="0" role="slider" aria-label="Move the item inward to make it more private" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-valuetext="Your public profile, visible to anyone">Weekend cooking notes</div>
+        </div>
+        <p class="small" style="text-align:center;margin-top:1em">Each layer gives you more privacy. Move inward when a thought, note, or plan belongs with fewer people.</p>
+      </div>
+    </div>
+
+    <h3 class="h3s rv">When something goes wrong, <em>people stay accountable.</em></h3>
+    <p class="deck rv">Moderation decisions are explained, made by people, and open to appeal.</p>
+
+    <div class="pipe rv">
+      <div><em>Step 01</em><b>A report</b><span>From anyone, about a community issue.</span></div>
+      <div class="arw2" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ai"><em>Step 02 · software</em><b>Screening</b><span>Flags, summarises, and gathers context. Decides nothing on its own.</span></div>
+      <div class="arw2" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="hum"><em>Step 03 · people</em><b>Community reviewers</b><span>A rotating group reviews the context, explains the decision, and stays accountable for it.</span></div>
+      <div class="arw2" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="hum"><em>Step 04 · appeal</em><b>Appeal review</b><span>A wider review panel considers the appeal. The process remains human and explainable.</span></div>
+    </div>
+    <p class="small rv legal">Legal and government requests follow a separate process, handled by staff and recorded in a transparency log where permitted.</p>
+
+    <h3 class="h3s rv">What the built-in assistant does, <em>and will never do.</em></h3>
+    <p class="deck rv">It can summarise a long thread, explain an unfamiliar term, or help you start a reply. Anything marked in indigo was done by software.</p>
+    <div class="assist rv">
+      <span class="assist-h"><svg width="14" height="14" aria-hidden="true"><use href="#i-thought"/></svg>Thread summary · written by software</span>
+      <p>Twenty-six replies. Most describe the same turn: asking what the other person hoped for changed the conversation. Two people disagree, saying listening can become a way to avoid a decision. One reply asks what to do when the other person will not listen back. No sources were cited in the thread.</p>
+      <span class="assist-f">Each sentence links to the replies it draws from, so you can read them in full.</span>
+    </div>
+    <ul class="never stag" style="margin-top:1.4em">
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Tell you what to believe</b><span>It will not tell you what to believe or act as an authority on someone's values. It helps summarise, clarify, and surface sources.</span></div></li>
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Score a person</b><span>It can describe <em style="font-style:normal;color:var(--ink)">writing</em> — how clear, constructive, or contextual a piece of writing is. It should not score the person behind it or infer personal traits.</span></div></li>
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Hide generated content</b><span>Generated content should be clearly labelled so people know when software helped create it.</span></div></li>
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Invent certainty</b><span>When it makes a factual claim, it shows the source. When it is unsure, or cannot support an answer, it says so.</span></div></li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ══════════════════ JOIN ══════════════════ -->
+<section class="sec" id="join" aria-labelledby="h-join">
+  <div class="wrap">
+    <span class="eyebrow rv">07 — Join</span>
+    <h2 id="h-join" class="big rv">Be here <em>from the start.</em></h2>
+    <p class="deck rv">We are opening in stages. The first members start the first communities and set the tone for everyone who joins after them.</p>
+
+    <div class="joinbox rv">
+      <div class="ji">
+       <div>
+        <h3>Join the early list, <em>and we will email you when your invitation is ready.</em></h3>
+        <p>One email address. No profile form, no phone number, no unnecessary questions. You will hear from us when there is something real to join.</p>
+
+        <label class="jlab" for="joinmail">Your email address</label>
+        <form class="joinform" id="joinform" autocomplete="off" novalidate>
+          <input id="joinmail" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="joinsay">
+          <button class="btn btn-p" type="submit"><span>Join the early list</span><span class="arw" aria-hidden="true">→</span></button>
+        </form>
+        <output class="jsay" id="joinsay" for="joinmail" aria-live="polite"></output>
+
+        <ul class="jterms">
+          <li>One confirmation, one launch message</li>
+          <li class="no">No drip campaign</li>
+          <li>Unsubscribe in one click</li>
+          <li class="no">No tracking pixel</li>
+          <li>Delete the address when you ask, subject to legal requirements</li>
+          <li class="no">Never sold or used to identify you elsewhere</li>
+        </ul>
+       </div>
+      </div>
+      <p class="jfoot"><b>Said plainly:</b> This page is a design concept and the list is not live yet. Until it is, this form should not store anything. When it opens, you will confirm from your inbox before the address is retained. Questions? Write to <a href="mailto:admin@myvedaverse.in">admin@myvedaverse.in</a>.</p>
+    </div>
+
+    <ul class="facts stag" aria-label="About the project">
+      <li><b>Who is building it</b><span>An independent team based in India.</span></li>
+      <li><b>Stage</b><span>Design prototype. Nothing is live yet; this page shows how the product is meant to work.</span></li>
+      <li><b>Where it will run</b><span>On the web first, then Android and iOS.</span></li>
+      <li><b>Contact</b><span><a href="mailto:admin@myvedaverse.in">admin@myvedaverse.in</a></span></li>
+    </ul>
+
+    <h3 class="h3s rv">Your first <em>ten minutes.</em></h3>
+    <p class="deck rv">Four short steps. No birth date, no contact upload, no personality quiz.</p>
+
+    <div class="demo rv">
+      <div class="pick" id="stepPick" role="tablist" aria-label="The four steps">
+        <button role="tab" aria-selected="true" data-s="0">1 · Interests</button>
+        <button role="tab" aria-selected="false" data-s="1">2 · Delivery windows</button>
+        <button role="tab" aria-selected="false" data-s="2">3 · First question</button>
+        <button role="tab" aria-selected="false" data-s="3">4 · Privacy</button>
+      </div>
+      <div class="bar" aria-hidden="true"><i id="stepBar"></i></div>
+
+      <div class="pane on" data-p="0">
+        <div>
+          <span class="kicker">Instead of an empty feed</span>
+          <h3>Choose a few topics</h3>
+          <p>Choose what genuinely interests you—culture, work, science, books, relationships, local life, and more. Your first feed starts there.</p>
+          <div class="reveal-box"><b>What you see</b>A small set of real questions, each with a simple explanation of why it reached you.</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <g fill="none" stroke="var(--line)" stroke-width="1.4"><rect x="22" y="46" width="70" height="28" rx="14"/><rect x="104" y="46" width="74" height="28" rx="14"/><rect x="34" y="126" width="62" height="28" rx="14"/></g>
+          <rect x="40" y="86" width="84" height="28" rx="14" fill="var(--accent)"/>
+          <rect x="108" y="126" width="60" height="28" rx="14" fill="var(--accent)" opacity=".75"/>
+        </svg></figure>
+      </div>
+
+      <div class="pane" data-p="1">
+        <div>
+          <span class="kicker">Instead of “allow all notifications?”</span>
+          <h3>Choose your delivery windows</h3>
+          <p>Morning, lunch, evening, or your own schedule. Messages arrive together, and people can see when they will reach you.</p>
+          <div class="reveal-box"><b>What you see</b>A simple day-long timeline. Choose a window, and the next person messaging you sees the delivery time before they send.</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="74" fill="none" stroke="var(--line)"/>
+          <path d="M40 124h120" stroke="var(--ink-3)" stroke-opacity=".5" stroke-width="1.2" stroke-linecap="round"/>
+          <g fill="var(--accent)"><circle cx="62" cy="124" r="8"/><circle cx="104" cy="124" r="8"/><circle cx="146" cy="124" r="8"/></g>
+          <g stroke="var(--accent)" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"><path d="M62 108v-12M104 108v-12M146 108v-12"/></g>
+          <path d="M84 70c0-12 32-12 32 0" fill="none" stroke="var(--ink-3)" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round"/>
+        </svg></figure>
+      </div>
+
+      <div class="pane" data-p="2">
+        <div>
+          <span class="kicker">Start with a question</span>
+          <h3>Ask your first question</h3>
+          <p>Anything you have genuinely wondered. Why do some families keep recipes by memory? Is AI changing how we create? What makes a good manager?</p>
+          <div class="reveal-box"><b>What you see</b>It reaches people who follow the topic, and a welcoming member helps make sure your first question gets a real response.</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <rect x="34" y="40" width="132" height="64" rx="16" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+          <path d="M92 60c0-9 16-9 16 0 0 7-8 7-8 14M100 84v1" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <g fill="var(--leaf)"><circle cx="64" cy="140" r="9"/><circle cx="100" cy="150" r="9"/><circle cx="136" cy="140" r="9"/></g>
+          <path d="M70 132 92 108M100 140v-36M130 132 108 108" stroke="var(--line)" stroke-dasharray="2 4"/>
+        </svg></figure>
+      </div>
+
+      <div class="pane" data-p="3">
+        <div>
+          <span class="kicker">Privacy you can understand</span>
+          <h3>One object, five visibility rings</h3>
+          <p>Instead of burying privacy in settings, you can explore it directly through the same object you move to set visibility.</p>
+          <div class="reveal-box"><b>What you see</b>Move it outward to share more broadly; move it inward to keep it private. The interaction makes the permission visible before you choose it. ↑</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="84" fill="none" stroke="var(--line)"/>
+          <circle cx="100" cy="100" r="62" fill="none" stroke="var(--line)"/>
+          <circle cx="100" cy="100" r="40" fill="none" stroke="var(--line)"/>
+          <circle cx="100" cy="100" r="18" fill="none" stroke="var(--accent)" stroke-opacity=".8"/>
+          <circle cx="100" cy="38" r="13" fill="var(--accent)"/>
+        </svg></figure>
+      </div>
+
+      <div class="nav-b">
+        <button id="sPrev" type="button" disabled>← Back</button>
+        <button id="sNext" type="button">Next →</button>
+      </div>
+    </div>
+
+    <h3 class="h3s rv">Questions people ask.</h3>
+
+    <div class="faq3 stag">
+      <div>
+        <h4>When can I sign in?</h4>
+        <p>Invitations go out in stages, starting with the early list. You will get <b>one email</b> when yours is ready, and nothing before then.</p>
+      </div>
+      <div>
+        <h4>Do I need to know anything about Indian culture?</h4>
+        <p>No. Most conversations are about everyday life — food, books, work, cities, family, and ideas. Indian life and traditions come up naturally, because they are part of many members' lives. <b>If you are curious, you are welcome.</b></p>
+      </div>
+      <div>
+        <h4>Is this a religious app?</h4>
+        <p>No. It is a social platform. People talk about everyday life, culture, science, work, and values without being asked to adopt any worldview. <b>Nobody is asked to believe anything</b>, and nobody is mocked for what they believe.</p>
+      </div>
+      <div>
+        <h4>No ads and no data sales. So how is it paid for?</h4>
+        <p>Joining and taking part stay free. The platform is meant to be funded by <b>members and patrons who choose to support it</b>, with open finances. If that means staying smaller, we would rather stay smaller than become an attention business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ THE END ══════════════════ -->
+<section class="end" aria-labelledby="h-end">
+  <div class="wrap">
+   <div class="night">
+    <svg class="mark" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg>
+    <h2 id="h-end">You have reached the end. <em>That is on purpose.</em></h2>
+    <p>The feed ends the same way. When you are caught up, it says so, and the rest of your day is yours.</p>
+    <p class="backup"><a href="#join">Join the early list</a> · <a href="#top">Back to the top</a></p>
+
+    <footer>
+      <p>My Veda Verse is a social platform in development. Express thoughtfully. Engage meaningfully. Share responsibly.</p>
+      <p class="contact">Contact us: <a href="mailto:admin@myvedaverse.in">admin@myvedaverse.in</a></p>
+      <div class="ctl" role="group" aria-label="Page settings">
+  <div class="ctl">
+        <button id="tone" type="button" aria-pressed="false" title="A low drone and slow bells. Silent until you ask, every time.">
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="toneLabel">Sound off</span>
+        </button>
+        <button id="still" type="button" aria-pressed="false" title="Stops the ambient motion on this page, whatever your device is set to.">
+          <span class="dotm" aria-hidden="true"></span><span id="stillLabel">Motion on</span>
+        </button>
+  </div>
+      </div>
+      <div class="sig">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg>
+        My Veda Verse
+      </div>
+      <span class="dom">myvedaverse.in</span>
+    </footer>
+   </div>
+  </div>
+</section>
+</main>
+
+<style>
+/* ══ VICHARA — the gate on disagreement ═════════════════════════════════
+   The Nyaya Sutras sort structured debate into three kinds: vada, honest and
+   truth-seeking; jalpa, played to win; vitanda, attack with no position of
+   one's own. The classical form runs purvapaksa (the opponent's view, stated
+   fairly) then uttarapaksa (the reply) then siddhanta (what is settled). This
+   product makes the first of those three a hard precondition of the second. */
+.gate{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);align-items:start;margin-top:1.7em}
+@media (max-width:880px){.gate{grid-template-columns:1fr}}
+.gstep{border:1px solid var(--line-2);border-radius:var(--r-lg);padding:1.15em 1.25em;background:var(--well);
+  transition:border-color .6s var(--ease),opacity .6s var(--ease),background-color .6s var(--ease)}
+.gstep+.gstep{margin-top:.7em}
+.gstep.now{border-color:var(--a45);background:rgba(248,201,79,.05)}
+.gstep.done{border-color:color-mix(in srgb,var(--leaf) 40%,transparent)}
+.gstep.wait{opacity:.45}
+.gstep .gn{display:flex;align-items:center;gap:.6em;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:.55em}
+.gstep.now .gn{color:var(--accent)}
+.gstep.done .gn{color:var(--leaf)}
+.gstep .gn i{font-style:normal;width:17px;height:17px;border-radius:50%;border:1.5px solid currentColor;
+  display:grid;place-items:center;font-size:.75rem;flex:none}
+.gstep h4{font-family:var(--display);font-size:1.04rem;font-weight:600;margin-bottom:.3em}
+.gstep p{font-size:.9rem;color:var(--ink-2);line-height:1.55}
+.gstep .quote{border-left:2px solid var(--terra-lit);padding-left:.9em;margin-top:.6em;font-size:.93rem;color:var(--ink)}
+.gstep textarea{width:100%;margin-top:.8em;min-height:82px;resize:vertical;background:rgba(0,0,0,.24);
+  border:1px solid var(--line);border-radius:var(--r-md);padding:.8em 1em;color:var(--ink);outline:none;
+  font-family:var(--body);font-size:.92rem;line-height:1.5;transition:border-color .4s,box-shadow .4s}
+.gstep textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(248,201,79,.13)}
+.gstep textarea::placeholder{color:var(--ink-3)}
+.gbar{display:flex;align-items:center;gap:.7em;margin-top:.75em;flex-wrap:wrap}
+.gbar .cnt{font-family:var(--label);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.gbar .cnt.ok{color:var(--leaf)}
+.locked{position:relative}
+.locked .veil{position:absolute;inset:0;z-index:4;display:grid;place-items:center;text-align:center;padding:1.4em;
+  border-radius:var(--r-lg);background:rgba(16,10,14,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.locked .veil span{font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);max-width:26ch;line-height:1.7}
+.locked .veil svg{color:var(--ink-3);margin:0 auto .6em;display:block}
+.locked.open .veil{display:none}
+/* ══ SAMVAD — the calm inbox ════════════════════════════════════════════ */
+.inbox{border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;background:var(--panel)}
+.inbox-h{display:flex;align-items:center;justify-content:space-between;gap:1em;flex-wrap:wrap;
+  padding:1em 1.25em;border-bottom:1px solid var(--line-2);background:rgba(0,0,0,.16)}
+.inbox-h b{font-family:var(--display);font-size:1.06rem;font-weight:600}
+.win{display:flex;align-items:baseline;gap:.55em;font-family:var(--label);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.win i{font-style:normal;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:.04em}
+.inbox-b{padding:1.15em 1.25em}
+.held{display:flex;gap:.8em;align-items:flex-start;padding:.75em 0;border-bottom:1px solid var(--line-2)}
+.held:last-of-type{border-bottom:0}
+.held .av{width:32px;height:32px;border-radius:50%;flex:none;overflow:hidden;border:1px solid var(--line-2)}
+.held .av svg{width:100%;height:100%;display:block}
+.held .bd{flex:1;min-width:0}
+.held .who{font-family:var(--label);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.held .tx{font-size:.92rem;color:var(--ink);margin-top:.1em}
+.mauna{display:flex;align-items:center;gap:.8em;padding:.85em 1.1em;margin-top:1em;border-radius:var(--r-pill);
+  border:1px solid var(--line-2);background:rgba(0,0,0,.2);font-size:.89rem;color:var(--ink-2);
+  transition:border-color .5s var(--ease),background-color .5s var(--ease)}
+.mauna.on{border-color:rgba(245,233,214,.36);background:rgba(245,233,214,.07);color:var(--ink)}
+.mauna svg{flex:none;color:var(--ink-3);transition:color .5s var(--ease)}
+.mauna.on svg{color:var(--parchment)}
+.mauna .sw{margin-left:auto;flex:none;width:44px;height:24px;border-radius:var(--r-pill);border:1px solid var(--line);
+  background:rgba(0,0,0,.3);position:relative;cursor:pointer;transition:all .5s var(--ease)}
+.mauna .sw::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;
+  background:var(--ink-3);transition:all .45s var(--spring)}
+.mauna.on .sw{border-color:rgba(245,233,214,.55);background:rgba(245,233,214,.16)}
+.mauna.on .sw::after{left:22px;background:var(--parchment)}
+.inbox-f{display:flex;gap:.5em;flex-wrap:wrap;padding:1em 1.25em;border-top:1px solid var(--line-2);background:rgba(0,0,0,.14)}
+.inbox-f button{border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;
+  padding:.45em 1em;border-radius:var(--r-pill);font-family:var(--label);font-weight:600;font-size:.75rem;
+  transition:all .4s var(--ease)}
+.inbox-f button:hover{border-color:var(--accent);color:var(--accent)}
+.inbox-f .why{margin-left:auto;font-family:var(--label);font-size:.75rem;letter-spacing:.08em;color:var(--ink-3);align-self:center}
+
+/* ══ GUARDRAILS ═════════════════════════════════════════════════════════ */
+.never{list-style:none;margin:1.8em 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--line-2);border:1px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden}
+@media (max-width:760px){.never{grid-template-columns:1fr}}
+.never li{background:var(--well);padding:1.15em 1.25em;display:flex;gap:.85em;align-items:flex-start;
+  transition:background-color .5s var(--ease)}
+.never li:hover{background:rgba(217,138,95,.06)}
+.never li svg{flex:none;color:var(--terra-lit);margin-top:.15em}
+.never b{display:block;font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:.22em}
+.never span{font-size:.87rem;color:var(--ink-2);line-height:1.5}
+
+/* ══ SGI PROVENANCE CHIP ════════════════════════════════════════════════ */
+.sgi{display:inline-flex;align-items:center;gap:.45em;margin-top:.7em;padding:.3em .75em;border-radius:var(--r-pill);
+  border:1px solid color-mix(in srgb,var(--indigo) 42%,transparent);background:rgba(163,176,238,.1);
+  font-family:var(--label);font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--indigo)}
+.sgi svg{flex:none}
+
+/* ══ THE CONSTITUTION, and what would prove us wrong ════════════════════ */
+.wrong{margin-top:2.2em;padding-top:1.6em;border-top:1px solid var(--line-2)}
+.wrong h3{font-size:1.24rem;font-weight:600;margin-bottom:.3em}
+.wrong>p{font-size:.94rem;color:var(--ink-2);max-width:64ch}
+.wrong ol{list-style:none;margin:1.3em 0 0;padding:0;display:grid;gap:.65em}
+.wrong li{display:grid;grid-template-columns:1fr 1fr;gap:.9em;border:1px solid var(--line-2);border-radius:var(--r-md);padding:.9em 1.05em}
+@media (max-width:700px){.wrong li{grid-template-columns:1fr;gap:.4em}}
+.wrong li b{display:block;font-family:var(--label);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.25em}
+.wrong li>div+div b{color:var(--leaf-ink)}   /* what would kill it: the checkable half */
+.wrong li p{font-size:.9rem;color:var(--ink-2);line-height:1.5}
+</style>
+<style>
+/* ══ REFINE — the product, shown plainly ═══════════════════════════════
+   One story: here is the app, why it exists, how each part works, what we
+   commit to, the people, and the door. Motion is kept for things that
+   change state; hover answers with colour, never with movement. */
+
+/* header: three links, sign in, join */
+.acct{display:flex;align-items:center;gap:4px;margin-left:10px}
+.signin{min-height:38px;padding:.4em .9em;border:0;border-radius:var(--r-pill);background:transparent;color:var(--ink-2);cursor:pointer;
+  font-family:var(--label);font-weight:600;font-size:.83rem;transition:color .3s var(--ease),background-color .3s var(--ease)}
+.signin:hover,.signin[aria-expanded="true"]{color:var(--ink);background:rgba(245,233,214,.07)}
+.signpop{position:absolute;right:clamp(16px,5vw,56px);top:calc(100% + 8px);width:min(320px,calc(100vw - 32px));z-index:120;
+  padding:1em 1.1em 1.1em;border-radius:var(--r-md);background:#1B1320;border:1px solid rgba(186,150,168,.3);box-shadow:var(--lift-lg)}
+.signpop p{font-size:.9rem;line-height:1.5;color:#E0D0BE}
+.signpop b{color:#F5E9D6;font-weight:600}
+.signpop .btn{margin-top:.85em;padding:.62em 1.15em;font-size:.84rem;background:#F8C94F;color:#2A1F19}
+@media (max-width:980px){.signin{display:none}.acct{margin-left:auto}}
+.sheet-note{margin:12px 4px 0;font-size:.85rem;line-height:1.5;color:#C9B79B}
+
+/* hero: the app, not a symbol of it */
+.hero .kick{display:block;text-transform:none;letter-spacing:.005em;font-size:clamp(.9rem,1.3vw,1rem);font-weight:600;max-width:34ch}
+.hero .kick::before{display:none}
+@media (min-width:921px){.hero-in{grid-template-columns:.9fr 1.1fr}}
+.cta-note{margin-top:1.1em;font-family:var(--label);font-size:.8rem;letter-spacing:.03em;color:var(--ink-3)}
+.hero-demo .av{display:block;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2);background:rgba(0,0,0,.3)}
+.hero-demo .av svg{width:100%;height:100%;display:block}
+.app{border:1px solid var(--line);border-radius:22px;background:rgba(16,11,20,.88);box-shadow:var(--lift-lg);overflow:hidden}
+.app-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line-2);background:rgba(0,0,0,.22)}
+.app-dots{display:flex;gap:5px}
+.app-dots i{width:8px;height:8px;border-radius:50%;background:rgba(245,233,214,.16)}
+.app-search{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:var(--r-pill);background:rgba(245,233,214,.06);
+  color:var(--ink-3);font-family:var(--label);font-size:.75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app-search svg{width:13px;height:13px;flex:none}
+.app-bell{position:relative;display:grid;place-items:center;width:28px;height:28px;color:var(--ink-2)}
+.app-bell svg{width:17px;height:17px}
+.app-bell i{position:absolute;top:-2px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--accent);color:var(--on-accent);
+  font-style:normal;font-family:var(--label);font-weight:700;font-size:.75rem;line-height:16px;text-align:center}
+.app-me{width:28px;height:28px}
+.app-body{display:grid;grid-template-columns:126px minmax(0,1fr)}
+.app-rail{list-style:none;margin:0;padding:12px 8px;border-right:1px solid var(--line-2);display:grid;align-content:start;gap:2px}
+.app-rail li{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:10px;font-family:var(--label);font-weight:600;font-size:.75rem;color:var(--ink-3)}
+.app-rail svg{width:15px;height:15px;flex:none}
+.app-rail li.on{color:var(--ink);background:rgba(245,233,214,.08)}
+.app-main{padding:12px;display:grid;gap:10px;min-width:0}
+.app-tabs{display:flex;gap:6px;overflow:hidden;white-space:nowrap}
+.app-tabs span{padding:3px 10px;border-radius:var(--r-pill);border:1px solid var(--line-2);font-family:var(--label);font-weight:600;font-size:.75rem;color:var(--ink-3)}
+.app-tabs span.on{color:var(--ink);border-color:var(--line);background:rgba(245,233,214,.08)}
+.apost{border:1px solid var(--line-2);border-radius:14px;padding:12px 13px;background:rgba(0,0,0,.22)}
+.apost-h{display:flex;align-items:center;gap:9px}
+.apost-h .av{width:32px;height:32px}
+.am b{display:block;font-family:var(--label);font-weight:600;font-size:.82rem;color:var(--ink);line-height:1.3}
+.am span{display:block;font-family:var(--label);font-size:.75rem;color:var(--ink-3);line-height:1.3}
+.apost-h .kind{margin:0 0 0 auto}
+.apost-t{margin-top:8px;font-family:var(--display);font-weight:600;font-size:1.04rem;line-height:1.3;color:var(--ink)}
+.apost-b{margin-top:4px;font-size:.86rem;line-height:1.5;color:var(--ink-2)}
+.apost-r{display:flex;gap:8px;align-items:flex-start;margin-top:10px;padding-left:10px;border-left:2px solid var(--line-2)}
+.apost-r .av{width:22px;height:22px}
+.apost-r p{font-size:.8rem;line-height:1.45;color:var(--ink-2)}
+.apost-r b{color:var(--ink);font-weight:600;margin-right:.35em}
+.apost-f{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line-2)}
+.rx{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pill);border:1px solid var(--line-2);font-family:var(--label);font-weight:600;font-size:.75rem;color:var(--ink-3)}
+.rx svg{width:13px;height:13px;flex:none}
+.rx.on{color:var(--accent);border-color:var(--a35);background:rgba(248,201,79,.07)}
+.rx.sv{margin-left:auto}
+.apost-who{margin-top:7px;font-family:var(--label);font-size:.75rem;color:var(--ink-3)}
+.apost-img{margin-top:8px;border-radius:10px;overflow:hidden;aspect-ratio:16/7;border:1px solid var(--line-2)}
+.apost-img svg{width:100%;height:100%;display:block}
+.app-toast{position:absolute;left:clamp(-28px,-2vw,-12px);bottom:64px;z-index:2;display:flex;gap:9px;align-items:flex-start;max-width:272px;
+  padding:10px 12px;border-radius:14px;background:#221829;border:1px solid var(--a35);box-shadow:var(--lift-lg)}
+.app-toast .av{width:26px;height:26px}
+.app-toast p{font-size:.8rem;line-height:1.45;color:#E0D0BE}
+.app-toast b{color:#F5E9D6;font-weight:600}
+@media (max-width:620px){
+  .app-rail,.app-dots{display:none}
+  .app-body{grid-template-columns:minmax(0,1fr)}
+  .app-toast{position:relative;left:auto;bottom:auto;max-width:none;margin-top:10px}
+}
+
+/* why: three plain problems, then the better way */
+.h3s em{font-style:italic;color:var(--accent);font-weight:400}
+.h3s+.deck{margin-top:.6em}
+.h3s+.ees{margin-top:1.4em}
+.probs{list-style:none;margin:2.2em 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.8em}
+@media (max-width:760px){.probs{grid-template-columns:1fr}}
+.probs li{padding:1.15em 1.25em 1.25em;border:1px solid var(--line-2);border-radius:var(--r-lg);background:var(--well)}
+.probs span{display:block;font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gerua-lit)}
+.probs b{display:block;margin-top:.35em;font-family:var(--display);font-size:1.3rem;font-weight:600}
+.probs p{margin-top:.3em;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+
+/* how it works: six steps, each one tried in place */
+.flow{list-style:none;margin:2.2em 0 0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;
+  background:var(--line-2);border:1px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden}
+@media (max-width:1040px){.flow{grid-template-columns:repeat(4,minmax(0,1fr))}.flow li:last-child{grid-column:span 2}}
+@media (max-width:560px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.flow li{display:flex}
+.flow a{display:block;flex:1;padding:1em 1.05em 1.15em;background:var(--well);color:var(--ink);text-decoration:none;transition:background-color .3s var(--ease)}
+.flow a:hover{background:rgba(248,201,79,.06)}
+.flow i{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--a45);color:var(--accent);
+  font-style:normal;font-family:var(--label);font-weight:700;font-size:.78rem}
+.flow b{display:block;margin-top:.55em;font-family:var(--display);font-size:1.12rem;font-weight:600}
+.flow span{display:block;margin-top:.15em;font-size:.84rem;line-height:1.4;color:var(--ink-2)}
+.step{margin-top:clamp(56px,7vw,92px);scroll-margin-top:84px}
+.step-h{display:flex;gap:1em;align-items:flex-start;max-width:64ch}
+.step-n{flex:none;display:grid;place-items:center;width:38px;height:38px;margin-top:.1em;border-radius:50%;background:var(--accent);color:var(--on-accent);
+  font-family:var(--label);font-weight:700;font-size:.95rem}
+.step-h h3{font-size:clamp(1.55rem,3vw,2.05rem);font-weight:500}
+.step-h p{margin-top:.35em;font-size:1rem;line-height:1.58;color:var(--ink-2)}
+.step>.demo{margin-top:1.4em}
+
+/* read: a thread, notifications, saved */
+.rgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(18px,3vw,32px);align-items:start}
+@media (max-width:900px){.rgrid{grid-template-columns:1fr}}
+.post.tcard:hover{background:var(--well);border-color:var(--line-2)}
+.rxbar{display:flex;flex-wrap:wrap;align-items:center;gap:.4em;margin-top:.95em}
+.rxbar button{display:inline-flex;align-items:center;gap:.45em;min-height:38px;padding:.3em .9em;border-radius:var(--r-pill);border:1px solid var(--line);
+  background:transparent;color:var(--ink-2);cursor:pointer;font-family:var(--label);font-weight:600;font-size:.8rem;
+  transition:border-color .3s var(--ease),color .3s var(--ease),background-color .3s var(--ease)}
+.rxbar button svg{width:15px;height:15px;flex:none}
+.rxbar button:hover{border-color:var(--accent);color:var(--ink)}
+.rxbar button[aria-pressed="true"]{border-color:var(--a50);color:var(--accent);background:rgba(248,201,79,.08)}
+.rxbar .sv{margin-left:auto}
+.rxnote{display:block;margin-top:.5em;font-family:var(--label);font-size:.75rem;color:var(--ink-3)}
+.rp.nest{margin-left:2em}
+.rside{display:grid;gap:.8em}
+.notes{border:1px solid var(--line-2);border-radius:var(--r-lg);background:var(--well);overflow:hidden}
+.notes h4{display:flex;justify-content:space-between;align-items:baseline;gap:1em;padding:.8em 1.05em;border-bottom:1px solid var(--line-2);
+  font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.notes h4 span{font-weight:500;letter-spacing:.02em;text-transform:none;color:var(--ink-3)}
+.notes ul{list-style:none;margin:0;padding:0}
+.notes li{display:flex;gap:.7em;align-items:flex-start;padding:.75em 1.05em;border-top:1px solid var(--line-2);font-size:.87rem;line-height:1.45;color:var(--ink-2)}
+.notes li:first-child{border-top:0}
+.notes li b{color:var(--ink);font-weight:600}
+.notes .av{width:28px;height:28px;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2)}
+.notes .av svg{width:100%;height:100%;display:block}
+.notes li>svg{flex:none;width:16px;height:16px;margin-top:.15em;color:var(--accent)}
+.notes .nt{display:block;margin-top:.15em;font-family:var(--label);font-size:.75rem;color:var(--ink-3)}
+.nfoot{padding:.75em 1.05em;border-top:1px solid var(--line-2);font-size:.8rem;color:var(--ink-3)}
+
+/* pages: organisations kept apart from people */
+.orgfeed{margin-top:1.6em;padding-top:1.3em;border-top:1px solid var(--line)}
+.org-h h4{font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.org-h p{margin-top:.35em;font-size:.87rem;line-height:1.5;color:var(--ink-3);max-width:62ch}
+.orgfeed .feed{margin-top:1em}
+.post.org{background:rgba(245,233,214,.03)}
+.omark{width:38px;height:38px;border-radius:10px;flex:none;display:grid;place-items:center;background:var(--oc);color:#1B1320;
+  font-family:var(--label);font-weight:700;font-size:.8rem;letter-spacing:.04em}
+.okind{display:inline-block;margin-left:.5em;padding:0 .6em;border-radius:var(--r-pill);border:1px solid var(--line);
+  font-size:.75rem;font-weight:600;letter-spacing:.02em;color:var(--ink-3);vertical-align:.08em}
+
+/* contact */
+footer .contact{margin-top:.7em;font-family:var(--label);font-size:.85rem;letter-spacing:.02em;color:var(--ink-2)}
+footer .contact a,.jfoot a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--a35)}
+footer .contact a:hover,.jfoot a:hover{border-bottom-color:var(--accent)}
+
+/* audit fixes: the name, how communities work, who is building it, the assistant at work */
+.hero-name{margin-top:1em;max-width:48ch;padding-left:.9em;border-left:2px solid var(--a35);font-size:.95rem;line-height:1.55;color:var(--ink-3)}
+.cwork{margin-top:1.3em}
+.cwork+.roles{margin-top:.7em}
+.facts{list-style:none;margin:1.2em 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7em}
+@media (max-width:860px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.facts{grid-template-columns:1fr}}
+.facts li{border:1px solid var(--line-2);border-radius:var(--r-md);padding:.8em .95em;background:var(--well)}
+.facts b{display:block;font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.28em}
+.facts span{font-size:.9rem;line-height:1.5;color:var(--ink)}
+.facts a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--a35);overflow-wrap:anywhere}
+.assist{margin-top:1.4em;padding:1em 1.2em;border:1px solid color-mix(in srgb,var(--indigo) 45%,transparent);border-radius:var(--r-lg);background:rgba(163,176,238,.06)}
+.assist-h{display:flex;align-items:center;gap:.5em;font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--indigo)}
+.assist p{margin-top:.5em;font-size:.95rem;line-height:1.58;color:var(--ink);max-width:72ch}
+.assist-f{display:block;margin-top:.5em;font-size:.84rem;color:var(--ink-3)}
+
+/* discuss steps: the number sits dead centre in its circle, level with its label */
+.gstep .gn{gap:.7em;line-height:1}
+.gstep .gn i{width:24px;height:24px;border-width:1.5px;font-size:.78rem;font-weight:700;letter-spacing:0;line-height:1;font-variant-numeric:tabular-nums;text-indent:0}
+
+/* from the house of Veda Verse */
+.hero-demo .hm{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;flex:none;background:rgba(248,201,79,.1);border:1px solid var(--a35);color:var(--accent)}
+.hero-demo .hm svg{width:19px;height:19px}
+.apost.house{border-color:var(--a30)}
+.apost.house .apost-img{aspect-ratio:16/5}
+.hgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9em;margin-top:2.2em;align-items:stretch}
+@media (max-width:860px){.hgrid{grid-template-columns:1fr}}
+.hread{display:flex;flex-direction:column;border:1px solid var(--line-2);border-radius:var(--r-xl);background:var(--well);overflow:hidden}
+.hread-art{aspect-ratio:16/6;border-bottom:1px solid var(--line-2)}
+.hread-art svg{width:100%;height:100%;display:block}
+.hread-in{flex:1;display:flex;flex-direction:column;gap:.65em;padding:1.2em 1.35em 1.3em}
+.hmeta{display:flex;flex-wrap:wrap;align-items:center;gap:.2em;font-family:var(--label);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.hmeta .kind{text-transform:none;letter-spacing:.03em}
+.hread h3{font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:600;line-height:1.2}
+.hdek{margin-top:-.25em;font-family:var(--display);font-style:italic;font-size:1.02rem;line-height:1.4;color:var(--ink-2)}
+.hb{font-size:.95rem;line-height:1.6;color:var(--ink-2)}
+.hsplit{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+@media (max-width:560px){.hsplit{grid-template-columns:1fr}}
+.hsplit>div{border:1px solid var(--line-2);border-radius:var(--r-md);padding:.7em .85em;background:rgba(0,0,0,.14)}
+.hsplit .told{border-style:dashed}
+.hsplit b{display:block;margin-bottom:.25em;font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.hsplit .doc b{color:var(--leaf)}
+.hsplit .told b{color:var(--ink-3)}
+.hsplit p{font-size:.87rem;line-height:1.5;color:var(--ink-2)}
+.hans{border:1px dashed var(--line);border-radius:var(--r-md);padding:.55em .85em}
+.hans summary{cursor:pointer;list-style:none;font-family:var(--label);font-weight:600;font-size:.85rem;color:var(--accent)}
+.hans summary::-webkit-details-marker{display:none}
+.hans summary::before{content:"+ "}
+.hans[open] summary::before{content:"− "}
+.hans p{margin-top:.4em;font-size:.92rem;line-height:1.55;color:var(--ink)}
+.hread .post-ctx{margin-top:0}
+.htake{margin-top:auto;padding-top:.8em;border-top:1px solid var(--line-2);font-family:var(--display);font-size:1.04rem;line-height:1.4;color:var(--ink)}
+.htake span{display:block;margin-bottom:.2em;font-family:var(--label);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.hread .rxbar{margin-top:0}
+.h3s+.hmore{margin-top:1.3em}
+.hmore{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7em}
+@media (max-width:1040px){.hmore{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.hmore{grid-template-columns:1fr}}
+.hmore li{display:flex;flex-direction:column;gap:.5em;padding:1em 1.05em 1.1em;border:1px solid var(--line-2);border-radius:var(--r-lg);background:var(--well)}
+.hmore h4{font-family:var(--display);font-size:1.06rem;font-weight:600;line-height:1.3}
+.hmore p{font-size:.87rem;line-height:1.5;color:var(--ink-2)}
+.hmore .tag{align-self:flex-start}
+.hmore .ht{margin-top:auto;padding-top:.5em;border-top:1px solid var(--line-2);font-family:var(--display);font-style:italic;font-size:.95rem;color:var(--ink)}
+.hlink{font-family:var(--label);font-weight:600;font-size:.84rem;color:var(--accent);text-decoration:none}
+.hlink:hover{text-decoration:underline}
+.hcarry{margin-top:2.2em;padding:1.35em 1.45em 1.5em;border:1px solid var(--line-2);border-radius:var(--r-xl);background:var(--panel)}
+.hcarry h3{font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:500}
+.hcarry h3 em{font-style:italic;color:var(--accent);font-weight:400}
+.hcarry ol{list-style:none;counter-reset:hc;margin:1.1em 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1em 1.6em}
+@media (max-width:860px){.hcarry ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.hcarry ol{grid-template-columns:1fr}}
+.hcarry li{counter-increment:hc;display:flex;gap:.7em;font-family:var(--display);font-size:1.04rem;line-height:1.4;color:var(--ink)}
+.hcarry li::before{content:counter(hc,decimal-leading-zero);flex:none;margin-top:.3em;font-family:var(--label);font-weight:700;font-size:.78rem;color:var(--accent)}
+.hrule{margin-top:1.4em;max-width:80ch;padding-left:1em;border-left:2px solid color-mix(in srgb,var(--leaf) 55%,transparent);font-size:.92rem;line-height:1.6;color:var(--ink-2)}
+.hrule b{color:var(--ink)}
+
+/* the footer holds the page settings */
+.end .ctl #tone,.end .ctl #still{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
+
+/* hover answers with colour, not movement */
+.t-lift:hover,.t-lift:focus-within,.t:active{transform:none}
+</style>
+<script>
+(function(){
+"use strict";
+var D=document, W=window, R=D.documentElement;
+var reduce = W.matchMedia && W.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* a phone asking to save data, or one with very little memory, gets the same
+   sky without the perpetual motion */
+var NAV=W.navigator||{}, LITE=!!((NAV.connection&&NAV.connection.saveData)||(NAV.deviceMemory&&NAV.deviceMemory<=2));
+var STILL=false; try{ STILL=localStorage.getItem("mvv.still")==="1"; }catch(e){}
+if(STILL) R.classList.add("still");
+R.classList.add("has-js");
+/* JS takes over anchor scrolling, so the CSS fallback must get out of the way */
+R.style.scrollBehavior="auto";
+function easeIO(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+D.addEventListener("click",function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+  var id=a.getAttribute("href").slice(1); if(!id) return;
+  var el=D.getElementById(id); if(!el) return;
+  e.preventDefault();
+  var to=Math.max(0,Math.min(el.getBoundingClientRect().top+W.scrollY-6,
+                             D.documentElement.scrollHeight-W.innerHeight));
+  if(reduce||Math.abs(to-W.scrollY)<2){ W.scrollTo(0,to); history.replaceState(null,"","#"+id); return; }
+  var from=W.scrollY, dist=Math.abs(to-from),
+      dur=Math.max(520,Math.min(1250,500+Math.sqrt(dist)*9)), t0=null, done=false;
+  /* frames can stall — a tab backgrounded mid-jump, a throttled embed. The
+     journey is decoration; arriving is not, so a plain timer guarantees it. */
+  var land=setTimeout(function(){ if(!done){ W.scrollTo(0,to); history.replaceState(null,"","#"+id); } },dur+450);
+  requestAnimationFrame(function step(ts){
+    if(t0===null)t0=ts;
+    var k=Math.min(1,(ts-t0)/dur);
+    W.scrollTo(0,from+(to-from)*easeIO(k));
+    if(k<1){ requestAnimationFrame(step); }
+    else { done=true; clearTimeout(land); history.replaceState(null,"","#"+id); }
+  });
+});
+function $(s,c){return (c||D).querySelector(s)}
+function $$(s,c){return Array.prototype.slice.call((c||D).querySelectorAll(s))}
+function clamp(v,a,b){return v<a?a:v>b?b:v}
+function lerp(a,b,t){return a+(b-a)*t}
+
+/* ══════════════════════════════════════════════════════════════════════
+   0. FACES
+   Every person in this product has a face, and none of them is a stock
+   photograph or an empty grey circle. Each is a small rosette generated
+   from the name itself — same name, same face, forever — built from the
+   geometry a temple ceiling uses: a ring, a count of petals, a centre.
+   Nothing is fetched, nothing is stored, and nobody's likeness is used.
+   ══════════════════════════════════════════════════════════════════════ */
+var AV_INK=["#E0A063","#C98BA0","#9FD6C8","#A3B0EE","#F0B36B","#D98A5F","#C7B27A","#B9A2D6"];
+var AV_BG =["#2E211A","#28202F","#2C2420","#222A29","#312718"];
+function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+var AVN=0;   /* one id per rendering, so the same face twice never shares a gradient */
+function avatar(name){
+  /* A rosette, not a portrait: nobody here is asked for their face. It has to
+     survive being 32px wide, which the old ring of sub-pixel dots did not, so
+     the mark is now three readable rings — a lit ground, radial petals, and a
+     point at the centre. */
+  var h=hash(name),
+      ink=AV_INK[h%AV_INK.length],
+      bg=AV_BG[(h>>4)%AV_BG.length],
+      petals=5+((h>>8)%4),          /* 5..8 */
+      rot=(h>>12)%72,
+      id="av"+h.toString(36)+"-"+(AVN++),
+      o='<svg viewBox="0 0 40 40" aria-hidden="true">'+
+        '<defs><radialGradient id="'+id+'" cx="50%" cy="32%" r="78%">'+
+          '<stop offset="0" stop-color="'+ink+'" stop-opacity=".40"/>'+
+          '<stop offset="62%" stop-color="'+ink+'" stop-opacity=".13"/>'+
+          '<stop offset="100%" stop-color="'+bg+'"/></radialGradient></defs>'+
+        '<rect width="40" height="40" fill="'+bg+'"/>'+
+        '<rect width="40" height="40" fill="url(#'+id+')"/>'+
+        '<g transform="rotate('+rot+' 20 20)">'+
+        '<circle cx="20" cy="20" r="15" fill="none" stroke="'+ink+'" stroke-opacity=".38" stroke-width="1.1"/>';
+  for(var j=0;j<petals;j++){
+    var b=j/petals*6.2832-1.5708,
+        cx=(20+Math.cos(b)*10.2), cy=(20+Math.sin(b)*10.2),
+        dg=(b*57.2958).toFixed(1);
+    o+='<ellipse cx="'+cx.toFixed(2)+'" cy="'+cy.toFixed(2)+'" rx="3.9" ry="2.5" fill="'+ink+'" fill-opacity=".9"'+
+       ' transform="rotate('+dg+' '+cx.toFixed(2)+' '+cy.toFixed(2)+')"/>';
+  }
+  return o+'<circle cx="20" cy="20" r="5.6" fill="none" stroke="'+ink+'" stroke-opacity=".55" stroke-width="1.1"/>'+
+           '<circle cx="20" cy="20" r="2.6" fill="'+ink+'"/></g></svg>';
+}
+/* ══════════════════════════════════════════════════════════════════════
+   1. ONE SKY, SHARED BY THE WHOLE PAGE
+
+   No section owns a colour. Every colour is a live variable rewritten from
+   the scroll position, so the whole visible page always sits in one moment
+   of one dawn and moving between sections is a cross-fade, never a step.
+
+   The sky travels a full night. Its morning is the Bolo palette used in
+   order — terracotta at the horizon, then gerua, then turmeric light, then
+   parchment — because those five tones are a sunrise if you lay them out in
+   sequence. What that palette has no colour for is night, so the night is a
+   deep warm violet: the hour that already has the warmth in it, before there
+   is any sun to explain it.
+
+   Content NEVER trades readability for the effect. Every section sits on a
+   veil, and the veil keeps it dark and its ink light the whole way down. The
+   morning is only ever let through where there is nothing to read — the
+   closing zone and the footer. The veil also THINS as you descend, because
+   the koshas are sheaths and by the end there is no sheath left.
+   ══════════════════════════════════════════════════════════════════════ */
+function smooth(a,b,x){x=clamp((x-a)/(b-a),0,1);return x*x*(3-2*x)}
+function mix(a,b,x){return a+(b-a)*x}
+function lerpRGB(a,b,x){return[Math.round(a[0]+(b[0]-a[0])*x),Math.round(a[1]+(b[1]-a[1])*x),Math.round(a[2]+(b[2]-a[2])*x)]}
+function rgbs(c){return "rgb("+c[0]+","+c[1]+","+c[2]+")"}
+function rgbas(c,a){return "rgba("+c[0]+","+c[1]+","+c[2]+","+a.toFixed(3)+")"}
+
+var SKY=[
+/* t      sky            veil          vA    ink            ink-2          ink-3          accent         edge          */
+ [0,    [22,16,34],   [17,12,22],   .70, [245,233,214], [224,208,190], [201,183,155], [248,201,79],  [186,150,168]],
+ [.30,  [31,19,38],   [25,16,25],   .68, [245,233,214], [224,208,190], [201,183,155], [248,201,79],  [196,154,158]],
+ [.58,  [47,26,36],   [37,22,22],   .68, [246,235,217], [226,210,192], [203,186,158], [249,203,84],  [206,160,146]],
+ [.80,  [78,44,31],   [49,28,19],   .74, [248,238,221], [229,213,194], [206,189,161], [250,206,90],  [216,170,138]],
+ /* terracotta at the horizon — the first of the five tones to arrive */
+ [.90,  [155,73,44],  [48,28,18],   .84, [251,242,227], [232,217,198], [210,193,166], [251,208,96],  [224,180,144]],
+ /* gerua, the tone the whole palette was named for, at full strength */
+ [.965, [224,122,47], [46,27,17],   .88, [254,247,235], [236,222,204], [214,198,172], [253,212,108], [230,190,150]],
+ /* and then parchment: full morning, and the last swatch on the card */
+ [1,    [245,233,214],[42,25,16],   .90, [255,250,242], [238,224,208], [216,200,176], [254,214,116], [236,198,158]]
+];
+/* MORNING drives only how far the veil is allowed to lift. Nothing inverts:
+   see the note above .night in the stylesheet for why that was abandoned. */
+var lastSky=-1, MORNING=0;
+
+/* The sunrise begins exactly when the last readable thing clears the screen —
+   measured from where the closing zone actually starts, not guessed, so it
+   holds at any viewport and any content length. */
+/* recomputed in measure(), never during a scroll or a frame */
+var DAWN=.90;
+function dawnStart(){ return DAWN; }
+/* remap scroll so the night occupies everything up to that point, and the
+   whole sunrise happens inside the quiet zone at the foot of the page */
+function phaseOf(t){var d=DAWN;return t<d?(t/d)*.8:.8+((t-d)/(1-d))*.2}
+
+function skyAt(t){
+  var i=0; while(i<SKY.length-2&&t>SKY[i+1][0])i++;
+  var a=SKY[i],b=SKY[i+1],x=clamp((t-a[0])/(b[0]-a[0]),0,1);
+  x=x*x*(3-2*x);                                   /* ease every crossing */
+  return {sky:lerpRGB(a[1],b[1],x),veil:lerpRGB(a[2],b[2],x),vA:a[3]+(b[3]-a[3])*x,
+          ink:lerpRGB(a[4],b[4],x),ink2:lerpRGB(a[5],b[5],x),ink3:lerpRGB(a[6],b[6],x),
+          acc:lerpRGB(a[7],b[7],x),edge:lerpRGB(a[8],b[8],x)};
+}
+var ATINT=[30,35,40,42,45,50,65,70,80,85,90];
+var themeMeta=$('meta[name="theme-color"]'), skyCache={};
+function setVar(k,v){ if(skyCache[k]!==v){ skyCache[k]=v; R.style.setProperty(k,v); } }
+function paintSky(t){
+  if(Math.abs(t-lastSky)<.0015) return;            /* only repaint on real change */
+  lastSky=t;
+  var p=phaseOf(t), c=skyAt(p);
+  /* flips late and fast, inside the last stretch of the sunrise, so the
+     closing ink is never a mid-tone standing on a mid-tone ground */
+  MORNING=smooth(.93,.999,p);
+  setVar("--void",rgbs(c.sky));
+  setVar("--scrim",rgbas(c.veil,c.vA));
+  setVar("--scrim-soft",rgbas(c.veil,c.vA*.82));
+  setVar("--scrim-thin",rgbas(c.veil,c.vA*.46));
+  /* nothing reads on this one — it is the strip the morning is let through */
+  setVar("--scrim-thinner",rgbas(c.veil,c.vA*.20*(1-MORNING)+.03*MORNING));
+  /* The chrome never crosses over. It keeps a dark bar and light text the
+     whole way, because a bar fading through mid-grey on a mid ground is
+     unreadable at exactly the halfway point — and a dark bar standing on
+     morning is no hardship at all. */
+  setVar("--chrome",rgbas(c.veil,Math.max(.80,c.vA)));
+  setVar("--ink",rgbs(c.ink));
+  setVar("--ink-2",rgbs(c.ink2));
+  setVar("--ink-3",rgbs(c.ink3));
+  setVar("--accent",rgbs(c.acc));
+  ATINT.forEach(function(a){ setVar("--a"+a, rgbas(c.acc, a/100)); });
+  setVar("--line",rgbas(c.edge,.26));
+  setVar("--line-2",rgbas(c.edge,.13));
+  setVar("--panel",rgbas(c.ink,.045));
+  setVar("--panel-2",rgbas(c.ink,.075));
+  setVar("--warm",p.toFixed(2));
+  if(themeMeta) themeMeta.setAttribute("content",rgbs(lerpRGB(c.veil,c.sky,1-c.vA)));
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   2. THE JOURNEY — a point becomes a field, and the field becomes a hum.
+
+   One singularity opens into a sky while the page is still talking about the
+   outer, public layers, and draws back in as it descends toward the private
+   core: the same movement as the koshas, at cosmic scale. What it gathers
+   into is the chandrabindu — the bowl and the point of light, which is the
+   mark, the lamp and the cooling-off timer. Then rings leave it, which is
+   what a chandrabindu means: the resonance that carries on after the word.
+
+   Drawn as light rather than as type — three layers, blurred at build time,
+   composited at descending alpha — so it never depends on a webfont arriving
+   and never falls back to a missing glyph.
+   ══════════════════════════════════════════════════════════════════════ */
+var cvs=$("#cosmos"), cctx=cvs?cvs.getContext("2d"):null,
+    stars=[], bloomImg=null, coreImg=null, waveImg=null, waveGerua=null,
+    binduL=null, binduD=null, BINDU_INK=.90, CW=0, CH=0;
+
+/* ── the twenty-seven nakshatras ──
+   The moon crosses all 27 lunar mansions in about 27.3 days, so the page is
+   laid out as one full cycle: top to bottom walks the whole month, one
+   mansion at a time. Each carries its traditional figure. Deliberately
+   unlabelled — a figure you notice and wonder about is better company than
+   one that announces itself. The names stay here as the record of what is
+   being drawn, which is the same bargain the silent engine makes. */
+var NAK=[
+ ["Ashwini","20,70 50,30 78,62"],["Bharani","50,25 22,75 78,75"],
+ ["Krittika","30,40 46,29 59,44 40,57 67,60 52,69"],["Rohini","22,66 50,26 78,66 34,80 68,80"],
+ ["Mrigashirsha","34,64 50,32 68,62"],["Ardra","50,50"],
+ ["Punarvasu","26,66 40,34 60,34 74,66"],["Pushya","50,28 30,66 70,66"],
+ ["Ashlesha","24,72 36,46 54,34 70,48 66,72"],["Magha","26,72 26,44 50,30 74,44 74,72"],
+ ["Purva Phalguni","36,42 64,66"],["Uttara Phalguni","36,66 64,42"],
+ ["Hasta","24,62 38,38 52,30 66,38 76,60"],["Chitra","50,50"],["Swati","50,48"],
+ ["Vishakha","26,72 32,40 68,40 74,72"],["Anuradha","50,28 28,54 72,54 50,74"],
+ ["Jyeshtha","50,28 34,60 66,60"],["Mula","50,22 38,40 62,40 28,58 50,58 72,58 34,78 50,84 66,78"],
+ ["Purva Ashadha","38,38 62,68"],["Uttara Ashadha","38,68 62,38"],
+ ["Shravana","30,70 50,50 70,30"],["Dhanishtha","32,34 68,34 32,70 68,70"],
+ ["Shatabhisha","50,50"],["Purva Bhadrapada","40,32 60,70"],
+ ["Uttara Bhadrapada","40,70 60,32"],["Revati","26,52 38,36 56,32 72,44 74,60 56,70 38,66 30,60"]
+];
+NAK.forEach(function(n){n[2]=n[1].split(" ").map(function(p){var a=p.split(",");return[+a[0]/100,+a[1]/100]})});
+
+function sprite(size,stops){
+  var s=D.createElement("canvas"); s.width=s.height=size;
+  var g=s.getContext("2d"),grd=g.createRadialGradient(size/2,size/2,0,size/2,size/2,size/2);
+  stops.forEach(function(st){grd.addColorStop(st[0],st[1])});
+  g.fillStyle=grd; g.fillRect(0,0,size,size); return s;
+}
+/* the chandrabindu, as light. Same geometry as the logo, so the thing the
+   journey resolves into is literally the mark on the header. */
+function buildBindu(fill,S,blurFrac){
+  var c=D.createElement("canvas"); c.width=c.height=S;
+  var g=c.getContext("2d"), k=S/100;
+  if(blurFrac) g.filter="blur("+(S*blurFrac).toFixed(1)+"px)";
+  g.strokeStyle=fill; g.fillStyle=fill; g.lineCap="round"; g.lineJoin="round";
+  g.scale(k,k);
+  g.lineWidth=2.4; g.globalAlpha=.45;                 /* the echo — resonance */
+  g.beginPath(); g.moveTo(7,43); g.bezierCurveTo(7,87,93,87,93,43); g.stroke();
+  g.globalAlpha=1; g.lineWidth=8;                     /* the bowl */
+  g.beginPath(); g.moveTo(21,49); g.bezierCurveTo(21,80,79,80,79,49); g.stroke();
+  g.beginPath(); g.arc(50,25,10,0,6.2832); g.fill();  /* the point of light */
+  return c;
+}
+function binduSet(fill){return[buildBindu(fill,256,.085),buildBindu(fill,384,.028),buildBindu(fill,576,.004)]}
+var BW=[.34,.5,1];
+function drawBindu(set,Dm,a,cx,cy){
+  if(!set||a<=.002) return;
+  for(var i=0;i<3;i++){cctx.globalAlpha=a*BW[i];cctx.drawImage(set[i],cx-Dm/2,cy-Dm/2,Dm,Dm)}
+}
+/* Density scales with viewport area — a fixed count that reads as a field on
+   a laptop disappears entirely on a wide monitor. */
+function buildField(){
+  var n=Math.round(Math.min(330,Math.max(64,(W.innerWidth*W.innerHeight)/5200)));
+  stars=[];
+  for(var i=0;i<n;i++) stars.push({
+    a:Math.random()*6.2832,
+    /* floor the radius: stars at r≈0 would park on the dead-centre pixel for
+       the whole open-field phase, sitting behind the body text */
+    r:.14+Math.pow(Math.random(),.62)*.86,
+    /* height above the plane, biased toward it, so the field is a thick disc
+       rather than a ball — a galaxy, not a swarm */
+    hz:(Math.random()*2-1)*Math.pow(Math.random(),.5),
+    s:Math.random()*1.5+.7, w:Math.random()*.5+.5, k:Math.random()*.5+.82,
+    tw:Math.random()<.55, ph:Math.random()*6.28,
+    br:.00009+Math.random()*.00022, ba:.006+Math.random()*.016,
+    tr:.0007+Math.random()*.0012, warm:Math.random()<.12
+  });
+}
+function sizeCosmos(){
+  if(!cctx) return;
+  var dpr=(W.innerWidth<760||LITE)?1:Math.min(W.devicePixelRatio||1,2);
+  CW=W.innerWidth; CH=W.innerHeight;
+  cvs.width=Math.round(CW*dpr); cvs.height=Math.round(CH*dpr);
+  cvs.style.width=CW+"px"; cvs.style.height=CH+"px";
+  cctx.setTransform(dpr,0,0,dpr,0,0);
+}
+
+function drawCosmos(t,time,br){
+  if(!cctx) return;
+  var w=CW,h=CH,cx=w/2,cy=h/2,mind=Math.min(w,h);
+  cctx.clearRect(0,0,w,h);
+  t=phaseOf(t);
+  var grow=smooth(.02,.38,t),        /* the expansion */
+      pull=smooth(.55,.80,t),        /* the gathering back in */
+      /* rise, a real plateau at full presence, then a release. The pale mark
+         lives entirely against the night and lets go completely; a darker one
+         returns once the light has settled and stays — so the foot of the page
+         is somewhere to be, not somewhere the page stops. */
+      rise=smooth(.76,.86,t),
+      binduLA=rise*(1-smooth(.925,.975,t)),
+      binduDA=smooth(.965,1,t)*.34,
+      diss=smooth(.86,1,t),
+      spread=grow*(1-pull)+diss*.95,
+      coreI=Math.max(Math.pow(1-grow,1.6),Math.pow(pull,2.2)*Math.max(0,1-diss*1.25)),
+      /* everything born of the singularity keeps orbiting it. About three
+         a revolution: slow enough to rest against, fast enough that you can
+         actually watch a star travel while the page sits still. Nothing here
+         is driven by scrolling; scrolling only changes where the sky IS. */
+      rot=t*1.15+time*.00013,
+      /* the sunrise waits until the mark has had its moment in the dark — a
+         pale glyph and a dark one cross-fading over a mid ground cancel each
+         other out, so the two events are separated in time instead */
+      dawn=smooth(.90,.998,t),
+      /* The sky is a volume, not a picture of one. Everything sits somewhere
+         real in it and is projected with perspective, so near things are
+         larger, brighter and sweep faster. The elevation opens as you descend:
+         you begin looking along the plane and slowly rise above it. */
+      elev=mix(.61,1.08,smooth(0,.75,t)),
+      cosE=Math.cos(elev), sinE=Math.sin(elev), focal=mind*2.1;
+
+  /* the halo — wide, and only a few levels above the void */
+  var bR=mix(.22,1.34,spread)*mind*(1+br*.03);
+  cctx.globalAlpha=mix(.6,.26,spread)*(.92+br*.12)*(1-dawn*.8);
+  cctx.drawImage(bloomImg,cx-bR,cy-bR,bR*2,bR*2);
+
+  /* the field — rises out of the singularity, draws in, then returns */
+  var starA=smooth(.03,.18,t)*(1-smooth(.82,.92,t)*.8);
+  starA=Math.min(1,starA+diss*.9);
+  if(starA>.004){
+    for(var i=0;i<stars.length;i++){
+      var st=stars[i],
+          bob=Math.sin(time*st.br+st.ph)*st.ba,
+          rad=st.r*spread*mind*.8*(1+bob)+2,
+          /* inner orbits run faster than outer ones, the way real ones do —
+             rigid rotation reads as a spinning picture, not as a sky */
+          ang=st.a+rot*st.k*(1.55-st.r*.85)+Math.sin(time*st.br*.7+st.ph)*.014,
+          wx=Math.cos(ang)*rad, wz=Math.sin(ang)*rad, wy=st.hz*spread*mind*.3,
+          ry=wy*cosE-wz*sinE, rz=wy*sinE+wz*cosE,
+          persp=focal/(focal+rz);
+      if(persp<=.06) continue;                       /* behind the eye */
+      var x=cx+wx*persp, y=cy+ry*persp,
+          tw=st.tw?(.6+.4*Math.sin(time*st.tr+st.ph)):1,
+          near=Math.min(1.3,Math.max(.42,persp)),
+          sz=st.s*Math.min(1.85,Math.max(.55,persp)),
+          a=starA*st.w*tw*near*(1-dawn);
+      cctx.fillStyle=st.warm?"#f6bd7c":"#f5ecd8";
+      if(sz>1.75){cctx.globalAlpha=a*.22;cctx.fillRect(x-1.5,y-1.5,sz+3,sz+3)}
+      cctx.globalAlpha=a; cctx.fillRect(x,y,sz,sz);
+    }
+  }
+
+  /* the nakshatra currently overhead — drawn where the moon would be standing
+     in the cycle, riding the same tilted plane as the rest of the field */
+  var nakI=Math.min(NAK.length-1,Math.floor(t*NAK.length)), nakP=t*NAK.length-nakI,
+      nakA=Math.min(smooth(0,.22,nakP),1-smooth(.78,1,nakP))*(1-dawn)*.62;
+  if(nakA>.004&&starA>.05){
+    var pts=NAK[nakI][2],
+        seat=(nakI/NAK.length)*6.2832+time*.00011+rot*.5,
+        orbit=mind*(.33+.05*Math.sin(time*.000031+nakI)),
+        nwx=Math.cos(seat)*orbit, nwz=Math.sin(seat)*orbit, nwy=-mind*.05,
+        nry=nwy*cosE-nwz*sinE, nrz=nwy*sinE+nwz*cosE,
+        nP=Math.max(.4,focal/(focal+nrz)),
+        nx=cx+nwx*nP, ny=cy+nry*nP,
+        size=mind*(.30+.022*Math.sin(time*.00006+nakI*.7))*nP;
+    nakA*=Math.min(1.15,nP);
+    cctx.save(); cctx.translate(nx,ny); cctx.rotate(time*.000028+nakI*.9);
+    cctx.strokeStyle="#f7e4c6"; cctx.fillStyle="#fff5e0"; cctx.lineWidth=1.4;
+    if(pts.length>1){
+      cctx.globalAlpha=nakA*.42; cctx.beginPath();
+      for(var q=0;q<pts.length;q++){
+        var px=(pts[q][0]-.5)*size, py=(pts[q][1]-.5)*size;
+        if(q===0)cctx.moveTo(px,py); else cctx.lineTo(px,py);
+      }
+      cctx.stroke();
+    }
+    for(var q2=0;q2<pts.length;q2++){
+      var qx=(pts[q2][0]-.5)*size, qy=(pts[q2][1]-.5)*size,
+          twk=.68+.32*Math.sin(time*.0011+q2*1.7+nakI);
+      cctx.globalAlpha=nakA*twk*.55; cctx.beginPath(); cctx.arc(qx,qy,4.4,0,6.2832); cctx.fill();
+      cctx.globalAlpha=nakA*twk;     cctx.beginPath(); cctx.arc(qx,qy,2.3,0,6.2832); cctx.fill();
+    }
+    cctx.restore();
+  }
+
+  /* the point itself — small and hot, never a wash */
+  if(coreI>.012){
+    var cR=mix(mind*.035,mind*.10,coreI);
+    cctx.globalAlpha=Math.min(1,coreI)*(1-dawn*.55);
+    cctx.drawImage(coreImg,cx-cR,cy-cR,cR*2,cR*2);
+  }
+
+  /* sunrise — a wash of morning rising over everything above it, so the field
+     does not vanish so much as get outshone. Terracotta and gerua first, and
+     only then does the light give up colour for parchment. */
+  if(dawn>.002){
+    var whiten=smooth(.945,1,t),
+        sun=cctx.createRadialGradient(cx,cy+h*.12,0,cx,cy+h*.12,mind*1.5),
+        GER=[[248,201,79,.98],[224,122,47,.94],[180,75,42,.86],[120,52,32,.70]],
+        PAR=[[255,252,246,.99],[250,240,222,.97],[245,233,214,.92],[238,222,200,.82]],
+        ST=[0,.34,.72,1];
+    for(var si=0;si<4;si++){
+      var a1=GER[si],b1=PAR[si];
+      sun.addColorStop(ST[si],"rgba("+Math.round(mix(a1[0],b1[0],whiten))+","+
+        Math.round(mix(a1[1],b1[1],whiten))+","+Math.round(mix(a1[2],b1[2],whiten))+","+
+        mix(a1[3],b1[3],whiten).toFixed(3)+")");
+    }
+    cctx.globalAlpha=dawn*(.94+br*.06);
+    cctx.fillStyle=sun; cctx.fillRect(0,0,w,h);
+  }
+
+  /* the mark, ink-centred, swelling and thinning as it lets go. Two sprites
+     cross-fade so it stays legible as the ground turns from night to morning. */
+  if(binduLA>.002||binduDA>.002){
+    /* it breathes a half-cycle out of step with the halo, so the two are
+       never at their fullest at the same moment */
+    var mb=1-br,
+        Dm=(mind*(.50+diss*.12))/BINDU_INK*(.983+mb*.034),
+        bA=.90+mb*.2;
+    drawBindu(binduL,Dm,binduLA*.26*bA,cx,cy);
+    drawBindu(binduD,Dm*.82,binduDA*.44*bA,cx,cy+h*.26);
+  }
+
+  /* the resonance — concentric rings leaving centre, carrying the sound back
+     out into the field it came from. Two rings, not three, and slow: emptiness
+     is most of what makes this calm, and Shunyata applies to motion too. */
+  if(diss>.004&&waveImg){
+    for(var v=0;v<3;v++){
+      var pw=((time/13000)+v/3)%1, wR=(.08+pw*1.32)*mind, wA=diss*Math.pow(1-pw,1.45)*1.05;
+      if(dawn<.995){cctx.globalAlpha=wA*(1-dawn);cctx.drawImage(waveImg,cx-wR,cy-wR,wR*2,wR*2)}
+      if(dawn>.005&&waveGerua){cctx.globalAlpha=Math.min(1,wA*dawn*1.5);cctx.drawImage(waveGerua,cx-wR,cy-wR,wR*2,wR*2)}
+    }
+  }
+  cctx.globalAlpha=1;
+}
+
+if(cctx){
+  bloomImg=sprite(512,[[0,"rgba(158,110,48,.55)"],[.32,"rgba(124,82,34,.22)"],
+                       [.68,"rgba(78,50,18,.07)"],[1,"rgba(0,0,0,0)"]]);
+  coreImg=sprite(256,[[0,"rgba(255,236,184,1)"],[.10,"rgba(255,226,160,.86)"],
+                      [.34,"rgba(240,164,74,.20)"],[1,"rgba(224,122,47,0)"]]);
+  waveImg=sprite(512,[[0,"rgba(0,0,0,0)"],[.60,"rgba(0,0,0,0)"],
+                      [.76,"rgba(226,182,124,.34)"],[.86,"rgba(255,236,190,.78)"],
+                      [.93,"rgba(226,182,124,.22)"],[1,"rgba(0,0,0,0)"]]);
+  waveGerua=sprite(512,[[0,"rgba(0,0,0,0)"],[.60,"rgba(0,0,0,0)"],
+                        [.76,"rgba(210,104,34,.42)"],[.86,"rgba(236,142,46,.92)"],
+                        [.93,"rgba(180,75,42,.28)"],[1,"rgba(0,0,0,0)"]]);
+  binduL=binduSet("#ffe9c4");     /* against the night */
+  binduD=binduSet("#8a5a3a");     /* the quiet mark that returns on morning */
+  buildField(); sizeCosmos();
+  W.addEventListener("resize",function(){sizeCosmos();buildField();roomCanvasSize();drawCosmos(tSeen,0,.5)},{passive:true});
+}
+/* ══════════════════════════════════════════════════════════════════════
+   4. WAYFINDING — six stops, and the page says where you are in them.
+   A line in the header fills as you read; the nav marks the part of the
+   product you are looking at; on a phone the menu button counts the stops.
+   The lamp rail this replaces was hidden on most screens and repeated the nav.
+   ══════════════════════════════════════════════════════════════════════ */
+var SECS=["explore","why","how","communities","house","principles","join"];
+var NAVOF={explore:"explore",how:"how",communities:"communities",house:"house",principles:"principles"};
+var segEls=$$("#segbar i"), stopNow=$("#stopNow"), sheetLinks=$$("#sheet .sheet-l a"),
+    navLinks=$$(".top nav a"), hprog=$("#hprog"), litCount=-2, progV=-1;
+var SECTOP=[];                       /* filled by measure(), read by wayfind() */
+function wayfind(){
+  var p=Math.round(journey*500)/500;
+  if(p!==progV&&hprog){ progV=p; hprog.style.transform="scaleX("+p+")"; }
+  var mid=W.scrollY+W.innerHeight*0.42, cur=-1;
+  for(var i=0;i<SECTOP.length;i++){ if(SECTOP[i]<=mid) cur=i; }
+  if(cur===litCount) return;
+  litCount=cur;
+  segEls.forEach(function(s,i){s.classList.toggle("on",i<=cur)});
+  if(stopNow) stopNow.textContent=cur<0?"Menu":(cur+1)+" / "+SECS.length;
+  sheetLinks.forEach(function(a,i){a.classList.toggle("on",i===cur)});
+  var here=cur<0?"":NAVOF[SECS[cur]]||"";
+  navLinks.forEach(function(a){
+    var on=a.getAttribute("href")==="#"+here;
+    a.classList.toggle("on",on);
+    if(on) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current");
+  });
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   5. THE SOURCE OF TRUTH, AND THE LOOP
+
+   Scroll tracking deliberately does NOT depend on requestAnimationFrame.
+   Where rAF is throttled — a background tab, some embeds — the easing loop
+   stops, and the sky would otherwise freeze at the singularity forever. The
+   loop is an enhancement; this handler is the truth.
+
+   The loop eases toward the scroll position rather than tracking it 1:1.
+   That lag is most of what makes the sky read as drift rather than a scrub.
+   ══════════════════════════════════════════════════════════════════════ */
+var journey=0, tSeen=0, lastLoop=-1e6, lastT=0, docMax=0, running=false, lastDraw=0, skyT=0;
+/* The one place in the whole page that is allowed to force a layout. */
+function measure(){
+  docMax=D.documentElement.scrollHeight-W.innerHeight;
+  var f=$(".end");
+  DAWN=(f&&docMax>0)?Math.min(.95,Math.max(.5,(f.offsetTop-W.innerHeight*1.5)/docMax)):.90;
+  SECTOP=SECS.map(function(id){var e=D.getElementById(id);return e?e.offsetTop:1e9});
+}
+function onScroll(){
+  journey=docMax>0?clamp(W.scrollY/docMax,0,1):0;
+  wayfind();
+  /* the loop owns the sky; this only takes over when frames are not running */
+  if(reduce||performance.now()-lastLoop>400){
+    tSeen=journey;
+    paintSky(tSeen);
+    drawCosmos(tSeen,reduce?0:skyT,.5);
+  }
+  wake();
+}
+W.addEventListener("scroll",onScroll,{passive:true});
+
+function ambientOn(){ return !(LITE||STILL); }
+function wake(){ if(running||reduce) return; running=true; lastT=0; requestAnimationFrame(frame); }
+function frame(t){
+  lastLoop=t;
+  if(!lastT)lastT=t;
+  var dt=Math.min(t-lastT,80); lastT=t;
+  if(docMax>0){ var j=clamp(W.scrollY/docMax,0,1); if(j!==journey){ journey=j; wayfind(); } }
+  var gap=journey-tSeen, easing=Math.abs(gap)>.0006, amb=ambientOn();
+  /* the lag is most of what makes the sky drift rather than scrub; it is
+     frame-rate independent now, so 30 frames ease exactly like 60 */
+  tSeen = easing ? tSeen+gap*(1-Math.pow(.925,dt/16.7)) : journey;
+  if(amb) skyT=t;
+  if(easing || (amb && t-lastDraw>=32)){
+    lastDraw=t;
+    paintSky(tSeen);
+    drawCosmos(tSeen, skyT, amb?(1-Math.cos(t/11000*6.2832))/2:.5);
+  }
+  if(amb) roomAmbient(dt);
+  coolTick(t);
+  if(easing||amb||coolEnd) requestAnimationFrame(frame);
+  else running=false;          /* asleep until the next scroll, press or resize */
+}
+/* measure first: onScroll reads the cache, so the cache has to exist before
+   the first paint — otherwise a page opened at a #hash starts on the wrong
+   moment of the sky. Re-run once the late modules have injected their content
+   and the document has its final height. */
+function resync(){ measure(); onScroll(); }
+resync();
+W.addEventListener("resize",resync,{passive:true});
+/* layout changes (fonts arriving, a demo growing) re-measure, instead of a forced read every 45 frames */
+if("ResizeObserver" in W){ new ResizeObserver(function(){ measure(); wake(); }).observe(D.body); }
+setTimeout(resync,300); setTimeout(resync,1400);
+if(reduce) drawCosmos(tSeen,0,.5); else wake();
+
+/* ══════════════════════════════════════════════════════════════════════
+   6. LIT, not slid in.
+   ══════════════════════════════════════════════════════════════════════ */
+if("IntersectionObserver" in W){
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("lit");io.unobserve(e.target);}
+    });
+  },{rootMargin:"0px 0px -12% 0px",threshold:.12});
+  $$(".rv,.stag").forEach(function(el){io.observe(el)});
+}else{ $$(".rv,.stag").forEach(function(el){el.classList.add("lit")}); }
+W.__mvvOK=true;   /* the head watchdog stands down: reveals are wired */
+
+/* ══════════════════════════════════════════════════════════════════════
+   8. ARRIVAL — four moves
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+  var tabs=$$("#stepPick button"), panes=$$(".pane"), bar=$("#stepBar"),
+      prev=$("#sPrev"), next=$("#sNext"), cur=0;
+  function go(i){
+    cur=clamp(i,0,tabs.length-1);
+    tabs.forEach(function(b,n){b.setAttribute("aria-selected",n===cur?"true":"false")});
+    panes.forEach(function(p,n){p.classList.toggle("on",n===cur)});
+    bar.style.width=((cur+1)/tabs.length*100)+"%";
+    prev.disabled=cur===0; next.disabled=cur===tabs.length-1;
+  }
+  tabs.forEach(function(b,n){b.addEventListener("click",function(){go(n)})});
+  prev.addEventListener("click",function(){go(cur-1)});
+  next.addEventListener("click",function(){go(cur+1)});
+  go(0);
+})();
+
+/* ═══════════════════════════════════════════════════════════════════
+   10c. THE DOOR
+   Set JOIN_ENDPOINT to a URL and this POSTs {email} as JSON; the server is
+   expected to send one confirmation message (double opt-in) and keep nothing
+   until it is clicked. Left empty, the form says plainly that nothing was
+   saved. The address is never stored in the browser and never echoed back,
+   because a shared family phone would show it to the next person.
+   ═════════════════════════════════════════════════════════════════ */
+var JOIN_ENDPOINT="";
+(function(){
+  var f=$("#joinform"), inp=$("#joinmail"), say=$("#joinsay"), btn=f?f.querySelector("button"):null;
+  if(!f) return;
+  try{ localStorage.removeItem("mvv.lamp"); }catch(e){}   /* an earlier draft of this page kept it */
+  function tell(t,ok){ say.textContent=t; say.classList.add("on"); say.classList.toggle("ok",!!ok);
+    inp.setAttribute("aria-invalid",ok?"false":"true"); }
+  function valid(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var v=(inp.value||"").trim();
+    if(!valid(v)){ tell("That does not look like an email address — have another go.",false); inp.focus(); return; }
+    btn.disabled=true;
+    if(JOIN_ENDPOINT){
+      fetch(JOIN_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:v})})
+        .then(function(r){ if(!r.ok) throw 0; inp.value=""; btn.disabled=false;
+          tell("Check your inbox: one message asks you to confirm. Nothing is kept until you do.",true); ping(5); })
+        .catch(function(){ btn.disabled=false; tell("That did not go through. Try again in a moment.",false); });
+    }else{
+      inp.value=""; btn.disabled=false;
+      tell("Thank you. The list is not open yet, so nothing was saved — not here, and not on a server.",true); ping(5);
+    }
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   11. FIVE ROOMS, FIVE PHYSICS
+   Not a tab switcher with different copy. Vayu really does let go of its
+   messages while you watch, and Akash really has no way to speak.
+   ══════════════════════════════════════════════════════════════════════ */
+var roomTimer=null, amb=$("#amb"), ax=amb?amb.getContext("2d"):null, AW=0,AH=0,P=[],ambCfg=null;
+var ROOM={
+  prithvi:{n:"Reading Circle",c:"var(--terra-lit)",ic:"#i-prithvi",
+    meta:"Reading Circle · kept over time · 2,140 notes", mode:"Shared record",
+    note:"Useful contributions stay easy to find and build on.",
+    speech:"Written, searchable",mem:"Kept over time",pace:"Thoughtful by design",who:"Everyone in the community",
+    say:{on:true,t:"What you add here stays easy to find for whoever reads the book next."},
+    msgs:[["Lakshmi","Added notes from chapter six. The part about memory and home stayed with me all week.","#2138"],
+          ["Ruth","Logged two readings of the same passage. We disagreed usefully, so I kept both.","#2139"],
+          ["Neha","Wrote a short summary so anyone joining next month can catch up.","#2140"]],
+    amb:{n:16,vy:.02,vx:0,r:1.4,a:.13,col:"217,138,95"}},
+  jal:{n:"Local Community",c:"var(--indigo)",ic:"#i-jal",
+    meta:"Local Community · kept 30 days · 41 here now", mode:"Everyday conversation",
+    note:"Held for thirty days, and then it lets go.",
+    speech:"Casual, written",mem:"Thirty days",pace:"Easy",who:"Everyone in the community",
+    say:{on:true,t:"Ask the small, practical question. That is what this space is for."},
+    msgs:[["Nandita","Does anyone know a quiet place to study near the library after six?","·"],
+          ["Harpreet","The reading room upstairs stays open until eight.","·"],
+          ["Tsering","Organising a Sunday clean-up by the lake. Bring gloves if you have them.","·"]],
+    amb:{n:22,vy:0,vx:.16,r:1.1,a:.14,col:"163,176,238"}},
+  vayu:{n:"Young Founders",c:"#9FD6C8",ic:"#i-vayu",
+    meta:"Young Founders · live session · gone in 24 hours", mode:"Live, not kept",
+    note:"Watch — these messages disappear while you read them.",
+    speech:"Spoken, unrecorded",mem:"Twenty-four hours",pace:"Fast",who:"Everyone in the community",
+    say:{on:true,t:"Nothing said here is saved. Ask the honest question."},
+    msgs:[["Navneet","Live now: a Q&A on finding your first ten customers. The link is in the header.","~"],
+          ["Samyak","How did you decide on pricing before you had any data?","~"],
+          ["Rukmini","This space closes tonight, so ask the question you would never put in writing.","~"]],
+    amb:{n:30,vy:.1,vx:.5,r:1,a:.2,col:"159,214,200"}},
+  akash:{n:"Language & Culture",c:"#C9B79B",ic:"#i-akash",
+    meta:"Language & Culture · announcements · 12,400 members", mode:"Announcements",
+    note:"There is no reply box here. Conversations happen in the discussion threads.",
+    speech:"None — you read",mem:"Kept",pace:"Rare",who:"Stewards only",
+    say:{on:false,t:"This space is for updates. Replies happen in the discussion threads."},
+    msgs:[["Stewards","This month's language-exchange pairs are up: 120 people matched with a conversation partner.","◦"],
+          ["Appeal review","Appeal 0114 was upheld. The full reasoning is attached, signed by all five reviewers.","◦"]],
+    amb:{n:12,vy:.012,vx:.01,r:1,a:.16,col:"201,183,155"}}
+};
+function roomCanvasSize(){
+  if(!amb) return;
+  var r=amb.parentElement; if(!r) return;
+  AW=r.clientWidth; AH=r.clientHeight;
+  var d=(W.innerWidth<760||LITE)?1:Math.min(W.devicePixelRatio||1,2);
+  amb.width=AW*d; amb.height=AH*d; amb.style.width=AW+"px"; amb.style.height=AH+"px";
+  ax.setTransform(d,0,0,d,0,0);
+}
+function seedAmb(cfg){
+  ambCfg=cfg; ambCfg.css="rgb("+cfg.col+")";   /* parsed once, not per particle */
+  P=[];
+  for(var i=0;i<cfg.n;i++)P.push({x:Math.random()*AW,y:Math.random()*AH,o:.3+Math.random()*.7,ph:Math.random()*6.28});
+}
+var roomSeen=false;
+function roomAmbient(dt){
+  if(!ambCfg||!AW||!ax||!roomSeen) return;   /* nothing to draw when off-screen */
+  ax.clearRect(0,0,AW,AH);
+  ax.fillStyle=ambCfg.css;
+  var k=reduce?0:dt/16;
+  for(var i=0;i<P.length;i++){
+    var p=P[i];
+    p.y-=ambCfg.vy*k; p.x+=ambCfg.vx*k; p.ph+=.01*k;
+    if(p.y<-6)p.y=AH+6; if(p.x>AW+6)p.x=-6; if(p.x<-6)p.x=AW+6;
+    ax.globalAlpha=ambCfg.a*p.o*(.6+.4*Math.sin(p.ph));
+    ax.beginPath();ax.arc(p.x,p.y,ambCfg.r,0,6.2832);ax.fill();
+  }
+  ax.globalAlpha=1;
+}
+if("IntersectionObserver" in W){
+  var rio=new IntersectionObserver(function(en){roomSeen=en[0].isIntersecting},{rootMargin:"200px"});
+  setTimeout(function(){var r=$("#room"); if(r) rio.observe(r);},50);
+}else{ roomSeen=true; }
+function msgEl(m){
+  var d=D.createElement("div"); d.className="msg";
+  d.innerHTML='<div class="av">'+avatar(m[0])+'</div><div class="bd"><div class="nmx"><span>'+m[0]+'</span><span class="ix">'+m[2]+'</span></div><div class="tx">'+m[1]+'</div></div>';
+  return d;
+}
+function setRoom(key){
+  var r=ROOM[key], box=$("#room"), body=$("#rBody");
+  if(roomTimer){clearInterval(roomTimer);roomTimer=null;}
+  box.dataset.el=key; box.style.setProperty("--rc",r.c);
+  $("#rIconUse").setAttribute("href",r.ic);
+  $("#rName").textContent=r.n; $("#rMeta").textContent=r.meta;
+  $("#rMode").textContent=r.mode; $("#rNote").textContent=r.note;
+  $("#rSpeech").textContent=r.speech; $("#rMem").textContent=r.mem;
+  $("#rPace").textContent=r.pace; $("#rWho").textContent=r.who;
+  body.innerHTML="";
+  r.msgs.forEach(function(m){body.appendChild(msgEl(m))});
+  var bar=D.createElement("div");
+  bar.className="saybar"+(r.say.on?"":" mute");
+  bar.innerHTML=(r.say.on
+    ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4.4 10.5C4.4 17.5 19.6 17.5 19.6 10.5" stroke-linecap="round"/><circle cx="12" cy="5.6" r="2.2" fill="currentColor" stroke="none"/></svg>'
+    : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M6 18 18 6" stroke-linecap="round"/></svg>')+'<span>'+r.say.t+'</span>';
+  body.appendChild(bar);
+  roomCanvasSize(); seedAmb(r.amb);
+
+  /* Vayu genuinely lets go. Nothing is archived, and you can watch it happen. */
+  if(key==="vayu"&&!reduce){
+    var pool=[["Jonah","Twenty minutes left, and then this room is gone.","~"],
+              ["Navneet","Someone note that pricing tip, because this room will not keep it.","~"],
+              ["Samyak","That is the trade. Nothing kept, everything present.","~"],
+              ["Rukmini","If this were recorded, I would never have asked my basic question.","~"]],n=0;
+    roomTimer=setInterval(function(){
+      if($("#room").dataset.el!=="vayu"){clearInterval(roomTimer);roomTimer=null;return;}
+      /* nothing disappears while someone is reading or focused in it (2.2.2) */
+      var rm=$("#room"); if(rm.matches(":hover")||rm.contains(D.activeElement)) return;
+      var first=body.querySelector(".msg");
+      if(first){first.classList.add("fading");setTimeout(function(){first.remove()},2600);}
+      body.insertBefore(msgEl(pool[n++%pool.length]),bar);
+    },3600);
+  }
+}
+$$("#roomPick button").forEach(function(b){
+  b.addEventListener("click",function(){
+    $$("#roomPick button").forEach(function(x){x.setAttribute("aria-pressed","false")});
+    b.setAttribute("aria-pressed","true"); setRoom(b.dataset.r); ping(1);
+  });
+});
+setTimeout(function(){setRoom("prithvi")},60);
+
+/* ══════════════════════════════════════════════════════════════════════
+   12. THE BOWL — the middle way, made of light instead of a lock.
+   ══════════════════════════════════════════════════════════════════════ */
+var coolEnd=0, CIRC=207.345;
+(function(){
+  var input=$("#cin"), post=$("#cpost"), thread=$("#thread"),
+      comp=$("#composer"), cool=$("#cool"), fil=$("#fil"), hits=[], draft="";
+  if(!input) return;
+  function say(){
+    var v=input.value.trim(); if(!v){input.focus();return;}
+    var d=D.createElement("div"); d.className="bub mine";
+    var by=D.createElement("span"); by.className="by"; by.textContent="You · just now";
+    d.appendChild(by); d.appendChild(D.createTextNode(v));
+    thread.appendChild(d); input.value=""; ping(3);
+    var now=Date.now(); hits.push(now); hits=hits.filter(function(t){return now-t<20000});
+    if(hits.length>=3){hits=[];draft="";open();}
+  }
+  function open(){
+    coolEnd=performance.now()+15000; wake();
+    comp.classList.add("hide"); cool.classList.add("on");
+    /* rAF stops in a backgrounded tab; the room must still hand itself back */
+    clearTimeout(W.__coolFall);
+    W.__coolFall=setTimeout(function(){if(coolEnd){ping(4);W.__closeCool();}},15400);
+  }
+  W.__closeCool=function(){
+    clearTimeout(W.__coolFall);
+    comp.classList.remove("hide"); cool.classList.remove("on");
+    fil.setAttribute("stroke-dashoffset",CIRC);
+    $("#ctime").textContent="15s"; input.value=draft; coolEnd=0;
+  };
+  W.__coolFil=fil;
+  post.addEventListener("click",say);
+  input.addEventListener("keydown",function(e){if(e.key==="Enter")say()});
+})();
+function coolTick(t){
+  if(!coolEnd) return;
+  var left=coolEnd-t;
+  if(left<=0){ping(4);W.__closeCool();return;}
+  W.__coolFil.setAttribute("stroke-dashoffset",(CIRC*(left/15000)).toFixed(2));
+  var s=Math.ceil(left/1000), el=$("#ctime");
+  if(el.textContent!==s+"s") el.textContent=s+"s";
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   13. THE PROFILE CARD — presence you declare, and a record written in words.
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+  var G={
+    sattva:{c:"var(--indigo)",s:"Reflective",e:"Open to a thoughtful conversation. Slower conversations can be surfaced without pretending everything is urgent."},
+    rajas:{c:"var(--gerua-lit)",s:"Building",e:"Making something, with others. Collaboration gets through; everything else waits its turn."},
+    tamas:{c:"#A08A72",s:"Taking a break",e:"Not available, and not apologising for it. Nothing pings, and nobody is shown that you were away."},
+    chardi:{c:"var(--accent)",s:"Here to help",e:"Room to spare for somebody else. Newcomer welcomes and source requests are offered, never assigned."}
+  };
+  var pf=$("#gprofile"), av=$("#gav");
+  if(!pf) return;
+  if(av) av.innerHTML=avatar("Ananya Krishnan");
+  $$("#gunaPick button").forEach(function(b){
+    b.addEventListener("click",function(){
+      $$("#gunaPick button").forEach(function(x){x.setAttribute("aria-pressed","false")});
+      b.setAttribute("aria-pressed","true");
+      var g=G[b.dataset.g];
+      pf.style.setProperty("--st",g.c);
+      $("#gstate").textContent=g.s; $("#geff").textContent=g.e;
+      ping(2);
+    });
+  });
+  /* numbers for you, stories for others, rankings for nobody — shown, not said */
+  var vb=$$("#viewPick button");
+  vb.forEach(function(b){
+    b.addEventListener("click",function(){
+      vb.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+      pf.setAttribute("data-view",b.dataset.v); ping(3);
+    });
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   14. THE FIVE SHEATHS — the explainer and the sandbox are one object.
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+  var stage=$("#stage"), node=$("#node"), rings=$$(".ring",stage),
+      list=$$("#klist li"), out=$("#readout"), layer=0, ang=-Math.PI/2;
+  if(!stage) return;
+  var NAME=["Your public profile","Your availability","Your posts and communities","Your drafts & working notes","Your private space"];
+  var SEEN=["anyone","people you have met","your communities — 23 people","a small group of 4","only you"];
+  var TAIL=["the outermost layer","the second layer","the third layer","the fourth layer","the innermost layer"];
+  var BAND=[.442,.345,.245,.148,.055], EDGE=[.50,.395,.295,.195,.10];
+  function place(){
+    var r=BAND[layer]*stage.clientWidth;
+    node.style.transform="translate("+(Math.cos(ang)*r).toFixed(1)+"px,"+(Math.sin(ang)*r).toFixed(1)+"px)";
+  }
+  function render(){
+    rings.forEach(function(rg,i){rg.classList.toggle("on",i===layer);rg.classList.toggle("in",i<layer)});
+    list.forEach(function(li,i){li.classList.toggle("on",i===layer)});
+    node.classList.toggle("deep",layer>=3);
+    node.setAttribute("aria-valuenow",layer+1);
+    node.setAttribute("aria-valuetext",NAME[layer]+", visible to "+SEEN[layer]);
+    out.innerHTML='<b>'+NAME[layer]+' — '+TAIL[layer]+'</b><span>“Weekend cooking notes” is visible to <span class="cnt">'+SEEN[layer]+'</span>.</span>';
+  }
+  function set(i){layer=clamp(i,0,4);render();place()}
+  var drag=false;
+  node.addEventListener("pointerdown",function(e){drag=true;node.setPointerCapture(e.pointerId);e.preventDefault()});
+  node.addEventListener("pointermove",function(e){
+    if(!drag) return;
+    var b=stage.getBoundingClientRect(), dx=e.clientX-(b.left+b.width/2), dy=e.clientY-(b.top+b.height/2);
+    var d=Math.sqrt(dx*dx+dy*dy)/stage.clientWidth;
+    ang=Math.atan2(dy,dx);
+    var cap=Math.min(d,EDGE[0]-.015)*stage.clientWidth;
+    node.style.transform="translate("+(Math.cos(ang)*cap).toFixed(1)+"px,"+(Math.sin(ang)*cap).toFixed(1)+"px)";
+    var l=0; for(var i=4;i>=0;i--){ if(d<=EDGE[i]){l=i;break;} }
+    if(l!==layer){layer=l;render();ping(layer);}
+  });
+  function stop(){if(!drag)return;drag=false;place()}
+  node.addEventListener("pointerup",stop); node.addEventListener("pointercancel",stop);
+  node.addEventListener("keydown",function(e){
+    var k=e.key;
+    if(k==="ArrowRight"||k==="ArrowUp"){set(layer+1);ping(layer);e.preventDefault();}
+    else if(k==="ArrowLeft"||k==="ArrowDown"){set(layer-1);ping(layer);e.preventDefault();}
+    else if(k==="Home"){set(0);e.preventDefault();}
+    else if(k==="End"){set(4);e.preventDefault();}
+  });
+  list.forEach(function(li,i){
+    li.addEventListener("click",function(){set(i);ping(i)});
+    li.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){set(i);ping(i);e.preventDefault();}});
+  });
+  W.addEventListener("resize",place,{passive:true});
+  set(0);
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   21. THE PURVAPAKSA GATE
+   The classical order is purvapaksa, then uttarapaksa, then siddhanta: the
+   opponent's view stated fairly, then the reply, then what is settled. Most
+   software lets you skip straight to the middle one. Here the reply box is
+   genuinely inert until the other person has agreed that your version of
+   their argument is one they would sign.
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+  var ta=$("#pvText"), ask=$("#pvAsk"), cnt=$("#pvCnt"),
+      s1=$("#gs1"), s2=$("#gs2"), s3=$("#gs3"), box=$("#rebutBox"),
+      h3=$("#gs3h"), p3=$("#gs3p"), rb=$("#rbText"), post=$("#rbPost"), note=$("#rbNote");
+  if(!ta) return;
+  var MIN=12, asked=false;
+  function words(){ return ta.value.trim().split(/\s+/).filter(Boolean).length; }
+  /* length alone is trivially gamed; the restatement has to meet her reason */
+  var REASON=/pause|catch|recipe|seat|table|week|belong/i;
+  function tick(){
+    var w=words(), left=Math.max(0,MIN-w), meets=REASON.test(ta.value);
+    cnt.textContent = w + (w===1?" word":" words") + (left?" · "+left+" to go":
+                      meets?" · and it meets her reason":" · now name her reason, not only her conclusion");
+    cnt.classList.toggle("ok",left===0&&meets);
+    ask.disabled = left>0 || !meets || asked;
+  }
+  ta.addEventListener("input",tick); tick();
+  ask.addEventListener("click",function(){
+    if(asked) return;
+    asked=true; ask.disabled=true; ta.readOnly=true;
+    s2.classList.remove("now"); s2.classList.add("done");
+    s3.classList.remove("wait"); s3.classList.add("now");
+    h3.textContent="Devika is reading it…";
+    p3.textContent="She sees only your restatement. Your reply is still sealed.";
+    ping(2);
+    setTimeout(function(){
+      s3.classList.remove("now"); s3.classList.add("done");
+      h3.textContent="“Yes — that's my position.”";
+      p3.innerHTML="Accepted, so the reply box is open. Had she sent it back, you would be rewriting it, not arguing.";
+      box.classList.add("open");
+      ping(5);
+      setTimeout(function(){ try{ rb.focus({preventScroll:true}); }catch(e){} },120);
+    },1900);
+  });
+  post.addEventListener("click",function(){
+    if(!box.classList.contains("open")) return;
+    var v=(rb.value||"").trim();
+    note.textContent = v ? "Published — her position first, then yours." : "Write something first.";
+    note.classList.toggle("ok",!!v);
+    if(v){ post.disabled=true; rb.readOnly=true; ping(4); }
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   23. SAMVAD — the calm inbox
+   Three predictable delivery windows a day. The evidence is specific: batching
+   beat real-time delivery, and it also beat switching notifications off, which
+   raised anxiety and fear of missing out. Calm is a rhythm, not an absence.
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+  var at=$("#winAt"), inn=$("#winIn"), sw=$("#maunaSw"), row=$("#mauna"), tx=$("#maunaTx"),
+      why=$("#inboxWhy"), now=$("#sendNow"), keep=$("#keepBatched");
+  if(!at) return;
+  $$("#inboxBody .av").forEach(function(el){ el.innerHTML=avatar(el.dataset.av); });
+  var WINDOWS=[9,13,18];                    /* 9am, 1pm, 6pm */
+  function nextWindow(){
+    var d=new Date(), h=d.getHours(), m=d.getMinutes(), s2=d.getSeconds();
+    for(var i=0;i<WINDOWS.length;i++){ if(WINDOWS[i]>h||(WINDOWS[i]===h&&m===0&&s2===0)) return {h:WINDOWS[i],day:0}; }
+    return {h:WINDOWS[0],day:1};
+  }
+  function label(h){ var ap=h>=12?"pm":"am", hh=h%12||12; return hh+":00 "+ap; }
+  function tick(){
+    var w=nextWindow(), d=new Date(),
+        t=new Date(d.getFullYear(),d.getMonth(),d.getDate()+w.day,w.h,0,0),
+        ms=Math.max(0,t-d), mins=Math.floor(ms/60000), hrs=Math.floor(mins/60);
+    at.textContent=label(w.h);
+    inn.textContent = hrs>0 ? hrs+"h "+(mins%60)+"m" : (mins+1)+"m";
+  }
+  tick(); setInterval(tick,20000);
+
+  var on=false;
+  function paint(){
+    row.classList.toggle("on",on);
+    sw.setAttribute("aria-checked",on?"true":"false");
+    tx.textContent = on ? "Quiet mode is on — messages are held until you come back"
+                        : "Quiet mode is off—messages arrive at the next window";
+    why.textContent = on ? "Nobody is told you are in quiet mode. There is no “away” badge to perform."
+                         : "Read receipts are off by design. There is no pressure to be instantly available.";
+  }
+  sw.addEventListener("click",function(){ on=!on; paint(); ping(on?1:3); });
+  paint();
+  now.addEventListener("click",function(){ why.textContent="Sent. The window is a default, never a wall."; ping(4); });
+  keep.addEventListener("click",function(){ why.textContent="Held. It will go out with the rest at the next window."; ping(2); });
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   17. SOUND — silent until asked, every time.
+   Synthesised rather than fetched, so nothing is downloaded and nothing can
+   play before a deliberate click: a low drone, a fifth above it, and slow
+   bells over the top — the shape of a bowl still ringing.
+
+   Bhupali, the major pentatonic, chosen because a pentatonic cannot produce
+   a harsh interval: whichever notes land together, the result is consonant.
+   Serene by construction, and bright rather than solemn, which a bare drone
+   never manages.
+   ══════════════════════════════════════════════════════════════════════ */
+var BHUPALI=[261.63,293.66,329.63,392.00,440.00,523.25,587.33,659.26,783.99,880.00];
+var ACTX=null, master=null, nodes=[], soundOn=false, bellTimer=null;
+function voice(f,len,peak,dest){
+  var t0=ACTX.currentTime, o=ACTX.createOscillator(), g=ACTX.createGain(),
+      o2=ACTX.createOscillator(), g2=ACTX.createGain();
+  o.type="sine"; o.frequency.value=f;
+  g.gain.setValueAtTime(.0001,t0);
+  g.gain.exponentialRampToValueAtTime(peak,t0+.05);
+  g.gain.exponentialRampToValueAtTime(.0001,t0+len);
+  /* a quiet octave above gives it the shimmer of a struck bowl */
+  o2.type="sine"; o2.frequency.value=f*2.01;
+  g2.gain.setValueAtTime(.0001,t0);
+  g2.gain.exponentialRampToValueAtTime(peak*.26,t0+.04);
+  g2.gain.exponentialRampToValueAtTime(.0001,t0+len*.55);
+  o.connect(g); g.connect(dest); o2.connect(g2); g2.connect(dest);
+  o.start(t0); o2.start(t0); o.stop(t0+len+.2); o2.stop(t0+len+.2);
+}
+function bell(){
+  if(!soundOn||!ACTX) return;
+  var dest=master;
+  if(ACTX.createStereoPanner){
+    var pan=ACTX.createStereoPanner();
+    pan.pan.value=(Math.random()*2-1)*.55; pan.connect(master); dest=pan;
+  }
+  voice(BHUPALI[Math.floor(Math.random()*BHUPALI.length)],4.5+Math.random()*2.5,.5,dest);
+  bellTimer=setTimeout(bell,2200+Math.random()*4200);
+}
+/* a single struck note when you touch something — the same scale, so it can
+   never disagree with whatever the bed happens to be doing */
+function ping(i){
+  if(!soundOn||!ACTX||!master) return;
+  voice(BHUPALI[(Math.abs(i|0)%5)+3],1.8,.22,master);
+}
+function soundStart(){
+  var AC=W.AudioContext||W.webkitAudioContext; if(!AC) return false;
+  if(!ACTX) ACTX=new AC();
+  if(ACTX.state==="suspended") ACTX.resume();
+  master=ACTX.createGain();
+  master.gain.setValueAtTime(.0001,ACTX.currentTime);
+  master.gain.exponentialRampToValueAtTime(.16,ACTX.currentTime+3);
+  var filter=ACTX.createBiquadFilter();
+  filter.type="lowpass"; filter.frequency.value=2600; filter.Q.value=.4;
+  master.connect(filter); filter.connect(ACTX.destination);
+  /* a tanpura-ish bed: tonic and fifth, barely there, gently detuned against
+     each other so the pair never sits perfectly still */
+  [130.81,196.00,261.63].forEach(function(f,i){
+    var o=ACTX.createOscillator(), g=ACTX.createGain();
+    o.type="triangle"; o.frequency.value=f*(i===2?1.001:1);
+    g.gain.value=i===0?.085:(i===1?.05:.035);
+    var lfo=ACTX.createOscillator(), lg=ACTX.createGain();
+    lfo.frequency.value=.04+i*.015; lg.gain.value=.3;
+    lfo.connect(lg); lg.connect(g.gain);
+    o.connect(g); g.connect(master);
+    o.start(); lfo.start(); nodes.push(o,lfo);
+  });
+  soundOn=true;
+  bellTimer=setTimeout(bell,900);
+  return true;
+}
+function soundStop(){
+  soundOn=false;
+  if(bellTimer){clearTimeout(bellTimer);bellTimer=null;}
+  if(!ACTX||!master) return;
+  var t=ACTX.currentTime;
+  master.gain.cancelScheduledValues(t);
+  master.gain.setValueAtTime(master.gain.value,t);
+  master.gain.exponentialRampToValueAtTime(.0001,t+1.6);
+  var dying=nodes.slice(); nodes=[];
+  setTimeout(function(){dying.forEach(function(n){try{n.stop()}catch(e){}})},1900);
+}
+(function(){
+  var btn=$("#tone"), label=$("#toneLabel");
+  if(!btn) return;
+  btn.addEventListener("click",function(){
+    if(soundOn){ soundStop(); }
+    else if(!soundStart()){ label.textContent="No sound here"; return; }
+    btn.setAttribute("aria-pressed",soundOn?"true":"false");
+    label.textContent=soundOn?"Sound on":"Sound off";
+  });
+})();
+/* ══════════════════════════════════════════════════════════════════════
+   18. PICTURES WITHOUT PHOTOGRAPHS
+   Every image on this page is generated from a seed rather than fetched.
+   Nothing is a stock photo pretending to be someone's afternoon, nothing
+   ships a megabyte, and nothing has to be licensed. Warm bands, one light
+   source, a little grit — the palette doing landscape.
+   ══════════════════════════════════════════════════════════════════════ */
+var SC_INK=[["#3A2130","#7A3B24","#E07A2F","#F8C94F"],["#241C2E","#5A3350","#B44B2A","#F0B36B"],
+            ["#1E2430","#3B4A52","#9FD6C8","#F5E9D6"],["#2A1D2E","#4A2A22","#D98A5F","#F8C94F"],
+            ["#1F1A2E","#403257","#A3B0EE","#E8DCC6"]];
+function scene(seed,w,h){
+  var r=hash(seed), pal=SC_INK[r%SC_INK.length],
+      sunX=((r>>5)%70+15)/100*w, sunY=((r>>11)%40+14)/100*h,
+      id="sg"+(r%99999), o='<defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1">'+
+      '<stop offset="0" stop-color="'+pal[0]+'"/><stop offset="55%" stop-color="'+pal[1]+'"/>'+
+      '<stop offset="100%" stop-color="'+pal[0]+'"/></linearGradient>'+
+      '<radialGradient id="'+id+'r"><stop offset="0" stop-color="'+pal[3]+'" stop-opacity=".85"/>'+
+      '<stop offset="100%" stop-color="'+pal[2]+'" stop-opacity="0"/></radialGradient></defs>'+
+      '<rect width="'+w+'" height="'+h+'" fill="url(#'+id+')"/>'+
+      '<circle cx="'+sunX.toFixed(0)+'" cy="'+sunY.toFixed(0)+'" r="'+(h*.42).toFixed(0)+'" fill="url(#'+id+'r)"/>'+
+      '<circle cx="'+sunX.toFixed(0)+'" cy="'+sunY.toFixed(0)+'" r="'+(h*.055).toFixed(0)+'" fill="'+pal[3]+'" fill-opacity=".9"/>';
+  /* ridge lines, receding */
+  for(var i=0;i<4;i++){
+    var base=h*(.58+i*.13), amp=h*(.10-i*.018), ph=((r>>(i*3+2))%100)/100*6.28,
+        d="M0 "+h+" L0 "+base.toFixed(1);
+    for(var x=0;x<=w;x+=w/10){
+      d+=" L"+x.toFixed(1)+" "+(base+Math.sin(x/w*3.1+ph+i)*amp).toFixed(1);
+    }
+    d+=" L"+w+" "+h+"Z";
+    o+='<path d="'+d+'" fill="'+pal[i%2?0:1]+'" fill-opacity="'+(0.5+i*.13).toFixed(2)+'"/>';
+  }
+  for(var s=0;s<10;s++){
+    var sx=((r>>(s+1))%1000)/1000*w, sy=((r>>(s+6))%1000)/1000*h*.5;
+    o+='<circle cx="'+sx.toFixed(1)+'" cy="'+sy.toFixed(1)+'" r="'+(0.7+(s%3)*.4)+'" fill="'+pal[3]+'" fill-opacity=".35"/>';
+  }
+  return o;
+}
+
+$$("[data-av]:empty").forEach(function(el){ el.innerHTML=avatar(el.dataset.av); });
+
+/* ══════════════════════════════════════════════════════════════════════
+   19. THE FEED
+   The comparison is the argument. The same three posts, once with the
+   scoreboard and once without — and the version without is the default,
+   because the numbers are the thing being removed, not the feature.
+   ══════════════════════════════════════════════════════════════════════ */
+var KIND={q:["k-q","Question"],int:["k-int","Interpretation"],ctx:["k-ctx","Context"],fact:["k-fact","Fact"],
+          exp:["k-exp","Experience"],trad:["k-trad","Tradition"],bel:["k-bel","Belief"],spec:["k-spec","Speculation"]};
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]}); }
+function kindTag(k){ return '<span class="kind '+KIND[k][0]+'">'+KIND[k][1]+'</span>'; }
+var DISH='<svg viewBox="0 0 320 180" role="img" aria-label="A plate of rajma, rice, a roti and salad on a wooden table">'+
+  '<defs><radialGradient id="dsT" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#5A3A2A"/><stop offset="100%" stop-color="#241712"/></radialGradient></defs>'+
+  '<rect width="320" height="180" fill="url(#dsT)"/><path d="M0 40h320M0 92h320M0 144h320" stroke="#3A2418" stroke-opacity=".55"/>'+
+  '<ellipse cx="160" cy="94" rx="104" ry="72" fill="#D9D2C4"/><ellipse cx="160" cy="94" rx="92" ry="62" fill="#EEE8DC"/>'+
+  '<circle cx="126" cy="80" r="30" fill="#B8B0A2"/><circle cx="126" cy="80" r="25" fill="#7A2E1E"/>'+
+  '<g fill="#551B12"><circle cx="116" cy="74" r="3.4"/><circle cx="129" cy="70" r="3.2"/><circle cx="136" cy="84" r="3.4"/><circle cx="120" cy="88" r="3"/><circle cx="128" cy="80" r="3"/></g>'+
+  '<path d="M150 120c10-16 44-20 62-6 4 10-6 20-30 20s-34-4-32-14Z" fill="#FBF6EA"/>'+
+  '<circle cx="204" cy="72" r="24" fill="#D6A86A"/><g fill="#9A6A34" fill-opacity=".55"><circle cx="196" cy="66" r="2.2"/><circle cx="210" cy="78" r="2.6"/><circle cx="214" cy="64" r="1.8"/></g>'+
+  '<circle cx="98" cy="120" r="9" fill="#C84B3A"/><circle cx="112" cy="128" r="7" fill="#7FA35A"/><path d="M84 127h14" stroke="#E9E2C8" stroke-width="3" stroke-linecap="round"/>'+
+  '<path d="M116 44c-4-6 4-10 0-16M130 42c-4-6 4-10 0-16" fill="none" stroke="#F5E9D6" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/></svg>';
+var POSTS=[
+ {who:"Simran Kaur",topic:"Food",type:"Image",k:"exp",when:"1 hour ago",
+  title:"Made this at home for the first time.",
+  body:"My mother's rajma, cooked over a video call with her correcting me at every step. Two hours, one slightly burnt pan, and completely worth it.",
+  art:"dish",cap:"Photo · taken by Simran",
+  rp:[["Sneha Kulkarni","exp","The burnt pan is how you know it was really made at home. My first try at my grandmother's sambar went exactly the same way."],
+      ["Siddharth Kamble","q","Did she let you skip soaking the beans overnight, or is that non-negotiable?"]],
+  said:["Sneha","Siddharth","Harleen","Samyak"],n:"2.3K"},
+ {who:"Karan Mehta",topic:"Cities",type:"Question",k:"q",when:"3 hours ago",
+  title:"What is one local problem your city should fix?",
+  body:"Mine: footpaths that disappear halfway down the road. I walk to work and spend half the walk on the edge of traffic. What would you fix first where you live?",
+  rp:[["Ananya Krishnan","exp","Streetlights near bus stops. People on our road wait in the dark after eight."],
+      ["Parth Kothari","ctx","Many city wards publish their budgets online. Worth checking before proposing a fix, because some repairs are already approved and simply delayed."]],
+  said:["Ananya","Parth","Sarah"],n:"8.4K"},
+ {who:"Rachel Divekar",topic:"Education",type:"Poll",k:"q",when:"5 hours ago",
+  title:"Should we teach financial literacy in school?",
+  body:"Budgets, loans, and saving came up in my first job, not in any classroom. Where should it be taught?",
+  poll:[["Yes, as its own subject",46],["Yes, inside maths classes",29],["It is better learned at home",15],["Not sure yet",10]],
+  said:["Daniel","Neha"],n:"12K"},
+ {who:"Daniel Kolet",topic:"Books",type:"Text",k:"exp",when:"yesterday",
+  title:"Finally finished this book. Here's what stayed with me.",
+  body:"A novel about three generations of one family in Kolkata, read in short evening sittings over four months. What stayed with me: most of the arguments in it were really about someone feeling unheard.",
+  rp:[["Lakshmi Rao","int","I read it the same way. Almost every fight in the book softens the moment someone asks a question instead of defending themselves."],
+      ["Imran Sheikh","q","Adding it to my list. Does the ending feel earned?"]],
+  said:["Lakshmi","Imran","Pema"],n:"431"},
+ {who:"Sonam Dorjee",topic:"Everyday life",type:"Image",k:"exp",when:"yesterday",
+  title:"Learned to swim at thirty-four. Here's what surprised me.",
+  body:"The hardest part was not the water. It was being the only adult in a beginners' class. By week three two more had joined, and one told me they signed up after seeing me there.",
+  art:"swim-dawn",sgi:true,
+  rp:[["Meera Iyer","exp","I started learning the sitar at forty. Being a beginner in public takes its own small courage."]],
+  said:["Meera","Ezra"],n:"5.1K"}
+];
+/* pages are not people: invented organisations, shown in their own
+   division, labelled by kind, and never ranked above anyone's post */
+var ORGS=[
+ {name:"Morning Ledger India",kind:"News & media",mark:"ML",topic:"Cities",type:"Link",k:"fact",when:"2 hours ago",
+  title:"Why do footpaths in growing cities stop halfway?",
+  body:"We read three years of ward budget documents. Most gaps are not unplanned: repairs are approved, then split across departments that finish at different times.",
+  src:"Ward budget documents, 2023–2025",why:"Because you follow Cities",n:"41K"},
+ {name:"Amaltas Group",kind:"Company",mark:"AG",topic:"Education",type:"Text",k:"fact",when:"6 hours ago",
+  title:"We are funding money-basics workshops in 40 government schools.",
+  body:"Budgeting, saving, and how loans work, taught by the schools' own teachers. No logos in classrooms, and the full curriculum is open for anyone to use.",
+  src:"Curriculum and list of schools",why:"Because you follow Education",n:"9.2K"},
+ {name:"Handi Kitchen Foods",kind:"Brand",mark:"HK",topic:"Food",type:"Video",k:"exp",when:"yesterday",
+  title:"Rajma three ways, from Jammu, Punjab, and Himachal.",
+  body:"Our test kitchen cooked all three alongside home cooks from each region. The biggest difference was not the spices. It was how long the beans were soaked.",
+  why:"Because you follow Food",n:"22K"},
+ {name:"Pustak Setu Public Library",kind:"Public library",mark:"PS",topic:"Books",type:"Text",k:"ctx",when:"yesterday",
+  title:"Longer weekend hours, and this month's reading picks.",
+  body:"The reading room now stays open until nine on Saturdays and Sundays. Three novels and one book of essays are on the shared shelf by the entrance.",
+  why:"Because you follow Books",n:"3.4K"}
+];
+(function(){
+  var list=$("#feedList");
+  if(!list) return;
+  list.innerHTML=POSTS.map(function(p,pi){
+    var art = p.art==="dish" ? '<div class="art">'+DISH+'</div>'
+            : p.art ? '<div class="art"><svg viewBox="0 0 320 180" aria-hidden="true">'+scene(p.art,320,180)+'</svg></div>' : '';
+    var poll = p.poll ? '<div class="poll" data-i="'+pi+'">'+p.poll.map(function(o,oi){
+        return '<button type="button" aria-pressed="false" data-o="'+oi+'"><i></i><span>'+esc(o[0])+'</span><em>'+o[1]+'%</em></button>'; }).join("")+
+        '<span class="poll-n">Tap to vote. Results appear after you choose.</span></div>' : '';
+    var rp = p.rp ? '<div class="replies">'+p.rp.map(function(r){
+        return '<div class="rp"><div class="av">'+avatar(r[0])+'</div><p><b>'+esc(r[0].split(" ")[0])+'</b>'+kindTag(r[1])+esc(r[2])+'</p></div>'; }).join("")+'</div>' : '';
+    return '<article class="post" data-topic="'+p.topic+'">'+
+      '<div class="post-h"><div class="av">'+avatar(p.who)+'</div>'+
+      '<div><div class="who">'+esc(p.who)+'</div><div class="mt">'+p.topic+' · <span class="ptype">'+p.type+'</span> · '+p.when+'</div></div></div>'+
+      '<b class="ptitle">'+(p.k?kindTag(p.k):'')+esc(p.title)+'</b>'+(p.body?'<div class="body">'+esc(p.body)+'</div>':'')+
+      art+(p.cap?'<span class="pcap">'+esc(p.cap)+'</span>':'')+
+      (p.sgi?'<span class="sgi"><svg width="12" height="12" aria-hidden="true"><use href="#i-tag"/></svg>Illustration is AI-assisted · declared by the author</span>':'')+
+      poll+rp+
+      '<div class="post-f">'+
+        '<span class="reacted">'+p.said.map(function(n){return '<i>'+avatar(n)+'</i>'}).join("")+'</span>'+
+        '<span class="said">'+p.said[0]+' and '+(p.said.length-1)+(p.said.length===2?' other':' others')+' replied</span>'+
+        '<span class="metric">♥ '+p.n+' · '+Math.round(hash(p.who)%900+40)+' shares</span>'+
+        '<span class="act"><a href="#respond">Reply</a><button type="button" aria-pressed="false" data-toggle data-on="Saved" data-off="Save">Save</button><a href="#share">Share with your take</a></span>'+
+      '</div></article>';
+  }).join("");
+  var olist=$("#orgList"), OC=["#D98A5F","#A8C58C","#E6C9A2","#C9B79B"];
+  if(olist) olist.innerHTML=ORGS.map(function(o,i){
+    return '<article class="post org" data-topic="'+o.topic+'">'+
+      '<div class="post-h"><div class="omark" aria-hidden="true" style="--oc:'+OC[i%OC.length]+'">'+esc(o.mark)+'</div>'+
+      '<div><div class="who">'+esc(o.name)+'<span class="okind">'+o.kind+'</span></div><div class="mt">'+o.topic+' · <span class="ptype">'+o.type+'</span> · '+o.when+'</div></div></div>'+
+      '<b class="ptitle">'+(o.k?kindTag(o.k):'')+esc(o.title)+'</b><div class="body">'+esc(o.body)+'</div>'+
+      (o.src?'<div class="post-ctx"><span class="tag src">Source: '+esc(o.src)+'</span></div>':'')+
+      '<div class="post-f">'+
+        '<span class="said">'+o.why+' · no paid reach</span>'+
+        '<span class="metric">♥ '+o.n+' · '+Math.round(hash(o.name)%3000+200)+' shares</span>'+
+        '<span class="act"><button type="button" aria-pressed="false" data-toggle data-on="Saved" data-off="Save">Save</button><a href="#share">Share with your take</a></span>'+
+      '</div></article>';
+  }).join("");
+  $$(".poll",list).forEach(function(pl){
+    $$("button",pl).forEach(function(b){
+      b.addEventListener("click",function(){
+        if(pl.classList.contains("voted")) return;
+        pl.classList.add("voted"); b.setAttribute("aria-pressed","true");
+        var P=POSTS[+pl.dataset.i].poll;
+        $$("button",pl).forEach(function(x,i){ $("i",x).style.width=P[i][1]+"%"; });
+        $(".poll-n",pl).textContent="Your vote is private. This is a snapshot of opinion, not a ranking of people.";
+        ping(3);
+      });
+    });
+  });
+  $$("#feedPick button").forEach(function(b){
+    b.addEventListener("click",function(){
+      $$("#feedPick button").forEach(function(x){x.setAttribute("aria-pressed","false")});
+      b.setAttribute("aria-pressed","true");
+      list.classList.toggle("counts",b.dataset.f==="on");
+      if(olist) olist.classList.toggle("counts",b.dataset.f==="on");
+      ping(b.dataset.f==="on"?1:4);
+    });
+  });
+  var tf=$$("#topicF button");
+  tf.forEach(function(b){
+    b.addEventListener("click",function(){
+      tf.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+      var t=b.dataset.t;
+      $$("#feedList .post, #orgList .post").forEach(function(p){ p.hidden=!(t==="all"||p.dataset.topic===t); });
+      var of=$("#orgFeed"); if(of) of.hidden=!$$("#orgList .post").some(function(p){ return !p.hidden; });
+      ping(2);
+    });
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   20. WATCH — the stack has a bottom, and the bar at the top is the stack
+   rather than your progress through an endless one.
+   ══════════════════════════════════════════════════════════════════════ */
+var REELS=[
+ ["A two-minute stretch for long workdays","Health · 48s"],
+ ["One budgeting rule that actually sticks","Money · 1:01"],
+ ["Why some families still greet elders differently","Culture · 39s"],
+ ["Procrastination without the self-judgment","Psychology · 55s"],
+ ["Is AI changing how we create?","Technology · 44s"],
+ ["A family recipe, and why it gets passed on","Food · 52s"],
+ ["What makes a good first-time manager?","Work · 1:10"],
+ ["Photographing your street in morning light","Photography · 36s"],
+ ["Three stories worth reading with children","Books · 47s"],
+ ["Why shared meals still matter","Everyday life · 33s"],
+ ["How one neighbourhood fixed its streetlights","Cities · 58s"],
+ ["Listening before replying: a small experiment","Ideas · 1:04"]
+];
+(function(){
+  var sc=$("#reelScene"), cap=$("#reelCap"), st=$("#reelStack"), cnt=$("#reelCount"),
+      prev=$("#reelPrev"), next=$("#reelNext"), end=$("#reelEnd"), i=0;
+  if(!sc) return;
+  st.innerHTML=REELS.map(function(){return "<i></i>"}).join("");
+  var bars=$$("#reelStack i");
+  function show(n){
+    if(n>=REELS.length){ end.classList.add("on"); next.disabled=true; cnt.textContent="the bottom"; ping(5); return; }
+    end.classList.remove("on");
+    i=clamp(n,0,REELS.length-1);
+    sc.innerHTML=scene("reel"+i,180,320);
+    cap.innerHTML='<b>'+REELS[i][0]+'</b><span>'+REELS[i][1]+'</span>';
+    bars.forEach(function(b,k){b.classList.toggle("on",k<=i)});
+    cnt.textContent=(i+1)+" of "+REELS.length;
+    prev.disabled=i===0; next.disabled=false;
+  }
+  next.addEventListener("click",function(){ if(end.classList.contains("on"))return; show(i+1===REELS.length?REELS.length:i+1); if(!end.classList.contains("on"))ping(i); });
+  prev.addEventListener("click",function(){ show(i-1); ping(i); });
+  $("#reel").addEventListener("click",function(e){ if(e.target.closest(".reel-end"))return; next.click(); });
+  show(0);
+
+  /* chapter marks, not a watch-time bar: the divisions are where the
+     argument turns, and they are proportional to the real chapter lengths */
+  var CH=[4.17,7.42,6.45,5.96], total=CH.reduce(function(a,b){return a+b},0), s=$("#scrub");
+  s.innerHTML=CH.map(function(c,k){return '<i style="flex:'+(c/total).toFixed(3)+'"'+(k===0?' class="seen"':'')+'></i>'}).join("");
+  $$("#scrub i").forEach(function(b,k){
+    b.addEventListener("click",function(){ $$("#scrub i").forEach(function(x,n){x.classList.toggle("seen",n<=k)}); ping(k); });
+  });
+})();
+/* ═══════════════════════════════════════════════════════════════════
+   27. STILLNESS — independent of the device setting. It stops the sky's
+   travel, the breathing and the frieze, and remembers the choice.
+   ═════════════════════════════════════════════════════════════════ */
+function setStill(on){
+  STILL=on; R.classList.toggle("still",on);
+  try{ localStorage.setItem("mvv.still",on?"1":"0"); }catch(e){}
+  [$("#still"),$("#sheetStill")].forEach(function(b){ if(b) b.setAttribute("aria-pressed",on?"true":"false"); });
+  var l=$("#stillLabel"); if(l) l.textContent=on?"Motion off":"Motion on";
+  var s=$("#sheetStill"); if(s) s.textContent="Motion: "+(on?"off":"on");
+  wake();
+}
+(function(){
+  var b=$("#still"), s=$("#sheetStill"), t=$("#sheetTone"), tone=$("#tone");
+  if(b) b.addEventListener("click",function(){ setStill(!STILL); });
+  if(s) s.addEventListener("click",function(){ setStill(!STILL); });
+  if(t&&tone) t.addEventListener("click",function(){
+    tone.click();
+    t.setAttribute("aria-pressed",soundOn?"true":"false"); t.textContent="Sound: "+(soundOn?"on":"off");
+  });
+  setStill(STILL);
+})();
+
+/* 28. THE STOPS, ON A PHONE — a real dialog: focus goes in, Tab stays in,
+   Escape and the scrim close it, and focus comes back where it was. */
+(function(){
+  var btn=$("#stopBtn"), sh=$("#sheet");
+  if(!btn||!sh) return;
+  function open(){
+    sh.hidden=false; btn.setAttribute("aria-expanded","true");
+    D.body.style.overflow="hidden";
+    var a=$(".sheet-l a.on",sh)||$(".sheet-l a",sh); if(a) a.focus();
+  }
+  function close(back){
+    sh.hidden=true; btn.setAttribute("aria-expanded","false"); D.body.style.overflow="";
+    if(back){ try{ btn.focus({preventScroll:true}); }catch(e){} }
+  }
+  btn.addEventListener("click",open);
+  sh.addEventListener("click",function(e){
+    if(e.target.closest("[data-close]")) close(true);
+    else if(e.target.closest(".sheet-l a")) close(false);
+  });
+  sh.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){ close(true); return; }
+    if(e.key!=="Tab") return;
+    var f=$$("a,button",sh), i=f.indexOf(D.activeElement);
+    if(e.shiftKey&&i<=0){ f[f.length-1].focus(); e.preventDefault(); }
+    else if(!e.shiftKey&&i===f.length-1){ f[0].focus(); e.preventDefault(); }
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════════════
+   25. KEEPING THE PROMISES THE MARKUP MAKES
+
+   role="tablist" is a contract: whoever lands on one of these expects the
+   arrow keys to move between tabs, Home and End to reach the ends, and the
+   group to hold ONE stop in the tab order rather than four. All three
+   tablists on this page declared the role and implemented none of it.
+
+   Selection itself is left exactly where it was. Each tablist already owns
+   its own click handling and its own idea of what selecting means, so this
+   watches aria-selected rather than driving it — the keyboard just clicks
+   the right button and the existing code does the rest.
+   ═════════════════════════════════════════════════════════════════ */
+function wireTabs(list){
+  if(!list) return;
+  function tabs(){ return $$("button",list); }
+  function current(){
+    var b=tabs(), i;
+    for(i=0;i<b.length;i++){ if(b[i].getAttribute("aria-selected")==="true") return i; }
+    return 0;
+  }
+  /* one stop in the tab order, on the selected tab — the roving pattern */
+  function rove(){ var b=tabs(), c=current(); b.forEach(function(x,i){ x.tabIndex = i===c ? 0 : -1; }); }
+  list.addEventListener("keydown",function(e){
+    var b=tabs(); if(!b.length) return;
+    var c=current(), n=null;
+    if(e.key==="ArrowRight"||e.key==="ArrowDown") n=(c+1)%b.length;
+    else if(e.key==="ArrowLeft"||e.key==="ArrowUp") n=(c-1+b.length)%b.length;
+    else if(e.key==="Home") n=0;
+    else if(e.key==="End") n=b.length-1;
+    else return;
+    e.preventDefault();
+    b[n].click();
+    b[n].tabIndex=0; b[n].focus();
+  });
+  new MutationObserver(rove).observe(list,{subtree:true,childList:true,attributes:true,attributeFilter:["aria-selected"]});
+  rove();
+}
+wireTabs($("#stepPick"));
+wireTabs($("#ptype"));
+$$("#stepPick button").forEach(function(b,i){ var p=$$(".pane")[i]; if(!p) return;
+  b.id="step-t"+i; p.id="step-p"+i; b.setAttribute("aria-controls",p.id);
+  p.setAttribute("role","tabpanel"); p.setAttribute("aria-labelledby",b.id); });
+
+/* ═══════════════════════════════════════════════════════════════════
+   30. FOLLOW TOPICS — interests, not identities. Counted for you alone.
+   ═════════════════════════════════════════════════════════════════ */
+(function(){
+  var bs=$$("#topics button"), say=$("#topicSay");
+  if(!bs.length||!say) return;
+  function upd(){
+    var n=bs.filter(function(b){return b.getAttribute("aria-pressed")==="true"}).length;
+    say.textContent = n ? "Following "+n+(n===1?" topic":" topics")+". Your feed draws from these and the people you follow — plus one clearly labelled perspective you have not met."
+                        : "Follow a topic or two and your feed starts there.";
+  }
+  bs.forEach(function(b){ b.addEventListener("click",function(){
+    b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true"); upd(); ping(1); }); });
+  upd();
+})();
+
+/* ═══════════════════════════════════════════════════════════════════
+   31. THE COMPOSER — one extra tap: say what kind of post this is. A fact
+   cannot post without a source. The preview is built from text nodes, so
+   nothing typed ever becomes markup.
+   ═════════════════════════════════════════════════════════════════ */
+(function(){
+  var tabs=$$("#ptype button"), form=$("#composeForm"), title=$("#ctitle"), body=$("#cbody"), extra=$("#cextra"),
+      kinds=$$("#ckind button"), src=$("#csrc"), srcin=$("#csrcin"), topics=$$("#ctopic button"),
+      go=$("#cgo"), hint=$("#chint"), prev=$("#cprev");
+  if(!form||!title) return;
+  var TYPE="question", SEL=null, TOPIC="Everyday life", youAv=avatar("You");
+  var PH={question:["What is one local problem your city should fix?","What made you think of it?"],
+          text:["Sometimes listening is more useful than winning an argument","Say it in a few lines"],
+          image:["Made this at home for the first time","What is the story behind it?"],
+          poll:["Should we teach financial literacy in school?","Why are you asking?"],
+          video:["Three minutes on taking better photos on a walk","What will it help people notice?"],
+          link:["An essay on building a better morning routine","Why is it worth reading?"]};
+  var EX={poll:'<input class="cin" type="text" aria-label="Option one" placeholder="Option one"><input class="cin" type="text" aria-label="Option two" placeholder="Option two">',
+          image:'<div class="cdrop">Add an image—and a short description for people who cannot see it</div>',
+          video:'<div class="cdrop">Add a short video—captions are required</div>',
+          link:'<input class="cin" type="url" aria-label="Link" placeholder="https://">'};
+  var TNAME={question:"Question",text:"Text",image:"Image",poll:"Poll",video:"Video",link:"Link"};
+  function pick(k){ SEL=k; kinds.forEach(function(x){x.setAttribute("aria-pressed",x.dataset.k===k?"true":"false")}); src.hidden=k!=="fact"; }
+  tabs.forEach(function(b,i){
+    b.id="ptype-t"+i; b.setAttribute("aria-controls","composeForm");
+    b.addEventListener("click",function(){
+      tabs.forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")});
+      TYPE=b.dataset.p; form.setAttribute("aria-labelledby",b.id);
+      title.placeholder=PH[TYPE][0]; body.placeholder=PH[TYPE][1];
+      extra.innerHTML=EX[TYPE]||"";
+      if(TYPE==="question") pick("q");
+      render(); ping(1);
+    });
+  });
+  form.setAttribute("aria-labelledby","ptype-t0");
+  kinds.forEach(function(b){ b.addEventListener("click",function(){ pick(b.dataset.k); render(); ping(2); }); });
+  topics.forEach(function(b){ b.addEventListener("click",function(){
+    topics.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")}); TOPIC=b.dataset.t; render(); }); });
+  [title,body,srcin].forEach(function(el){ el.addEventListener("input",render); });
+  function node(tag,cls,txt){ var e=D.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; }
+  function render(){
+    var t=title.value.trim(), needSrc=SEL==="fact"&&!srcin.value.trim(), ok=t.length>=6&&!!SEL&&!needSrc;
+    go.disabled=!ok;
+    hint.textContent = !t ? "Start with a clear title" : t.length<6 ? "Add a little more to the title" : !SEL ? "Now add the kind of contribution it is"
+                     : needSrc ? "A factual post needs a source—where is it from?" : "Ready. It goes to people who follow "+TOPIC+".";
+    hint.classList.toggle("ok",ok);
+    prev.textContent="";
+    var h=node("div","post-h"), av=node("div","av"), meta=node("div");
+    av.innerHTML=youAv;
+    meta.appendChild(node("div","who","You")); meta.appendChild(node("div","mt",TOPIC+" · "+TNAME[TYPE]+" · just now"));
+    h.appendChild(av); h.appendChild(meta); prev.appendChild(h);
+    var tt=node("b","ptitle");
+    if(SEL) tt.appendChild(node("span","kind "+KIND[SEL][0],KIND[SEL][1]));
+    tt.appendChild(D.createTextNode(t||"Your title appears here"));
+    prev.appendChild(tt);
+    if(body.value.trim()) prev.appendChild(node("div","body",body.value.trim()));
+    if(SEL==="fact"&&srcin.value.trim()){ var c=node("div","post-ctx"); c.appendChild(node("span","tag src","Source: "+srcin.value.trim())); prev.appendChild(c); }
+  }
+  go.addEventListener("click",function(){
+    if(go.disabled) return;
+    hint.textContent="This is a preview, so nothing was published. In the product, "+(TYPE==="question"?"a welcomer makes sure every question gets a real answer.":"people who follow "+TOPIC+" would see it.");
+    go.disabled=true; ping(5);
+  });
+  pick("q"); render();
+})();
+
+/* ═══════════════════════════════════════════════════════════════════
+   32. SHARE WITH YOUR TAKE — a reshare needs a few words of your own; a
+   save is private and never becomes a count.
+   ═════════════════════════════════════════════════════════════════ */
+(function(){
+  var opts=$$("#shareOpt button"), ta=$("#stake"), lab=$("#stakeLab"), go=$("#sgo"), gotx=$("#sgoTx"),
+      hint=$("#shint"), take=$("#sprevTake"), head=$("#sprevH"), who=$("#sprevWho");
+  if(!ta) return;
+  var MODE="take";
+  var MD={take:{lab:"Your take",ph:"What do you think—and why is it useful to share?",min:5,btn:"Share",head:"What others see",who:"Ananya Krishnan shared",done:"Shared with the original attached."},
+          quote:{lab:"The line you are quoting, and why it matters",ph:"“The next useful action” is the part I keep coming back to.",min:5,btn:"Quote",head:"What others see",who:"Ananya Krishnan quoted",done:"Quoted. The original context stays attached."},
+          send:{lab:"A note for your friend — optional",ph:"Thought of you when I read this",min:0,btn:"Send",head:"What your friend sees",who:"From Ananya",done:"Sent. It will arrive in their next message window."},
+          save:{lab:"",ph:"",min:0,btn:"Save",head:"Only you see this",who:"Saved to Read later",done:"Saved. Only you can see it."}};
+  function words(){ return ta.value.trim().split(/\s+/).filter(Boolean).length; }
+  function upd(){
+    var m=MD[MODE], left=Math.max(0,m.min-words());
+    lab.textContent=m.lab; lab.hidden=ta.hidden=(MODE==="save"); ta.placeholder=m.ph;
+    gotx.textContent=m.btn; head.textContent=m.head; who.textContent=m.who;
+    go.disabled=left>0;
+    hint.textContent = MODE==="save" ? "Private, always." : left ? "Add "+left+" more word"+(left===1?"":"s")+" of your own"
+                     : m.min ? "Ready—your words go first, and the original travels with them" : "Ready";
+    hint.classList.toggle("ok",!left);
+    take.textContent = MODE==="save" ? "Saved posts live in a private list. There is no public save count."
+                     : (ta.value.trim()||"Your words appear here, above the original.");
+  }
+  opts.forEach(function(b){ b.addEventListener("click",function(){
+    opts.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")}); MODE=b.dataset.s; upd(); ping(1); }); });
+  ta.addEventListener("input",upd);
+  go.addEventListener("click",function(){ if(go.disabled) return; hint.textContent=MD[MODE].done; hint.classList.add("ok"); ping(4); });
+  upd();
+})();
+
+/* the bottom of the feed: three deliberate doors, one of them out */
+(function(){
+  var go=$("#feGo"), say=$("#feSay"); if(!go) return;
+  var T={path:"Karan replied to your comment about footpaths. It will be here when you are ready.",
+         hello:"Rukmini asked her first question in First-time managers. One thoughtful welcome is enough.",
+         close:"Good. It will still be here tomorrow. Nothing piles up while you are away."};
+  $$("button",go).forEach(function(b){ b.addEventListener("click",function(){ say.textContent=T[b.dataset.k]; ping(4); }); });
+})();
+
+/* ═══════════════════════════════════════════════════════════════════
+   26. THE REEL TAKES A THUMB
+
+   Buttons under a phone-shaped thing are not how anyone moves through
+   reels. The card tracks the pointer one-to-one, goes heavy at the two
+   ends so the top and the bottom of the stack are felt rather than
+   announced, and either carries through or springs back.
+
+   Vertical scrolling is never taken: touch-action pan-y hands the y-axis
+   back to the page, and a gesture that is mostly vertical is let go on the
+   first move rather than fought over.
+   ═════════════════════════════════════════════════════════════════ */
+(function(){
+  var reel=$("#reel"), nextB=$("#reelNext"), prevB=$("#reelPrev"), endB=$("#reelEnd");
+  if(!reel||!nextB) return;
+  var x0=0, y0=0, dx=0, w=260, down=false, live=false, gave=false, moved=false;
+
+  function set(v,o){ reel.style.setProperty("--dx",v.toFixed(1)+"px");
+                     reel.style.setProperty("--dop",o.toFixed(3)); }
+  function atEnd(){ return nextB.disabled || endB.classList.contains("on"); }
+  function step(dir){
+    var btn = dir<0 ? nextB : prevB;
+    if(btn.disabled) return false;
+    if(reduce){ btn.click(); return true; }
+    reel.classList.add("settling"); set(dir*w*.62, 0);
+    setTimeout(function(){
+      btn.click();
+      reel.classList.remove("settling"); set(-dir*w*.5, 0);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        reel.classList.add("settling"); set(0,1);
+      })});
+    }, 210);
+    return true;
+  }
+  function home(){ reel.classList.add("settling"); set(0,1); }
+  function used(){ var ph=reel.closest(".reelphone"); if(ph) ph.classList.add("used"); }
+
+  reel.addEventListener("pointerdown",function(e){
+    if(e.target.closest(".reel-end")) return;
+    down=true; live=false; gave=false; moved=false;
+    x0=e.clientX; y0=e.clientY; dx=0; w=reel.clientWidth||260;
+    reel.classList.remove("settling");
+  });
+  reel.addEventListener("pointermove",function(e){
+    if(!down||gave) return;
+    var ax=e.clientX-x0, ay=e.clientY-y0;
+    if(!live){
+      if(Math.abs(ax)<4 && Math.abs(ay)<4) return;
+      /* mostly vertical: this was a page scroll, not a swipe */
+      if(Math.abs(ay)>Math.abs(ax)){ gave=true; return; }
+      live=true; reel.classList.add("dragging"); used();
+      try{ reel.setPointerCapture(e.pointerId); }catch(err){}
+    }
+    moved=true; dx=ax;
+    /* resistance at the two ends of the stack */
+    if((dx>0&&prevB.disabled)||(dx<0&&atEnd())) dx*=.3;
+    set(dx, 1-Math.min(1,Math.abs(dx)/w)*.4);
+  });
+  function release(){
+    if(!down) return;
+    down=false;
+    if(!live){ return; }
+    live=false; reel.classList.remove("dragging");
+    var far=Math.abs(dx)>Math.max(38,w*.2);
+    if(!far || !step(dx<0?-1:1)) home();
+    setTimeout(function(){ moved=false; },60);
+  }
+  reel.addEventListener("pointerup",release);
+  reel.addEventListener("pointercancel",function(){ down=false; live=false;
+    reel.classList.remove("dragging"); home(); });
+  /* a swipe must not also read as the tap that advances the reel */
+  reel.addEventListener("click",function(e){ if(moved){ e.stopPropagation(); e.preventDefault(); } },true);
+
+  reel.addEventListener("keydown",function(e){
+    if(e.key==="ArrowRight"||e.key==="ArrowLeft") used();
+    if(e.key==="ArrowRight"){ if(!nextB.disabled){ step(-1)||nextB.click(); } e.preventDefault(); }
+    else if(e.key==="ArrowLeft"){ if(!prevB.disabled){ step(1)||prevB.click(); } e.preventDefault(); }
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════════════
+   33. SAVE AND REACT — small toggles, private by design: a save or a
+   reaction never becomes a public number.
+   ═════════════════════════════════════════════════════════════════ */
+D.addEventListener("click",function(e){
+  var b=e.target.closest("[data-toggle]"); if(!b) return;
+  var on=b.getAttribute("aria-pressed")!=="true";
+  b.setAttribute("aria-pressed",on?"true":"false");
+  if(b.dataset.on){ var l=$(".tl",b)||b; l.textContent=on?b.dataset.on:b.dataset.off; }
+  ping(on?2:1);
+});
+
+/* 34. SIGN IN — not open yet, and the page says so rather than pretending. */
+(function(){
+  var b=$("#signin"), p=$("#signinPop"); if(!b||!p) return;
+  function set(on,back){
+    p.hidden=!on; b.setAttribute("aria-expanded",on?"true":"false");
+    if(on){ var a=$("a",p); if(a){ try{ a.focus({preventScroll:true}); }catch(err){ a.focus(); } } }
+    else if(back){ b.focus(); }
+  }
+  b.addEventListener("click",function(){ set(p.hidden); });
+  D.addEventListener("click",function(e){ if(!p.hidden && !p.contains(e.target) && !b.contains(e.target)) set(false); });
+  p.addEventListener("click",function(e){ if(e.target.closest("a")) set(false); });
+  D.addEventListener("keydown",function(e){ if(e.key==="Escape" && !p.hidden) set(false,true); });
+})();
+})();

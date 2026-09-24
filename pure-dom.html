@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>My Veda Verse — a social platform built for better conversations</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Share everyday moments, ask questions, and follow the people, topics, and communities you care about — with context on replies, no public like counts, and a feed that ends. Express thoughtfully. Engage meaningfully. Share responsibly.">
+<meta name="theme-color" content="#161022">
+<meta property="og:title" content="My Veda Verse">
+<meta property="og:description" content="A social platform built for better conversations. Express thoughtfully. Engage meaningfully. Share responsibly.">
+<meta property="og:url" content="https://myvedaverse.in">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://myvedaverse.in/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="My Veda Verse — a calm social space for ideas, experiences, questions, and conversations.">
+<meta property="og:site_name" content="My Veda Verse">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My Veda Verse">
+<meta name="twitter:description" content="A social platform built for better conversations. Express thoughtfully. Engage meaningfully. Share responsibly.">
+<meta name="twitter:image" content="https://myvedaverse.in/og.png">
+<link rel="canonical" href="https://myvedaverse.in">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Three families, down from thirteen. The nine Indic script fonts went with
+     the paired glosses they existed to set: one language per label now. -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Karla:wght@400;500;600;700&family=Anek+Latin:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23161022'/%3E%3Cpath d='M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9' fill='none' stroke='%23F8C94F' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.3' r='2.5' fill='%23F8C94F'/%3E%3C/svg%3E">
+
+<!-- ═══ ICONOGRAPHY ══════════════════════════════════════════════════════
+     Five of these are not invented. Prithvi, Jal, Agni, Vayu and Akash are
+     drawn from the tattva yantras — the square, the crescent, the upward
+     triangle, the six-pointed circle and the open ring — forms these five
+     elements have carried for a very long time. The square is the only square
+     in the whole system, because earth is the thing that does not move.
+     ══════════════════════════════════════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8.5a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8Z" fill="currentColor"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16.5" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16.5 14.4c2.2 0 3.7 1.3 4.2 3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6.5 3.8h11v16.6L12 16.6l-5.5 3.8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 1.8h-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-reply" viewBox="0 0 24 24"><path d="M20 18.5c-1-4.6-4.3-7-9-7H6.5M10 7.5 6 11.5l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-repost" viewBox="0 0 24 24"><path d="M6.5 12.5V9a1.5 1.5 0 0 1 1.5-1.5h10.5M16 5l2.5 2.5L16 10M17.5 11.5V15a1.5 1.5 0 0 1-1.5 1.5H5.5M8 19l-2.5-2.5L8 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 17.5h6M10 20.5h4M12 3.5a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2v.7h5.2v-.7c0-.8.4-1.5 1-2A6 6 0 0 0 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-thought" viewBox="0 0 24 24"><path d="M4.5 6.5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H11l-4 3.5v-3.5h-.5a2 2 0 0 1-2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-prithvi" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-jal" viewBox="0 0 24 24"><path d="M4 8.5 A10 10 0 1 0 20 8.5 A12.5 12.5 0 0 1 4 8.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-agni" viewBox="0 0 24 24"><path d="M12 3.4 21 19.6H3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-vayu" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="2.6" r="1.3"/><circle cx="20.3" cy="7.3" r="1.3"/><circle cx="20.3" cy="16.7" r="1.3"/><circle cx="12" cy="21.4" r="1.3"/><circle cx="3.7" cy="16.7" r="1.3"/><circle cx="3.7" cy="7.3" r="1.3"/></g></symbol>
+  <symbol id="i-akash" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.6 4.2" stroke-linecap="round"/><circle cx="12" cy="12" r="2.1" fill="currentColor"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 9.5C3 18 21 18 21 9.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 21h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-level" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></g></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".6"/><circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".3"/></symbol>
+  <symbol id="i-breath" viewBox="0 0 24 24"><path d="M2 15c3.5 0 3.5-9 7-9s3.5 9 7 9 3.2-4.5 6-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-panch" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="3.6" r="2.1"/><circle cx="20" cy="9.4" r="2.1"/><circle cx="16.9" cy="18.8" r="2.1"/><circle cx="7.1" cy="18.8" r="2.1"/><circle cx="4" cy="9.4" r="2.1"/></g></symbol>
+  <symbol id="i-zero" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6.4" ry="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 20.5 18.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-7.1 7-12A7 7 0 0 0 5 10c0 4.9 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 16 20"><path d="M8 .8C8 6 13.4 7.2 13.4 12.6c0 4-2.5 6.7-5.4 6.7S2.6 16.6 2.6 12.6C2.6 9.2 5 8.2 5.5 5.2 6.5 7.2 8 7.6 8 .8Z"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 3a2 2 0 0 0 0 4h3M9 11h7M9 15h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-bridge" viewBox="0 0 24 24"><path d="M2 15c4 0 5-7 10-7s6 7 10 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2 15v4M22 15v4M8.5 11.6V19M15.5 11.6V19" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-calm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 14c1.6 1.8 3.2 2.7 5 2.7s3.4-.9 5-2.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-lamp" viewBox="0 0 24 24"><path d="M12 3.2c0 3 3.4 3.8 3.4 7.1a3.4 3.4 0 0 1-6.8 0c0-2.2 1.8-2.6 2.2-4.6.6 1.2 1.2 1.5 1.2-2.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16c0 4 16 4 16 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 20 6v6.2c0 4.6-3.3 8.1-8 9.3-4.7-1.2-8-4.7-8-9.3V6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5 19 12 8 18.5Z" fill="currentColor"/></symbol>
+  <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/><g stroke="currentColor" stroke-width="1.2" opacity=".8"><path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6 9.9 9.9M14.1 14.1l4.3 4.3M18.4 5.6 14.1 9.9M9.9 14.1 5.6 18.4"/></g></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M12 21c-4.4 0-8-3.4-8-7.6V9.2a1.7 1.7 0 0 1 3.4 0V6a1.7 1.7 0 0 1 3.4 0v-.8a1.7 1.7 0 0 1 3.4 0V7a1.7 1.7 0 0 1 3.4 0v6.4C17.6 17.6 15.7 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15.5 4 18.5 5.6 20 8 20c6.5 0 12-5.4 12-16Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M17 7 7 17" stroke="currentColor" stroke-width="1.2" opacity=".7"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 6.6v5.7l3.6 2.1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-mauna" viewBox="0 0 24 24"><path d="M5 15V9h3.5L13 5v14l-4.5-4H5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M17 9.5 21.5 14M21.5 9.5 17 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.8 5.8 18.2 18.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 11.4V4.5A1.5 1.5 0 0 1 4.5 3h6.9a2 2 0 0 1 1.4.6l8 8a2 2 0 0 1 0 2.8l-6.4 6.4a2 2 0 0 1-2.8 0l-8-8a2 2 0 0 1-.6-1.4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7.8" cy="7.8" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-kara" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/></symbol>
+</defs></svg>
+
+<a class="skip" href="#main">Skip to the content</a>
+<canvas id="cosmos" aria-hidden="true"></canvas>
+
+
+
+
+
+
+
+
+<header class="top">
+  <a class="brand" href="#top">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M1.8 10.6C1.8 21.4 22.2 21.4 22.2 10.6" fill="none" stroke="var(--terra)" stroke-width="1.1" opacity=".75"/>
+      <path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round"/>
+      <circle cx="12" cy="6.3" r="2.5" fill="var(--accent)"/>
+    </svg>
+    <span><b>My Veda Verse</b></span>
+  </a>
+  <nav aria-label="Main">
+    <a href="#explore">Explore</a>
+    <a href="#how">How it works</a>
+    <a href="#communities">Communities</a>
+    <a href="#house">From the house</a>
+    <a href="#principles">Principles</a>
+  </nav>
+  <div class="acct">
+    <button class="signin" id="signin" type="button" aria-expanded="false" aria-controls="signinPop">Sign in</button>
+    <a class="join" href="#join">Join</a>
+  </div>
+  <button class="stopbtn" id="stopBtn" type="button" aria-expanded="false" aria-controls="sheet">
+    <span class="segbar" id="segbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <span id="stopNow">Menu</span>
+  </button>
+  <span class="hprog" aria-hidden="true"><i id="hprog"></i></span>
+  <div class="signpop" id="signinPop" role="region" aria-label="Sign in" hidden>
+    <p><b>Sign-in opens with the first invitations.</b> People on the early list receive theirs first.</p>
+    <a class="btn btn-p" href="#join"><span>Join the early list</span></a>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetT" hidden>
+  <div class="sheet-scrim" data-close></div>
+  <div class="sheet-in">
+    <div class="sheet-h"><b id="sheetT">My Veda Verse</b><button class="sheet-x" type="button" data-close aria-label="Close the menu">×</button></div>
+    <ol class="sheet-l">
+      <li><a href="#explore">Explore</a></li>
+      <li><a href="#why">Why we are building this</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#communities">Communities</a></li>
+      <li><a href="#house">From the house of Veda Verse</a></li>
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#join">Join</a></li>
+    </ol>
+    <p class="sheet-note">Sign-in opens with the first invitations. People on the early list receive theirs first.</p>
+    <div class="sheet-ctl">
+      <button type="button" id="sheetTone" aria-pressed="false">Sound: off</button>
+      <button type="button" id="sheetStill" aria-pressed="false">Motion: on</button>
+    </div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero" id="top" aria-labelledby="h-top">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kick">Express thoughtfully. Engage meaningfully. Share responsibly.</p>
+      <h1 id="h-top">A social platform built for <em>better conversations.</em></h1>
+      <p class="deck">Share moments from your day, ask questions, and follow the people, topics, and communities you care about — without like counts, follower scoreboards, or a feed that never ends.</p>
+      <p class="hero-name">Open to everyone, for everyday conversation. The name comes from an old Indian idea — that knowledge grows when people think together. No religious or cultural background needed.</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#join"><span>Join the early list</span><span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-g" href="#how"><span>See how it works</span></a>
+      </div>
+      <p class="cta-note">Free to join · Member-supported · Opening in stages</p>
+    </div>
+
+    <figure class="hero-demo">
+      <div class="app">
+        <div class="app-bar" aria-hidden="true">
+          <span class="app-dots"><i></i><i></i><i></i></span>
+          <span class="app-search"><svg><use href="#i-search"/></svg>Search people, topics, communities</span>
+          <span class="app-bell"><svg><use href="#i-bell"/></svg><i>2</i></span>
+          <span class="av app-me" data-av="Ananya Krishnan"></span>
+        </div>
+        <div class="app-body">
+          <ul class="app-rail" aria-hidden="true">
+            <li class="on"><svg><use href="#i-home"/></svg>Home</li>
+            <li><svg><use href="#i-compass"/></svg>Explore</li>
+            <li><svg><use href="#i-people"/></svg>Communities</li>
+            <li><svg><use href="#i-bookmark"/></svg>Saved</li>
+            <li><svg><use href="#i-bell"/></svg>Notifications</li>
+          </ul>
+          <div class="app-main">
+            <div class="app-tabs" aria-hidden="true"><span>Following</span><span class="on">From the house</span><span>Everyday life</span><span>Books</span><span>Food</span></div>
+            <article class="apost house" aria-label="From the house of Veda Verse: why rangoli was drawn with rice flour">
+              <div class="apost-h"><span class="hm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg></span><div class="am"><b>From the house of Veda Verse</b><span>Everyday life · 6 min read</span></div><span class="kind k-trad">Tradition</span></div>
+              <p class="apost-t">Why was rangoli traditionally drawn with rice flour?</p>
+              <p class="apost-b">Before bright powders, many homes drew it with rice or wheat flour. By noon, ants, sparrows, and squirrels had eaten the edges — a small share left at the door for other lives.</p>
+              <div class="apost-img"><svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A rice-flour rangoli at a doorstep, with a line of ants carrying grains away"><defs><linearGradient id="klA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3830"/><stop offset="1" stop-color="#2B201B"/></linearGradient></defs><rect width="320" height="120" fill="url(#klA)"/><rect y="108" width="320" height="12" fill="#57443A"/><g fill="none" stroke="#F3EBDD" stroke-width="2" stroke-linecap="round" stroke-opacity=".92"><path d="M160 20 198 58 160 96 122 58Z"/><path d="M160 32 186 58 160 84 134 58Z"/><circle cx="160" cy="58" r="8"/><path d="M122 58c-18-18-18 18 0 0M198 58c18-18 18 18 0 0M160 20c-18-16 18-16 0 0M160 96c-18 16 18 16 0 0"/></g><g fill="#F3EBDD"><circle cx="141" cy="39" r="2.2"/><circle cx="179" cy="39" r="2.2"/><circle cx="141" cy="77" r="2.2"/><circle cx="179" cy="77" r="2.2"/><circle cx="160" cy="58" r="2.2"/><circle cx="206" cy="74" r=".9" fill-opacity=".7"/><circle cx="210" cy="71" r=".8" fill-opacity=".6"/></g><g fill="#140F0C"><ellipse cx="214" cy="79.0" rx="2.4" ry="1.4"/><ellipse cx="217" cy="79.6" rx="1.8" ry="1.2"/><ellipse cx="228" cy="84.0" rx="2.4" ry="1.4"/><ellipse cx="231" cy="84.6" rx="1.8" ry="1.2"/><ellipse cx="242" cy="89.0" rx="2.4" ry="1.4"/><ellipse cx="245" cy="89.6" rx="1.8" ry="1.2"/><ellipse cx="256" cy="93.5" rx="2.4" ry="1.4"/><ellipse cx="259" cy="94.1" rx="1.8" ry="1.2"/><ellipse cx="270" cy="98.0" rx="2.4" ry="1.4"/><ellipse cx="273" cy="98.6" rx="1.8" ry="1.2"/><ellipse cx="284" cy="102.0" rx="2.4" ry="1.4"/><ellipse cx="287" cy="102.6" rx="1.8" ry="1.2"/></g><g fill="#F3EBDD"><circle cx="219.4" cy="77.4" r="1"/><circle cx="247.4" cy="87.4" r="1"/><circle cx="275.4" cy="96.4" r="1"/></g></svg></div>
+              <div class="apost-f" aria-hidden="true">
+                <span class="rx on"><svg><use href="#i-bulb"/></svg>Helpful</span>
+                <span class="rx"><svg><use href="#i-reply"/></svg>Reply</span>
+                <span class="rx"><svg><use href="#i-repost"/></svg>Share</span>
+                <span class="rx sv on"><svg><use href="#i-bookmark"/></svg>Saved</span>
+              </div>
+              <p class="apost-who">Harleen, Ezra and 14 others replied</p>
+            </article>
+            <article class="apost house" aria-label="From the house of Veda Verse: did India's independence wait for midnight?">
+              <div class="apost-h"><span class="hm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg></span><div class="am"><b>From the house of Veda Verse</b><span>History · 5 min read</span></div><span class="kind k-ctx">Context</span></div>
+              <p class="apost-t">Did India's independence wait for midnight because of the stars?</p>
+              <p class="apost-b">The date came from a law and a viceroy; the hour, many say, from astrologers. And one country freed by the same Act did not wait for the clock. Can you guess which?</p>
+              <div class="apost-r"><span class="av" data-av="Ezra Samson"></span><p><b>Ezra</b><span class="kind k-q">Question</span>I have a guess. Which parts are recorded, and which are only told?</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="app-toast"><span class="av" data-av="Meera Iyer"></span><p><b>Meera</b> replied to your question: “Should we teach financial literacy in school?”</p></div>
+      <figcaption>A preview of the app: reads from the house of Veda Verse in their own tab, replies that say what they are, and no like counts.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════════════ EXPLORE ══════════════════ -->
+<section class="sec" id="explore" aria-labelledby="h-explore">
+  <div class="wrap">
+    <span class="eyebrow rv">01 — Explore</span>
+    <h2 id="h-explore" class="big rv">See what people <em>are sharing.</em></h2>
+    <p class="deck rv">Everyday moments, photos, questions, and polls from the people and topics you follow. Filter by topic, vote in a poll, or turn on counts to see how a scoreboard changes the same feed.</p>
+
+    <div class="demo rv">
+      <span class="hint">Compare the same feed with and without public counts</span>
+      <div class="feedbar">
+        <div class="pick" id="feedPick">
+          <button aria-pressed="true" data-f="off">Without counts</button>
+          <button aria-pressed="false" data-f="on">With counts</button>
+        </div>
+        <div class="chips topicf" id="topicF" role="group" aria-label="Filter the feed by topic">
+          <button type="button" aria-pressed="true" data-t="all">All</button>
+          <button type="button" aria-pressed="false" data-t="Food">Food</button>
+          <button type="button" aria-pressed="false" data-t="Cities">Cities</button>
+          <button type="button" aria-pressed="false" data-t="Education">Education</button>
+          <button type="button" aria-pressed="false" data-t="Books">Books</button>
+          <button type="button" aria-pressed="false" data-t="Everyday life">Everyday life</button>
+        </div>
+      </div>
+
+      <div class="feedwrap">
+        <div>
+          <div class="feed" id="feedList"></div>
+          <div class="orgfeed" id="orgFeed" role="region" aria-labelledby="orgT">
+            <div class="org-h">
+              <h4 id="orgT">From pages you follow</h4>
+              <p>Companies, news channels, brands, and public institutions post here — kept apart from people, clearly labelled, and never able to pay for reach. Follow or mute any page.</p>
+            </div>
+            <div class="feed" id="orgList"></div>
+          </div>
+          <div class="feed-end" style="margin-top:.8em">
+            <svg width="26" height="26" aria-hidden="true"><use href="#i-bowl"/></svg>
+            <b>You're all caught up.</b>
+            <span>That is everything from the people and topics you follow. New posts will be here tomorrow.</span>
+            <div class="fe-go" id="feGo">
+              <button type="button" data-k="path">Continue a discussion</button>
+              <button type="button" data-k="hello">Welcome someone new</button>
+              <button type="button" data-k="close">Close the app</button>
+            </div>
+            <span class="fe-say" id="feSay" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="aside">
+          <h4>Every post and reply says what it is</h4>
+          <p>One of eight labels, chosen with one tap, so readers know what they are reading. A fact always needs a source.</p>
+          <div class="kinds8"><span class="kind k-q">Question</span><span class="kind k-fact">Fact</span><span class="kind k-ctx">Context</span><span class="kind k-exp">Experience</span><span class="kind k-int">Interpretation</span><span class="kind k-trad">Tradition</span><span class="kind k-bel">Belief</span><span class="kind k-spec">Speculation</span></div>
+          <ul>
+            <li><b>A topic</b>, so it reaches people who care about it</li>
+            <li><b>Replies by people</b> — who contributed, not how many reacted</li>
+            <li><b>Save</b>, a private bookmark that never becomes a public count</li>
+          </ul>
+        </div>
+        <div class="aside" style="margin-top:.8em">
+          <h4>Not here</h4>
+          <p>Left out from the start, not hidden in a settings menu.</p>
+          <ul>
+            <li>Public like and follower counts</li>
+            <li>Infinite scroll and autoplay</li>
+            <li>A trending leaderboard</li>
+            <li>Brands paying for reach</li>
+            <li>Read receipts and typing indicators</li>
+            <li>Unlabelled AI-generated media</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WHY ══════════════════ -->
+<section class="sec" id="why" aria-labelledby="h-why">
+  <div class="wrap">
+    <span class="eyebrow rv">02 — Why we are building this</span>
+    <h2 id="h-why" class="big rv">Social media got loud. <em>It does not have to stay that way.</em></h2>
+    <p class="deck rv">Most feeds are designed to keep you scrolling, and what spreads fastest is often what makes people angriest. The good parts of being online — sharing, learning, meeting people — deserve a better place.</p>
+
+    <ul class="probs stag" aria-label="What goes wrong today">
+      <li><span>Rewards time spent</span><b>Noise</b><p>Endless feeds, autoplay, and alerts compete for every spare minute.</p></li>
+      <li><span>Rewards numbers</span><b>Performance</b><p>Likes and follower counts turn sharing into keeping score.</p></li>
+      <li><span>Rewards reactions</span><b>Outrage</b><p>The sharpest reply travels furthest, so conversations turn into contests.</p></li>
+    </ul>
+
+    <h3 class="h3s rv">A better way <em>to be online.</em></h3>
+    <ol class="ees stag" aria-label="How we hope people take part">
+      <li><span class="ee-i"><svg aria-hidden="true"><use href="#i-hand"/></svg></span><b class="ee-h">Express thoughtfully</b><p>Post what you mean, with a little context, so people know what they are reading.</p></li>
+      <li><span class="ee-i"><svg aria-hidden="true"><use href="#i-bridge"/></svg></span><b class="ee-h">Engage meaningfully</b><p>Reply to understand, ask a follow-up, and disagree without making it personal.</p></li>
+      <li><span class="ee-i"><svg aria-hidden="true"><use href="#i-panch"/></svg></span><b class="ee-h">Share responsibly</b><p>Pass things on with your own take, and keep the original context attached.</p></li>
+    </ol>
+
+    <div class="vs-wrap rv">
+      <table class="vs">
+        <caption class="vh">How My Veda Verse is built differently</caption>
+        <thead><tr><th scope="col">Most social platforms</th><th scope="col">My Veda Verse</th></tr></thead>
+        <tbody>
+          <tr><td>Built to hold your attention</td><td><b>Built around useful contributions</b><span>Success means people found what they came for</span></td></tr>
+          <tr><td>A feed that never ends</td><td><b>A feed with a natural end</b><span>When you are caught up, it tells you so</span></td></tr>
+          <tr><td>Opinion and fact look the same</td><td><b>Posts and replies say what they are</b><span>A fact with a source, an experience, an interpretation, or a question</span></td></tr>
+          <tr><td>The most reactive posts travel furthest</td><td><b>Helpful replies travel further</b><span>Especially when people who usually disagree both find them useful</span></td></tr>
+          <tr><td>Resharing strips context</td><td><b>Sharing keeps the original</b><span>Your take travels with the post, not instead of it</span></td></tr>
+          <tr><td>Likes and follower counts</td><td><b>Reputation through contribution</b><span>What you have helped people with, not how many follow you</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ HOW IT WORKS ══════════════════ -->
+<section class="sec" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <span class="eyebrow rv">03 — How it works</span>
+    <h2 id="h-how" class="big rv">What you already do online, <em>made a little better.</em></h2>
+    <p class="deck rv">Post, discover, read, respond, discuss, share, and message. Each works the way you would expect, with one small change that makes conversations better. Try them below.</p>
+
+    <ol class="flow stag" aria-label="The seven steps">
+      <li><a href="#post"><i>1</i><b>Post</b><span>Say what you think, with context</span></a></li>
+      <li><a href="#discover"><i>2</i><b>Discover</b><span>Follow topics and people you choose</span></a></li>
+      <li><a href="#read"><i>3</i><b>Read</b><span>Threads that show who said what</span></a></li>
+      <li><a href="#respond"><i>4</i><b>Respond</b><span>A moment to think when it heats up</span></a></li>
+      <li><a href="#discuss"><i>5</i><b>Discuss</b><span>Understand first, then disagree</span></a></li>
+      <li><a href="#share"><i>6</i><b>Share</b><span>Pass it on with your take</span></a></li>
+      <li><a href="#message"><i>7</i><b>Message</b><span>Private messages, on your schedule</span></a></li>
+    </ol>
+
+    <div class="step" id="post">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">1</span><div><h3>Post</h3><p>Ask a question, share a photo or a moment, start a poll, or add a link. One extra tap says what kind of post it is — and a fact needs a source.</p></div></div>
+    <div class="demo rv">
+      <div class="pick" id="ptype" role="tablist" aria-label="Type of post">
+        <button role="tab" aria-selected="true" data-p="question">Question</button>
+        <button role="tab" aria-selected="false" data-p="text">Text</button>
+        <button role="tab" aria-selected="false" data-p="image">Image</button>
+        <button role="tab" aria-selected="false" data-p="poll">Poll</button>
+        <button role="tab" aria-selected="false" data-p="video">Video</button>
+        <button role="tab" aria-selected="false" data-p="link">Link</button>
+      </div>
+      <div class="cgrid" id="composeForm" role="tabpanel">
+        <div class="cform">
+          <label class="clab" for="ctitle">Your post</label>
+          <input id="ctitle" class="cin" type="text" maxlength="120" autocomplete="off" placeholder="What is one local problem your city should fix?">
+          <label class="clab" for="cbody">Details <span>— optional</span></label>
+          <textarea id="cbody" class="cin" rows="3" placeholder="What made you think of it?"></textarea>
+          <div class="cextra" id="cextra"></div>
+          <span class="clab" id="kindLab">What kind of contribution is this?</span>
+          <div class="pick ckinds" id="ckind" role="group" aria-labelledby="kindLab">
+            <button type="button" aria-pressed="false" data-k="q">Question</button>
+            <button type="button" aria-pressed="false" data-k="fact">Fact</button>
+            <button type="button" aria-pressed="false" data-k="ctx">Context</button>
+            <button type="button" aria-pressed="false" data-k="exp">Experience</button>
+            <button type="button" aria-pressed="false" data-k="int">Interpretation</button>
+            <button type="button" aria-pressed="false" data-k="trad">Tradition</button>
+            <button type="button" aria-pressed="false" data-k="bel">Belief</button>
+            <button type="button" aria-pressed="false" data-k="spec">Speculation</button>
+          </div>
+          <div class="csrc" id="csrc" hidden>
+            <label class="clab" for="csrcin">Where is this from?</label>
+            <input id="csrcin" class="cin" type="text" autocomplete="off" placeholder="A book, article, paper, or person">
+          </div>
+          <span class="clab" id="topicLab">Topic</span>
+          <div class="chips" id="ctopic" role="group" aria-labelledby="topicLab">
+            <button type="button" aria-pressed="true" data-t="Everyday life">Everyday life</button>
+            <button type="button" aria-pressed="false" data-t="Food">Food</button>
+            <button type="button" aria-pressed="false" data-t="Books">Books</button>
+            <button type="button" aria-pressed="false" data-t="Cities">Cities</button>
+            <button type="button" aria-pressed="false" data-t="Education">Education</button>
+            <button type="button" aria-pressed="false" data-t="Ideas">Ideas</button>
+          </div>
+          <div class="gbar">
+            <button class="btn btn-p" id="cgo" type="button" disabled><span>Post</span></button>
+            <span class="cnt" id="chint" aria-live="polite">Start with a clear title</span>
+          </div>
+        </div>
+        <div class="cprev">
+          <span class="hint">Preview</span>
+          <article class="post" id="cprev" aria-live="polite"></article>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="discover">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">2</span><div><h3>Discover</h3><p>Follow topics and people. Every suggestion tells you why it is there, and every set of recommendations has an end.</p></div></div>
+    <div class="demo rv">
+      <span class="hint">Follow a few topics</span>
+      <div class="chips topics" id="topics" role="group" aria-label="Topics to follow">
+        <button type="button" aria-pressed="true">Everyday life</button>
+        <button type="button" aria-pressed="false">Food</button>
+        <button type="button" aria-pressed="true">Books &amp; writing</button>
+        <button type="button" aria-pressed="true">Cities</button>
+        <button type="button" aria-pressed="false">Education</button>
+        <button type="button" aria-pressed="false">Work</button>
+        <button type="button" aria-pressed="false">Photography</button>
+        <button type="button" aria-pressed="false">Science</button>
+        <button type="button" aria-pressed="false">Technology</button>
+        <button type="button" aria-pressed="false">Relationships</button>
+        <button type="button" aria-pressed="false">Culture</button>
+        <button type="button" aria-pressed="false">Ideas</button>
+      </div>
+      <p class="small" id="topicSay" aria-live="polite" style="margin-top:1em">Following 3 topics.</p>
+    </div>
+
+    <ul class="why3 stag" aria-label="Why this was suggested">
+      <li><span class="w-i"><svg aria-hidden="true"><use href="#i-scroll"/></svg></span><div><b>Because you follow Cities</b><span>A civil engineer on why so many footpaths end halfway down the road</span></div></li>
+      <li><span class="w-i"><svg aria-hidden="true"><use href="#i-panch"/></svg></span><div><b>From someone you follow</b><span>Meera: the one question I ask before replying to anyone</span></div></li>
+      <li><span class="w-i"><svg aria-hidden="true"><use href="#i-bridge"/></svg></span><div><b>A perspective you have not met</b><span>A schoolteacher on which money lessons children actually remember</span></div></li>
+    </ul>
+
+    <div class="demo rv">
+      <div class="watch">
+        <div class="vid">
+          <div class="screen">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <defs><linearGradient id="vg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A1D2E"/><stop offset="100%" stop-color="#7A3B24"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#vg1)"/>
+              <circle cx="214" cy="80" r="44" fill="#F8C94F" fill-opacity=".12"/>
+              <circle cx="214" cy="80" r="22" fill="#F8C94F" fill-opacity=".72"/>
+              <path d="M0 132h34v-24h22v14h18v-32h28v42h20v-18h26v18h14v-38h30v38h18v-14h24v14h22v-26h26v26h38v48H0Z" fill="#150E16" fill-opacity=".92"/>
+              <g fill="#F8C94F" fill-opacity=".5"><rect x="80" y="96" width="4" height="5"/><rect x="176" y="106" width="4" height="5"/><rect x="250" y="120" width="4" height="5"/></g>
+            </svg>
+            <div class="play"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></i></div>
+          </div>
+          <div class="scrub" id="scrub" aria-hidden="true"></div>
+          <div class="meta">
+            <b>How to take better photos on an everyday walk</b>
+            <span>Photography · Video · 15 min · four chapters</span>
+            <ul class="chapters">
+              <li><i>00:00</i><span>Light in the first hour of the morning</span></li>
+              <li><i>03:10</i><span>Framing an ordinary street</span></li>
+              <li><i>07:35</i><span>Photographing people, with their permission</span></li>
+              <li><i>11:02</i><span>Editing without overdoing it</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="reelphone">
+            <div class="reel" id="reel" tabindex="0" role="group" aria-label="Short-video set—swipe or use the arrow keys">
+              <svg class="scene" id="reelScene" viewBox="0 0 180 320" aria-hidden="true"></svg>
+              <div class="stack" id="reelStack" aria-hidden="true"></div>
+              <div class="cap" id="reelCap"></div>
+              <div class="reel-end" id="reelEnd">
+                <div>
+                  <svg width="28" height="28" aria-hidden="true"><use href="#i-bowl"/></svg>
+                  <b>That is the set.</b>
+                  <p>Twelve for today, the size you chose. Nothing extra is waiting underneath.</p>
+                </div>
+              </div>
+            </div>
+            <div class="reelbar">
+              <button id="reelPrev" type="button" aria-label="Previous item" disabled><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6 9 12l6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <span id="reelCount" aria-live="polite">1 of 12</span>
+              <button id="reelNext" type="button" aria-label="Next item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+            <span class="swipehint" aria-hidden="true">Swipe, or use ← →</span>
+          </div>
+          <p class="small" style="margin-top:1.1em">The bar at the top shows the whole set, so you always know where it ends.</p>
+        </div>
+      </div>
+
+      <div class="rules" style="margin-top:1.6em">
+        <div><b>Autoplay</b><span>Never</span></div>
+        <div><b>Next item</b><span>You choose it</span></div>
+        <div><b>Set size</b><span>Yours: 5, 12, or 20</span></div>
+        <div><b>Designed for</b><span>Finishing, not minutes watched</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="read">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">3</span><div><h3>Read</h3><p>Threads show who replied and what kind of reply it is. React in words, save posts for later, and get notifications when you choose.</p></div></div>
+    <div class="demo rv">
+      <div class="rgrid">
+        <article class="post tcard" aria-labelledby="tcT">
+          <div class="post-h"><div class="av" data-av="Devika Menon"></div><div><div class="who">Devika Menon</div><div class="mt">Ideas · <span class="ptype">Text</span> · 3 hours ago</div></div></div>
+          <b class="ptitle" id="tcT"><span class="kind k-exp">Experience</span>Sometimes listening is more useful than winning an argument.</b>
+          <div class="body">My brother told me he was leaving his job, and I spent a week arguing with him. Then I asked what he was hoping for. Ten minutes later we were planning it together.</div>
+          <div class="rxbar" role="group" aria-label="React to this post">
+            <button type="button" aria-pressed="true" data-toggle><svg aria-hidden="true"><use href="#i-bulb"/></svg>Helpful</button>
+            <button type="button" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-thought"/></svg>Made me think</button>
+            <button type="button" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-calm"/></svg>Relatable</button>
+            <button type="button" class="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span class="tl">Save</span></button>
+          </div>
+          <span class="rxnote">Reactions reach Devika privately. Nobody sees a total.</span>
+          <div class="replies">
+            <div class="rp"><div class="av" data-av="Arjan Singh Gill"></div><p><b>Arjan</b><span class="kind k-exp">Experience</span>Same with my manager. Our meetings got shorter the day I asked what worried her most.</p></div>
+            <div class="rp nest"><div class="av" data-av="Devika Menon"></div><p><b>Devika</b><span class="kind k-q">Question</span>Did you tell her afterwards what changed for you?</p></div>
+            <div class="rp"><div class="av" data-av="Sarah Penkar"></div><p><b>Sarah</b><span class="kind k-int">Interpretation</span>Listening is not the same as agreeing. It just makes sure you are replying to what was actually said.</p></div>
+            <div class="rp"><div class="av" data-av="Siddharth Kamble"></div><p><b>Siddharth</b><span class="kind k-q">Question</span>What do you do when the other person is not listening back?</p></div>
+          </div>
+          <div class="post-f">
+            <span class="said">Arjan, Sarah, Siddharth and 3 others replied</span>
+            <span class="act"><a href="#respond">Reply</a><a href="#share">Share with your take</a></span>
+          </div>
+        </article>
+
+        <div class="rside">
+          <div class="notes">
+            <h4>Notifications <span>Delivered at 6:00 pm</span></h4>
+            <ul>
+              <li><div class="av" data-av="Arjan Singh Gill"></div><p><b>Arjan</b> replied to your post about listening<span class="nt">2 hours ago</span></p></li>
+              <li><div class="av" data-av="Meera Iyer"></div><p><b>Meera</b> thanked you for your answer on financial literacy<span class="nt">4 hours ago</span></p></li>
+              <li><div class="av" data-av="Lakshmi Rao"></div><p><b>Reading Circle</b> has new notes on chapter six<span class="nt">Today</span></p></li>
+            </ul>
+            <p class="nfoot">No red badges. Notifications arrive together, at times you choose.</p>
+          </div>
+          <div class="notes">
+            <h4>Saved <span>Only you</span></h4>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-bookmark"/></svg><p>What is one local problem your city should fix?<span class="nt">Cities · Karan Mehta</span></p></li>
+              <li><svg aria-hidden="true"><use href="#i-bookmark"/></svg><p>Finally finished this book. Here's what stayed with me.<span class="nt">Books · Daniel Kolet</span></p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="respond">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">4</span><div><h3>Respond</h3><p>Reply the way you normally would. If a thread heats up and you post several replies in a row, you get a short pause before the next one. Nothing is deleted.</p></div></div>
+    <div class="demo rv">
+      <div class="flamewrap" style="margin-top:0">
+        <div>
+          <div class="thread" id="thread">
+            <div class="bub"><span class="by">Ira</span>Remote work made informal mentorship harder. Newer colleagues can miss the small lessons that once happened between meetings.</div>
+            <div class="bub"><span class="by">Devika</span>Or it showed that mentorship was too dependent on proximity. Maybe the answer is to design more deliberate ways to learn from each other.</div>
+          </div>
+          <div class="composer" id="composer">
+            <input id="cin" type="text" placeholder="Write a reply…" aria-label="Message" autocomplete="off">
+            <button class="btn btn-p" id="cpost" type="button"><span>Post</span></button>
+          </div>
+          <div class="cool" id="cool" role="status">
+            <svg class="bowlsvg" viewBox="0 0 80 80" aria-hidden="true">
+              <circle class="trk" cx="40" cy="40" r="33"/>
+              <circle class="fil" id="fil" cx="40" cy="40" r="33" stroke-dasharray="207.3" stroke-dashoffset="207.3"/>
+            </svg>
+            <div class="cd">
+              <b>A short pause. <i id="ctime">15s</i></b>
+              Nothing was deleted. Your draft is still there, waiting for you.
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="sub">Why a pause, not a block</p>
+          <p class="gnote">A hard stop can feel like punishment. A brief pause creates room to reconsider without taking the conversation away. Same moment of friction, a different invitation.</p>
+          <p class="small" style="margin-top:1.2em">Try it: post three replies quickly. The pause here is shortened to fifteen seconds so you can watch it finish.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="discuss">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">5</span><div><h3>Discuss</h3><p>To disagree, first put the other person's view in your own words. Once they agree it is fair, your reply opens. The argument stays about the idea.</p></div></div>
+    <div class="demo rv">
+      <span class="hint">Try it—you are about to disagree with Devika</span>
+      <div class="gate">
+        <div>
+          <div class="gstep done" id="gs1">
+            <div class="gn"><i>1</i>Her position</div>
+            <h4>Devika Menon</h4>
+            <p class="quote">In my family, our Sunday meal was never just about food. It was a weekly pause, a way to catch up, share recipes, and make sure everyone had a seat at the table. Calling it simply a “tradition” misses why it mattered.</p>
+          </div>
+
+          <div class="gstep now" id="gs2">
+            <div class="gn"><i>2</i>Say it back</div>
+            <h4>Put her case as fairly as she would</h4>
+            <p>Not a summary and not a caricature. If she would not recognise her own point in it, it does not count.</p>
+            <textarea id="pvText" rows="3" placeholder="Their position, in your own words…" aria-label="State the other view"></textarea>
+            <div class="gbar">
+              <button class="btn btn-p" id="pvAsk" type="button" disabled><span>Ask Devika if this is fair</span><span class="arw" aria-hidden="true">→</span></button>
+              <span class="cnt" id="pvCnt">0 words · 12 to go</span>
+            </div>
+          </div>
+
+          <div class="gstep wait" id="gs3">
+            <div class="gn"><i>3</i>Her call</div>
+            <h4 id="gs3h">Waiting for Devika</h4>
+            <p id="gs3p">She sees your restatement before your reply. She can accept it, or send it back with a note.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="gstep locked" id="rebutBox">
+            <div class="veil">
+              <div>
+                <svg width="26" height="26" aria-hidden="true"><use href="#i-lock"/></svg>
+                <span>Your reply opens once the restatement is accepted</span>
+              </div>
+            </div>
+            <div class="gn"><i>4</i>Your reply</div>
+            <h4>Now add your perspective</h4>
+            <p>Her position is already there in the words she accepted. Build from it.</p>
+            <textarea id="rbText" rows="4" placeholder="Your reply…" aria-label="Your reply"></textarea>
+            <div class="gbar">
+              <button class="btn btn-p" id="rbPost" type="button"><span>Publish</span></button>
+              <span class="cnt" id="rbNote">Both parts publish together, in order.</span>
+            </div>
+          </div>
+          <p class="small" style="margin-top:1.1em">The point is simple: understanding the other side should happen before the rebuttal, not after the damage is done.</p>
+        </div>
+      </div>
+
+      <div class="rules exits">
+        <div><b>Only rebuttals pause</b><span>Questions and clarifications never do</span></div>
+        <div><b>Sent back twice</b><span>A neutral restatement can be suggested for you</span></div>
+        <div><b>No answer in 48 hours</b><span>You can still move on—silence cannot stall the conversation</span></div>
+        <div><b>Still stuck?</b><span>Publish anyway, labelled "restatement not yet accepted"</span></div>
+      </div>
+
+    </div>
+    </div>
+
+    <div class="step" id="share">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">6</span><div><h3>Share</h3><p>Add your take, quote a line, send it to a friend, or save it privately. The original post always travels with it.</p></div></div>
+    <div class="demo rv">
+      <div class="pick" id="shareOpt">
+        <button type="button" aria-pressed="true" data-s="take">Share with your take</button>
+        <button type="button" aria-pressed="false" data-s="quote">Quote a line</button>
+        <button type="button" aria-pressed="false" data-s="send">Send to a friend</button>
+        <button type="button" aria-pressed="false" data-s="save">Save for later</button>
+      </div>
+      <div class="sgrid">
+        <div>
+          <label class="clab" for="stake" id="stakeLab">Your take</label>
+          <textarea id="stake" class="cin" rows="3" placeholder="What do you think—and why is it useful to share?"></textarea>
+          <div class="gbar">
+            <button class="btn btn-p" id="sgo" type="button" disabled><span id="sgoTx">Share</span></button>
+            <span class="cnt" id="shint" aria-live="polite">Add a few words of your own</span>
+          </div>
+        </div>
+        <div class="sprev">
+          <span class="hint" id="sprevH">What others see</span>
+          <article class="post shared">
+            <div class="post-h"><div class="av" data-av="Ananya Krishnan"></div><div><div class="who" id="sprevWho">Ananya Krishnan shared</div><div class="mt">Work · just now</div></div></div>
+            <div class="body" id="sprevTake">Your words appear here, above the original.</div>
+            <div class="qpost">
+              <div class="post-h"><div class="av" data-av="Karan Mehta"></div><div><div class="who">Karan Mehta</div><div class="mt">Work · Question</div></div></div>
+              <b class="ptitle"><span class="kind k-q">Question</span>What helps a team stay steady when work gets stressful?</b>
+              <p>I have found that focusing on the next useful action helps a team more than obsessing over the final outcome. What has worked for you in a high-pressure workplace?</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="step" id="message">
+      <div class="step-h rv"><span class="step-n" aria-hidden="true">7</span><div><h3>Message</h3><p>Talk to someone privately. Messages arrive in delivery windows the recipient chooses, senders can see when theirs will land, read receipts are off, and anything urgent can still go through now.</p></div></div>
+    <div class="demo rv">
+      <div class="inbox">
+        <div class="inbox-h">
+          <b>Messages</b>
+          <span class="win"><svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>Next delivery window <i id="winAt">6:00 pm</i> · in <i id="winIn">2h 14m</i></span>
+        </div>
+        <div class="inbox-b" id="inboxBody">
+          <div class="held"><div class="av" data-av="Aarav Doshi"></div><div class="bd"><div class="who">Aarav Doshi · waiting</div><div class="tx">Sent you the updated reading list—no rush to reply.</div></div></div>
+          <div class="held"><div class="av" data-av="Pema Lhamo"></div><div class="bd"><div class="who">Pema Lhamo · waiting</div><div class="tx">Are you joining the Thursday session? Tomorrow is fine.</div></div></div>
+          <div class="mauna" id="mauna">
+            <svg width="17" height="17" aria-hidden="true"><use href="#i-mauna"/></svg>
+            <span id="maunaTx">Quiet mode is off—messages arrive at the next window</span>
+            <button class="sw" id="maunaSw" type="button" role="switch" aria-checked="false" aria-label="Quiet mode"></button>
+          </div>
+        </div>
+        <div class="inbox-f">
+          <button type="button" id="sendNow">Send mine now</button>
+          <button type="button" id="keepBatched">Keep it for the next window</button>
+          <span class="why" id="inboxWhy">Read receipts are off by design. There is no pressure to be instantly available.</span>
+        </div>
+      </div>
+      <p class="small" style="margin-top:1.2em"><b style="color:var(--ink)">A calmer rhythm, not silence.</b> Predictable delivery makes it easier to focus without disconnecting.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMMUNITIES ══════════════════ -->
+<section class="sec" id="communities" aria-labelledby="h-communities">
+  <div class="wrap">
+    <span class="eyebrow rv">04 — Communities</span>
+    <h2 id="h-communities" class="big rv">Find your people <em>around what you care about.</em></h2>
+    <p class="deck rv">Reading groups, neighbourhoods, young founders, language learners. Join the ones you care about, or start your own. Each community decides its pace, what it keeps, and how it welcomes new members.</p>
+
+    <div class="demo rv">
+      <span class="hint">Visit a community</span>
+      <div class="pick" id="roomPick">
+        <button aria-pressed="true" data-r="prithvi"><svg width="15" height="15" aria-hidden="true"><use href="#i-prithvi"/></svg>Reading Circle</button>
+        <button aria-pressed="false" data-r="jal"><svg width="15" height="15" aria-hidden="true"><use href="#i-jal"/></svg>Local Community</button>
+        <button aria-pressed="false" data-r="vayu"><svg width="15" height="15" aria-hidden="true"><use href="#i-vayu"/></svg>Young Founders</button>
+        <button aria-pressed="false" data-r="akash"><svg width="15" height="15" aria-hidden="true"><use href="#i-akash"/></svg>Language & Culture</button>
+      </div>
+
+      <div class="room" id="room" data-el="prithvi" style="--rc:var(--terra-lit)">
+        <canvas id="amb" aria-hidden="true"></canvas>
+        <div class="room-head">
+          <div class="nm"><svg width="19" height="19" style="color:var(--rc)" aria-hidden="true"><use href="#i-prithvi" id="rIconUse"/></svg><span id="rName">Reading Circle</span></div>
+          <div class="mt" id="rMeta">Reading Circle · kept over time · 2,140 notes</div>
+        </div>
+        <div class="room-body" id="rBody"></div>
+        <div class="room-foot"><span class="lock" id="rMode">Shared record</span><span id="rNote">Useful contributions stay easy to find and build on.</span></div>
+      </div>
+
+      <div class="rules">
+        <div><b>Format</b><span id="rSpeech">Written, searchable</span></div>
+        <div><b>Memory</b><span id="rMem">Kept over time</span></div>
+        <div><b>Pace</b><span id="rPace">Thoughtful by design</span></div>
+        <div><b>Who can contribute</b><span id="rWho">Everyone in the community</span></div>
+      </div>
+    </div>
+
+    <h3 class="h3s rv">How communities <em>work.</em></h3>
+    <div class="rules cwork stag">
+      <div><b>Joining</b><span>Open communities take one tap. Some ask a short question first, so members know why you are there.</span></div>
+      <div><b>Starting one</b><span>Any member can propose a community. It opens once a few people agree to steward it.</span></div>
+      <div><b>Open or closed</b><span>Each community chooses: open to read, open to join, or members only. You see the choice before you join.</span></div>
+      <div><b>In your feed</b><span>Posts from communities you join appear in your feed, marked with the community's name. Mute any community at any time.</span></div>
+    </div>
+
+    <div class="rules roles stag">
+      <div><b>Stewards</b><span>A few rotating members help keep the space healthy; the role carries responsibility, not status</span></div>
+      <div><b>Welcomers</b><span>New members are welcomed with a real response</span></div>
+      <div><b>Beginner's thread</b><span>A standing place for basic questions and first steps</span></div>
+      <div><b>Community reviewers</b><span>Difficult community decisions are explained openly</span></div>
+    </div>
+
+
+    <h3 class="h3s rv">Profiles show what you add, <em>not your numbers.</em></h3>
+    <p class="deck rv">No follower count and no public like total. A profile shows what someone is curious about, where they take part, and how they help.</p>
+
+    <div class="demo rv">
+      <div class="pick" id="viewPick">
+        <button type="button" aria-pressed="true" data-v="them">As others see it</button>
+        <button type="button" aria-pressed="false" data-v="me">As you see it</button>
+      </div>
+      <div class="idcard" id="gprofile" data-view="them" style="--st:var(--indigo)">
+        <div class="id-top">
+          <div class="avatar" id="gav" aria-hidden="true"></div>
+          <div class="id-name"><b>Ananya Krishnan</b><span>Product designer · joined recently</span><span class="state" id="gstate">Reflective</span></div>
+        </div>
+        <div class="id-grid">
+          <div><h4>Curious about</h4><ul class="tags"><li>Psychology</li><li>Work and leadership</li><li>Food and family traditions</li></ul></div>
+          <div><h4>Communities</h4><ul class="tags"><li>First-time managers</li><li>Family recipes</li><li>Everyday science</li></ul></div>
+          <div class="id-wide"><h4>Recently asked</h4>
+            <ul class="asked"><li>Why do some families have different ways of greeting elders?</li><li>What makes a healthy work ethic without burning out?</li></ul>
+          </div>
+          <div class="id-wide"><h4>How Ananya takes part</h4>
+            <ul class="ledger">
+              <li><span class="them">Asks questions that help people think together</span><span class="me">4 questions helped start discussions this month</span></li>
+              <li><span class="them">Adds context other people can use</span><span class="me">Added useful sources to 12 replies</span></li>
+              <li><span class="them">Shows understanding before disagreeing</span><span class="me">3 restatements accepted by people who initially disagreed</span></li>
+            </ul>
+          </div>
+          <div class="id-wide"><h4>Thanks received</h4>
+            <p class="thanks"><span class="them">Private. Only Ananya sees who sent thanks, and what for.</span><span class="me">“Your question helped me have a better conversation with my mother.” — Meera</span></p>
+          </div>
+        </div>
+        <p class="id-rule">Private numbers can help you understand your own participation. Publicly, your profile tells the story through words and contributions.</p>
+      </div>
+      <div class="id-today">
+        <span class="hint">Today, I am…</span>
+        <div class="pick" id="gunaPick">
+          <button aria-pressed="true" data-g="sattva">Reflective</button>
+          <button aria-pressed="false" data-g="rajas">Building</button>
+          <button aria-pressed="false" data-g="tamas">Taking a break</button>
+          <button aria-pressed="false" data-g="chardi">Here to help</button>
+        </div>
+        <p class="eff" id="geff">Open to a thoughtful conversation. Slower conversations can be surfaced without pretending everything is urgent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FROM THE HOUSE ══════════════════ -->
+<section class="sec" id="house" aria-labelledby="h-house">
+  <div class="wrap">
+    <span class="eyebrow rv">05 — From the house of Veda Verse</span>
+    <h2 id="h-house" class="big rv">Old ideas, <em>read for the way we live now.</em></h2>
+    <p class="deck rv">Short, sourced reads from our editors on Indian culture — where a practice came from, what it asked of people, and what is still worth carrying today.</p>
+
+    <div class="hgrid">
+      <article class="hread rv" aria-labelledby="hr1">
+        <div class="hread-art"><svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A rice-flour rangoli at a doorstep, with a line of ants carrying grains away"><defs><linearGradient id="klB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3830"/><stop offset="1" stop-color="#2B201B"/></linearGradient></defs><rect width="320" height="120" fill="url(#klB)"/><rect y="108" width="320" height="12" fill="#57443A"/><g fill="none" stroke="#F3EBDD" stroke-width="2" stroke-linecap="round" stroke-opacity=".92"><path d="M160 20 198 58 160 96 122 58Z"/><path d="M160 32 186 58 160 84 134 58Z"/><circle cx="160" cy="58" r="8"/><path d="M122 58c-18-18-18 18 0 0M198 58c18-18 18 18 0 0M160 20c-18-16 18-16 0 0M160 96c-18 16 18 16 0 0"/></g><g fill="#F3EBDD"><circle cx="141" cy="39" r="2.2"/><circle cx="179" cy="39" r="2.2"/><circle cx="141" cy="77" r="2.2"/><circle cx="179" cy="77" r="2.2"/><circle cx="160" cy="58" r="2.2"/><circle cx="206" cy="74" r=".9" fill-opacity=".7"/><circle cx="210" cy="71" r=".8" fill-opacity=".6"/></g><g fill="#140F0C"><ellipse cx="214" cy="79.0" rx="2.4" ry="1.4"/><ellipse cx="217" cy="79.6" rx="1.8" ry="1.2"/><ellipse cx="228" cy="84.0" rx="2.4" ry="1.4"/><ellipse cx="231" cy="84.6" rx="1.8" ry="1.2"/><ellipse cx="242" cy="89.0" rx="2.4" ry="1.4"/><ellipse cx="245" cy="89.6" rx="1.8" ry="1.2"/><ellipse cx="256" cy="93.5" rx="2.4" ry="1.4"/><ellipse cx="259" cy="94.1" rx="1.8" ry="1.2"/><ellipse cx="270" cy="98.0" rx="2.4" ry="1.4"/><ellipse cx="273" cy="98.6" rx="1.8" ry="1.2"/><ellipse cx="284" cy="102.0" rx="2.4" ry="1.4"/><ellipse cx="287" cy="102.6" rx="1.8" ry="1.2"/></g><g fill="#F3EBDD"><circle cx="219.4" cy="77.4" r="1"/><circle cx="247.4" cy="87.4" r="1"/><circle cx="275.4" cy="96.4" r="1"/></g></svg></div>
+        <div class="hread-in">
+          <div class="hmeta"><span class="kind k-trad">Tradition</span>Everyday life · 6 min read</div>
+          <h3 id="hr1">Why rangoli was drawn with rice flour</h3>
+          <p class="hdek">A doorway drawing that was meant to disappear.</p>
+          <p class="hb">In many homes — especially in the south, where it is called kolam — the morning drawing at the threshold was made with rice flour, and in some homes wheat flour. It was never meant to last. By midday, ants had carried off the fine lines, and sparrows and squirrels had picked at the rest.</p>
+          <div class="hsplit">
+            <div class="doc"><b>Documented</b><p>Flour designs at the doorway are drawn across much of India, and ants, birds, and squirrels do eat them.</p></div>
+            <div class="told"><b>Told</b><p>That the drawing began as a daily meal left for small creatures. Many families explain it this way; the practice is older than the records that could confirm it.</p></div>
+          </div>
+          <p class="htake"><span>Worth carrying</span>Begin the day by leaving something for someone who can never thank you.</p>
+          <div class="rxbar"><button type="button" class="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save to read later"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span class="tl">Save to read later</span></button></div>
+        </div>
+      </article>
+
+      <article class="hread rv" aria-labelledby="hr2">
+        <div class="hread-art"><svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A clock at midnight, between 14 and 15 August"><defs><linearGradient id="mnS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1530"/><stop offset="1" stop-color="#3A2438"/></linearGradient></defs><rect width="320" height="120" fill="url(#mnS)"/><g fill="#F5E9D6" fill-opacity=".5"><circle cx="40" cy="22" r="1.2"/><circle cx="92" cy="14" r="1"/><circle cx="262" cy="20" r="1.3"/><circle cx="294" cy="46" r="1"/><circle cx="24" cy="74" r="1"/><circle cx="300" cy="96" r="1.1"/></g><circle cx="160" cy="60" r="36" fill="#241C30" stroke="#F8C94F" stroke-opacity=".75" stroke-width="2"/><path d="M160 29v6M160 85v6M129 60h6M185 60h6" stroke="#F5E9D6" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/><path d="M160 60V33" stroke="#F8C94F" stroke-width="2.6" stroke-linecap="round"/><path d="M160 60V43" stroke="#F5E9D6" stroke-width="3.4" stroke-linecap="round"/><circle cx="160" cy="60" r="3.2" fill="#F8C94F"/><g font-family="Anek Latin, sans-serif" font-weight="600" font-size="13" letter-spacing="1.5" fill="#F5E9D6" fill-opacity=".8"><text x="76" y="65" text-anchor="middle">14 AUG</text><text x="244" y="65" text-anchor="middle">15 AUG</text></g></svg></div>
+        <div class="hread-in">
+          <div class="hmeta"><span class="kind k-ctx">Context</span>History · 5 min read</div>
+          <h3 id="hr2">Why did India's freedom arrive at midnight?</h3>
+          <p class="hdek">And which country, freed by the same law, did not wait for the clock?</p>
+          <p class="hb">The date came from a law and a viceroy. The hour, many people say, came from the stars. Both halves of the story are worth knowing — and worth keeping apart.</p>
+          <div class="hsplit">
+            <div class="doc"><b>Documented</b><p>The Indian Independence Act 1947 set 15 August as the day two new dominions, India and Pakistan, came into being. Mountbatten had chosen the date: the second anniversary of Japan's surrender.</p></div>
+            <div class="told"><b>Told</b><p>That astrologers found the 15th inauspicious, and midnight — a moment belonging to neither day — became the compromise for the handover in Delhi. The story is widely retold; how far it decided the hour is still debated.</p></div>
+          </div>
+          <details class="hans"><summary>Show the answer</summary><p>Pakistan. Its handover ceremony was held in Karachi on 14 August, and it celebrates its independence on that day.</p></details>
+          <div class="post-ctx"><span class="tag src">Sources: Indian Independence Act 1947 · published accounts of the transfer of power</span></div>
+          <p class="htake"><span>Worth carrying</span>Tell the good story — and label it. Keep what is recorded and what is remembered side by side, not blended.</p>
+          <div class="rxbar"><button type="button" class="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save to read later"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span class="tl">Save to read later</span></button></div>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="h3s rv">More from <em>the house.</em></h3>
+    <ul class="hmore stag">
+      <li><div class="hmeta"><span class="kind k-ctx">Context</span>Ideas · 7 min</div><h4>Make their case before you answer it</h4><p>In classical Indian debate, a writer first set out the opposing view as strongly as its own holders would, and only then replied. It is the idea behind the Discuss step here.</p><p class="ht">Earn the right to disagree.</p><a class="hlink" href="#discuss">See it in Discuss →</a></li>
+      <li><div class="hmeta"><span class="kind k-fact">Fact</span>History · 5 min</div><h4>Stepwells were water tanks — and public squares</h4><p>Across Gujarat and Rajasthan, stepwells stored water, stayed cool through summer, and gave people a shaded place to meet. Rani-ki-Vav in Patan is a World Heritage Site.</p><span class="tag src">Source: UNESCO World Heritage List</span><p class="ht">Build useful things that are generous to strangers.</p></li>
+      <li><div class="hmeta"><span class="kind k-trad">Tradition</span>Everyday life · 3 min</div><h4>A bowl of water on the roof in May</h4><p>Many households still leave clay bowls of water out for birds through the summer heat. It costs almost nothing, and it asks you to notice who else shares your street.</p><p class="ht">Small care, repeated, becomes a practice.</p></li>
+      <li><div class="hmeta"><span class="kind k-trad">Tradition</span>Food · 4 min</div><h4>Recipes handed down without measurements</h4><p>A grandmother who cooks by estimate is not being vague. She is teaching attention: the smell of the tempering, the feel of the dough, the look of the dal when it is ready.</p><p class="ht">Learn by paying attention, not only by following steps.</p></li>
+    </ul>
+
+    <div class="hcarry rv">
+      <h3>Worth carrying <em>into today.</em></h3>
+      <ol>
+        <li>Leave something at the door for someone who can never thank you.</li>
+        <li>Make their case before you answer it.</li>
+        <li>Tell the story you love, and label what is recorded and what is remembered.</li>
+        <li>Build useful things that are generous to strangers.</li>
+        <li>In the summer heat, a bowl of water is enough.</li>
+        <li>Learn by paying attention, not only by following steps.</li>
+      </ol>
+    </div>
+    <p class="hrule rv"><b>How we write these.</b> Our editors write every piece, attach its sources, and mark what is documented, what is tradition, and what is only told. We never tell anyone what to believe. Question any claim in the replies — corrections are published and stay attached to the piece. Follow the house to get new reads in their own tab; they are never ranked above what people share.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ PRINCIPLES ══════════════════ -->
+<section class="sec" id="principles" aria-labelledby="h-principles">
+  <div class="wrap">
+    <span class="eyebrow rv">06 — Principles</span>
+    <h2 id="h-principles" class="big rv">Principles you can <em>see in the product.</em></h2>
+    <p class="deck rv">Good intentions are easy to write down. These are the commitments behind the design, and the places you would notice them.</p>
+
+    <div class="leaf rv">
+      <span class="eyebrow">In plain words</span>
+      <h3 class="leaf-h">Seven principles <em>we build by.</em></h3>
+
+      <div class="policies">
+        <div><b>Agency</b><p>You choose what reaches you and when. No autoplay, no infinite scroll, and no ranking built around keeping you scrolling.</p></div>
+        <div><b>Context</b><p>Posts and replies carry context. Sources can stay attached, and sharing adds your perspective instead of stripping the original.</p></div>
+        <div><b>Plurality</b><p>No single viewpoint is treated as the default. People can contribute different experiences and perspectives, and useful ideas can travel across disagreement.</p></div>
+        <div><b>Contribution</b><p>Recognition comes from what you add to a conversation and the people you help—not from likes or follower totals.</p></div>
+        <div><b>Calm</b><p>Messages can arrive in windows you choose. Heated conversations can slow down without turning every pause into a penalty.</p></div>
+        <div><b>Privacy</b><p>Collect as little as practical. No ads and no data sales. When you ask for deletion, we tell you what can be removed and what a legal requirement prevents.</p></div>
+        <div><b>Community responsibility</b><p>Community standards are applied with accountable human review. Serious legal requests have a separate process and a transparency record.</p></div>
+      </div>
+
+      <ol class="laws">
+        <li><span class="n">01</span><div><h3>Question ideas, respect people</h3><p>People bring different backgrounds, values, and experiences. Challenge an idea without turning the person behind it into the target.</p></div></li>
+        <li><span class="n">02</span><div><h3>No status scoring. Not anywhere.</h3><p>No hidden social score, class, or popularity tier shapes what people can see or how they are treated.</p></div></li>
+        <li><span class="n">03</span><div><h3>The product should stay accountable to its purpose</h3><p>The long-term model should protect the product from quietly becoming an attention business. The goal is to be funded by people who want the platform to exist, not by selling their attention or data.</p></div></li>
+      </ol>
+
+      <div class="wrong">
+        <h3>And here is what could prove us wrong.</h3>
+        <p>Good intentions are not evidence. Here are three product claims we would test—and the results that would make us change the design.</p>
+        <ol>
+          <li><div><b>The claim</b><p>A feed with a clear end can feel better than a feed with no end.</p></div><div><b>What would change it</b><p>If sustained use falls because the feed ends, we revisit the design rather than pretending the measure is wrong.</p></div></li>
+          <li><div><b>The claim</b><p>Restating someone's view before replying improves understanding.</p></div><div><b>What would change it</b><p>If independent reviewers cannot distinguish the restatements from a control, we remove the gate.</p></div></li>
+          <li><div><b>The claim</b><p>Predictable message windows can reduce distraction without reducing contribution.</p></div><div><b>What would change it</b><p>If contribution drops materially, we change the delivery model rather than defending the friction.</p></div></li>
+        </ol>
+        <p class="small" style="margin-top:1.2em;color:var(--ink-3)">When the product is tested, participants should consent, know the purpose, and receive the results. Findings should be published clearly, including outcomes that go against the design.</p>
+      </div>
+
+    </div>
+
+
+    <h3 class="h3s rv">Privacy you can <em>see and set.</em></h3>
+    <p class="deck rv">Choose who sees each thing you share. Move an item inward and fewer people can see it.</p>
+
+    <div class="kgrid">
+      <div>
+        <span class="hint rv">Drag the label—or focus it and use ← →</span>
+        <ul class="klist rv" id="klist">
+          <li class="on" data-k="0" tabindex="0"><span class="kn">Layer 01 · public</span><h3>Your public profile</h3><p>Your name, photo, and a short introduction. Enough for people to recognise your contribution, without exposing more than necessary.</p><span class="seen">Anyone</span></li>
+          <li data-k="1" tabindex="0"><span class="kn">Layer 02 · availability</span><h3>Your availability</h3><p>Whether you have room to talk right now — declared by you, never inferred about you.</p><span class="seen">People you have met</span></li>
+          <li data-k="2" tabindex="0"><span class="kn">Layer 03 · posts & communities</span><h3>Your posts and communities</h3><p>Your posts, interests, and communities. Visibility is something you choose, not a default you inherit.</p><span class="seen">Your communities · 23 people</span></li>
+          <li data-k="3" tabindex="0"><span class="kn">Layer 04 · drafts</span><h3>Your drafts & working notes</h3><p>Early ideas and unfinished thoughts you are not ready to share widely.</p><span class="seen">4 people</span></li>
+          <li data-k="4" tabindex="0"><span class="kn">Layer 05 · private</span><h3>Your private space</h3><p>Private reflections, plans, and notes stay yours unless you choose to share them.</p><span class="seen">You alone</span></li>
+        </ul>
+        <div class="readout rv" id="readout" aria-live="polite">
+          <b>Your public profile—the outermost layer</b>
+          <span>“Weekend cooking notes” is visible to <span class="cnt">anyone</span>.</span>
+        </div>
+      </div>
+
+      <div class="rv">
+        <div class="stage" id="stage" role="group" aria-label="Privacy sandbox">
+          <div class="ring" data-k="0" style="width:98%;height:98%"><span class="ringlab">Anyone</span></div>
+          <div class="ring" data-k="1" style="width:79%;height:79%"><span class="ringlab">People you have met</span></div>
+          <div class="ring" data-k="2" style="width:59%;height:59%"><span class="ringlab">Your communities</span></div>
+          <div class="ring" data-k="3" style="width:39%;height:39%"><span class="ringlab">A small group</span></div>
+          <div class="ring" data-k="4" style="width:20%;height:20%"><span class="ringlab">You</span></div>
+          <div id="node" tabindex="0" role="slider" aria-label="Move the item inward to make it more private" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-valuetext="Your public profile, visible to anyone">Weekend cooking notes</div>
+        </div>
+        <p class="small" style="text-align:center;margin-top:1em">Each layer gives you more privacy. Move inward when a thought, note, or plan belongs with fewer people.</p>
+      </div>
+    </div>
+
+    <h3 class="h3s rv">When something goes wrong, <em>people stay accountable.</em></h3>
+    <p class="deck rv">Moderation decisions are explained, made by people, and open to appeal.</p>
+
+    <div class="pipe rv">
+      <div><em>Step 01</em><b>A report</b><span>From anyone, about a community issue.</span></div>
+      <div class="arw2" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ai"><em>Step 02 · software</em><b>Screening</b><span>Flags, summarises, and gathers context. Decides nothing on its own.</span></div>
+      <div class="arw2" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="hum"><em>Step 03 · people</em><b>Community reviewers</b><span>A rotating group reviews the context, explains the decision, and stays accountable for it.</span></div>
+      <div class="arw2" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="hum"><em>Step 04 · appeal</em><b>Appeal review</b><span>A wider review panel considers the appeal. The process remains human and explainable.</span></div>
+    </div>
+    <p class="small rv legal">Legal and government requests follow a separate process, handled by staff and recorded in a transparency log where permitted.</p>
+
+    <h3 class="h3s rv">What the built-in assistant does, <em>and will never do.</em></h3>
+    <p class="deck rv">It can summarise a long thread, explain an unfamiliar term, or help you start a reply. Anything marked in indigo was done by software.</p>
+    <div class="assist rv">
+      <span class="assist-h"><svg width="14" height="14" aria-hidden="true"><use href="#i-thought"/></svg>Thread summary · written by software</span>
+      <p>Twenty-six replies. Most describe the same turn: asking what the other person hoped for changed the conversation. Two people disagree, saying listening can become a way to avoid a decision. One reply asks what to do when the other person will not listen back. No sources were cited in the thread.</p>
+      <span class="assist-f">Each sentence links to the replies it draws from, so you can read them in full.</span>
+    </div>
+    <ul class="never stag" style="margin-top:1.4em">
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Tell you what to believe</b><span>It will not tell you what to believe or act as an authority on someone's values. It helps summarise, clarify, and surface sources.</span></div></li>
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Score a person</b><span>It can describe <em style="font-style:normal;color:var(--ink)">writing</em> — how clear, constructive, or contextual a piece of writing is. It should not score the person behind it or infer personal traits.</span></div></li>
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Hide generated content</b><span>Generated content should be clearly labelled so people know when software helped create it.</span></div></li>
+      <li><svg width="19" height="19" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Invent certainty</b><span>When it makes a factual claim, it shows the source. When it is unsure, or cannot support an answer, it says so.</span></div></li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ══════════════════ JOIN ══════════════════ -->
+<section class="sec" id="join" aria-labelledby="h-join">
+  <div class="wrap">
+    <span class="eyebrow rv">07 — Join</span>
+    <h2 id="h-join" class="big rv">Be here <em>from the start.</em></h2>
+    <p class="deck rv">We are opening in stages. The first members start the first communities and set the tone for everyone who joins after them.</p>
+
+    <div class="joinbox rv">
+      <div class="ji">
+       <div>
+        <h3>Join the early list, <em>and we will email you when your invitation is ready.</em></h3>
+        <p>One email address. No profile form, no phone number, no unnecessary questions. You will hear from us when there is something real to join.</p>
+
+        <label class="jlab" for="joinmail">Your email address</label>
+        <form class="joinform" id="joinform" autocomplete="off" novalidate>
+          <input id="joinmail" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email" aria-describedby="joinsay">
+          <button class="btn btn-p" type="submit"><span>Join the early list</span><span class="arw" aria-hidden="true">→</span></button>
+        </form>
+        <output class="jsay" id="joinsay" for="joinmail" aria-live="polite"></output>
+
+        <ul class="jterms">
+          <li>One confirmation, one launch message</li>
+          <li class="no">No drip campaign</li>
+          <li>Unsubscribe in one click</li>
+          <li class="no">No tracking pixel</li>
+          <li>Delete the address when you ask, subject to legal requirements</li>
+          <li class="no">Never sold or used to identify you elsewhere</li>
+        </ul>
+       </div>
+      </div>
+      <p class="jfoot"><b>Said plainly:</b> This page is a design concept and the list is not live yet. Until it is, this form should not store anything. When it opens, you will confirm from your inbox before the address is retained. Questions? Write to <a href="mailto:admin@myvedaverse.in">admin@myvedaverse.in</a>.</p>
+    </div>
+
+    <ul class="facts stag" aria-label="About the project">
+      <li><b>Who is building it</b><span>An independent team based in India.</span></li>
+      <li><b>Stage</b><span>Design prototype. Nothing is live yet; this page shows how the product is meant to work.</span></li>
+      <li><b>Where it will run</b><span>On the web first, then Android and iOS.</span></li>
+      <li><b>Contact</b><span><a href="mailto:admin@myvedaverse.in">admin@myvedaverse.in</a></span></li>
+    </ul>
+
+    <h3 class="h3s rv">Your first <em>ten minutes.</em></h3>
+    <p class="deck rv">Four short steps. No birth date, no contact upload, no personality quiz.</p>
+
+    <div class="demo rv">
+      <div class="pick" id="stepPick" role="tablist" aria-label="The four steps">
+        <button role="tab" aria-selected="true" data-s="0">1 · Interests</button>
+        <button role="tab" aria-selected="false" data-s="1">2 · Delivery windows</button>
+        <button role="tab" aria-selected="false" data-s="2">3 · First question</button>
+        <button role="tab" aria-selected="false" data-s="3">4 · Privacy</button>
+      </div>
+      <div class="bar" aria-hidden="true"><i id="stepBar"></i></div>
+
+      <div class="pane on" data-p="0">
+        <div>
+          <span class="kicker">Instead of an empty feed</span>
+          <h3>Choose a few topics</h3>
+          <p>Choose what genuinely interests you—culture, work, science, books, relationships, local life, and more. Your first feed starts there.</p>
+          <div class="reveal-box"><b>What you see</b>A small set of real questions, each with a simple explanation of why it reached you.</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <g fill="none" stroke="var(--line)" stroke-width="1.4"><rect x="22" y="46" width="70" height="28" rx="14"/><rect x="104" y="46" width="74" height="28" rx="14"/><rect x="34" y="126" width="62" height="28" rx="14"/></g>
+          <rect x="40" y="86" width="84" height="28" rx="14" fill="var(--accent)"/>
+          <rect x="108" y="126" width="60" height="28" rx="14" fill="var(--accent)" opacity=".75"/>
+        </svg></figure>
+      </div>
+
+      <div class="pane" data-p="1">
+        <div>
+          <span class="kicker">Instead of “allow all notifications?”</span>
+          <h3>Choose your delivery windows</h3>
+          <p>Morning, lunch, evening, or your own schedule. Messages arrive together, and people can see when they will reach you.</p>
+          <div class="reveal-box"><b>What you see</b>A simple day-long timeline. Choose a window, and the next person messaging you sees the delivery time before they send.</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="74" fill="none" stroke="var(--line)"/>
+          <path d="M40 124h120" stroke="var(--ink-3)" stroke-opacity=".5" stroke-width="1.2" stroke-linecap="round"/>
+          <g fill="var(--accent)"><circle cx="62" cy="124" r="8"/><circle cx="104" cy="124" r="8"/><circle cx="146" cy="124" r="8"/></g>
+          <g stroke="var(--accent)" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"><path d="M62 108v-12M104 108v-12M146 108v-12"/></g>
+          <path d="M84 70c0-12 32-12 32 0" fill="none" stroke="var(--ink-3)" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round"/>
+        </svg></figure>
+      </div>
+
+      <div class="pane" data-p="2">
+        <div>
+          <span class="kicker">Start with a question</span>
+          <h3>Ask your first question</h3>
+          <p>Anything you have genuinely wondered. Why do some families keep recipes by memory? Is AI changing how we create? What makes a good manager?</p>
+          <div class="reveal-box"><b>What you see</b>It reaches people who follow the topic, and a welcoming member helps make sure your first question gets a real response.</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <rect x="34" y="40" width="132" height="64" rx="16" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+          <path d="M92 60c0-9 16-9 16 0 0 7-8 7-8 14M100 84v1" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <g fill="var(--leaf)"><circle cx="64" cy="140" r="9"/><circle cx="100" cy="150" r="9"/><circle cx="136" cy="140" r="9"/></g>
+          <path d="M70 132 92 108M100 140v-36M130 132 108 108" stroke="var(--line)" stroke-dasharray="2 4"/>
+        </svg></figure>
+      </div>
+
+      <div class="pane" data-p="3">
+        <div>
+          <span class="kicker">Privacy you can understand</span>
+          <h3>One object, five visibility rings</h3>
+          <p>Instead of burying privacy in settings, you can explore it directly through the same object you move to set visibility.</p>
+          <div class="reveal-box"><b>What you see</b>Move it outward to share more broadly; move it inward to keep it private. The interaction makes the permission visible before you choose it. ↑</div>
+        </div>
+        <figure><svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="84" fill="none" stroke="var(--line)"/>
+          <circle cx="100" cy="100" r="62" fill="none" stroke="var(--line)"/>
+          <circle cx="100" cy="100" r="40" fill="none" stroke="var(--line)"/>
+          <circle cx="100" cy="100" r="18" fill="none" stroke="var(--accent)" stroke-opacity=".8"/>
+          <circle cx="100" cy="38" r="13" fill="var(--accent)"/>
+        </svg></figure>
+      </div>
+
+      <div class="nav-b">
+        <button id="sPrev" type="button" disabled>← Back</button>
+        <button id="sNext" type="button">Next →</button>
+      </div>
+    </div>
+
+    <h3 class="h3s rv">Questions people ask.</h3>
+
+    <div class="faq3 stag">
+      <div>
+        <h4>When can I sign in?</h4>
+        <p>Invitations go out in stages, starting with the early list. You will get <b>one email</b> when yours is ready, and nothing before then.</p>
+      </div>
+      <div>
+        <h4>Do I need to know anything about Indian culture?</h4>
+        <p>No. Most conversations are about everyday life — food, books, work, cities, family, and ideas. Indian life and traditions come up naturally, because they are part of many members' lives. <b>If you are curious, you are welcome.</b></p>
+      </div>
+      <div>
+        <h4>Is this a religious app?</h4>
+        <p>No. It is a social platform. People talk about everyday life, culture, science, work, and values without being asked to adopt any worldview. <b>Nobody is asked to believe anything</b>, and nobody is mocked for what they believe.</p>
+      </div>
+      <div>
+        <h4>No ads and no data sales. So how is it paid for?</h4>
+        <p>Joining and taking part stay free. The platform is meant to be funded by <b>members and patrons who choose to support it</b>, with open finances. If that means staying smaller, we would rather stay smaller than become an attention business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ THE END ══════════════════ -->
+<section class="end" aria-labelledby="h-end">
+  <div class="wrap">
+   <div class="night">
+    <svg class="mark" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg>
+    <h2 id="h-end">You have reached the end. <em>That is on purpose.</em></h2>
+    <p>The feed ends the same way. When you are caught up, it says so, and the rest of your day is yours.</p>
+    <p class="backup"><a href="#join">Join the early list</a> · <a href="#top">Back to the top</a></p>
+
+    <footer>
+      <p>My Veda Verse is a social platform in development. Express thoughtfully. Engage meaningfully. Share responsibly.</p>
+      <p class="contact">Contact us: <a href="mailto:admin@myvedaverse.in">admin@myvedaverse.in</a></p>
+      <div class="ctl" role="group" aria-label="Page settings">
+  <div class="ctl">
+        <button id="tone" type="button" aria-pressed="false" title="A low drone and slow bells. Silent until you ask, every time.">
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="toneLabel">Sound off</span>
+        </button>
+        <button id="still" type="button" aria-pressed="false" title="Stops the ambient motion on this page, whatever your device is set to.">
+          <span class="dotm" aria-hidden="true"></span><span id="stillLabel">Motion on</span>
+        </button>
+  </div>
+      </div>
+      <div class="sig">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><circle cx="12" cy="6.3" r="2.5" fill="currentColor"/></svg>
+        My Veda Verse
+      </div>
+      <span class="dom">myvedaverse.in</span>
+    </footer>
+   </div>
+  </div>
+</section>
+</main>
+
+</html>
+

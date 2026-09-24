@@ -1,0 +1,725 @@
+[
+  {
+    "id": "table.community",
+    "label": "Create table \"community\"",
+    "summary": "Creates table \"community\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "community"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"community\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"community\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"community\"",
+        "sql": "CREATE TABLE \"public\".\"community\" (\n  \"blurb\" text,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"id\" text NOT NULL,\n  \"name\" text NOT NULL,\n  \"slug\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"community\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"community\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.membership",
+    "label": "Create table \"membership\"",
+    "summary": "Creates table \"membership\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "membership"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"membership\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"membership\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"membership\"",
+        "sql": "CREATE TABLE \"public\".\"membership\" (\n  \"communityId\" text NOT NULL,\n  \"isSteward\" bool DEFAULT false NOT NULL,\n  \"joinedAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"userId\" text NOT NULL,\n  PRIMARY KEY (\"userId\", \"communityId\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"membership\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"membership\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.room",
+    "label": "Create table \"room\"",
+    "summary": "Creates table \"room\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "room"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"room\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"room\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"room\"",
+        "sql": "CREATE TABLE \"public\".\"room\" (\n  \"accentToken\" text NOT NULL,\n  \"communityId\" text NOT NULL,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"iconSymbol\" text NOT NULL,\n  \"id\" text NOT NULL,\n  \"invitation\" text,\n  \"key\" text NOT NULL,\n  \"memory\" text NOT NULL,\n  \"modeLabel\" text NOT NULL,\n  \"name\" text NOT NULL,\n  \"pace\" text NOT NULL,\n  \"retentionHours\" int4,\n  \"ruleNote\" text NOT NULL,\n  \"speech\" text NOT NULL,\n  \"whoSpeaks\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"room\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"room\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table.roomMessage",
+    "label": "Create table \"roomMessage\"",
+    "summary": "Creates table \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"roomMessage\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"roomMessage\"",
+        "sql": "CREATE TABLE \"public\".\"roomMessage\" (\n  \"authorId\" text NOT NULL,\n  \"body\" text NOT NULL,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"expiresAt\" timestamptz,\n  \"id\" text NOT NULL,\n  \"refLabel\" text,\n  \"roomId\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"roomMessage\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.community.community_slug_key",
+    "label": "Add unique constraint on \"community\" (slug)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "community_slug_key",
+        "table": "community"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"community_slug_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "community_slug_key",
+          "public",
+          "\"public\".\"community\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"community_slug_key\"",
+        "sql": "ALTER TABLE \"public\".\"community\" ADD CONSTRAINT \"community_slug_key\" UNIQUE (\"slug\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"community_slug_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "community_slug_key",
+          "public",
+          "\"public\".\"community\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.room.room_communityId_key_key",
+    "label": "Add unique constraint on \"room\" (communityId, key)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "room_communityId_key_key",
+        "table": "room"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"room_communityId_key_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "room_communityId_key_key",
+          "public",
+          "\"public\".\"room\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"room_communityId_key_key\"",
+        "sql": "ALTER TABLE \"public\".\"room\" ADD CONSTRAINT \"room_communityId_key_key\" UNIQUE (\"communityId\", \"key\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"room_communityId_key_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "room_communityId_key_key",
+          "public",
+          "\"public\".\"room\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.membership.membership_communityId_idx_e2c72225",
+    "label": "Create index \"membership_communityId_idx_e2c72225\" on \"membership\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "membership_communityId_idx_e2c72225",
+        "table": "membership"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"membership_communityId_idx_e2c72225\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"membership_communityId_idx_e2c72225\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"membership_communityId_idx_e2c72225\"",
+        "sql": "CREATE INDEX \"membership_communityId_idx_e2c72225\" ON \"public\".\"membership\" (\"communityId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"membership_communityId_idx_e2c72225\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"membership_communityId_idx_e2c72225\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.membership.membership_userId_idx_a489d58a",
+    "label": "Create index \"membership_userId_idx_a489d58a\" on \"membership\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "membership_userId_idx_a489d58a",
+        "table": "membership"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"membership_userId_idx_a489d58a\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"membership_userId_idx_a489d58a\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"membership_userId_idx_a489d58a\"",
+        "sql": "CREATE INDEX \"membership_userId_idx_a489d58a\" ON \"public\".\"membership\" (\"userId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"membership_userId_idx_a489d58a\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"membership_userId_idx_a489d58a\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.room.room_communityId_idx_e2c72225",
+    "label": "Create index \"room_communityId_idx_e2c72225\" on \"room\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "room_communityId_idx_e2c72225",
+        "table": "room"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"room_communityId_idx_e2c72225\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"room_communityId_idx_e2c72225\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"room_communityId_idx_e2c72225\"",
+        "sql": "CREATE INDEX \"room_communityId_idx_e2c72225\" ON \"public\".\"room\" (\"communityId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"room_communityId_idx_e2c72225\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"room_communityId_idx_e2c72225\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.roomMessage.roomMessage_authorId_idx_e47547ed",
+    "label": "Create index \"roomMessage_authorId_idx_e47547ed\" on \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "roomMessage_authorId_idx_e47547ed",
+        "table": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"roomMessage_authorId_idx_e47547ed\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_authorId_idx_e47547ed\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"roomMessage_authorId_idx_e47547ed\"",
+        "sql": "CREATE INDEX \"roomMessage_authorId_idx_e47547ed\" ON \"public\".\"roomMessage\" (\"authorId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"roomMessage_authorId_idx_e47547ed\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_authorId_idx_e47547ed\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.roomMessage.roomMessage_expiresAt_idx_6b6b8c10",
+    "label": "Create index \"roomMessage_expiresAt_idx_6b6b8c10\" on \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "roomMessage_expiresAt_idx_6b6b8c10",
+        "table": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"roomMessage_expiresAt_idx_6b6b8c10\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_expiresAt_idx_6b6b8c10\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"roomMessage_expiresAt_idx_6b6b8c10\"",
+        "sql": "CREATE INDEX \"roomMessage_expiresAt_idx_6b6b8c10\" ON \"public\".\"roomMessage\" (\"expiresAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"roomMessage_expiresAt_idx_6b6b8c10\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_expiresAt_idx_6b6b8c10\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.roomMessage.roomMessage_roomId_createdAt_idx_71ac5cd0",
+    "label": "Create index \"roomMessage_roomId_createdAt_idx_71ac5cd0\" on \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "roomMessage_roomId_createdAt_idx_71ac5cd0",
+        "table": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"roomMessage_roomId_createdAt_idx_71ac5cd0\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_roomId_createdAt_idx_71ac5cd0\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"roomMessage_roomId_createdAt_idx_71ac5cd0\"",
+        "sql": "CREATE INDEX \"roomMessage_roomId_createdAt_idx_71ac5cd0\" ON \"public\".\"roomMessage\" (\"roomId\", \"createdAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"roomMessage_roomId_createdAt_idx_71ac5cd0\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_roomId_createdAt_idx_71ac5cd0\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.roomMessage.roomMessage_roomId_idx_fe51d647",
+    "label": "Create index \"roomMessage_roomId_idx_fe51d647\" on \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "roomMessage_roomId_idx_fe51d647",
+        "table": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"roomMessage_roomId_idx_fe51d647\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_roomId_idx_fe51d647\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"roomMessage_roomId_idx_fe51d647\"",
+        "sql": "CREATE INDEX \"roomMessage_roomId_idx_fe51d647\" ON \"public\".\"roomMessage\" (\"roomId\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"roomMessage_roomId_idx_fe51d647\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"roomMessage_roomId_idx_fe51d647\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.membership.membership_userId_fkey",
+    "label": "Add foreign key \"membership_userId_fkey\" on \"membership\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "membership_userId_fkey",
+        "table": "membership"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"membership_userId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "membership_userId_fkey",
+          "public",
+          "\"public\".\"membership\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"membership_userId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"membership\"\nADD CONSTRAINT \"membership_userId_fkey\"\nFOREIGN KEY (\"userId\")\nREFERENCES \"public\".\"user\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"membership_userId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "membership_userId_fkey",
+          "public",
+          "\"public\".\"membership\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.membership.membership_communityId_fkey",
+    "label": "Add foreign key \"membership_communityId_fkey\" on \"membership\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "membership_communityId_fkey",
+        "table": "membership"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"membership_communityId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "membership_communityId_fkey",
+          "public",
+          "\"public\".\"membership\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"membership_communityId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"membership\"\nADD CONSTRAINT \"membership_communityId_fkey\"\nFOREIGN KEY (\"communityId\")\nREFERENCES \"public\".\"community\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"membership_communityId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "membership_communityId_fkey",
+          "public",
+          "\"public\".\"membership\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.room.room_communityId_fkey",
+    "label": "Add foreign key \"room_communityId_fkey\" on \"room\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "room_communityId_fkey",
+        "table": "room"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"room_communityId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "room_communityId_fkey",
+          "public",
+          "\"public\".\"room\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"room_communityId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"room\"\nADD CONSTRAINT \"room_communityId_fkey\"\nFOREIGN KEY (\"communityId\")\nREFERENCES \"public\".\"community\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"room_communityId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "room_communityId_fkey",
+          "public",
+          "\"public\".\"room\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.roomMessage.roomMessage_roomId_fkey",
+    "label": "Add foreign key \"roomMessage_roomId_fkey\" on \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "roomMessage_roomId_fkey",
+        "table": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"roomMessage_roomId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "roomMessage_roomId_fkey",
+          "public",
+          "\"public\".\"roomMessage\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"roomMessage_roomId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"roomMessage\"\nADD CONSTRAINT \"roomMessage_roomId_fkey\"\nFOREIGN KEY (\"roomId\")\nREFERENCES \"public\".\"room\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"roomMessage_roomId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "roomMessage_roomId_fkey",
+          "public",
+          "\"public\".\"roomMessage\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "foreignKey.roomMessage.roomMessage_authorId_fkey",
+    "label": "Add foreign key \"roomMessage_authorId_fkey\" on \"roomMessage\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "foreignKey",
+        "name": "roomMessage_authorId_fkey",
+        "table": "roomMessage"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure FK \"roomMessage_authorId_fkey\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "roomMessage_authorId_fkey",
+          "public",
+          "\"public\".\"roomMessage\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add FK \"roomMessage_authorId_fkey\"",
+        "sql": "ALTER TABLE \"public\".\"roomMessage\"\nADD CONSTRAINT \"roomMessage_authorId_fkey\"\nFOREIGN KEY (\"authorId\")\nREFERENCES \"public\".\"user\" (\"id\")\nON DELETE CASCADE"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify FK \"roomMessage_authorId_fkey\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "roomMessage_authorId_fkey",
+          "public",
+          "\"public\".\"roomMessage\""
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  name      String
+  avatar    String?
+  createdAt DateTime   @default(now())
+  posts     Post[]
+  reactions Reaction[]
+  saves     Save[]
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  mark      String
+  kind      String
+  createdAt DateTime @default(now())
+  posts     Post[]
+}
+
+model Topic {
+  id    String @id @default(uuid())
+  name  String @unique
+  posts Post[]
+}
+
+model Post {
+  id           String        @id @default(uuid())
+  title        String?
+  body         String?       @db.Text
+  type         String        // "Text", "Image", "Poll", "Video", "Link", "Question"
+  kind         String?       // "q", "fact", "ctx", "exp", "int", "trad", "bel", "spec"
+  topicId      String
+  topic        Topic         @relation(fields: [topicId], references: [id])
+  
+  // Relations: A post can belong to a User OR an Organization
+  userId       String?
+  user         User?         @relation(fields: [userId], references: [id])
+  orgId        String?
+  org          Organization? @relation(fields: [orgId], references: [id])
+  
+  // Additional fields for specific post types/features
+  art          String?
+  cap          String?
+  sgi          Boolean       @default(false)
+  src          String?       // Used by facts/links
+  why          String?       // Used by organization posts
+  likesCount   Int           @default(0) // The 'n' metric (e.g. 2.3K) mapped to Int for real data
+
+  createdAt    DateTime      @default(now())
+  
+  reactions    Reaction[]
+  saves        Save[]
+  pollOptions  PollOption[]
+}
+
+model Reaction {
+  id        String   @id @default(uuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  kind      String   // "q", "exp", etc.
+  text      String
+  createdAt DateTime @default(now())
+}
+
+model Save {
+  id        String   @id @default(uuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([postId, userId])
+}
+
+model PollOption {
+  id        String @id @default(uuid())
+  postId    String
+  post      Post   @relation(fields: [postId], references: [id])
+  text      String
+  votes     Int    @default(0)
+}
+
+model Reel {
+  id        String   @id @default(uuid())
+  title     String
+  subtitle  String
+  duration  String
+  createdAt DateTime @default(now())
+}
