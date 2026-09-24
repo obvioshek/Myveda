@@ -1,4 +1,4 @@
-import { getNextDeliveryTime } from '../actions/samvad.js';
+import { getNextDeliveryTime } from '../lib/delivery.js';
 
 function assertEqual(actual: Date, expected: Date, message: string) {
   if (actual.getTime() !== expected.getTime()) {

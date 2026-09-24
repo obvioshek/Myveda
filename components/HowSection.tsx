@@ -2,8 +2,11 @@
 
 import Composer from "@/components/Composer";
 import Reel from "@/components/Reel";
+import Toggle from "@/components/Toggle";
+import { CalmInbox, DiscussGate, FollowTopics, ShareDemo, VideoChapters } from "@/components/HowDemos";
+import type { ReelItem } from "@/lib/feed";
 
-export default function HowSection({ reels = [] }: { reels?: any[] }) {
+export default function HowSection({ reels = [], live = false }: { reels?: ReelItem[]; live?: boolean }) {
   return (
     <section className="sec" id="how" aria-labelledby="h-how">
   <div className="wrap">
@@ -24,7 +27,7 @@ export default function HowSection({ reels = [] }: { reels?: any[] }) {
     <div className="step" id="post">
       <div className="step-h rv"><span className="step-n" aria-hidden="true">1</span><div><h3>Post</h3><p>Ask a question, share a photo or a moment, start a poll, or add a link. One extra tap says what kind of post it is — and a fact needs a source.</p></div></div>
     <div className="demo rv">
-      <Composer />
+      <Composer live={live} />
     </div>
     </div>
 
@@ -32,21 +35,7 @@ export default function HowSection({ reels = [] }: { reels?: any[] }) {
       <div className="step-h rv"><span className="step-n" aria-hidden="true">2</span><div><h3>Discover</h3><p>Follow topics and people. Every suggestion tells you why it is there, and every set of recommendations has an end.</p></div></div>
     <div className="demo rv">
       <span className="hint">Follow a few topics</span>
-      <div className="chips topics" id="topics" role="group" aria-label="Topics to follow">
-        <button type="button" aria-pressed="true">Everyday life</button>
-        <button type="button" aria-pressed="false">Food</button>
-        <button type="button" aria-pressed="true">Books &amp; writing</button>
-        <button type="button" aria-pressed="true">Cities</button>
-        <button type="button" aria-pressed="false">Education</button>
-        <button type="button" aria-pressed="false">Work</button>
-        <button type="button" aria-pressed="false">Photography</button>
-        <button type="button" aria-pressed="false">Science</button>
-        <button type="button" aria-pressed="false">Technology</button>
-        <button type="button" aria-pressed="false">Relationships</button>
-        <button type="button" aria-pressed="false">Culture</button>
-        <button type="button" aria-pressed="false">Ideas</button>
-      </div>
-      <p className="small" id="topicSay" aria-live="polite" style={{"marginTop":"1em"} as React.CSSProperties}>Following 3 topics.</p>
+      <FollowTopics />
     </div>
 
     <ul className="why3 stag" aria-label="Why this was suggested">
@@ -69,7 +58,7 @@ export default function HowSection({ reels = [] }: { reels?: any[] }) {
             </svg>
             <div className="play"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></i></div>
           </div>
-          <div className="scrub" id="scrub" aria-hidden="true"></div>
+          <VideoChapters />
           <div className="meta">
             <b>How to take better photos on an everyday walk</b>
             <span>Photography · Video · 15 min · four chapters</span>
@@ -106,10 +95,10 @@ export default function HowSection({ reels = [] }: { reels?: any[] }) {
           <b className="ptitle" id="tcT"><span className="kind k-exp">Experience</span>Sometimes listening is more useful than winning an argument.</b>
           <div className="body">My brother told me he was leaving his job, and I spent a week arguing with him. Then I asked what he was hoping for. Ten minutes later we were planning it together.</div>
           <div className="rxbar" role="group" aria-label="React to this post">
-            <button type="button" aria-pressed="true" data-toggle><svg aria-hidden="true"><use href="#i-bulb"/></svg>Helpful</button>
-            <button type="button" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-thought"/></svg>Made me think</button>
-            <button type="button" aria-pressed="false" data-toggle><svg aria-hidden="true"><use href="#i-calm"/></svg>Relatable</button>
-            <button type="button" className="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span className="tl">Save</span></button>
+            <Toggle initial icon="i-bulb" label="Helpful" />
+            <Toggle icon="i-thought" label="Made me think" />
+            <Toggle icon="i-calm" label="Relatable" />
+            <Toggle className="sv" icon="i-bookmark" on="Saved" off="Save" />
           </div>
           <span className="rxnote">Reactions reach Devika privately. Nobody sees a total.</span>
           <div className="replies">
@@ -183,52 +172,7 @@ export default function HowSection({ reels = [] }: { reels?: any[] }) {
       <div className="step-h rv"><span className="step-n" aria-hidden="true">5</span><div><h3>Discuss</h3><p>To disagree, first put the other person's view in your own words. Once they agree it is fair, your reply opens. The argument stays about the idea.</p></div></div>
     <div className="demo rv">
       <span className="hint">Try it—you are about to disagree with Devika</span>
-      <div className="gate">
-        <div>
-          <div className="gstep done" id="gs1">
-            <div className="gn"><i>1</i>Her position</div>
-            <h4>Devika Menon</h4>
-            <p className="quote">In my family, our Sunday meal was never just about food. It was a weekly pause, a way to catch up, share recipes, and make sure everyone had a seat at the table. Calling it simply a “tradition” misses why it mattered.</p>
-          </div>
-
-          <div className="gstep now" id="gs2">
-            <div className="gn"><i>2</i>Say it back</div>
-            <h4>Put her case as fairly as she would</h4>
-            <p>Not a summary and not a caricature. If she would not recognise her own point in it, it does not count.</p>
-            <textarea id="pvText" rows={3} placeholder="Their position, in your own words…" aria-label="State the other view"></textarea>
-            <div className="gbar">
-              <button className="btn btn-p" id="pvAsk" type="button" disabled><span>Ask Devika if this is fair</span><span className="arw" aria-hidden="true">→</span></button>
-              <span className="cnt" id="pvCnt">0 words · 12 to go</span>
-            </div>
-          </div>
-
-          <div className="gstep wait" id="gs3">
-            <div className="gn"><i>3</i>Her call</div>
-            <h4 id="gs3h">Waiting for Devika</h4>
-            <p id="gs3p">She sees your restatement before your reply. She can accept it, or send it back with a note.</p>
-          </div>
-        </div>
-
-        <div>
-          <div className="gstep locked" id="rebutBox">
-            <div className="veil">
-              <div>
-                <svg width="26" height="26" aria-hidden="true"><use href="#i-lock"/></svg>
-                <span>Your reply opens once the restatement is accepted</span>
-              </div>
-            </div>
-            <div className="gn"><i>4</i>Your reply</div>
-            <h4>Now add your perspective</h4>
-            <p>Her position is already there in the words she accepted. Build from it.</p>
-            <textarea id="rbText" rows={4} placeholder="Your reply…" aria-label="Your reply"></textarea>
-            <div className="gbar">
-              <button className="btn btn-p" id="rbPost" type="button"><span>Publish</span></button>
-              <span className="cnt" id="rbNote">Both parts publish together, in order.</span>
-            </div>
-          </div>
-          <p className="small" style={{"marginTop":"1.1em"} as React.CSSProperties}>The point is simple: understanding the other side should happen before the rebuttal, not after the damage is done.</p>
-        </div>
-      </div>
+      <DiscussGate />
 
       <div className="rules exits">
         <div><b>Only rebuttals pause</b><span>Questions and clarifications never do</span></div>
@@ -243,60 +187,14 @@ export default function HowSection({ reels = [] }: { reels?: any[] }) {
     <div className="step" id="share">
       <div className="step-h rv"><span className="step-n" aria-hidden="true">6</span><div><h3>Share</h3><p>Add your take, quote a line, send it to a friend, or save it privately. The original post always travels with it.</p></div></div>
     <div className="demo rv">
-      <div className="pick" id="shareOpt">
-        <button type="button" aria-pressed="true" data-s="take">Share with your take</button>
-        <button type="button" aria-pressed="false" data-s="quote">Quote a line</button>
-        <button type="button" aria-pressed="false" data-s="send">Send to a friend</button>
-        <button type="button" aria-pressed="false" data-s="save">Save for later</button>
-      </div>
-      <div className="sgrid">
-        <div>
-          <label className="clab" htmlFor="stake" id="stakeLab">Your take</label>
-          <textarea id="stake" className="cin" rows={3} placeholder="What do you think—and why is it useful to share?"></textarea>
-          <div className="gbar">
-            <button className="btn btn-p" id="sgo" type="button" disabled><span id="sgoTx">Share</span></button>
-            <span className="cnt" id="shint" aria-live="polite">Add a few words of your own</span>
-          </div>
-        </div>
-        <div className="sprev">
-          <span className="hint" id="sprevH">What others see</span>
-          <article className="post shared">
-            <div className="post-h"><div className="av" data-av="Ananya Krishnan"></div><div><div className="who" id="sprevWho">Ananya Krishnan shared</div><div className="mt">Work · just now</div></div></div>
-            <div className="body" id="sprevTake">Your words appear here, above the original.</div>
-            <div className="qpost">
-              <div className="post-h"><div className="av" data-av="Karan Mehta"></div><div><div className="who">Karan Mehta</div><div className="mt">Work · Question</div></div></div>
-              <b className="ptitle"><span className="kind k-q">Question</span>What helps a team stay steady when work gets stressful?</b>
-              <p>I have found that focusing on the next useful action helps a team more than obsessing over the final outcome. What has worked for you in a high-pressure workplace?</p>
-            </div>
-          </article>
-        </div>
-      </div>
+      <ShareDemo />
     </div>
     </div>
 
     <div className="step" id="message">
       <div className="step-h rv"><span className="step-n" aria-hidden="true">7</span><div><h3>Message</h3><p>Talk to someone privately. Messages arrive in delivery windows the recipient chooses, senders can see when theirs will land, read receipts are off, and anything urgent can still go through now.</p></div></div>
     <div className="demo rv">
-      <div className="inbox">
-        <div className="inbox-h">
-          <b>Messages</b>
-          <span className="win"><svg width="14" height="14" aria-hidden="true"><use href="#i-clock"/></svg>Next delivery window <i id="winAt">6:00 pm</i> · in <i id="winIn">2h 14m</i></span>
-        </div>
-        <div className="inbox-b" id="inboxBody">
-          <div className="held"><div className="av" data-av="Aarav Doshi"></div><div className="bd"><div className="who">Aarav Doshi · waiting</div><div className="tx">Sent you the updated reading list—no rush to reply.</div></div></div>
-          <div className="held"><div className="av" data-av="Pema Lhamo"></div><div className="bd"><div className="who">Pema Lhamo · waiting</div><div className="tx">Are you joining the Thursday session? Tomorrow is fine.</div></div></div>
-          <div className="mauna" id="mauna">
-            <svg width="17" height="17" aria-hidden="true"><use href="#i-mauna"/></svg>
-            <span id="maunaTx">Quiet mode is off—messages arrive at the next window</span>
-            <button className="sw" id="maunaSw" type="button" role="switch" aria-checked="false" aria-label="Quiet mode"></button>
-          </div>
-        </div>
-        <div className="inbox-f">
-          <button type="button" id="sendNow">Send mine now</button>
-          <button type="button" id="keepBatched">Keep it for the next window</button>
-          <span className="why" id="inboxWhy">Read receipts are off by design. There is no pressure to be instantly available.</span>
-        </div>
-      </div>
+      <CalmInbox />
       <p className="small" style={{"marginTop":"1.2em"} as React.CSSProperties}><b style={{"color":"var(--ink)"} as React.CSSProperties}>A calmer rhythm, not silence.</b> Predictable delivery makes it easier to focus without disconnecting.</p>
     </div>
     </div>

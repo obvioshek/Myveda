@@ -1,5 +1,7 @@
 "use client";
 
+import Toggle from "@/components/Toggle";
+
 export default function HouseSection() {
   return (
     <section className="sec" id="house" aria-labelledby="h-house">
@@ -21,7 +23,7 @@ export default function HouseSection() {
             <div className="told"><b>Told</b><p>That the drawing began as a daily meal left for small creatures. Many families explain it this way; the practice is older than the records that could confirm it.</p></div>
           </div>
           <p className="htake"><span>Worth carrying</span>Begin the day by leaving something for someone who can never thank you.</p>
-          <div className="rxbar"><button type="button" className="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save to read later"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span className="tl">Save to read later</span></button></div>
+          <div className="rxbar"><Toggle className="sv" icon="i-bookmark" on="Saved" off="Save to read later" /></div>
         </div>
       </article>
 
@@ -39,7 +41,7 @@ export default function HouseSection() {
           <details className="hans"><summary>Show the answer</summary><p>Pakistan. Its handover ceremony was held in Karachi on 14 August, and it celebrates its independence on that day.</p></details>
           <div className="post-ctx"><span className="tag src">Sources: Indian Independence Act 1947 · published accounts of the transfer of power</span></div>
           <p className="htake"><span>Worth carrying</span>Tell the good story — and label it. Keep what is recorded and what is remembered side by side, not blended.</p>
-          <div className="rxbar"><button type="button" className="sv" aria-pressed="false" data-toggle data-on="Saved" data-off="Save to read later"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span className="tl">Save to read later</span></button></div>
+          <div className="rxbar"><Toggle className="sv" icon="i-bookmark" on="Saved" off="Save to read later" /></div>
         </div>
       </article>
     </div>

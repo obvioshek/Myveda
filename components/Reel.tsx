@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import ArtScene from "@/components/ArtScene";
+import type { ReelItem } from "@/lib/feed";
+import { ping } from "@/lib/ping";
 
-export default function Reel({ initialReels = [] }: { initialReels?: any[] }) {
+export default function Reel({ initialReels = [] }: { initialReels?: ReelItem[] }) {
   const [index, setIndex] = useState(0);
   const reelRef = useRef<HTMLDivElement>(null);
   const nextBtnRef = useRef<HTMLButtonElement>(null);
@@ -13,13 +15,15 @@ export default function Reel({ initialReels = [] }: { initialReels?: any[] }) {
 
   const handleNext = () => {
     if (index < initialReels.length) {
-      setIndex(prev => prev + 1);
+      setIndex(index + 1);
+      ping(index + 1 >= initialReels.length ? 5 : index + 1);
     }
   };
 
   const handlePrev = () => {
     if (index > 0) {
-      setIndex(prev => prev - 1);
+      setIndex(index - 1);
+      ping(index - 1);
     }
   };
 
@@ -125,8 +129,8 @@ export default function Reel({ initialReels = [] }: { initialReels?: any[] }) {
     };
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") { prevB!.click(); used(); }
-      if (e.key === "ArrowRight") { nextB!.click(); used(); }
+      if (e.key === "ArrowLeft") { if (!step(1)) prevB!.click(); used(); e.preventDefault(); }
+      if (e.key === "ArrowRight") { if (!step(-1)) nextB!.click(); used(); e.preventDefault(); }
     };
 
     reel.addEventListener("pointerdown", onDown);
@@ -159,6 +163,7 @@ export default function Reel({ initialReels = [] }: { initialReels?: any[] }) {
         tabIndex={0} 
         role="group" 
         aria-label="Short-video set—swipe or use the arrow keys"
+        onClick={e => { if (!(e.target as HTMLElement).closest(".reel-end")) handleNext(); }}
       >
         <div className="scene" id="reelScene" aria-hidden="true">
           <ArtScene seed={seed} />

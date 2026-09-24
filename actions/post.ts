@@ -2,6 +2,7 @@
 
 import { db } from "@/src/prisma/db";
 import { revalidatePath } from "next/cache";
+import { getCurrentUser } from "@/utils/supabase/server";
 
 export async function fetchFeed(topicName: string = "all") {
   const whereClause = topicName !== "all" ? { topic: { name: topicName } } : {};
@@ -59,6 +60,7 @@ export async function createPost(data: {
   linkUrl?: string;
   altText?: string;
   captions?: string;
+  pollOptions?: string[];
 }) {
   const contributionKind = KIND_MAP[data.kind];
   if (!contributionKind) {
@@ -78,10 +80,22 @@ export async function createPost(data: {
   if (data.type === "VIDEO" && (!data.captions || data.captions.trim() === "")) {
     throw new Error("Videos carry captions.");
   }
+  const pollOptions = (data.pollOptions ?? []).map(o => o.trim()).filter(Boolean).slice(0, 4);
+  if (data.type === "POLL" && pollOptions.length < 2) {
+    throw new Error("A poll needs at least two options.");
+  }
+  const title = data.title?.trim() ?? "";
+  if (title.length < 6 || title.length > 120) {
+    throw new Error("A post needs a clear title of 6 to 120 characters.");
+  }
 
   // In a real app with Auth, we would get the userId from session
   // For this milestone, we'll find or create a "You" user
-  const you = await db.orm.public.User
+  // A signed-in member posts as themselves (their row is created at sign-in);
+  // otherwise the shared demo "You" account is used.
+  const member = await getCurrentUser();
+  const existing = member ? await db.orm.public.User.where({ id: member.id }).first() : null;
+  const you = existing ?? await db.orm.public.User
     .select('id', 'name')
     .upsert({
       create: { id: "user-you-id", name: "You", deliveryWindows: [9, 13, 18] },
@@ -112,7 +126,7 @@ export async function createPost(data: {
   }
 
   const postData: any = {
-    title: data.title,
+    title,
     type: data.type.toLowerCase(), // In schema it's "question", "text", etc.
     kind: data.kind,               // In schema it's "q", "fact", etc.
     topicId: topic.id,
@@ -124,6 +138,10 @@ export async function createPost(data: {
   if (capVal) postData.cap = capVal;
 
   const post = await db.orm.public.Post.create(postData);
+
+  for (const text of data.type === "POLL" ? pollOptions : []) {
+    await db.orm.public.PollOption.create({ postId: post.id, text, votes: 0 });
+  }
 
   revalidatePath("/");
   return post;

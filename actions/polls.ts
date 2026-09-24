@@ -1,12 +1,11 @@
 'use server';
 
-import { createClient } from '@/utils/supabase/server';
+import { getCurrentUser } from '@/utils/supabase/server';
 import { db } from '@/src/prisma/db';
 import { revalidatePath } from 'next/cache';
 
 export async function voteInPoll(optionId: string, postId: string) {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
   if (!user) {
     throw new Error('Not logged in');
   }

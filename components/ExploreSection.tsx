@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { POSTS, ORGS, Post } from "@/lib/data";
+import React, { useState, useTransition } from "react";
 import Avatar from "@/components/Avatar";
 import DishSVG from "@/components/DishSVG";
 import ArtScene from "@/components/ArtScene";
 import Poll from "@/components/Poll";
 import { toggleReaction, toggleSave } from "@/actions/reaction";
+import type { FeedItem, FeedPost } from "@/lib/feed";
+import { ping } from "@/lib/ping";
 
 const KIND: Record<string, [string, string]> = {
   q: ["k-q", "Question"],
@@ -19,36 +20,190 @@ const KIND: Record<string, [string, string]> = {
   spec: ["k-spec", "Speculation"]
 };
 
-function hashStr(s: string) {
-  let h = 2166136261;
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
+const TOPICS = ["All", "Food", "Cities", "Education", "Books", "Everyday life"];
+const OC = ["#D98A5F", "#A8C58C", "#E6C9A2", "#C9B79B"];
+
+/* the bottom of the feed: three deliberate doors, one of them out */
+const FEED_END: Record<string, string> = {
+  path: "Karan replied to your comment about footpaths. It will be here when you are ready.",
+  hello: "Rukmini asked her first question in First-time managers. One thoughtful welcome is enough.",
+  close: "Good. It will still be here tomorrow. Nothing piles up while you are away."
+};
+
+const REACTIONS: [string, string, string][] = [
+  ["HELPFUL", "i-bulb", "Helpful"],
+  ["CHANGED_MY_MIND", "i-thought", "Made me think"],
+  ["RELATABLE", "i-calm", "Relatable"]
+];
+
+function KindTag({ k }: { k?: string | null }) {
+  if (!k || !KIND[k]) return null;
+  return <span className={`kind ${KIND[k][0]}`}>{KIND[k][1]}</span>;
 }
 
-export default function ExploreSection({ 
-  initialPosts = [], 
-  initialOrgPosts = [] 
-}: { 
-  initialPosts?: any[]; 
-  initialOrgPosts?: any[]; 
+function Body({ text }: { text?: string | null }) {
+  if (!text) return null;
+  let paras: string[] = [text];
+  try {
+    const parsed = JSON.parse(text);
+    if (Array.isArray(parsed)) paras = parsed.map(String);
+  } catch { /* plain text */ }
+  return <div className="body">{paras.length === 1 ? paras[0] : paras.map((p, i) => <p key={i}>{p}</p>)}</div>;
+}
+
+function firstName(name: string) {
+  return name.split(" ")[0];
+}
+
+// A save is private and never becomes a count. The button answers at once;
+// on the live feed the change is also written to the database.
+function SaveButton({ postId, initial, live }: { postId: string; initial: boolean; live: boolean }) {
+  const [saved, setSaved] = useState(initial);
+  const [, startTransition] = useTransition();
+  const flip = () => {
+    const next = !saved;
+    setSaved(next);
+    ping(next ? 2 : 1);
+    if (live) startTransition(async () => {
+      try { await toggleSave(postId); } catch { setSaved(!next); }
+    });
+  };
+  return (
+    <button type="button" aria-pressed={saved} onClick={flip}>{saved ? "Saved" : "Save"}</button>
+  );
+}
+
+function Reactions({ post, initial, live }: { post: FeedPost; initial: string[]; live: boolean }) {
+  const [on, setOn] = useState<string[]>(initial);
+  const [, startTransition] = useTransition();
+  const flip = (kind: string) => {
+    const was = on.includes(kind);
+    setOn(cur => was ? cur.filter(k => k !== kind) : [...cur, kind]);
+    ping(was ? 1 : 2);
+    if (live) startTransition(async () => {
+      try { await toggleReaction(post.id, kind); }
+      catch { setOn(cur => was ? [...cur, kind] : cur.filter(k => k !== kind)); }
+    });
+  };
+  const author = post.user?.name ? firstName(post.user.name) : "the author";
+  return (
+    <>
+      <div className="rxbar" role="group" aria-label="React to this post">
+        {REACTIONS.map(([kind, icon, label]) => (
+          <button key={kind} type="button" aria-pressed={on.includes(kind)} onClick={() => flip(kind)}>
+            <svg aria-hidden="true"><use href={`#${icon}`}/></svg>{label}
+          </button>
+        ))}
+      </div>
+      <span className="rxnote">Reactions reach {author} privately. Nobody sees a total.</span>
+    </>
+  );
+}
+
+function PersonPost({ item, live, hidden }: { item: FeedItem; live: boolean; hidden: boolean }) {
+  const p = item.post;
+  const who = p.user?.name || "A member";
+  const replies = p.replies ?? [];
+  const said = p.said?.length
+    ? p.said
+    : Array.from(new Set(replies.map(r => firstName(r.user.name))));
+  return (
+    <article className="post" data-topic={p.topic.name} hidden={hidden}>
+      <div className="post-h">
+        <Avatar name={who} />
+        <div>
+          <div className="who">{who}</div>
+          <div className="mt">{p.topic.name} · <span className="ptype">{p.type}</span> · {p.when}</div>
+        </div>
+      </div>
+      <b className="ptitle"><KindTag k={p.kind} />{p.title}</b>
+      <Body text={p.body} />
+      {p.art === "dish" && <div className="art"><DishSVG /></div>}
+      {p.art && p.art !== "dish" && <div className="art"><ArtScene seed={p.art} /></div>}
+      {p.cap && <span className="pcap">{p.cap}</span>}
+      {p.sgi && (
+        <span className="sgi">
+          <svg width="12" height="12" aria-hidden="true"><use href="#i-tag"/></svg>
+          Illustration is AI-assisted · declared by the author
+        </span>
+      )}
+      {p.src && <div className="post-ctx"><span className="tag src">Source: {p.src}</span></div>}
+      {p.pollOptions && p.pollOptions.length > 0 && (
+        <Poll postId={p.id} options={p.pollOptions} viewerVotedOptionId={item.viewerVotedOptionId} live={live} />
+      )}
+      <Reactions post={p} initial={item.viewerReactions} live={live} />
+      {replies.length > 0 && (
+        <div className="replies">
+          {replies.map((r, ri) => (
+            <div className="rp" key={r.id ?? ri}>
+              <Avatar name={r.user.name} />
+              <p><b>{firstName(r.user.name)}</b><KindTag k={r.kind} />{r.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      <div className="post-f">
+        {said.length > 0 && (
+          <>
+            <span className="reacted">{said.map(n => <i key={n}><Avatar name={n} /></i>)}</span>
+            <span className="said">
+              {said.length === 1 ? `${said[0]} replied` : `${said[0]} and ${said.length - 1} ${said.length === 2 ? "other" : "others"} replied`}
+            </span>
+          </>
+        )}
+        {p.metric && <span className="metric">{p.metric}</span>}
+        <span className="act">
+          <a href="#respond">Reply</a>
+          <SaveButton postId={p.id} initial={item.viewerSaved} live={live} />
+          <a href="#share">Share with your take</a>
+        </span>
+      </div>
+    </article>
+  );
+}
+
+function OrgPost({ item, index, live, hidden }: { item: FeedItem; index: number; live: boolean; hidden: boolean }) {
+  const o = item.post;
+  return (
+    <article className="post org" data-topic={o.topic.name} hidden={hidden}>
+      <div className="post-h">
+        <div className="omark" aria-hidden="true" style={{ "--oc": OC[index % OC.length] } as React.CSSProperties}>{o.org?.mark}</div>
+        <div>
+          <div className="who">{o.org?.name}<span className="okind">{o.org?.kind}</span></div>
+          <div className="mt">{o.topic.name} · <span className="ptype">{o.type}</span> · {o.when}</div>
+        </div>
+      </div>
+      <b className="ptitle"><KindTag k={o.kind} />{o.title}</b>
+      <Body text={o.body} />
+      {o.src && <div className="post-ctx"><span className="tag src">Source: {o.src}</span></div>}
+      <div className="post-f">
+        <span className="said">{item.reason} · no paid reach</span>
+        {o.metric && <span className="metric">{o.metric}</span>}
+        <span className="act">
+          <SaveButton postId={o.id} initial={item.viewerSaved} live={live} />
+          <a href="#share">Share with your take</a>
+        </span>
+      </div>
+    </article>
+  );
+}
+
+export default function ExploreSection({
+  initialPosts = [],
+  initialOrgPosts = [],
+  live = false
+}: {
+  initialPosts?: FeedItem[];
+  initialOrgPosts?: FeedItem[];
+  live?: boolean;
 }) {
   const [topic, setTopic] = useState("all");
   const [showCounts, setShowCounts] = useState(false);
+  const [endSay, setEndSay] = useState("");
 
-  useEffect(() => {
-    // Replicate the global class toggle for the feed counts
-    if (showCounts) {
-      document.documentElement.classList.add("ff-on");
-    } else {
-      document.documentElement.classList.remove("ff-on");
-    }
-  }, [showCounts]);
-
-  const filteredItems = initialPosts.filter(i => topic === "all" || i.post.topic.name === topic);
-  const filteredOrgs = initialOrgPosts.filter(i => topic === "all" || i.post.topic.name === topic);
+  const shown = (i: FeedItem) => topic === "all" || i.post.topic.name === topic;
+  const anyOrgShown = initialOrgPosts.some(shown);
+  const feedClass = showCounts ? "feed counts" : "feed";
 
   return (
     <section className="sec" id="explore" aria-labelledby="h-explore">
@@ -61,29 +216,18 @@ export default function ExploreSection({
           <span className="hint">Compare the same feed with and without public counts</span>
           <div className="feedbar">
             <div className="pick" id="feedPick">
-              <button 
-                aria-pressed={!showCounts} 
-                onClick={() => setShowCounts(false)}
-              >
+              <button type="button" aria-pressed={!showCounts} onClick={() => { setShowCounts(false); ping(4); }}>
                 Without counts
               </button>
-              <button 
-                aria-pressed={showCounts} 
-                onClick={() => setShowCounts(true)}
-              >
+              <button type="button" aria-pressed={showCounts} onClick={() => { setShowCounts(true); ping(1); }}>
                 With counts
               </button>
             </div>
             <div className="chips topicf" id="topicF" role="group" aria-label="Filter the feed by topic">
-              {["All", "Food", "Cities", "Education", "Books", "Everyday life"].map(t => {
+              {TOPICS.map(t => {
                 const val = t === "All" ? "all" : t;
                 return (
-                  <button 
-                    key={val}
-                    type="button" 
-                    aria-pressed={topic === val} 
-                    onClick={() => setTopic(val)}
-                  >
+                  <button key={val} type="button" aria-pressed={topic === val} onClick={() => { setTopic(val); ping(2); }}>
                     {t}
                   </button>
                 );
@@ -93,168 +237,37 @@ export default function ExploreSection({
 
           <div className="feedwrap">
             <div>
-              <div className="feed" id="feedList">
-                {filteredItems.map((item, i) => {
-                  const p = item.post;
-                  return (
-                  <article key={i} className="post" data-topic={p.topic.name}>
-                    <div className="post-h">
-                      <Avatar name={p.user?.name || "Anonymous"} />
-                      <div>
-                        <div className="who">{p.user?.name || "Anonymous"}</div>
-                        <div className="mt">{p.topic.name} · <span className="ptype">{p.type}</span> · 1 hour ago</div>
-                      </div>
-                    </div>
-                    <div className="post-ctx note">
-                      <span className="tag src">Served: {item.reason}</span>
-                    </div>
-                    <b className="ptitle">
-                      {p.kind && <span className={`kind ${KIND[p.kind][0]}`}>{KIND[p.kind][1]}</span>}
-                      {p.title}
-                    </b>
-                    {p.body && (
-                      <div className="body">
-                        {(() => {
-                          try {
-                            const b = JSON.parse(p.body);
-                            return Array.isArray(b) ? b.map((para: string, bi: number) => <p key={bi}>{para}</p>) : <p>{p.body}</p>;
-                          } catch {
-                            return <p>{p.body}</p>;
-                          }
-                        })()}
-                      </div>
-                    )}
-                    {p.art === "dish" && <div className="art"><DishSVG /></div>}
-                    {p.art && p.art !== "dish" && <div className="art"><ArtScene seed={p.art} /></div>}
-                    {p.cap && <span className="pcap">{p.cap}</span>}
-                    {p.sgi && (
-                      <span className="sgi">
-                        <svg width="12" height="12" aria-hidden="true"><use href="#i-tag"/></svg>
-                        Illustration is AI-assisted · declared by the author
-                      </span>
-                    )}
-                    {p.pollOptions && p.pollOptions.length > 0 && (
-                      <Poll 
-                        postId={p.id} 
-                        options={p.pollOptions} 
-                        viewerVotedOptionId={item.viewerVotedOptionId} 
-                      />
-                    )}
-                    <div className="rxbar" role="group" aria-label="React to this post">
-                      <button type="button" aria-pressed={item.viewerReactions?.includes('HELPFUL') || false} 
-                              onClick={() => toggleReaction(p.id, 'HELPFUL')}>
-                        <svg aria-hidden="true"><use href="#i-bulb"/></svg>Helpful
-                      </button>
-                      <button type="button" aria-pressed={item.viewerReactions?.includes('CHANGED_MY_MIND') || false}
-                              onClick={() => toggleReaction(p.id, 'CHANGED_MY_MIND')}>
-                        <svg aria-hidden="true"><use href="#i-thought"/></svg>Made me think
-                      </button>
-                      <button type="button" aria-pressed={item.viewerReactions?.includes('RELATABLE') || false}
-                              onClick={() => toggleReaction(p.id, 'RELATABLE')}>
-                        <svg aria-hidden="true"><use href="#i-calm"/></svg>Relatable
-                      </button>
-                    </div>
-                    <span className="rxnote">Reactions reach {p.user?.name.split(" ")[0]} privately. Nobody sees a total.</span>
-
-                    {p.replies && p.replies.length > 0 && (
-                      <div className="replies">
-                        {p.replies.map((r: any, ri: number) => (
-                          <div className="rp" key={ri}>
-                            <Avatar name={r.user.name} />
-                            <p>
-                              <b>{r.user.name.split(" ")[0]}</b>
-                              <span className={`kind ${KIND[r.kind][0]}`}>{KIND[r.kind][1]}</span>
-                              {r.body}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    <div className="post-f">
-                      <span className="reacted">
-                        {Array.from(new Set(p.replies?.map((r: any) => r.user.name) || [])).map((n: unknown, ni) => <i key={ni as number}><Avatar name={n as string} /></i>)}
-                      </span>
-                      <span className="said">
-                        {p.replies?.length > 0 && `${p.replies[0].user.name.split(' ')[0]} and ${p.replies.length - 1} other${p.replies.length === 2 ? '' : 's'} replied`}
-                      </span>
-                      <span className="act">
-                        <a href="#respond">Reply</a>
-                        <button type="button" className="sv" aria-pressed={item.viewerSaved || false} onClick={() => toggleSave(p.id)} data-toggle data-on="Saved" data-off="Save"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span className="tl">{item.viewerSaved ? 'Saved' : 'Save'}</span></button>
-                        <a href="#share">Share with your take</a>
-                      </span>
-                    </div>
-                  </article>
-                )})}
+              <div className={feedClass} id="feedList">
+                {initialPosts.map(item => (
+                  <PersonPost key={item.id} item={item} live={live} hidden={!shown(item)} />
+                ))}
               </div>
 
-              <div className="orgfeed" id="orgFeed" role="region" aria-labelledby="orgT" hidden={filteredOrgs.length === 0}>
+              <div className="orgfeed" id="orgFeed" role="region" aria-labelledby="orgT" hidden={!anyOrgShown}>
                 <div className="org-h">
                   <h4 id="orgT">From pages you follow</h4>
                   <p>Companies, news channels, brands, and public institutions post here — kept apart from people, clearly labelled, and never able to pay for reach. Follow or mute any page.</p>
                 </div>
-                <div className="feed" id="orgList">
-                  {filteredOrgs.map((item, i) => {
-                    const OC = ["#D98A5F", "#A8C58C", "#E6C9A2", "#C9B79B"];
-                    const o = item.post;
-                    return (
-                      <article key={i} className="post org" data-topic={o.topic.name}>
-                        <div className="post-h">
-                          <div className="omark" aria-hidden="true" style={{ "--oc": OC[i % OC.length] } as React.CSSProperties}>{o.org?.mark}</div>
-                          <div>
-                            <div className="who">{o.org?.name}<span className="okind">{o.org?.kind}</span></div>
-                            <div className="mt">{o.topic.name} · <span className="ptype">{o.type}</span> · 1 day ago</div>
-                          </div>
-                        </div>
-                        <div className="post-ctx note">
-                          <span className="tag t-ok">Served:</span> {item.reason}
-                        </div>
-                        <b className="ptitle">
-                          {o.kind && <span className={`kind ${KIND[o.kind][0]}`}>{KIND[o.kind][1]}</span>}
-                          {o.title}
-                        </b>
-                        {o.body && (
-                          <div className="body">
-                            {(() => {
-                              try {
-                                const b = JSON.parse(o.body);
-                                return Array.isArray(b) ? b.map((para: string, bi: number) => <p key={bi}>{para}</p>) : <p>{o.body}</p>;
-                              } catch {
-                                return <p>{o.body}</p>;
-                              }
-                            })()}
-                          </div>
-                        )}
-                        {o.src && (
-                          <div className="post-ctx">
-                            <span className="tag src">Source: {o.src}</span>
-                          </div>
-                        )}
-                        <div className="post-f">
-                          <span className="act">
-                            <a href="#respond">Reply</a>
-                            <button type="button" className="sv" aria-pressed={item.viewerSaved || false} onClick={() => toggleSave(o.id)} data-toggle data-on="Saved" data-off="Save"><svg aria-hidden="true"><use href="#i-bookmark"/></svg><span className="tl">{item.viewerSaved ? 'Saved' : 'Save'}</span></button>
-                            <a href="#share">Share with your take</a>
-                          </span>
-                        </div>
-                      </article>
-                    );
-                  })}
+                <div className={feedClass} id="orgList">
+                  {initialOrgPosts.map((item, i) => (
+                    <OrgPost key={item.id} item={item} index={i} live={live} hidden={!shown(item)} />
+                  ))}
                 </div>
               </div>
 
-              <div className="feed-end" style={{ marginTop: ".8em" } as React.CSSProperties}>
+              <div className="feed-end" style={{ marginTop: ".8em" }}>
                 <svg width="26" height="26" aria-hidden="true"><use href="#i-bowl"/></svg>
-                <b>You're all caught up.</b>
+                <b>You&apos;re all caught up.</b>
                 <span>That is everything from the people and topics you follow. New posts will be here tomorrow.</span>
                 <div className="fe-go" id="feGo">
-                  <button type="button" data-k="path">Continue a discussion</button>
-                  <button type="button" data-k="hello">Welcome someone new</button>
-                  <button type="button" data-k="close">Close the app</button>
+                  {Object.entries({ path: "Continue a discussion", hello: "Welcome someone new", close: "Close the app" }).map(([k, label]) => (
+                    <button key={k} type="button" data-k={k} onClick={() => { setEndSay(FEED_END[k]); ping(4); }}>{label}</button>
+                  ))}
                 </div>
-                <span className="fe-say" id="feSay" aria-live="polite"></span>
+                <span className="fe-say" id="feSay" aria-live="polite">{endSay}</span>
               </div>
             </div>
-            
+
             <div className="aside">
               <h4>Every post and reply says what it is</h4>
               <p>One of eight labels, chosen with one tap, so readers know what they are reading. A fact always needs a source.</p>
@@ -274,7 +287,7 @@ export default function ExploreSection({
                 <li><b>Save</b>, a private bookmark that never becomes a public count</li>
               </ul>
             </div>
-            <div className="aside" style={{ marginTop: ".8em" } as React.CSSProperties}>
+            <div className="aside" style={{ marginTop: ".8em" }}>
               <h4>Not here</h4>
               <p>Left out from the start, not hidden in a settings menu.</p>
               <ul>
