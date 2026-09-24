@@ -16,10 +16,12 @@ What's left is choosing a host, adding the DNS records and filling in the settin
    postgres://postgres.<project-ref>:<password>@aws-0-ap-south-1.pooler.supabase.com:5432/postgres?sslmode=require
    ```
    If the password contains `@`, `:`, `/`, `#` or `%`, percent-encode those characters (`@` becomes `%40`). Otherwise the address breaks at that character.
-3. **Tables.** Nothing to do by hand: every Vercel deploy runs `npm run vercel-build`, which:
+3. **Tables.** Nothing to do by hand: every Vercel **production** deploy runs `npm run vercel-build` (through `scripts/prepare-db.ts`), which:
    - applies any pending migrations;
    - loads the topic list that onboarding asks members to pick from;
    - switches on row-level security for every table.
+
+   Preview deploys, which Vercel builds for each pull request, leave the database alone, so an unmerged change never touches the live data.
 
    Supabase exposes every table in the `public` schema through its Data API, using the anon key that ships to every browser. The site doesn't use that API; it connects to Postgres directly as the tables' owner. So row-level security with no policies closes the API without changing anything the site does.
 
@@ -43,7 +45,7 @@ What's left is choosing a host, adding the DNS records and filling in the settin
    | `NEXT_PUBLIC_SITE_URL` | `https://myvedaverse.in` |
 
    Don't set `DEMO_LOGIN`. On a live site it would let anyone act as any member.
-3. Deploy. Every push to `master` then deploys automatically, and each deploy brings the database up to date first (see step 1.3). If the database can't be reached, the deploy fails and the previous version stays live.
+3. Deploy. Every push to `master` then deploys automatically, and each production deploy brings the database up to date first (see step 1.3). If the database can't be reached, the deploy fails and the previous version stays live.
 4. Under **Settings → Functions**, set the region to **Mumbai (bom1)** so pages are served close to the database.
 
 The free Hobby plan is for non-commercial use. Move to Pro once the site earns money.
