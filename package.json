@@ -13,6 +13,7 @@
     "contract:emit": "prisma contract emit",
     "db:migrate": "prisma db migrate",
     "db:seed": "tsx prisma/seed-app.ts",
+    "db:seed:topics": "tsx prisma/seed-app.ts --topics-only",
     "db:seed:landing": "tsx prisma/seed.ts"
   },
   "dependencies": {
