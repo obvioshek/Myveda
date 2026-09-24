@@ -48,7 +48,7 @@ What's left is choosing a host, adding the DNS records and filling in the settin
 
    Don't set `DEMO_LOGIN`. On a live site it would let anyone act as any member.
 3. Deploy. Every push to `master` then deploys automatically, and each production deploy brings the database up to date first (see step 1.3). If the database can't be reached, the deploy fails and the previous version stays live.
-4. Under **Settings → Functions**, set the region to **Mumbai (bom1)** so pages are served close to the database.
+4. Pages run in **Mumbai (bom1)**, next to the database, because `vercel.json` sets the region. A page makes many small queries, so running it on another continent makes every page slow. If the database is elsewhere, change the region there to match.
 
 The free Hobby plan is for non-commercial use. Move to Pro once the site earns money.
 
