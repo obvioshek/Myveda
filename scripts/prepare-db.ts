@@ -1,8 +1,7 @@
 // Brings the database up to date before a deploy is built (see "vercel-build"):
-// pending migrations, the onboarding topic list, then Supabase's Data API
-// closed. Only production deploys do this — a preview build for an unmerged
+// pending migrations, then the onboarding topic list. Only production deploys do this — a preview build for an unmerged
 // branch must never migrate the live database — and a build with no database
-// configured skips it, since the site then runs on its demo content.
+// configured skips it: the landing page works without one.
 import "dotenv/config";
 import { execSync } from "node:child_process";
 
@@ -35,7 +34,7 @@ if (!process.env.DATABASE_URL) {
   console.log(`[prepare-db] ${target} build; the database is only changed by production deploys`);
 } else {
   console.log(`[prepare-db] ${describe(process.env.DATABASE_URL)}`);
-  for (const step of ["prisma db migrate", "tsx prisma/seed-app.ts --topics-only", "tsx scripts/lock-data-api.ts"]) {
+  for (const step of ["prisma db migrate", "tsx prisma/seed-app.ts --topics-only"]) {
     console.log(`[prepare-db] ${step}`);
     execSync(`npx ${step}`, { stdio: "inherit" });
   }

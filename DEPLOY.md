@@ -21,11 +21,10 @@ What's left is choosing a host, adding the DNS records and filling in the settin
 3. **Tables.** Nothing to do by hand: every Vercel **production** deploy runs `npm run vercel-build` (through `scripts/prepare-db.ts`), which:
    - applies any pending migrations;
    - loads the topic list that onboarding asks members to pick from;
-   - switches on row-level security for every table.
 
    Preview deploys, which Vercel builds for each pull request, leave the database alone, so an unmerged change never touches the live data.
 
-   Supabase exposes every table in the `public` schema through its Data API, using the anon key that ships to every browser. The site doesn't use that API; it connects to Postgres directly as the tables' owner. So row-level security with no policies closes the API without changing anything the site does.
+   Supabase exposes every table in the `public` schema through its Data API, using the anon key that ships to every browser. The site doesn't use that API; it connects to Postgres directly as the tables' owner. So every model in `src/prisma/contract.prisma` carries `@@rls`: row-level security is on with no policies, which closes the API without changing anything the site does. Because it's part of the contract, migrations create new tables with it, and `db verify` checks it. Give every new model `@@rls` too.
 
    To do the same from your own computer, put the connection string in `.env` as `DATABASE_URL` and run `npm run db:migrate`, then `npm run db:seed:topics`. Don't run `npm run db:seed` against the live database: it loads the sample people and posts, and it refuses to run once real members have signed up.
 4. **Keys.** Under **Project Settings → API**, copy the project URL and the anon (or publishable) key.

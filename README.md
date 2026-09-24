@@ -2,7 +2,7 @@
 
 Two things live in this repository:
 
-- **The landing page** at `/`, for [myvedaverse.in](https://myvedaverse.in). It explains the idea and lets visitors try each part of it.
+- **The landing page** at `/`, for [myvedaverse.in](https://myvedaverse.in): *Social media without the scoreboard.* It shows a feed that ends, and has five working demos (posting with a label, reading, disagreeing, sharing, privacy). Visitors can join the early list, and invited members can sign in.
 - **Veda Verse, the product**, at `/home` and the pages around it. Members ask questions and share what they know, and every post says what it rests on: *Asking*, *Documented*, *Lived*, *Told* or *My view*. There are no public counts, and the daily Edition ends.
 
 Built with Next.js 16 (App Router), React 19, Prisma 8 (`@prisma/orm-postgres`) on PostgreSQL, and Supabase Auth.
@@ -20,7 +20,7 @@ npm run dev
 - Open [http://localhost:3000](http://localhost:3000) for the landing page.
 - Open [http://localhost:3000/signin](http://localhost:3000/signin) for the product. In development you can sign in as any seeded member; Ananya Krishnan's account has the most going on.
 
-The landing page also works with no configuration at all: without a database it shows its built-in demo content. The product needs the database.
+The landing page also works with no configuration at all: its demos run in the browser, and without a database the early-list form says nothing was stored and offers an email link instead. The product needs the database.
 
 To put the site live on [myvedaverse.in](https://myvedaverse.in), follow [DEPLOY.md](DEPLOY.md). It covers hosting, database, sign-in email and DNS records.
 
@@ -33,6 +33,7 @@ Copy `.env.example` to `.env`. Use `.env` rather than `.env.local`, because the 
 | `DATABASE_URL` | PostgreSQL 15 or newer. Required for the product; optional for the landing page. |
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Email magic-link sign-in. A member's profile is created the first time they sign in, and they start with onboarding. |
 | `NEXT_PUBLIC_SITE_URL` | The site's public address, used in the sign-in email link, canonical and share tags, `robots.txt` and the sitemap. Defaults to `https://myvedaverse.in` in production and `http://localhost:3000` in development. |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` | Sends the early list's confirmation emails. Without them, addresses are saved but no confirmation goes out. With GoDaddy email, use `smtpout.secureserver.net`, port `465`, and the mailbox's address and password. |
 | `DEMO_LOGIN` | `1` allows signing in as a seeded member without email; `0` turns it off. It is on by default in development and off in production. **Never enable it on a real deployment**, because it lets anyone act as any member. |
 
 ## The product
@@ -65,12 +66,14 @@ These live in the server actions in `actions/app/`, not just in the UI:
 
 ### Code layout
 
-- `app/(landing)/` is the landing page. Its stylesheet, `app/styles/mvv.css`, is **frozen**: `npm run gate` fails if it changes.
+- `app/(landing)/` is the landing site: the page itself, `/early-list` (where confirmation emails land) and `/privacy`, with its own root layout and stylesheet (`landing.css`).
+  - The words and demo data are in `content/landing.ts`, and the components are in `components/landing/`. Only the demos, the header and the form are client components.
+  - The early list is stored in the `earlyListEntry` table by `actions/earlyList.ts`. An address counts once it's confirmed from the inbox, unconfirmed ones are deleted after 30 days, and confirming or removing takes a button press, so mail scanners can't do either.
 - `app/(app)/` is the product, with its own root layout and stylesheet (`product.css`, the "Organic" design system). Signed-in screens share `app/(app)/(shell)/layout.tsx`.
 - `lib/app/` holds the server-side building blocks: the session (`session.ts`), what the viewer follows and mutes (`viewer.ts`), the Edition and Following feeds (`feed.ts`), a loader per screen, notification delivery (`notify.ts`) and the label rules (`labels.ts`).
 - `actions/app/` holds the server actions. Each returns `{ ok, error }`, so refusals reach the member instead of being swallowed in production.
 - `components/app/` holds the product's client components.
-- The data model is in `src/prisma/contract.prisma`, with migrations in `migrations/`. The product's tables sit alongside the landing page's demo tables and don't touch them. (`prisma/schema.prisma` is an older copy and is not used.)
+- The data model is in `src/prisma/contract.prisma`, with migrations in `migrations/`. The product's tables sit alongside the tables of an earlier landing-page demo (`post`, `feedItem`, `reel` and so on), which nothing uses any more. (`prisma/schema.prisma` is an older copy and is not used.)
 
 ## Database
 
@@ -78,10 +81,9 @@ These live in the server actions in `actions/app/`, not just in the UI:
 npm run db:migrate          # apply migrations (reads DATABASE_URL from .env)
 npm run db:seed             # product sample data; safe to re-run, refuses once real members exist
 npm run db:seed:topics      # only the topic list; use this on the live database
-npm run db:seed:landing     # the landing page's demo feed tables
 ```
 
-After changing the contract, run `npm run contract:emit`, then `npx prisma migration plan --name <name>`, then `npm run db:migrate`. Note that in Prisma 8, `.update()` and `.delete()` only change the first matching row. Use `updateAndCount()` or `deleteAndCount()` when you mean all of them.
+After changing the contract, run `npm run contract:emit`, then `npx prisma migration plan --name <name> --from <current storage hash>`, then `npm run db:migrate`. Give every new model `@@rls`: row-level security with no policies keeps Supabase's public Data API closed. The app connects as the tables' owner, so RLS doesn't restrict the app. Note that in Prisma 8, `.update()` and `.delete()` only change the first matching row. Use `updateAndCount()` or `deleteAndCount()` when you mean all of them.
 
 ## Scripts
 
@@ -90,7 +92,6 @@ After changing the contract, run `npm run contract:emit`, then `npx prisma migra
 | `npm run dev` | Development server |
 | `npm run build` / `npm start` | Production build and server |
 | `npm run lint` | ESLint |
-| `npm run gate` | Checks that the frozen landing stylesheet is unchanged |
 | `npm run db:migrate` / `npm run db:seed` | Apply migrations / load the product's sample data |
 | `npm run db:seed:topics` | Load only the topic list (for a real deployment) |
-| `npm run vercel-build` | What Vercel runs on each deploy. On production deploys it first migrates, loads topics and closes Supabase's Data API (`scripts/prepare-db.ts`); previews only build |
+| `npm run vercel-build` | What Vercel runs on each deploy. On production deploys it first migrates and loads topics (`scripts/prepare-db.ts`); previews only build |
