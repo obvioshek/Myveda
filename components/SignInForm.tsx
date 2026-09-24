@@ -21,7 +21,7 @@ export default function SignInForm() {
       <label className="jlab" htmlFor="signinMail" style={{ marginTop: '.85em' }}>Your email address</label>
       <input
         id="signinMail"
-        className="cin"
+        className="cin input"
         type="email"
         name="email"
         inputMode="email"
@@ -33,7 +33,7 @@ export default function SignInForm() {
         aria-describedby={state.error ? 'signinErr' : undefined}
       />
       {state.error && <p id="signinErr" role="alert" style={{ marginTop: '.6em', color: 'var(--gerua-lit)' }}>{state.error}</p>}
-      <button className="btn btn-p" type="submit" disabled={pending}>
+      <button className="btn btn-p btn-primary" type="submit" disabled={pending}>
         <span>{pending ? 'Sending…' : 'Email me a sign-in link'}</span>
       </button>
     </form>

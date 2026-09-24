@@ -11,7 +11,7 @@ import JoinSection from "@/components/JoinSection";
 import ClosingSection from "@/components/ClosingSection";
 import { getProfile } from "@/actions/profile";
 import { loadHomeContent } from "@/lib/content";
-import { hasSupabase } from "@/lib/backend";
+import { hasDatabase, hasSupabase } from "@/lib/backend";
 import { getCurrentUser } from "@/utils/supabase/server";
 
 export default async function Home() {
@@ -25,7 +25,7 @@ export default async function Home() {
 
   return (
     <>
-      <SiteChrome user={account} signInOpen={signInOpen} />
+      <SiteChrome user={account} signInOpen={signInOpen} appOpen={hasDatabase()} />
       <SettingsSheet user={account} profile={profile} signInOpen={signInOpen} />
       <main id="main" tabIndex={-1}>
         <Hero />

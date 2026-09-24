@@ -20,6 +20,34 @@ model User {
   
   memberships     Membership[]
   roomMessages    RoomMessage[]
+
+  // ── Veda Verse product profile ──
+  email           String?    @unique
+  handle          String?    @unique
+  initials        String?
+  hue             Int        @default(60)
+  line            String?
+  credential      String?
+  isEditor        Boolean    @default(false)
+  brings          String?
+  openTo          String     @default("Answering questions")
+  quietHours      Boolean    @default(true)
+  digest          String     @default("Daily")
+  keepHistory     Boolean    @default(true)
+  onboardedAt     DateTime?
+  lastSeenAt      DateTime?
+
+  expertise       Expertise[]
+  notes           Note[]
+  questions       Question[]
+  answers         Answer[]
+  responses       Response[]
+  following       Follow[]      @relation("follower")
+  followers       Follow[]      @relation("followee")
+  notifications   Notification[] @relation("recipient")
+  actedNotifications Notification[] @relation("actor")
+  drafts          Draft[]
+  collections     Collection[]
 }
 
 model Organization {
@@ -36,6 +64,12 @@ model Topic {
   name  String @unique
   posts   Post[]
   follows TopicFollow[]
+
+  expertise   Expertise[]
+  notes       Note[]
+  questions   Question[]
+  articles    Article[]
+  communities CommunityTopic[]
 }
 
 model Post {
@@ -258,6 +292,22 @@ model Community {
   createdAt DateTime @default(now())
   rooms     Room[]
   members   Membership[]
+
+  // Circle | Board | Cohort | Practice
+  format       String   @default("Circle")
+  // kept | fades | members — what happens to what people write here
+  memory       String   @default("kept")
+  fadeDays     Int?
+  pace         String?
+  contributors String?
+  weekPrompt   String?
+  weekDetail   String?
+  rules        String[]
+
+  topics    CommunityTopic[]
+  threads   CommunityThread[]
+  notes     Note[]
+  questions Question[]
 }
 
 model Room {
@@ -293,6 +343,8 @@ model Membership {
   community   Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
   isSteward   Boolean   @default(false)
   joinedAt    DateTime  @default(now())
+  // member | applied (a Cohort takes applications)
+  status      String    @default("member")
   
   @@id([userId, communityId])
 }
@@ -310,4 +362,406 @@ model RoomMessage {
   
   @@index([roomId, createdAt])
   @@index([expiresAt])
+}
+
+
+// ══════════════════════════════════════════════════════════════════════
+// Veda Verse — the product
+// Five labels say what a contribution rests on: asking, documented, lived,
+// told, view. No public counts are stored anywhere a reader can see them.
+// ══════════════════════════════════════════════════════════════════════
+
+// "Ask me about" — up to three topics a member answers questions on.
+model Expertise {
+  userId  String
+  topicId String
+  user    User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topic   Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@id([userId, topicId])
+}
+
+model CommunityTopic {
+  communityId String
+  topicId     String
+  community   Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  topic       Topic     @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@id([communityId, topicId])
+}
+
+model CommunityThread {
+  id          String    @id @default(uuid())
+  communityId String
+  community   Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  title       String
+  subtitle    String?
+  pinned      Boolean   @default(false)
+  isCurrent   Boolean   @default(false)
+  // notes stay hidden until a member says they have read this far
+  spoiler     Boolean   @default(false)
+  archived    Boolean   @default(false)
+  position    Int       @default(0)
+  createdAt   DateTime  @default(now())
+
+  notes       Note[]
+  unlocks     SpoilerUnlock[]
+
+  @@index([communityId])
+}
+
+model SpoilerUnlock {
+  userId   String
+  threadId String
+  thread   CommunityThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@id([userId, threadId])
+}
+
+// A shared post, in public under a topic or inside a community thread.
+model Note {
+  id            String    @id @default(uuid())
+  authorId      String
+  author        User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  body          String
+  // documented | lived | told | view
+  basis         String
+  topicId       String?
+  topic         Topic?    @relation(fields: [topicId], references: [id])
+  communityId   String?
+  community     Community? @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  threadId      String?
+  thread        CommunityThread? @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  buildsOnId    String?
+  buildsOn      Note?     @relation("buildsOn", fields: [buildsOnId], references: [id], onDelete: SetNull)
+  builtOnBy     Note[]    @relation("buildsOn")
+  sourceUrl     String?
+  sourceType    String?
+  sourceLocator String?
+  aiAssisted    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  editedAt      DateTime?
+
+  responses     Response[]
+
+  @@index([authorId])
+  @@index([topicId])
+  @@index([communityId])
+  @@index([threadId])
+  @@index([createdAt])
+}
+
+model Question {
+  id               String    @id @default(uuid())
+  askerId          String
+  asker            User      @relation(fields: [askerId], references: [id], onDelete: Cascade)
+  title            String
+  context          String?
+  topicId          String
+  topic            Topic     @relation(fields: [topicId], references: [id])
+  communityId      String?
+  community        Community? @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  acceptedAnswerId String?
+  aiAssisted       Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+
+  answers          Answer[]
+  followers        QuestionFollow[]
+
+  @@index([askerId])
+  @@index([topicId])
+  @@index([createdAt])
+}
+
+model Answer {
+  id            String    @id @default(uuid())
+  questionId    String
+  question      Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  authorId      String
+  author        User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  // Answers | Builds on | Disagrees
+  relation      String    @default("Answers")
+  basis         String
+  body          String
+  onAnswerId    String?
+  onAnswer      Answer?   @relation("answerBuildsOn", fields: [onAnswerId], references: [id], onDelete: SetNull)
+  builtOnBy     Answer[]  @relation("answerBuildsOn")
+  reason        String?
+  sourceUrl     String?
+  sourceType    String?
+  sourceLocator String?
+  createdAt     DateTime  @default(now())
+
+  @@index([questionId])
+  @@index([authorId])
+}
+
+model QuestionFollow {
+  userId     String
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  following  Boolean  @default(true)
+  // "I have this question too" — counted for the asker alone
+  same       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  @@id([userId, questionId])
+}
+
+// A piece written and edited by the house, with its record and its lore
+// kept apart.
+model Article {
+  id          String    @id @default(uuid())
+  slug        String    @unique
+  title       String
+  dek         String?
+  topicId     String
+  topic       Topic     @relation(fields: [topicId], references: [id])
+  editorName  String
+  image       String?
+  readMinutes Int       @default(5)
+  documented  String?
+  told        String?
+  carry       String?
+  related     String[]
+  publishedAt DateTime  @default(now())
+  updatedAt   DateTime?
+
+  paragraphs  ArticleParagraph[]
+  sources     ArticleSource[]
+  corrections ArticleCorrection[]
+  suggestions CorrectionSuggestion[]
+  responses   Response[]
+
+  @@index([topicId])
+}
+
+model ArticleParagraph {
+  id        String  @id @default(uuid())
+  articleId String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  position  Int
+  text      String
+  sourceNumber Int?
+
+  @@index([articleId])
+}
+
+model ArticleSource {
+  id        String  @id @default(uuid())
+  articleId String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  number    Int
+  title     String
+  type      String
+  locator   String?
+  url       String?
+  checks    SourceCheck[]
+
+  @@unique([articleId, number])
+}
+
+model ArticleCorrection {
+  id        String   @id @default(uuid())
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  text      String
+  createdAt DateTime @default(now())
+
+  @@index([articleId])
+}
+
+model CorrectionSuggestion {
+  id        String   @id @default(uuid())
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  userId    String
+  body      String
+  status    String   @default("open")
+  createdAt DateTime @default(now())
+
+  @@index([articleId])
+}
+
+// A reader's verdict on one source: Supports it | Partly | Doesn't | Can't access
+model SourceCheck {
+  userId    String
+  sourceId  String
+  source    ArticleSource @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  verdict   String
+  createdAt DateTime @default(now())
+
+  @@id([userId, sourceId])
+}
+
+// A reply to a note or an article, grouped by how it relates.
+model Response {
+  id           String    @id @default(uuid())
+  authorId     String
+  author       User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  noteId       String?
+  note         Note?     @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  articleId    String?
+  article      Article?  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  // Adds context | Builds on | Disagrees | Asks
+  relation     String
+  basis        String
+  anchor       String?
+  onResponseId String?
+  onResponse   Response? @relation("responseBuildsOn", fields: [onResponseId], references: [id], onDelete: SetNull)
+  builtOnBy    Response[] @relation("responseBuildsOn")
+  reason       String?
+  body         String
+  createdAt    DateTime  @default(now())
+
+  @@index([noteId])
+  @@index([articleId])
+}
+
+model Follow {
+  followerId String
+  followeeId String
+  follower   User     @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  followee   User     @relation("followee", fields: [followeeId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@id([followerId, followeeId])
+  @@index([followeeId])
+}
+
+model Mute {
+  userId  String
+  mutedId String
+  createdAt DateTime @default(now())
+
+  @@id([userId, mutedId])
+}
+
+model Block {
+  userId    String
+  blockedId String
+  createdAt DateTime @default(now())
+
+  @@id([userId, blockedId])
+}
+
+// "Not interested" — hides one item from this member's feed.
+model Hide {
+  userId     String
+  targetType String
+  targetId   String
+  createdAt  DateTime @default(now())
+
+  @@id([userId, targetType, targetId])
+}
+
+// Private: the author is told, nobody sees a total.
+model Helpful {
+  userId     String
+  targetType String
+  targetId   String
+  createdAt  DateTime @default(now())
+
+  @@id([userId, targetType, targetId])
+  @@index([targetType, targetId])
+}
+
+model Bookmark {
+  userId     String
+  targetType String
+  targetId   String
+  note       String?
+  createdAt  DateTime @default(now())
+
+  @@id([userId, targetType, targetId])
+}
+
+model Collection {
+  id         String   @id @default(uuid())
+  ownerId    String
+  owner      User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name       String
+  // private | a community id it is shared with
+  visibility String   @default("private")
+  createdAt  DateTime @default(now())
+  items      CollectionItem[]
+
+  @@index([ownerId])
+}
+
+model CollectionItem {
+  collectionId String
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  targetType   String
+  targetId     String
+  addedAt      DateTime   @default(now())
+
+  @@id([collectionId, targetType, targetId])
+}
+
+model Draft {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  text          String
+  intent        String?
+  basis         String?
+  topicName     String?
+  audience      String?
+  sourceUrl     String?
+  sourceType    String?
+  sourceLocator String?
+  aiAssisted    Boolean  @default(false)
+  updatedAt     DateTime @default(now())
+
+  @@index([userId])
+}
+
+model ReadEvent {
+  userId     String
+  targetType String
+  targetId   String
+  title      String
+  readAt     DateTime @default(now())
+
+  @@id([userId, targetType, targetId])
+  @@index([userId, readAt])
+}
+
+model Report {
+  id          String   @id @default(uuid())
+  reporterId  String
+  targetType  String
+  targetId    String
+  reason      String
+  communityId String?
+  status      String   @default("open")
+  createdAt   DateTime @default(now())
+
+  @@index([status])
+}
+
+// The Inbox. Answers, builds-on, mentions and thanks arrive right away
+// (outside quiet hours); circle activity waits for the digest.
+model Notification {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation("recipient", fields: [userId], references: [id], onDelete: Cascade)
+  // Answers | Builds on | Mentions | Thanks | Communities
+  type        String
+  actorId     String?
+  actor       User?     @relation("actor", fields: [actorId], references: [id], onDelete: SetNull)
+  text        String
+  preview     String?
+  href        String
+  replyType   String?
+  replyId     String?
+  digestKey   String?
+  deliverAt   DateTime  @default(now())
+  readAt      DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@index([userId, deliverAt])
+  @@index([digestKey])
 }

@@ -5,7 +5,7 @@ import SignInForm from './SignInForm';
 
 import { signOut } from '../actions/auth';
 
-export default function SiteChrome({ user, signInOpen = false }: { user: { email: string | null } | null; signInOpen?: boolean }) {
+export default function SiteChrome({ user, signInOpen = false, appOpen = false }: { user: { email: string | null } | null; signInOpen?: boolean; appOpen?: boolean }) {
   const [open, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
   const popRef = useRef<HTMLDivElement>(null);
@@ -50,9 +50,12 @@ export default function SiteChrome({ user, signInOpen = false }: { user: { email
   </nav>
   <div className="acct">
     {user ? (
-      <form action={signOut}>
-        <button className="signin" type="submit" title={user.email ?? undefined}>Sign out</button>
-      </form>
+      <>
+        {appOpen && <a className="signin" href="/home">Open Veda Verse</a>}
+        <form action={signOut}>
+          <button className="signin" type="submit" title={user.email ?? undefined}>Sign out</button>
+        </form>
+      </>
     ) : (
       <>
         <button ref={btnRef} className="signin" id="signin" type="button" aria-expanded={open} aria-controls="signinPop" onClick={() => setOpen(o => !o)}>Sign in</button>
@@ -75,7 +78,12 @@ export default function SiteChrome({ user, signInOpen = false }: { user: { email
       hidden={!open}
       onClick={e => { if ((e.target as HTMLElement).closest("a")) setOpen(false); }}
     >
-      {signInOpen ? (
+      {appOpen ? (
+        <>
+          <p><b>Veda Verse is open.</b> Sign in with a one-time email link and pick up your daily Edition.</p>
+          <a className="btn btn-p" href="/signin"><span>Sign in to Veda Verse</span></a>
+        </>
+      ) : signInOpen ? (
         <SignInForm />
       ) : (
         <>

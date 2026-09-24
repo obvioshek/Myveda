@@ -46,7 +46,7 @@ export async function toggleQuietMode(heldByQuiet: boolean) {
   if (!user) throw new Error('Not logged in');
 
   // Updating future queued messages for this recipient
-  await db.orm.public.Message.where({ recipientId: user.id, state: 'QUEUED' }).update({
+  await db.orm.public.Message.where({ recipientId: user.id, state: 'QUEUED' }).updateAndCount({
     heldByQuiet
   });
 
