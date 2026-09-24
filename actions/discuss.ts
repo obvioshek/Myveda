@@ -1,12 +1,11 @@
 'use server';
 
-import { createClient } from '@/utils/supabase/server';
+import { getCurrentUser } from '@/utils/supabase/server';
 import { db } from '@/src/prisma/db';
 import { revalidatePath } from 'next/cache';
 
 export async function submitRestatement(restatementId: string) {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
   const userId = user?.id || "user-you-id";
 
   const restatement = await db.orm.public.Restatement.where({ id: restatementId }).first();
@@ -28,8 +27,7 @@ export async function submitRestatement(restatementId: string) {
 }
 
 export async function decideRestatement(restatementId: string, decision: 'ACCEPTED' | 'RETURNED', returnNote?: string) {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await getCurrentUser();
   const userId = user?.id || "user-you-id";
 
   const restatement = await db.orm.public.Restatement.where({ id: restatementId }).include('parentPost').first();

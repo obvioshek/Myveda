@@ -891,6 +891,8 @@ function ping(i){
   if(!soundOn||!ACTX||!master) return;
   voice(BHUPALI[(Math.abs(i|0)%5)+3],1.8,.22,master);
 }
+/* the React-rendered demos strike the same note */
+W.__mvvPing=ping;
 function soundStart(){
   var AC=W.AudioContext||W.webkitAudioContext; if(!AC) return false;
   if(!ACTX) ACTX=new AC();

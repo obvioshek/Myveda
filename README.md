@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Veda Verse
 
-## Getting Started
+The site for [myvedaverse.in](https://myvedaverse.in): a social platform built for better conversations. It's a single long page that explains the product and lets visitors try each idea: a feed that ends, labelled posts, a pause before heated replies, restating the other view before disagreeing, and messages that arrive in delivery windows.
 
-First, run the development server:
+Built with Next.js 16 (App Router), React 19, Prisma 8 (`@prisma/orm-postgres`) and Supabase Auth.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). No configuration is needed: without a database or Supabase project, the page runs on the demo content in `lib/data.ts`. All the demos work, and nothing is saved.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env` and fill in whatever you have. Use `.env` rather than `.env.local`, because the Prisma CLI and the seed script read it too. Every variable is optional.
 
-## Learn More
+| Variable | Enables |
+| --- | --- |
+| `DATABASE_URL` | The live feed: a finite feed session per visit, plus reactions, saves, poll votes and the post composer. |
+| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Email magic-link sign-in, and the delivery-window settings in the menu. |
+| `NEXT_PUBLIC_SITE_URL` | The origin used in the sign-in email link (defaults to `http://localhost:3000`). |
 
-To learn more about Next.js, take a look at the following resources:
+If the database is set but can't be reached, the page logs the error and shows the demo content instead of failing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Database
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The data contract lives in `src/prisma/contract.prisma`, and its migrations are in `migrations/`. (`prisma/schema.prisma` is an older copy and is not used.)
 
-## Deploy on Vercel
+```bash
+npm run db:migrate   # apply the migrations
+npm run db:seed      # load the demo people, posts and reels
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+After changing the contract, run `npm run contract:emit` to regenerate `contract.json` and `contract.d.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How the page is put together
+
+- `app/page.tsx` loads the signed-in user and the feed (`lib/content.ts`), then renders the sections in `components/`.
+- `app/styles/mvv.css` is the design system, copied verbatim from `reference/index-improved.html`. **It is frozen**: `npm run gate` fails if it changes. Put new rules in `app/styles/app-additions.css`, using only the existing custom properties.
+- `public/engine.js` holds the page-wide behaviour from the reference: the night sky, scroll reveals, wayfinding, sound, the stillness toggle, the join form, the menu sheet, the reply pause and the community rooms. Anything with its own state (the feed, composer, reels, Discuss gate, Share, the inbox) is a React component, mostly in `components/HowDemos.tsx`.
+- `actions/` holds the server actions. They use `getCurrentUser()` from `utils/supabase/server.ts`, which returns `null` when Supabase isn't configured.
+
+## Scripts
+
+| Command | Does |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run build` / `npm start` | Production build and server |
+| `npm run lint` | ESLint |
+| `npm run gate` | Checks that the frozen stylesheet is unchanged |
+| `npm run db:migrate` / `npm run db:seed` | Apply migrations / load demo data |

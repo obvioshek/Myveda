@@ -1,23 +1,24 @@
 'use server'
 
-import { createClient } from '../utils/supabase/server'
+import { getCurrentUser } from '@/utils/supabase/server'
 import { db } from '../src/prisma/db'
 import { revalidatePath } from 'next/cache'
+import { hasDatabase } from '@/lib/backend'
 
 export async function getProfile() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await getCurrentUser()
 
-  if (!user) return null
+  if (!user || !hasDatabase()) return null
 
-  const profile = await db.orm.public.User.where({ id: user.id }).first()
-
-  return profile
+  try {
+    return await db.orm.public.User.where({ id: user.id }).first()
+  } catch {
+    return null
+  }
 }
 
 export async function updateProfileSettings(prevState: any, formData: FormData) {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await getCurrentUser()
 
   if (!user) return { error: 'Not authenticated', success: '' }
 
@@ -26,6 +27,15 @@ export async function updateProfileSettings(prevState: any, formData: FormData) 
   const deliveryWindows = deliveryWindowsStr.map(Number)
 
   if (!timezone) return { error: 'Timezone is required', success: '' }
+  if (!deliveryWindows.length || deliveryWindows.some(h => !Number.isInteger(h) || h < 0 || h > 23)) {
+    return { error: 'Choose at least one delivery window', success: '' }
+  }
+  try {
+    new Intl.DateTimeFormat('en-US', { timeZone: timezone })
+  } catch {
+    return { error: 'That time zone is not recognised (try Asia/Kolkata)', success: '' }
+  }
+  if (!hasDatabase()) return { error: 'Settings cannot be saved right now', success: '' }
 
   try {
     await db.orm.public.User.where({ id: user.id }).update({

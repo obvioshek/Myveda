@@ -1,5 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
+import type { User } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
+import { hasSupabase } from '@/lib/backend'
 
 export async function createClient() {
   const cookieStore = await cookies()
@@ -26,4 +28,17 @@ export async function createClient() {
       },
     }
   )
+}
+
+// The signed-in user, or null when nobody is signed in, Supabase is not
+// configured, or it cannot be reached.
+export async function getCurrentUser(): Promise<User | null> {
+  if (!hasSupabase()) return null
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    return user
+  } catch {
+    return null
+  }
 }

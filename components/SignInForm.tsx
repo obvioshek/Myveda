@@ -12,36 +12,29 @@ export default function SignInForm() {
   const [state, formAction, pending] = useActionState(signInWithEmail, initialState);
 
   if (state.success) {
-    return (
-      <div style={{ padding: '1rem' }}>
-        <p><b>{state.success}</b></p>
-      </div>
-    );
+    return <p role="status"><b>{state.success}</b> The link signs you in on this device.</p>;
   }
 
   return (
-    <form action={formAction} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem' }}>
-      <p><b>Sign-in to your account.</b></p>
-      
-      {state.error && <p style={{ color: 'red' }}>{state.error}</p>}
-      
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Email address" 
-        required 
+    <form action={formAction} noValidate>
+      <p><b>Sign in with your email.</b> We send a one-time link — no password to remember.</p>
+      <label className="jlab" htmlFor="signinMail" style={{ marginTop: '.85em' }}>Your email address</label>
+      <input
+        id="signinMail"
+        className="cin"
+        type="email"
+        name="email"
+        inputMode="email"
+        autoComplete="email"
+        placeholder="you@example.com"
+        required
         disabled={pending}
-        style={{ 
-          padding: '0.8rem', 
-          background: 'var(--bg)', 
-          color: 'var(--fg)', 
-          border: '1px solid var(--fg2)', 
-          borderRadius: '8px' 
-        }} 
+        aria-invalid={state.error ? true : undefined}
+        aria-describedby={state.error ? 'signinErr' : undefined}
       />
-      
+      {state.error && <p id="signinErr" role="alert" style={{ marginTop: '.6em', color: 'var(--gerua-lit)' }}>{state.error}</p>}
       <button className="btn btn-p" type="submit" disabled={pending}>
-        <span>{pending ? 'Sending...' : 'Send Magic Link'}</span>
+        <span>{pending ? 'Sending…' : 'Email me a sign-in link'}</span>
       </button>
     </form>
   );

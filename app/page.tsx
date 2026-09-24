@@ -9,31 +9,33 @@ import HouseSection from "@/components/HouseSection";
 import PrinciplesSection from "@/components/PrinciplesSection";
 import JoinSection from "@/components/JoinSection";
 import ClosingSection from "@/components/ClosingSection";
-import { buildFeedSession, fetchFeed } from "@/actions/feed";
-import { fetchReels } from "@/actions/reel";
 import { getProfile } from "@/actions/profile";
-
-import { createClient } from "@/utils/supabase/server";
+import { loadHomeContent } from "@/lib/content";
+import { hasSupabase } from "@/lib/backend";
+import { getCurrentUser } from "@/utils/supabase/server";
 
 export default async function Home() {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  const profile = await getProfile();
-
-  const sessionId = await buildFeedSession();
-  const { personalItems, orgItems } = await fetchFeed(sessionId);
-  
-  const reels = await fetchReels();
+  const [user, profile, content] = await Promise.all([
+    getCurrentUser(),
+    getProfile(),
+    loadHomeContent(),
+  ]);
+  const signInOpen = hasSupabase();
+  const account = user ? { email: user.email ?? null } : null;
 
   return (
     <>
-      <SiteChrome user={user} />
-      <SettingsSheet user={user} profile={profile} />
+      <SiteChrome user={account} signInOpen={signInOpen} />
+      <SettingsSheet user={account} profile={profile} signInOpen={signInOpen} />
       <main id="main" tabIndex={-1}>
         <Hero />
-        <ExploreSection initialPosts={personalItems} initialOrgPosts={orgItems} />
+        <ExploreSection
+          initialPosts={content.personalItems}
+          initialOrgPosts={content.orgItems}
+          live={content.live}
+        />
         <WhySection />
-        <HowSection reels={reels} />
+        <HowSection reels={content.reels} live={content.live} />
         <CommunitiesSection />
         <HouseSection />
         <PrinciplesSection />

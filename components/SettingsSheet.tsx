@@ -5,8 +5,20 @@ import { updateProfileSettings } from '../actions/profile';
 
 const initialState = { error: '', success: '' };
 
-export default function SettingsSheet({ user, profile }: { user: any, profile: any }) {
+const WINDOW_HOURS = [7, 9, 11, 13, 15, 18, 20, 22];
+
+function hourLabel(h: number) {
+  const ap = h >= 12 ? 'pm' : 'am';
+  return `${h % 12 || 12}:00 ${ap}`;
+}
+
+export default function SettingsSheet({ user, profile, signInOpen = false }: {
+  user: { email: string | null } | null;
+  profile: { timezone?: string | null; deliveryWindows?: readonly number[] | null } | null;
+  signInOpen?: boolean;
+}) {
   const [state, formAction, pending] = useActionState(updateProfileSettings, initialState);
+  const windows = new Set(profile?.deliveryWindows ?? [9, 13, 18]);
 
   return (
     <div className="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetT" hidden>
@@ -22,45 +34,46 @@ export default function SettingsSheet({ user, profile }: { user: any, profile: a
       <li><a href="#principles">Principles</a></li>
       <li><a href="#join">Join</a></li>
     </ol>
-    
+
     {!user && (
-      <p className="sheet-note">Sign-in opens with the first invitations. People on the early list receive theirs first.</p>
+      <p className="sheet-note">
+        {signInOpen
+          ? 'Sign in from the top of the page with a one-time email link.'
+          : 'Sign-in opens with the first invitations. People on the early list receive theirs first.'}
+      </p>
     )}
 
     {user && profile && (
-      <form action={formAction} className="sheet-note" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
-        <p><b>Your Settings</b></p>
-        
-        {state.success && <p style={{ color: 'green' }}>{state.success}</p>}
-        {state.error && <p style={{ color: 'red' }}>{state.error}</p>}
+      <form action={formAction} className="sheet-note">
+        <p><b>Your delivery windows</b> — messages to you arrive together at these times.</p>
 
-        <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          Timezone
-          <input 
-            type="text" 
-            name="timezone" 
-            defaultValue={profile.timezone} 
-            required 
-            style={{ padding: '0.5rem', background: 'var(--bg)', color: 'var(--fg)', border: '1px solid var(--fg2)' }}
-          />
-        </label>
-        
-        <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          Delivery Windows (hours)
-          <select 
-            multiple 
-            name="deliveryWindows" 
-            defaultValue={profile.deliveryWindows.map(String)} 
-            style={{ padding: '0.5rem', background: 'var(--bg)', color: 'var(--fg)', border: '1px solid var(--fg2)', minHeight: '100px' }}
-          >
-            {[...Array(24)].map((_, i) => (
-              <option key={i} value={i}>{i.toString().padStart(2, '0')}:00</option>
+        {state.success && <p role="status" style={{ color: 'var(--leaf)' }}>{state.success}</p>}
+        {state.error && <p role="alert" style={{ color: 'var(--gerua-lit)' }}>{state.error}</p>}
+
+        <label className="jlab" htmlFor="sheetTz" style={{ marginTop: '.8em' }}>Time zone</label>
+        <input
+          id="sheetTz"
+          className="cin"
+          type="text"
+          name="timezone"
+          defaultValue={profile.timezone ?? 'Asia/Kolkata'}
+          required
+        />
+
+        <fieldset style={{ border: 0, padding: 0, margin: '.8em 0 0' }}>
+          <legend className="jlab">Windows</legend>
+          <div className="chips">
+            {WINDOW_HOURS.map(h => (
+              <label key={h} style={{ display: 'inline-flex', alignItems: 'center', gap: '.35em', marginRight: '.8em' }}>
+                <input type="checkbox" name="deliveryWindows" value={h} defaultChecked={windows.has(h)} />
+                {hourLabel(h)}
+              </label>
             ))}
-          </select>
-        </label>
+          </div>
+        </fieldset>
 
-        <button className="btn btn-p" type="submit" disabled={pending}>
-          <span>{pending ? 'Saving...' : 'Save Settings'}</span>
+        <button className="btn btn-p" type="submit" disabled={pending} style={{ marginTop: '.9em' }}>
+          <span>{pending ? 'Saving…' : 'Save'}</span>
         </button>
       </form>
     )}
