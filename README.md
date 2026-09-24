@@ -93,3 +93,4 @@ After changing the contract, run `npm run contract:emit`, then `npx prisma migra
 | `npm run gate` | Checks that the frozen landing stylesheet is unchanged |
 | `npm run db:migrate` / `npm run db:seed` | Apply migrations / load the product's sample data |
 | `npm run db:seed:topics` | Load only the topic list (for a real deployment) |
+| `npm run vercel-build` | What Vercel runs on each deploy. On production deploys it first migrates, loads topics and closes Supabase's Data API (`scripts/prepare-db.ts`); previews only build |
