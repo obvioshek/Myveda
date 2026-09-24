@@ -11,10 +11,11 @@ What's left is choosing a host, adding the DNS records and filling in the settin
 ## 1. Database and sign-in: Supabase
 
 1. Create a project at [supabase.com](https://supabase.com). Pick **South Asia (Mumbai)** as the region, and save the database password.
-2. **Connection string.** Go to **Connect** and copy the **Session pooler** string (not the direct connection, which is IPv6-only, and not the transaction pooler). Add `?sslmode=no-verify` to the end:
+2. **Connection string.** Go to **Connect**, choose **Session pooler**, and copy the string exactly as Supabase shows it. Don't use the direct connection, which is IPv6-only, or the transaction pooler. Replace `[YOUR-PASSWORD]`, brackets included, with the database password, and add `?sslmode=no-verify` to the end:
    ```
-   postgres://postgres.<project-ref>:<password>@aws-0-ap-south-1.pooler.supabase.com:5432/postgres?sslmode=no-verify
+   postgresql://postgres.<project-ref>:<password>@aws-<N>-<region>.pooler.supabase.com:5432/postgres?sslmode=no-verify
    ```
+   Take the server name (`aws-0-…` or `aws-1-…`) from Supabase rather than typing it. A pooler on the wrong cluster rejects the login with `password authentication failed` even when the password is right.
    `no-verify` keeps the connection encrypted but doesn't check who signed the server's certificate. Supabase signs its certificates with its own authority, which Node.js doesn't trust, so `require` fails with "self-signed certificate". The database driver now treats `require` as full verification.
    If the password contains `@`, `:`, `/`, `#` or `%`, percent-encode those characters (`@` becomes `%40`). Otherwise the address breaks at that character.
 3. **Tables.** Nothing to do by hand: every Vercel **production** deploy runs `npm run vercel-build` (through `scripts/prepare-db.ts`), which:
