@@ -113,7 +113,7 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
               <Part>Core idea</Part>
               <div className="ls-core">
                 <p className="core">{lesson.lead}</p>
-                <div className="prose">{detail}</div>
+                {detail}
               </div>
             </div>
 

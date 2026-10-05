@@ -38,6 +38,7 @@ export default function LessonLens({ pairings, notes }: { pairings: Pairing[]; n
         ))}
       </ol>
 
+      {items.length > 1 && (
       <div className="compare" role="table" aria-label="Modern idea beside its classical counterpart">
         <div className="cmp-head ls-cmp" role="row">
           <span role="columnheader">Side by side</span>
@@ -52,6 +53,7 @@ export default function LessonLens({ pairings, notes }: { pairings: Pairing[]; n
           </div>
         ))}
       </div>
+      )}
     </div>
   );
 }

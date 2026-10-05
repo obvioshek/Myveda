@@ -10,7 +10,7 @@ import Pairings from "@/components/learn/Pairings";
 import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import { CHAPTERS, HOW, TEXTS_USED, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, neighbours, termsForChapter, GLOSSARY_PATH } from "@/content/learn";
-import { lessonsFor } from "@/content/learn/lessons";
+import { lessonProblems, lessonsFor } from "@/content/learn/lessons";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -46,6 +46,10 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const terms = termsForChapter(c.n);
   // A chapter with guided lessons teaches each concept in place, passages included.
   const lessons = lessonsFor(c.slug);
+  if (lessons) {
+    const problems = lessonProblems(c.blocks, c.pairings.length, lessons);
+    if (problems.length) throw new Error(`Lessons for ${c.slug}: ${problems.join("; ")}`);
+  }
   const used = new Set((lessons ?? []).flatMap(l => l.lens.map(n => n.pairing)));
   const loose = c.pairings.filter((_, i) => !used.has(i));
   const showLens = loose.length > 0;
@@ -118,7 +122,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     index={li}
                     total={lessons.length}
                     path={chapterPath(c.slug)}
-                    detail={<div dangerouslySetInnerHTML={html(b.html)} />}
+                    detail={<div className="prose" dangerouslySetInnerHTML={html(b.html)} />}
                     lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
                   />
                 );

@@ -93,7 +93,7 @@
 .prose td:first-child { color: var(--color-text); font-weight: 800; }
 .prose tbody tr:last-child td { border-bottom: 0; }
 .prose figure { display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 2px solid var(--color-text); background: var(--color-neutral-100); }
-.prose figure svg { height: auto; }
+.prose figure svg { height: auto; overflow: visible; }
 .prose figcaption { max-width: 60ch; color: var(--soft); font-size: 14px; line-height: 22px; }
 
 /* ---------- The Ancient lens ---------- */
