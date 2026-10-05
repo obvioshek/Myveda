@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageShell from "@/components/landing/PageShell";
 import { confirmEarlyList, removeEarlyList } from "@/actions/earlyList";
 
-export const metadata = { title: "Early list · My Veda Verse", robots: { index: false } };
+export const metadata = { title: "Early list · Veda Verse", robots: { index: false } };
 
 const DONE: Record<string, { title: string; body: string }> = {
   confirmed: { title: "You're on the early list.", body: "Thanks for confirming. You'll get one email when your invitation is ready, and nothing before then." },
@@ -22,7 +22,7 @@ export default async function EarlyListPage({ searchParams }: { searchParams: Pr
       <PageShell>
         <h1>{r.title}</h1>
         <p>{r.body}</p>
-        <div className="row"><Link className="btn btn-quiet" href="/">Back to My Veda Verse</Link></div>
+        <div className="row"><Link className="btn btn-secondary btn-lg" href="/">Back to Veda Verse</Link></div>
       </PageShell>
     );
   }
@@ -36,7 +36,7 @@ export default async function EarlyListPage({ searchParams }: { searchParams: Pr
         : "This deletes your email address from the early list. Nothing else is kept."}</p>
       <form action={confirm ? confirmEarlyList : removeEarlyList} className="row">
         <input type="hidden" name="token" value={token} />
-        <button className={confirm ? "btn btn-primary" : "btn btn-quiet"} type="submit">{confirm ? "Confirm my place" : "Remove my address"}</button>
+        <button className={confirm ? "btn btn-primary btn-lg" : "btn btn-secondary btn-lg"} type="submit">{confirm ? "Confirm my place" : "Remove my address"}</button>
       </form>
     </PageShell>
   );

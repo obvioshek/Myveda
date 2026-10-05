@@ -1,7 +1,7 @@
 import PageShell from "@/components/landing/PageShell";
 import { CONTACT_EMAIL } from "@/content/landing";
 
-export const metadata = { title: "Privacy notice · My Veda Verse", alternates: { canonical: "/privacy" } };
+export const metadata = { title: "Privacy notice · Veda Verse", alternates: { canonical: "/privacy" } };
 
 // A plain notice for the early list and for members, written with India's
 // Digital Personal Data Protection Act, 2023 in mind. Not legal advice; have
@@ -10,7 +10,14 @@ export default function PrivacyPage() {
   return (
     <PageShell>
       <h1>Privacy notice</h1>
-      <p>Last updated 24 September 2026. This explains what My Veda Verse collects, why, and what you can ask us to do with it.</p>
+      <p>Last updated 5 October 2026. This explains what Veda Verse collects, why, and what you can ask us to do with it.</p>
+
+      <h2>Reading the site</h2>
+      <ul>
+        <li><b>No sign-in is needed</b> to read the home page and its sample concept.</li>
+        <li><b>On your device only:</b> the concept you opened last (for “Continue”) and anything you type in the “Reflect &amp; Discuss” box are kept in your browser’s local storage. They are never sent to us, and clearing your browser’s site data removes them.</li>
+        <li>We don’t use advertising or tracking cookies.</li>
+      </ul>
 
       <h2>The early list</h2>
       <ul>

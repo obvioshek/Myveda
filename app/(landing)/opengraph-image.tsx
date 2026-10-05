@@ -1,48 +1,44 @@
 import { ImageResponse } from "next/og";
 
 // The card shown when myvedaverse.in is shared in a chat or a post: the
-// headline beside a short feed that ends.
-export const alt = "A short feed with labelled posts that ends with the words: You're all caught up.";
+// headline beside a single question card, in the site's cream, terracotta and
+// sage. The default sans-serif stands in for the site's fonts.
+export const alt = "Veda Verse: Learn the idea. Then see how the classics saw it.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const PAPER = "#EEEFEA", INK = "#1E1D22", INK2 = "#54535B", ACCENT = "#4A2548", LINE = "#D6D7CF";
-
-function Label({ text, fg, bg }: { text: string; fg: string; bg: string }) {
-  return <div style={{ display: "flex", fontSize: 18, color: fg, background: bg, padding: "4px 10px", borderRadius: 6 }}>{text}</div>;
-}
-
-function Post({ who, text, label }: { who: string; text: string; label: React.ReactNode }) {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8, padding: "18px 22px", borderBottom: `1px solid ${LINE}` }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 20, color: INK }}>{who}{label}</div>
-      <div style={{ display: "flex", fontSize: 20, color: INK2 }}>{text}</div>
-    </div>
-  );
-}
+const BG = "#F5EAD8", INK = "#201E1D", TERRA = "#C67139", TERRA_D = "#8C491A", TERRA_L = "#FFF2EB", SAGE = "#7A8A5E", SAGE_L = "#F0FAE1", SAGE_D = "#3D472B";
 
 export default function Image() {
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: PAPER, padding: 64, gap: 48 }}>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 32, color: INK }}>
-            <div style={{ width: 52, height: 52, borderRadius: 26, background: ACCENT, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" stroke="white" strokeWidth="2.4" strokeLinecap="round" /><circle cx="12" cy="6.3" r="2.5" fill="white" /></svg>
+      <div style={{ width: "100%", height: "100%", display: "flex", background: BG, padding: 64, gap: 48, position: "relative" }}>
+        <div style={{ position: "absolute", right: -80, top: -90, width: 420, height: 420, borderRadius: 210, background: "#E1EECC" }} />
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1, position: "relative" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, fontSize: 34, color: INK }}>
+            <div style={{ display: "flex", position: "relative", width: 56, height: 40 }}>
+              <div style={{ position: "absolute", left: 0, top: 0, width: 40, height: 40, borderRadius: 20, background: TERRA }} />
+              <div style={{ position: "absolute", left: 16, top: 0, width: 40, height: 40, borderRadius: 20, background: SAGE, opacity: 0.85 }} />
             </div>
-            My Veda Verse
+            Veda Verse
           </div>
-          <div style={{ display: "flex", flexDirection: "column", fontSize: 72, lineHeight: 1.05, color: INK }}>
-            <span>Social media</span><span>without the</span><span style={{ color: ACCENT }}>scoreboard.</span>
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 72, lineHeight: 1.06, color: INK }}>
+            <span>Learn the idea.</span>
+            <span style={{ color: TERRA }}>Then see how</span>
+            <span style={{ color: TERRA }}>the classics</span>
+            <span style={{ color: TERRA }}>saw it.</span>
           </div>
-          <div style={{ display: "flex", fontSize: 26, color: ACCENT }}>myvedaverse.in</div>
+          <div style={{ display: "flex", fontSize: 26, color: TERRA_D }}>myvedaverse.in</div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", width: 460, background: "#FAFAF7", border: `1px solid ${LINE}`, borderRadius: 18, overflow: "hidden", alignSelf: "center" }}>
-          <Post who="Simran Kaur" text="Made my mother's rajma over a video call." label={<Label text="Lived" fg="#8A500E" bg="#F4E7D2" />} />
-          <Post who="Karan Mehta" text="What should your city fix first?" label={<Label text="Asking" fg="#2F4E9A" bg="#E3E8F5" />} />
-          <div style={{ display: "flex", flexDirection: "column", gap: 6, padding: "20px 22px", background: "#E4E5DF" }}>
-            <div style={{ display: "flex", fontSize: 26, color: INK }}>You&apos;re all caught up.</div>
-            <div style={{ display: "flex", fontSize: 18, color: INK2 }}>New posts arrive tomorrow.</div>
+        <div style={{ display: "flex", flexDirection: "column", width: 420, alignSelf: "center", position: "relative", gap: 16 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, padding: 30, borderRadius: 36, background: TERRA_L }}>
+            <div style={{ display: "flex", width: 14, height: 14, borderRadius: 7, background: TERRA }} />
+            <div style={{ display: "flex", fontSize: 26, lineHeight: 1.25, color: INK }}>Kautilya tested a minister&apos;s integrity in secret before giving him office.</div>
+            <div style={{ display: "flex", fontSize: 22, fontWeight: 700, color: TERRA_D }}>Would his method be acceptable today?</div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6, padding: "22px 30px", borderRadius: 36, background: SAGE_L }}>
+            <div style={{ display: "flex", fontSize: 18, fontWeight: 700, color: SAGE_D, letterSpacing: 1 }}>BHAGAVAD GĪTĀ 2.47</div>
+            <div style={{ display: "flex", fontSize: 22, color: INK }}>Your right is to the action alone, never to its fruits.</div>
           </div>
         </div>
       </div>

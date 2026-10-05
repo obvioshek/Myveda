@@ -2,7 +2,7 @@
 
 Two things live in this repository:
 
-- **The landing page** at `/`, for [myvedaverse.in](https://myvedaverse.in): *Social media without the scoreboard.* It shows a feed that ends, and has five working demos (posting with a label, reading, disagreeing, sharing, privacy). Visitors can join the early list, and invited members can sign in.
+- **The landing page** at `/`, for [myvedaverse.in](https://myvedaverse.in): *Learn the idea. Then see how the classics saw it.* It presents Veda Verse as a place to learn management, with each idea read alongside India's classical texts. It has a sample concept to try (a "before you read" question, an Ancient Lens that opens on request, a note kept on the device), a search over ten areas and a shelf of ten texts. Signing in is optional, and invited members can still sign in from the header.
 - **Veda Verse, the product**, at `/home` and the pages around it. Members ask questions and share what they know, and every post says what it rests on: *Asking*, *Documented*, *Lived*, *Told* or *My view*. There are no public counts, and the daily Edition ends.
 
 Built with Next.js 16 (App Router), React 19, Prisma 8 (`@prisma/orm-postgres`) on PostgreSQL, and Supabase Auth.
@@ -20,7 +20,7 @@ npm run dev
 - Open [http://localhost:3000](http://localhost:3000) for the landing page.
 - Open [http://localhost:3000/signin](http://localhost:3000/signin) for the product. In development you can sign in as any seeded member; Ananya Krishnan's account has the most going on.
 
-The landing page also works with no configuration at all: its demos run in the browser, and without a database the early-list form says nothing was stored and offers an email link instead. The product needs the database.
+The landing page works with no configuration at all: everything on it runs in the browser, and the only things it remembers (the concept to "Continue" with, and the reader's note) stay in that browser's local storage. The product needs the database.
 
 To put the site live on [myvedaverse.in](https://myvedaverse.in), follow [DEPLOY.md](DEPLOY.md). It covers hosting, database, sign-in email and DNS records.
 
@@ -67,8 +67,9 @@ These live in the server actions in `actions/app/`, not just in the UI:
 ### Code layout
 
 - `app/(landing)/` is the landing site: the page itself, `/early-list` (where confirmation emails land) and `/privacy`, with its own root layout and stylesheet (`landing.css`).
-  - The words and demo data are in `content/landing.ts`, and the components are in `components/landing/`. Only the demos, the header and the form are client components.
-  - The early list is stored in the `earlyListEntry` table by `actions/earlyList.ts`. An address counts once it's confirmed from the inbox, unconfirmed ones are deleted after 30 days, and confirming or removing takes a button press, so mail scanners can't do either.
+  - The words are in `content/landing.ts`, and the components are in `components/landing/`. The design follows the Veda Verse landing design (v4) on the "Organic" design system, with its copy review: every verse shown is cited, and a slot with no verified content stays empty rather than showing a placeholder. Only the interactive parts (header, section rail, hero card, sample concept, five-step strip, area search, text shelf, toast) are client components.
+  - Concept pages don't exist yet, so the "Today's idea", "Read the full concept" and "Start with" links save the concept to "Continue" on the device and move on. Nothing is sent anywhere.
+  - The landing page no longer has an early-list form, but `/early-list` still serves the links in confirmation emails already sent, and the early list is stored in the `earlyListEntry` table by `actions/earlyList.ts`. An address counts once it's confirmed from the inbox, unconfirmed ones are deleted after 30 days, and confirming or removing takes a button press, so mail scanners can't do either.
 - `app/(app)/` is the product, with its own root layout and stylesheet (`product.css`, the "Organic" design system). Signed-in screens share `app/(app)/(shell)/layout.tsx`.
 - `lib/app/` holds the server-side building blocks: the session (`session.ts`), what the viewer follows and mutes (`viewer.ts`), the Edition and Following feeds (`feed.ts`), a loader per screen, notification delivery (`notify.ts`) and the label rules (`labels.ts`).
 - `actions/app/` holds the server actions. Each returns `{ ok, error }`, so refusals reach the member instead of being swallowed in production.
