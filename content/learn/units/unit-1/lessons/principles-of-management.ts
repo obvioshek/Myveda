@@ -1,6 +1,35 @@
-import type { Lesson } from "@/content/learn/lesson-kit";
+import { ask, type Lesson } from "@/content/learn/lesson-kit";
 
 const principles: Lesson[] = [
+  {
+    blockId: "what-is-management",
+    name: "What management is",
+    intro: "Getting things done through people, effectively and efficiently.",
+    before: {
+      q: "A team meets its sales target but overspends its budget by half. Was it well managed?",
+      choices: [
+        { label: "Yes, it hit the target", reveal: "Only half-way. It was effective, since it reached the goal, but not efficient, since it wasted resources. Management asks for both." },
+        { label: "Not entirely", reveal: "Right. It was effective, since it reached the goal, but not efficient, since it wasted resources. Management asks for both." },
+      ],
+    },
+    lead: "Management is getting things done through and with people, reaching goals effectively and with the least waste.",
+    check: [
+      ask("Who defined management as \"the art of getting things done through people\"?", "Mary Parker Follett", ["Peter Drucker", "Henri Fayol", "F. W. Taylor"], "Follett's short definition; Koontz added \"through and with people in formally organised groups\"."),
+      ask("Doing the right things, so that goals are reached, is…", "Effectiveness", ["Efficiency", "Coordination", "Control"], "Effectiveness is reaching the goal; efficiency is reaching it with the least waste."),
+      ask("Which level of management turns policy into departmental plans and links top and bottom?", "Middle management", ["Top management", "First-line management", "The board of directors"], "Top management sets objectives and policy; first-line management directs day-to-day work."),
+    ],
+    lens: [],
+    reflect: "Think of a group you belong to. Is it more effective or more efficient, and what would improve the weaker one?",
+    summary: {
+      points: [
+        "Management is getting things done through and with people.",
+        "Effective: reaching the goal. Efficient: with the least waste.",
+        "Nature: goal-oriented, continuous, universal, a group activity, intangible, multidisciplinary, both art and science.",
+        "Levels: top (policy), middle (plans and coordination), first-line (day-to-day work).",
+      ],
+      memory: "Right things (effective), done right (efficient), through people.",
+    },
+  },
   {
     blockId: "fayols-14-principles",
     name: "Fayol's 14 principles",
@@ -38,7 +67,7 @@ const principles: Lesson[] = [
       { pairing: 1, adds: "Power is held against an obligation to deliver results for others.", differs: "Kauṭilya speaks of a ruler and the people he rules. Fayol speaks of a manager and an organisation." },
       { pairing: 2, adds: "Shared movement, speech and purpose as the ground of team spirit.", differs: "The hymn is a prayer for concord among people. It does not set out reporting lines or plans." },
       { pairing: 3, adds: "Sustained effort as the root of prosperity, with resolve and enthusiasm in the doer.", differs: "Kauṭilya's line is about effort that sustains wealth. Fayol's initiative is the freedom to propose and carry out plans." },
-      { pairing: 8, adds: "Equal regard for all, named as a mark of the wise.", differs: "Fayol's equity joins kindness with justice in managing staff. The Gītā verses describe an inner vision, not workplace rules." },
+      { pairing: 7, adds: "Equal regard for all, named as a mark of the wise.", differs: "Fayol's equity joins kindness with justice in managing staff. The Gītā verses describe an inner vision, not workplace rules." },
     ],
     reflect: "Which of the fourteen principles is hardest to keep in a team you have worked in, and why?",
     summary: {
@@ -95,46 +124,6 @@ const principles: Lesson[] = [
         "Contribution: scientific work methods.",
       ],
       memory: "Fayol manages the organisation. Taylor optimises the work.",
-    },
-  },
-  {
-    blockId: "functions-of-management-posdc",
-    name: "Functions of management: POSDC",
-    intro: "Five linked functions that repeat in a cycle.",
-    before: {
-      q: "When a manager finds a gap between results and plan, what happens next?",
-      choices: [
-        { label: "The cycle ends", reveal: "Not quite. In POSDC, controlling measures results, compares them with the plan and corrects the gap, which feeds the next round of planning." },
-        { label: "Back to planning", reveal: "Yes. Controlling measures results, compares them with the plan and corrects the gap, which feeds the next round of planning." },
-      ],
-    },
-    lead: "Management is five linked functions that repeat in a cycle: plan, organise, staff, direct, control.",
-    check: [
-      {
-        q: "Which function recruits, selects and develops people?",
-        options: ["Planning", "Organising", "Staffing", "Directing"],
-        answer: 2,
-        why: "Staffing. Organising arranges tasks, people and resources, and directing leads, motivates and communicates.",
-      },
-      {
-        q: "What does controlling do?",
-        options: ["Sets objectives and the course of action", "Measures results, compares them with the plan and corrects the gap", "Leads and motivates", "Arranges tasks and resources"],
-        answer: 1,
-        why: "Controlling measures results, compares them with the plan and corrects the gap, which feeds the next round of planning.",
-      },
-    ],
-    lens: [
-      { pairing: 7, adds: "The first controller sits inside the person, with measured habits in eating, rest and work.", differs: "Controlling in management compares results with a standard and corrects. The Gītā speaks of self-mastery, not of a plan-against-actual cycle." },
-    ],
-    reflect: "Think of one gap between a plan and its result in your own work. What did it change the next time?",
-    summary: {
-      points: [
-        "Planning sets objectives and the course of action; organising arranges tasks, people and resources.",
-        "Staffing recruits, selects and develops people; directing leads, motivates and communicates.",
-        "Controlling measures results, compares them with the plan and corrects the gap.",
-        "The corrected gap feeds the next round of planning.",
-      ],
-      memory: "Plan, organise, staff, direct, control, then round again.",
     },
   },
   {

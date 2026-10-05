@@ -31,6 +31,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "webers-bureaucracy",
+    name: "Weber's bureaucracy",
+    intro: "Organisation by rules and offices, not persons.",
+    before: {
+      q: "In a bureaucracy, whom do you obey?",
+      choices: [
+        { label: "The person in charge", reveal: "Not in Weber's model. Authority is rational-legal: you obey the rules and the office, whoever holds it." },
+        { label: "The rules and the office", reveal: "Right. Weber's authority is rational-legal: you obey the rules and the office, whoever holds it." },
+      ],
+    },
+    lead: "Weber's bureaucracy rests on rational-legal authority: hierarchy, rules, impersonality and merit.",
+    check: [
+      ask("Weber's bureaucracy rests on which kind of authority?", "Rational-legal", ["Traditional", "Charismatic", "Personal"], "Authority belongs to rules and offices, not to persons."),
+      ask("In a bureaucracy, selection and promotion are based on…", "Merit and qualification", ["Family ties", "Seniority alone", "The superior's preference"], "Often tested in open competition, with a career and a systematic pay structure."),
+      ask("Which is a weakness of bureaucracy?", "Rigidity and red tape", ["Unpredictable decisions", "No written records", "No hierarchy"], "Its strengths are predictability, fairness and accountability; its weaknesses are rigidity and slow response."),
+    ],
+    lens: [],
+    reflect: "Think of an office you have dealt with. Which of Weber's features helped you, and which got in your way?",
+    summary: {
+      points: [
+        "Max Weber: the most rational way to organise large-scale work.",
+        "Rational-legal authority: obey rules and offices, not persons.",
+        "Features: hierarchy, division of labour, rules, impersonality, merit, career, records.",
+        "Strengths: predictability, fairness. Weaknesses: rigidity, red tape.",
+      ],
+      memory: "The office, not the person; the rule, not the mood.",
+    },
+  },
+  {
     blockId: "neoclassical-school",
     name: "Neoclassical school",
     intro: "Human relations, motivation, communication, teamwork and morale.",
@@ -59,6 +88,64 @@ const lessons: Lesson[] = [
         "Participative leadership and attention to relationships matter.",
       ],
       memory: "From tasks and structure to people.",
+    },
+  },
+  {
+    blockId: "hawthorne-experiments",
+    name: "The Hawthorne experiments",
+    intro: "Four phases that moved management from lighting to people.",
+    before: {
+      q: "Lighting in a test room is turned down, and output still rises. Why?",
+      choices: [
+        { label: "Dimmer light is better", reveal: "No. Output rose whether the lights went up or down. The workers responded to being studied and to the attention, not to the light." },
+        { label: "Something besides light", reveal: "Yes. Output rose whether the lights went up or down. The workers responded to being studied and to the attention, not to the light." },
+      ],
+    },
+    lead: "The Hawthorne studies found that attention, morale and the work group shape output as much as pay and conditions.",
+    check: [
+      ask("Which phase found that a work group sets its own output norm?", "Bank wiring observation room", ["Illumination experiments", "Relay assembly test room", "Mass interviewing"], "The group pressed members to keep to its norm, whatever the incentive."),
+      ask("Where were the Hawthorne studies carried out?", "Western Electric's Hawthorne Works, near Chicago", ["Ford's Detroit plant", "General Motors in Michigan", "The Midvale Steel Company"], "From 1924 to 1932; Midvale was where Taylor worked."),
+      ask("People changing their behaviour because they know they are studied is called…", "The Hawthorne effect", ["The halo effect", "Groupthink", "Social loafing"], "Named after the studies."),
+    ],
+    lens: [],
+    reflect: "When has someone paying attention to your work changed how hard you worked?",
+    summary: {
+      points: [
+        "Western Electric, Hawthorne Works, 1924–1932; Mayo, Roethlisberger and Dickson.",
+        "Illumination: output rose either way.",
+        "Relay assembly: attention and morale mattered. Interviews: being heard mattered.",
+        "Bank wiring: the group sets its own norm.",
+      ],
+      memory: "Light, relay, listen, wire: people, not lamps.",
+    },
+  },
+  {
+    blockId: "theory-x-theory-y-and-theory-z",
+    name: "Theory X, Theory Y and Theory Z",
+    intro: "A manager's style follows from assumptions about people.",
+    before: {
+      q: "A manager checks every task and every hour. Which assumption about people is at work?",
+      choices: [
+        { label: "Theory X", reveal: "Yes. Theory X assumes people dislike work and must be controlled, so supervision is close." },
+        { label: "Theory Y", reveal: "No. Theory Y assumes people direct themselves; close checking comes from Theory X, which assumes people dislike work." },
+      ],
+    },
+    lead: "McGregor's Theory X assumes people dislike work; Theory Y assumes they seek responsibility. Ouchi's Theory Z adds a Japanese-style model.",
+    check: [
+      ask("In which book did McGregor set out Theory X and Theory Y?", "The Human Side of Enterprise (1960)", ["Theory Z (1981)", "The Practice of Management (1954)", "The Functions of the Executive (1938)"], "Theory Z is Ouchi's book; the others are by Drucker and Barnard."),
+      ask("Which assumption belongs to Theory Y?", "People seek responsibility under the right conditions", ["People avoid work", "People must be threatened", "Security matters most"], "The other three are Theory X assumptions."),
+      ask("Ouchi's Theory Z emphasises…", "Long-term employment and collective decisions", ["Close supervision", "Piece-rate pay", "Strict rules"], "It also stresses slow evaluation and concern for the whole employee."),
+    ],
+    lens: [],
+    reflect: "Which theory do your own habits as a team member or leader assume, X or Y?",
+    summary: {
+      points: [
+        "McGregor, The Human Side of Enterprise (1960).",
+        "Theory X: people dislike work, avoid responsibility, need control.",
+        "Theory Y: work is natural, people direct themselves and seek responsibility.",
+        "Theory Z: Ouchi (1981), long-term employment and collective decisions; Maslow used the name in 1969.",
+      ],
+      memory: "X controls, Y trusts, Z commits for the long term.",
     },
   },
   {

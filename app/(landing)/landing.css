@@ -163,6 +163,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 @media (min-width: 1240px) { .top-links { display: flex; } .mnav { display: none; } }
 @media (min-width: 1360px) { .hide-md { display: inline-flex; } }
 @media (max-width: 479px) { .top-in { gap: 10px; } .top-end { gap: 8px; } .top-end .btn { padding: 0 12px; } }
+@media (max-width: 379px) { .top-in { padding-inline: 12px; } .brand { gap: 8px; font-size: 17px; } .brand .sq { width: 12px; height: 12px; } .top-end { gap: 6px; } .top-end .btn, .srch-btn { padding: 0 9px; } }
 
 /* ---------- Continue band (returning visitors) ---------- */
 .band-continue { background: var(--color-surface); border-bottom: 2px solid var(--color-divider); }
@@ -171,7 +172,10 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 
 /* ---------- Hero ---------- */
 .hero { display: flex; flex-direction: column; gap: 32px; padding-top: clamp(56px, 8vw, 104px); padding-bottom: clamp(56px, 7vw, 96px); }
-.hero h1 { margin-left: -.06em; font-size: clamp(48px, 8.2vw, 116px); line-height: .98; letter-spacing: -.035em; text-wrap: balance; }
+/* Sized from the hero's own width, so each line of the headline (about 9.7em
+   wide) stays whole wherever it fits; phones keep the 48px floor and wrap. */
+.hero { container-type: inline-size; }
+.hero h1 { margin-left: -.06em; font-size: clamp(48px, 10cqi, 116px); line-height: .98; letter-spacing: -.035em; text-wrap: balance; }
 .hero h1 span { display: block; }
 .hero h1 .red { color: var(--color-accent); }
 .intro { padding-top: 28px; border-top: 2px solid var(--color-text); }

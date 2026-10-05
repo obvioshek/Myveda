@@ -4,19 +4,24 @@
   "view": "An interpretive parallel. The text does not discuss the modern concept; the link is a reading offered for reflection, not a claim about what the authors meant.",
   "translations": "Translations are paraphrases. Arthaśāstra references follow Kangle's critical edition; Bhagavad Gītā references are chapter.verse. Check each reference against your own edition before quoting it in submitted work."
  },
- "textsUsed": "Ṛgveda and Atharvaveda (hymns); Taittirīya, Bṛhadāraṇyaka, Kaṭha, Īśa and Muṇḍaka Upaniṣads; Bhagavad Gītā; Yoga Sūtras of Patañjali; Manusmṛti; Kauṭilya's Arthaśāstra (Kangle numbering); Kālidāsa's Raghuvaṃśa.",
+ "textsUsed": "Ṛgveda and Atharvaveda (hymns); Taittirīya, Bṛhadāraṇyaka, Kaṭha, Īśa and Muṇḍaka Upaniṣads; Bhagavad Gītā; Yoga Sūtras of Patañjali; Manusmṛti; Kauṭilya's Arthaśāstra (Kangle numbering); Tirukkuṟaḷ (couplet numbers); Kālidāsa's Raghuvaṃśa.",
  "chapters": [
   {
    "n": 1,
    "slug": "principles-of-management",
-   "title": "Principles and Functions of Management",
-   "scope": "What managers do, how the classical writers said they should do it, and the skills and roles the job demands.",
+   "title": "Management: Concept, Principles, Roles and Skills",
+   "scope": "What management is, how the classical writers said it should be done, and the roles and skills the job demands.",
    "group": "management",
    "blocks": [
     {
+     "id": "what-is-management",
+     "title": "What management is",
+     "html": "<p><b>Management</b> is the process of getting things done through and with people, using an organisation's resources to reach its goals <b>effectively</b> (doing the right things, so the goals are met) and <b>efficiently</b> (doing things right, with the least waste of time, money and effort).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"What management is, in five definitions\" tabindex=\"0\"><table>\n<thead><tr><th>Writer</th><th>Management is…</th></tr></thead>\n<tbody>\n<tr><td>Mary Parker Follett</td><td>the art of getting things done through people.</td></tr>\n<tr><td>Harold Koontz</td><td>the art of getting things done through and with people in formally organised groups.</td></tr>\n<tr><td>Koontz and Weihrich</td><td>the process of designing and maintaining an environment in which individuals, working together in groups, efficiently accomplish selected aims.</td></tr>\n<tr><td>Peter Drucker</td><td>a multipurpose organ that manages a business, manages managers, and manages workers and work.</td></tr>\n<tr><td>Dalton E. McFarland</td><td>the process by which managers create, direct, maintain and operate purposive organisations through systematic, coordinated, cooperative human effort.</td></tr>\n</tbody></table></div>\n<p><b>Nature.</b> Management is goal-oriented; a continuous process; universal, since its principles apply to every kind of organisation; a group activity; intangible, seen only in its results; multidisciplinary, drawing on economics, psychology, sociology and statistics; and both an <b>art</b> (skilled personal practice) and a <b>science</b> (a systematic body of knowledge). It has many marks of a <b>profession</b>, such as a body of knowledge and formal training, though unlike medicine or law entry to it is not restricted by a licence.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Levels of management\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Who</th><th>Main work</th></tr></thead>\n<tbody>\n<tr><td>Top</td><td>Board of directors, chief executive</td><td>Sets objectives, policy and strategy; answers to owners and society</td></tr>\n<tr><td>Middle</td><td>Heads of departments and divisions</td><td>Turns policy into plans, coordinates departments, links top and bottom</td></tr>\n<tr><td>First-line (lower)</td><td>Supervisors, foremen, section officers</td><td>Directs day-to-day work and reports results upward</td></tr>\n</tbody></table></div>\n<p><b>Why it matters.</b> Management reaches goals, uses resources with less waste, coordinates departments and levels, avoids duplication of work, places competent people in each position, and prepares the organisation for a changing environment.</p>"
+    },
+    {
      "id": "fayols-14-principles",
      "title": "Fayol's 14 principles",
-     "html": "<p>Henri Fayol wrote from the top of the organisation downward. His administrative principles describe how a whole enterprise should be arranged and run. They fall into four groups.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Fayol's 14 principles\" tabindex=\"0\"><table>\n<thead><tr><th>Group</th><th>Principles</th></tr></thead>\n<tbody>\n<tr><td>Work and authority</td><td>1 Division of work: specialise so that output and skill rise. 2 Authority and responsibility: the right to command comes with an equal duty to answer for results. 3 Discipline: respect for rules and agreements. 4 Unity of command: each employee takes orders from one superior.</td></tr>\n<tr><td>Direction and organisational interest</td><td>5 Unity of direction: one plan and one leader for activities with the same objective. 6 Subordination of individual interest to the general interest. 7 Remuneration: pay that is fair to both employer and employee.</td></tr>\n<tr><td>Structure and order</td><td>8 Centralisation and decentralisation: set decision authority at the level the situation needs. 9 Scalar chain: an unbroken line of authority from top to bottom. 10 Order: materials and people each in their proper place.</td></tr>\n<tr><td>People and team spirit</td><td>11 Equity: kindness joined with justice. 12 Stability of tenure: low turnover so people can learn their jobs. 13 Initiative: freedom to propose and carry out plans. 14 Esprit de corps: unity and team spirit.</td></tr>\n</tbody></table></div>"
+     "html": "<p>Henri Fayol wrote from the top of the organisation downward. His administrative principles describe how a whole enterprise should be arranged and run. They fall into four groups.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Fayol's 14 principles\" tabindex=\"0\"><table>\n<thead><tr><th>Group</th><th>Principles</th></tr></thead>\n<tbody>\n<tr><td>Work and authority</td><td>1 Division of work: specialise so that output and skill rise. 2 Authority and responsibility: the right to command comes with an equal duty to answer for results. 3 Discipline: respect for rules and agreements. 4 Unity of command: each employee takes orders from one superior.</td></tr>\n<tr><td>Direction and organisational interest</td><td>5 Unity of direction: one plan and one leader for activities with the same objective. 6 Subordination of individual interest to the general interest. 7 Remuneration: pay that is fair to both employer and employee.</td></tr>\n<tr><td>Structure and order</td><td>8 Centralisation and decentralisation: set decision authority at the level the situation needs. 9 Scalar chain: an unbroken line of authority from top to bottom. 10 Order: materials and people each in their proper place.</td></tr>\n<tr><td>People and team spirit</td><td>11 Equity: kindness joined with justice. 12 Stability of tenure: low turnover so people can learn their jobs. 13 Initiative: freedom to propose and carry out plans. 14 Esprit de corps: unity and team spirit.</td></tr>\n</tbody></table></div>\n<p>Fayol also divided an enterprise's activities into six groups: technical, commercial, financial, security, accounting and managerial, the last being the one he analysed. When the scalar chain is too slow, his <b>gang plank</b> lets two people at the same level deal with each other directly, with their superiors' knowledge.</p>"
     },
     {
      "id": "taylors-scientific-management",
@@ -24,19 +29,14 @@
      "html": "<p>F. W. Taylor worked from the shop floor upward. He replaced guesswork with measurement, and his approach rests on seven elements:</p>\n<ul>\n<li><b>Science, not rule of thumb:</b> find the best method by study.</li>\n<li><b>Harmony, not discord:</b> managers and workers cooperate.</li>\n<li><b>Scientific selection and training:</b> the right person trained for the task.</li>\n<li><b>Functional foremanship:</b> several specialist foremen supervise each worker, one per kind of task, instead of one generalist supervisor.</li>\n<li><b>Differential piece-rate:</b> a higher rate per piece for meeting the standard output, a lower rate for falling short.</li>\n<li><b>Standardisation and simplification:</b> uniform tools, methods and processes.</li>\n<li><b>Time and motion study:</b> break a job into steps, remove wasted movement, set an output standard.</li>\n</ul>\n<div class=\"tb\" role=\"region\" aria-label=\"Taylor's scientific management\" tabindex=\"0\"><table>\n<thead><tr><td></td><th>Fayol (administrative)</th><th>Taylor (scientific)</th></tr></thead>\n<tbody>\n<tr><td>Starting point</td><td>The whole organisation</td><td>The individual task</td></tr>\n<tr><td>Main concern</td><td>How to manage the organisation</td><td>How to perform work efficiently</td></tr>\n<tr><td>Key ideas</td><td>Principles, authority, unity, order</td><td>Study, standards, incentives</td></tr>\n<tr><td>Contribution</td><td>Administrative framework</td><td>Scientific work methods</td></tr>\n</tbody></table></div>"
     },
     {
-     "id": "functions-of-management-posdc",
-     "title": "Functions of management: POSDC",
-     "html": "<p>Management is commonly described as five linked functions that repeat in a cycle. <b>Planning</b> sets objectives and the course of action. <b>Organising</b> arranges tasks, people and resources. <b>Staffing</b> recruits, selects and develops people. <b>Directing</b> leads, motivates and communicates. <b>Controlling</b> measures results, compares them with the plan and corrects the gap, which feeds the next round of planning.</p>"
-    },
-    {
      "id": "katzs-three-managerial-skills",
      "title": "Katz's three managerial skills",
-     "html": "<p><b>Technical</b> skill is knowing the work: methods, tools, specialised knowledge. <b>Human</b> skill is leading, motivating and resolving conflict, and it matters at every level. <b>Conceptual</b> skill is seeing the organisation as a whole and connecting strategy to its parts. Emphasis shifts with rank: lower management leans on technical skill, middle management on human skill, with a balance of all three, top management on conceptual. Design skill is not one of Katz's three.</p>"
+     "html": "<p>Robert Katz (1955) named three skills every manager needs, in proportions that change with level.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Katz's three managerial skills\" tabindex=\"0\"><table>\n<thead><tr><th>Skill</th><th>What it is</th><th>Where it weighs most</th></tr></thead>\n<tbody>\n<tr><td>Technical</td><td>Knowing the work: methods, tools, procedures and specialised knowledge, such as selling, accounting or engineering</td><td>First-line managers; its weight falls as one rises</td></tr>\n<tr><td>Human</td><td>Working with and through people: leading, motivating, communicating and resolving conflict</td><td>Every level; the main emphasis in middle management</td></tr>\n<tr><td>Conceptual</td><td>Seeing the organisation as a whole, how its parts depend on each other and on the environment, and connecting strategy to its parts</td><td>Top management; its weight rises with level</td></tr>\n</tbody></table></div>\n<p>Emphasis shifts with rank: lower management leans on technical skill, middle management on human skill, with a balance of all three, top management on conceptual. Design skill is not one of Katz's three. Managers also draw on related skills: communication, decision-making, delegation, planning, problem-solving and time management. Skills, unlike talent, can be learnt and improved with practice.</p>"
     },
     {
      "id": "mintzbergs-managerial-roles",
      "title": "Mintzberg's managerial roles",
-     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Mintzberg's managerial roles\" tabindex=\"0\"><table>\n<thead><tr><th>Category</th><th>Roles</th><th>About</th></tr></thead>\n<tbody>\n<tr><td>Interpersonal</td><td>Figurehead, leader, liaison</td><td>Relationships and status</td></tr>\n<tr><td>Informational</td><td>Monitor, disseminator, spokesperson</td><td>Gathering and passing on information</td></tr>\n<tr><td>Decisional</td><td>Entrepreneur, disturbance handler, resource allocator, negotiator</td><td>Choices and action</td></tr>\n</tbody></table></div>"
+     "html": "<p>Henry Mintzberg watched five chief executives at work (a consulting firm, a school, a technology firm, a consumer-goods maker and a hospital) and reported in <i>The Nature of Managerial Work</i> (1973). Instead of orderly planning he found brief, varied and fragmented activity, and he grouped what managers do into ten roles in three categories.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Mintzberg's managerial roles\" tabindex=\"0\"><table>\n<thead><tr><th>Category</th><th>Role</th><th>What the manager does</th></tr></thead>\n<tbody>\n<tr><td>Interpersonal</td><td>Figurehead</td><td>Performs ceremonial and symbolic duties: greeting visitors, signing documents, presiding at functions</td></tr>\n<tr><td></td><td>Leader</td><td>Directs, motivates, trains and counsels subordinates</td></tr>\n<tr><td></td><td>Liaison</td><td>Keeps a network of contacts inside and outside the organisation</td></tr>\n<tr><td>Informational</td><td>Monitor</td><td>Seeks and receives information about changes, opportunities and problems</td></tr>\n<tr><td></td><td>Disseminator</td><td>Passes information on to members of the organisation</td></tr>\n<tr><td></td><td>Spokesperson</td><td>Speaks for the organisation to outsiders</td></tr>\n<tr><td>Decisional</td><td>Entrepreneur</td><td>Starts improvement projects and initiates change</td></tr>\n<tr><td></td><td>Disturbance handler</td><td>Takes corrective action in disputes and crises</td></tr>\n<tr><td></td><td>Resource allocator</td><td>Decides who gets what: money, people, time and equipment</td></tr>\n<tr><td></td><td>Negotiator</td><td>Represents the unit in negotiations with unions, suppliers, customers and government</td></tr>\n</tbody></table></div>\n<p>The categories connect: formal authority and status give rise to the interpersonal roles; these give the manager access to information (the informational roles), which the manager then uses to decide (the decisional roles).</p>"
     }
    ],
    "lensNote": null,
@@ -105,15 +105,6 @@
      "quote": "“Whatever the best person does, others do too.” <i>yad yad ācarati śreṣṭhas tat tad evetaro janaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.21; see also 18.20</span>"
     },
     {
-     "kind": "view",
-     "modern": "Controlling",
-     "classic": "self-regulation",
-     "text": [
-      "Controlling compares results with a standard and corrects. The Gītā places the first controller inside the person, and recommends measured habits in eating, rest and work."
-     ],
-     "quote": "“Lift yourself by yourself.” <i>uddhared ātmanātmānam.</i> <span class=\"ref\">Bhagavad Gītā 6.5; moderation at 6.17</span>"
-    },
-    {
      "kind": "documented",
      "modern": "Equity",
      "classic": "equal regard",
@@ -126,6 +117,125 @@
   },
   {
    "n": 2,
+   "slug": "functions-of-management",
+   "title": "Functions of Management",
+   "scope": "Planning, organising, staffing, directing, coordinating and controlling: what each involves, step by step.",
+   "group": "management",
+   "lensNote": null,
+   "blocks": [
+    {
+     "id": "functions-of-management-posdc",
+     "title": "The functions of management",
+     "html": "<p>Management functions are the general duties managers carry out in almost every organisation. Writers have listed them differently.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The functions of management\" tabindex=\"0\"><table>\n<thead><tr><th>Writer</th><th>Functions</th></tr></thead>\n<tbody>\n<tr><td>Henri Fayol (1916)</td><td>To forecast and plan, to organise, to command, to co-ordinate and to control</td></tr>\n<tr><td>Luther Gulick (1937)</td><td><b>POSDCORB</b>: planning, organising, staffing, directing, co-ordinating, reporting and budgeting</td></tr>\n<tr><td>George R. Terry</td><td>Planning, organising, actuating and controlling</td></tr>\n<tr><td>Koontz and O'Donnell</td><td>Planning, organising, staffing, directing and controlling: the most widely used list</td></tr>\n</tbody></table></div>\n<p>The five functions repeat in a cycle. <b>Planning</b> sets objectives and the course of action. <b>Organising</b> arranges tasks, people and resources. <b>Staffing</b> recruits, selects and develops people. <b>Directing</b> leads, motivates and communicates. <b>Controlling</b> measures results, compares them with the plan and corrects the gap, which feeds the next round of planning. <b>Coordination</b> runs through all five, which is why many writers call it the essence of management rather than a separate function.</p>\n<p>The functions overlap and are performed together, at every level. Top managers spend more of their time planning and organising; first-line managers spend more of theirs directing.</p>"
+    },
+    {
+     "id": "planning",
+     "title": "Planning",
+     "html": "<p><b>Planning</b> is deciding in advance what to do, how to do it, when to do it and who is to do it (Koontz and O'Donnell). It bridges the gap between where we are and where we want to be. M. E. Hurley put it in a line: planning is deciding in advance what is to be done. It is the <b>primary</b> function, since the others follow from it and controlling has nothing to measure without it.</p>\n<p><b>Nature.</b> Planning is goal-oriented, all-pervasive (done at every level), forward-looking, continuous, an intellectual process, and a matter of choice among alternatives. It offsets uncertainty, gives direction, reduces waste, guides decisions, helps coordination and makes control possible.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Types of planning\" tabindex=\"0\"><table>\n<thead><tr><th>Classified by</th><th>Types</th></tr></thead>\n<tbody>\n<tr><td>Level</td><td>Corporate, divisional, functional</td></tr>\n<tr><td>Focus</td><td><b>Strategic</b>: long-term, for the whole organisation. <b>Tactical</b>: turns strategy into departmental plans. <b>Operational</b>: day-to-day. <b>Contingency</b>: a fallback ready if conditions change.</td></tr>\n<tr><td>Time</td><td>Long-term, medium-term, short-term</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"The planning process\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1. Recognise the need for action</td><td>Scan for opportunities and problems, often with a SWOT analysis</td></tr>\n<tr><td>2. Set objectives</td><td>For the organisation, then for each department</td></tr>\n<tr><td>3. Develop planning premises</td><td>Assumptions about the future: external (economy, policy, technology, competition) and internal (resources, policies, management)</td></tr>\n<tr><td>4. Identify alternatives</td><td>List the possible courses of action, then narrow them to the promising few</td></tr>\n<tr><td>5. Evaluate alternatives</td><td>Weigh each against the objectives: cost, risk, return</td></tr>\n<tr><td>6. Select an alternative</td><td>Choose the best, sometimes combining parts of several</td></tr>\n<tr><td>7. Formulate supporting plans</td><td>Derivative plans such as hiring, training and budgets that make the main plan work</td></tr>\n<tr><td>8. Implement and follow up</td><td>Act through policies, procedures, budgets and rules, and check progress</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "organising",
+     "title": "Organising",
+     "html": "<p><b>Organising</b> brings together physical, financial and human resources and sets up productive relationships among them to reach goals. Planning decides <i>what</i> to do; organising decides <i>how</i> it will be done: what tasks there are, who does them, how they are grouped, who reports to whom and where decisions are made (Robbins and Coulter). Louis A. Allen defined it as identifying and grouping the work, defining and delegating responsibility and authority, and establishing relationships so people can work together effectively.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The organising process\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1. Identify activities</td><td>List everything that must be done: bookkeeping, selling, training, quality control</td></tr>\n<tr><td>2. Group activities</td><td>Combine related activities into departments or units (departmentalisation)</td></tr>\n<tr><td>3. Assign duties and authority</td><td>Give each position its tasks and the authority to carry them out</td></tr>\n<tr><td>4. Establish reporting relationships</td><td>Set who reports to whom, so each person knows their authority and accountability</td></tr>\n</tbody></table></div>\n<p><b>Benefits.</b> Clear roles and accountability, channels of communication, efficient use of resources without duplication, coordination of diverse work, and a structure that can grow. The result of organising is the organisation structure, the subject of a later chapter.</p>"
+    },
+    {
+     "id": "staffing",
+     "title": "Staffing",
+     "html": "<p><b>Staffing</b> fills the positions in the organisation structure and keeps them filled with the right people: the right person in the right job. Koontz and O'Donnell describe it as manning the structure through proper and effective selection, appraisal and development of personnel. Today it is largely the work of human resource management.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The staffing process\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1. Manpower planning</td><td>Estimate how many people, and of what kind, are needed (workload and workforce analysis)</td></tr>\n<tr><td>2. Recruitment</td><td>Find prospective employees and encourage them to apply</td></tr>\n<tr><td>3. Selection</td><td>Choose from the applicants: screening, tests, interviews, medical examination</td></tr>\n<tr><td>4. Placement and orientation</td><td>Put each person in the job they suit; orientation (induction) introduces them to colleagues, rules and facilities</td></tr>\n<tr><td>5. Training and development</td><td>Build skills for the present job and for future roles</td></tr>\n<tr><td>6. Compensation</td><td>Fix wages, salaries, incentives and fringe benefits</td></tr>\n<tr><td>7. Performance appraisal</td><td>Rate performance against set standards</td></tr>\n<tr><td>8. Promotion, transfer and career planning</td><td>Move people to where they are best used, and plan their growth</td></tr>\n</tbody></table></div>\n<p>Unit 2's chapters on human resource planning, recruitment and selection, training and compensation treat these steps in depth.</p>"
+    },
+    {
+     "id": "directing",
+     "title": "Directing and leadership styles",
+     "html": "<p><b>Directing</b> (also called leading) guides, influences, motivates and supervises people so they work toward the organisation's goals. It turns plans into action. Its elements are <b>supervision</b> (overseeing the work), <b>motivation</b> (encouraging effort with monetary and non-monetary incentives), <b>communication</b> (passing on information and understanding) and <b>leadership</b> (influencing people to follow).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Leadership styles\" tabindex=\"0\"><table>\n<thead><tr><th>Style</th><th>How it works</th><th>Strength</th><th>Weakness</th></tr></thead>\n<tbody>\n<tr><td>Autocratic (authoritarian)</td><td>The leader decides alone and expects compliance</td><td>Fast decisions; a clear chain of command</td><td>Stifles initiative and creativity; can raise turnover</td></tr>\n<tr><td>Democratic (participative)</td><td>The leader involves the team and keeps the final word</td><td>Commitment, creativity, morale</td><td>Slow; weak if members lack skill</td></tr>\n<tr><td>Laissez-faire (free-rein)</td><td>The leader provides resources and hands decisions to the group</td><td>Suits experienced, self-driven experts</td><td>Unclear responsibility; can lower productivity</td></tr>\n<tr><td>Transactional</td><td>Rewards and penalties for meeting set goals</td><td>Clear, measurable targets</td><td>Little room for innovation</td></tr>\n<tr><td>Transformational</td><td>Inspires change through a shared vision and personal example</td><td>High morale and commitment to change</td><td>Depends heavily on the leader</td></tr>\n</tbody></table></div>\n<p>The first three styles come from Kurt Lewin's studies (1939); James MacGregor Burns (1978) set transactional leadership against transformational. Which style works best depends on the leader's personality, the followers and the organisation's culture. Unit 2's chapter on group behaviour and leadership covers the theories behind this.</p>"
+    },
+    {
+     "id": "coordinating",
+     "title": "Coordinating",
+     "html": "<p><b>Coordination</b> is the orderly arrangement of group effort to provide unity of action in the pursuit of a common purpose (Mooney and Reiley). Because it runs through every function, Koontz and O'Donnell called it the essence of management rather than a separate function. Fayol listed it among his five elements, and it is the CO in Gulick's POSDCORB.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Kinds of coordination\" tabindex=\"0\"><table>\n<thead><tr><th>Kind</th><th>Between</th></tr></thead>\n<tbody>\n<tr><td>Internal</td><td>Departments, units and people inside the organisation</td></tr>\n<tr><td>External</td><td>The organisation and outsiders: suppliers, customers, government</td></tr>\n<tr><td>Vertical</td><td>Levels of the hierarchy, superior and subordinate</td></tr>\n<tr><td>Horizontal</td><td>Departments at the same level, such as production and sales</td></tr>\n</tbody></table></div>\n<p><b>How it is achieved.</b> Clear objectives and plans, a sound structure with defined authority, effective communication, committees and liaison roles, good leadership, and voluntary cooperation among those involved. Mary Parker Follett set out four principles: direct contact among the people concerned, an early start while plans are still being made, reciprocal relating of all the factors in a situation, and continuity.</p>"
+    },
+    {
+     "id": "controlling",
+     "title": "Controlling",
+     "html": "<p><b>Controlling</b> measures performance against standards, finds deviations and corrects them, so that goals are reached as planned. Fayol wrote that control consists of seeing that everything is carried out in accordance with the plan adopted, the orders given and the principles laid down; its object is to point out mistakes so that they may be rectified and prevented from recurring. Planning and controlling are inseparable: planning sets the standard, controlling checks against it, and its findings feed the next plan.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The control process\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1. Set standards</td><td>Measurable targets drawn from the plan: output, cost, quality, time</td></tr>\n<tr><td>2. Measure performance</td><td>Collect data on what actually happened</td></tr>\n<tr><td>3. Compare with standards</td><td>Find the deviation and its cause, attending to the significant deviations (management by exception)</td></tr>\n<tr><td>4. Take corrective action</td><td>Remove the cause, or revise the standard or the plan if it was unrealistic</td></tr>\n</tbody></table></div>\n<p><b>Nature.</b> Control is continuous, present at every level, closely linked with planning, and action-oriented; good control looks ahead to prevent deviations as well as back to correct them. Robert J. Mockler called it a systematic effort to compare performance with predetermined standards and to take whatever action is needed so that resources are used effectively and efficiently.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Control techniques\" tabindex=\"0\"><table>\n<thead><tr><th>Technique</th><th>What it checks</th></tr></thead>\n<tbody>\n<tr><td>Personal observation</td><td>Work seen first-hand</td></tr>\n<tr><td>Reports and management information systems</td><td>Regular data on operations</td></tr>\n<tr><td>Budgetary control</td><td>Income and spending against the budget</td></tr>\n<tr><td>Ratio analysis and return on investment</td><td>Financial health and the return on capital</td></tr>\n<tr><td>Break-even analysis</td><td>The output at which revenue covers cost</td></tr>\n<tr><td>Benchmarking</td><td>Performance against the best in the field</td></tr>\n</tbody></table></div>"
+    }
+   ],
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "The functions of management",
+     "classic": "create, gather, guard, allocate",
+     "text": [
+      "The Kuṟaḷ describes the able ruler as one who can create resources, gather them, guard them and allocate what has been guarded. It names a cycle of duties rather than a single act, which is how the functions of management are taught. The couplet describes a king's work, not the modern list, so the link is a reading."
+     ],
+     "quote": "“He is a king who can create, gather and guard wealth, and allocate what is guarded.” <span lang=\"ta\" class=\"ta\">இயற்றலும் ஈட்டலும் காத்தலும் காத்த வகுத்தலும் வல்ல தரசு.</span> <span class=\"ref\">Tirukkuṟaḷ 385</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Planning comes first",
+     "classic": "think, then act",
+     "text": [
+      "The Kuṟaḷ insists that thinking comes before the deed, not after it, and calls it a fault to start first and think later. That is planning's claim to be the primary function: decide in advance, then act."
+     ],
+     "quote": "“Resolve on a deed only after thinking it through; to say 'we will think after we begin' is a fault.” <span lang=\"ta\" class=\"ta\">எண்ணித் துணிக கருமம் துணிந்தபின் எண்ணுவம் என்பது இழுக்கு.</span> <span class=\"ref\">Tirukkuṟaḷ 467</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Organising resources",
+     "classic": "the five things to weigh",
+     "text": [
+      "The Kuṟaḷ tells the one who acts to weigh, free of doubt, five things: the means, the instruments, the time, the deed and the place. Organising assembles exactly these before work begins: funds, tools, timing, the tasks and where they will be done."
+     ],
+     "quote": "“Act after weighing, free of doubt, these five: the means, the instruments, the time, the deed and the place.” <span lang=\"ta\" class=\"ta\">பொருள்கருவி காலம் வினையிடனொடு ஐந்தும் இருள்தீர எண்ணிச் செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 675</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Staffing",
+     "classic": "whom to employ",
+     "text": [
+      "The Kuṟaḷ's chapter on choosing and employing people opens with this couplet: the person to employ is one who weighs good and harm and inclines to the good. Staffing adds the systematic steps around that judgement: manpower planning, recruitment, selection, placement and development."
+     ],
+     "quote": "“Employ the one who weighs both good and evil and chooses to do good.” <span lang=\"ta\" class=\"ta\">நன்மையும் தீமையும் நாடி நலம்புரிந்த தன்மையான் ஆளப் படும்.</span> <span class=\"ref\">Tirukkuṟaḷ 511</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Directing",
+     "classic": "kind words and generous care",
+     "text": [
+      "In its chapter on the excellence of a ruler, the Kuṟaḷ says the world follows willingly the one who can give with kind words and protect. Directing works through motivation and communication rather than force alone, which is the democratic and transformational end of the leadership styles."
+     ],
+     "quote": "“The world is at the word of one who can give with kind words and protect.” <span lang=\"ta\" class=\"ta\">இன்சொலால் ஈத்தளிக்க வல்லார்க்குத் தன்சொலால் தான்கண் டனைத்திவ் வுலகு.</span> <span class=\"ref\">Tirukkuṟaḷ 387</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Coordination",
+     "classic": "the hymn of concord",
+     "text": [
+      "The closing hymn of the Ṛgveda asks people to move together, speak together and be of one mind. Coordination is that unity of action, arranged deliberately across departments and levels."
+     ],
+     "quote": "“Move together, speak together, let your minds be of one accord.” <i>saṃ gacchadhvaṃ saṃ vadadhvaṃ saṃ vo manāṃsi jānatām.</i> <span class=\"ref\">Ṛgveda 10.191.2</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Control needs a check",
+     "classic": "the ruler with none to rebuke him",
+     "text": [
+      "The Kuṟaḷ warns that a ruler with no one to point out his errors falls even without an enemy. Control builds that check into the organisation as standards, reports and correction. The couplet is about advisers, not management systems, so the link is a reading."
+     ],
+     "quote": "“The unguarded king with none to rebuke him perishes even with no one to destroy him.” <span lang=\"ta\" class=\"ta\">இடிப்பாரை இல்லாத ஏமரா மன்னன் கெடுப்பார் இலானும் கெடும்.</span> <span class=\"ref\">Tirukkuṟaḷ 448</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Controlling",
+     "classic": "self-regulation",
+     "text": [
+      "Controlling compares results with a standard and corrects. The Gītā places the first controller inside the person, and recommends measured habits in eating, rest and work."
+     ],
+     "quote": "“Lift yourself by yourself.” <i>uddhared ātmanātmānam.</i> <span class=\"ref\">Bhagavad Gītā 6.5; moderation at 6.17</span>"
+    }
+   ]
+  },
+  {
+   "n": 3,
    "slug": "theories-of-management",
    "title": "Theories of Management",
    "scope": "Five schools, each a response to the limits of the one before: efficiency, people, interconnection, situation, and quality with knowledge.",
@@ -137,14 +247,29 @@
      "html": "<div class=\"tb\" role=\"region\" aria-label=\"Classical school\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>Late 19th to early 20th century</td></tr><tr><td>Key names</td><td>F. W. Taylor, Henri Fayol</td></tr></tbody></table></div>\n<p>Efficiency, structure and productivity. Scientific study of work, time and motion studies, differential piece-rate, administrative principles, division of work, unity of command, scalar chain. Central idea: replace rule of thumb with systematic management.</p>"
     },
     {
+     "id": "webers-bureaucracy",
+     "title": "Weber's bureaucracy",
+     "html": "<p>Max Weber (1864–1920), a German sociologist, described bureaucracy as the most rational way to organise large-scale work. It rests on <b>rational-legal authority</b>: people obey rules and offices, not persons.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Weber's bureaucracy\" tabindex=\"0\"><table>\n<thead><tr><th>Feature</th><th>What it means</th></tr></thead>\n<tbody>\n<tr><td>Hierarchy</td><td>A chain of offices, each supervised by the one above</td></tr>\n<tr><td>Division of labour</td><td>Specialised roles with defined duties</td></tr>\n<tr><td>Rules</td><td>Written, stable rules govern decisions</td></tr>\n<tr><td>Impersonality</td><td>Decisions follow rules, not personal feelings; the office belongs to the organisation, not its holder</td></tr>\n<tr><td>Merit</td><td>Selection and promotion by qualification, often tested in open competition</td></tr>\n<tr><td>Career</td><td>A salaried career with a systematic pay structure</td></tr>\n<tr><td>Records</td><td>Decisions and actions are documented in files</td></tr>\n</tbody></table></div>\n<p><b>Strengths:</b> predictability, fairness, accountability and efficiency in routine work; the model still shapes most governments. <b>Weaknesses:</b> rigidity, red tape, slow response to change, and routine that dulls initiative and leaves people feeling apart from the organisation's purpose.</p>"
+    },
+    {
      "id": "neoclassical-school",
      "title": "Neoclassical school",
      "html": "<div class=\"tb\" role=\"region\" aria-label=\"Neoclassical school\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>1920s–1930s</td></tr><tr><td>Key names</td><td>Elton Mayo</td></tr></tbody></table></div>\n<p>Human relations, motivation, communication, teamwork and morale. The Hawthorne studies found that productivity follows social and psychological factors, not physical conditions alone. Employees are social and emotional beings, so participative leadership and attention to relationships matter.</p>"
     },
     {
+     "id": "hawthorne-experiments",
+     "title": "The Hawthorne experiments",
+     "html": "<p>The Hawthorne studies (1924–1932) at the Western Electric Company's Hawthorne Works near Chicago began as engineering tests and ended as a finding about people. Elton Mayo, Fritz Roethlisberger and William Dickson led the later phases.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The Hawthorne experiments\" tabindex=\"0\"><table>\n<thead><tr><th>Phase</th><th>What it found</th></tr></thead>\n<tbody>\n<tr><td>Illumination experiments (1924–1927)</td><td>Output rose whether lighting went up or down, so physical conditions alone did not explain productivity</td></tr>\n<tr><td>Relay assembly test room (1927–1932)</td><td>A small group's output rose through changes in rest pauses and hours, and stayed high when the old conditions returned; attention, morale and the group mattered</td></tr>\n<tr><td>Mass interviewing (1928–1930)</td><td>About 20,000 interviews showed that workers valued being listened to, and that their attitudes shaped their work</td></tr>\n<tr><td>Bank wiring observation room (1931–1932)</td><td>The group set its own output norm and pressed members to keep to it, whatever the incentive</td></tr>\n</tbody></table></div>\n<p>The lesson: workers are social beings. Informal groups, attention and recognition influence output as much as pay and physical conditions. The tendency of people to change their behaviour when they know they are being studied is now called the <b>Hawthorne effect</b>.</p>"
+    },
+    {
+     "id": "theory-x-theory-y-and-theory-z",
+     "title": "Theory X, Theory Y and Theory Z",
+     "html": "<p>Douglas McGregor, in <i>The Human Side of Enterprise</i> (1960), argued that a manager's style follows from the manager's assumptions about people.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Theory X and Theory Y\" tabindex=\"0\"><table>\n<thead><tr><th>Assumption about</th><th>Theory X</th><th>Theory Y</th></tr></thead>\n<tbody>\n<tr><td>Work</td><td>People dislike work and avoid it</td><td>Work is as natural as play or rest</td></tr>\n<tr><td>Direction</td><td>People must be coerced, controlled and threatened</td><td>People direct themselves toward goals they are committed to</td></tr>\n<tr><td>Responsibility</td><td>People avoid it and prefer to be led</td><td>People accept and seek it under the right conditions</td></tr>\n<tr><td>Ambition and creativity</td><td>Little ambition; security matters most</td><td>Imagination and creativity are widely spread</td></tr>\n<tr><td>Resulting style</td><td>Close supervision, rewards and penalties</td><td>Participation, delegation and enriched jobs</td></tr>\n</tbody></table></div>\n<p><b>Theory Z</b> names two later ideas. William Ouchi's <i>Theory Z</i> (1981) described a model drawn from Japanese management: long-term employment, collective decision-making, slow evaluation and promotion, and concern for the whole employee. Earlier, Abraham Maslow (1969) had used the name for a dimension of work beyond Theory Y, concerned with meaning and self-transcendence.</p>"
+    },
+    {
      "id": "systems-approach",
      "title": "Systems approach",
-     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Systems approach\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>Mid-20th century to present</td></tr><tr><td>Key names</td><td>Chester Barnard, Ludwig von Bertalanffy</td></tr></tbody></table></div>\n<p>The organisation is an open system of interdependent subsystems (production, finance, HR and others) interacting with its environment. A change in one subsystem affects the rest. Key words: interdependence, integration, coordination, feedback, synergy. Think of the whole, not isolated parts.</p>"
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Systems approach\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>Mid-20th century to present</td></tr><tr><td>Key names</td><td>Chester Barnard, Ludwig von Bertalanffy</td></tr></tbody></table></div>\n<p>The organisation is an open system of interdependent subsystems (production, finance, HR and others) interacting with its environment. A change in one subsystem affects the rest. Key words: interdependence, integration, coordination, feedback, synergy. Think of the whole, not isolated parts.</p>\n<p>Seen as a system, an organisation has five parts: <b>inputs</b> (materials, people, capital, information, technology), a <b>transformation process</b> (work and management activities), <b>outputs</b> (products, services, financial and human results), <b>feedback</b> (results that shape the next inputs) and the <b>environment</b> it draws from and serves.</p>"
     },
     {
      "id": "contingency-approach",
@@ -221,7 +346,7 @@
    ]
   },
   {
-   "n": 3,
+   "n": 4,
    "slug": "communication",
    "title": "Communication",
    "scope": "The exchange of ideas, information and feelings between people or groups to reach mutual understanding.",
@@ -230,12 +355,17 @@
     {
      "id": "what-communication-is",
      "title": "What communication is",
-     "html": "<p><b>Forms.</b> Verbal, non-verbal, written and digital. Good communication gives an organisation clarity, coordination, cooperation, better relationships and a shared sense of objectives.</p>"
+     "html": "<p>Communication (from the Latin <i>communicare</i>, to share) is the transfer of information and understanding from one person to another. Newman and Summer call it an exchange of facts, ideas, opinions or emotions by two or more persons; Louis Allen calls it a bridge of meaning, a systematic and continuous process of telling, listening and understanding.</p>\n<p><b>Forms.</b> Verbal, non-verbal, written and digital. Good communication gives an organisation clarity, coordination, cooperation, better relationships and a shared sense of objectives.</p>\n<p><b>Characteristics.</b> It is a two-way, continuous process; it needs at least a sender and a receiver; it carries facts, ideas, opinions and feelings; and it is pervasive and goal-oriented.</p>\n<p><b>Functions.</b> To inform, to instruct, to persuade and motivate, to integrate the parts of an organisation, to counsel, to hear grievances, and to train.</p>"
     },
     {
      "id": "the-communication-process",
      "title": "The communication process",
-     "html": "<p>Seven steps. The <b>sender</b> forms an idea and <b>encodes</b> it into words, gestures or visuals. The <b>message</b> (information, ideas, emotions) travels through a <b>channel</b>: spoken, written or electronic. The <b>receiver</b> takes it in and <b>decodes</b> it, making sense of it. <b>Feedback</b> returns to the sender and confirms understanding. <b>Noise</b> is interference at any step and comes in three kinds: physical, psychological and semantic. The goal is to minimise distortion and maximise understanding.</p>"
+     "html": "<p>Seven steps. The <b>sender</b> forms an idea and <b>encodes</b> it into words, gestures or visuals. The <b>message</b> (information, ideas, emotions) travels through a <b>channel</b>: spoken, written or electronic. The <b>receiver</b> takes it in and <b>decodes</b> it, making sense of it. <b>Feedback</b> returns to the sender and confirms understanding. <b>Noise</b> is interference at any step and comes in three kinds: physical, psychological and semantic. The goal is to minimise distortion and maximise understanding.</p>\n<p>The <b>medium</b> is the broad means of communication (spoken, written, electronic); the <b>channel</b> is the specific route the message takes, such as a phone call, a letter or an email. Face-to-face feedback is immediate; in writing, the sender cannot read the receiver's face and must wait.</p>"
+    },
+    {
+     "id": "models-of-communication",
+     "title": "Models of communication",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Models of communication\" tabindex=\"0\"><table>\n<thead><tr><th>Model</th><th>Year</th><th>What it adds</th></tr></thead>\n<tbody>\n<tr><td>Shannon and Weaver</td><td>1949</td><td>A source, a transmitter (encoder), a channel, a receiver (decoder) and a destination, with <b>noise</b> distorting the signal. Built for telephone engineering, later applied to human communication; often called the mother of all models.</td></tr>\n<tr><td>Schramm</td><td>1954</td><td>Communication as a two-way exchange: each party both encodes and decodes, and meaning is shared through an overlapping <b>field of experience</b>.</td></tr>\n<tr><td>Berlo (SMCR)</td><td>1960</td><td><b>S</b>ource, <b>m</b>essage, <b>c</b>hannel, <b>r</b>eceiver, each shaped by factors such as communication skills, attitudes, knowledge, social system and culture.</td></tr>\n</tbody></table></div>\n<p>Each model adds something the last left out: Shannon and Weaver add noise, Schramm adds shared experience and two-way exchange, and Berlo adds the human factors that shape each element.</p>"
     },
     {
      "id": "formal-and-informal-communication",
@@ -243,9 +373,24 @@
      "html": "<div class=\"tb\" role=\"region\" aria-label=\"Formal and informal communication\" tabindex=\"0\"><table>\n<thead><tr><td></td><th>Formal</th><th>Informal</th></tr></thead>\n<tbody>\n<tr><td>Channel</td><td>Official channels and the established hierarchy</td><td>Natural, unstructured channels</td></tr>\n<tr><td>Strength</td><td>Consistency, clarity, accountability</td><td>Relationship building, quick exchange of ideas</td></tr>\n<tr><td>Examples</td><td>Reports, memos, meetings</td><td>Grapevine, conversation, social media</td></tr>\n</tbody></table></div>\n<p>By direction, formal communication flows <b>downward</b> (for example circulars), <b>upward</b> (grievances), <b>horizontally</b> between peers (joint forums), and <b>externally</b> (annual reports). Informal communication takes five common forms: the <b>grapevine</b> (unofficial, fast, often inaccurate), <b>face-to-face</b> talk (direct, instant feedback, non-verbal cues), <b>social media</b> (fast and flexible), <b>telephone</b> (immediate but with limited visual feedback) and <b>non-verbal</b> signals such as gestures, posture and facial expression.</p>"
     },
     {
+     "id": "directions-of-communication",
+     "title": "Directions of communication",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Directions of communication\" tabindex=\"0\"><table>\n<thead><tr><th>Direction</th><th>Flows</th><th>Examples</th><th>Watch for</th></tr></thead>\n<tbody>\n<tr><td>Downward</td><td>From superiors to subordinates</td><td>Orders, policies, notices, job instructions, handbooks</td><td>Delay, distortion and filtering through many levels; overload</td></tr>\n<tr><td>Upward</td><td>From subordinates to superiors</td><td>Reports, suggestions, grievances, complaints</td><td>Fear of superiors, distortion, inattention at the top</td></tr>\n<tr><td>Horizontal (lateral)</td><td>Between people or departments at the same level</td><td>Meetings and memos between department heads</td><td>Rivalry between departments</td></tr>\n<tr><td>Diagonal (crosswise)</td><td>Between people at different levels in different departments</td><td>A finance executive asks the marketing head directly for projected expenses</td><td>Bypasses the chain of command and unity of command</td></tr>\n</tbody></table></div>\n<p>Downward communication carries authority and objectives; upward communication brings feedback, ideas and early warning; horizontal communication coordinates; diagonal communication saves time when speed matters.</p>"
+    },
+    {
+     "id": "communication-networks",
+     "title": "Communication networks and the grapevine",
+     "html": "<p>A communication network is the pattern of channels among the members of a group.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Formal communication networks\" tabindex=\"0\"><table>\n<thead><tr><th>Network</th><th>Pattern</th><th>Character</th></tr></thead>\n<tbody>\n<tr><td>Chain</td><td>Messages pass up and down a line, as in the scalar chain</td><td>Orderly but slow; distortion grows with each link</td></tr>\n<tr><td>Wheel</td><td>One central person communicates with each member; members do not communicate directly</td><td>Fastest for simple tasks; centralised</td></tr>\n<tr><td>Circle</td><td>Each person communicates with the two beside them</td><td>Slow; no central leader</td></tr>\n<tr><td>All-channel (free flow)</td><td>Everyone communicates with everyone</td><td>Highest satisfaction and best for complex problems; slow to reach a decision</td></tr>\n</tbody></table></div>\n<p>The <b>grapevine</b> is the informal network that grows from social ties. Keith Davis described four patterns along which it carries news.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Grapevine patterns\" tabindex=\"0\"><table>\n<thead><tr><th>Pattern</th><th>How news spreads</th></tr></thead>\n<tbody>\n<tr><td>Single strand</td><td>Each person tells one other, in a line</td></tr>\n<tr><td>Gossip</td><td>One person tells everyone</td></tr>\n<tr><td>Probability</td><td>Each person tells others at random</td></tr>\n<tr><td>Cluster</td><td>Each tells a few trusted people, who pass it on selectively; the most common pattern</td></tr>\n</tbody></table></div>\n<p>The grapevine is fast and tells managers how people feel, but it also carries rumour and distortion. It works best alongside open formal channels.</p>"
+    },
+    {
+     "id": "oral-and-written-communication",
+     "title": "Oral and written communication",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Oral and written communication\" tabindex=\"0\"><table>\n<thead><tr><th></th><th>Oral</th><th>Written</th></tr></thead>\n<tbody>\n<tr><td>Forms</td><td>Face-to-face talks, meetings, telephone, interviews, voice messages</td><td>Letters, memos, circulars, reports, manuals, notices, email</td></tr>\n<tr><td>Strengths</td><td>Quick, flexible and personal; immediate feedback; saves time and cost</td><td>A permanent record and legal evidence; precise; fixes responsibility; suits long, complex or widely sent messages</td></tr>\n<tr><td>Weaknesses</td><td>No record; easily misunderstood; poor for long messages</td><td>Slow, costly, impersonal and rigid; feedback is delayed</td></tr>\n</tbody></table></div>\n<p>Both are forms of verbal communication, because both use words. <b>Non-verbal</b> communication (gesture, expression, posture, tone, pictures and symbols) accompanies them and often carries the feeling behind the words.</p>"
+    },
+    {
      "id": "barriers-to-communication",
      "title": "Barriers to communication",
-     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Barriers to communication\" tabindex=\"0\"><table>\n<thead><tr><th>Barrier</th><th>What gets in the way</th></tr></thead>\n<tbody>\n<tr><td>Physical</td><td>Noise, distance, poor infrastructure</td></tr>\n<tr><td>Psychological</td><td>Stress, fear, bias</td></tr>\n<tr><td>Language</td><td>Vocabulary, jargon, dialect</td></tr>\n<tr><td>Cultural</td><td>Beliefs, traditions, practices</td></tr>\n<tr><td>Perceptual</td><td>Different interpretations, experience, attitudes</td></tr>\n<tr><td>Organisational</td><td>Rigid hierarchy, poor coordination</td></tr>\n<tr><td>Attitudinal</td><td>Negative behaviour, dominance, lack of respect</td></tr>\n</tbody></table></div>"
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Barriers to communication\" tabindex=\"0\"><table>\n<thead><tr><th>Barrier</th><th>What gets in the way</th></tr></thead>\n<tbody>\n<tr><td>Physical</td><td>Noise, distance, poor infrastructure</td></tr>\n<tr><td>Psychological</td><td>Stress, fear, bias</td></tr>\n<tr><td>Language</td><td>Vocabulary, jargon, dialect</td></tr>\n<tr><td>Cultural</td><td>Beliefs, traditions, practices</td></tr>\n<tr><td>Perceptual</td><td>Different interpretations, experience, attitudes</td></tr>\n<tr><td>Organisational</td><td>Rigid hierarchy, poor coordination</td></tr>\n<tr><td>Attitudinal</td><td>Negative behaviour, dominance, lack of respect</td></tr>\n</tbody></table></div>\n<p><b>Semantic</b> barriers, a kind of language barrier, are the most common at work: one word with several meanings, poorly built messages, faulty translation, jargon and unstated assumptions. Barriers are reduced by clarifying the idea before sending it, choosing the right medium, using simple language, listening actively, asking for feedback and keeping channels open in every direction.</p>"
     }
    ],
    "lensNote": null,
@@ -289,7 +434,7 @@
    ]
   },
   {
-   "n": 4,
+   "n": 5,
    "slug": "decision-making",
    "title": "Decision Making",
    "scope": "Selecting the best course of action from the available alternatives to reach a goal.",
@@ -298,7 +443,7 @@
     {
      "id": "what-a-decision-rests-on",
      "title": "What a decision rests on",
-     "html": "<p>Decisions rest on three foundations: <b>logic</b>, <b>analysis</b> and <b>intuition</b>. Done well, they improve efficiency, effectiveness, adaptability, competitiveness and organisational performance.</p>"
+     "html": "<p>A <b>decision</b> is the choice of one course of action from two or more alternatives to solve a problem or reach a goal (Trewatha and Newport; George Terry). Peter Drucker put its weight plainly: whatever a manager does, he does through making decisions.</p>\n<p>Decisions rest on three foundations: <b>logic</b>, <b>analysis</b> and <b>intuition</b>. Done well, they improve efficiency, effectiveness, adaptability, competitiveness and organisational performance.</p>\n<p><b>Features.</b> Decision-making is a mental, rational process; it is selective, so there must be alternatives to choose from; it is purposive, aimed at a goal; it implies commitment until the decision is carried out; it involves evaluating both the alternatives and the results; it happens at every level; and a decision can be negative, a choice not to act.</p>"
     },
     {
      "id": "types-of-decision",
@@ -313,7 +458,7 @@
     {
      "id": "techniques-and-tools",
      "title": "Techniques and tools",
-     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Techniques and tools\" tabindex=\"0\"><table>\n<thead><tr><th>Technique</th><th>What it does</th><th>Best for</th></tr></thead>\n<tbody>\n<tr><td>Decision tree</td><td>Maps alternatives to possible outcomes</td><td>Risk analysis</td></tr>\n<tr><td>Delphi method</td><td>Anonymous expert rounds until consensus forms</td><td>Forecasting</td></tr>\n<tr><td>Decision matrix</td><td>Scores options against weighted criteria</td><td>Selection</td></tr>\n<tr><td>Cost-benefit analysis</td><td>Compares expected costs with expected benefits</td><td>Investment</td></tr>\n<tr><td>PEST analysis</td><td>Political, economic, social and technological factors</td><td>Market entry</td></tr>\n<tr><td>SWOT analysis</td><td>Strengths, weaknesses, opportunities, threats</td><td>Strategy</td></tr>\n<tr><td>Conjoint analysis</td><td>Measures how customers trade off product features</td><td>Product and pricing</td></tr>\n<tr><td>Pareto analysis</td><td>The vital few causes behind most problems (80/20 principle)</td><td>Quality improvement</td></tr>\n<tr><td>Multi-voting</td><td>Group members vote to rank a long list</td><td>Project selection</td></tr>\n<tr><td>Linear programming</td><td>Optimises output or minimises cost under constraints</td><td>Production planning</td></tr>\n<tr><td>Payback analysis</td><td>Time taken to recover an investment</td><td>Capital decisions</td></tr>\n<tr><td>Feasibility study</td><td>Technical, financial and legal viability</td><td>New projects</td></tr>\n</tbody></table></div>"
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Techniques and tools\" tabindex=\"0\"><table>\n<thead><tr><th>Technique</th><th>What it does</th><th>Best for</th></tr></thead>\n<tbody>\n<tr><td>Decision tree</td><td>Maps alternatives to possible outcomes</td><td>Risk analysis</td></tr>\n<tr><td>Delphi method</td><td>Anonymous expert rounds until consensus forms</td><td>Forecasting</td></tr>\n<tr><td>Decision matrix</td><td>Scores options against weighted criteria</td><td>Selection</td></tr>\n<tr><td>Cost-benefit analysis</td><td>Compares expected costs with expected benefits</td><td>Investment</td></tr>\n<tr><td>PEST analysis</td><td>Political, economic, social and technological factors</td><td>Market entry</td></tr>\n<tr><td>SWOT analysis</td><td>Strengths, weaknesses, opportunities, threats</td><td>Strategy</td></tr>\n<tr><td>Conjoint analysis</td><td>Measures how customers trade off product features</td><td>Product and pricing</td></tr>\n<tr><td>Pareto analysis</td><td>The vital few causes behind most problems (80/20 principle)</td><td>Quality improvement</td></tr>\n<tr><td>Multi-voting</td><td>Narrows a long list in rounds: each member gets votes equal to about a third of the items and spends them on the top priorities</td><td>Project selection</td></tr>\n<tr><td>Linear programming</td><td>Optimises output or minimises cost under constraints</td><td>Production planning</td></tr>\n<tr><td>Payback analysis</td><td>Time taken to recover an investment</td><td>Capital decisions</td></tr>\n<tr><td>Feasibility study</td><td>Technical, financial and legal viability</td><td>New projects</td></tr>\n</tbody></table></div>"
     }
    ],
    "lensNote": null,
@@ -375,7 +520,7 @@
    ]
   },
   {
-   "n": 5,
+   "n": 6,
    "slug": "organisation-structure",
    "title": "Organisation Structure",
    "scope": "The framework that defines roles, responsibilities, authority and communication, so resources align with goals and accountability is clear.",
@@ -447,7 +592,7 @@
    ]
   },
   {
-   "n": 6,
+   "n": 7,
    "slug": "business-economics-and-demand",
    "title": "Business Economics and Demand",
    "scope": "Economic theory applied to business decisions, and the study of why and how much people buy.",
@@ -534,7 +679,7 @@
    ]
   },
   {
-   "n": 7,
+   "n": 8,
    "slug": "elasticity-of-demand",
    "title": "Elasticity of Demand",
    "scope": "How strongly quantity demanded responds to changes in price, income and the prices of related goods.",
@@ -584,7 +729,7 @@
    ]
   },
   {
-   "n": 8,
+   "n": 9,
    "slug": "utility-analysis",
    "title": "Utility Analysis",
    "scope": "The cardinal approach: satisfaction can be measured in numbers called utils, and consumers allocate a budget to maximise total utility.",
@@ -657,7 +802,7 @@
    ]
   },
   {
-   "n": 9,
+   "n": 10,
    "slug": "indifference-curves",
    "title": "Indifference Curve Analysis",
    "scope": "The ordinal approach: utility is ranked, not measured. Consumers compare bundles and choose the one they prefer within their budget.",
@@ -721,7 +866,7 @@
    ]
   },
   {
-   "n": 10,
+   "n": 11,
    "slug": "market-structures",
    "title": "Market Structures",
    "scope": "How markets are classified by the number of sellers, the product and ease of entry, and how that fixes price and profit.",
@@ -775,7 +920,7 @@
    ]
   },
   {
-   "n": 11,
+   "n": 12,
    "slug": "national-income-and-inflation",
    "title": "National Income and Inflation",
    "scope": "How an economy's output and income are measured, and what happens when the general price level keeps rising.",
@@ -839,7 +984,7 @@
    ]
   },
   {
-   "n": 12,
+   "n": 13,
    "slug": "business-ethics-and-csr",
    "title": "Business Ethics and CSR",
    "scope": "Moral principles applied to commercial decisions, and a firm's responsibility to the society it operates in.",
@@ -930,7 +1075,7 @@
    ]
   },
   {
-   "n": 13,
+   "n": 14,
    "slug": "corporate-governance",
    "title": "Corporate Governance and Value-Based Organisations",
    "scope": "How a company is directed and controlled, and what changes when values, not only profit, shape its culture and strategy.",
