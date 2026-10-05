@@ -5,5 +5,6 @@
 
 import type { UnitSource } from "../types";
 import unit1 from "./unit-1";
+import unit2 from "./unit-2";
 
-export const UNIT_SOURCES: UnitSource[] = [unit1];
+export const UNIT_SOURCES: UnitSource[] = [unit1, unit2];

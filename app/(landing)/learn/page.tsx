@@ -9,8 +9,8 @@ import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, REVISION_PATH, UNITS, chapterPa
 import { CONTACT_EMAIL } from "@/content/landing";
 import { siteUrl } from "@/lib/site";
 
-const title = "Management and economics chapters · Veda Verse";
-const description = `${CHAPTERS.length} chapters of management and managerial economics in plain language, each read alongside the Arthashastra, the Bhagavad Gita and the Upanishads.`;
+const title = "Management, economics, OB and HRM chapters · Veda Verse";
+const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour and HRM in plain language, each read alongside the Arthashastra, the Gita and the Tirukkural.`;
 
 export const metadata: Metadata = {
   title,
@@ -28,7 +28,7 @@ export default function LearnIndex() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CollectionPage", "@id": `${base}/learn#page`, url: `${base}/learn`, name: "Management and economics chapters",
+        "@type": "CollectionPage", "@id": `${base}/learn#page`, url: `${base}/learn`, name: "Management, economics, OB and HRM chapters",
         description, inLanguage: "en-IN", isPartOf: { "@id": `${base}/#site` }, publisher: { "@id": `${base}/#org` },
         mainEntity: { "@type": "ItemList", itemListElement: CHAPTERS.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.title, url: `${base}${chapterPath(c.slug)}` })) },
       },

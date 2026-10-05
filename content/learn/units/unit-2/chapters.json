@@ -1,0 +1,894 @@
+{
+ "textsUsed": "Bhagavad Gītā; Tirukkuṟaḷ (couplet numbers); Kauṭilya's Arthaśāstra (Kangle numbering); Taittirīya, Kaṭha and Mahā Upaniṣads; Ṛgveda; Manusmṛti; Yoga Sūtras of Patañjali.",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "organisational-behaviour",
+   "title": "Organisational Behaviour: Significance and Theories",
+   "scope": "What organisational behaviour studies, and how management thought moved from efficiency to people to systems and situations.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "what-organisational-behaviour-studies",
+     "title": "What organisational behaviour studies",
+     "html": "<p>Organisational behaviour (OB) studies how people think, feel and act at work: as individuals, in groups, and as part of the whole organisation. Its use is practical: to understand behaviour, predict it, and improve how people and organisations perform.</p>\n<p>The management thought behind it moved in three steps: from <b>efficiency</b>, to <b>human behaviour</b>, to <b>systems and situational thinking</b>.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>School</th><th>Main focus</th><th>Key thinkers and theories</th></tr></thead><tbody><tr><td>Classical</td><td>Efficiency and structure</td><td>Taylor, Fayol, Weber</td></tr><tr><td>Behavioural</td><td>People and motivation</td><td>Mayo, Maslow, McGregor</td></tr><tr><td>Modern</td><td>Systems and adapting to the situation</td><td>Systems theory, contingency theory</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "classical-school-of-management",
+     "title": "Classical school of management",
+     "html": "<p>The classical school grew up with the Industrial Revolution. It stressed efficiency, organisational structure, division of work and a clear chain of command.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Approach</th><th>Thinker</th><th>Core idea</th></tr></thead><tbody><tr><td>Scientific management</td><td>F. W. Taylor</td><td>Use scientific methods to find the most efficient way to do a job.</td></tr><tr><td>Administrative management</td><td>Henri Fayol</td><td>The management process and general principles of management.</td></tr><tr><td>Bureaucratic management</td><td>Max Weber</td><td>A formal organisation run by rules: clear hierarchy, detailed rules and regulations, clear division of labour, a formalised system of operation, impersonality and appointment by professional competence.</td></tr></tbody></table></div>\n<p><b>Taylor's four principles:</b> science, not rule of thumb; scientific selection and training of workers; cooperation between workers and management; and division of work and responsibility, with managers planning and training and workers performing.</p>\n<p><b>Fayol</b> named five functions of management (planning, organising, commanding, coordinating and controlling) and fourteen principles, among them division of work, authority, discipline, unity of command and unity of direction. <b>Weber's</b> aim was efficiency and an end to favouritism.</p>"
+    },
+    {
+     "id": "behavioural-school-of-management",
+     "title": "Behavioural school of management",
+     "html": "<p>The behavioural school was a reaction to the limits of the classical approach. It put human behaviour and social needs at the centre.</p>\n<ul><li><b>Hawthorne studies</b> (Elton Mayo, at Western Electric's Hawthorne plant): productivity rose when employees felt valued; social needs, morale and relationships shape behaviour at work. The <b>Hawthorne effect</b>: attention and social relations change behaviour and productivity.</li><li><b>Maslow's hierarchy of needs</b>: physiological, safety, social, esteem and self-actualisation. Managers should understand and address employees' different needs.</li><li><b>McGregor's Theory X and Theory Y</b>: two opposite sets of assumptions about people at work.</li></ul>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Theory X</th><th>Theory Y</th></tr></thead><tbody><tr><td>View of work</td><td>Employees dislike work</td><td>Employees can be motivated</td></tr><tr><td>Direction</td><td>People need coercion and control</td><td>People can direct themselves and seek responsibility</td></tr><tr><td>Style</td><td>Management-centred control</td><td>Participative management</td></tr><tr><td>Trust</td><td>Low</td><td>Trust and collaboration</td></tr><tr><td>Creativity</td><td>Assumed to be limited</td><td>Encouraged</td></tr></tbody></table></div>\n<p class=\"cue\">The core contrast: control against participation.</p>"
+    },
+    {
+     "id": "modern-school-of-management",
+     "title": "Modern school: systems and contingency",
+     "html": "<p>The modern school recognises how complex organisations are, and how much they depend on their environment.</p>\n<p><b>Systems theory</b> sees the organisation as an open system. Inputs (labour, materials, capital) pass through a transformation process (activities and operations) to become outputs (products and services), and feedback returns to the start, all within an external environment. The parts are interrelated and work toward a common goal; the key ideas are interdependence, interaction, environment and feedback.</p>\n<p><b>Contingency theory</b> holds that there is no single best way to manage: practice must be tailored to the situation. Effectiveness depends on the external environment, technology, organisational structure and the characteristics of the workforce. The manager analyses the situation, identifies the variables, adapts the practice and acts.</p>\n<p class=\"cue\">It depends on the situation.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Bureaucracy's rules and records",
+     "classic": "the accounts office",
+     "text": [
+      "Kauṭilya's accounts office (<i>akṣapaṭala</i>) keeps registers for every department, fixes when and how accounts are to be presented, and sets penalties for officials who fail to present them. Written records, set procedures and regular checks are what Weber later described as bureaucracy."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.7</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Theory Y",
+     "classic": "lifting oneself",
+     "text": [
+      "Theory Y assumes that people can direct themselves and will seek responsibility. The Gītā asks each person to raise themselves by their own effort and not let themselves sink, which treats self-direction as a human capacity. The verse is about inner discipline, not about a manager's assumptions."
+     ],
+     "quote": "“Lift yourself by yourself; do not let yourself sink.” <i>uddhared ātmanātmānaṃ nātmānam avasādayet.</i> <span class=\"ref\">Bhagavad Gītā 6.5</span>"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "slug": "personality-perception-and-attitude",
+   "title": "Personality, Perception and Attitude",
+   "scope": "Who a person is, how they read the world, and the stance they take toward it: three building blocks of individual behaviour at work.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "personality",
+     "title": "Personality",
+     "html": "<p>Personality is the unique and relatively consistent pattern of a person's thoughts, emotions and behaviour. It is shaped by genetics, environment, experience and learning, and it matters at work for recruitment, communication, team dynamics, leadership, motivation, job satisfaction and performance.</p>\n<p>The <b>Myers-Briggs Type Indicator (MBTI)</b>, developed by Katharine Briggs and Isabel Myers from Carl Jung's psychological types, sorts people into 16 types along four dimensions. It is used to understand team compatibility, leadership styles and communication preferences.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Dimension</th><th>One preference</th><th>The other</th></tr></thead><tbody><tr><td>E – I</td><td>Extraversion: interaction, outward energy</td><td>Introversion: reflection, solitude</td></tr><tr><td>S – N</td><td>Sensing: facts and present realities</td><td>Intuition: patterns and possibilities</td></tr><tr><td>T – F</td><td>Thinking: logic and objectivity</td><td>Feeling: empathy and human impact</td></tr><tr><td>J – P</td><td>Judging: structure and decisiveness</td><td>Perceiving: flexibility and spontaneity</td></tr></tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Theory</th><th>Proponents</th><th>Core idea</th></tr></thead><tbody><tr><td>Psychoanalytic</td><td>Sigmund Freud</td><td>Unconscious conflicts among id, ego and superego; early childhood shapes personality.</td></tr><tr><td>Behaviourist</td><td>B. F. Skinner, J. B. Watson</td><td>Personality develops through learning, conditioning and reinforcement.</td></tr><tr><td>Humanistic</td><td>Carl Rogers, Abraham Maslow</td><td>People strive for self-growth and to fulfil their potential.</td></tr><tr><td>Trait</td><td>Gordon Allport; the Big Five</td><td>Personality is a set of relatively stable traits.</td></tr><tr><td>Cognitive</td><td>Albert Bandura</td><td>Mental processes, observation, imitation and self-efficacy shape personality.</td></tr><tr><td>Biological</td><td>Hans Eysenck; Darwinian view</td><td>Personality is linked to genetics, brain chemistry and evolution.</td></tr></tbody></table></div>\n<p>The <b>Big Five (OCEAN)</b>: openness, conscientiousness, extraversion, agreeableness and neuroticism.</p>"
+    },
+    {
+     "id": "perception",
+     "title": "Perception",
+     "html": "<p>Perception is the process of selecting, organising and interpreting sensory information to give meaning to the environment. It is subjective: the same situation can draw different responses because people's experiences and expectations differ.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Stage</th><th>What happens</th></tr></thead><tbody><tr><td>1 Selection</td><td>We notice only some of the many stimuli, influenced by intensity, relevance, novelty, interests and expectations.</td></tr><tr><td>2 Organisation</td><td>We arrange what we noticed into patterns, by similarity, proximity and closure.</td></tr><tr><td>3 Interpretation</td><td>We give it meaning using experience, beliefs and motives. Assumptions and stereotypes creep in here.</td></tr></tbody></table></div>\n<p>Three sets of factors shape perception: the <b>perceiver</b> (motives, experiences, attitudes, expectations), the <b>target</b> (appearance, behaviour, communication style) and the <b>situation</b> (context, time, work setting).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Perceptual error</th><th>What happens</th></tr></thead><tbody><tr><td>Stereotyping</td><td>Judging a person by the group they belong to.</td></tr><tr><td>Halo effect</td><td>One favourable trait shapes the whole judgement.</td></tr><tr><td>Horn effect</td><td>One unfavourable trait shapes the whole judgement.</td></tr><tr><td>Selective perception</td><td>Noticing only what supports opinions already held.</td></tr><tr><td>Projection</td><td>Attributing one's own thoughts, feelings or motives to others.</td></tr><tr><td>Contrast effect</td><td>Judging a person against others rather than against an objective standard.</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "attitude",
+     "title": "Attitude",
+     "html": "<p>An attitude is a learned tendency to respond consistently, in a favourable or unfavourable way. It combines beliefs, feelings and an intention to behave, and it influences job satisfaction, motivation and organisational commitment.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Component</th><th>What it is</th><th>Example</th></tr></thead><tbody><tr><td>Affective</td><td>Feelings and emotions: liking, disliking, indifference</td><td>“I enjoy this project.”</td></tr><tr><td>Behavioural</td><td>An intention or readiness to act</td><td>Working overtime to reach a goal</td></tr><tr><td>Cognitive</td><td>Beliefs and ideas</td><td>“Hard work leads to success.”</td></tr></tbody></table></div>\n<p class=\"cue\">Cognitive is what you think, affective what you feel, behavioural what you are ready to do.</p>\n<p>Three attitudes matter most at work. <b>Job satisfaction</b> is the positive or negative feeling toward one's job, role and work environment; high satisfaction supports commitment and performance. <b>Organisational commitment</b> is emotional attachment and loyalty to the organisation; strong commitment can reduce turnover and absenteeism. <b>Job involvement</b> is how far a person identifies with their job and treats it as important to their self-worth.</p>\n<p>Attitudes are formed by family and early experience, by peer groups and society, by the organisational environment (leadership, rewards, recognition, communication) and by personal experience of success and failure.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Personality",
+     "classic": "the three qualities of nature",
+     "text": [
+      "The Gītā describes three qualities born of nature (<i>sattva</i>, <i>rajas</i> and <i>tamas</i>) that bind every person and mix in different proportions, and later sorts food, work and faith by them. A modern reader may see a trait theory: stable dispositions that shape behaviour. The <i>guṇas</i> are a metaphysical account, not a measured personality test."
+     ],
+     "quote": "“Sattva, rajas and tamas, the qualities born of nature, bind the embodied self.” <i>sattvaṃ rajas tama iti guṇāḥ prakṛti-sambhavāḥ.</i> <span class=\"ref\">Bhagavad Gītā 14.5</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Personality is consistent",
+     "classic": "acting by one's own nature",
+     "text": [
+      "Personality is defined as a relatively consistent pattern. The Gītā observes that even a wise person acts in keeping with their own nature, and that all beings follow theirs: a person's disposition persists from one situation to the next."
+     ],
+     "quote": "“Even the wise act in keeping with their own nature; beings follow their nature.” <i>sadṛśaṃ ceṣṭate svasyāḥ prakṛter jñānavān api, prakṛtiṃ yānti bhūtāni.</i> <span class=\"ref\">Bhagavad Gītā 3.33</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Halo and horn effects",
+     "classic": "weighing merits against faults",
+     "text": [
+      "Tiruvaḷḷuvar's advice for judging people is to look for their merits, then for their faults, and to judge by whichever outweighs the other. It is a direct guard against the halo and horn effects, where one trait decides the whole judgement."
+     ],
+     "quote": "“Examine a person's merits, examine their faults too, and judge by whichever is greater.” <span lang=\"ta\" class=\"ta\">குணம்நாடிக் குற்றமும் நாடி அவற்றுள் மிகைநாடி மிக்க கொளல்.</span> <span class=\"ref\">Tirukkuṟaḷ 504</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Judging the message by the speaker",
+     "classic": "discerning the truth",
+     "text": [
+      "The Kuṟaḷ defines wisdom as finding the truth of what is said, whoever says it. Judging a message by its source (a respected senior, an unpopular colleague) is a common perceptual error at work."
+     ],
+     "quote": "“Whatever is heard, from whomever, wisdom is to discern the truth in it.” <span lang=\"ta\" class=\"ta\">எப்பொருள் யார்யார்வாய்க் கேட்பினும் அப்பொருள் மெய்ப்பொருள் காண்ப தறிவு.</span> <span class=\"ref\">Tirukkuṟaḷ 423</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Attitude",
+     "classic": "a person is made of their faith",
+     "text": [
+      "The Gītā says each person's faith takes the shape of their nature, and that a person is made of their faith. Attitude theory makes a narrower claim, a learned tendency to respond in a consistent way, but both see a settled inner stance shaping action."
+     ],
+     "quote": "“A person is made of their faith: as their faith is, so are they.” <i>śraddhāmayo ’yaṃ puruṣo yo yac-chraddhaḥ sa eva saḥ.</i> <span class=\"ref\">Bhagavad Gītā 17.3</span>"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "slug": "values-learning-and-motivation",
+   "title": "Values, Learning and Motivation",
+   "scope": "What shapes individual behaviour, the values people steer by, how they learn, and what moves them to act.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "what-shapes-individual-behaviour",
+     "title": "What shapes individual behaviour",
+     "html": "<p>Individual behaviour is how a person acts, thinks and responds. It is shaped by internal traits, learned experience and surroundings, and understanding it helps explain people's reactions and improve how the organisation works.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Factor</th><th>What it includes</th><th>At work</th></tr></thead><tbody><tr><td>Biological</td><td>Age, gender, health, heredity</td><td>Physical and emotional abilities; adaptability and handling of stress may vary.</td></tr><tr><td>Psychological</td><td>Personality, perception, attitude, beliefs</td><td>An optimistic employee may see a deadline as a challenge rather than a threat.</td></tr><tr><td>Environmental</td><td>Culture, family, peers, workplace</td><td>Collectivist cultures stress teamwork; individualist cultures stress personal success.</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "values",
+     "title": "Values",
+     "html": "<p>Values are deep beliefs that guide actions and decisions: what a person considers right, desirable or important. They are stable and enduring (often formed early through family and culture), act as standards for judging actions and people, influence ethical behaviour and responsibility, and shape priorities in life and work.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Rokeach's value types</th><th>Meaning</th><th>Examples</th></tr></thead><tbody><tr><td>Terminal values</td><td>End goals a person strives for</td><td>Freedom, inner harmony, wisdom</td></tr><tr><td>Instrumental values</td><td>The means, or principles, used to reach them</td><td>Honesty, responsibility, politeness</td></tr></tbody></table></div>\n<p class=\"cue\">Terminal values are ends; instrumental values are means.</p>"
+    },
+    {
+     "id": "learning",
+     "title": "Learning",
+     "html": "<p>Learning is a relatively permanent change in behaviour or knowledge that comes from experience, observation or practice. It builds adaptability and competence. It can be active or passive, intentional or unintentional; it is lifelong; and it changes thoughts, attitudes and skills.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Theory</th><th>Key idea</th><th>Example</th><th>At work</th></tr></thead><tbody><tr><td>Classical conditioning (Pavlov)</td><td>Learning by association between a neutral stimulus and a natural response</td><td>A school bell comes to signal lunch, and hunger</td><td>Advertising links emotions with products</td></tr><tr><td>Operant conditioning (Skinner)</td><td>Behaviour shaped by rewards and punishments</td><td>Praise for an early submission makes it more likely again</td><td>Bonuses encourage performance</td></tr><tr><td>Cognitive learning (Tolman, Piaget)</td><td>Learning through reasoning, thinking and problem-solving</td><td>Mind maps to understand a topic</td><td>Case analysis in corporate training</td></tr><tr><td>Social learning (Bandura)</td><td>Learning by observing and imitating others</td><td>A new employee copies a punctual senior</td><td>Role models shape habits</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "motivation",
+     "title": "Motivation",
+     "html": "<p>Motivation is the internal or external push that directs behaviour toward goals. It energises behaviour, guides it and sustains it.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Theory</th><th>Core idea</th><th>At work</th></tr></thead><tbody><tr><td>Maslow's hierarchy of needs</td><td>Needs rise from physiological, to safety, to social, to esteem, to self-actualisation</td><td>Match benefits and incentives to the needs employees have now</td></tr><tr><td>Herzberg's two-factor theory</td><td>Motivators create satisfaction; hygiene factors only prevent dissatisfaction</td><td>Pay is a hygiene factor; recognition is a motivator</td></tr><tr><td>McClelland's needs theory</td><td>Behaviour is driven by the needs for achievement, affiliation and power</td><td>Assign work to suit the dominant need</td></tr><tr><td>Vroom's expectancy theory</td><td>Effort leads to performance, and performance to reward</td><td>Clear goals and valued rewards strengthen motivation</td></tr></tbody></table></div>\n<div class=\"eq\">Motivation = Expectancy × Instrumentality × Valence</div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Instrumental values",
+     "classic": "the ten marks of dharma",
+     "text": [
+      "Manu lists ten marks of dharma: steadiness, forgiveness, self-control, not stealing, purity, restraint of the senses, wisdom, learning, truthfulness and freedom from anger. Most are ways of acting rather than end goals, close to Rokeach's instrumental values such as honesty and responsibility. Manu does not divide ends from means this way, so the comparison is a reading."
+     ],
+     "quote": "<i>dhṛtiḥ kṣamā damo ’steyaṃ śaucam indriya-nigrahaḥ, dhīr vidyā satyam akrodho daśakaṃ dharma-lakṣaṇam.</i> “Steadiness, forgiveness, self-control, not stealing, purity, restraint of the senses, wisdom, learning, truth and freedom from anger: these ten are the marks of dharma.” <span class=\"ref\">Manusmṛti 6.92</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Learning through practice",
+     "classic": "practice made firm",
+     "text": [
+      "Patañjali says practice becomes firmly grounded when it is kept up for a long time, without interruption and with care. Learning theory describes the same result, a lasting change through practice, and adds that rewards and observation also shape it."
+     ],
+     "quote": "“Practice becomes firmly grounded when it is pursued for a long time, without a break, and with devotion.” <i>sa tu dīrgha-kāla-nairantarya-satkārāsevito dṛḍha-bhūmiḥ.</i> <span class=\"ref\">Yoga Sūtra 1.14</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Social learning",
+     "classic": "people follow the best",
+     "text": [
+      "Bandura's social learning theory holds that people learn by watching and imitating others. The Gītā observes that people do what the best among them do, and follow the standard those people set."
+     ],
+     "quote": "“Whatever the best person does, others do too; the world follows the standard they set.” <i>yad yad ācarati śreṣṭhas tat tad evetaro janaḥ, sa yat pramāṇaṃ kurute lokas tad anuvartate.</i> <span class=\"ref\">Bhagavad Gītā 3.21</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Hierarchy of needs",
+     "classic": "the five sheaths",
+     "text": [
+      "The Taittirīya Upaniṣad describes the person as five layers, each within the last: food, breath, mind, understanding and bliss. A modern reader may see Maslow's climb from physiological needs to self-actualisation. The Upaniṣad describes the self, not a sequence of needs at work, so the link is a reading."
+     ],
+     "quote": "“Within it is another self.” <i>anyo ’ntara ātmā.</i> <span class=\"ref\">Taittirīya Upaniṣad 2.2–2.5</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Expectancy",
+     "classic": "effort brings prosperity",
+     "text": [
+      "The Kuṟaḷ says that effort creates prosperity and the lack of it brings poverty. Vroom's expectancy theory asks whether people believe effort will lead to performance and performance to reward. The couplet states the first link with confidence; the theory treats it as a belief that may be weak."
+     ],
+     "quote": "“Effort brings prosperity; the absence of effort brings poverty.” <span lang=\"ta\" class=\"ta\">முயற்சி திருவினை ஆக்கும் முயற்றின்மை இன்மை புகுத்தி விடும்.</span> <span class=\"ref\">Tirukkuṟaḷ 616</span>"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "slug": "group-behaviour-and-leadership",
+   "title": "Group Behaviour, Teams and Leadership",
+   "scope": "How people act together: kinds of groups and their norms, how teams develop, how leaders lead, and the forces at work inside a group.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "groups-and-group-norms",
+     "title": "Groups and group norms",
+     "html": "<p>Group behaviour is how individuals act, interact and influence one another within a group, through shared goals, roles, communication and social influence. Belonging to a group can change a person's behaviour, attitudes and decisions.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Formal groups</th><th>Informal groups</th></tr></thead><tbody><tr><td>How they form</td><td>Deliberately created by the organisation</td><td>Naturally and spontaneously</td></tr><tr><td>Basis</td><td>Structured roles and assigned tasks</td><td>Shared interests and social relationships</td></tr><tr><td>Aim</td><td>Specific organisational objectives</td><td>Not bound by the official structure</td></tr><tr><td>Example</td><td>The finance department</td><td>Colleagues who go jogging together</td></tr></tbody></table></div>\n<p><b>Group norms</b> are the unwritten rules that guide behaviour and set shared expectations. Positive norms bring harmony and productivity; negative norms bring excessive group pressure and lower performance. Example: members mute their phones in meetings without being asked.</p>\n<p><b>Social loafing</b> is putting in less effort in a group than when working alone, on the assumption that others will make up for it. Group performance falls, and so does the motivation of the committed members. Example: two students doing most of a group case study.</p>"
+    },
+    {
+     "id": "team-building-and-tuckmans-stages",
+     "title": "Team building and Tuckman's stages",
+     "html": "<p>Team building is a deliberate process of building trust, collaboration and agreement on goals. It runs from trust, to communication, to resolving conflict, to collaboration, to shared goals, and it brings trust and empathy, creativity and innovation, better communication and better problem-solving.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Tuckman's stage</th><th>What it looks like</th></tr></thead><tbody><tr><td>1 Forming</td><td>Members get acquainted; roles and goals are unclear.</td></tr><tr><td>2 Storming</td><td>Conflict, personality clashes, the leader challenged.</td></tr><tr><td>3 Norming</td><td>Shared norms, roles accepted, trust growing.</td></tr><tr><td>4 Performing</td><td>High efficiency, synergy, a self-managing team.</td></tr><tr><td>5 Adjourning</td><td>The task is complete; the team disbands and reflects.</td></tr></tbody></table></div>\n<p class=\"cue\">Forming, storming, norming, performing, adjourning.</p>"
+    },
+    {
+     "id": "leadership",
+     "title": "Leadership",
+     "html": "<p>Leadership is the process of motivating and guiding people toward a shared vision. A leader's core roles are to set direction, manage conflict, inspire and improve productivity.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Style</th><th>Core feature</th><th>Best use and risk</th></tr></thead><tbody><tr><td>Autocratic</td><td>The leader makes decisions alone</td><td>Crises and emergencies; fast, but overuse may demoralise</td></tr><tr><td>Democratic</td><td>Members take part in decisions</td><td>Builds participation and ownership; decisions may be slower</td></tr><tr><td>Laissez-faire</td><td>High autonomy, minimal guidance</td><td>Skilled, self-motivated teams</td></tr></tbody></table></div>\n<p>Effective leaders are <b>visionary</b> (future and strategic direction), <b>empathetic</b> (understand others' feelings), <b>communicative</b> (clear information and ideas), <b>ethical</b> (fair and morally sound decisions) and <b>decisive</b> (confident action).</p>"
+    },
+    {
+     "id": "group-dynamics",
+     "title": "Group dynamics",
+     "html": "<p>Group dynamics are the psychological processes and patterns of interaction at work within a group. They shape participation, collaboration, conflict resolution and performance.</p>\n<ul><li><b>Group size.</b> Small groups allow deeper discussion and faster decisions. Large groups bring more diversity, but more coordination and communication problems.</li><li><b>Group cohesiveness</b> is the degree of bonding and commitment among members. High cohesiveness improves coordination and performance; extreme cohesiveness may suppress dissent.</li><li><b>Groupthink</b> happens when a group values harmony and avoiding conflict above critical evaluation: alternatives are ignored and decisions get worse. Nixon's inner circle during Watergate is often cited as a case.</li></ul>\n<p class=\"cue\">Harmony above critical thinking: alternatives ignored, poor decisions.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Social loafing",
+     "classic": "action is better than inaction",
+     "text": [
+      "The Gītā tells Arjuna to do the work that is his, because action is better than inaction. Social loafing is the opposite habit inside a group: holding back because others will cover. The verse speaks to one person's duty, not to group work, so the link is a reading."
+     ],
+     "quote": "“Do your allotted work, for action is better than inaction.” <i>niyataṃ kuru karma tvaṃ karma jyāyo hy akarmaṇaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.8</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "A team that shares",
+     "classic": "the crow that calls its kin",
+     "text": [
+      "The Kuṟaḷ notes that a crow does not hide its food but calls its kin to share it, and says prosperity stays with people of that nature. Team building aims at the same habit: members who share rather than hoard. The couplet is about a ruler and his kin, so the comparison is offered for reflection."
+     ],
+     "quote": "“The crow does not hide its food but calls its kin to eat; prosperity belongs to those of such nature.” <span lang=\"ta\" class=\"ta\">காக்கை கரவா கரைந்துண்ணும் ஆக்கமும் அன்னநீ ரார்க்கே உள.</span> <span class=\"ref\">Tirukkuṟaḷ 527</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Traits of effective leaders",
+     "classic": "four qualities of a ruler",
+     "text": [
+      "Tiruvaḷḷuvar names four qualities that should never fail in a ruler: fearlessness, generosity, wisdom and energy. They sit close to the traits listed for effective leaders, such as being decisive and visionary."
+     ],
+     "quote": "“Fearlessness, generosity, wisdom and energy: never lacking these four is the nature of a ruler.” <span lang=\"ta\" class=\"ta\">அஞ்சாமை ஈகை அறிவூக்கம் இந்நான்கும் எஞ்சாமை வேந்தற் கியல்பு.</span> <span class=\"ref\">Tirukkuṟaḷ 382</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Groupthink",
+     "classic": "advisers who rebuke",
+     "text": [
+      "The Kuṟaḷ asks who could ruin a ruler who keeps advisers willing to rebuke him. Groupthink is the failure of that check: harmony is valued above critical evaluation, and the objections are never voiced."
+     ],
+     "quote": "“Who can ruin the ruler who keeps advisers willing to rebuke him?” <span lang=\"ta\" class=\"ta\">இடிக்குந் துணையாரை யாள்வாரை யாரே கெடுக்குந் தகைமை யவர்.</span> <span class=\"ref\">Tirukkuṟaḷ 448</span>"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "slug": "interpersonal-behaviour",
+   "title": "Interpersonal Behaviour and Transactional Analysis",
+   "scope": "How people communicate and respond to one another, the skills that make it work, and Eric Berne's transactional analysis.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "interpersonal-behaviour-and-its-patterns",
+     "title": "Interpersonal behaviour and its patterns",
+     "html": "<p>Interpersonal behaviour is how people communicate, respond and interact with one another, through verbal and non-verbal communication: tone, body language, emotions and gestures. It shapes teamwork, leadership, conflict resolution and organisational culture.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Pattern</th><th>Core idea</th></tr></thead><tbody><tr><td>One-to-one</td><td>Individual interaction; trust and clarity matter.</td></tr><tr><td>One-to-many</td><td>A leader communicates with a group; needs clarity and confidence.</td></tr><tr><td>Many-to-one</td><td>Several employees communicate with a superior; needs active listening.</td></tr><tr><td>Many-to-many</td><td>Team interaction; needs collaboration, respect and openness.</td></tr></tbody></table></div>\n<p><b>Reciprocal influence:</b> A's behaviour influences B, and B's response in turn influences A. Positive behaviour strengthens morale, motivation and cooperation; negative behaviour weakens them.</p>"
+    },
+    {
+     "id": "types-determinants-and-skills",
+     "title": "Types, determinants and skills",
+     "html": "<p><b>Cooperative behaviour</b> works toward shared goals with respect and openness, and brings teamwork, creativity and collaboration. <b>Conflicting behaviour</b> arises from different goals, perceptions or misunderstandings; managed constructively, it brings role clarity, better understanding and innovative solutions.</p>\n<p>Six things determine how people behave toward one another: personality, perception, attitudes, values, emotional intelligence and motivation.</p>\n<ul><li><b>Positive thinking</b> builds resilience and encourages constructive responses.</li><li><b>Mutual trust</b> promotes transparency and open communication.</li><li><b>Empathy</b> is understanding others' emotions and perspectives.</li><li><b>Courtesy</b> maintains respect and professional decorum.</li><li><b>Avoiding ego clashes</b> supports harmony, cooperation and teamwork.</li></ul>"
+    },
+    {
+     "id": "transactional-analysis",
+     "title": "Transactional analysis: Johari window, ego states and transactions",
+     "html": "<p>Transactional analysis (TA), developed by Eric Berne, explains interactions through ego states, and is used to improve self-awareness, communication and relationships.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Johari window area</th><th>Known to self</th><th>Known to others</th><th>What to do</th></tr></thead><tbody><tr><td>Open</td><td>Yes</td><td>Yes</td><td>Build trust and transparency</td></tr><tr><td>Blind</td><td>No</td><td>Yes</td><td>Reduce through feedback</td></tr><tr><td>Hidden</td><td>Yes</td><td>No</td><td>Reduce through self-disclosure</td></tr><tr><td>Unknown</td><td>No</td><td>No</td><td>Explore through experience</td></tr></tbody></table></div>\n<p>The Johari window was developed by Joseph Luft and Harrington Ingham. The goal is to enlarge the open area, for better self-awareness, understanding and trust.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Ego state</th><th>What it holds</th><th>How it shows</th></tr></thead><tbody><tr><td>Parent</td><td>Values, attitudes and behaviour learned from authority figures</td><td>Guiding or critical</td></tr><tr><td>Adult</td><td>Logical, factual, rational processing</td><td>Objective decisions</td></tr><tr><td>Child</td><td>Emotional, spontaneous, dependent responses</td><td>Playful or rebellious</td></tr></tbody></table></div>\n<p><b>Transactions:</b> in a <b>complementary</b> transaction the reply comes from the ego state the sender addressed (adult to adult), so communication flows. In a <b>crossed</b> transaction the reply comes from an unexpected ego state, causing misunderstanding or conflict. In an <b>ulterior</b> transaction two messages travel at once: an apparent social one and a hidden psychological one.</p>"
+    },
+    {
+     "id": "life-positions-strokes-and-games",
+     "title": "Life scripts, life positions, strokes and games",
+     "html": "<p>A <b>life script</b> is a largely unconscious pattern formed in childhood that shapes later decisions, relationships and behaviour. TA aims to recognise unhelpful patterns, change behaviour and support personal growth.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Life position</th><th>Orientation</th><th>Result</th></tr></thead><tbody><tr><td>I'm OK, you're OK</td><td>Positive toward self and others</td><td>Healthy relationships: the ideal position</td></tr><tr><td>I'm OK, you're not OK</td><td>Superior, blaming</td><td>Tension and conflict</td></tr><tr><td>I'm not OK, you're OK</td><td>Inferior, submissive</td><td>Dependency</td></tr><tr><td>I'm not OK, you're not OK</td><td>Negative toward self and others</td><td>Disengagement</td></tr></tbody></table></div>\n<p>A <b>stroke</b> is an act of recognition. Positive strokes (praise, appreciation) build morale and motivation; negative strokes (criticism, disapproval) may discourage. Managers should give genuine, constructive recognition.</p>\n<p><b>Games</b> are recurring patterns of interaction with hidden motives that lead to predictable, often unhelpful outcomes. In “Yes, but…”, a person asks for solutions and then rejects each one, avoiding responsibility.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "The Johari window's blind area",
+     "classic": "the friend who rebukes",
+     "text": [
+      "The Kuṟaḷ says friendship is not for laughing together but for stepping in to rebuke a friend who goes wrong. In Johari's terms, a friend's honest feedback shrinks the blind area: what others can see in us that we cannot."
+     ],
+     "quote": "“Friendship is not for laughing together; it is for stepping in to rebuke when one goes too far.” <span lang=\"ta\" class=\"ta\">நகுதற் பொருட்டன்று நட்டல் மிகுதிக்கண் மேற்சென் றிடித்தற் பொருட்டு.</span> <span class=\"ref\">Tirukkuṟaḷ 784</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Ego states",
+     "classic": "the chariot",
+     "text": [
+      "The Kaṭha Upaniṣad pictures the self as a rider in a chariot: the body is the chariot, the intellect the charioteer and the mind the reins. A modern reader may see the Adult ego state as the charioteer, steering learned habit and raw feeling. The Upaniṣad describes the self's journey, so this is a reading, not Berne's model."
+     ],
+     "quote": "“Know the self as the rider, the body as the chariot, the intellect as the charioteer and the mind as the reins.” <i>ātmānaṃ rathinaṃ viddhi śarīraṃ ratham eva tu, buddhiṃ tu sārathiṃ viddhi manaḥ pragraham eva ca.</i> <span class=\"ref\">Kaṭha Upaniṣad 1.3.3</span>"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "slug": "organisational-culture-and-climate",
+   "title": "Organisational Culture and Climate",
+   "scope": "The shared meaning that makes one organisation unlike another, how it is built and kept, and how it feels to work there.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "what-organisational-culture-is",
+     "title": "What organisational culture is",
+     "html": "<p>Organisational culture is a system of shared meaning held by members that distinguishes one organisation from another: the shared values, beliefs and norms that shape how things are done there.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Dimension</th><th>What it measures</th></tr></thead><tbody><tr><td>Innovation and risk-taking</td><td>Experimentation, creativity, willingness to take risks</td></tr><tr><td>Attention to detail</td><td>Precision, analysis, thoroughness</td></tr><tr><td>Outcome orientation</td><td>Results, performance, achieving targets</td></tr><tr><td>People orientation</td><td>The effect of decisions on employees and their well-being</td></tr><tr><td>Team orientation</td><td>Collaboration and collective achievement</td></tr><tr><td>Aggressiveness</td><td>Competitiveness and assertiveness</td></tr><tr><td>Stability</td><td>Order, consistency, keeping the status quo</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "strength-and-functions-of-culture",
+     "title": "Strength and functions of culture",
+     "html": "<p>A <b>dominant culture</b> is the core values most members accept, often shaped by founders and top management. <b>Subcultures</b> are smaller cultures within departments, locations or professions that combine the organisation's values with local experience.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Strong culture</th><th>Weak culture</th></tr></thead><tbody><tr><td>Looks like</td><td>Shared beliefs, clear norms, common goals</td><td>Fragmented beliefs, inconsistent messages</td></tr><tr><td>Leads to</td><td>Loyalty, engagement and consistent behaviour</td><td>Less unity, weaker values, disconnected employees</td></tr></tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Function</th><th>What culture does</th></tr></thead><tbody><tr><td>Boundary definition</td><td>Distinguishes the organisation from others</td></tr><tr><td>Identity</td><td>Gives members a sense of belonging</td></tr><tr><td>Commitment</td><td>Connects employees to a shared mission</td></tr><tr><td>Stability</td><td>Acts as social glue holding the organisation together</td></tr><tr><td>Behaviour guide</td><td>Signals what is acceptable, even without formal rules</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "how-culture-is-built-and-kept",
+     "title": "How culture is built and kept",
+     "html": "<p>Culture starts with the <b>founder's philosophy</b>, whose values shape hiring, leadership style and expectations. <b>Top management</b> keeps it alive as role models through their decisions and behaviour. <b>Reinforcement mechanisms</b> strengthen it: selection, training, performance evaluation, rewards and promotion.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Socialisation stage</th><th>What happens</th></tr></thead><tbody><tr><td>Pre-arrival</td><td>Expectations form before joining, through interviews, websites and reviews.</td></tr><tr><td>Encounter</td><td>Expectations meet reality through orientation, onboarding and practice.</td></tr><tr><td>Metamorphosis</td><td>The employee adapts and fits into the organisation's norms.</td></tr></tbody></table></div>\n<p>A <b>positive culture</b> builds on employees' strengths rather than dwelling on weaknesses, rewards more than it punishes, and supports growth through learning, creativity and career development. Its limit: positivity does not remove the need for objective standards and constructive feedback.</p>"
+    },
+    {
+     "id": "types-of-culture-and-climate",
+     "title": "Types of culture, and climate",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Type</th><th>Character</th><th>Values</th></tr></thead><tbody><tr><td>Clan (collaborate)</td><td>Warm, family-like</td><td>Mentoring, teamwork, involvement</td></tr><tr><td>Adhocracy (create)</td><td>Dynamic, entrepreneurial</td><td>Innovation, risk-taking, adaptability</td></tr><tr><td>Market (compete)</td><td>Competitive, results-driven</td><td>Goals, performance, measurable outcomes</td></tr><tr><td>Hierarchy (control)</td><td>Structured, rule-based</td><td>Stability, order, formal procedures</td></tr></tbody></table></div>\n<p><b>Organisational climate</b> is the shared perception members have of their organisation and work environment. Climate can be people-oriented (well-being and morale), rule-oriented (policies and procedures), innovation-oriented (creativity and new ideas) or goal-oriented (targets and performance).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Culture</th><th>Climate</th></tr></thead><tbody><tr><td>Focus</td><td>Shared values and meanings</td><td>Shared perceptions and feelings</td></tr><tr><td>Nature</td><td>Deep-rooted, relatively stable</td><td>More immediate and changeable</td></tr><tr><td>Time</td><td>Long-term</td><td>Current experience</td></tr><tr><td>Core question</td><td>“How do we do things here?”</td><td>“What does it feel like to work here?”</td></tr></tbody></table></div>\n<p class=\"cue\">Culture is values and meaning; climate is perceptions and feelings.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Culture set from the top",
+     "classic": "the ruler's energy",
+     "text": [
+      "Kauṭilya opens his chapter on the ruler's duties by observing that when the ruler is active his servants become active too, and when he is careless they grow careless and eat into his work. Culture theory says the same of founders and top managers: their conduct becomes the standard."
+     ],
+     "quote": "“When the ruler is active, his servants rise with him; when he is careless, they are careless too.” <i>rājānam utthitam anūttiṣṭhante bhṛtyāḥ; pramādyantam anupramādyanti.</i> <span class=\"ref\">Arthaśāstra 1.19.1–2</span>"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "slug": "workforce-diversity",
+   "title": "Workforce Diversity and Cross-Cultural Behaviour",
+   "scope": "Recognising and respecting differences at work, managing them fairly, and working well across national cultures.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "workforce-diversity-and-its-dimensions",
+     "title": "Workforce diversity and its dimensions",
+     "html": "<p>Workforce diversity is recognising and respecting differences among employees in age, gender, race, religion, ethnicity, physical ability and background. Diversity is more than tolerance: it means inclusion, equal opportunity and respect. Its benefits include innovation, creativity, balanced decisions, harmony and efficiency.</p>\n<p>Managing diversity means creating a workplace where everyone can perform fairly and without bias, through <b>fairness and equity</b> (equal opportunity), <b>inclusion</b> (valuing different identities), <b>respect</b> (preventing discrimination and exclusion) and a <b>business link</b> (performance and competitiveness).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Dimension</th><th>What it calls for</th></tr></thead><tbody><tr><td>Race and ethnicity</td><td>Respect for cultural heritage and traditions; equality at work</td></tr><tr><td>Age and generation</td><td>Understanding different values, expectations and ways of communicating</td></tr><tr><td>Gender and identity</td><td>Inclusion of all gender identities</td></tr><tr><td>Sexual orientation</td><td>A safe, discrimination-free environment and equal rights</td></tr><tr><td>Religious beliefs</td><td>Flexible schedules, attire and prayer facilities</td></tr><tr><td>Disability</td><td>Assistive tools, accessibility and ability-focused roles</td></tr><tr><td>Socioeconomic background</td><td>Diverse perspectives and equal opportunity</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "techniques-for-managing-diversity",
+     "title": "Techniques for managing diversity",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Technique</th><th>How</th></tr></thead><tbody><tr><td>Raising awareness</td><td>Training, storytelling, discussion</td></tr><tr><td>Shared culture</td><td>Cross-cultural collaboration</td></tr><tr><td>Special care programmes</td><td>Flexible work, accessibility, wellness</td></tr><tr><td>Career development</td><td>Mentoring, training, promotion</td></tr><tr><td>Ending discrimination</td><td>Addressing hidden bias and the glass ceiling</td></tr><tr><td>Preventing sexual harassment</td><td>Zero tolerance and safe reporting</td></tr><tr><td>Diverse committees</td><td>Several perspectives in decisions</td></tr></tbody></table></div>\n<p>Diversity also plays out in groups: formal groups (organisational tasks, such as an HR team), informal groups (personal relationships, such as a lunch group), and <b>in-groups and out-groups</b>, which create belonging for some and exclusion for others. Members take <b>task</b> roles (the planner), <b>relationship</b> roles (the motivator) or <b>individual</b> roles (the dominator).</p>"
+    },
+    {
+     "id": "cross-cultural-behaviour-and-hofstede",
+     "title": "Cross-cultural behaviour and Hofstede",
+     "html": "<p>Cross-cultural organisational behaviour studies how cultural differences affect behaviour in multicultural workplaces. Globalisation brings multicultural workplaces and cultural differences, and with them the need to adapt. Done well, it brings adaptation to cultural norms, better international HR strategies, better cooperation, fewer misunderstandings and greater global competitiveness.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Hofstede's dimension</th><th>High</th><th>Low</th></tr></thead><tbody><tr><td>Power distance</td><td>Hierarchy and authority accepted</td><td>Equality and informality</td></tr><tr><td>Uncertainty avoidance</td><td>Structure and risk avoidance (France)</td><td>Flexibility and openness (Singapore)</td></tr><tr><td>Individualism and collectivism</td><td>Self-reliance (the United States)</td><td>Group orientation (India)</td></tr><tr><td>Masculinity and femininity</td><td>Competition and assertiveness (Japan)</td><td>Cooperation and quality of life (Sweden)</td></tr><tr><td>Time orientation</td><td>Long-term persistence (China)</td><td>Short-term results (the United States)</td></tr></tbody></table></div>\n<p class=\"cue\">P, U, I, M, T: power distance, uncertainty avoidance, individualism, masculinity, time orientation.</p>"
+    },
+    {
+     "id": "culture-shock-and-cross-cultural-training",
+     "title": "Culture shock and cross-cultural training",
+     "html": "<p><b>Culture shock</b> is the set of difficulties a person faces in adapting to an unfamiliar culture. Its causes include language barriers, new customs and emotional stress. It is reduced by training, then adjustment support, then integration.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Training area</th><th>Aim</th></tr></thead><tbody><tr><td>Self-awareness</td><td>Understand one's own cultural assumptions</td></tr><tr><td>Host-country knowledge</td><td>Customs and workplace practices</td></tr><tr><td>Role clarification</td><td>Responsibilities and expectations</td></tr><tr><td>Intercultural communication</td><td>Effective communication across cultures</td></tr><tr><td>Conflict resolution</td><td>Handling cultural misunderstandings</td></tr></tbody></table></div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Diversity, not mere tolerance",
+     "classic": "one truth, many names",
+     "text": [
+      "A Ṛgvedic hymn says that what is real is one, and the wise speak of it in many ways. Read for the workplace, it treats differences of expression as compatible with a shared core, the premise of inclusion rather than mere tolerance. The hymn is about naming the divine, so the link is a reading."
+     ],
+     "quote": "“Truth is one; the wise call it by many names.” <i>ekaṃ sad viprā bahudhā vadanti.</i> <span class=\"ref\">Ṛgveda 1.164.46</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "In-groups and out-groups",
+     "classic": "the world as one family",
+     "text": [
+      "A verse found in the Mahā Upaniṣad, and quoted in the Hitopadeśa, says that only the narrow-minded count people as ours and theirs; for the large-hearted, the whole world is one family. In-groups and out-groups are exactly that counting."
+     ],
+     "quote": "“‘This one is ours, that one a stranger’ is the reckoning of the small-minded; for the large-hearted, the world itself is a family.” <i>ayaṃ nijaḥ paro veti gaṇanā laghucetasām, udāracaritānāṃ tu vasudhaiva kuṭumbakam.</i> <span class=\"ref\">Mahā Upaniṣad 6.71</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Adapting to other cultures",
+     "classic": "the customs of regions and guilds",
+     "text": [
+      "Manu tells the ruler, in settling matters, to take account of the customs of castes, of regions, of guilds and of families. Guilds (<i>śreṇī</i>) were the trade associations of the time, so this is an early instruction to understand other groups' norms before applying one's own, which is what cross-cultural management asks."
+     ],
+     "quote": "<i>jāti-jānapadān dharmān śreṇī-dharmāṃś ca dharmavit, samīkṣya kula-dharmāṃś ca sva-dharmaṃ pratipādayet.</i> “One who knows the law should examine the customs of castes, regions, guilds and families, and then set out the law that fits.” <span class=\"ref\">Manusmṛti 8.41</span>"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "slug": "emotions-and-stress",
+   "title": "Emotions and Stress Management",
+   "scope": "Emotions, moods and emotional intelligence at work, and the causes, effects and management of work stress.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "emotions-moods-and-affect",
+     "title": "Emotions, moods and affect",
+     "html": "<p><b>Affect</b> is the broad emotional background of positive and negative feelings: a person's overall emotional tone. <b>Emotions</b> are brief, intense and specific feelings directed at a person or event, such as joy, anger or fear; they trigger quick reactions and influence motivation and decisions. <b>Moods</b> are general, longer-lasting states, often without a definite cause, that colour perception and behaviour over time.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Nature</th><th>Duration</th><th>Trigger</th></tr></thead><tbody><tr><td>Emotion</td><td>Specific, intense</td><td>Short</td><td>A particular event or person</td></tr><tr><td>Mood</td><td>General, mild</td><td>Long</td><td>Often unknown</td></tr><tr><td>Affect</td><td>Broad emotional tone</td><td>Varies</td><td>Overall emotional state</td></tr></tbody></table></div>\n<p>Emotions drive behaviour, influence decisions, prepare the body for action and shape how we read social situations. They may be universal, but display rules vary across cultures, and understanding the differences reduces misunderstanding at work. Six emotions are widely treated as universal: happiness, sadness, fear, anger, surprise and disgust. Descartes named six primitive passions: wonder, love, hatred, desire, joy and sadness.</p>"
+    },
+    {
+     "id": "sources-of-emotions-and-moods",
+     "title": "Sources of emotions and moods",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Source</th><th>Effect</th></tr></thead><tbody><tr><td>Personality</td><td>Sets baseline emotional tendencies.</td></tr><tr><td>Weather</td><td>Effects are generally limited; a link people perceive may be an illusion of correlation.</td></tr><tr><td>Stress</td><td>Persistent demands without relief can trigger negative emotions.</td></tr><tr><td>Social interaction</td><td>Positive contact can lift mood; isolation or conflict may lower it.</td></tr><tr><td>Sleep</td><td>Poor sleep weakens emotional regulation: irritability and poorer judgement.</td></tr><tr><td>Exercise</td><td>Helps improve mood and reduce tension.</td></tr><tr><td>Age</td><td>Emotional regulation may improve with age and experience.</td></tr><tr><td>Sex</td><td>Patterns of expression may differ between men and women, but individual and cultural variation is substantial.</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "emotional-labour-and-emotional-intelligence",
+     "title": "Emotional labour and emotional intelligence",
+     "html": "<p><b>Emotional labour</b> is managing and displaying the emotions a job requires, which may differ from what the employee actually feels; a customer-service employee stays cheerful while feeling stressed. <b>Emotional dissonance</b> is the gap between felt and displayed emotion. Prolonged, it can lead to fatigue, burnout and job dissatisfaction. Empathy and emotional awareness help manage these demands.</p>\n<p><b>Emotional intelligence (EI)</b> is the ability to recognise, understand and manage one's own emotions and those of others.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Component</th><th>What it does</th></tr></thead><tbody><tr><td>Self-awareness</td><td>Recognise your own emotions</td></tr><tr><td>Emotional regulation</td><td>Manage your emotional responses</td></tr><tr><td>Empathy</td><td>Understand others</td></tr><tr><td>Relationships</td><td>Improve interaction and teamwork</td></tr></tbody></table></div>\n<p>People with high EI tend to stay calm under stress, manage conflict, stay motivated and optimistic, make balanced decisions and work well in teams.</p>"
+    },
+    {
+     "id": "work-stress",
+     "title": "Work stress",
+     "html": "<p>Stress occurs when important demands stretch a person's capacity to cope. Common triggers are excessive pressure, unclear roles and an imbalance between demands and resources: when resources match or exceed demands, stress is lower; when demands exceed resources, the result is strain.</p>\n<p><b>Challenge stressors</b> (deadlines, demanding projects) can energise and motivate. <b>Hindrance stressors</b> (bureaucracy, workplace conflict) get in the way of goals.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Source</th><th>Examples</th></tr></thead><tbody><tr><td>Environmental</td><td>Political instability, economic uncertainty, technological change</td></tr><tr><td>Organisational</td><td>Heavy workload, poor management, role ambiguity, conflict</td></tr><tr><td>Personal</td><td>Family or financial problems, personality, perfectionism</td></tr></tbody></table></div>\n<p>Small stressors accumulate and can become overwhelming. The consequences are <b>physiological</b> (raised heart rate, headaches, fatigue), <b>psychological</b> (anxiety, mood changes, depression, low satisfaction) and <b>behavioural</b> (absenteeism, lower performance, withdrawal, substance abuse).</p>\n<p class=\"cue\">Moderate stress may enhance performance; chronic stress brings burnout, illness and decline.</p>"
+    },
+    {
+     "id": "stress-management",
+     "title": "Stress management",
+     "html": "<p>Stress is managed from two sides at once.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Individual approaches</th><th>Organisational approaches</th></tr></thead><tbody><tr><td>Time management: prioritise, organise, cut distractions</td><td>Selection and job fit: match skills with roles</td></tr><tr><td>Physical exercise: relieve tension, improve energy</td><td>Training and development: build competence, reduce anxiety</td></tr><tr><td>Relaxation: meditation, deep breathing, mindfulness</td><td>Clear goal setting: specific goals and feedback</td></tr><tr><td>Social support: emotional comfort, advice, coping</td><td>Job redesign, empowerment and better communication</td></tr><tr><td></td><td>Sabbaticals and wellness programmes</td></tr></tbody></table></div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Emotional regulation",
+     "classic": "steady wisdom",
+     "text": [
+      "The Gītā's portrait of a person of steady wisdom: undisturbed in sorrow, without craving in pleasure, free of attachment, fear and anger. Emotional regulation aims at a similar steadiness, though emotional intelligence also values recognising emotions, not only rising above them."
+     ],
+     "quote": "“Undisturbed in sorrow, free of craving in pleasure, without attachment, fear or anger: such a person is called steady in wisdom.” <i>duḥkheṣv anudvigna-manāḥ sukheṣu vigata-spṛhaḥ, vīta-rāga-bhaya-krodhaḥ sthita-dhīr munir ucyate.</i> <span class=\"ref\">Bhagavad Gītā 2.56</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Empathy",
+     "classic": "seeing others' joy and sorrow as one's own",
+     "text": [
+      "The Gītā praises the person who, measuring by themselves, sees the joy and sorrow of others as equal to their own. That is empathy, one of the four parts of emotional intelligence."
+     ],
+     "quote": "“Who, by the measure of themself, sees the joy and sorrow of all as the same is the highest yogin.” <i>ātmaupamyena sarvatra samaṃ paśyati yo ’rjuna, sukhaṃ vā yadi vā duḥkhaṃ sa yogī paramo mataḥ.</i> <span class=\"ref\">Bhagavad Gītā 6.32</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Emotional labour",
+     "classic": "the patient earth",
+     "text": [
+      "The Kuṟaḷ says the best course is to bear with those who scorn you, as the earth bears those who dig into it. Emotional labour asks something similar of a service employee facing a rude customer. The modern view adds a warning the couplet does not give: a long gap between what is felt and what is shown leads to burnout."
+     ],
+     "quote": "“As the earth bears those who dig into it, so to bear with those who scorn you is best.” <span lang=\"ta\" class=\"ta\">அகழ்வாரைத் தாங்கும் நிலம்போலத் தம்மை இகழ்வார்ப் பொறுத்தல் தலை.</span> <span class=\"ref\">Tirukkuṟaḷ 151</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Individual stress management",
+     "classic": "moderation in food, rest and sleep",
+     "text": [
+      "The Gītā says discipline removes sorrow for one who is moderate in eating and recreation, measured in effort at work, and regular in sleep and waking. Exercise, rest and time management, the individual approaches to stress, are that same moderation."
+     ],
+     "quote": "“For one moderate in food and recreation, measured in effort at work, and regular in sleep and waking, discipline destroys sorrow.” <i>yuktāhāra-vihārasya yukta-ceṣṭasya karmasu, yukta-svapnāvabodhasya yogo bhavati duḥkha-hā.</i> <span class=\"ref\">Bhagavad Gītā 6.17</span>"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "slug": "organisational-justice-and-whistleblowing",
+   "title": "Organisational Justice and Whistleblowing",
+   "scope": "Whether people see their workplace as fair in outcomes, processes and treatment, and how wrongdoing can be reported safely.",
+   "group": "ob",
+   "blocks": [
+    {
+     "id": "organisational-justice",
+     "title": "Organisational justice",
+     "html": "<p>Organisational justice is employees' perception of fairness in the workplace. It covers both the outcome a person receives and how that outcome is reached and communicated. The term was popularised by Jerald Greenberg (1987).</p>\n<p>It matters because fairness builds trust, trust builds morale, morale builds productivity, and all of it helps retain people.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Dimension</th><th>The question it asks</th></tr></thead><tbody><tr><td>Distributive</td><td>Was the outcome fair?</td></tr><tr><td>Procedural</td><td>Was the process fair?</td></tr><tr><td>Interactional</td><td>Was I treated fairly?</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "distributive-and-procedural-justice",
+     "title": "Distributive and procedural justice",
+     "html": "<p><b>Distributive justice</b> is the perceived fairness of how outcomes are shared out: pay, promotions, recognition, workloads and resources. Three principles can govern the sharing.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Principle</th><th>Rewards are based on</th></tr></thead><tbody><tr><td>Equity</td><td>Contribution or input</td></tr><tr><td>Equality</td><td>An equal share for everyone</td></tr><tr><td>Need</td><td>Individual needs</td></tr></tbody></table></div>\n<p><b>Procedural justice</b> is the fairness of the methods used to reach decisions, even when the outcome is unfavourable. It has six requirements: <b>consistency</b> (the same rules for everyone), <b>freedom from bias</b> (no prejudice or favouritism), <b>accuracy</b> (reliable, adequate information), <b>representation</b> (employees have a voice), <b>correctability</b> (a way to challenge or appeal) and <b>ethicality</b> (moral and legal standards upheld).</p>\n<p class=\"cue\">C, B, A, R, C, E: consistency, bias-free, accuracy, representation, correctability, ethicality.</p>"
+    },
+    {
+     "id": "interactional-justice",
+     "title": "Interactional justice",
+     "html": "<p><b>Interactional justice</b> is about how people are treated and how decisions are communicated. It has two parts: <b>interpersonal justice</b> (dignity, respect and courtesy) and <b>informational justice</b> (explanations that are honest, timely and adequate).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Kind of justice</th><th>Concerns</th></tr></thead><tbody><tr><td>Distributive</td><td>The outcome</td></tr><tr><td>Procedural</td><td>The process</td></tr><tr><td>Interactional</td><td>The treatment</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "whistleblowing",
+     "title": "Whistleblowing",
+     "html": "<p>Whistleblowing is reporting organisational wrongdoing to protect ethical, legal and public interests. Common concerns are fraud, financial manipulation, bribery and corruption, unsafe conditions, discrimination, insider trading and other unethical acts.</p>\n<p>Employees, customers and clients, contractors, consultants, vendors and suppliers may all report. Whistleblowers risk retaliation: career setbacks, legal threats, social ostracism and harassment.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Internal whistleblowing</th><th>External whistleblowing</th></tr></thead><tbody><tr><td>Reported to</td><td>HR, senior management, an ethics committee</td><td>Regulators, legal authorities, the media</td></tr><tr><td>When</td><td>Generally the preferred first step, giving the organisation a chance to act</td><td>When internal mechanisms fail or the environment is hostile</td></tr></tbody></table></div>\n<p class=\"cue\">Wrongdoing, then internal reporting, then resolution; if unresolved or hostile, external reporting.</p>"
+    },
+    {
+     "id": "whistleblowing-law-and-benefits",
+     "title": "Reportable offences, benefits and India's framework",
+     "html": "<p>Reportable offences include legal, contractual and ethical violations, financial or data fraud, health and safety risks, environmental violations, misuse of property or funds, abuse of power and intellectual property violations.</p>\n<p>For the organisation, whistleblowing brings early detection of legal and operational risks, trust among employees, customers and investors, an ethical culture, a responsible public image, prevention of major scandals, and transparency.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>India</th><th>What it provides</th></tr></thead><tbody><tr><td>Companies Act, 2013</td><td>Mechanisms for inspecting a company's affairs; the Serious Fraud Investigation Office for serious fraud; vigil mechanisms required of specified companies.</td></tr><tr><td>SEBI framework</td><td>Whistleblower mechanisms in listed entities, with avenues and safeguards for reporting.</td></tr><tr><td>Whistle Blowers Protection Act, 2014</td><td>A framework for receiving public-interest disclosures about corruption or misuse of power by public servants, and for protecting those who make them against victimisation.</td></tr></tbody></table></div>\n<p>False or malicious complaints may attract penalties under the applicable law.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Fairness",
+     "classic": "the even balance",
+     "text": [
+      "The Kuṟaḷ calls it the ornament of the wise to be like a balance that weighs evenly and leans to neither side. Organisational justice is that impartiality, as employees perceive it."
+     ],
+     "quote": "“Like a balance that weighs evenly, leaning to neither side: such impartiality is the ornament of the wise.” <span lang=\"ta\" class=\"ta\">சமன்செய்து சீர்தூக்குங் கோல்போல் அமைந்தொருபால் கோடாமை சான்றோர்க் கணி.</span> <span class=\"ref\">Tirukkuṟaḷ 118</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Distributive justice by equity",
+     "classic": "regard by merit",
+     "text": [
+      "The Kuṟaḷ says that when a ruler does not treat everyone alike but regards each according to their worth, many will live by that regard. Distributive justice by equity, reward in line with contribution, is the same principle."
+     ],
+     "quote": "“If the ruler does not regard all alike but each by their worth, many will live by that regard.” <span lang=\"ta\" class=\"ta\">பொதுநோக்கான் வேந்தன் வரிசையா நோக்கின் அதுநோக்கி வாழ்வார் பலர்.</span> <span class=\"ref\">Tirukkuṟaḷ 528</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Procedural justice",
+     "classic": "inquire, and favour none",
+     "text": [
+      "Justice, says the Kuṟaḷ, is to examine carefully, show favour to no one, and act impartially toward all after weighing the matter. Procedural justice sets out the same requirements: accuracy, freedom from bias and consistency."
+     ],
+     "quote": "“To inquire, to favour none, to act impartially toward all after weighing the matter: that is justice.” <span lang=\"ta\" class=\"ta\">ஓர்ந்துகண் ணோடா திறைபுரிந் தியார்மாட்டும் தேர்ந்துசெய் வஃதே முறை.</span> <span class=\"ref\">Tirukkuṟaḷ 541</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Interactional justice",
+     "classic": "kind words",
+     "text": [
+      "The Kuṟaḷ compares speaking harshly when kind words are at hand to picking unripe fruit when ripe fruit is there. Interactional justice asks that decisions, even hard ones, be delivered with dignity, respect and courtesy."
+     ],
+     "quote": "“To speak harshly when kind words are at hand is to pick the unripe fruit when the ripe is there.” <span lang=\"ta\" class=\"ta\">இனிய உளவாக இன்னாத கூறல் கனியிருப்பக் காய்கவர்ந் தற்று.</span> <span class=\"ref\">Tirukkuṟaḷ 100</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Internal whistleblowing channels",
+     "classic": "a ruler who can be reached",
+     "text": [
+      "Kauṭilya warns the ruler not to keep people with business waiting at his door: a ruler who is hard to reach is made, by those around him, to confuse what should and should not be done. Internal reporting channels serve a similar purpose in a company, a way for bad news to reach the top past the inner circle. Kauṭilya is writing about petitions to a king, so the link is a reading."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 1.19</span>"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "slug": "human-resource-management",
+   "title": "Human Resource Management",
+   "scope": "What HRM is, how it grew, what it aims at and does, and how it differs from personnel management and from organisational behaviour.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "meaning-and-objectives-of-hrm",
+     "title": "Meaning and objectives of HRM",
+     "html": "<p>Human resource management (HRM) is the process of acquiring, developing, motivating and retaining employees to achieve organisational goals. It aims to maximise performance, ensure employee welfare and align people with the organisation's strategy.</p>\n<div class=\"eq\">Acquire → Develop → Motivate → Retain: a skilled, motivated and committed workforce</div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Objectives</th><th>Examples</th></tr></thead><tbody><tr><td>Personal</td><td>Training, career development, work-life balance, satisfaction</td></tr><tr><td>Organisational</td><td>Productivity, performance, workforce planning, talent management</td></tr><tr><td>Other</td><td>Legal compliance, social responsibility, diversity and inclusion, fairness</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "evolution-of-hrm",
+     "title": "Evolution of HRM",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Stage</th><th>Period</th><th>Focus</th></tr></thead><tbody><tr><td>Pre-industrial</td><td>Before the 18th century</td><td>Agrarian and manual work; no formal HR</td></tr><tr><td>Industrial Revolution</td><td>18th–19th century</td><td>Factory system, supervision, discipline, productivity</td></tr><tr><td>Scientific management</td><td>Late 19th–early 20th century</td><td>F. W. Taylor: efficiency, time and motion, standardisation</td></tr><tr><td>Human relations</td><td>1920s–1930s</td><td>Elton Mayo: social factors, morale, motivation</td></tr><tr><td>Post-war personnel</td><td>1940s–1950s</td><td>Personnel departments, hiring, training, labour relations</td></tr><tr><td>Modern HRM</td><td>1960s–1980s</td><td>From personnel administration to HR development and motivation</td></tr><tr><td>TQM and globalisation</td><td>1980s–1990s</td><td>Quality, employee involvement, continuous improvement</td></tr><tr><td>Strategic HRM</td><td>2000s onward</td><td>HR information systems, analytics, diversity, a global workforce, strategic alignment</td></tr></tbody></table></div>\n<p class=\"cue\">Control, efficiency, human relations, personnel, HRM, strategic HR.</p>"
+    },
+    {
+     "id": "functions-of-hrm",
+     "title": "Functions of HRM",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Function</th><th>Activity</th><th>Purpose</th></tr></thead><tbody><tr><td>Plan</td><td>Human resource planning</td><td>Forecast manpower requirements</td></tr><tr><td>Acquire</td><td>Recruitment and selection</td><td>Attract and select suitable employees</td></tr><tr><td>Develop</td><td>Training and development</td><td>Build knowledge, skills and capabilities</td></tr><tr><td>Evaluate</td><td>Performance appraisal</td><td>Assess performance and find areas to improve</td></tr><tr><td>Reward</td><td>Compensation management</td><td>Fair pay, benefits and retention</td></tr><tr><td>Relate</td><td>Employee relations</td><td>Communication, cooperation and conflict resolution</td></tr><tr><td>Protect</td><td>Safety and welfare</td><td>Health, safety and well-being</td></tr><tr><td>Prepare</td><td>Career and succession planning</td><td>Future talent and leadership continuity</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "approaches-to-hrm",
+     "title": "Approaches to HRM, and how HRM differs",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Approach</th><th>Core idea</th></tr></thead><tbody><tr><td>Traditional</td><td>Administrative control, records, compliance</td></tr><tr><td>Human relations</td><td>Motivation, morale and social needs</td></tr><tr><td>Human resource development</td><td>Learning, skills and career development</td></tr><tr><td>Contingency</td><td>HR practices depend on the situation; no single best way</td></tr><tr><td>Strategic HRM</td><td>HR strategy aligned with business strategy</td></tr><tr><td>High-performance work systems</td><td>Teamwork, empowerment and performance-linked rewards</td></tr><tr><td>Best practices</td><td>Some HR practices improve performance almost everywhere</td></tr><tr><td>Resource-based view</td><td>People as strategic resources for lasting competitive advantage</td></tr><tr><td>Employee-centric</td><td>Well-being, engagement, flexibility and inclusion</td></tr><tr><td>Evidence-based</td><td>Data and evidence guide HR decisions</td></tr></tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>HRM</th><th>Personnel management</th></tr></thead><tbody><tr><td>Philosophy</td><td>Strategic and proactive</td><td>Administrative and reactive</td></tr><tr><td>Focus</td><td>People and business strategy</td><td>Routine employee administration</td></tr><tr><td>Scope</td><td>Broad: development, engagement, planning</td><td>Narrow: payroll, records, compliance</td></tr><tr><td>Employee relations</td><td>Participation and engagement</td><td>Control and grievance handling</td></tr><tr><td>Development</td><td>Learning, potential and growth</td><td>Mainly task-specific training</td></tr></tbody></table></div>\n<p class=\"cue\">HRM asks “How do we manage people?”; organisational behaviour asks “Why do people behave the way they do?”</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Matching people to work",
+     "classic": "entrusting the task",
+     "text": [
+      "The Kuṟaḷ's rule for assigning work: having judged that this person will accomplish this task by these means, leave the task to them. Acquiring and developing a workforce turns that judgement into a system."
+     ],
+     "quote": "“Having judged that this person can accomplish this task by these means, entrust the task to them.” <span lang=\"ta\" class=\"ta\">இதனை இதனால் இவன்முடிக்கும் என்றாய்ந் ததனை அவன்கண் விடல்.</span> <span class=\"ref\">Tirukkuṟaḷ 517</span>"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "slug": "human-resource-planning",
+   "title": "Human Resource Planning",
+   "scope": "Forecasting and balancing the demand for and supply of people, so the right people are in the right place at the right time.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "meaning-of-hrp",
+     "title": "Meaning of human resource planning",
+     "html": "<p>Human resource planning (HRP) is the process of forecasting and managing the demand for and supply of human resources. It makes sure the organisation has the right people, in the right place, at the right time.</p>\n<p>Its core objective is balance: between the human resources available and what the organisation requires.</p>"
+    },
+    {
+     "id": "the-hrp-process",
+     "title": "The HRP process",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Step</th><th>What it involves</th></tr></thead><tbody><tr><td>1 Analyse organisational objectives</td><td>Understand the mission, strategy and future business goals</td></tr><tr><td>2 Forecast HR demand</td><td>Estimate future workforce needs from expansion, technology and production</td></tr><tr><td>3 Analyse HR supply</td><td>Assess available talent, skills, turnover, promotions and succession</td></tr><tr><td>4 Identify skill gaps</td><td>Compare existing skills with those required</td></tr><tr><td>5 Determine workforce requirements</td><td>The number and type of employees needed, by department</td></tr><tr><td>6 Match demand and supply</td><td>Find shortages or surpluses</td></tr><tr><td>7 Develop HR action plans</td><td>Recruitment, training, redeployment, retention</td></tr><tr><td>8 Monitor and control</td><td>Track measures, review outcomes, update plans as conditions change</td></tr></tbody></table></div>\n<p class=\"cue\">Strategy, forecast, analyse, match, act, review.</p>"
+    },
+    {
+     "id": "methods-of-supply-analysis",
+     "title": "Methods of supply analysis",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Method</th><th>Looks at</th></tr></thead><tbody><tr><td>Skills inventory</td><td>Employees' qualifications, skills and experience</td></tr><tr><td>Succession planning</td><td>Potential future leaders for critical positions</td></tr><tr><td>Turnover analysis</td><td>Exit patterns and what they mean for future staffing</td></tr><tr><td>Promotion and mobility analysis</td><td>Internal movement and advancement potential</td></tr><tr><td>Job analysis</td><td>Duties, responsibilities and required competencies</td></tr><tr><td>Scenario planning</td><td>Possible future situations and their workforce implications</td></tr></tbody></table></div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Right person, right work, right time",
+     "classic": "the doer, the work and the time",
+     "text": [
+      "The Kuṟaḷ advises acting only after weighing the doer, the work and the right time together. Human resource planning asks a workforce the same three questions: who, for what work, and when."
+     ],
+     "quote": "“Weigh the doer, weigh the work, and act knowing the right time.” <span lang=\"ta\" class=\"ta\">செய்வானை நாடி வினைநாடிக் காலத்தோடு எய்த உணர்ந்து செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 516</span>"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "slug": "recruitment-and-selection",
+   "title": "Recruitment and Selection",
+   "scope": "Attracting a pool of suitable candidates, then choosing the best of them: the sources, the steps and the tests.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "recruitment-and-its-sources",
+     "title": "Recruitment and its sources",
+     "html": "<p>Recruitment is the process of searching for, identifying and attracting qualified candidates for job vacancies. Its purpose is to build a pool of capable candidates for current and future needs: from a vacancy, to attracting candidates, to a talent pool, to selection.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Internal method</th><th>Key focus</th></tr></thead><tbody><tr><td>Job posting</td><td>Announcing the vacancy internally</td></tr><tr><td>Employee referrals</td><td>Recommendations by employees</td></tr><tr><td>Promotions</td><td>Movement to higher positions</td></tr><tr><td>Transfers</td><td>Movement across departments or locations</td></tr><tr><td>Rehiring retired employees</td><td>Part-time or project engagement</td></tr><tr><td>Previous applicants</td><td>Reconsidering earlier applicants</td></tr></tbody></table></div>\n<p>Internal recruitment costs less, is faster, lifts morale and supports career development. <b>External recruitment</b> brings a wider talent pool, fresh skills, new perspectives and innovation. Its sources include online recruitment, social media, recruitment agencies, job fairs, campus recruitment, headhunting, internships, walk-ins, telephone interviews, temporary or contract hiring, poaching and government job centres.</p>"
+    },
+    {
+     "id": "the-recruitment-process",
+     "title": "The recruitment process",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Step</th><th>Purpose</th></tr></thead><tbody><tr><td>1 Identify the vacancy</td><td>Recognise the staffing need</td></tr><tr><td>2 Job analysis</td><td>Determine duties and required skills</td></tr><tr><td>3 Job description and specification</td><td>Define responsibilities and qualifications</td></tr><tr><td>4 Advertise the job</td><td>Use internal and external channels</td></tr><tr><td>5 Receive and review applications</td><td>Screen and shortlist</td></tr><tr><td>6 Build a talent pool</td><td>Keep potential candidates in view</td></tr><tr><td>7 Employer branding</td><td>Attract quality applicants</td></tr><tr><td>8 Initial communication</td><td>Give role clarity</td></tr><tr><td>9 Networking</td><td>Reach passive candidates</td></tr><tr><td>10 Recruitment campaigns</td><td>Plan hiring drives</td></tr><tr><td>11 Tracking and reporting</td><td>Evaluate how well recruitment worked</td></tr></tbody></table></div>\n<p class=\"cue\">Need, analyse, attract, screen, build, evaluate.</p>"
+    },
+    {
+     "id": "selection-and-selection-tests",
+     "title": "Selection and selection tests",
+     "html": "<p>Selection is the process of evaluating and choosing the most suitable candidate from the applicant pool. Its goal is to match the candidate's skills, attitude and values with the organisation's requirements.</p>\n<div class=\"eq\">Application review → preliminary screening → shortlisting → interview → tests → verification → medical → offer → onboarding</div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Selection test</th><th>Measures</th></tr></thead><tbody><tr><td>Intelligence test</td><td>Reasoning, analysis and problem-solving</td></tr><tr><td>Aptitude test</td><td>Ability to learn job-specific skills</td></tr><tr><td>Interest test</td><td>Occupational preferences</td></tr><tr><td>Personality test</td><td>Behaviour and emotional stability</td></tr><tr><td>Achievement test</td><td>Job-related knowledge and proficiency</td></tr><tr><td>Trade test</td><td>Technical, job-specific ability</td></tr><tr><td>Dexterity test</td><td>Manual skill and coordination</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "recruitment-against-selection",
+     "title": "Recruitment against selection",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Recruitment</th><th>Selection</th></tr></thead><tbody><tr><td>Meaning</td><td>Attracting potential candidates</td><td>Choosing the best candidate</td></tr><tr><td>Objective</td><td>Create an applicant pool</td><td>Identify the suitable candidate</td></tr><tr><td>Nature</td><td>Positive: encourages applicants</td><td>Negative: eliminates unsuitable applicants</td></tr><tr><td>Scope</td><td>Broad: sourcing and attracting</td><td>Narrow: screening and evaluation</td></tr><tr><td>Outcome</td><td>A pool of candidates</td><td>The final hiring decision</td></tr><tr><td>Responsibility</td><td>Mainly the HR recruitment team</td><td>HR with departmental heads</td></tr></tbody></table></div>\n<p class=\"cue\">Recruitment attracts, for more candidates; selection chooses, for the best candidate.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Testing a candidate",
+     "classic": "the four tests",
+     "text": [
+      "The Kuṟaḷ says a person should be chosen after being tested on four things: virtue, wealth, pleasure and the fear of losing life. Modern selection tests ability, aptitude and personality; the couplet tests character under temptation and threat."
+     ],
+     "quote": "“Choose a person after testing them in four ways: by virtue, by wealth, by pleasure and by the fear of death.” <span lang=\"ta\" class=\"ta\">அறம்பொருள் இன்பம் உயிரச்சம் நான்கின் திறந்தெரிந்து தேறப் படும்.</span> <span class=\"ref\">Tirukkuṟaḷ 501</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Selection's secret trials",
+     "classic": "the four allurements",
+     "text": [
+      "Kauṭilya tells the ruler to test ministers in secret through four trials (<i>upadhā</i>), of righteousness, wealth, desire and fear, and to place each in work that suits what the trials showed. The home page's sample concept compares this with modern selection; secret trials of this kind would breach today's ethics and employment law."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 1.10</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Why selection must be careful",
+     "classic": "trusting the untested",
+     "text": [
+      "The Kuṟaḷ warns that trusting someone who has not been tested, and doubting someone who has, both bring endless trouble. It is the case for a careful selection process, and for trusting its result once it is done."
+     ],
+     "quote": "“To trust the untested, and to doubt the one you have tested, both bring endless sorrow.” <span lang=\"ta\" class=\"ta\">தேரான் தெளிவும் தெளிந்தான்கண் ஐயுறவும் தீரா இடும்பை தரும்.</span> <span class=\"ref\">Tirukkuṟaḷ 510</span>"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "slug": "training-and-development",
+   "title": "Training and Development",
+   "scope": "Building skills for today's job and growing people for tomorrow's: the methods, the process and the difference between the two.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "training-and-its-methods",
+     "title": "Training and its methods",
+     "html": "<p>Training is a systematic process of enhancing employees' skills, knowledge and competencies to improve performance in their current job. It focuses on practical application, specific abilities and work efficiency, and it raises productivity and quality while lowering operational costs.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>On-the-job method</th><th>Key focus</th></tr></thead><tbody><tr><td>Coaching</td><td>One-to-one instruction in job skills</td></tr><tr><td>Job rotation</td><td>Experience across departments or tasks</td></tr><tr><td>Mentoring</td><td>Long-term guidance by a senior</td></tr><tr><td>Internships</td><td>Practical work experience</td></tr><tr><td>Apprenticeships</td><td>Long-term, skill-based training</td></tr></tbody></table></div>\n<p><b>Off-the-job training</b> takes place outside the normal work environment, through theory or simulation: classroom training, seminars and workshops, e-learning, simulation exercises and case studies.</p>"
+    },
+    {
+     "id": "the-training-process",
+     "title": "The training process",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Step</th><th>What happens</th></tr></thead><tbody><tr><td>1 Identify training needs</td><td>Find performance gaps and skill shortages</td></tr><tr><td>2 Determine participants</td><td>Select the employees who need training</td></tr><tr><td>3 Prepare learners</td><td>Build readiness and interest</td></tr><tr><td>4 Present the operation</td><td>Demonstrate the task clearly</td></tr><tr><td>5 Performance try-out</td><td>Trainees perform under supervision</td></tr><tr><td>6 Follow-up</td><td>Evaluate, correct errors and make sure it is applied</td></tr></tbody></table></div>\n<p class=\"cue\">Needs, participants, preparation, presentation, try-out, follow-up.</p>"
+    },
+    {
+     "id": "development-and-how-it-differs",
+     "title": "Development, and how it differs from training",
+     "html": "<p>Development enhances employees' knowledge, skills and abilities for future responsibilities and long-term growth. It focuses on future roles, career growth, leadership potential and the talent pipeline. Its methods include training programmes, job rotation, job enrichment, mentoring and coaching, skill workshops, e-learning, cross-training, simulations and role-play, certifications, and feedback and appraisal.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th></th><th>Training</th><th>Development</th></tr></thead><tbody><tr><td>Focus</td><td>Specific job-related skills</td><td>Broader career and personal growth</td></tr><tr><td>Time horizon</td><td>Short-term</td><td>Long-term</td></tr><tr><td>Scope</td><td>Job-specific and narrow</td><td>Career-oriented and wide</td></tr><tr><td>Purpose</td><td>Improve current performance</td><td>Prepare for future roles</td></tr><tr><td>Methods</td><td>On-the-job training, workshops, seminars</td><td>Mentoring, coaching, job rotation</td></tr></tbody></table></div>\n<p class=\"cue\">Training is for current performance; development is for future growth.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Training that sticks",
+     "classic": "learn, then live by it",
+     "text": [
+      "The Kuṟaḷ says: learn thoroughly what is worth learning, and then stand by it. The training process ends the same way, with a follow-up that checks whether what was learnt is being applied."
+     ],
+     "quote": "“Learn thoroughly what should be learnt, and having learnt it, live by it.” <span lang=\"ta\" class=\"ta\">கற்க கசடறக் கற்பவை கற்றபின் நிற்க அதற்குத் தக.</span> <span class=\"ref\">Tirukkuṟaḷ 391</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Development as open-ended growth",
+     "classic": "the sand well",
+     "text": [
+      "The deeper a well is dug in sand, the more water flows into it; the more a person learns, the more their knowledge grows. Development, unlike training, is open-ended growth of exactly this kind."
+     ],
+     "quote": "“As water springs in a sand well the deeper it is dug, so knowledge springs the more one learns.” <span lang=\"ta\" class=\"ta\">தொட்டனைத் தூறும் மணற்கேணி மாந்தர்க்குக் கற்றனைத் தூறும் அறிவு.</span> <span class=\"ref\">Tirukkuṟaḷ 396</span>"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "slug": "job-analysis-evaluation-and-design",
+   "title": "Job Analysis, Evaluation and Design",
+   "scope": "Studying jobs, writing them down, judging their worth and shaping them: analyse, document, evaluate, design.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "job-analysis",
+     "title": "Job analysis and its methods",
+     "html": "<p>Job analysis is a systematic study of a job's tasks, methods, equipment, skills and attitudes needed for successful performance. It yields four kinds of information: the job's <b>purpose and nature</b>, its <b>organisational fit</b> (department, reporting line, hierarchy), the <b>human profile</b> it needs (skills, attributes, behaviour), and its <b>relationships and context</b> (interactions, dependencies, tools, demands).</p>\n<p>Its strategic uses are work simplification (breaking complex jobs into manageable tasks), setting measurable performance standards, and supporting recruitment, selection, training and appraisal.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Method</th><th>Key focus</th></tr></thead><tbody><tr><td>Direct observation</td><td>Watching employees at work; best for routine or physical jobs</td></tr><tr><td>Work method analysis</td><td>Time and motion study to find the most efficient sequence</td></tr><tr><td>Critical incident technique</td><td>Analysing exceptionally effective or ineffective incidents</td></tr><tr><td>Interview method</td><td>Employees and supervisors describe the job in detail</td></tr></tbody></table></div>\n<p class=\"cue\">A limit of observation: people may behave differently when watched (the Hawthorne effect).</p>"
+    },
+    {
+     "id": "job-description-and-specification",
+     "title": "Job description and job specification",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Job description: defines the job</th><th>Job specification: defines the person</th></tr></thead><tbody><tr><td>Job purpose and summary</td><td>Required qualifications</td></tr><tr><td>Tasks and duties</td><td>Experience</td></tr><tr><td>Reporting line and location</td><td>Mental and physical attributes</td></tr><tr><td>Working conditions</td><td>Emotional traits</td></tr><tr><td>Tools and responsibilities</td><td>Technical and interpersonal skills</td></tr></tbody></table></div>\n<p class=\"cue\">The job description says what the job involves; the job specification says who can do it.</p>"
+    },
+    {
+     "id": "job-evaluation",
+     "title": "Job evaluation and its methods",
+     "html": "<p>Job evaluation is a systematic, comparative process of determining the relative worth of jobs within an organisation. Its objectives are internal equity (jobs of similar worth get fair pay), a standard pay structure, fairness (less favouritism and wage inequality) and benchmarking against industry pay.</p>\n<div class=\"eq\">Job analysis → job documentation → job rating → job hierarchy</div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Method</th><th>Kind</th><th>Core idea</th></tr></thead><tbody><tr><td>Ranking</td><td>Non-quantitative</td><td>Compare and rank jobs by overall worth</td></tr><tr><td>Grading or classification</td><td>Non-quantitative</td><td>Place jobs into predefined grades</td></tr><tr><td>Points system</td><td>Quantitative</td><td>Weight compensable factors and assign points</td></tr><tr><td>Factor comparison</td><td>Quantitative</td><td>Compare jobs with benchmark jobs, factor by factor</td></tr></tbody></table></div>\n<p class=\"cue\">Non-quantitative methods compare whole jobs; quantitative ones score factors.</p>"
+    },
+    {
+     "id": "job-design",
+     "title": "Job design",
+     "html": "<p>Job design is structuring jobs to achieve organisational efficiency while meeting employees' motivational needs.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Method</th><th>What it does</th></tr></thead><tbody><tr><td>Job simplification</td><td>Fewer, repetitive tasks: more efficiency, but possible monotony</td></tr><tr><td>Job rotation</td><td>Moves people across roles: less boredom, more versatility</td></tr><tr><td>Job enlargement</td><td>Horizontal expansion: more tasks at the same level</td></tr><tr><td>Job enrichment</td><td>Vertical expansion: more responsibility, autonomy and decision-making</td></tr></tbody></table></div>\n<p class=\"cue\">Simplification: fewer tasks. Rotation: different tasks. Enlargement: more tasks. Enrichment: more authority.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "A graded pay structure",
+     "classic": "Kauṭilya's salary scale",
+     "text": [
+      "Book 5 of the Arthaśāstra sets out a scale of annual salaries for the state's servants, from the highest officers down to labourers, graded by the importance of the post. That is a pay structure built on judging the worth of each job, which is the aim of job evaluation."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 5.3</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Job enrichment",
+     "classic": "making the capable the master of the work",
+     "text": [
+      "The Kuṟaḷ says that once a person has been found fit for a task, they should be made its master. Job enrichment gives a capable employee more responsibility, autonomy and say over their work. The couplet is about appointing officers, so the link is offered as a reading."
+     ],
+     "quote": "“Once you have found a person fit for the work, make them its master.” <span lang=\"ta\" class=\"ta\">வினைக்குரிமை நாடிய பின்றை அவனை அதற்குரிய னாகச் செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 518</span>"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "slug": "compensation-management",
+   "title": "Compensation Management",
+   "scope": "Rewarding people for their contribution: the aims of pay, protection for injury at work, and the classic incentive plans.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "meaning-and-objectives-of-compensation",
+     "title": "Meaning and objectives of compensation",
+     "html": "<p>Compensation management is the systematic process of rewarding employees for their contribution, through <b>monetary rewards</b> (wages, incentives, bonuses) and <b>non-monetary rewards</b> (benefits, recognition, perks).</p>\n<p>Its objectives are to attract talent, retain employees, motivate performance, ensure equity, improve productivity and comply with the law.</p>"
+    },
+    {
+     "id": "the-employees-compensation-act-1923",
+     "title": "The Employees' Compensation Act, 1923",
+     "html": "<p>The Act gives financial protection to employees who are injured during their employment or who suffer occupational diseases.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Provision</th><th>What it means</th></tr></thead><tbody><tr><td>Employer liability</td><td>Compensation for injury arising out of and in the course of employment</td></tr><tr><td>Coverage</td><td>Accidents, occupational diseases and employment-related death</td></tr><tr><td>Dependants</td><td>Compensation to the widow, children and other eligible dependants</td></tr><tr><td>Medical examination</td><td>May be required to assess the injury or disability</td></tr><tr><td>Notice and claims</td><td>Accidents should be reported promptly</td></tr><tr><td>Non-compliance</td><td>Fines or imprisonment</td></tr></tbody></table></div>\n<p>The amount depends on the injury, the percentage of disability and the wage level. The Code on Social Security, 2020 brings this Act together with other social security laws.</p>"
+    },
+    {
+     "id": "incentive-plans",
+     "title": "Incentive plans",
+     "html": "<p>Incentive plans link reward to performance: productivity, efficiency or time saved. Higher efficiency brings higher earnings, and higher earnings encourage higher productivity. In the formulas, T is the time taken, S the standard time and R the hourly rate.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Plan</th><th>Developer</th><th>Principle</th></tr></thead><tbody><tr><td>Halsey premium plan</td><td>F. A. Halsey</td><td>Time wage plus 50% of the time saved</td></tr><tr><td>Bedaux plan</td><td>Charles Bedaux</td><td>Guaranteed base pay plus a bonus based on Bedaux points; calculation is complex and may cause disputes</td></tr><tr><td>Rowan plan</td><td>James Rowan</td><td>Bonus in proportion to the time saved against standard time; rises with efficiency, at a diminishing rate</td></tr><tr><td>Emerson's efficiency plan</td><td>Harrington Emerson</td><td>Guaranteed daily wage plus a bonus that starts at two-thirds efficiency and rises with it</td></tr><tr><td>Gantt task and bonus system</td><td>H. L. Gantt</td><td>Guaranteed time rate, plus a fixed bonus for meeting or beating the standard</td></tr><tr><td>Taylor's differential piece rate</td><td>F. W. Taylor</td><td>Two piece rates: higher above the standard, lower below it; a strong incentive that may cause stress</td></tr></tbody></table></div>\n<div class=\"eq\">Halsey: Earnings = T × R + 50% × (S − T) × R</div>\n<div class=\"eq\">Rowan: Earnings = T × R + ((S − T) ÷ S) × T × R</div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Pay for contribution",
+     "classic": "effort earns its wage",
+     "text": [
+      "The Kuṟaḷ says that even when fate denies success, effort still earns the wages of one's labour. Compensation management starts from the same point: contribution is owed a reward."
+     ],
+     "quote": "“Even when fate denies the result, effort yields the wages of one's labour.” <span lang=\"ta\" class=\"ta\">தெய்வத்தான் ஆகா தெனினும் முயற்சிதன் மெய்வருத்தக் கூலி தரும்.</span> <span class=\"ref\">Tirukkuṟaḷ 619</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Compensation for dependants",
+     "classic": "provision for families",
+     "text": [
+      "In the same chapter as its salary scale, the Arthaśāstra provides that when servants die in the course of their work, their sons and wives are to receive their food and wages. The Employees' Compensation Act gives a worker's dependants a comparable claim."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 5.3</span>"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "slug": "strategic-hrm",
+   "title": "Strategic Human Resource Management",
+   "scope": "Aligning HR with the organisation's strategy, so that its people become a lasting source of advantage.",
+   "group": "hrm",
+   "blocks": [
+    {
+     "id": "meaning-of-shrm",
+     "title": "Meaning of strategic HRM",
+     "html": "<p>Strategic human resource management (SHRM) aligns HR activities (recruitment, training, performance management and development) with the organisation's strategy.</p>\n<div class=\"eq\">HR activities → strategic alignment → workforce capability → competitive advantage</div>\n<ul><li>Employees are treated as long-term strategic assets.</li><li>HR becomes proactive, helping shape the organisation's growth and capability.</li><li>The focus shifts from routine HR administration to strategic people management.</li></ul>"
+    },
+    {
+     "id": "key-strategic-dimensions",
+     "title": "Key strategic dimensions",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Dimension</th><th>What it involves</th></tr></thead><tbody><tr><td>Employer branding and talent acquisition</td><td>Communicate the culture to attract talent; a strong brand brings better applicants and fewer mismatches</td></tr><tr><td>Employee lifecycle management</td><td>Onboarding, development, engagement and retention; lower turnover and a stable workforce</td></tr><tr><td>Performance and learning</td><td>Performance management that focuses on growth, not fault-finding; continuous learning</td></tr><tr><td>Retention and engagement</td><td>Growth opportunities, recognition and fairness; analyse why people leave</td></tr><tr><td>Culture and change management</td><td>Reinforce values and behaviour; people-focused change meets less resistance</td></tr></tbody></table></div>"
+    },
+    {
+     "id": "components-and-objectives-of-shrm",
+     "title": "Components and objectives of SHRM",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Component</th><th>Meaning</th></tr></thead><tbody><tr><td>Human resources as core capital</td><td>Skills and potential</td></tr><tr><td>HR policies and programmes</td><td>Motivate and align employees</td></tr><tr><td>Plans and patterns</td><td>Strategic planning and consistent behaviour</td></tr><tr><td>Unified direction</td><td>HR actions aligned with the long-term vision</td></tr></tbody></table></div>\n<div class=\"eq\">SHRM = people capability + HR systems + strategic direction</div>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Objective</th><th>Means</th></tr></thead><tbody><tr><td>Strategic fit</td><td>Alignment of HR with strategy and its execution</td></tr><tr><td>Resource-based strategy</td><td>Specialised talent as a competitive advantage</td></tr><tr><td>High-performance management</td><td>Measures and productivity</td></tr><tr><td>High-involvement management</td><td>Sharing ideas, innovation</td></tr><tr><td>High-commitment management</td><td>Trust and employee dedication</td></tr></tbody></table></div>\n<p class=\"cue\">Fit, resource, performance, involvement, commitment.</p>"
+    },
+    {
+     "id": "implementing-shrm",
+     "title": "Implementing SHRM",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>Implementation step</th><th>What it involves</th></tr></thead><tbody><tr><td>1 Understand the business vision</td><td>Align HR with purpose and the strategic plan</td></tr><tr><td>2 Identify measures and data</td><td>Use people analytics; data-driven decisions reduce bias</td></tr><tr><td>3 Assess HR readiness</td><td>Review skills, structure and technology; close the gaps</td></tr><tr><td>4 Forecast talent needs</td><td>Predict needs for growth or automation; reskill and upskill</td></tr><tr><td>5 Assess HR systems</td><td>Make HR tools efficient and integrated</td></tr><tr><td>6 Evaluate and iterate</td><td>Monitor outcomes and keep policies relevant</td></tr></tbody></table></div>\n<p>Strategic HR planning runs in five steps: define SMART goals, assess HR capabilities, evaluate workforce skills, analyse departmental needs, and recruit strategically for cultural fit, adaptability and future readiness.</p>\n<p class=\"cue\">The right people, with the right capabilities, for the right strategy, at the right time.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Reviewing people against the strategy",
+     "classic": "the ruler's daily review",
+     "text": [
+      "The Kuṟaḷ tells the ruler to look every day into the conduct of those who do his work: if they do not swerve, the world will not swerve. SHRM's last step, evaluating and iterating, is the same discipline of regular review."
+     ],
+     "quote": "“Let the ruler look daily into the conduct of those who work for him; if they do not swerve, the world will not swerve.” <span lang=\"ta\" class=\"ta\">நாடோறும் நாடுக மன்னன் வினைசெய்வான் கோடாமை கோடா துலகு.</span> <span class=\"ref\">Tirukkuṟaḷ 520</span>"
+    }
+   ]
+  }
+ ]
+}

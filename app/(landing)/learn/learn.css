@@ -138,6 +138,7 @@ h4 { margin: 0; }
 .lp-main i { font-family: var(--font-deva); }
 .lp-q { margin: 0 0 22px; padding: 16px 18px; border-left: 6px solid var(--color-accent); background: var(--color-accent-100); color: var(--color-text); font-size: 16px; font-weight: 700; line-height: 25px; }
 .lp-q i { display: block; margin-top: 8px; color: var(--color-accent-800); font: italic 400 16px/26px var(--font-deva); }
+.lp-q .ta { display: block; margin-top: 8px; color: var(--color-accent-800); font: 400 16px/1.7 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
 .lp-q .ref { display: block; margin-top: 10px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .04em; line-height: 17px; text-transform: uppercase; }
 .lp.view .lp-q { border: 2px dashed var(--color-text); border-left: 6px solid var(--color-text); background: transparent; }
 .lp.view .lp-q .ref { color: var(--color-text); }
