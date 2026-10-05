@@ -63,6 +63,34 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "models-of-communication",
+    name: "Models of communication",
+    intro: "Three models, each adding what the last left out.",
+    before: {
+      q: "Is communication a one-way delivery from sender to receiver?",
+      choices: [
+        { label: "Yes", reveal: "That is how the first model drew it. Schramm showed both parties encode and decode, sharing meaning through a common field of experience." },
+        { label: "No", reveal: "Right. Schramm showed both parties encode and decode, sharing meaning through a common field of experience." },
+      ],
+    },
+    lead: "Shannon and Weaver add noise, Schramm adds shared experience and two-way exchange, and Berlo adds the human factors in each element.",
+    check: [
+      ask("Which model is often called the mother of all models?", "Shannon and Weaver", ["Berlo", "Schramm", "Lasswell"], "Built for telephone engineering in 1949 and later applied to human communication."),
+      ask("SMCR in Berlo's model stands for…", "Source, message, channel, receiver", ["Sender, medium, code, response", "Signal, meaning, context, reply", "Source, medium, channel, response"], "Each is shaped by skills, attitudes, knowledge, social system and culture."),
+      ask("Schramm said meaning is shared through an overlapping…", "Field of experience", ["Channel", "Hierarchy", "Code book"], "The more the two fields overlap, the easier the understanding."),
+    ],
+    lens: [],
+    reflect: "Think of a misunderstanding you had. Which model best explains what went wrong?",
+    summary: {
+      points: [
+        "Shannon and Weaver (1949): source to destination, with noise.",
+        "Schramm (1954): two-way, through a shared field of experience.",
+        "Berlo (1960): SMCR, each element shaped by human factors.",
+      ],
+      memory: "Noise, then shared experience, then the human factors.",
+    },
+  },
+  {
     blockId: "formal-and-informal-communication",
     name: "Formal and informal communication",
     intro: "Official channels and natural ones.",
@@ -89,6 +117,89 @@ const lessons: Lesson[] = [
         "Informal takes five common forms: grapevine, face-to-face, social media, telephone and non-verbal signals.",
       ],
       memory: "Formal: consistent and accountable. Informal: quick and personal.",
+    },
+  },
+  {
+    blockId: "directions-of-communication",
+    name: "Directions of communication",
+    intro: "Downward, upward, horizontal and diagonal.",
+    before: {
+      q: "A finance executive asks the marketing head directly for next quarter's expenses. Which direction is that?",
+      choices: [
+        { label: "Horizontal", reveal: "Close, but they work at different levels in different departments, which makes it diagonal. It saves time but bypasses the chain of command." },
+        { label: "Diagonal", reveal: "Yes. Different levels, different departments. It saves time but bypasses the chain of command." },
+      ],
+    },
+    lead: "Downward carries authority, upward carries feedback, horizontal coordinates, diagonal saves time.",
+    check: [
+      ask("Grievances and suggestions travel…", "Upward", ["Downward", "Horizontally", "Diagonally"], "From subordinates to superiors."),
+      ask("Which direction can bypass unity of command?", "Diagonal", ["Downward", "Upward", "Horizontal"], "It crosses both levels and departments."),
+    ],
+    lens: [],
+    reflect: "In an organisation you know, which direction of communication is weakest, and what does it cost?",
+    summary: {
+      points: [
+        "Downward: orders, policies, instructions; risk of delay and filtering.",
+        "Upward: reports, suggestions, grievances; risk of fear and distortion.",
+        "Horizontal: peers coordinating; diagonal: across levels and departments, fast but bypasses the chain.",
+      ],
+      memory: "Down commands, up informs, across coordinates, diagonal hurries.",
+    },
+  },
+  {
+    blockId: "communication-networks",
+    name: "Communication networks and the grapevine",
+    intro: "The patterns messages follow, formal and informal.",
+    before: {
+      q: "Is the grapevine something managers should try to stamp out?",
+      choices: [
+        { label: "Yes", reveal: "It can't be stamped out, and it has uses: it is fast and shows how people feel. It works best alongside open formal channels, which starve rumour." },
+        { label: "No", reveal: "Right. It is fast and shows how people feel. It works best alongside open formal channels, which starve rumour." },
+      ],
+    },
+    lead: "Formal networks run as chain, wheel, circle and all-channel; the grapevine spreads mostly in clusters.",
+    check: [
+      ask("In which network does one central person communicate with each member?", "Wheel", ["Chain", "Circle", "All-channel"], "It is the fastest for simple tasks and the most centralised."),
+      ask("According to Keith Davis, the most common grapevine pattern is…", "Cluster", ["Single strand", "Gossip", "Probability"], "Each tells a few trusted people, who pass it on selectively."),
+      ask("Which network gives members the highest satisfaction?", "All-channel", ["Wheel", "Chain", "Circle"], "Everyone can talk to everyone, though it is slow to reach a decision."),
+    ],
+    lens: [],
+    reflect: "How did you hear the last big piece of news at work or college: a formal channel or the grapevine?",
+    summary: {
+      points: [
+        "Formal networks: chain, wheel, circle, all-channel.",
+        "Wheel is fastest for simple tasks; all-channel satisfies most and suits complex problems.",
+        "Grapevine patterns (Keith Davis): single strand, gossip, probability, cluster.",
+        "Cluster is the most common.",
+      ],
+      memory: "Chain, wheel, circle, all; strand, gossip, chance, cluster.",
+    },
+  },
+  {
+    blockId: "oral-and-written-communication",
+    name: "Oral and written communication",
+    intro: "Speed and warmth against record and precision.",
+    before: {
+      q: "A change to the leave policy must reach 2,000 staff. Oral or written?",
+      choices: [
+        { label: "Oral", reveal: "Not alone. A policy change needs a permanent record that fixes responsibility, so it should be written, perhaps with a meeting to explain it." },
+        { label: "Written", reveal: "Yes. A policy change needs a permanent record that fixes responsibility; a meeting can add the explanation." },
+      ],
+    },
+    lead: "Oral communication is quick and personal; written communication is a precise, permanent record.",
+    check: [
+      ask("Which is a strength of written communication?", "It serves as a permanent record and legal evidence", ["Immediate feedback", "A personal touch", "Low cost"], "Oral communication gives immediate feedback and a personal touch."),
+      ask("Oral and written communication are both forms of…", "Verbal communication", ["Non-verbal communication", "Visual communication", "Diagonal communication"], "Both use words; non-verbal communication uses gesture, expression and tone."),
+    ],
+    lens: [],
+    reflect: "What did you last put in writing that you should have said in person, or the other way round?",
+    summary: {
+      points: [
+        "Oral: quick, flexible, personal, immediate feedback; no record.",
+        "Written: permanent record, precise, fixes responsibility; slow and impersonal.",
+        "Both are verbal; non-verbal cues carry the feeling behind them.",
+      ],
+      memory: "Say it for speed; write it to keep it.",
     },
   },
   {

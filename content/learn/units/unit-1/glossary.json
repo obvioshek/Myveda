@@ -11,7 +11,7 @@
   "letter": "A",
   "term": "Agency Theory",
   "def": "A corporate governance theory explaining the conflict of interest between shareholders (principals) and managers (agents), resolved through audits and performance incentives.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "authority-responsibility",
@@ -25,112 +25,112 @@
   "letter": "B",
   "term": "Barriers to Communication",
   "def": "Physical, psychological, language, cultural, perceptual, organisational or attitudinal obstacles that distort or block the transfer of a message.",
-  "chapter": 3
+  "chapter": 4
  },
  {
   "id": "budget-line",
   "letter": "B",
   "term": "Budget Line",
   "def": "A graphical representation of all combinations of two goods a consumer can purchase given a fixed income and fixed prices.",
-  "chapter": 9
+  "chapter": 10
  },
  {
   "id": "built-in-inflation",
   "letter": "B",
   "term": "Built-In Inflation",
   "def": "Inflation driven by a wage-price spiral, where workers and firms adjust wages and prices based on expected future inflation.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "business-ethics",
   "letter": "B",
   "term": "Business Ethics",
   "def": "The application of moral principles to corporate conduct, balancing the profit motive with social welfare and stakeholder interests.",
-  "chapter": 12
+  "chapter": 13
  },
  {
   "id": "consumer-equilibrium",
   "letter": "C",
   "term": "Consumer Equilibrium",
   "def": "The point at which a consumer maximises utility subject to the budget constraint, where the indifference curve is tangent to the budget line.",
-  "chapter": 9
+  "chapter": 10
  },
  {
   "id": "contingency-theory",
   "letter": "C",
   "term": "Contingency Theory",
   "def": "A management theory holding that there is no single best way to organise; effectiveness depends on matching structure to the situation (structure, environment, technology, people).",
-  "chapter": 2
+  "chapter": 3
  },
  {
   "id": "corporate-governance",
   "letter": "C",
   "term": "Corporate Governance",
   "def": "The system of rules, practices and processes by which a company is directed and controlled to balance stakeholder interests.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "cross-elasticity-of-demand-xed",
   "letter": "C",
   "term": "Cross Elasticity of Demand (XED)",
   "def": "The responsiveness of demand for one good to a price change in a related good — positive for substitutes, negative for complements.",
-  "chapter": 7
+  "chapter": 8
  },
  {
   "id": "csr-corporate-social-responsibility",
   "letter": "C",
   "term": "CSR (Corporate Social Responsibility)",
   "def": "The integration of social, environmental and economic responsibility into business operations; mandatory in India above specified net worth, turnover or profit thresholds.",
-  "chapter": 12
+  "chapter": 13
  },
  {
   "id": "decentralisation",
   "letter": "D",
   "term": "Decentralisation",
   "def": "The system-wide distribution of decision-making power across multiple levels of an organisation — functional, geographic, product-based or market-based.",
-  "chapter": 5
+  "chapter": 6
  },
  {
   "id": "delegation-of-authority",
   "letter": "D",
   "term": "Delegation of Authority",
   "def": "The transfer of responsibility and decision-making power from a superior to a subordinate, while the superior retains ultimate accountability.",
-  "chapter": 5
+  "chapter": 6
  },
  {
   "id": "demand-pull-inflation",
   "letter": "D",
   "term": "Demand-Pull Inflation",
   "def": "Inflation caused when aggregate demand in an economy exceeds aggregate supply capability.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "deontological-ethics",
   "letter": "D",
   "term": "Deontological Ethics",
   "def": "An ethical approach focused on adherence to moral duties and principles rather than outcomes.",
-  "chapter": 12
+  "chapter": 13
  },
  {
   "id": "disinflation",
   "letter": "D",
   "term": "Disinflation",
   "def": "A slowdown in the rate of inflation, where prices continue rising but at a reduced pace.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "elasticity-of-demand",
   "letter": "E",
   "term": "Elasticity of Demand",
   "def": "A measure of how responsive quantity demanded is to changes in price, income, or the price of related goods.",
-  "chapter": 7
+  "chapter": 8
  },
  {
   "id": "encoding",
   "letter": "E",
   "term": "Encoding",
   "def": "The stage of the communication process where the sender transforms thoughts into transmittable symbols such as words, gestures or visuals.",
-  "chapter": 3
+  "chapter": 4
  },
  {
   "id": "esprit-de-corps",
@@ -144,7 +144,7 @@
   "letter": "E",
   "term": "Ethical Dilemma",
   "def": "A situation requiring a choice between two or more conflicting moral values or obligations.",
-  "chapter": 12
+  "chapter": 13
  },
  {
   "id": "fayols-14-principles",
@@ -158,14 +158,14 @@
   "letter": "F",
   "term": "Fiscal Policy",
   "def": "A government's use of taxation and public spending to influence economic conditions such as inflation.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "formal-communication",
   "letter": "F",
   "term": "Formal Communication",
   "def": "Communication that follows official organisational channels and hierarchy, ensuring consistency and accountability.",
-  "chapter": 3
+  "chapter": 4
  },
  {
   "id": "functional-foremanship",
@@ -179,42 +179,42 @@
   "letter": "G",
   "term": "GDP Deflator",
   "def": "A comprehensive measure of price change, calculated as the ratio of nominal GDP to real GDP, multiplied by 100.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "grapevine-communication",
   "letter": "G",
   "term": "Grapevine Communication",
   "def": "An unofficial, informal communication network that spreads information — often rumour-based — rapidly through an organisation.",
-  "chapter": 3
+  "chapter": 4
  },
  {
   "id": "gross-domestic-product-gdp",
   "letter": "G",
   "term": "Gross Domestic Product (GDP)",
   "def": "The market value of all final goods and services produced within a country's borders, equal to Consumption + Investment + Government Expenditure + Net Exports.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "gross-national-product-gnp",
   "letter": "G",
   "term": "Gross National Product (GNP)",
   "def": "Total income earned by a country's residents, both domestically and abroad, equal to GDP plus net factor income from abroad.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "hawthorne-studies",
   "letter": "H",
   "term": "Hawthorne Studies",
   "def": "Elton Mayo's research proving that productivity is driven by social and psychological factors, not merely physical working conditions.",
-  "chapter": 2
+  "chapter": 3
  },
  {
   "id": "holacracy",
   "letter": "H",
   "term": "Holacracy",
   "def": "An informal organisational structure built on self-managed teams rather than traditional hierarchy.",
-  "chapter": 5
+  "chapter": 6
  },
  {
   "id": "human-skills",
@@ -228,35 +228,35 @@
   "letter": "H",
   "term": "Hyperinflation",
   "def": "An extreme, uncontrollable rise in prices exceeding 50% per month, typically leading to currency collapse.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "income-elasticity-of-demand-yed",
   "letter": "I",
   "term": "Income Elasticity of Demand (YED)",
   "def": "The responsiveness of demand to a change in consumer income, distinguishing normal, inferior, necessity and luxury goods.",
-  "chapter": 7
+  "chapter": 8
  },
  {
   "id": "indifference-curve",
   "letter": "I",
   "term": "Indifference Curve",
   "def": "A graphical representation of all combinations of two goods that provide a consumer with the same level of satisfaction.",
-  "chapter": 9
+  "chapter": 10
  },
  {
   "id": "inflation",
   "letter": "I",
   "term": "Inflation",
   "def": "A persistent rise in the general price level of goods and services, resulting in a decline in purchasing power.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "informal-communication",
   "letter": "I",
   "term": "Informal Communication",
   "def": "Unstructured, spontaneous communication such as the grapevine or face-to-face interaction that builds relationships and speeds up decisions.",
-  "chapter": 3
+  "chapter": 4
  },
  {
   "id": "interpersonal-roles",
@@ -270,42 +270,42 @@
   "letter": "K",
   "term": "Kinked Demand Curve",
   "def": "A model of oligopoly pricing where the demand curve has a kink at the prevailing price, reflecting rivals' asymmetric reactions to price changes.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "long-run-profitability",
   "letter": "L",
   "term": "Long-Run Profitability",
   "def": "The sustainable profit level a firm can earn in a given market structure — normal profit under perfect/monopolistic competition, potentially supernormal under oligopoly/monopoly.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "matrix-structure",
   "letter": "M",
   "term": "Matrix Structure",
   "def": "An organisational design with dual reporting lines, combining functional and project-based authority.",
-  "chapter": 5
+  "chapter": 6
  },
  {
   "id": "monetary-policy",
   "letter": "M",
   "term": "Monetary Policy",
   "def": "Central bank actions such as adjusting interest rates or reserve ratios to control money supply and inflation.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "monopolistic-competition",
   "letter": "M",
   "term": "Monopolistic Competition",
   "def": "A market structure with many sellers offering differentiated products and relatively easy entry/exit.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "monopoly",
   "letter": "M",
   "term": "Monopoly",
   "def": "A market structure with a single seller, a unique product, and blocked entry, giving full control over price.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "motion-study",
@@ -319,49 +319,49 @@
   "letter": "N",
   "term": "National Income",
   "def": "The total money value of all final goods and services produced by a country's normal residents over a year, including net factor income from abroad, measured at factor cost (NNP at factor cost).",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "neoclassical-theory",
   "letter": "N",
   "term": "Neoclassical Theory",
   "def": "A management theory (1920s-30s) emphasising human relations, motivation and teamwork over purely mechanical efficiency.",
-  "chapter": 2
+  "chapter": 3
  },
  {
   "id": "noise-communication",
   "letter": "N",
   "term": "Noise (Communication)",
   "def": "Any physical, psychological or semantic interference that disrupts the transmission or understanding of a message.",
-  "chapter": 3
+  "chapter": 4
  },
  {
   "id": "normal-profit",
   "letter": "N",
   "term": "Normal Profit",
   "def": "The minimum profit level required to keep a firm operating in an industry — the typical long-run outcome under perfect and monopolistic competition.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "oecd-principles",
   "letter": "O",
   "term": "OECD Principles",
   "def": "International corporate governance guidelines covering shareholder rights, equitable treatment, transparency and stakeholder roles.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "oligopoly",
   "letter": "O",
   "term": "Oligopoly",
   "def": "A market structure dominated by a few large sellers with interdependent pricing decisions.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "open-system",
   "letter": "O",
   "term": "Open System",
   "def": "The Modern/Systems Approach view of an organisation as an interdependent set of subsystems interacting with its external environment.",
-  "chapter": 2
+  "chapter": 3
  },
  {
   "id": "order-fayols-principle",
@@ -375,28 +375,28 @@
   "letter": "O",
   "term": "Organisational Chart",
   "def": "A visual map showing an organisation's hierarchy, roles, and reporting relationships.",
-  "chapter": 5
+  "chapter": 6
  },
  {
   "id": "per-capita-income-pci",
   "letter": "P",
   "term": "Per Capita Income (PCI)",
   "def": "Average income per person in an economy, calculated as national income divided by total population, used as a standard-of-living indicator.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "perfect-competition",
   "letter": "P",
   "term": "Perfect Competition",
   "def": "A market structure with an infinite number of sellers, homogeneous products and free entry/exit.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "personal-income-pi",
   "letter": "P",
   "term": "Personal Income (PI)",
   "def": "Income actually received by individuals before direct taxes, including transfer payments but excluding retained corporate profits.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "piece-rate-system",
@@ -410,21 +410,21 @@
   "letter": "P",
   "term": "Price Discrimination",
   "def": "The practice of charging different prices to different consumers or markets for the same product, without a cost-based justification.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "price-elasticity-of-demand-ped",
   "letter": "P",
   "term": "Price Elasticity of Demand (PED)",
   "def": "A measure of how responsive quantity demanded is to a change in a product's own price.",
-  "chapter": 7
+  "chapter": 8
  },
  {
   "id": "reverse-dumping",
   "letter": "R",
   "term": "Reverse Dumping",
   "def": "A form of international price discrimination where a firm sells a product at a higher price abroad than in its home market.",
-  "chapter": 10
+  "chapter": 11
  },
  {
   "id": "robert-katzs-managerial-skills",
@@ -438,7 +438,7 @@
   "letter": "R",
   "term": "Running Inflation",
   "def": "A rapid rate of inflation, roughly 10-20%, signalling an overheating economy.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "scalar-chain",
@@ -459,21 +459,21 @@
   "letter": "S",
   "term": "Stagflation",
   "def": "An unusual economic condition combining high inflation with high unemployment and stagnant growth.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "stewardship-theory",
   "letter": "S",
   "term": "Stewardship Theory",
   "def": "A corporate governance theory viewing managers as trustworthy stewards of the company rather than self-interested agents.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "systems-approach",
   "letter": "S",
   "term": "Systems Approach",
   "def": "A management perspective viewing the organisation as an open system of interdependent subsystems interacting with the external environment.",
-  "chapter": 2
+  "chapter": 3
  },
  {
   "id": "time-motion-study",
@@ -487,21 +487,21 @@
   "letter": "T",
   "term": "Total Quality Management (TQM)",
   "def": "A contemporary management approach prioritising continuous improvement and customer satisfaction.",
-  "chapter": 2
+  "chapter": 3
  },
  {
   "id": "transitivity",
   "letter": "T",
   "term": "Transitivity",
   "def": "A rational-consumer assumption stating that if a consumer prefers A to B and B to C, they must also prefer A to C.",
-  "chapter": 9
+  "chapter": 10
  },
  {
   "id": "trust-vbo",
   "letter": "T",
   "term": "Trust (VBO)",
   "def": "A core success factor of a Value-Based Organisation, built through consistent ethical conduct and shared values.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "unity-of-command",
@@ -522,48 +522,279 @@
   "letter": "U",
   "term": "Utilitarian Approach",
   "def": "An ethical decision-making approach favouring the action that provides the greatest good for the greatest number of people.",
-  "chapter": 12
+  "chapter": 13
  },
  {
   "id": "value-added-method",
   "letter": "V",
   "term": "Value Added Method",
   "def": "A method of measuring national income by summing the value created at every stage of production.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "value-based-organisation-vbo",
   "letter": "V",
   "term": "Value-Based Organisation (VBO)",
   "def": "An organisation where ethical values shape culture, leadership and strategy, prioritising societal contribution alongside profit.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "virtue-ethics",
   "letter": "V",
   "term": "Virtue Ethics",
   "def": "An ethical theory emphasising the moral character of the decision-maker — such as honesty and courage — rather than rules or outcomes.",
-  "chapter": 12
+  "chapter": 13
  },
  {
   "id": "vision-statement",
   "letter": "V",
   "term": "Vision Statement",
   "def": "The long-term aspirational direction guiding an organisation's future growth, forming the top tier of the VBO hierarchy.",
-  "chapter": 13
+  "chapter": 14
  },
  {
   "id": "walking-inflation",
   "letter": "W",
   "term": "Walking Inflation",
   "def": "A moderate rate of inflation, roughly 3-10%, that gradually erodes purchasing power over time.",
-  "chapter": 11
+  "chapter": 12
  },
  {
   "id": "wholesale-price-index-wpi",
   "letter": "W",
   "term": "Wholesale Price Index (WPI)",
   "def": "A measure of inflation based on bulk/producer prices, excluding services.",
-  "chapter": 11
+  "chapter": 12
+ },
+ {
+  "id": "management",
+  "letter": "M",
+  "term": "Management",
+  "def": "The process of getting things done through and with people, using an organisation's resources to reach its goals effectively and efficiently.",
+  "chapter": 1
+ },
+ {
+  "id": "effectiveness",
+  "letter": "E",
+  "term": "Effectiveness",
+  "def": "Doing the right things: the degree to which goals are actually reached.",
+  "chapter": 1
+ },
+ {
+  "id": "efficiency",
+  "letter": "E",
+  "term": "Efficiency",
+  "def": "Doing things right: reaching goals with the least waste of time, money and effort.",
+  "chapter": 1
+ },
+ {
+  "id": "levels-of-management",
+  "letter": "L",
+  "term": "Levels of Management",
+  "def": "Top management sets objectives and policy, middle management turns policy into plans and coordinates, and first-line management directs day-to-day work.",
+  "chapter": 1
+ },
+ {
+  "id": "gang-plank",
+  "letter": "G",
+  "term": "Gang Plank",
+  "def": "Fayol's exception to the scalar chain: two people at the same level may deal with each other directly, with their superiors' knowledge, when the chain is too slow.",
+  "chapter": 1
+ },
+ {
+  "id": "informational-roles",
+  "letter": "I",
+  "term": "Informational Roles",
+  "def": "Mintzberg's monitor, disseminator and spokesperson roles, in which a manager gathers and passes on information.",
+  "chapter": 1
+ },
+ {
+  "id": "decisional-roles",
+  "letter": "D",
+  "term": "Decisional Roles",
+  "def": "Mintzberg's entrepreneur, disturbance handler, resource allocator and negotiator roles, in which a manager makes choices.",
+  "chapter": 1
+ },
+ {
+  "id": "conceptual-skills",
+  "letter": "C",
+  "term": "Conceptual Skills",
+  "def": "In Katz's model, the ability to see the organisation as a whole and connect strategy to its parts; most important for top managers.",
+  "chapter": 1
+ },
+ {
+  "id": "technical-skills",
+  "letter": "T",
+  "term": "Technical Skills",
+  "def": "In Katz's model, knowledge of methods, tools and procedures for the work itself; most important for first-line managers.",
+  "chapter": 1
+ },
+ {
+  "id": "posdcorb",
+  "letter": "P",
+  "term": "POSDCORB",
+  "def": "Luther Gulick's 1937 list of executive functions: planning, organising, staffing, directing, co-ordinating, reporting and budgeting.",
+  "chapter": 2
+ },
+ {
+  "id": "planning",
+  "letter": "P",
+  "term": "Planning",
+  "def": "Deciding in advance what to do, how to do it, when to do it and who is to do it; the primary function of management.",
+  "chapter": 2
+ },
+ {
+  "id": "planning-premises",
+  "letter": "P",
+  "term": "Planning Premises",
+  "def": "The assumptions about the future, external and internal, on which a plan is built.",
+  "chapter": 2
+ },
+ {
+  "id": "contingency-plan",
+  "letter": "C",
+  "term": "Contingency Plan",
+  "def": "An alternative plan kept ready for use if conditions change or the main plan fails.",
+  "chapter": 2
+ },
+ {
+  "id": "organising",
+  "letter": "O",
+  "term": "Organising",
+  "def": "Identifying and grouping the work, assigning responsibility and authority, and setting reporting relationships so people can work together toward goals.",
+  "chapter": 2
+ },
+ {
+  "id": "departmentalisation",
+  "letter": "D",
+  "term": "Departmentalisation",
+  "def": "Grouping related activities into departments or units, for example by function, product or region.",
+  "chapter": 2
+ },
+ {
+  "id": "staffing",
+  "letter": "S",
+  "term": "Staffing",
+  "def": "Filling the positions in the organisation structure with the right people and keeping them filled, from manpower planning to career planning.",
+  "chapter": 2
+ },
+ {
+  "id": "orientation-induction",
+  "letter": "O",
+  "term": "Orientation (Induction)",
+  "def": "Introducing a newly placed employee to colleagues, rules, policies and facilities.",
+  "chapter": 2
+ },
+ {
+  "id": "directing",
+  "letter": "D",
+  "term": "Directing",
+  "def": "Guiding, motivating, supervising and communicating with people so they work toward the organisation's goals.",
+  "chapter": 2
+ },
+ {
+  "id": "transactional-leadership",
+  "letter": "T",
+  "term": "Transactional Leadership",
+  "def": "A style that relies on clear goals and on rewards and penalties for meeting them.",
+  "chapter": 2
+ },
+ {
+  "id": "transformational-leadership",
+  "letter": "T",
+  "term": "Transformational Leadership",
+  "def": "A style that inspires followers to change through a shared vision and the leader's own example.",
+  "chapter": 2
+ },
+ {
+  "id": "coordination",
+  "letter": "C",
+  "term": "Coordination",
+  "def": "The orderly arrangement of group effort to provide unity of action in the pursuit of a common purpose; often called the essence of management.",
+  "chapter": 2
+ },
+ {
+  "id": "controlling",
+  "letter": "C",
+  "term": "Controlling",
+  "def": "Setting standards, measuring performance, comparing it with the standards and correcting deviations.",
+  "chapter": 2
+ },
+ {
+  "id": "management-by-exception",
+  "letter": "M",
+  "term": "Management by Exception",
+  "def": "Attending only to significant deviations from the standard, leaving routine results to run.",
+  "chapter": 2
+ },
+ {
+  "id": "benchmarking",
+  "letter": "B",
+  "term": "Benchmarking",
+  "def": "Comparing an organisation's performance or practices with the best in its field.",
+  "chapter": 2
+ },
+ {
+  "id": "bureaucracy-weber",
+  "letter": "B",
+  "term": "Bureaucracy (Weber)",
+  "def": "Max Weber's model of organisation based on rational-legal authority: hierarchy, written rules, impersonality, merit, careers and records.",
+  "chapter": 3
+ },
+ {
+  "id": "theory-z",
+  "letter": "T",
+  "term": "Theory Z",
+  "def": "William Ouchi's 1981 model, drawn from Japanese management, of long-term employment, collective decision-making and concern for the whole employee.",
+  "chapter": 3
+ },
+ {
+  "id": "downward-communication",
+  "letter": "D",
+  "term": "Downward Communication",
+  "def": "Communication from superiors to subordinates, such as orders, policies and instructions.",
+  "chapter": 4
+ },
+ {
+  "id": "upward-communication",
+  "letter": "U",
+  "term": "Upward Communication",
+  "def": "Communication from subordinates to superiors, such as reports, suggestions and grievances.",
+  "chapter": 4
+ },
+ {
+  "id": "diagonal-communication",
+  "letter": "D",
+  "term": "Diagonal Communication",
+  "def": "Communication between people at different levels in different departments; fast, but it bypasses the chain of command.",
+  "chapter": 4
+ },
+ {
+  "id": "communication-network",
+  "letter": "C",
+  "term": "Communication Network",
+  "def": "The pattern of channels among members of a group: chain, wheel, circle or all-channel.",
+  "chapter": 4
+ },
+ {
+  "id": "semantic-barrier",
+  "letter": "S",
+  "term": "Semantic Barrier",
+  "def": "A breakdown in communication caused by words or symbols with different meanings, jargon, poor translation or unstated assumptions.",
+  "chapter": 4
+ },
+ {
+  "id": "shannon-weaver-model",
+  "letter": "S",
+  "term": "Shannon–Weaver Model",
+  "def": "A 1949 model of communication from source to destination through a channel, with noise distorting the signal.",
+  "chapter": 4
+ },
+ {
+  "id": "smcr-model",
+  "letter": "S",
+  "term": "SMCR Model",
+  "def": "David Berlo's 1960 model of source, message, channel and receiver, each shaped by human factors such as skills, attitudes and culture.",
+  "chapter": 4
  }
 ]
