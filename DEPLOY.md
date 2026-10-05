@@ -95,7 +95,7 @@ A new site isn't in Google's index until Google has found it, and that doesn't h
 
 Things that help once it's indexed: links from other sites (a profile page, a post, a college or community page that links to `https://myvedaverse.in`), and new pages for specific concepts, since each is something people can search for.
 
-What the site already does for search, so you don't have to: a fast static home page, a title and description sized for results, a canonical address, a sitemap and `robots.txt`, structured data naming the site, a branded favicon, and a share image. The product behind sign-in is kept out of the index on purpose.
+What the site already does for search, so you don't have to: a fast static home page and static chapter pages (each with its own title, description, canonical and article data), a title and description sized for results, a canonical address, a sitemap and `robots.txt`, structured data naming the site, a branded favicon, and a share image. The product behind sign-in is kept out of the index on purpose.
 
 ## Using a different host
 

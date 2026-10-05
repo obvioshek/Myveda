@@ -13,6 +13,7 @@ import Toast from "@/components/landing/Toast";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import { CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
+import { CHAPTERS, chapterPath, deva } from "@/content/learn";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -133,10 +134,38 @@ export default function LandingPage() {
         </section>
 
         <Rule />
+        <section className="wrap sec" id="chapters" aria-labelledby="chapters-h">
+          <div className="split end">
+            <div className="sec-copy">
+              <Eyebrow num="४">Read</Eyebrow>
+              <h2 id="chapters-h">Thirteen chapters. <span className="red">Each one ends with the classics.</span></h2>
+            </div>
+            <div className="chap-cta">
+              <p className="sub">Unit 1 of management and managerial economics, from Fayol and Taylor to elasticity, market structures and governance. Each chapter explains the idea first, then sets cited passages from India&apos;s classical texts beside it.</p>
+              <div className="btn-row">
+                <Link href="/learn" className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
+                <Link href="/learn/glossary" className="btn btn-secondary btn-lg">Browse the glossary</Link>
+              </div>
+            </div>
+          </div>
+          <ol className="grid g3 chap">
+            {CHAPTERS.map(c => (
+              <li key={c.slug} className="cell chap-c">
+                <Link href={chapterPath(c.slug)}>
+                  <span className="chap-n" lang="sa" aria-hidden="true">{deva(c.n)}</span>
+                  <span className="chap-t">{c.title}</span>
+                  <Arrow />
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <Rule />
         <section className="wrap sec" id="texts" aria-labelledby="texts-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="४">Ancient Lens</Eyebrow>
+              <Eyebrow num="५">Ancient Lens</Eyebrow>
               <h2 id="texts-h">Ten texts, <span className="red">read the way one reads Aristotle or Confucius.</span></h2>
             </div>
             <p className="sub">Every verse is shown with its original, a transliteration, a credited translation and an exact reference.</p>
@@ -161,15 +190,15 @@ export default function LandingPage() {
         <section className="wrap sec" aria-label="Community and practice">
           <div className="grid g2">
             <div className="cell big" id="together">
-              <Eyebrow num="५">Together</Eyebrow>
+              <Eyebrow num="६">Together</Eyebrow>
               <h2 className="h-sm">You understand an idea best <span className="red">when you explain it to someone else.</span></h2>
               <p>Concept discussions, study circles (<i lang="sa-Latn">Saṅgha</i>) and structured debates (<i lang="sa-Latn">Śāstrārtha</i>). No sign-in needed to read, appreciate, comment or share. No follower counts. No endless feed.</p>
             </div>
             <div className="cell big" id="practice">
-              <Eyebrow num="६">Practice</Eyebrow>
+              <Eyebrow num="७">Practice</Eyebrow>
               <h2 className="h-sm">Studying for an exam or a course? <span className="red">The same pages hold up when the stakes are higher.</span></h2>
               <p>Every concept covers what a postgraduate management course expects, from first principles to strategy.</p>
-              <a className="more" href="#steps">See how practice works<Arrow /></a>
+              <Link className="more" href="/learn">Read the Unit 1 chapters<Arrow /></Link>
             </div>
           </div>
         </section>
@@ -200,6 +229,8 @@ export default function LandingPage() {
           <nav className="foot-col" aria-label="Learn">
             <span className="label">Learn</span>
             <a href="#explore">Explore ten areas</a>
+            <Link href="/learn">Unit 1 chapters</Link>
+            <Link href="/learn/glossary">Glossary</Link>
             <a href="#inside">Sample concept</a>
             <a href="#practice">For exam students</a>
             <a href="#together">Community</a>
