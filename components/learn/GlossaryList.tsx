@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 
-export type GlossaryItem = { id: string; letter: string; term: string; def: string; chapterN: number; chapterTitle: string; chapterHref: string };
+export type GlossaryItem = { id: string; letter: string; term: string; def: string; chapterN: number; chapterTitle: string; chapterHref: string; unitN?: number };
 
 // The A to Z list with a filter box. Every term is in the page from the start,
 // so search engines and readers without scripts see all of it; the box only
@@ -55,7 +55,7 @@ export default function GlossaryList({ items }: { items: GlossaryItem[] }) {
                 <dt>{t.term}</dt>
                 <dd>
                   <p>{t.def}</p>
-                  <Link className="gl-ch" href={t.chapterHref}>Chapter {t.chapterN}: {t.chapterTitle}</Link>
+                  <Link className="gl-ch" href={t.chapterHref} prefetch={false}>{t.unitN ? `Unit ${t.unitN}, ` : ""}Chapter {t.chapterN}: {t.chapterTitle}</Link>
                 </dd>
               </div>
             ))}

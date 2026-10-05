@@ -1,5 +1,5 @@
 import type { Pairing } from "@/content/learn";
-import type { LensNote } from "@/content/learn/lessons";
+import type { LensNote } from "@/content/learn";
 import { Tag } from "./Evidence";
 
 const html = (__html: string) => ({ __html });

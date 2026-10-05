@@ -27,7 +27,12 @@ const nextConfig: NextConfig = {
     if (process.env.NODE_ENV === "production") {
       security.push({ key: "Strict-Transport-Security", value: "max-age=63072000" });
     }
-    return [{ source: "/:path*", headers: security }];
+    return [
+      { source: "/:path*", headers: security },
+      // Font files never change in place (a new version gets a new name), so
+      // browsers can keep them for a year.
+      { source: "/fonts/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
+    ];
   },
 };
 

@@ -14,8 +14,8 @@ export default function PrivacyPage() {
 
       <h2>Reading the site</h2>
       <ul>
-        <li><b>No sign-in is needed</b> to read the home page, the chapters and the glossary.</li>
-        <li><b>On your device only:</b> the concept you opened last (for “Continue”) and anything you type in the “Reflect &amp; discuss” boxes are kept in your browser’s local storage. They are never sent to us, and clearing your browser’s site data removes them.</li>
+        <li><b>No sign-in is needed</b> to read the home page, the chapters, the glossary and the revision sheets.</li>
+        <li><b>On your device only:</b> the concept you opened last (for “Continue”), which concepts you have finished, and anything you type in the “Reflect &amp; discuss” boxes are kept in your browser’s local storage. They are never sent to us, and clearing your browser’s site data removes them.</li>
         <li>We don’t use advertising or tracking cookies.</li>
       </ul>
 

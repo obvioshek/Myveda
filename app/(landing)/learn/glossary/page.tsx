@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import GlossaryList, { type GlossaryItem } from "@/components/learn/GlossaryList";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, chapterPath } from "@/content/learn";
+import { GLOSSARY, GLOSSARY_PATH, UNITS, chapterBySlug, chapterPath } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
 const title = "Glossary of management and economics terms · Veda Verse";
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function GlossaryPage() {
   const base = siteUrl();
   const items: GlossaryItem[] = GLOSSARY.map(t => {
-    const c = CHAPTERS.find(x => x.n === t.chapter)!;
-    return { id: t.id, letter: t.letter, term: t.term, def: t.def, chapterN: c.n, chapterTitle: c.title, chapterHref: chapterPath(c.slug) };
+    const c = chapterBySlug(t.chapterSlug)!;
+    return { id: t.id, letter: t.letter, term: t.term, def: t.def, chapterN: c.n, chapterTitle: c.title, chapterHref: chapterPath(c.slug), unitN: UNITS.length > 1 ? c.unitN : undefined };
   });
   const jsonLd = {
     "@context": "https://schema.org",
