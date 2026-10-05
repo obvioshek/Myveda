@@ -79,6 +79,12 @@ export const neighbours = (c: Chapter) => {
   return { prev: list.find(x => x.n === c.n - 1) ?? null, next: list.find(x => x.n === c.n + 1) ?? null };
 };
 
+// The lesson that sets out a chapter's passage, for linking straight to it.
+export function passageHref(slug: string, pairing: number) {
+  const lesson = lessonsFor(slug)?.find(l => l.lens.some(n => n.pairing === pairing));
+  return lesson ? `${chapterPath(slug)}#${lesson.blockId}` : chapterPath(slug);
+}
+
 export function evidence(c: Chapter) {
   const documented = c.pairings.filter(p => p.kind === "documented").length;
   return { documented, view: c.pairings.length - documented, total: c.pairings.length };

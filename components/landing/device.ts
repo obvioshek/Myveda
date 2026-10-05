@@ -2,19 +2,16 @@
 
 import { useSyncExternalStore } from "react";
 
-// Things the landing page remembers on this device only: the concept to
-// continue with, and the reader's own note. Nothing here is sent anywhere.
+// Things the site remembers on this device only, such as the concept to
+// continue with. Nothing here is sent anywhere.
 // localStorage can be missing or throw (private windows, blocked site data), so
 // every access is wrapped and the page works without it.
 
 export const LAST_KEY = "vv-last";
 export const LAST_HREF_KEY = "vv-last-href";
-export const NOTE_KEY = "vv-note";
 
 const CHANGE = "vv-device-change";
 const TOAST = "vv-toast";
-const SEARCH = "vv-search";
-const CONCEPT = "vv-concept";
 
 function read(key: string): string {
   try { return localStorage.getItem(key) ?? ""; } catch { return ""; }
@@ -49,28 +46,10 @@ export function onToast(handler: (message: string) => void) {
   return () => window.removeEventListener(TOAST, listener);
 }
 
-// Fills the area search from elsewhere on the page (a question card).
-export function searchAreas(term: string) {
-  window.dispatchEvent(new CustomEvent(SEARCH, { detail: term }));
-}
-
-export function onSearchAreas(handler: (term: string) => void) {
-  const listener = (e: Event) => handler((e as CustomEvent<string>).detail);
-  window.addEventListener(SEARCH, listener);
-  return () => window.removeEventListener(SEARCH, listener);
-}
-
-export function onRevealConcept(handler: () => void) {
-  window.addEventListener(CONCEPT, handler);
-  return () => window.removeEventListener(CONCEPT, handler);
-}
-
-// Opening a concept saves it as the place to continue from. With no `href` it
-// opens the sample concept on the home page (Selection); with one, Continue
-// leads back to that lesson's own page.
-export function openConcept(name: string, announce = true, href = "") {
+// Opening a concept saves it, with the lesson's address, as the place to
+// continue from.
+export function openConcept(name: string, announce: boolean, href: string) {
   writeDevice(LAST_HREF_KEY, href);
   writeDevice(LAST_KEY, name);
   if (announce) showToast(`${name} saved to Continue`);
-  window.dispatchEvent(new Event(CONCEPT));
 }

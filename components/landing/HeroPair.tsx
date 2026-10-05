@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Arrow from "./Arrow";
 
 // The hero's example, as two ruled cells: the modern idea, and the classical
 // verse that answers it. The second cell turns red and shows the verse on
-// request. Motivation and Gītā 2.47 are the only verified pair so far.
-export default function HeroPair() {
+// request, with a link to the lesson where the pair is read in full.
+export default function HeroPair({ href }: { href: string }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="pair">
@@ -39,6 +40,7 @@ export default function HeroPair() {
           <div className="pair-differ">
             <span className="label red">Where they differ</span>
             <p>Vroom makes the expected result the reason to act. The Gītā asks you to act well without making the result the reason.</p>
+            <Link className="more" href={href} prefetch={false}>Read it in Chapter 1<Arrow /></Link>
           </div>
         </div>
       </div>

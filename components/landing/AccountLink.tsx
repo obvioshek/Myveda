@@ -1,9 +1,10 @@
 "use client";
 
-import { signInLabel, useAccount } from "./account";
+import { signInLabel, signInOnly, useAccount } from "./account";
 
-// The footer's optional sign-in link, shown once the browser knows what to offer.
+// The footer's optional sign-in link, shown once the browser knows there is one
+// to offer and the visitor isn't signed in.
 export default function AccountLink() {
-  const account = useAccount();
+  const account = signInOnly(useAccount());
   return account ? <a href={account.href}>{signInLabel(account)}</a> : null;
 }

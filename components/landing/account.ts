@@ -27,3 +27,7 @@ export function useAccount(): Account | null {
 }
 
 export const signInLabel = (a: Account) => (a.label === "Sign in" ? "Sign in (optional)" : a.label);
+
+// The account to offer as a separate link: only signing in, since a signed-in
+// member reaches the app through the Community link.
+export const signInOnly = (a: Account | null) => (a?.label === "Sign in" ? a : null);
