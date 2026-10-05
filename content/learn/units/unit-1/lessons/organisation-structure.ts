@@ -34,6 +34,64 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "forms-of-organisation",
+    name: "Line, line-and-staff and other forms",
+    intro: "The classical forms, and two ways of describing a structure.",
+    before: {
+      q: "A manager gets expert advice from a legal adviser who cannot give orders to the manager's team. Which form is that?",
+      choices: [
+        { label: "Line-and-staff", reveal: "Yes. Staff specialists advise; line managers keep the authority to command, so unity of command is kept." },
+        { label: "Functional", reveal: "No. In Taylor's functional form specialists give orders directly to workers. Advice without command is line-and-staff." },
+      ],
+    },
+    lead: "Line organisation is a single chain of command; line-and-staff adds advisers; Taylor's functional form lets specialists command.",
+    check: [
+      ask("Which form breaks unity of command?", "Functional (Taylor)", ["Line", "Line-and-staff", "Committee"], "Several specialist foremen each direct the same worker."),
+      ask("A temporary team from several departments, disbanded when the goal is met, is a…", "Project organisation", ["Line organisation", "Committee", "Informal organisation"], "It is built around one time-bound goal."),
+      ask("Burns and Stalker's organic structure suits…", "A changing environment", ["A stable environment", "Strict rules", "Narrow spans"], "Mechanistic structures suit stable conditions."),
+    ],
+    lens: [],
+    reflect: "In an organisation you know, where does the informal organisation help the formal one, and where does it work against it?",
+    summary: {
+      points: [
+        "Line: one chain of command; simple but short of specialists.",
+        "Line-and-staff: staff advise, line commands; risk of line-staff conflict.",
+        "Functional (Taylor): specialists command; breaks unity of command. Committee and project forms.",
+        "Mechanistic vs organic (Burns and Stalker, 1961); formal vs informal organisation.",
+      ],
+      memory: "Line commands, staff advise, function specialises.",
+    },
+  },
+  {
+    blockId: "authority-responsibility-and-accountability",
+    name: "Authority, responsibility and accountability",
+    intro: "Who may decide, who must do it, and who answers for it.",
+    before: {
+      q: "Can a manager hand over responsibility for a task entirely, along with the authority?",
+      choices: [
+        { label: "Yes", reveal: "Not entirely. The subordinate takes on responsibility for the task, but the manager's own ultimate responsibility and accountability to the superior remain." },
+        { label: "No", reveal: "Right. The subordinate takes on responsibility for the task, but the manager's own ultimate responsibility and accountability to the superior remain." },
+      ],
+    },
+    lead: "Authority is the right to decide, responsibility the obligation to perform, accountability answering for results; authority should match responsibility.",
+    check: [
+      ask("Barnard's acceptance theory says authority comes from…", "The subordinates who accept it", ["Ownership of the firm", "Personal expertise alone", "The law"], "Chester Barnard (1938); orders within the zone of indifference are accepted without question."),
+      ask("Which flows upward?", "Accountability", ["Authority", "Line authority", "Functional authority"], "Authority flows downward; responsibility and accountability flow upward."),
+      ask("Responsibility without matching authority leads to…", "A person unable to act", ["Misuse of power", "Too much discipline", "Faster decisions"], "Authority without responsibility invites misuse; the reverse leaves a person unable to act."),
+    ],
+    lens: [],
+    reflect: "Have you ever been responsible for something without the authority to do it? What happened?",
+    summary: {
+      points: [
+        "Authority: the right to decide. Responsibility: the duty to perform. Accountability: answering for results.",
+        "Theories: formal, acceptance (Barnard, 1938), competence.",
+        "Line, staff and functional authority.",
+        "Parity: authority should match responsibility; ultimate responsibility cannot be delegated.",
+      ],
+      memory: "Authority down, accountability up, and the two should match.",
+    },
+  },
+  {
     blockId: "span-of-control-and-charts",
     name: "Span of control and charts",
     intro: "How many people one manager supervises, and how to draw the result.",
@@ -66,6 +124,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "span-of-control-graicunas-and-urwick",
+    name: "How wide a span: Graicunas and Urwick",
+    intro: "Why relationships multiply faster than subordinates.",
+    before: {
+      q: "A manager with 6 subordinates takes on a 7th. Roughly how much do the possible relationships grow?",
+      choices: [
+        { label: "By about a sixth", reveal: "Far more. By Graicunas's formula they rise from 222 to 490, more than doubling." },
+        { label: "More than double", reveal: "Yes. By Graicunas's formula they rise from 222 to 490." },
+      ],
+    },
+    lead: "Graicunas showed that relationships grow exponentially as subordinates are added, so a span has a practical limit.",
+    check: [
+      ask("Using R = n[2^(n−1) + n − 1], how many relationships does a manager with 4 subordinates have?", "44", ["16", "20", "100"], "4 × (2³ + 4 − 1) = 4 × 11 = 44."),
+      ask("Urwick held that no superior can directly supervise more than about…", "Five or six subordinates whose work interlocks", ["Two or three subordinates", "Ten to twelve subordinates", "Twenty subordinates"], "The limit applies where the subordinates' work interlocks."),
+      ask("Which factor allows a wider span?", "Competent, well-trained subordinates", ["Complex, varied work", "Rapidly changing conditions", "Widely scattered staff"], "The others call for a narrower span."),
+    ],
+    lens: [],
+    reflect: "How many people could you supervise well at once, and what would let you handle more?",
+    summary: {
+      points: [
+        "Graicunas (1933): R = n[2^(n−1) + n − 1].",
+        "4 → 44, 5 → 100, 6 → 222, 7 → 490 relationships.",
+        "Urwick: five or six where work interlocks.",
+        "Span depends on competence, the work, plans, change, technology, dispersion and decentralisation.",
+      ],
+      memory: "Add one person, double the relationships.",
+    },
+  },
+  {
     blockId: "delegation-and-decentralisation",
     name: "Delegation and decentralisation",
     intro: "Passing on a task, and spreading decisions across the organisation.",
@@ -94,6 +181,35 @@ const lessons: Lesson[] = [
         "Delegation: narrow, a task, an individual. Decentralisation: broad, the organisation, a unit.",
       ],
       memory: "Delegation is about the person; decentralisation is about the system.",
+    },
+  },
+  {
+    blockId: "centralisation-and-decentralisation",
+    name: "Centralisation and decentralisation",
+    intro: "Where decisions are kept, and how far down they go.",
+    before: {
+      q: "Is any real organisation completely centralised or completely decentralised?",
+      choices: [
+        { label: "Yes", reveal: "No. Some decisions are always kept at the centre and some always made lower down; it is a matter of degree." },
+        { label: "No", reveal: "Right. Some decisions are always kept at the centre and some always made lower down; it is a matter of degree." },
+      ],
+    },
+    lead: "Centralisation keeps authority at central points; decentralisation pushes it to the lowest level able to use it. It is a matter of degree.",
+    check: [
+      ask("Developing future managers is an advantage of…", "Decentralisation", ["Centralisation", "Line organisation", "Narrow spans"], "Managers lower down learn by making real decisions."),
+      ask("Uniform policies and tight control are advantages of…", "Centralisation", ["Decentralisation", "Delayering", "Informal organisation"], "Decentralisation gains speed and initiative but loses some uniformity."),
+      ask("Whose definitions call centralisation the systematic reservation of authority at central points?", "Louis A. Allen", ["Henri Fayol", "Chester Barnard", "Ernest Dale"], "Ernest Dale gave tests for the degree of decentralisation."),
+    ],
+    lens: [],
+    reflect: "Which decisions in an organisation you know should move closer to the people who carry them out?",
+    summary: {
+      points: [
+        "Allen: centralisation reserves authority; decentralisation delegates it to the lowest level able to use it.",
+        "A matter of degree; Dale's tests measure it.",
+        "Centralisation: uniformity and control. Decentralisation: speed, initiative and management development.",
+        "Factors: size, cost of decisions, need for uniformity, philosophy, managers available, controls, change.",
+      ],
+      memory: "Keep the few at the centre; push the rest down.",
     },
   },
 ];

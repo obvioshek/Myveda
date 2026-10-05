@@ -2,6 +2,63 @@ import { ask, type Lesson } from "@/content/learn/lesson-kit";
 
 const lessons: Lesson[] = [
   {
+    blockId: "what-a-market-is",
+    name: "What a market is",
+    intro: "Buyers and sellers in contact, not a place.",
+    before: {
+      q: "Is a market a place where goods are bought and sold?",
+      choices: [
+        { label: "Yes", reveal: "Not in economics. A market is the whole set of buyers and sellers of a commodity in contact with each other, wherever they are." },
+        { label: "No", reveal: "Right. In economics a market is the whole set of buyers and sellers of a commodity in contact with each other, wherever they are." },
+      ],
+    },
+    lead: "A market is the set of buyers and sellers of a commodity in contact, so that one price tends to prevail.",
+    check: [
+      ask("A single buyer facing many sellers is…", "Monopsony", ["Monopoly", "Oligopsony", "Duopoly"], "Oligopsony has a few buyers; monopoly is a single seller."),
+      ask("In bilateral monopoly, price is settled by…", "Bargaining between the single seller and single buyer", ["Market demand and supply", "Government alone", "Marginal cost alone"], "Price is indeterminate within limits and is fixed by bargaining."),
+      ask("Which does NOT determine a market's structure?", "The colour of the product's packaging", ["The number of sellers", "Conditions of entry", "Whether the product is differentiated"], "Structure depends on numbers of buyers and sellers, the product, entry and scale economies."),
+    ],
+    lens: [],
+    reflect: "Name a market you buy in. How many sellers does it have, and could you easily start selling in it yourself?",
+    summary: {
+      points: [
+        "A market: buyers and sellers of a commodity in contact, not a place (Cournot).",
+        "Structure depends on sellers, buyers, product, entry and scale economies.",
+        "Buyer side: monopsony, duopsony, oligopsony; bilateral monopoly settles price by bargaining.",
+      ],
+      memory: "Contact, not a place; count the sellers, and the buyers.",
+    },
+  },
+  {
+    blockId: "revenue-concepts",
+    name: "Revenue: total, average and marginal",
+    intro: "TR, AR, MR, and how they link to elasticity.",
+    before: {
+      q: "A firm must cut its price to sell one more unit. Is the extra revenue from that unit equal to its price?",
+      choices: [
+        { label: "Yes", reveal: "No. The price cut applies to all units sold, so marginal revenue is less than price." },
+        { label: "No, it's less", reveal: "Right. The price cut applies to all units sold, so marginal revenue is less than price." },
+      ],
+    },
+    lead: "TR = P × Q, AR = P (the demand curve), and MR is the change in TR from one more unit; MR = AR(1 − 1/e).",
+    check: [
+      ask("Total revenue is at its maximum where…", "MR = 0", ["MR = AR", "AR = 0", "MR = MC"], "Up to there extra units add revenue; beyond it they subtract."),
+      ask("Under perfect competition…", "AR = MR = P", ["MR is below AR", "MR is negative", "AR slopes downward"], "The firm sells any quantity at the market price."),
+      ask("If demand is inelastic (e < 1), marginal revenue is…", "Negative", ["Positive", "Zero", "Equal to price"], "MR = AR(1 − 1/e), and 1/e > 1 when e < 1."),
+    ],
+    lens: [],
+    reflect: "If you sold something and had to cut the price to sell more, at what point would selling more stop paying?",
+    summary: {
+      points: [
+        "TR = P × Q; AR = TR/Q = P; MR = ΔTR/ΔQ.",
+        "The AR curve is the demand curve.",
+        "Perfect competition: AR = MR = P. Otherwise MR < AR.",
+        "MR = AR(1 − 1/e): positive if elastic, zero at e = 1, negative if inelastic.",
+      ],
+      memory: "Average is the price; marginal is less, unless the price never moves.",
+    },
+  },
+  {
     blockId: "the-four-market-structures",
     name: "The four market structures",
     intro: "Sellers, products and entry decide price and profit.",
@@ -31,6 +88,93 @@ const lessons: Lesson[] = [
         "Monopoly: one seller, no close substitute, blocked entry, price maker.",
       ],
       memory: "Sellers, product, entry.",
+    },
+  },
+  {
+    blockId: "perfect-competition",
+    name: "Perfect competition",
+    intro: "Many price takers, free entry, normal profit in the long run.",
+    before: {
+      q: "In the long run, can a perfectly competitive firm keep earning supernormal profit?",
+      choices: [
+        { label: "Yes", reveal: "No. Supernormal profit draws in new firms, supply rises and price falls until only normal profit remains." },
+        { label: "No", reveal: "Right. Supernormal profit draws in new firms, supply rises and price falls until only normal profit remains." },
+      ],
+    },
+    lead: "Under perfect competition firms are price takers; in the long run P = AR = MR = MC = minimum average cost.",
+    check: [
+      ask("A perfectly competitive firm's demand curve is…", "Horizontal (perfectly elastic)", ["Vertical", "Downward sloping", "Kinked"], "It can sell any quantity at the market price."),
+      ask("In the short run, a firm should shut down if price falls below…", "Average variable cost", ["Average total cost", "Marginal revenue", "Normal profit"], "Below AVC it cannot even cover its variable costs."),
+      ask("In Marshall's market period, supply of a perishable good such as fish is…", "Perfectly inelastic", ["Perfectly elastic", "Unitary elastic", "Kinked"], "Supply is fixed, so demand alone sets the price."),
+    ],
+    lens: [],
+    reflect: "Which market you know comes closest to perfect competition, and which condition does it fail?",
+    summary: {
+      points: [
+        "Conditions: many buyers and sellers, homogeneous product, free entry and exit, perfect knowledge and mobility.",
+        "Pure competition (Chamberlin): the first three conditions only.",
+        "Marshall's periods: market (demand sets price), short run, long run (cost matters most).",
+        "Long run: P = AR = MR = MC = minimum AC; normal profit.",
+      ],
+      memory: "Price takers, free entry, profit competed away.",
+    },
+  },
+  {
+    blockId: "monopoly-and-monopolistic-competition",
+    name: "Monopoly and monopolistic competition",
+    intro: "One seller behind barriers, and many sellers with their own brands.",
+    before: {
+      q: "Does a monopolist ever choose to produce where demand for its product is inelastic?",
+      choices: [
+        { label: "Yes, often", reveal: "No. Where demand is inelastic, marginal revenue is negative, so cutting output would raise revenue and lower cost. A profit-maximising monopolist stays on the elastic part." },
+        { label: "No", reveal: "Right. Where demand is inelastic, marginal revenue is negative, so a profit-maximising monopolist always produces on the elastic part of its demand curve." },
+      ],
+    },
+    lead: "A monopolist sets MR = MC and charges what demand will bear; monopolistic competition ends in normal profit with excess capacity.",
+    check: [
+      ask("Who set out the theory of monopolistic competition in 1933?", "Edward Chamberlin", ["Joan Robinson", "Paul Sweezy", "Augustin Cournot"], "Joan Robinson's Economics of Imperfect Competition appeared the same year."),
+      ask("In long-run equilibrium under monopolistic competition, the demand curve is…", "Tangent to the average cost curve", ["Above the average cost curve", "Horizontal", "Vertical"], "Price equals average cost, so profit is normal, with excess capacity."),
+      ask("Economies of scale so large that one firm supplies most cheaply create a…", "Natural monopoly", ["Cartel", "Product group", "Duopoly"], "Railways and power grids are classic cases."),
+    ],
+    lens: [],
+    reflect: "Choose a brand you are loyal to. How much could its price rise before you switched?",
+    summary: {
+      points: [
+        "Monopoly: one seller, no close substitutes, barriers to entry; the firm is the industry.",
+        "Equilibrium MR = MC; price from the demand curve; always on the elastic part.",
+        "Monopolistic competition (Chamberlin, 1933): differentiation, free entry, selling costs, a product group.",
+        "Long run: demand tangent to AC, normal profit, excess capacity.",
+      ],
+      memory: "Monopoly keeps its profit; brands compete theirs away.",
+    },
+  },
+  {
+    blockId: "oligopoly-and-duopoly",
+    name: "Oligopoly and duopoly",
+    intro: "A few interdependent sellers, and the models of their rivalry.",
+    before: {
+      q: "One of three cement makers cuts its price. Should it expect the others to ignore it?",
+      choices: [
+        { label: "Yes", reveal: "Unlikely. In an oligopoly firms are interdependent: rivals usually match a price cut to protect their share, which is why price wars rarely pay." },
+        { label: "No", reveal: "Right. Rivals usually match a price cut to protect their share; that interdependence is the mark of oligopoly." },
+      ],
+    },
+    lead: "Oligopoly is a few interdependent sellers; its models (Cournot, Bertrand, Stackelberg, kinked demand) differ in how firms expect rivals to react.",
+    check: [
+      ask("In the Cournot model, two firms together produce…", "Two-thirds of the competitive output", ["The competitive output", "Half the competitive output", "The monopoly output"], "Each produces one-third, so together two-thirds."),
+      ask("Who proposed the kinked demand curve in 1939?", "Paul Sweezy, and separately Hall and Hitch", ["Augustin Cournot", "Joseph Bertrand", "Heinrich von Stackelberg"], "It explains why oligopoly prices stay rigid."),
+      ask("A group of firms that fixes a joint price and allots output quotas is a…", "Cartel", ["Duopoly", "Product group", "Monopsony"], "OPEC is the best-known example."),
+    ],
+    lens: [],
+    reflect: "Which industry you know behaves like an oligopoly, and how do its firms avoid price wars?",
+    summary: {
+      points: [
+        "Few sellers, interdependence, entry barriers, advertising; pure or differentiated.",
+        "Cournot: output; Bertrand: price, P = MC; Edgeworth: oscillation; Stackelberg: leader and follower.",
+        "Kinked demand (Sweezy; Hall and Hitch, 1939): rigid prices.",
+        "Collusion: cartels and price leadership.",
+      ],
+      memory: "Few sellers, each watching the others.",
     },
   },
   {
