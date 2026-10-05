@@ -30,6 +30,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "methods-of-measuring-price-elasticity",
+    name: "Methods of measuring price elasticity",
+    intro: "Proportionate, point, arc and total outlay.",
+    before: {
+      q: "Price falls and total spending on the good rises. Is demand elastic or inelastic?",
+      choices: [
+        { label: "Elastic", reveal: "Yes. Quantity rose proportionately more than price fell, so spending went up: elasticity is greater than 1." },
+        { label: "Inelastic", reveal: "No. If spending rises when price falls, quantity rose proportionately more than price fell: demand is elastic." },
+      ],
+    },
+    lead: "Price elasticity is measured by the proportionate, point, arc and total outlay methods.",
+    check: [
+      ask("At the midpoint of a straight-line demand curve, elasticity is…", "1", ["0", "Infinite", "2"], "Point elasticity = lower segment ÷ upper segment, and the two are equal at the midpoint."),
+      ask("Price rises and total outlay stays the same. Demand is…", "Unitary elastic", ["Perfectly elastic", "Inelastic", "Elastic"], "Equal proportionate changes leave P × Q unchanged; the curve is a rectangular hyperbola."),
+      ask("Why does the arc method use average price and quantity?", "So the answer is the same whether price rises or falls", ["To make elasticity positive", "Because the curve is a straight line", "To measure total outlay"], "Without averages, the base changes with the direction of the move."),
+    ],
+    lens: [],
+    reflect: "Think of something whose price went up recently. Did you spend more or less on it in total, and what does that say about your elasticity?",
+    summary: {
+      points: [
+        "Proportionate: e = (ΔQ/Q) ÷ (ΔP/P).",
+        "Point: lower segment ÷ upper segment; 1 at the midpoint, ∞ and 0 at the ends.",
+        "Arc: the midpoint formula, the same both ways.",
+        "Total outlay (Marshall): spending up when price falls means elastic.",
+      ],
+      memory: "Watch the spending: price down, spending up means elastic.",
+    },
+  },
+  {
     blockId: "five-degrees-of-price-elasticity",
     name: "Five degrees of price elasticity",
     intro: "From perfectly elastic to perfectly inelastic.",

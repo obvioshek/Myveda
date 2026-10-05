@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Header from "@/components/landing/Header";
-import AccountLink from "@/components/landing/AccountLink";
 import BrandMark from "@/components/landing/Brand";
 import ContinueBand from "@/components/landing/ContinueBand";
 import HeroPair from "@/components/landing/HeroPair";
@@ -242,7 +241,6 @@ export default function LandingPage() {
           <nav className="foot-col" aria-label="Contact">
             <span className="label">Contact</span>
             <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
-            <AccountLink />
             <Link href="/privacy">Privacy</Link>
           </nav>
         </div>

@@ -5,12 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import { NAV } from "@/content/landing";
 import BrandMark from "./Brand";
 import SiteSearch from "@/components/learn/SiteSearch";
-import { signInLabel, signInOnly, useAccount } from "./account";
 
 // Sticky header with a thin red reading-progress rule along its foot and a
 // native <details> menu on small screens.
 export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel: React.ReactNode; chaptersList: React.ReactNode }) {
-  const account = signInOnly(useAccount());
   const bar = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDetailsElement>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +46,6 @@ export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel:
         </nav>
         <div className="top-end">
           <SiteSearch />
-          {account && <a className="btn btn-ghost hide-md" href={account.href}>{signInLabel(account)}</a>}
           <Link className="btn btn-primary" href="/learn">Start reading</Link>
           <details className="mnav" ref={menu}>
             <summary aria-label="Menu">
@@ -58,7 +55,6 @@ export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel:
               {NAV.map(n => n.href === "#chapters"
                 ? <details key={n.href} className="mnav-sub"><summary>{n.label}</summary>{chaptersList}</details>
                 : <a key={n.href} href={n.href} onClick={close}>{n.label}</a>)}
-              {account && <a href={account.href} onClick={close}>{signInLabel(account)}</a>}
             </nav>
           </details>
         </div>

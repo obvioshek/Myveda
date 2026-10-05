@@ -796,5 +796,236 @@
   "term": "SMCR Model",
   "def": "David Berlo's 1960 model of source, message, channel and receiver, each shaped by human factors such as skills, attitudes and culture.",
   "chapter": 4
+ },
+ {
+  "id": "managerial-economics",
+  "letter": "M",
+  "term": "Managerial Economics",
+  "def": "The integration of economic theory with business practice to help managers make decisions and plan ahead (Spencer and Siegelman); also called business economics.",
+  "chapter": 7
+ },
+ {
+  "id": "demand-function",
+  "letter": "D",
+  "term": "Demand Function",
+  "def": "An equation stating quantity demanded as depending on own price, related prices, income, tastes, expectations, population and advertising.",
+  "chapter": 7
+ },
+ {
+  "id": "giffen-good",
+  "letter": "G",
+  "term": "Giffen Good",
+  "def": "A strongly inferior staple taking a large share of a poor household's budget, whose demand rises when its price rises; named by Marshall after Sir Robert Giffen.",
+  "chapter": 7
+ },
+ {
+  "id": "veblen-good",
+  "letter": "V",
+  "term": "Veblen Good",
+  "def": "A good bought partly because its high price signals status, so demand can rise with price; after Thorstein Veblen's idea of conspicuous consumption (1899).",
+  "chapter": 7
+ },
+ {
+  "id": "demand-forecasting",
+  "letter": "D",
+  "term": "Demand Forecasting",
+  "def": "Estimating future demand for a product, by survey methods or statistical methods, to plan production, prices and capacity.",
+  "chapter": 7
+ },
+ {
+  "id": "delphi-method",
+  "letter": "D",
+  "term": "Delphi Method",
+  "def": "A forecasting method in which experts answer anonymously in rounds, seeing a summary of others' views, until their estimates converge.",
+  "chapter": 7
+ },
+ {
+  "id": "trend-projection",
+  "letter": "T",
+  "term": "Trend Projection",
+  "def": "Forecasting by fitting a trend to past sales, for example by least squares, and extending it into the future.",
+  "chapter": 7
+ },
+ {
+  "id": "barometric-method",
+  "letter": "B",
+  "term": "Barometric Method",
+  "def": "Forecasting demand from leading indicators that move before it, such as building permits ahead of cement demand.",
+  "chapter": 7
+ },
+ {
+  "id": "point-elasticity",
+  "letter": "P",
+  "term": "Point Elasticity",
+  "def": "Elasticity at a single point on a demand curve; on a straight line it equals the lower segment divided by the upper segment.",
+  "chapter": 8
+ },
+ {
+  "id": "arc-elasticity",
+  "letter": "A",
+  "term": "Arc Elasticity",
+  "def": "Elasticity between two points on a demand curve, measured with average price and quantity so the result is the same in either direction.",
+  "chapter": 8
+ },
+ {
+  "id": "total-outlay-method",
+  "letter": "T",
+  "term": "Total Outlay Method",
+  "def": "Marshall's method of judging elasticity from total spending: if spending rises when price falls, demand is elastic; if unchanged, unitary; if it falls, inelastic.",
+  "chapter": 8
+ },
+ {
+  "id": "line-organisation",
+  "letter": "L",
+  "term": "Line Organisation",
+  "def": "The simplest form of organisation, in which authority runs straight down a single chain of command.",
+  "chapter": 6
+ },
+ {
+  "id": "line-and-staff-organisation",
+  "letter": "L",
+  "term": "Line and Staff Organisation",
+  "def": "A form in which line managers hold authority to command and staff specialists advise and serve them.",
+  "chapter": 6
+ },
+ {
+  "id": "committee-organisation",
+  "letter": "C",
+  "term": "Committee Organisation",
+  "def": "An arrangement in which a group of managers decides jointly on matters referred to it.",
+  "chapter": 6
+ },
+ {
+  "id": "project-organisation",
+  "letter": "P",
+  "term": "Project Organisation",
+  "def": "A temporary structure drawing specialists from several departments for one time-bound goal, disbanded when it is met.",
+  "chapter": 6
+ },
+ {
+  "id": "mechanistic-and-organic-structures",
+  "letter": "M",
+  "term": "Mechanistic and Organic Structures",
+  "def": "Burns and Stalker's (1961) contrast between rigid, centralised structures suited to stable conditions and flexible, decentralised ones suited to change.",
+  "chapter": 6
+ },
+ {
+  "id": "informal-organisation",
+  "letter": "I",
+  "term": "Informal Organisation",
+  "def": "The network of personal and social relationships that grows on its own alongside the formal structure.",
+  "chapter": 6
+ },
+ {
+  "id": "acceptance-theory-of-authority",
+  "letter": "A",
+  "term": "Acceptance Theory of Authority",
+  "def": "Chester Barnard's view (1938) that an order has authority only if those who receive it accept it.",
+  "chapter": 6
+ },
+ {
+  "id": "accountability",
+  "letter": "A",
+  "term": "Accountability",
+  "def": "The obligation to answer to a superior for the results of assigned work; it flows upward and cannot be delegated away.",
+  "chapter": 6
+ },
+ {
+  "id": "parity-of-authority-and-responsibility",
+  "letter": "P",
+  "term": "Parity of Authority and Responsibility",
+  "def": "The principle that the authority given to a person should match the responsibility placed on them.",
+  "chapter": 6
+ },
+ {
+  "id": "graicunas-formula",
+  "letter": "G",
+  "term": "Graicunas's Formula",
+  "def": "V. A. Graicunas's (1933) count of a manager's possible relationships with n subordinates: n[2^(n−1) + n − 1].",
+  "chapter": 6
+ },
+ {
+  "id": "centralisation",
+  "letter": "C",
+  "term": "Centralisation",
+  "def": "The systematic and consistent reservation of authority at central points in an organisation (Louis A. Allen).",
+  "chapter": 6
+ },
+ {
+  "id": "market",
+  "letter": "M",
+  "term": "Market",
+  "def": "In economics, the whole set of buyers and sellers of a commodity in contact with each other, not a particular place.",
+  "chapter": 11
+ },
+ {
+  "id": "monopsony",
+  "letter": "M",
+  "term": "Monopsony",
+  "def": "A market with a single buyer facing many sellers.",
+  "chapter": 11
+ },
+ {
+  "id": "bilateral-monopoly",
+  "letter": "B",
+  "term": "Bilateral Monopoly",
+  "def": "A market in which a single seller faces a single buyer, so price is settled by bargaining within limits.",
+  "chapter": 11
+ },
+ {
+  "id": "marginal-revenue",
+  "letter": "M",
+  "term": "Marginal Revenue",
+  "def": "The change in total revenue from selling one more unit; below price whenever the firm must cut price to sell more.",
+  "chapter": 11
+ },
+ {
+  "id": "average-revenue",
+  "letter": "A",
+  "term": "Average Revenue",
+  "def": "Total revenue divided by quantity sold, which equals price; the average revenue curve is the firm's demand curve.",
+  "chapter": 11
+ },
+ {
+  "id": "natural-monopoly",
+  "letter": "N",
+  "term": "Natural Monopoly",
+  "def": "A monopoly arising because economies of scale let one firm supply the whole market more cheaply than several could.",
+  "chapter": 11
+ },
+ {
+  "id": "excess-capacity",
+  "letter": "E",
+  "term": "Excess Capacity",
+  "def": "Under monopolistic competition, the shortfall between a firm's long-run output and the output at which its average cost would be lowest.",
+  "chapter": 11
+ },
+ {
+  "id": "duopoly",
+  "letter": "D",
+  "term": "Duopoly",
+  "def": "An oligopoly with two sellers.",
+  "chapter": 11
+ },
+ {
+  "id": "cournot-model",
+  "letter": "C",
+  "term": "Cournot Model",
+  "def": "Augustin Cournot's 1838 duopoly model in which each firm chooses output taking its rival's as given; each produces one-third of the competitive output.",
+  "chapter": 11
+ },
+ {
+  "id": "cartel",
+  "letter": "C",
+  "term": "Cartel",
+  "def": "A formal agreement among firms to fix a joint price and share out output, such as OPEC.",
+  "chapter": 11
+ },
+ {
+  "id": "price-leadership",
+  "letter": "P",
+  "term": "Price Leadership",
+  "def": "Tacit collusion in which firms follow the prices set by a low-cost, dominant or barometric firm.",
+  "chapter": 11
  }
 ]

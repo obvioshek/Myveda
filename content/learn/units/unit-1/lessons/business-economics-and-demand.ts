@@ -31,6 +31,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "managerial-economics",
+    name: "Managerial economics",
+    intro: "Economic theory put to work on business decisions.",
+    before: {
+      q: "Is managerial economics mainly about the whole economy or about the firm?",
+      choices: [
+        { label: "The whole economy", reveal: "Not mainly. Its core is microeconomic, centred on the firm; it uses macroeconomics to understand the environment the firm works in." },
+        { label: "The firm", reveal: "Right. Its core is microeconomic, centred on the firm; it uses macroeconomics to understand the environment the firm works in." },
+      ],
+    },
+    lead: "Managerial economics integrates economic theory with business practice to help managers decide and plan ahead.",
+    check: [
+      ask("Who defined managerial economics as the integration of economic theory with business practice for decision-making and forward planning?", "Spencer and Siegelman", ["Joel Dean", "Edwin Mansfield", "Alfred Marshall"], "Milton Spencer and Louis Siegelman (1959). Joel Dean wrote the first textbook on the subject in 1951."),
+      ask("Managerial economics is described as normative because it…", "Says what the firm should do", ["Only describes what firms do", "Deals with the whole economy", "Avoids numbers"], "It prescribes decisions, which makes it normative and pragmatic."),
+      ask("Which belongs to the operational (internal) side of its scope?", "Demand forecasting", ["Government policy", "Foreign trade", "National income"], "The others belong to the environmental (macro) side."),
+    ],
+    lens: [],
+    reflect: "Which business decision you have seen could have been made better with a demand forecast or a cost analysis?",
+    summary: {
+      points: [
+        "Integrates economic theory with business practice (Spencer and Siegelman, 1959); Joel Dean's 1951 text was the first.",
+        "Mainly micro, normative, pragmatic, decision-oriented; uses macro for the environment.",
+        "Operational scope: demand, cost, pricing, profit, capital. Environmental scope: the economy and policy.",
+        "Objectives beyond profit: sales (Baumol), growth (Marris), satisficing (Simon).",
+      ],
+      memory: "Theory meets practice, for decisions and forward planning.",
+    },
+  },
+  {
     blockId: "how-economics-has-been-defined",
     name: "How economics has been defined",
     intro: "Five writers, five emphases.",
@@ -44,7 +73,7 @@ const lessons: Lesson[] = [
     lead: "Wealth, welfare, scarcity and choice, income and employment, resources and growth: five emphases over time.",
     check: [
       ask("Which writer is linked to welfare, in 1890?", "Alfred Marshall", ["Adam Smith", "Lionel Robbins", "J. M. Keynes"], "Marshall: the study of the ordinary business of life, and human welfare."),
-      ask("Which writer is linked to income and employment, in 1936?", "J. M. Keynes", ["Paul Samuelson", "Adam Smith", "Alfred Marshall"], "Keynes: the administration of scarce resources, with income and employment."),
+      ask("Which writer is linked to income and employment, in 1936?", "J. M. Keynes", ["Paul Samuelson", "Adam Smith", "Alfred Marshall"], "Keynes, in The General Theory: what determines a whole economy's income, output and employment."),
       ask("Which writer wrote in 1776, on wealth creation?", "Adam Smith", ["Alfred Marshall", "Lionel Robbins", "Paul Samuelson"], "The nature and causes of the wealth of nations."),
     ],
     lens: [
@@ -88,6 +117,35 @@ const lessons: Lesson[] = [
         "Determinants: price, income, tastes, related goods, expected prices, population and government policy.",
       ],
       memory: "Desire, ability, willingness.",
+    },
+  },
+  {
+    blockId: "the-demand-function",
+    name: "The demand function",
+    intro: "Quantity demanded as a function of its determinants.",
+    before: {
+      q: "Along a straight-line demand curve, is elasticity the same at every point?",
+      choices: [
+        { label: "Yes, the slope is constant", reveal: "No. The slope is constant, but elasticity is slope times P/Q, which changes along the line: high near the top, low near the bottom." },
+        { label: "No", reveal: "Right. The slope is constant, but elasticity is slope times P/Q, which changes along the line: high near the top, low near the bottom." },
+      ],
+    },
+    lead: "The demand function writes demand as depending on own price, related prices, income, tastes, expectations, population and advertising.",
+    check: [
+      ask("In Dx = f(Px, Pr, Y, T, E, N, A), what does Y stand for?", "Income", ["Yield", "Year", "Tastes"], "T is tastes, E expectations, N population and A advertising."),
+      ask("For Q = 50 − 2.5P, what is the quantity demanded at P = 12?", "20", ["5", "12", "30"], "50 − 2.5 × 12 = 50 − 30 = 20."),
+      ask("Moving down a straight-line demand curve, elasticity…", "Falls", ["Rises", "Stays the same", "Becomes negative infinity"], "Elasticity = slope × P/Q, and P/Q falls as you move down the line."),
+    ],
+    lens: [],
+    reflect: "Pick something you buy often. Which variable in the demand function moves your purchases most?",
+    summary: {
+      points: [
+        "Dx = f(Px, Pr, Y, T, E, N, A).",
+        "Schedule: a table of prices and quantities; curve: its graph.",
+        "Linear functions have constant slope; non-linear ones do not.",
+        "Slope is not elasticity: elasticity changes along a straight line.",
+      ],
+      memory: "Price plus six other forces; the slope is not the elasticity.",
     },
   },
   {
@@ -178,6 +236,35 @@ const lessons: Lesson[] = [
         "Direct (final consumption) and independent (unaffected by other goods).",
       ],
       memory: "Individual, market, joint, composite, derived, direct, independent.",
+    },
+  },
+  {
+    blockId: "demand-forecasting",
+    name: "Demand forecasting",
+    intro: "Estimating future demand, by asking people or by reading the data.",
+    before: {
+      q: "A firm is launching a product nobody has sold before. Can it forecast demand from past sales trends?",
+      choices: [
+        { label: "Yes", reveal: "It has no past sales to project. For a new product, survey methods, expert opinion or a market experiment are the usual routes." },
+        { label: "No", reveal: "Right. There is no sales history to project, so survey methods, expert opinion or a market experiment are the usual routes." },
+      ],
+    },
+    lead: "Demand forecasting estimates future demand by survey methods (asking) or statistical methods (reading the data).",
+    check: [
+      ask("In the Delphi method, experts…", "Answer anonymously in rounds until their estimates converge", ["Meet face to face and vote once", "Are replaced by a regression model", "Test-market the product"], "It was developed at RAND in the 1950s; seeing a summary of others' views, experts revise in rounds."),
+      ask("Using building permits to predict cement demand is the…", "Barometric method", ["Trend projection method", "End-use method", "Collective opinion method"], "Building permits are a leading indicator that moves before cement demand."),
+      ask("Which method assumes the past pattern of sales continues?", "Trend projection", ["Market experiment", "Delphi method", "Survey of buyers' intentions"], "It fits a trend to past sales, for example by least squares, and extends it."),
+    ],
+    lens: [],
+    reflect: "If you had to forecast next year's demand for a product you know, which method would you trust most, and why?",
+    summary: {
+      points: [
+        "Short-run uses: production, pricing, sales targets, finance. Long-run: capacity, investment, manpower.",
+        "Survey methods: buyers' intentions, sales-force opinion, expert opinion and Delphi, market experiments.",
+        "Statistical methods: trend projection, regression, barometric (leading indicators).",
+        "Surveys suit new products; statistics suit established ones.",
+      ],
+      memory: "Ask people, or read the numbers; for something new, ask.",
     },
   },
 ];
