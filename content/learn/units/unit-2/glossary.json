@@ -1,0 +1,681 @@
+[
+ {
+  "id": "achievement-need",
+  "letter": "A",
+  "term": "Achievement Need",
+  "def": "McClelland's need for accomplishing challenging goals and excelling at tasks.",
+  "chapter": 3
+ },
+ {
+  "id": "affiliation-need",
+  "letter": "A",
+  "term": "Affiliation Need",
+  "def": "McClelland's need for warm, friendly interpersonal relationships and a sense of belonging.",
+  "chapter": 3
+ },
+ {
+  "id": "aptitude-test",
+  "letter": "A",
+  "term": "Aptitude Test",
+  "def": "A selection test assessing a candidate's capacity to learn specific job-related skills.",
+  "chapter": 12
+ },
+ {
+  "id": "attitude",
+  "letter": "A",
+  "term": "Attitude",
+  "def": "A learned tendency to respond consistently, favourably or unfavourably, toward a person, object or situation.",
+  "chapter": 2
+ },
+ {
+  "id": "autocratic-leadership",
+  "letter": "A",
+  "term": "Autocratic Leadership",
+  "def": "A leadership style involving total leader control with minimal team input, best suited to emergencies.",
+  "chapter": 4
+ },
+ {
+  "id": "behaviourist-theory-personality",
+  "letter": "B",
+  "term": "Behaviourist Theory (Personality)",
+  "def": "A theory holding that personality is shaped by learning, conditioning and environment rather than internal drives.",
+  "chapter": 2
+ },
+ {
+  "id": "big-five-model-ocean",
+  "letter": "B",
+  "term": "Big Five Model (OCEAN)",
+  "def": "A trait-based personality framework comprising Openness, Conscientiousness, Extraversion, Agreeableness and Neuroticism.",
+  "chapter": 2
+ },
+ {
+  "id": "bureaucratic-management",
+  "letter": "B",
+  "term": "Bureaucratic Management",
+  "def": "Max Weber's approach emphasising clear hierarchy, detailed rules and impersonality to achieve efficiency and eliminate favouritism.",
+  "chapter": 1
+ },
+ {
+  "id": "classical-conditioning",
+  "letter": "C",
+  "term": "Classical Conditioning",
+  "def": "Pavlov's learning theory linking a neutral stimulus with a natural response through repeated association.",
+  "chapter": 3
+ },
+ {
+  "id": "cognitive-learning",
+  "letter": "C",
+  "term": "Cognitive Learning",
+  "def": "A learning theory (Tolman, Piaget) emphasising reasoning, thinking and problem-solving over conditioning.",
+  "chapter": 3
+ },
+ {
+  "id": "contingency-theory-unit-2",
+  "letter": "C",
+  "term": "Contingency Theory",
+  "def": "A management theory holding that there is no single best way to organise; the right approach depends on the specific situation.",
+  "chapter": 1
+ },
+ {
+  "id": "contrast-effect",
+  "letter": "C",
+  "term": "Contrast Effect",
+  "def": "A perceptual error where a person is evaluated by comparison with others rather than against objective standards.",
+  "chapter": 2
+ },
+ {
+  "id": "critical-incident-technique",
+  "letter": "C",
+  "term": "Critical Incident Technique",
+  "def": "A job analysis method documenting extreme examples of good or poor performance to uncover key job behaviours.",
+  "chapter": 14
+ },
+ {
+  "id": "democratic-leadership",
+  "letter": "D",
+  "term": "Democratic Leadership",
+  "def": "A leadership style that actively involves the team in decision-making.",
+  "chapter": 4
+ },
+ {
+  "id": "development-hr",
+  "letter": "D",
+  "term": "Development (HR)",
+  "def": "Long-term, broad career-oriented growth activities that prepare employees for future roles.",
+  "chapter": 13
+ },
+ {
+  "id": "direct-observation",
+  "letter": "D",
+  "term": "Direct Observation",
+  "def": "A job analysis method of watching an employee perform routine or physical tasks in real time.",
+  "chapter": 14
+ },
+ {
+  "id": "distributive-justice",
+  "letter": "D",
+  "term": "Distributive Justice",
+  "def": "The fairness of outcomes in the allocation of rewards and resources, based on equity, equality or need.",
+  "chapter": 9
+ },
+ {
+  "id": "employer-branding",
+  "letter": "E",
+  "term": "Employer Branding",
+  "def": "An organisation's reputation and image as an employer, used to attract quality candidates.",
+  "chapter": 16
+ },
+ {
+  "id": "evidence-based-hrm",
+  "letter": "E",
+  "term": "Evidence-Based HRM",
+  "def": "An HR approach that utilises hard data and analytics to drive scientific decision-making.",
+  "chapter": 10
+ },
+ {
+  "id": "external-recruitment",
+  "letter": "E",
+  "term": "External Recruitment",
+  "def": "Sourcing candidates from outside the organisation to inject fresh skills and perspectives.",
+  "chapter": 12
+ },
+ {
+  "id": "external-whistleblowing",
+  "letter": "E",
+  "term": "External Whistleblowing",
+  "def": "Reporting organisational wrongdoing outside the company, such as to media or regulators, typically when internal channels fail.",
+  "chapter": 9
+ },
+ {
+  "id": "factor-comparison",
+  "letter": "F",
+  "term": "Factor Comparison",
+  "def": "A quantitative job evaluation method that ranks new jobs against benchmark jobs with known, agreed-upon pay rates.",
+  "chapter": 14
+ },
+ {
+  "id": "formal-groups",
+  "letter": "F",
+  "term": "Formal Groups",
+  "def": "Groups structured by the organisation with assigned tasks and specific objectives.",
+  "chapter": 4
+ },
+ {
+  "id": "forming",
+  "letter": "F",
+  "term": "Forming",
+  "def": "Tuckman's first stage of team development, marked by cautious, polite behaviour and unclear roles.",
+  "chapter": 4
+ },
+ {
+  "id": "grading-classification",
+  "letter": "G",
+  "term": "Grading/Classification",
+  "def": "A non-quantitative job evaluation method grouping jobs into predefined salary grades.",
+  "chapter": 14
+ },
+ {
+  "id": "group-cohesiveness",
+  "letter": "G",
+  "term": "Group Cohesiveness",
+  "def": "The psychological bond between group members; high cohesion generally improves performance but can suppress dissent if excessive.",
+  "chapter": 4
+ },
+ {
+  "id": "groupthink",
+  "letter": "G",
+  "term": "Groupthink",
+  "def": "A phenomenon where the desire for group harmony overrides critical thinking, leading to poor high-stakes decisions.",
+  "chapter": 4
+ },
+ {
+  "id": "halo-horn-effect",
+  "letter": "H",
+  "term": "Halo/Horn Effect",
+  "def": "A perceptual error of evaluating a person entirely based on one positive (halo) or negative (horn) trait.",
+  "chapter": 2
+ },
+ {
+  "id": "hawthorne-effect",
+  "letter": "H",
+  "term": "Hawthorne Effect",
+  "def": "The tendency for productivity to rise when workers feel observed and valued, discovered in Elton Mayo's studies.",
+  "chapter": 1
+ },
+ {
+  "id": "herzbergs-two-factor-theory",
+  "letter": "H",
+  "term": "Herzberg's Two-Factor Theory",
+  "def": "A motivation theory distinguishing Motivators, which cause satisfaction, from Hygiene Factors, which prevent dissatisfaction.",
+  "chapter": 3
+ },
+ {
+  "id": "hierarchy-of-needs",
+  "letter": "H",
+  "term": "Hierarchy of Needs",
+  "def": "Maslow's model of five sequential need levels — Physiological, Safety, Social, Esteem and Self-Actualisation.",
+  "chapter": 3
+ },
+ {
+  "id": "high-performance-work-system-hpws",
+  "letter": "H",
+  "term": "High-Performance Work System (HPWS)",
+  "def": "An HR approach integrating strategy with teamwork, empowerment and performance-linked rewards.",
+  "chapter": 10
+ },
+ {
+  "id": "human-resource-management-hrm",
+  "letter": "H",
+  "term": "Human Resource Management (HRM)",
+  "def": "The systematic process of acquiring, developing, motivating and retaining employees to achieve organisational goals.",
+  "chapter": 10
+ },
+ {
+  "id": "human-resource-planning-hrp",
+  "letter": "H",
+  "term": "Human Resource Planning (HRP)",
+  "def": "The systematic process of forecasting and managing the demand and supply of human resources.",
+  "chapter": 11
+ },
+ {
+  "id": "humanistic-theory-personality",
+  "letter": "H",
+  "term": "Humanistic Theory (Personality)",
+  "def": "A theory (Rogers, Maslow) focused on inherent goodness, self-growth and self-actualisation.",
+  "chapter": 2
+ },
+ {
+  "id": "hygiene-factors",
+  "letter": "H",
+  "term": "Hygiene Factors",
+  "def": "Herzberg's category of factors, such as base pay, that prevent job dissatisfaction but do not motivate.",
+  "chapter": 3
+ },
+ {
+  "id": "informal-groups",
+  "letter": "I",
+  "term": "Informal Groups",
+  "def": "Naturally formed groups based on shared interests and social connections rather than organisational structure.",
+  "chapter": 4
+ },
+ {
+  "id": "interactional-justice",
+  "letter": "I",
+  "term": "Interactional Justice",
+  "def": "The fairness of interpersonal treatment and communication during decision-making, covering both dignity and honest explanation.",
+  "chapter": 9
+ },
+ {
+  "id": "internal-recruitment",
+  "letter": "I",
+  "term": "Internal Recruitment",
+  "def": "Filling vacancies by promoting or transferring existing employees.",
+  "chapter": 12
+ },
+ {
+  "id": "internal-whistleblowing",
+  "letter": "I",
+  "term": "Internal Whistleblowing",
+  "def": "Reporting wrongdoing within the company, such as to HR or an ethics committee.",
+  "chapter": 9
+ },
+ {
+  "id": "interpretation",
+  "letter": "I",
+  "term": "Interpretation",
+  "def": "The perceptual stage of assigning meaning to organised sensory data based on prior experience and beliefs.",
+  "chapter": 2
+ },
+ {
+  "id": "job-analysis",
+  "letter": "J",
+  "term": "Job Analysis",
+  "def": "A systematic diagnostic process of studying the tasks, methods, skills and attitudes required for a specific job.",
+  "chapter": 14
+ },
+ {
+  "id": "job-description",
+  "letter": "J",
+  "term": "Job Description",
+  "def": "A document detailing a job's title, duties and working conditions to reduce ambiguity for applicants.",
+  "chapter": 14
+ },
+ {
+  "id": "job-enlargement",
+  "letter": "J",
+  "term": "Job Enlargement",
+  "def": "Increasing the variety and number of tasks at the same responsibility level — horizontal expansion.",
+  "chapter": 14
+ },
+ {
+  "id": "job-enrichment",
+  "letter": "J",
+  "term": "Job Enrichment",
+  "def": "Adding greater autonomy and decision-making power to a job to boost intrinsic motivation — vertical expansion.",
+  "chapter": 14
+ },
+ {
+  "id": "job-evaluation",
+  "letter": "J",
+  "term": "Job Evaluation",
+  "def": "A systematic process assessing the relative value of one job compared to all others in an organisation.",
+  "chapter": 14
+ },
+ {
+  "id": "job-involvement",
+  "letter": "J",
+  "term": "Job Involvement",
+  "def": "The degree of psychological identification an employee has with their job as part of their self-worth.",
+  "chapter": 2
+ },
+ {
+  "id": "job-rotation",
+  "letter": "J",
+  "term": "Job Rotation",
+  "def": "Periodically moving employees across different tasks to reduce boredom and build cross-functional skills.",
+  "chapter": 14
+ },
+ {
+  "id": "job-satisfaction",
+  "letter": "J",
+  "term": "Job Satisfaction",
+  "def": "Positive or negative feelings toward one's job roles that influence performance.",
+  "chapter": 2
+ },
+ {
+  "id": "job-simplification",
+  "letter": "J",
+  "term": "Job Simplification",
+  "def": "Creating highly repetitive, specialised tasks to maximise efficiency, which can cause monotony.",
+  "chapter": 14
+ },
+ {
+  "id": "job-specification",
+  "letter": "J",
+  "term": "Job Specification",
+  "def": "A document defining the ideal candidate profile — education, experience and traits — required for a job.",
+  "chapter": 14
+ },
+ {
+  "id": "laissez-faire-leadership",
+  "letter": "L",
+  "term": "Laissez-Faire Leadership",
+  "def": "A leadership style granting high team autonomy with minimal guidance, effective for highly skilled, self-motivated professionals.",
+  "chapter": 4
+ },
+ {
+  "id": "leadership",
+  "letter": "L",
+  "term": "Leadership",
+  "def": "The art of motivating and guiding a group toward a shared vision by setting direction and managing conflict.",
+  "chapter": 4
+ },
+ {
+  "id": "learning",
+  "letter": "L",
+  "term": "Learning",
+  "def": "A permanent change in behaviour or knowledge acquired through experience, observation or practice.",
+  "chapter": 3
+ },
+ {
+  "id": "mbti-myers-briggs-type-indicator",
+  "letter": "M",
+  "term": "MBTI (Myers-Briggs Type Indicator)",
+  "def": "A personality framework based on four dichotomies: Extraversion/Introversion, Sensing/Intuition, Thinking/Feeling, and Judging/Perceiving.",
+  "chapter": 2
+ },
+ {
+  "id": "mcclellands-needs-theory",
+  "letter": "M",
+  "term": "McClelland's Needs Theory",
+  "def": "A motivation theory proposing that behaviour is driven by three needs — Achievement, Affiliation and Power.",
+  "chapter": 3
+ },
+ {
+  "id": "mentoring",
+  "letter": "M",
+  "term": "Mentoring",
+  "def": "A development method pairing an employee with an experienced guide to support long-term career growth.",
+  "chapter": 13
+ },
+ {
+  "id": "motivation",
+  "letter": "M",
+  "term": "Motivation",
+  "def": "The internal or external push that energises, sustains and directs behaviour toward goals.",
+  "chapter": 3
+ },
+ {
+  "id": "motivators",
+  "letter": "M",
+  "term": "Motivators",
+  "def": "Herzberg's category of factors, such as recognition, that actively cause job satisfaction.",
+  "chapter": 3
+ },
+ {
+  "id": "norming",
+  "letter": "N",
+  "term": "Norming",
+  "def": "Tuckman's third stage of team development, where trust increases and roles are accepted.",
+  "chapter": 4
+ },
+ {
+  "id": "off-the-job-training",
+  "letter": "O",
+  "term": "Off-the-Job Training",
+  "def": "Training conducted outside the normal work environment, focused on theoretical or simulated learning.",
+  "chapter": 13
+ },
+ {
+  "id": "onboarding",
+  "letter": "O",
+  "term": "Onboarding",
+  "def": "The process of introducing new hires to company culture and policies after a job offer.",
+  "chapter": 12
+ },
+ {
+  "id": "on-the-job-training-ojt",
+  "letter": "O",
+  "term": "On-the-Job Training (OJT)",
+  "def": "Learning through hands-on experience while performing actual duties under supervision.",
+  "chapter": 13
+ },
+ {
+  "id": "operant-conditioning",
+  "letter": "O",
+  "term": "Operant Conditioning",
+  "def": "Skinner's learning theory in which behaviour is shaped through rewards and punishments.",
+  "chapter": 3
+ },
+ {
+  "id": "organisational-commitment",
+  "letter": "O",
+  "term": "Organisational Commitment",
+  "def": "An employee's emotional loyalty to the organisation, which reduces turnover.",
+  "chapter": 2
+ },
+ {
+  "id": "organisational-justice",
+  "letter": "O",
+  "term": "Organisational Justice",
+  "def": "Employees' perceptions of fairness in the workplace, covering both outcomes and the treatment used to reach them.",
+  "chapter": 9
+ },
+ {
+  "id": "perception",
+  "letter": "P",
+  "term": "Perception",
+  "def": "The subjective process of selecting, organising and interpreting sensory information to give it meaning.",
+  "chapter": 2
+ },
+ {
+  "id": "personality",
+  "letter": "P",
+  "term": "Personality",
+  "def": "A unique, consistent pattern of thoughts, emotions and behaviours shaped by genetics, environment and experience.",
+  "chapter": 2
+ },
+ {
+  "id": "points-system",
+  "letter": "P",
+  "term": "Points System",
+  "def": "A quantitative job evaluation method assigning weighted points to compensable factors that convert into salary bands.",
+  "chapter": 14
+ },
+ {
+  "id": "procedural-justice",
+  "letter": "P",
+  "term": "Procedural Justice",
+  "def": "The fairness of the methods and processes used to reach a decision, regardless of outcome.",
+  "chapter": 9
+ },
+ {
+  "id": "projection",
+  "letter": "P",
+  "term": "Projection",
+  "def": "A perceptual error of attributing one's own motives or feelings to other people.",
+  "chapter": 2
+ },
+ {
+  "id": "psychoanalytic-theory",
+  "letter": "P",
+  "term": "Psychoanalytic Theory",
+  "def": "Freud's theory that personality is driven by unconscious forces — id, ego, superego — and early childhood experiences.",
+  "chapter": 2
+ },
+ {
+  "id": "ranking-system",
+  "letter": "R",
+  "term": "Ranking System",
+  "def": "A simple, subjective job evaluation method comparing jobs directly based on overall complexity.",
+  "chapter": 14
+ },
+ {
+  "id": "recruitment",
+  "letter": "R",
+  "term": "Recruitment",
+  "def": "The process of searching for, identifying and attracting qualified candidates to fill job vacancies.",
+  "chapter": 12
+ },
+ {
+  "id": "reference-background-check",
+  "letter": "R",
+  "term": "Reference & Background Check",
+  "def": "A selection step verifying a candidate's history and credentials before an offer is made.",
+  "chapter": 12
+ },
+ {
+  "id": "resource-based-view-hr",
+  "letter": "R",
+  "term": "Resource-Based View (HR)",
+  "def": "An HR approach viewing employees as valuable assets crucial to sustainable competitive advantage.",
+  "chapter": 10
+ },
+ {
+  "id": "scenario-planning",
+  "letter": "S",
+  "term": "Scenario Planning",
+  "def": "An HR supply-analysis method anticipating multiple possible workforce futures.",
+  "chapter": 11
+ },
+ {
+  "id": "scientific-management-unit-2",
+  "letter": "S",
+  "term": "Scientific Management",
+  "def": "Taylor's approach of scientifically studying and standardising work to determine the most efficient method.",
+  "chapter": 1
+ },
+ {
+  "id": "selection",
+  "letter": "S",
+  "term": "Selection",
+  "def": "The process of choosing the most suitable candidate from the recruitment pool to minimise turnover.",
+  "chapter": 12
+ },
+ {
+  "id": "selective-perception",
+  "letter": "S",
+  "term": "Selective Perception",
+  "def": "A perceptual error of focusing only on information that confirms existing opinions.",
+  "chapter": 2
+ },
+ {
+  "id": "shortlisting",
+  "letter": "S",
+  "term": "Shortlisting",
+  "def": "The selection stage of filtering applicants who meet minimum criteria for further evaluation.",
+  "chapter": 12
+ },
+ {
+  "id": "skills-gap-analysis",
+  "letter": "S",
+  "term": "Skills Gap Analysis",
+  "def": "Identifying the precise difference between an organisation's existing and required skills.",
+  "chapter": 11
+ },
+ {
+  "id": "social-learning-theory",
+  "letter": "S",
+  "term": "Social Learning Theory",
+  "def": "Bandura's theory that people learn through observing and imitating others.",
+  "chapter": 3
+ },
+ {
+  "id": "stereotyping",
+  "letter": "S",
+  "term": "Stereotyping",
+  "def": "A perceptual error of judging an individual based on the group they belong to.",
+  "chapter": 2
+ },
+ {
+  "id": "storming",
+  "letter": "S",
+  "term": "Storming",
+  "def": "Tuckman's second stage of team development, where conflicts emerge and boundaries are tested.",
+  "chapter": 4
+ },
+ {
+  "id": "strategic-hrm",
+  "letter": "S",
+  "term": "Strategic HRM",
+  "def": "An approach integrating HR practices directly with overall corporate strategy.",
+  "chapter": 16
+ },
+ {
+  "id": "succession-planning",
+  "letter": "S",
+  "term": "Succession Planning",
+  "def": "Identifying and preparing future leaders for critical roles to ensure leadership continuity.",
+  "chapter": 11
+ },
+ {
+  "id": "systems-theory",
+  "letter": "S",
+  "term": "Systems Theory",
+  "def": "A management view of organisations as open systems of interrelated parts striving toward a common goal.",
+  "chapter": 1
+ },
+ {
+  "id": "talent-pool",
+  "letter": "T",
+  "term": "Talent Pool",
+  "def": "A curated group of potential candidates built through ongoing recruitment efforts.",
+  "chapter": 12
+ },
+ {
+  "id": "theory-x",
+  "letter": "T",
+  "term": "Theory X",
+  "def": "McGregor's assumption that employees are inherently lazy, avoid work and require coercion and control.",
+  "chapter": 1
+ },
+ {
+  "id": "theory-y",
+  "letter": "T",
+  "term": "Theory Y",
+  "def": "McGregor's assumption that employees are naturally motivated, creative and seek responsibility.",
+  "chapter": 1
+ },
+ {
+  "id": "training",
+  "letter": "T",
+  "term": "Training",
+  "def": "Short-term activities that enhance an employee's practical skills for their current job.",
+  "chapter": 13
+ },
+ {
+  "id": "trait-theory",
+  "letter": "T",
+  "term": "Trait Theory",
+  "def": "A personality theory (Allport, Big Five) defining personality through stable, measurable characteristics.",
+  "chapter": 2
+ },
+ {
+  "id": "turnover-analysis",
+  "letter": "T",
+  "term": "Turnover Analysis",
+  "def": "Examining historical employee exit patterns to predict future manpower needs.",
+  "chapter": 11
+ },
+ {
+  "id": "vrooms-expectancy-theory",
+  "letter": "V",
+  "term": "Vroom's Expectancy Theory",
+  "def": "A motivation theory proposing Motivation = Expectancy × Instrumentality × Valence, linking effort to performance and reward.",
+  "chapter": 3
+ },
+ {
+  "id": "whistle-blowers-protection-act-2014",
+  "letter": "W",
+  "term": "Whistle Blowers Protection Act, 2014",
+  "def": "India's primary law protecting the identity and employment of whistleblowers against retaliation.",
+  "chapter": 9
+ },
+ {
+  "id": "whistleblowing",
+  "letter": "W",
+  "term": "Whistleblowing",
+  "def": "The act of exposing organisational wrongdoing to protect ethical standards, laws and public welfare.",
+  "chapter": 9
+ }
+]

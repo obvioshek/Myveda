@@ -142,7 +142,7 @@ export default function LandingPage() {
               <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each one ends with the classics.</span></h2>
             </div>
             <div className="chap-cta">
-              <p className="sub">Management and managerial economics, from Fayol and Taylor to elasticity, market structures and governance. Every concept opens in place: the idea, a quick check, the classical passage beside it, and a one-page summary.</p>
+              <p className="sub">Management and managerial economics, organisational behaviour and HRM: from Fayol and Taylor to elasticity, motivation, leadership and job evaluation. Every concept opens in place: the idea, a quick check, the classical passage beside it, and a one-page summary.</p>
               <div className="btn-row">
                 <Link href="/learn" className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
                 <Link href="/learn/glossary" className="btn btn-secondary btn-lg">Browse the glossary</Link>
@@ -204,7 +204,7 @@ export default function LandingPage() {
               <Eyebrow num="७">Practice</Eyebrow>
               <h2 className="h-sm">Studying for an exam or a course? <span className="red">The same pages hold up when the stakes are higher.</span></h2>
               <p>Every concept covers what a postgraduate management course expects, from first principles to strategy.</p>
-              <Link className="more" href="/learn">Read the Unit 1 chapters<Arrow /></Link>
+              <Link className="more" href="/learn">Read the chapters<Arrow /></Link>
             </div>
           </div>
         </section>
@@ -235,7 +235,7 @@ export default function LandingPage() {
           <nav className="foot-col" aria-label="Learn">
             <span className="label">Learn</span>
             <a href="#explore">Explore ten areas</a>
-            <Link href="/learn">Unit 1 chapters</Link>
+            <Link href="/learn">All chapters</Link>
             <Link href="/learn/glossary">Glossary</Link>
             <a href="#inside">Sample concept</a>
             <a href="#practice">For exam students</a>

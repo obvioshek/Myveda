@@ -20,7 +20,7 @@ export type { Check, Lesson, LensNote } from "./lesson-kit";
 export const HOW = {
   documented: "The passage exists in a named text, and the modern concept is a fair reading of what it says.",
   view: "An interpretive parallel. The text does not discuss the modern concept; the link is a reading offered for reflection, not a claim about what the authors meant.",
-  translations: "Translations are paraphrases. Arthaśāstra references follow Kangle's critical edition; Bhagavad Gītā references are chapter.verse. Check each reference against your own edition before quoting it in submitted work.",
+  translations: "Translations are paraphrases. Arthaśāstra references follow Kangle's critical edition; Bhagavad Gītā references are chapter.verse; Tirukkuṟaḷ references are couplet numbers. Check each reference against your own edition before quoting it in submitted work.",
 };
 
 // Edit when chapter text changes; the sitemap reports it as the last-modified date.
