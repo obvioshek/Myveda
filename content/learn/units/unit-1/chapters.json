@@ -48,7 +48,7 @@
      "text": [
       "The Gītā argues that each person performs best in the work that fits their own nature, and that taking up another's task is riskier. A modern reader will see specialisation. The traditional varṇa reading is contested, so treat this as a statement about fit between person and task."
      ],
-     "quote": "“Better one's own duty, imperfectly done, than another's duty done well.” <i>śreyān svadharmo viguṇaḥ paradharmāt svanuṣṭhitāt.</i> <span class=\"ref\">Bhagavad Gītā 3.35; also 18.45</span>"
+     "quote": "“Better one's own duty, imperfectly done, than another's duty done well.” <i>śreyān svadharmo viguṇaḥ paradharmāt svanuṣṭhitāt.</i> <span class=\"ref\">Bhagavad Gītā 3.35; also 18.45–47</span>"
     },
     {
      "kind": "documented",
@@ -169,7 +169,7 @@
      "modern": "Classical",
      "classic": "the Arthaśāstra as a management manual",
      "text": [
-      "Book 2 of the Arthaśāstra sets out superintendents (<i>adhyakṣa</i>) for separate departments such as agriculture, mines, trade, treasury and accounts, each with duties and checks. That is structure, specialisation and standard procedure written down more than two thousand years ago."
+      "Book 2 of the Arthaśāstra sets out superintendents (<i>adhyakṣa</i>) for separate departments such as agriculture, mines, trade, treasury and accounts, each with duties and checks. That is structure, specialisation and standard procedure written down roughly two thousand years ago."
      ],
      "quote": "<span class=\"ref\">Arthaśāstra, Book 2 (Adhyakṣapracāra)</span>"
     },
@@ -264,7 +264,7 @@
      "modern": "Decoding and feedback",
      "classic": "hearing, reflecting, absorbing",
      "text": [
-      "The Bṛhadāraṇyaka Upaniṣad gives a three-stage path for the receiver: listen, reflect, then assimilate. Understanding is completed by the listener's own work, as in decoding and feedback."
+      "The Bṛhadāraṇyaka Upaniṣad says the Self is to be seen, heard, reflected on and deeply absorbed; later Vedānta reads this as a three-stage path: listen, reflect, then assimilate. Understanding is completed by the listener's own work, as in decoding and feedback."
      ],
      "quote": "<i>śrotavyo mantavyo nididhyāsitavyaḥ.</i> “To be heard, reflected on, deeply absorbed.” <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 2.4.5</span>"
     },
@@ -273,7 +273,7 @@
      "modern": "Communication ethics",
      "classic": "true, pleasant and beneficial",
      "text": [
-      "The Gītā sets three tests for speech: it should not agitate, it should be true, and it should be pleasant and beneficial. Manu's older formula pairs truth with pleasantness and cautions against an unpleasant truth. The Gītā adds the test of benefit."
+      "The Gītā sets three tests for speech: it should not agitate, it should be true, and it should be pleasant and beneficial. Manu's formula pairs truth with pleasantness and cautions against an unpleasant truth. The Gītā's verse also includes the test of benefit."
      ],
      "quote": "“Speech that causes no distress, that is true, pleasant and beneficial.” <i>anudvegakaraṃ vākyaṃ satyaṃ priyahitaṃ ca yat.</i> <span class=\"ref\">Bhagavad Gītā 17.15; Manusmṛti 4.138</span>"
     },
@@ -413,9 +413,9 @@
      "modern": "Span of control",
      "classic": "tiers of ten",
      "text": [
-      "Manu prescribes a layered administration: an officer over one village, one over ten, one over twenty, one over a hundred and one over a thousand. Each tier reports upward in a regular ratio, a description of scalar chain and span."
+      "Manu prescribes a layered administration: an officer over one village, one over ten, one over twenty, one over a hundred and one over a thousand. Each tier reports to the one above it, a description of scalar chain and span."
      ],
-     "quote": "<span class=\"ref\">Manusmṛti 7.114–115</span>"
+     "quote": "<span class=\"ref\">Manusmṛti 7.115–117</span>"
     },
     {
      "kind": "documented",
@@ -529,7 +529,7 @@
      "text": [
       "The Arthaśāstra's Superintendent of Commerce fixes prices and permits a stated profit margin over cost, with a different margin for imported goods. Kauṭilya treats price as something a market officer sets and watches, which is a practical analogue to price determination."
      ],
-     "quote": "<span class=\"ref\">Arthaśāstra 2.16</span>"
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16; margins at 4.2</span>"
     }
    ]
   },
@@ -570,7 +570,7 @@
      "text": [
       "The Taittirīya Upaniṣad treats food as the base of life and tells the student not to disparage it, and to make it abundant. Food is the clearest inelastic good: demand barely moves when its price does."
      ],
-     "quote": "<i>annaṃ na nindyāt, tad vratam.</i> “Do not disparage food; that is the vow.” <span class=\"ref\">Taittirīya Upaniṣad 3.7</span>"
+     "quote": "<i>annaṃ na nindyāt, tad vratam.</i> “Do not disparage food; that is the vow.” <span class=\"ref\">Taittirīya Upaniṣad 3.7; abundance at 3.9</span>"
     },
     {
      "kind": "view",
@@ -579,7 +579,7 @@
      "text": [
       "When demand is inelastic, shortages produce steep price spikes. The Arthaśāstra shows a state that does not leave this to chance: it regulates traders' margins in the marketplace and prescribes relief measures for famine and other calamities. This is the practical case for price controls and buffer stocks that elasticity analysis supports today."
      ],
-     "quote": "<span class=\"ref\">Arthaśāstra 2.16 (trade regulation); 4.3 (remedies against calamities)</span>"
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16 and 4.2 (trade regulation); 4.3 (remedies against calamities)</span>"
     }
    ]
   },
@@ -619,7 +619,7 @@
    "lensNote": null,
    "pairings": [
     {
-     "kind": "documented",
+     "kind": "view",
      "modern": "Utility is unstable",
      "classic": "sensations come and go",
      "text": [
@@ -637,7 +637,7 @@
      "quote": "<span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
     },
     {
-     "kind": "documented",
+     "kind": "view",
      "modern": "Equi-marginal allocation",
      "classic": "balance across what we consume",
      "text": [
@@ -752,7 +752,7 @@
      "text": [
       "The Arthaśāstra, in its chapter on the control of traders, names the problem of merchants who combine to hold back goods and fix prices for gain, and prescribes penalties. This is cartel behaviour, the oligopolist's temptation, and an early case for competition policy."
      ],
-     "quote": "<span class=\"ref\">Arthaśāstra, Book 4 (control of traders)</span>"
+     "quote": "<span class=\"ref\">Arthaśāstra 4.2 (control of traders)</span>"
     },
     {
      "kind": "view",
@@ -761,7 +761,7 @@
      "text": [
       "The Superintendent of Commerce permits a different profit margin on local goods and on foreign goods. It is regulated differential pricing by market. The state, not the seller, sets the difference, and the reason given is protection of the buyer, not extraction of surplus."
      ],
-     "quote": "<span class=\"ref\">Arthaśāstra 2.16</span>"
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16; margins at 4.2</span>"
     },
     {
      "kind": "documented",
@@ -816,7 +816,7 @@
      "text": [
       "The Arthaśāstra lists the heads of the state's revenue: fortified cities, countryside, mines, irrigation works, forests, herds and trade routes. It pairs them with an accounts office that records income and expenditure. It is an early sectoral accounting of an economy."
      ],
-     "quote": "<i>durgaṃ rāṣṭraṃ khaniḥ setuḥ vanaṃ vrajo vaṇikpathaś ca.</i> <span class=\"ref\">Arthaśāstra 2.6.1; accounts in Book 2</span>"
+     "quote": "<i>samāhartā durgaṃ rāṣṭraṃ khaniṃ setuṃ vanaṃ vrajaṃ vaṇikpathaṃ cāvekṣeta.</i> <span class=\"ref\">Arthaśāstra 2.6.1; accounts office at 2.7</span>"
     },
     {
      "kind": "documented",
@@ -825,7 +825,7 @@
      "text": [
       "Manu advises taking tax in small amounts, as a leech, a calf and a bee take their food. Kālidāsa describes a king who takes tax as the sun takes water, to return it many times over. Taxation is tied to a limit and to a return for the public."
      ],
-     "quote": "“As the bee takes honey little by little, so the king should draw taxes.” <i>yathālpālpam adanty ādyaṃ vāryaukovatsaṭpadāḥ.</i> <span class=\"ref\">Manusmṛti 7.129; Raghuvaṃśa 1.18</span>"
+     "quote": "“As the bee takes honey little by little, so the king should draw taxes.” <i>yathālpālpam adanty ādyaṃ vāryokovatsaṣaṭpadāḥ.</i> <span class=\"ref\">Manusmṛti 7.129; Raghuvaṃśa 1.18</span>"
     },
     {
      "kind": "view",
@@ -834,7 +834,7 @@
      "text": [
       "Where price ceilings, rationing and stock management appear in modern inflation policy, the Arthaśāstra describes the superintendent of commerce fixing prices and prescribes relief measures in calamity. It also provides for official regulation of the mint. The state is expected to act on prices directly when markets fail."
      ],
-     "quote": "<span class=\"ref\">Arthaśāstra 2.16; 4.3</span>"
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16; 4.2; 4.3; the mint at 2.12</span>"
     }
    ]
   },
@@ -907,7 +907,7 @@
      "text": [
       "The Gītā lists the qualities of a person oriented to the good: fearlessness, purity of heart, charity, self-control, straightforwardness, non-violence, truthfulness and others. This is a virtue list, and it is paired with a list of opposing vices."
      ],
-     "quote": "<i>abhayaṃ sattvasaṃśuddhir dānaṃ damaś ca.</i> <span class=\"ref\">Bhagavad Gītā 16.1–3</span>"
+     "quote": "<i>abhayaṃ sattvasaṃśuddhir jñānayogavyavasthitiḥ, dānaṃ damaś ca…</i> <span class=\"ref\">Bhagavad Gītā 16.1–3</span>"
     },
     {
      "kind": "documented",

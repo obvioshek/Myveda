@@ -18,7 +18,7 @@ const lessons: Lesson[] = [
       ask("What is the classical school's central idea?", "Replace rule of thumb with systematic management", ["Productivity follows social and psychological factors", "There is no single best way to manage", "Create, share and use knowledge as a resource"], "The others belong to the neoclassical, contingency and contemporary schools."),
     ],
     lens: [
-      { pairing: 0, adds: "A written-down structure of departments, each with duties and checks, more than two thousand years ago.", differs: "Book 2 sets out departments of a state. The classical school's own claim is that work can be studied and a best method found." },
+      { pairing: 0, adds: "A written-down structure of departments, each with duties and checks, roughly two thousand years ago.", differs: "Book 2 sets out departments of a state. The classical school's own claim is that work can be studied and a best method found." },
     ],
     reflect: "Where in your own work is a task still done by habit rather than by studying the best method?",
     summary: {
