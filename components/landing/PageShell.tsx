@@ -13,8 +13,9 @@ export default function PageShell({ children, wide = false, note = "Questions ab
         <div className="top-in">
           <Link className="brand" href="/"><BrandMark />Veda Verse</Link>
           <nav className="top-nav" aria-label="Site">
-            <div className="has-menu"><Link href="/learn">Chapters</Link><ChaptersMenu variant="panel" /></div>
-            <Link href="/learn/glossary">Glossary</Link>
+            <div className="has-menu"><Link href="/learn" prefetch={false}>Chapters</Link><ChaptersMenu variant="panel" /></div>
+            <Link href="/learn/glossary" prefetch={false}>Glossary</Link>
+            <Link href="/learn/revision" prefetch={false} className="hide-sm">Revision</Link>
           </nav>
           <SiteSearch />
         </div>
@@ -25,10 +26,11 @@ export default function PageShell({ children, wide = false, note = "Questions ab
           <div className="foot-base">
             <span>{note}</span>
             <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-            <Link href="/">Home</Link>
-            <Link href="/learn">Chapters</Link>
-            <Link href="/learn/glossary">Glossary</Link>
-            <Link href="/privacy">Privacy</Link>
+            <Link href="/" prefetch={false}>Home</Link>
+            <Link href="/learn" prefetch={false}>Chapters</Link>
+            <Link href="/learn/glossary" prefetch={false}>Glossary</Link>
+            <Link href="/learn/revision" prefetch={false}>Revision</Link>
+            <Link href="/privacy" prefetch={false}>Privacy</Link>
           </div>
         </div>
       </footer>

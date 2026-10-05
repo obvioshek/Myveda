@@ -1,4 +1,4 @@
-import { ask, type Lesson } from "./types";
+import { ask, type Lesson } from "@/content/learn/lesson-kit";
 
 const lessons: Lesson[] = [
   {

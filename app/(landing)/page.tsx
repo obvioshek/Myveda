@@ -14,7 +14,7 @@ import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import { CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
-import { CHAPTERS, chapterPath, deva } from "@/content/learn";
+import { CHAPTERS, UNITS, chapterPath, deva } from "@/content/learn";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -139,27 +139,32 @@ export default function LandingPage() {
           <div className="split end">
             <div className="sec-copy">
               <Eyebrow num="४">Read</Eyebrow>
-              <h2 id="chapters-h">Thirteen chapters. <span className="red">Each one ends with the classics.</span></h2>
+              <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each one ends with the classics.</span></h2>
             </div>
             <div className="chap-cta">
-              <p className="sub">Unit 1 of management and managerial economics, from Fayol and Taylor to elasticity, market structures and governance. Each chapter explains the idea first, then sets cited passages from India&apos;s classical texts beside it.</p>
+              <p className="sub">Management and managerial economics, from Fayol and Taylor to elasticity, market structures and governance. Every concept opens in place: the idea, a quick check, the classical passage beside it, and a one-page summary.</p>
               <div className="btn-row">
                 <Link href="/learn" className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
                 <Link href="/learn/glossary" className="btn btn-secondary btn-lg">Browse the glossary</Link>
               </div>
             </div>
           </div>
-          <ol className="grid g3 chap">
-            {CHAPTERS.map(c => (
-              <li key={c.slug} className="cell chap-c">
-                <Link href={chapterPath(c.slug)}>
-                  <span className="chap-n" lang="sa" aria-hidden="true">{deva(c.n)}</span>
-                  <span className="chap-t">{c.title}</span>
-                  <Arrow />
-                </Link>
-              </li>
-            ))}
-          </ol>
+          {UNITS.map(u => (
+            <div key={u.id} className="chap-unit">
+              {UNITS.length > 1 && <h3 className="chap-unit-h"><span className="label red">Unit {u.n}</span>{u.title}</h3>}
+              <ol className="grid g3 chap">
+                {u.chapters.map(c => (
+                  <li key={c.slug} className="cell chap-c">
+                    <Link href={chapterPath(c.slug)} prefetch={false}>
+                      <span className="chap-n" lang="sa" aria-hidden="true">{deva(c.n)}</span>
+                      <span className="chap-t">{c.title}</span>
+                      <Arrow />
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
         </section>
 
         <Rule />

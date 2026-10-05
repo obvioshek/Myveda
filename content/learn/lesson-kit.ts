@@ -40,3 +40,32 @@ export function ask(q: string, right: string, wrong: string[], why: string): Che
   options.splice(at, 0, right);
   return { q, options, answer: at, why };
 }
+
+// Catches slips in the lesson data when the pages are built: a lesson that points at
+// a block or passage that isn't there, a passage used twice or not at all, or an
+// answer that isn't one of the options. A build that finds one fails rather than
+// publishing a broken page.
+export function lessonProblems(blocks: { id: string }[], pairingCount: number, lessons: Lesson[]): string[] {
+  const out: string[] = [];
+  const ids = new Set(blocks.map(b => b.id));
+  const seen = new Set<string>();
+  const used = new Map<number, number>();
+  for (const l of lessons) {
+    if (!ids.has(l.blockId)) out.push(`lesson "${l.name}" points at a missing block (${l.blockId})`);
+    if (seen.has(l.blockId)) out.push(`two lessons explain ${l.blockId}`);
+    seen.add(l.blockId);
+    for (const c of l.check) {
+      if (c.answer < 0 || c.answer >= c.options.length) out.push(`"${c.q}" has an answer outside its options`);
+      if (new Set(c.options).size !== c.options.length) out.push(`"${c.q}" repeats an option`);
+    }
+    if (!l.check.length) out.push(`lesson "${l.name}" has no questions`);
+    for (const n of l.lens) used.set(n.pairing, (used.get(n.pairing) ?? 0) + 1);
+  }
+  for (const b of blocks) if (!seen.has(b.id)) out.push(`block ${b.id} has no lesson`);
+  for (let i = 0; i < pairingCount; i++) {
+    const n = used.get(i) ?? 0;
+    if (n !== 1) out.push(`passage ${i} is used ${n} times`);
+  }
+  for (const i of used.keys()) if (i < 0 || i >= pairingCount) out.push(`lesson points at passage ${i}, which does not exist`);
+  return out;
+}

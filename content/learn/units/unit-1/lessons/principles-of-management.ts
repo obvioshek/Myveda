@@ -1,4 +1,4 @@
-import type { Lesson } from "./types";
+import type { Lesson } from "@/content/learn/lesson-kit";
 
 const principles: Lesson[] = [
   {

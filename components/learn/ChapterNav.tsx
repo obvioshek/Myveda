@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CHAPTERS, GLOSSARY_PATH, GROUPS, chapterPath, deva, type Chapter } from "@/content/learn";
+import { GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, deva, unitById, type Chapter } from "@/content/learn";
 
 function Sections({ c, hasTerms, showLens }: { c: Chapter; hasTerms: boolean; showLens: boolean }) {
   return (
@@ -16,16 +16,21 @@ function Sections({ c, hasTerms, showLens }: { c: Chapter; hasTerms: boolean; sh
 }
 
 function Chapters({ current }: { current: Chapter }) {
+  const unit = unitById(current.unit);
+  if (!unit) return null;
   return (
     <>
-      <div className="rail-group"><Link href={GLOSSARY_PATH}>Glossary, A to Z</Link></div>
-      {GROUPS.map(g => (
+      <div className="rail-group rail-ref">
+        <Link href={GLOSSARY_PATH} prefetch={false}>Glossary, A to Z</Link>
+        <Link href={REVISION_PATH} prefetch={false}>Revision sheets</Link>
+      </div>
+      {unit.groups.map(g => (
         <div key={g.key} className="rail-group">
-          <span className="label">{g.label}</span>
+          <span className="label">{UNITS.length > 1 ? `Unit ${unit.n} · ${g.label}` : g.label}</span>
           <ol>
-            {CHAPTERS.filter(c => c.group === g.key).map(c => (
+            {unit.chapters.filter(c => c.group === g.key).map(c => (
               <li key={c.slug}>
-                <Link href={chapterPath(c.slug)} aria-current={c.slug === current.slug ? "page" : undefined}>
+                <Link href={chapterPath(c.slug)} prefetch={false} aria-current={c.slug === current.slug ? "page" : undefined}>
                   <span className="rail-n" lang="sa" aria-hidden="true">{deva(c.n)}</span><span>{c.title}</span>
                 </Link>
               </li>
@@ -33,11 +38,19 @@ function Chapters({ current }: { current: Chapter }) {
           </ol>
         </div>
       ))}
+      {UNITS.length > 1 && (
+        <div className="rail-group">
+          <span className="label">Other units</span>
+          <ol>
+            {UNITS.filter(u => u.id !== unit.id).map(u => <li key={u.id}><Link href={`${LEARN_PATH}#${u.id}`} prefetch={false}>Unit {u.n} · {u.short}</Link></li>)}
+          </ol>
+        </div>
+      )}
     </>
   );
 }
 
-// On wide screens a sticky rail lists this chapter's sections and all thirteen
+// On wide screens a sticky rail lists this chapter's sections and the unit's
 // chapters; on narrow ones the same links sit in a fold-out above the text.
 export default function ChapterNav({ chapter, hasTerms, showLens }: { chapter: Chapter; hasTerms: boolean; showLens: boolean }) {
   return (
