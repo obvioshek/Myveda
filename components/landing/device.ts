@@ -12,6 +12,8 @@ export const NOTE_KEY = "vv-note";
 
 const CHANGE = "vv-device-change";
 const TOAST = "vv-toast";
+const SEARCH = "vv-search";
+const CONCEPT = "vv-concept";
 
 function read(key: string): string {
   try { return localStorage.getItem(key) ?? ""; } catch { return ""; }
@@ -46,16 +48,27 @@ export function onToast(handler: (message: string) => void) {
   return () => window.removeEventListener(TOAST, listener);
 }
 
-// Opening a concept saves it as the place to continue from.
-export function openConcept(name: string) {
-  writeDevice(LAST_KEY, name);
-  showToast(`${name} saved to Continue`);
+// Fills the area search from elsewhere on the page (a question card).
+export function searchAreas(term: string) {
+  window.dispatchEvent(new CustomEvent(SEARCH, { detail: term }));
 }
 
-// Scrolls under the sticky header, and respects reduced motion.
-export function goTo(id: string, offset = 80) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: reduce ? "auto" : "smooth" });
+export function onSearchAreas(handler: (term: string) => void) {
+  const listener = (e: Event) => handler((e as CustomEvent<string>).detail);
+  window.addEventListener(SEARCH, listener);
+  return () => window.removeEventListener(SEARCH, listener);
+}
+
+export function onRevealConcept(handler: () => void) {
+  window.addEventListener(CONCEPT, handler);
+  return () => window.removeEventListener(CONCEPT, handler);
+}
+
+// Opening a concept saves it as the place to continue from and opens the sample
+// concept on the page. Concept pages don't exist yet, and Selection is the one
+// concept with content, so it is the one that opens.
+export function openConcept(name: string, announce = true) {
+  writeDevice(LAST_KEY, name);
+  if (announce) showToast(`${name} saved to Continue`);
+  window.dispatchEvent(new Event(CONCEPT));
 }
