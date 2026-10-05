@@ -1,11 +1,14 @@
 import Link from "next/link";
-import { CHAPTERS, GROUPS, chapterPath, deva, type Chapter } from "@/content/learn";
+import { CHAPTERS, GLOSSARY_PATH, GROUPS, chapterPath, deva, type Chapter } from "@/content/learn";
 
-function Sections({ c }: { c: Chapter }) {
+function Sections({ c, hasTerms }: { c: Chapter; hasTerms: boolean }) {
   return (
     <ul className="rail-sub">
       <li><a href="#concepts">The concepts</a>
-        <ul>{c.blocks.filter(b => b.title).map(b => <li key={b.id}><a href={`#${b.id}`}>{b.title}</a></li>)}</ul>
+        <ul>
+          {c.blocks.filter(b => b.title).map(b => <li key={b.id}><a href={`#${b.id}`}>{b.title}</a></li>)}
+          {hasTerms && <li><a href="#terms">Terms from the glossary</a></li>}
+        </ul>
       </li>
       <li><a href="#lens">Ancient lens</a></li>
     </ul>
@@ -15,6 +18,7 @@ function Sections({ c }: { c: Chapter }) {
 function Chapters({ current }: { current: Chapter }) {
   return (
     <>
+      <div className="rail-group"><Link href={GLOSSARY_PATH}>Glossary, A to Z</Link></div>
       {GROUPS.map(g => (
         <div key={g.key} className="rail-group">
           <span className="label">{g.label}</span>
@@ -35,7 +39,7 @@ function Chapters({ current }: { current: Chapter }) {
 
 // On wide screens a sticky rail lists this chapter's sections and all thirteen
 // chapters; on narrow ones the same links sit in a fold-out above the text.
-export default function ChapterNav({ chapter }: { chapter: Chapter }) {
+export default function ChapterNav({ chapter, hasTerms }: { chapter: Chapter; hasTerms: boolean }) {
   return (
     <>
       <details className="ch-jump">
@@ -44,13 +48,13 @@ export default function ChapterNav({ chapter }: { chapter: Chapter }) {
         </summary>
         <div className="rail-body">
           <span className="label red">On this page</span>
-          <Sections c={chapter} />
+          <Sections c={chapter} hasTerms={hasTerms} />
           <Chapters current={chapter} />
         </div>
       </details>
       <aside className="ch-rail" aria-label="This chapter and all chapters">
         <span className="label red">On this page</span>
-        <Sections c={chapter} />
+        <Sections c={chapter} hasTerms={hasTerms} />
         <Chapters current={chapter} />
       </aside>
     </>

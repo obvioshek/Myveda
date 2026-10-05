@@ -136,3 +136,32 @@
 .ch-texts { padding-top: 18px; border-top: 2px solid var(--color-divider); }
 .ch-texts summary { font-size: 15px; font-weight: 800; cursor: pointer; }
 .ch-texts p { max-width: 70ch; margin-top: 12px; color: var(--soft); font-size: 14px; line-height: 23px; }
+
+/* ---------- Glossary ---------- */
+.gl { padding-bottom: clamp(56px, 7vw, 96px); }
+.gl-search { display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
+.gl-rail { display: flex; flex-wrap: wrap; margin: 28px 0 8px; border: 2px solid var(--color-text); background: var(--color-bg); }
+.gl-rail a, .gl-rail span { display: grid; place-items: center; width: 40px; height: 40px; color: var(--color-text); font-size: 14px; font-weight: 800; }
+.gl-rail a:hover { background: var(--color-accent); color: var(--color-bg); }
+.gl-rail span { opacity: .28; }
+.gl-sec { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 24px; padding-top: 28px; border-top: 2px solid var(--color-text); margin-top: 24px; scroll-margin-top: 130px; }
+.gl-l { margin: 0; color: var(--color-accent); font-size: 64px; line-height: 1; letter-spacing: -.03em; }
+.gl dl { margin: 0; }
+.gl-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px 40px; padding: 20px 0; border-top: 2px solid var(--color-divider); scroll-margin-top: 130px; }
+.gl-row:first-child { border-top: 0; }
+.gl-row.on { background: var(--color-accent-100); box-shadow: inset 6px 0 0 var(--color-accent); padding-left: 20px; }
+.gl-row dt { font-size: 19px; line-height: 1.25; font-weight: 800; letter-spacing: -.005em; }
+.gl-row dd { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+.gl-row p { max-width: 62ch; color: var(--body); font-size: 16px; line-height: 26px; }
+.gl-ch { align-self: flex-start; font-size: 13px; font-weight: 700; }
+@media (min-width: 760px) { .gl-rail { position: sticky; top: 68px; z-index: 5; } .gl-row { grid-template-columns: 260px minmax(0, 1fr); } }
+@media (min-width: 900px) { .gl-sec { grid-template-columns: 110px minmax(0, 1fr); } .gl-l { position: sticky; top: 140px; align-self: start; } }
+
+/* Terms at the foot of a chapter's concepts */
+.ch-terms { display: flex; flex-direction: column; gap: 14px; padding-top: 28px; border-top: 2px solid var(--color-divider); scroll-margin-top: 88px; }
+.ch-terms h3 { font-size: 24px; line-height: 1.2; letter-spacing: -.01em; }
+.ch-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ch-chips a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 2px solid var(--color-text); color: var(--color-text); font-size: 14px; font-weight: 700; }
+.ch-chips a:hover { background: var(--color-text); color: var(--color-bg); }
+.ci-ref { display: flex; flex-direction: column; padding-top: clamp(24px, 3vw, 40px); }
+.ci-ref .ci { min-height: 0; }

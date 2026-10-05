@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
 import { Meter, Tag } from "@/components/learn/Evidence";
-import { CHAPTERS, GROUPS, HOW, TEXTS_USED, chapterPath, deva, evidence } from "@/content/learn";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, GROUPS, HOW, TEXTS_USED, chapterPath, deva, evidence } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { siteUrl } from "@/lib/site";
 
@@ -89,6 +89,15 @@ export default function LearnIndex() {
           </section>
         );
       })}
+
+      <section className="wrap ci-ref" aria-label="Reference">
+        <Link href={GLOSSARY_PATH} className="cell ci">
+          <span className="label red">Reference</span>
+          <h2 className="h-xs">Glossary, A to Z</h2>
+          <p className="ci-s">{GLOSSARY.length} terms in plain language, from agency theory and elasticity to stagflation. Each links back to the chapter that explains it.</p>
+          <span className="ci-f"><span>Open the glossary</span><Arrow /></span>
+        </Link>
+      </section>
 
       <section className="wrap ci-texts" aria-labelledby="texts-used">
         <h2 id="texts-used" className="h-xs">Texts used</h2>

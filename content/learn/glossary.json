@@ -1,0 +1,569 @@
+[
+ {
+  "id": "administrative-principles-fayol",
+  "letter": "A",
+  "term": "Administrative Principles (Fayol)",
+  "def": "Henri Fayol's framework of general management principles such as division of work and the scalar chain, focused on top-down organisational efficiency.",
+  "chapter": 1
+ },
+ {
+  "id": "agency-theory",
+  "letter": "A",
+  "term": "Agency Theory",
+  "def": "A corporate governance theory explaining the conflict of interest between shareholders (principals) and managers (agents), resolved through audits and performance incentives.",
+  "chapter": 13
+ },
+ {
+  "id": "authority-responsibility",
+  "letter": "A",
+  "term": "Authority & Responsibility",
+  "def": "Fayol's principle that the power to give orders must be matched by an equal obligation to accept accountability for the outcomes.",
+  "chapter": 1
+ },
+ {
+  "id": "barriers-to-communication",
+  "letter": "B",
+  "term": "Barriers to Communication",
+  "def": "Physical, psychological, language, cultural, perceptual, organisational or attitudinal obstacles that distort or block the transfer of a message.",
+  "chapter": 3
+ },
+ {
+  "id": "budget-line",
+  "letter": "B",
+  "term": "Budget Line",
+  "def": "A graphical representation of all combinations of two goods a consumer can purchase given a fixed income and fixed prices.",
+  "chapter": 9
+ },
+ {
+  "id": "built-in-inflation",
+  "letter": "B",
+  "term": "Built-In Inflation",
+  "def": "Inflation driven by a wage-price spiral, where workers and firms adjust wages and prices based on expected future inflation.",
+  "chapter": 11
+ },
+ {
+  "id": "business-ethics",
+  "letter": "B",
+  "term": "Business Ethics",
+  "def": "The application of moral principles to corporate conduct, balancing the profit motive with social welfare and stakeholder interests.",
+  "chapter": 12
+ },
+ {
+  "id": "consumer-equilibrium",
+  "letter": "C",
+  "term": "Consumer Equilibrium",
+  "def": "The point at which a consumer maximises utility subject to the budget constraint, where the indifference curve is tangent to the budget line.",
+  "chapter": 9
+ },
+ {
+  "id": "contingency-theory",
+  "letter": "C",
+  "term": "Contingency Theory",
+  "def": "A management theory holding that there is no single best way to organise; effectiveness depends on matching structure to the situation (structure, environment, technology, people).",
+  "chapter": 2
+ },
+ {
+  "id": "corporate-governance",
+  "letter": "C",
+  "term": "Corporate Governance",
+  "def": "The system of rules, practices and processes by which a company is directed and controlled to balance stakeholder interests.",
+  "chapter": 13
+ },
+ {
+  "id": "cross-elasticity-of-demand-xed",
+  "letter": "C",
+  "term": "Cross Elasticity of Demand (XED)",
+  "def": "The responsiveness of demand for one good to a price change in a related good — positive for substitutes, negative for complements.",
+  "chapter": 7
+ },
+ {
+  "id": "csr-corporate-social-responsibility",
+  "letter": "C",
+  "term": "CSR (Corporate Social Responsibility)",
+  "def": "The integration of social, environmental and economic responsibility into business operations; mandatory in India above specified net worth, turnover or profit thresholds.",
+  "chapter": 12
+ },
+ {
+  "id": "decentralisation",
+  "letter": "D",
+  "term": "Decentralisation",
+  "def": "The system-wide distribution of decision-making power across multiple levels of an organisation — functional, geographic, product-based or market-based.",
+  "chapter": 5
+ },
+ {
+  "id": "delegation-of-authority",
+  "letter": "D",
+  "term": "Delegation of Authority",
+  "def": "The transfer of responsibility and decision-making power from a superior to a subordinate, while the superior retains ultimate accountability.",
+  "chapter": 5
+ },
+ {
+  "id": "demand-pull-inflation",
+  "letter": "D",
+  "term": "Demand-Pull Inflation",
+  "def": "Inflation caused when aggregate demand in an economy exceeds aggregate supply capability.",
+  "chapter": 11
+ },
+ {
+  "id": "deontological-ethics",
+  "letter": "D",
+  "term": "Deontological Ethics",
+  "def": "An ethical approach focused on adherence to moral duties and principles rather than outcomes.",
+  "chapter": 12
+ },
+ {
+  "id": "disinflation",
+  "letter": "D",
+  "term": "Disinflation",
+  "def": "A slowdown in the rate of inflation, where prices continue rising but at a reduced pace.",
+  "chapter": 11
+ },
+ {
+  "id": "elasticity-of-demand",
+  "letter": "E",
+  "term": "Elasticity of Demand",
+  "def": "A measure of how responsive quantity demanded is to changes in price, income, or the price of related goods.",
+  "chapter": 7
+ },
+ {
+  "id": "encoding",
+  "letter": "E",
+  "term": "Encoding",
+  "def": "The stage of the communication process where the sender transforms thoughts into transmittable symbols such as words, gestures or visuals.",
+  "chapter": 3
+ },
+ {
+  "id": "esprit-de-corps",
+  "letter": "E",
+  "term": "Esprit de Corps",
+  "def": "Fayol's principle of promoting team spirit and unity to strengthen organisational cohesion.",
+  "chapter": 1
+ },
+ {
+  "id": "ethical-dilemma",
+  "letter": "E",
+  "term": "Ethical Dilemma",
+  "def": "A situation requiring a choice between two or more conflicting moral values or obligations.",
+  "chapter": 12
+ },
+ {
+  "id": "fayols-14-principles",
+  "letter": "F",
+  "term": "Fayol's 14 Principles",
+  "def": "Henri Fayol's foundational set of administrative principles covering organisational structure, direction, and personnel management.",
+  "chapter": 1
+ },
+ {
+  "id": "fiscal-policy",
+  "letter": "F",
+  "term": "Fiscal Policy",
+  "def": "A government's use of taxation and public spending to influence economic conditions such as inflation.",
+  "chapter": 11
+ },
+ {
+  "id": "formal-communication",
+  "letter": "F",
+  "term": "Formal Communication",
+  "def": "Communication that follows official organisational channels and hierarchy, ensuring consistency and accountability.",
+  "chapter": 3
+ },
+ {
+  "id": "functional-foremanship",
+  "letter": "F",
+  "term": "Functional Foremanship",
+  "def": "Taylor's concept of supervision by multiple task-specialist foremen rather than a single generalist supervisor.",
+  "chapter": 1
+ },
+ {
+  "id": "gdp-deflator",
+  "letter": "G",
+  "term": "GDP Deflator",
+  "def": "A comprehensive measure of price change, calculated as the ratio of nominal GDP to real GDP, multiplied by 100.",
+  "chapter": 11
+ },
+ {
+  "id": "grapevine-communication",
+  "letter": "G",
+  "term": "Grapevine Communication",
+  "def": "An unofficial, informal communication network that spreads information — often rumour-based — rapidly through an organisation.",
+  "chapter": 3
+ },
+ {
+  "id": "gross-domestic-product-gdp",
+  "letter": "G",
+  "term": "Gross Domestic Product (GDP)",
+  "def": "The market value of all final goods and services produced within a country's borders, equal to Consumption + Investment + Government Expenditure + Net Exports.",
+  "chapter": 11
+ },
+ {
+  "id": "gross-national-product-gnp",
+  "letter": "G",
+  "term": "Gross National Product (GNP)",
+  "def": "Total income earned by a country's residents, both domestically and abroad, equal to GDP plus net factor income from abroad.",
+  "chapter": 11
+ },
+ {
+  "id": "hawthorne-studies",
+  "letter": "H",
+  "term": "Hawthorne Studies",
+  "def": "Elton Mayo's research proving that productivity is driven by social and psychological factors, not merely physical working conditions.",
+  "chapter": 2
+ },
+ {
+  "id": "holacracy",
+  "letter": "H",
+  "term": "Holacracy",
+  "def": "An informal organisational structure built on self-managed teams rather than traditional hierarchy.",
+  "chapter": 5
+ },
+ {
+  "id": "human-skills",
+  "letter": "H",
+  "term": "Human Skills",
+  "def": "Robert Katz's managerial skill category involving the ability to lead, motivate and resolve conflict among people.",
+  "chapter": 1
+ },
+ {
+  "id": "hyperinflation",
+  "letter": "H",
+  "term": "Hyperinflation",
+  "def": "An extreme, uncontrollable rise in prices exceeding 50% per month, typically leading to currency collapse.",
+  "chapter": 11
+ },
+ {
+  "id": "income-elasticity-of-demand-yed",
+  "letter": "I",
+  "term": "Income Elasticity of Demand (YED)",
+  "def": "The responsiveness of demand to a change in consumer income, distinguishing normal, inferior, necessity and luxury goods.",
+  "chapter": 7
+ },
+ {
+  "id": "indifference-curve",
+  "letter": "I",
+  "term": "Indifference Curve",
+  "def": "A graphical representation of all combinations of two goods that provide a consumer with the same level of satisfaction.",
+  "chapter": 9
+ },
+ {
+  "id": "inflation",
+  "letter": "I",
+  "term": "Inflation",
+  "def": "A persistent rise in the general price level of goods and services, resulting in a decline in purchasing power.",
+  "chapter": 11
+ },
+ {
+  "id": "informal-communication",
+  "letter": "I",
+  "term": "Informal Communication",
+  "def": "Unstructured, spontaneous communication such as the grapevine or face-to-face interaction that builds relationships and speeds up decisions.",
+  "chapter": 3
+ },
+ {
+  "id": "interpersonal-roles",
+  "letter": "I",
+  "term": "Interpersonal Roles",
+  "def": "Mintzberg's category of managerial roles — figurehead, leader, liaison — focused on relationships and status.",
+  "chapter": 1
+ },
+ {
+  "id": "kinked-demand-curve",
+  "letter": "K",
+  "term": "Kinked Demand Curve",
+  "def": "A model of oligopoly pricing where the demand curve has a kink at the prevailing price, reflecting rivals' asymmetric reactions to price changes.",
+  "chapter": 10
+ },
+ {
+  "id": "long-run-profitability",
+  "letter": "L",
+  "term": "Long-Run Profitability",
+  "def": "The sustainable profit level a firm can earn in a given market structure — normal profit under perfect/monopolistic competition, potentially supernormal under oligopoly/monopoly.",
+  "chapter": 10
+ },
+ {
+  "id": "matrix-structure",
+  "letter": "M",
+  "term": "Matrix Structure",
+  "def": "An organisational design with dual reporting lines, combining functional and project-based authority.",
+  "chapter": 5
+ },
+ {
+  "id": "monetary-policy",
+  "letter": "M",
+  "term": "Monetary Policy",
+  "def": "Central bank actions such as adjusting interest rates or reserve ratios to control money supply and inflation.",
+  "chapter": 11
+ },
+ {
+  "id": "monopolistic-competition",
+  "letter": "M",
+  "term": "Monopolistic Competition",
+  "def": "A market structure with many sellers offering differentiated products and relatively easy entry/exit.",
+  "chapter": 10
+ },
+ {
+  "id": "monopoly",
+  "letter": "M",
+  "term": "Monopoly",
+  "def": "A market structure with a single seller, a unique product, and blocked entry, giving full control over price.",
+  "chapter": 10
+ },
+ {
+  "id": "motion-study",
+  "letter": "M",
+  "term": "Motion Study",
+  "def": "Taylor's technique of analysing worker movements to eliminate wasteful actions and set efficiency standards.",
+  "chapter": 1
+ },
+ {
+  "id": "national-income",
+  "letter": "N",
+  "term": "National Income",
+  "def": "The total monetary value of all final goods and services produced within a country over a year, measured at factor cost.",
+  "chapter": 11
+ },
+ {
+  "id": "neoclassical-theory",
+  "letter": "N",
+  "term": "Neoclassical Theory",
+  "def": "A management theory (1920s-30s) emphasising human relations, motivation and teamwork over purely mechanical efficiency.",
+  "chapter": 2
+ },
+ {
+  "id": "noise-communication",
+  "letter": "N",
+  "term": "Noise (Communication)",
+  "def": "Any physical, psychological or semantic interference that disrupts the transmission or understanding of a message.",
+  "chapter": 3
+ },
+ {
+  "id": "normal-profit",
+  "letter": "N",
+  "term": "Normal Profit",
+  "def": "The minimum profit level required to keep a firm operating in an industry — the typical long-run outcome under perfect and monopolistic competition.",
+  "chapter": 10
+ },
+ {
+  "id": "oecd-principles",
+  "letter": "O",
+  "term": "OECD Principles",
+  "def": "International corporate governance guidelines covering shareholder rights, equitable treatment, transparency and stakeholder roles.",
+  "chapter": 13
+ },
+ {
+  "id": "oligopoly",
+  "letter": "O",
+  "term": "Oligopoly",
+  "def": "A market structure dominated by a few large sellers with interdependent pricing decisions.",
+  "chapter": 10
+ },
+ {
+  "id": "open-system",
+  "letter": "O",
+  "term": "Open System",
+  "def": "The Modern/Systems Approach view of an organisation as an interdependent set of subsystems interacting with its external environment.",
+  "chapter": 2
+ },
+ {
+  "id": "order-fayols-principle",
+  "letter": "O",
+  "term": "Order (Fayol's Principle)",
+  "def": "Fayol's principle that resources — materials and people — should be systematically arranged in their proper place.",
+  "chapter": 1
+ },
+ {
+  "id": "organisational-chart",
+  "letter": "O",
+  "term": "Organisational Chart",
+  "def": "A visual map showing an organisation's hierarchy, roles, and reporting relationships.",
+  "chapter": 5
+ },
+ {
+  "id": "per-capita-income-pci",
+  "letter": "P",
+  "term": "Per Capita Income (PCI)",
+  "def": "Average income per person in an economy, calculated as national income divided by total population, used as a standard-of-living indicator.",
+  "chapter": 11
+ },
+ {
+  "id": "perfect-competition",
+  "letter": "P",
+  "term": "Perfect Competition",
+  "def": "A market structure with an infinite number of sellers, homogeneous products and free entry/exit.",
+  "chapter": 10
+ },
+ {
+  "id": "personal-income-pi",
+  "letter": "P",
+  "term": "Personal Income (PI)",
+  "def": "Income actually received by individuals before direct taxes, including transfer payments but excluding retained corporate profits.",
+  "chapter": 11
+ },
+ {
+  "id": "piece-rate-system",
+  "letter": "P",
+  "term": "Piece-Rate System",
+  "def": "Taylor's wage system linking pay directly to output, intended to motivate higher productivity.",
+  "chapter": 1
+ },
+ {
+  "id": "price-discrimination",
+  "letter": "P",
+  "term": "Price Discrimination",
+  "def": "The practice of charging different prices to different consumers or markets for the same product, without a cost-based justification.",
+  "chapter": 10
+ },
+ {
+  "id": "price-elasticity-of-demand-ped",
+  "letter": "P",
+  "term": "Price Elasticity of Demand (PED)",
+  "def": "A measure of how responsive quantity demanded is to a change in a product's own price.",
+  "chapter": 7
+ },
+ {
+  "id": "reverse-dumping",
+  "letter": "R",
+  "term": "Reverse Dumping",
+  "def": "A form of international price discrimination where a firm sells a product at a higher price abroad than in its home market.",
+  "chapter": 10
+ },
+ {
+  "id": "robert-katzs-managerial-skills",
+  "letter": "R",
+  "term": "Robert Katz's Managerial Skills",
+  "def": "A framework identifying Technical, Human and Conceptual skills as the components of managerial competence.",
+  "chapter": 1
+ },
+ {
+  "id": "running-inflation",
+  "letter": "R",
+  "term": "Running Inflation",
+  "def": "A rapid rate of inflation, roughly 10-20%, signalling an overheating economy.",
+  "chapter": 11
+ },
+ {
+  "id": "scalar-chain",
+  "letter": "S",
+  "term": "Scalar Chain",
+  "def": "Fayol's principle establishing a clear, unbroken line of authority from top management down to the lowest levels.",
+  "chapter": 1
+ },
+ {
+  "id": "scientific-management",
+  "letter": "S",
+  "term": "Scientific Management",
+  "def": "F.W. Taylor's approach of applying scientific methods — time and motion study, standardisation — to maximise shop-floor efficiency.",
+  "chapter": 1
+ },
+ {
+  "id": "stagflation",
+  "letter": "S",
+  "term": "Stagflation",
+  "def": "An unusual economic condition combining high inflation with high unemployment and stagnant growth.",
+  "chapter": 11
+ },
+ {
+  "id": "stewardship-theory",
+  "letter": "S",
+  "term": "Stewardship Theory",
+  "def": "A corporate governance theory viewing managers as trustworthy stewards of the company rather than self-interested agents.",
+  "chapter": 13
+ },
+ {
+  "id": "systems-approach",
+  "letter": "S",
+  "term": "Systems Approach",
+  "def": "A management perspective viewing the organisation as an open system of interdependent subsystems interacting with the external environment.",
+  "chapter": 2
+ },
+ {
+  "id": "time-motion-study",
+  "letter": "T",
+  "term": "Time & Motion Study",
+  "def": "Taylor's technique of breaking tasks into steps, analysing movements and time, and setting output standards.",
+  "chapter": 1
+ },
+ {
+  "id": "total-quality-management-tqm",
+  "letter": "T",
+  "term": "Total Quality Management (TQM)",
+  "def": "A contemporary management approach prioritising continuous improvement and customer satisfaction.",
+  "chapter": 2
+ },
+ {
+  "id": "transitivity",
+  "letter": "T",
+  "term": "Transitivity",
+  "def": "A rational-consumer assumption stating that if a consumer prefers A to B and B to C, they must also prefer A to C.",
+  "chapter": 9
+ },
+ {
+  "id": "trust-vbo",
+  "letter": "T",
+  "term": "Trust (VBO)",
+  "def": "A core success factor of a Value-Based Organisation, built through consistent ethical conduct and shared values.",
+  "chapter": 13
+ },
+ {
+  "id": "unity-of-command",
+  "letter": "U",
+  "term": "Unity of Command",
+  "def": "Fayol's principle that each employee should receive orders from only one superior, to avoid confusion.",
+  "chapter": 1
+ },
+ {
+  "id": "unity-of-direction",
+  "letter": "U",
+  "term": "Unity of Direction",
+  "def": "Fayol's principle that one plan and one leader should guide all activities sharing the same objective.",
+  "chapter": 1
+ },
+ {
+  "id": "utilitarian-approach",
+  "letter": "U",
+  "term": "Utilitarian Approach",
+  "def": "An ethical decision-making approach favouring the action that provides the greatest good for the greatest number of people.",
+  "chapter": 12
+ },
+ {
+  "id": "value-added-method",
+  "letter": "V",
+  "term": "Value Added Method",
+  "def": "A method of measuring national income by summing the value created at every stage of production.",
+  "chapter": 11
+ },
+ {
+  "id": "value-based-organisation-vbo",
+  "letter": "V",
+  "term": "Value-Based Organisation (VBO)",
+  "def": "An organisation where ethical values shape culture, leadership and strategy, prioritising societal contribution alongside profit.",
+  "chapter": 13
+ },
+ {
+  "id": "virtue-ethics",
+  "letter": "V",
+  "term": "Virtue Ethics",
+  "def": "An ethical theory emphasising the moral character of the decision-maker — such as honesty and courage — rather than rules or outcomes.",
+  "chapter": 12
+ },
+ {
+  "id": "vision-statement",
+  "letter": "V",
+  "term": "Vision Statement",
+  "def": "The long-term aspirational direction guiding an organisation's future growth, forming the top tier of the VBO hierarchy.",
+  "chapter": 13
+ },
+ {
+  "id": "walking-inflation",
+  "letter": "W",
+  "term": "Walking Inflation",
+  "def": "A moderate rate of inflation, roughly 3-10%, that gradually erodes purchasing power over time.",
+  "chapter": 11
+ },
+ {
+  "id": "wholesale-price-index-wpi",
+  "letter": "W",
+  "term": "Wholesale Price Index (WPI)",
+  "def": "A measure of inflation based on bulk/producer prices, excluding services.",
+  "chapter": 11
+ }
+]

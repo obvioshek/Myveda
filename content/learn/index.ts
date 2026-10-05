@@ -9,6 +9,7 @@
 // offered for reflection). Keep that distinction when adding to the file.
 
 import data from "./chapters.json";
+import glossary from "./glossary.json";
 
 export type Kind = "documented" | "view";
 export type Group = "management" | "economics" | "ethics";
@@ -76,3 +77,9 @@ export function chapterTitle(c: Chapter) {
   const long = `${c.title}, explained with the classics · Veda Verse`;
   return long.length <= 65 ? long : `${c.title} · Veda Verse`;
 }
+
+// The glossary: short definitions, each tied to the chapter that explains the idea.
+export type Term = { id: string; letter: string; term: string; def: string; chapter: number };
+export const GLOSSARY = glossary as Term[];
+export const GLOSSARY_PATH = "/learn/glossary";
+export const termsForChapter = (n: number) => GLOSSARY.filter(t => t.chapter === n);

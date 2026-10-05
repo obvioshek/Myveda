@@ -6,7 +6,7 @@ import Arrow from "@/components/landing/Arrow";
 import ChapterNav from "@/components/learn/ChapterNav";
 import Pairings from "@/components/learn/Pairings";
 import { Meter, Tag } from "@/components/learn/Evidence";
-import { CHAPTERS, HOW, TEXTS_USED, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, neighbours } from "@/content/learn";
+import { CHAPTERS, HOW, TEXTS_USED, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, neighbours, termsForChapter, GLOSSARY_PATH } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -39,6 +39,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const url = `${base}${chapterPath(c.slug)}`;
   const ev = evidence(c);
   const { prev, next } = neighbours(c);
+  const terms = termsForChapter(c.n);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -82,7 +83,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
       </header>
 
       <div className="wrap ch-grid">
-        <ChapterNav chapter={c} />
+        <ChapterNav chapter={c} hasTerms={terms.length > 0} />
 
         <div className="ch-main">
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
@@ -93,6 +94,14 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 <div className="prose" dangerouslySetInnerHTML={html(b.html)} />
               </div>
             ))}
+            {terms.length > 0 && (
+              <div id="terms" className="ch-terms">
+                <h3>Terms from the glossary</h3>
+                <ul className="ch-chips">
+                  {terms.map(t => <li key={t.id}><Link href={`${GLOSSARY_PATH}#${t.id}`}>{t.term}</Link></li>)}
+                </ul>
+              </div>
+            )}
           </section>
 
           <section id="lens" className="ch-part ch-lens" aria-labelledby="lens-h">

@@ -142,7 +142,10 @@ export default function LandingPage() {
             </div>
             <div className="chap-cta">
               <p className="sub">Unit 1 of management and managerial economics, from Fayol and Taylor to elasticity, market structures and governance. Each chapter explains the idea first, then sets cited passages from India&apos;s classical texts beside it.</p>
-              <Link href="/learn" className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
+              <div className="btn-row">
+                <Link href="/learn" className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
+                <Link href="/learn/glossary" className="btn btn-secondary btn-lg">Browse the glossary</Link>
+              </div>
             </div>
           </div>
           <ol className="grid g3 chap">
@@ -227,6 +230,7 @@ export default function LandingPage() {
             <span className="label">Learn</span>
             <a href="#explore">Explore ten areas</a>
             <Link href="/learn">Unit 1 chapters</Link>
+            <Link href="/learn/glossary">Glossary</Link>
             <a href="#inside">Sample concept</a>
             <a href="#practice">For exam students</a>
             <a href="#together">Community</a>

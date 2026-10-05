@@ -12,7 +12,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
           <Link className="brand" href="/"><BrandMark />Veda Verse</Link>
           <nav className="top-nav" aria-label="Site">
             <Link href="/learn">Chapters</Link>
-            <Link href="/#explore">Explore</Link>
+            <Link href="/learn/glossary">Glossary</Link>
           </nav>
         </div>
       </header>
@@ -24,6 +24,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <Link href="/">Home</Link>
             <Link href="/learn">Chapters</Link>
+            <Link href="/learn/glossary">Glossary</Link>
             <Link href="/privacy">Privacy</Link>
           </div>
         </div>
