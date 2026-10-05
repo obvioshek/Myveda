@@ -7,6 +7,7 @@ export const CONTACT_EMAIL = "admin@myvedaverse.in";
 
 export const NAV = [
   { href: "#explore", label: "Explore" },
+  { href: "#chapters", label: "Chapters" },
   { href: "#inside", label: "Sample concept" },
   { href: "#together", label: "Community" },
   { href: "#practice", label: "For exam students" },

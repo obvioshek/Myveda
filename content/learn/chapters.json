@@ -1,0 +1,975 @@
+{
+ "how": {
+  "documented": "The passage exists in a named text, and the modern concept is a fair reading of what it says.",
+  "view": "An interpretive parallel. The text does not discuss the modern concept; the link is a reading offered for reflection, not a claim about what the authors meant.",
+  "translations": "Translations are paraphrases. Arthaśāstra references follow Kangle's critical edition; Bhagavad Gītā references are chapter.verse. Check each reference against your own edition before quoting it in submitted work."
+ },
+ "textsUsed": "Ṛgveda and Atharvaveda (hymns); Taittirīya, Bṛhadāraṇyaka, Kaṭha, Īśa and Muṇḍaka Upaniṣads; Bhagavad Gītā; Yoga Sūtras of Patañjali; Manusmṛti; Kauṭilya's Arthaśāstra (Kangle numbering); Kālidāsa's Raghuvaṃśa.",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "principles-of-management",
+   "title": "Principles and Functions of Management",
+   "scope": "What managers do, how the classical writers said they should do it, and the skills and roles the job demands.",
+   "group": "management",
+   "blocks": [
+    {
+     "id": "fayols-14-principles",
+     "title": "Fayol's 14 principles",
+     "html": "<p>Henri Fayol wrote from the top of the organisation downward. His administrative principles describe how a whole enterprise should be arranged and run. They fall into four groups.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Group</th><th>Principles</th></tr></thead>\n<tbody>\n<tr><td>Work and authority</td><td>1 Division of work: specialise so that output and skill rise. 2 Authority and responsibility: the right to command comes with an equal duty to answer for results. 3 Discipline: respect for rules and agreements. 4 Unity of command: each employee takes orders from one superior.</td></tr>\n<tr><td>Direction and organisational interest</td><td>5 Unity of direction: one plan and one leader for activities with the same objective. 6 Subordination of individual interest to the general interest. 7 Remuneration: pay that is fair to both employer and employee.</td></tr>\n<tr><td>Structure and order</td><td>8 Centralisation and decentralisation: set decision authority at the level the situation needs. 9 Scalar chain: an unbroken line of authority from top to bottom. 10 Order: materials and people each in their proper place.</td></tr>\n<tr><td>People and team spirit</td><td>11 Equity: kindness joined with justice. 12 Stability of tenure: low turnover so people can learn their jobs. 13 Initiative: freedom to propose and carry out plans. 14 Esprit de corps: unity and team spirit.</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "taylors-scientific-management",
+     "title": "Taylor's scientific management",
+     "html": "<p>F. W. Taylor worked from the shop floor upward. He replaced guesswork with measurement, and his approach rests on seven elements:</p>\n<ul>\n<li><b>Science, not rule of thumb:</b> find the best method by study.</li>\n<li><b>Harmony, not discord:</b> managers and workers cooperate.</li>\n<li><b>Scientific selection and training:</b> the right person trained for the task.</li>\n<li><b>Functional foremanship:</b> several specialist foremen supervise each worker, one per kind of task, instead of one generalist supervisor.</li>\n<li><b>Incentive and piece-rate:</b> pay linked directly to output.</li>\n<li><b>Standardisation and simplification:</b> uniform tools, methods and processes.</li>\n<li><b>Time and motion study:</b> break a job into steps, remove wasted movement, set an output standard.</li>\n</ul>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th></th><th>Fayol (administrative)</th><th>Taylor (scientific)</th></tr></thead>\n<tbody>\n<tr><td>Starting point</td><td>The whole organisation</td><td>The individual task</td></tr>\n<tr><td>Main concern</td><td>How to manage the organisation</td><td>How to perform work efficiently</td></tr>\n<tr><td>Key ideas</td><td>Principles, authority, unity, order</td><td>Study, standards, incentives</td></tr>\n<tr><td>Contribution</td><td>Administrative framework</td><td>Scientific work methods</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "functions-of-management-posdc",
+     "title": "Functions of management: POSDC",
+     "html": "<p>Management is commonly described as five linked functions that repeat in a cycle. <b>Planning</b> sets objectives and the course of action. <b>Organising</b> arranges tasks, people and resources. <b>Staffing</b> recruits, selects and develops people. <b>Directing</b> leads, motivates and communicates. <b>Controlling</b> measures results, compares them with the plan and corrects the gap, which feeds the next round of planning.</p>"
+    },
+    {
+     "id": "katzs-three-managerial-skills",
+     "title": "Katz's three managerial skills",
+     "html": "<p><b>Technical</b> skill is knowing the work: methods, tools, specialised knowledge. <b>Human</b> skill is leading, motivating and resolving conflict, and it matters at every level. <b>Conceptual</b> skill is seeing the organisation as a whole and connecting strategy to its parts. Emphasis shifts with rank: lower management leans on technical skill, middle management on human and technical, top management on conceptual. Design skill is not one of Katz's three.</p>"
+    },
+    {
+     "id": "mintzbergs-managerial-roles",
+     "title": "Mintzberg's managerial roles",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Category</th><th>Roles</th><th>About</th></tr></thead>\n<tbody>\n<tr><td>Interpersonal</td><td>Figurehead, leader, liaison</td><td>Relationships and status</td></tr>\n<tr><td>Informational</td><td>Monitor, disseminator, spokesperson</td><td>Gathering and passing on information</td></tr>\n<tr><td>Decisional</td><td>Entrepreneur, disturbance handler, resource allocator, negotiator</td><td>Choices and action</td></tr>\n</tbody></table></div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Division of work",
+     "classic": "svadharma",
+     "text": [
+      "The Gītā argues that each person performs best in the work that fits their own nature, and that taking up another's task is riskier. A modern reader will see specialisation. The traditional varṇa reading is contested, so treat this as a statement about fit between person and task."
+     ],
+     "quote": "“Better one's own duty, imperfectly done, than another's duty done well.” <i>śreyān svadharmo viguṇaḥ paradharmāt svanuṣṭhitāt.</i> <span class=\"ref\">Bhagavad Gītā 3.35; also 18.45</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Authority and responsibility",
+     "classic": "the ruler's accountability",
+     "text": [
+      "Kauṭilya ties the ruler's own wellbeing to the wellbeing of those ruled. Power is held against an obligation to deliver results for others."
+     ],
+     "quote": "“In the happiness of his subjects lies the king's happiness; in their welfare, his welfare.” <i>prajāsukhe sukhaṃ rājñaḥ prajānāṃ ca hite hitam.</i> <span class=\"ref\">Arthaśāstra 1.19.34</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Unity of direction, esprit de corps",
+     "classic": "the hymn of concord",
+     "text": [
+      "The closing hymn of the Ṛgveda asks for shared movement, shared speech and a single purpose, which is Fayol's one plan and one team spirit."
+     ],
+     "quote": "“Move together, speak together, let your minds be of one accord.” <i>saṃ gacchadhvaṃ saṃ vadadhvaṃ saṃ vo manāṃsi jānatām.</i> <span class=\"ref\">Ṛgveda 10.191.2; common purpose at 10.191.4</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Initiative",
+     "classic": "utthāna",
+     "text": [
+      "Kauṭilya names sustained effort as the root of prosperity. The Gītā describes the ideal doer as combining resolve with enthusiasm (<i>utsāha</i>)."
+     ],
+     "quote": "“The root of wealth is activity; its absence brings ruin.” <i>arthasya mūlam utthānam anarthasya viparyayaḥ.</i> <span class=\"ref\">Arthaśāstra 1.19.35; Bhagavad Gītā 18.26</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Taylor's best method",
+     "classic": "skill in action",
+     "text": [
+      "The Gītā defines yoga in terms of work done skilfully, which is close to Taylor's concern with doing a task the best way."
+     ],
+     "quote": "“Yoga is skill in action.” <i>yogaḥ karmasu kauśalam.</i> <span class=\"ref\">Bhagavad Gītā 2.50</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Piece-rate and the fruit of action",
+     "classic": null,
+     "text": [
+      "Piece-rate ties reward to output. The Gītā tells the worker to commit fully to the action while not clinging to its reward. These work at different layers: the first is how a firm designs pay, the second is the worker's inner stance toward results. A firm can do the first and still invite the second."
+     ],
+     "quote": "“You have a claim on action alone, never on its fruits.” <i>karmaṇy evādhikāras te mā phaleṣu kadācana.</i> <span class=\"ref\">Bhagavad Gītā 2.47</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Human and conceptual skill",
+     "classic": "leading by example, seeing the whole",
+     "text": [
+      "The Gītā notes that people copy those they regard as best, which is human skill working through example. It also describes the clear kind of knowledge as seeing one undivided reality in all beings, which parallels conceptual skill."
+     ],
+     "quote": "“Whatever the best person does, others do too.” <i>yad yad ācarati śreṣṭhas tat tad evetaro janaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.21; see also 18.20</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Controlling",
+     "classic": "self-regulation",
+     "text": [
+      "Controlling compares results with a standard and corrects. The Gītā places the first controller inside the person, and recommends measured habits in eating, rest and work."
+     ],
+     "quote": "“Lift yourself by yourself.” <i>uddhared ātmanātmānam.</i> <span class=\"ref\">Bhagavad Gītā 6.5; moderation at 6.17</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Equity",
+     "classic": "equal regard",
+     "text": [
+      "Fayol's equity asks for fair treatment of all. The Gītā describes the wise as seeing a learned person, a cow, an elephant and an outcast with the same regard, and as even-minded toward friend and foe."
+     ],
+     "quote": "<i>sama-darśinaḥ.</i> “Those who see with equal regard.” <span class=\"ref\">Bhagavad Gītā 5.18; 6.9</span>"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "slug": "theories-of-management",
+   "title": "Theories of Management",
+   "scope": "Five schools, each a response to the limits of the one before: efficiency, people, interconnection, situation, and quality with knowledge.",
+   "group": "management",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>School</th><th>Period</th><th>Key names</th><th>Focus and contribution</th></tr></thead>\n<tbody>\n<tr><td>Classical</td><td>Late 19th to early 20th century</td><td>F. W. Taylor, Henri Fayol</td><td>Efficiency, structure and productivity. Scientific study of work, time and motion studies, differential piece-rate, administrative principles, division of work, unity of command, scalar chain. Central idea: replace rule of thumb with systematic management.</td></tr>\n<tr><td>Neoclassical</td><td>1920s–1930s</td><td>Elton Mayo</td><td>Human relations, motivation, communication, teamwork and morale. The Hawthorne studies found that productivity follows social and psychological factors, not physical conditions alone. Employees are social and emotional beings, so participative leadership and attention to relationships matter.</td></tr>\n<tr><td>Systems (modern)</td><td>Mid-20th century to present</td><td>Chester Barnard, Ludwig von Bertalanffy</td><td>The organisation is an open system of interdependent subsystems (production, finance, HR and others) interacting with its environment. A change in one subsystem affects the rest. Key words: interdependence, integration, coordination, feedback, synergy. Think of the whole, not isolated parts.</td></tr>\n<tr><td>Contingency</td><td>1960s to present</td><td>Fred Fiedler, Paul Lawrence, Jay Lorsch</td><td>There is no single best way to manage. Effectiveness depends on the fit between structure, environment, technology and people. The manager analyses the situation, adapts the approach, and improves results.</td></tr>\n<tr><td>Contemporary</td><td>Late 20th century to present</td><td>W. Edwards Deming, Peter Drucker, Ikujiro Nonaka</td><td>Two streams. Total Quality Management: continuous improvement and customer satisfaction through teamwork. Knowledge management: create, share and use knowledge so it becomes a competitive resource. Together they stress learning culture, innovation, adaptability, customer trust and employee contribution.</td></tr>\n</tbody></table></div>\n<p>The sequence reads as a series of shifts: from <b>tasks and structure</b> to <b>people</b>; from people to the <b>interconnected organisation</b>; from one system to <b>situation-specific</b> management; and from adaptation to <b>continuous improvement and knowledge</b>.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Classical",
+     "classic": "the Arthaśāstra as a management manual",
+     "text": [
+      "Book 2 of the Arthaśāstra sets out superintendents (<i>adhyakṣa</i>) for separate departments such as agriculture, mines, trade, treasury and accounts, each with duties and checks. That is structure, specialisation and standard procedure written down more than two thousand years ago."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra, Book 2 (Adhyakṣapracāra)</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Neoclassical",
+     "classic": "working together",
+     "text": [
+      "The peace invocation of the Taittirīya Upaniṣad is a teacher-and-student prayer for shared protection, shared nourishment and shared effort. The Gītā's portrait of the dear devotee begins with having no hatred toward any being, and with friendliness and compassion."
+     ],
+     "quote": "“May we be protected together, nourished together, and work together with vigour.” <i>saha nāv avatu saha nau bhunaktu saha vīryaṃ karavāvahai.</i> <span class=\"ref\">Taittirīya Upaniṣad, Brahmānandavallī (opening invocation); Bhagavad Gītā 12.13</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Systems",
+     "classic": "the whole and mutual nourishment",
+     "text": [
+      "The invocation of the Īśa and Bṛhadāraṇyaka Upaniṣads treats the part and the whole as inseparable. The Gītā describes a cycle in which beings and the forces of nature sustain each other: an open system with inputs, outputs and feedback."
+     ],
+     "quote": "“That is whole, this is whole; from the whole the whole arises.” <i>pūrṇam adaḥ pūrṇam idam pūrṇāt pūrṇam udacyate.</i> <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 5.1.1</span> “Nourishing one another, you will attain the highest good.” <i>parasparaṃ bhāvayantaḥ śreyaḥ param avāpsyatha.</i> <span class=\"ref\">Bhagavad Gītā 3.11; cycle at 3.14–16</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Contingency",
+     "classic": "place, time and person",
+     "text": [
+      "Classical Indian ethics is explicitly situational. The Gītā judges a gift by whether it is given in the right place, at the right time, to the right person, a three-part test that is the contingency principle in miniature."
+     ],
+     "quote": "<i>deśe kāle ca pātre ca.</i> “In the right place, at the right time, to the right recipient.” <span class=\"ref\">Bhagavad Gītā 17.20</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Total Quality Management",
+     "classic": "practice that compounds",
+     "text": [
+      "Continuous improvement rests on repeated practice. The Gītā says an unsteady mind is brought under control through practice (<i>abhyāsa</i>) and detachment."
+     ],
+     "quote": "<i>abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate.</i> <span class=\"ref\">Bhagavad Gītā 6.35</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Knowledge management",
+     "classic": "learning through questions and service",
+     "text": [
+      "The Gītā describes knowledge being transferred by humility, questioning and service, and calls knowledge the supreme purifier. Knowledge here is shared in relationship, not stored."
+     ],
+     "quote": "“Learn it by humble approach, by questioning, by service.” <i>tad viddhi praṇipātena paripraśnena sevayā.</i> <span class=\"ref\">Bhagavad Gītā 4.34; 4.38</span>"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "slug": "communication",
+   "title": "Communication",
+   "scope": "The exchange of ideas, information and feelings between people or groups to reach mutual understanding.",
+   "group": "management",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<p><b>Forms.</b> Verbal, non-verbal, written and digital. Good communication gives an organisation clarity, coordination, cooperation, better relationships and a shared sense of objectives.</p>"
+    },
+    {
+     "id": "the-communication-process",
+     "title": "The communication process",
+     "html": "<p>Seven steps. The <b>sender</b> forms an idea and <b>encodes</b> it into words, gestures or visuals. The <b>message</b> (information, ideas, emotions) travels through a <b>channel</b>: spoken, written or electronic. The <b>receiver</b> takes it in and <b>decodes</b> it, making sense of it. <b>Feedback</b> returns to the sender and confirms understanding. <b>Noise</b> is interference at any step and comes in three kinds: physical, psychological and semantic. The goal is to minimise distortion and maximise understanding.</p>"
+    },
+    {
+     "id": "formal-and-informal-communication",
+     "title": "Formal and informal communication",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th></th><th>Formal</th><th>Informal</th></tr></thead>\n<tbody>\n<tr><td>Channel</td><td>Official channels and the established hierarchy</td><td>Natural, unstructured channels</td></tr>\n<tr><td>Strength</td><td>Consistency, clarity, accountability</td><td>Relationship building, quick exchange of ideas</td></tr>\n<tr><td>Examples</td><td>Reports, memos, meetings</td><td>Grapevine, conversation, social media</td></tr>\n</tbody></table></div>\n<p>By direction, formal communication flows <b>downward</b> (for example circulars), <b>upward</b> (grievances), <b>horizontally</b> between peers (joint forums), and <b>externally</b> (annual reports). Informal communication takes five common forms: the <b>grapevine</b> (unofficial, fast, often inaccurate), <b>face-to-face</b> talk (direct, instant feedback, non-verbal cues), <b>social media</b> (fast and flexible), <b>telephone</b> (immediate but with limited visual feedback) and <b>non-verbal</b> signals such as gestures, posture and facial expression.</p>"
+    },
+    {
+     "id": "barriers-to-communication",
+     "title": "Barriers to communication",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Barrier</th><th>What gets in the way</th></tr></thead>\n<tbody>\n<tr><td>Physical</td><td>Noise, distance, poor infrastructure</td></tr>\n<tr><td>Psychological</td><td>Stress, fear, bias</td></tr>\n<tr><td>Language</td><td>Vocabulary, jargon, dialect</td></tr>\n<tr><td>Cultural</td><td>Beliefs, traditions, practices</td></tr>\n<tr><td>Perceptual</td><td>Different interpretations, experience, attitudes</td></tr>\n<tr><td>Organisational</td><td>Rigid hierarchy, poor coordination</td></tr>\n<tr><td>Attitudinal</td><td>Negative behaviour, dominance, lack of respect</td></tr>\n</tbody></table></div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Encoding",
+     "classic": "speech shaped by thought",
+     "text": [
+      "A Ṛgvedic hymn compares the wise shaping speech with the mind to sifting grain through a sieve. That is encoding as a deliberate act. Another hymn says speech has four measured parts, three kept hidden and one spoken. Later grammarians, notably Bhartṛhari, developed this into stages running from the unspoken idea to uttered sound, which maps loosely onto idea, encoding and transmission."
+     ],
+     "quote": "“Where the wise shaped speech with the mind, as grain is sifted with a sieve.” <i>saktum iva titaünā punanto yatra dhīrā manasā vācam akrata.</i> <span class=\"ref\">Ṛgveda 10.71.2; four parts of speech at 1.164.45</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Decoding and feedback",
+     "classic": "hearing, reflecting, absorbing",
+     "text": [
+      "The Bṛhadāraṇyaka Upaniṣad gives a three-stage path for the receiver: listen, reflect, then assimilate. Understanding is completed by the listener's own work, as in decoding and feedback."
+     ],
+     "quote": "<i>śrotavyo mantavyo nididhyāsitavyaḥ.</i> “To be heard, reflected on, deeply absorbed.” <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 2.4.5</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Communication ethics",
+     "classic": "true, pleasant and beneficial",
+     "text": [
+      "The Gītā sets three tests for speech: it should not agitate, it should be true, and it should be pleasant and beneficial. Manu's older formula pairs truth with pleasantness and cautions against an unpleasant truth. The Gītā adds the test of benefit."
+     ],
+     "quote": "“Speech that causes no distress, that is true, pleasant and beneficial.” <i>anudvegakaraṃ vākyaṃ satyaṃ priyahitaṃ ca yat.</i> <span class=\"ref\">Bhagavad Gītā 17.15; Manusmṛti 4.138</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Psychological barriers",
+     "classic": "the chain from anger to confusion",
+     "text": [
+      "The Gītā traces how strong emotion distorts what a person hears and remembers: anger leads to delusion, delusion to loss of memory, and loss of memory to loss of judgement. It is a compact account of why stress, fear and bias block a message."
+     ],
+     "quote": "<i>krodhād bhavati sammohaḥ sammohāt smṛtivibhramaḥ.</i> <span class=\"ref\">Bhagavad Gītā 2.63</span>"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "slug": "decision-making",
+   "title": "Decision Making",
+   "scope": "Selecting the best course of action from the available alternatives to reach a goal.",
+   "group": "management",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<p>Decisions rest on three foundations: <b>logic</b>, <b>analysis</b> and <b>intuition</b>. Done well, they improve efficiency, effectiveness, adaptability, competitiveness and organisational performance.</p>"
+    },
+    {
+     "id": "types-of-decision",
+     "title": "Types of decision",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Classified by</th><th>Types</th></tr></thead>\n<tbody>\n<tr><td>Programmability</td><td><b>Programmed:</b> routine, repetitive, handled by rules and procedures (travel approval). <b>Non-programmed:</b> novel and complex, needing judgement and creativity (launching a new product).</td></tr>\n<tr><td>Management level</td><td><b>Strategic:</b> long-term, high impact, tied to vision and mission. <b>Tactical:</b> mid-level, turns strategy into action. <b>Operational:</b> day-to-day execution.</td></tr>\n<tr><td>Purpose</td><td><b>Routine:</b> daily operations. <b>Major:</b> high risk, high return, long-term. <b>Minor:</b> low risk, limited consequences.</td></tr>\n<tr><td>Decision maker</td><td><b>Individual:</b> one person, quick. <b>Group:</b> discussion toward consensus. <b>Personal:</b> made outside an official role. <b>Organisational:</b> official decision affecting the institution.</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "the-rational-decision-process",
+     "title": "The rational decision process",
+     "html": "<p>Define the problem and its urgency; gather information; identify the criteria; weight the criteria; develop alternatives; evaluate them against the criteria on feasibility, cost, risk and outcome; choose the best balance of benefit and risk; implement by assigning responsibility and resources; then monitor results and correct where needed. Short form: identify, inform, alternatives, evaluate, select, implement, review.</p>"
+    },
+    {
+     "id": "techniques-and-tools",
+     "title": "Techniques and tools",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Technique</th><th>What it does</th><th>Best for</th></tr></thead>\n<tbody>\n<tr><td>Decision tree</td><td>Maps alternatives to possible outcomes</td><td>Risk analysis</td></tr>\n<tr><td>Delphi method</td><td>Anonymous expert rounds until consensus forms</td><td>Forecasting</td></tr>\n<tr><td>Decision matrix</td><td>Scores options against weighted criteria</td><td>Selection</td></tr>\n<tr><td>Cost-benefit analysis</td><td>Compares expected costs with expected benefits</td><td>Investment</td></tr>\n<tr><td>PEST analysis</td><td>Political, economic, social and technological factors</td><td>Market entry</td></tr>\n<tr><td>SWOT analysis</td><td>Strengths, weaknesses, opportunities, threats</td><td>Strategy</td></tr>\n<tr><td>Conjoint analysis</td><td>Measures how customers trade off product features</td><td>Product and pricing</td></tr>\n<tr><td>Pareto analysis</td><td>The vital few causes behind most problems (80/20 principle)</td><td>Quality improvement</td></tr>\n<tr><td>Multi-voting</td><td>Group members vote to rank a long list</td><td>Project selection</td></tr>\n<tr><td>Linear programming</td><td>Optimises output or minimises cost under constraints</td><td>Production planning</td></tr>\n<tr><td>Payback analysis</td><td>Time taken to recover an investment</td><td>Capital decisions</td></tr>\n<tr><td>Feasibility study</td><td>Technical, financial and legal viability</td><td>New projects</td></tr>\n</tbody></table></div>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "The decision process",
+     "classic": "the five limbs of counsel",
+     "text": [
+      "Kauṭilya holds that every undertaking begins with deliberation, and lists five parts to it: the means of starting the work, the men and material available, the division of place and time, remedies against failure, and the accomplishment of the aim. That reads as a decision process: define, gather resources, schedule, manage risk, review results."
+     ],
+     "quote": "<i>mantrapūrvāḥ sarvārambhāḥ.</i> “All undertakings are preceded by counsel.” <span class=\"ref\">Arthaśāstra 1.15.2; five limbs at 1.15.42</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Reflect fully, then choose",
+     "classic": null,
+     "text": [
+      "At the end of the Gītā, Kṛṣṇa lays out his teaching and hands the decision to Arjuna after full reflection. The process is advice, analysis, and a choice that remains the decider's own."
+     ],
+     "quote": "“Reflect on this fully, then do as you wish.” <i>vimṛśyaitad aśeṣeṇa yathecchasi tathā kuru.</i> <span class=\"ref\">Bhagavad Gītā 18.63</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Implementation",
+     "classic": "the five factors of action",
+     "text": [
+      "The Gītā names five factors behind any action: the seat or base, the doer, the instruments, the effort, and circumstance beyond control. As an implementation checklist it covers location, people, tools, effort, and the uncertainty that remains."
+     ],
+     "quote": "<span class=\"ref\">Bhagavad Gītā 18.14</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Judgement",
+     "classic": "knowing what to do and what to avoid",
+     "text": [
+      "The Gītā classifies the deciding faculty (<i>buddhi</i>) by quality. The clear kind distinguishes what should be done from what should not, what is to be feared from what is not, and what binds from what frees."
+     ],
+     "quote": "<i>pravṛttiṃ ca nivṛttiṃ ca kāryākārye bhayābhaye.</i> <span class=\"ref\">Bhagavad Gītā 18.30</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Intuition",
+     "classic": "truth-bearing insight",
+     "text": [
+      "The Yoga Sūtras describe a stage of concentrated insight called <i>ṛtaṃbharā prajñā</i>, which carries truth. It is a classical name for disciplined intuition, a different thing from a hunch."
+     ],
+     "quote": "<i>ṛtaṃbharā tatra prajñā.</i> <span class=\"ref\">Yoga Sūtra 1.48</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "SWOT",
+     "classic": "the seven elements of the state",
+     "text": [
+      "Kauṭilya's account of the seven constituents of a state (ruler, minister, territory, fortress, treasury, army, ally) is an inventory of strengths and weaknesses, used before deciding whether to act. It works as an audit in the way SWOT does."
+     ],
+     "quote": "<i>svāmy-amātya-janapada-durga-kośa-daṇḍa-mitrāṇi prakṛtayaḥ.</i> <span class=\"ref\">Arthaśāstra 6.1.1</span>"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "slug": "organisation-structure",
+   "title": "Organisation Structure",
+   "scope": "The framework that defines roles, responsibilities, authority and communication, so resources align with goals and accountability is clear.",
+   "group": "management",
+   "blocks": [
+    {
+     "id": "types-of-structure",
+     "title": "Types of structure",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Structure</th><th>Grouped by</th><th>Strength</th><th>Challenge</th></tr></thead>\n<tbody>\n<tr><td>Functional</td><td>Specialised functions</td><td>Efficiency, specialisation</td><td>Functional silos</td></tr>\n<tr><td>Divisional</td><td>Product, geography or customer</td><td>Flexibility, focus</td><td>Duplication</td></tr>\n<tr><td>Matrix</td><td>Dual reporting: function and project manager</td><td>Collaboration</td><td>Dual authority</td></tr>\n<tr><td>Hierarchical</td><td>Top-down authority</td><td>Clear authority, accountability</td><td>Slow adaptation</td></tr>\n<tr><td>Virtual</td><td>Dispersed teams linked by technology</td><td>Flexibility, cost efficiency</td><td>Technology dependence</td></tr>\n<tr><td>Lean</td><td>Flat, waste eliminated</td><td>Efficiency, autonomy</td><td>Managerial overload</td></tr>\n<tr><td>Hybrid</td><td>A combination of the above</td><td>Adaptability</td><td>Complexity</td></tr>\n</tbody></table></div>\n<p><b>Informal and flexible forms:</b> <i>network</i> (fluid relationships, agile), <i>flat</i> (few management levels, fast communication), <i>holacracy</i> (self-managed teams and circles, collective decisions), <i>team-based</i> (cross-functional teams, goal-oriented) and <i>boundaryless</i> (reduced internal and external barriers, partnerships).</p>"
+    },
+    {
+     "id": "span-of-control-and-charts",
+     "title": "Span of control and charts",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th></th><th>Wide span</th><th>Narrow span</th></tr></thead>\n<tbody>\n<tr><td>Shape</td><td>Many subordinates per manager, fewer levels</td><td>Few subordinates per manager, more levels</td></tr>\n<tr><td>Gains</td><td>Faster decisions, lower managerial cost, greater autonomy</td><td>Close supervision, better coordination</td></tr>\n<tr><td>Costs</td><td>Manager overload, limited supervision</td><td>Slower decisions, higher cost, bureaucracy</td></tr>\n</tbody></table></div>\n<p>An <b>organisational chart</b> shows who reports to whom. Four common charts are hierarchical (top to bottom), flat (few levels, broad span), matrix (dual reporting) and divisional (separate business units); a team-based chart maps cross-functional teams.</p>\n<p><b>The organising process</b> runs from purpose and goals, through inputs (materials, information, resources), activities and tasks, to outputs (products, reports, services), with monitoring and a feedback loop that drives improvement.</p>"
+    },
+    {
+     "id": "delegation-and-decentralisation",
+     "title": "Delegation and decentralisation",
+     "html": "<p><b>Delegation</b> passes responsibility and authority for a task from superior to subordinate. Responsibility is the duty to do the work, authority is the power to decide, and accountability is answering for results. The superior keeps ultimate accountability. A sound delegation provides training, guidance, trust and feedback. Short formula: responsibility, authority, action, accountability.</p>\n<p><b>Decentralisation</b> spreads decision-making power systematically across the organisation and can be functional, geographic, product- or service-based, or market-based.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th></th><th>Delegation</th><th>Decentralisation</th></tr></thead>\n<tbody>\n<tr><td>Meaning</td><td>Specific authority transferred</td><td>Authority systematically distributed</td></tr>\n<tr><td>Scope</td><td>Narrow</td><td>Broad</td></tr>\n<tr><td>Level</td><td>A task, an individual</td><td>The organisation, a unit</td></tr>\n<tr><td>Focus</td><td>Responsibility and supervision</td><td>Autonomy and distribution</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Memory hook: delegation is about the person; decentralisation is about the system.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Delegation",
+     "classic": "the one-wheeled cart",
+     "text": [
+      "Kauṭilya argues that no ruler can govern alone. Sovereignty needs helpers, so appoint counsellors and listen to them. This is the case for delegation, with the listening that makes it work."
+     ],
+     "quote": "“Kingship is possible only with assistance; one wheel alone does not move.” <i>sahāyasādhyaṃ rājatvaṃ cakram ekaṃ na vartate.</i> <span class=\"ref\">Arthaśāstra 1.7.9</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Span of control",
+     "classic": "tiers of ten",
+     "text": [
+      "Manu prescribes a layered administration: an officer over one village, one over ten, one over twenty, one over a hundred and one over a thousand. Each tier reports upward in a regular ratio, a description of scalar chain and span."
+     ],
+     "quote": "<span class=\"ref\">Manusmṛti 7.114–115</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Functional structure",
+     "classic": "departmental superintendents",
+     "text": [
+      "Book 2 of the Arthaśāstra assigns each domain (treasury, mines, trade, agriculture, accounts) to its own head, with defined duties and audit. This is a functional structure."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra, Book 2</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Holacracy and team-based forms",
+     "classic": "the sabhā and samiti",
+     "text": [
+      "The Atharvaveda speaks of the <i>sabhā</i> and <i>samiti</i> as two deliberative assemblies, daughters of Prajāpati. They are group bodies where decisions were made by discussion, which a modern reader may compare to self-managed circles. The comparison is loose: these were assemblies of a polity."
+     ],
+     "quote": "<i>sabhā ca mā samitiś cāvatām.</i> <span class=\"ref\">Atharvaveda 7.12.1</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "The organising process",
+     "classic": "a cycle of exchange",
+     "text": [
+      "The Gītā's wheel of sacrifice has inputs, transformation, outputs and a return, and says whoever refuses to turn it lives in vain. As a picture of purpose, input, activity, output and feedback, it parallels the organising process."
+     ],
+     "quote": "<i>evaṃ pravartitaṃ cakraṃ nānuvartayatīha yaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.14–16</span>"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "slug": "business-economics-and-demand",
+   "title": "Business Economics and Demand",
+   "scope": "Economic theory applied to business decisions, and the study of why and how much people buy.",
+   "group": "economics",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<p>Business economics applies economic principles and methods to real business situations. The decisions it informs include production, pricing, investment and risk management.</p>"
+    },
+    {
+     "id": "how-economics-has-been-defined",
+     "title": "How economics has been defined",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Writer</th><th>Year</th><th>Emphasis</th><th>Idea</th></tr></thead>\n<tbody>\n<tr><td>Adam Smith</td><td>1776</td><td>Wealth</td><td>Nature and causes of the wealth of nations; wealth creation.</td></tr>\n<tr><td>Alfred Marshall</td><td>1890</td><td>Welfare</td><td>Study of ordinary business of life; human welfare.</td></tr>\n<tr><td>Lionel Robbins</td><td>1932</td><td>Scarcity and choice</td><td>Human behaviour as a relation between ends and scarce means with alternative uses.</td></tr>\n<tr><td>J. M. Keynes</td><td>1936</td><td>Income and employment</td><td>Administration of scarce resources; income and employment.</td></tr>\n<tr><td>Paul Samuelson</td><td>1948</td><td>Resources, choice and growth</td><td>How resources are produced, distributed and consumed; integrated micro and macro view.</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "demand",
+     "title": "Demand",
+     "html": "<div class=\"eq\">Effective demand = desire + ability to pay + willingness to pay</div>\n<p>A want becomes demand only when the buyer can pay and intends to. <b>Demand</b> is the whole relationship between price and quantity; <b>quantity demanded</b> is the amount bought at one specific price. A price change moves you along the curve (expansion or contraction of quantity demanded). A change in any other determinant shifts the curve (increase or decrease in demand).</p>\n<p><b>Determinants:</b> price, income (normal goods rise with it, inferior goods fall), tastes and preferences, prices of related goods (substitutes and complements), expected future prices, population, and government policy such as taxes. Cost of production is a supply-side factor and does not determine demand.</p>"
+    },
+    {
+     "id": "law-of-demand",
+     "title": "Law of demand",
+     "html": "<p>Other things equal, when price falls quantity demanded rises, and when price rises it falls. The curve slopes downward for three reasons: the <b>income effect</b> (a lower price raises real purchasing power), the <b>substitution effect</b> (the good becomes cheaper relative to alternatives) and <b>diminishing marginal utility</b> (each extra unit is worth less, so buyers pay less for more).</p>\n<figure>\n<svg viewBox=\"0 0 360 215\" width=\"100%\" style=\"max-width:420px;display:block\" role=\"img\" aria-label=\"Demand curve with a rightward shift\">\n<line x1=\"40\" y1=\"10\" x2=\"40\" y2=\"185\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"40\" y1=\"185\" x2=\"350\" y2=\"185\" stroke=\"#201e1d\" stroke-width=\"2\"/>\n<line x1=\"60\" y1=\"30\" x2=\"250\" y2=\"170\" stroke=\"#201e1d\" stroke-width=\"3\"/>\n<line x1=\"120\" y1=\"30\" x2=\"310\" y2=\"170\" stroke=\"#ec3013\" stroke-width=\"3\"/>\n<circle cx=\"155\" cy=\"108\" r=\"4\" fill=\"#201e1d\"/><circle cx=\"205\" cy=\"145\" r=\"4\" fill=\"#201e1d\"/>\n<line x1=\"157\" y1=\"111\" x2=\"203\" y2=\"143\" stroke=\"#201e1d\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n<path d=\"M200 80 L238 80\" stroke=\"#ec3013\" stroke-width=\"2\" fill=\"none\"/><path d=\"M232 75 L240 80 L232 85\" stroke=\"#ec3013\" stroke-width=\"2\" fill=\"none\"/>\n<text x=\"62\" y=\"26\" font-size=\"12\" font-weight=\"800\" fill=\"#201e1d\" font-family=\"Archivo,sans-serif\">D</text>\n<text x=\"124\" y=\"26\" font-size=\"12\" font-weight=\"800\" fill=\"#ae1800\" font-family=\"Archivo,sans-serif\">D′ (increase)</text>\n<text x=\"212\" y=\"124\" font-size=\"11\" fill=\"#201e1d\" font-family=\"Archivo,sans-serif\">move along D</text>\n<text x=\"14\" y=\"16\" font-size=\"11\" fill=\"#201e1d\" font-family=\"Archivo,sans-serif\">Price</text>\n<text x=\"290\" y=\"205\" font-size=\"11\" fill=\"#201e1d\" font-family=\"Archivo,sans-serif\">Quantity demanded</text>\n</svg>\n<figcaption>Price changes move along the curve. A change in income, tastes or related prices shifts the whole curve.</figcaption>\n</figure>"
+    },
+    {
+     "id": "exceptions-and-special-demand-effects",
+     "title": "Exceptions and special demand effects",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Effect</th><th>Core idea</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Veblen</td><td>Higher price raises status, so demand rises</td><td>Luxury cars</td></tr>\n<tr><td>Giffen</td><td>Price rises, demand rises, because a strong income effect outweighs substitution for an inferior good</td><td>Staple foods</td></tr>\n<tr><td>Snob</td><td>Exclusivity: demand rises with uniqueness and falls as others buy</td><td>Limited-edition watches</td></tr>\n<tr><td>Bandwagon</td><td>Others buy, so the consumer follows</td><td>Trending smartphones</td></tr>\n</tbody></table></div>\n<p>Two further exceptions: <b>speculative goods</b> (a buyer who expects prices to rise buys more now) and <b>necessities</b> (demand is very inelastic, so a price rise barely cuts purchases). A high price can also be read as a sign of quality.</p>"
+    },
+    {
+     "id": "types-of-demand",
+     "title": "Types of demand",
+     "html": "<p><b>Individual</b> (one consumer) and <b>market</b> (all consumers). <b>Joint</b> demand for goods used together (car and petrol). <b>Composite</b> demand for a good with several uses (electricity). <b>Derived</b> demand that depends on demand for another good (steel for cars). <b>Direct</b> demand for final consumption (food, clothing). <b>Independent</b> demand unaffected by other goods (salt).</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "The definition of economics",
+     "classic": "the definition of artha",
+     "text": [
+      "The last chapter of the Arthaśāstra defines <i>artha</i> in terms of people's livelihood and the land they live on, and names the science as the means of acquiring and protecting that land. Livelihood, resources and the means to secure them sit close to the wealth, welfare and scarcity definitions above."
+     ],
+     "quote": "<i>manuṣyāṇāṃ vṛttir arthaḥ.</i> “The livelihood of people is wealth.” <span class=\"ref\">Arthaśāstra 15.1.1</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Effective demand",
+     "classic": "the three-part test of kāma, artha, dharma",
+     "text": [
+      "The tradition's four human aims include desire (<i>kāma</i>) and means (<i>artha</i>), bounded by right conduct (<i>dharma</i>). Desire alone does not make demand; it needs means, and the tradition adds a third test: whether the purchase is fitting. Willingness to pay, in modern terms, is that third part seen from the buyer's side."
+     ],
+     "quote": null
+    },
+    {
+     "kind": "documented",
+     "modern": "Wants that grow",
+     "classic": "and pleasures that fade",
+     "text": [
+      "Manu observes that desire is not quenched by consuming, as fire grows when fed with ghee. The Gītā says pleasures born of contact have a beginning and an end. The two lines sit on either side of the diminishing marginal utility debate: satisfaction per unit declines while the appetite persists."
+     ],
+     "quote": "“Desire is never quenched by enjoyment of desires; it only grows, like fire fed with ghee.” <i>na jātu kāmaḥ kāmānām upabhogena śāmyati.</i> <span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Veblen and bandwagon",
+     "classic": "display and imitation",
+     "text": [
+      "The Gītā's portrait of the over-proud mind includes boasting of wealth and birth: “who else is my equal?” That is the motive behind status buying. The same text notes that ordinary people follow whatever the eminent do, which describes imitation demand."
+     ],
+     "quote": "<i>āḍhyo 'bhijanavān asmi ko 'nyo 'sti sadṛśo mayā.</i> <span class=\"ref\">Bhagavad Gītā 16.15; 3.21</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Price regulation in the market",
+     "classic": null,
+     "text": [
+      "The Arthaśāstra's Superintendent of Commerce fixes prices and permits a stated profit margin over cost, with a different margin for imported goods. Kauṭilya treats price as something a market officer sets and watches, which is a practical analogue to price determination."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16</span>"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "slug": "elasticity-of-demand",
+   "title": "Elasticity of Demand",
+   "scope": "How strongly quantity demanded responds to changes in price, income and the prices of related goods.",
+   "group": "economics",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<p>If a small change in the determinant brings a large change in quantity, demand is <b>highly elastic</b>. If a large change brings only a small change, it is <b>inelastic</b>. Businesses use elasticity to set prices, forecast revenue, plan taxation and promotions, and judge which products respond most to change.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Measure</th><th>Formula</th><th>Reading</th><th>Worked example</th></tr></thead>\n<tbody>\n<tr><td>PED, price elasticity</td><td>% change in quantity demanded ÷ % change in price</td><td>&gt; 1 elastic, = 1 unitary, &lt; 1 inelastic</td><td>Price up 10%, quantity down 20%: PED = 2, elastic.</td></tr>\n<tr><td>YED, income elasticity</td><td>% change in quantity demanded ÷ % change in income</td><td>&gt; 1 luxury; between 0 and 1 necessity; 0 neutral; &lt; 0 inferior</td><td>Income up 10%, demand up 15%: YED = 1.5, luxury good.</td></tr>\n<tr><td>XED, cross elasticity</td><td>% change in quantity of A ÷ % change in price of B</td><td>Positive: substitutes. Negative: complements. Zero: unrelated.</td><td>Coffee price up 20%, tea demand up 10%: XED = +0.5, substitutes.</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "five-degrees-of-price-elasticity",
+     "title": "Five degrees of price elasticity",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Degree</th><th>PED</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Perfectly elastic</td><td>∞</td><td>A tiny price rise cuts quantity demanded to zero. Horizontal curve.</td></tr>\n<tr><td>Elastic</td><td>&gt; 1</td><td>Quantity changes more than price. Flatter curve.</td></tr>\n<tr><td>Unitary</td><td>= 1</td><td>Quantity changes in proportion to price.</td></tr>\n<tr><td>Inelastic</td><td>&lt; 1</td><td>Quantity changes less than price. Steeper curve.</td></tr>\n<tr><td>Perfectly inelastic</td><td>0</td><td>Quantity does not change at any price. Vertical curve.</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "what-makes-demand-elastic",
+     "title": "What makes demand elastic",
+     "html": "<ul>\n<li><b>Substitutes:</b> more close substitutes mean more elastic demand (butter against margarine).</li>\n<li><b>Nature of the good:</b> necessities are inelastic, luxuries elastic (insulin against a luxury car).</li>\n<li><b>Share of income:</b> expensive items are more elastic than cheap ones (house against salt).</li>\n<li><b>Time period:</b> demand is more elastic over a longer period, as consumers adjust (petrol).</li>\n<li><b>Durability:</b> durable goods are more elastic than non-durable goods (refrigerator against bread).</li>\n</ul>"
+    },
+    {
+     "id": "using-elasticity-in-decisions",
+     "title": "Using elasticity in decisions",
+     "html": "<p><b>Pricing:</b> with elastic demand a price cut raises revenue; with inelastic demand a price rise raises revenue. <b>Taxation:</b> taxing inelastic goods raises more revenue. <b>Cross elasticity</b> guides bundling of complements, competition analysis against substitutes, and revenue forecasts when competitors change prices. <b>YED</b> supports market segmentation and shows which products grow with incomes. For two perfect substitutes the cross elasticity tends to infinity.</p>"
+    }
+   ],
+   "lensNote": "The classical texts have no measure of responsiveness. The links below are thematic: they concern necessities and the handling of scarcity, which is where elasticity matters in practice.",
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Necessities",
+     "classic": "food as the foundation",
+     "text": [
+      "The Taittirīya Upaniṣad treats food as the base of life and tells the student not to disparage it, and to make it abundant. Food is the clearest inelastic good: demand barely moves when its price does."
+     ],
+     "quote": "<i>annaṃ na nindyāt, tad vratam.</i> “Do not disparage food; that is the vow.” <span class=\"ref\">Taittirīya Upaniṣad 3.7</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Intervening where demand cannot adjust",
+     "classic": null,
+     "text": [
+      "When demand is inelastic, shortages produce steep price spikes. The Arthaśāstra shows a state that does not leave this to chance: it regulates traders' margins in the marketplace and prescribes relief measures for famine and other calamities. This is the practical case for price controls and buffer stocks that elasticity analysis supports today."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16 (trade regulation); 4.3 (remedies against calamities)</span>"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "slug": "utility-analysis",
+   "title": "Utility Analysis",
+   "scope": "The cardinal approach: satisfaction can be measured in numbers called utils, and consumers allocate a budget to maximise total utility.",
+   "group": "economics",
+   "blocks": [
+    {
+     "id": "core-idea-and-assumptions",
+     "title": "Core idea and assumptions",
+     "html": "<p>A consumer with a fixed budget spreads income across goods to get the most total utility. The cardinal approach assumes a <b>rational consumer</b>, utility that can be <b>quantified</b> in utils, goods that are <b>divisible</b> into small units, and <b>diminishing marginal utility</b> as consumption rises. It ignores ordinal ranking: it counts satisfaction, it does not compare bundles.</p>"
+    },
+    {
+     "id": "total-and-marginal-utility",
+     "title": "Total and marginal utility",
+     "html": "<p><b>Total utility (TU)</b> is the overall satisfaction from all units consumed. <b>Marginal utility (MU)</b> is the additional satisfaction from one more unit. As consumption rises, MU falls.</p>"
+    },
+    {
+     "id": "law-of-diminishing-marginal-utility",
+     "title": "Law of diminishing marginal utility",
+     "html": "<p>As a person consumes more of a good, the extra satisfaction from each additional unit decreases, other things remaining constant.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Units</th><th>MU</th><th>TU</th><th>What to notice</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>12</td><td>12</td><td>MU is continuously falling</td></tr>\n<tr><td>2</td><td>8</td><td>20</td><td>TU rises while MU is positive</td></tr>\n<tr><td>3</td><td>5</td><td>25</td><td>TU rises at a diminishing rate</td></tr>\n<tr><td>4</td><td>3</td><td>28</td><td></td></tr>\n<tr><td>5</td><td>0</td><td>28</td><td>TU is maximum when MU = 0</td></tr>\n<tr><td>6</td><td>−2</td><td>26</td><td>TU falls when MU turns negative</td></tr>\n</tbody></table></div>\n<figure>\n<svg viewBox=\"0 0 360 175\" width=\"100%\" style=\"max-width:440px;display:block\" role=\"img\" aria-label=\"TU rises then falls, MU falls through zero\">\n<line x1=\"40\" y1=\"8\" x2=\"40\" y2=\"160\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"40\" y1=\"140\" x2=\"350\" y2=\"140\" stroke=\"#201e1d\" stroke-width=\"2\"/>\n<polyline points=\"40,140 90,92 140,60 190,40 240,28 290,28 340,36\" fill=\"none\" stroke=\"#201e1d\" stroke-width=\"3\"/>\n<polyline points=\"65,92 115,108 165,120 215,128 265,140 315,148\" fill=\"none\" stroke=\"#ec3013\" stroke-width=\"3\"/>\n<text x=\"296\" y=\"22\" font-size=\"12\" font-weight=\"800\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\">TU</text>\n<text x=\"318\" y=\"164\" font-size=\"12\" font-weight=\"800\" font-family=\"Archivo,sans-serif\" fill=\"#ae1800\">MU</text>\n<text x=\"250\" y=\"154\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\">MU = 0</text>\n<text x=\"44\" y=\"14\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\">Utils</text>\n<text x=\"220\" y=\"172\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\">Units consumed (1 to 6)</text>\n</svg>\n<figcaption>TU peaks at 28 where MU reaches zero, and falls once MU is negative.</figcaption>\n</figure>"
+    },
+    {
+     "id": "law-of-equi-marginal-utility",
+     "title": "Law of equi-marginal utility",
+     "html": "<div class=\"eq\">MU₁ ÷ P₁ = MU₂ ÷ P₂ = MU₃ ÷ P₃</div>\n<p>A consumer maximises total utility when the marginal utility per rupee is equal across all goods. If MU per rupee is higher for good A, shift spending to A until the ratios level out. This is <b>consumer equilibrium</b> in the cardinal approach: no further reallocation raises total utility.</p>"
+    },
+    {
+     "id": "consumer-surplus",
+     "title": "Consumer surplus",
+     "html": "<div class=\"eq\">Consumer surplus = total utility in money − total expenditure</div>\n<p>It is the gap between what a buyer is willing to pay and what is paid. If willingness to pay is ₹1,500 and the price paid is ₹1,200, surplus is ₹300. If the price rises to ₹1,300, surplus falls to ₹200.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Utility is unstable",
+     "classic": "sensations come and go",
+     "text": [
+      "The Gītā says that contacts with the senses bring heat and cold, pleasure and pain, and that they come and go. Utility from one unit is not a fixed quantity, which is why measuring it in utils is an assumption and not a fact."
+     ],
+     "quote": "<i>āgamāpāyino 'nityās.</i> “They come and go, and are impermanent.” <span class=\"ref\">Bhagavad Gītā 2.14</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Diminishing returns on pleasure",
+     "classic": "pleasures that end",
+     "text": [
+      "Manu's line about desire growing under consumption (see chapter 6) and the Gītā's line that contact-born pleasures have a beginning and an end together describe the two halves of the consumer: appetite remains while the satisfaction per unit declines."
+     ],
+     "quote": "<span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Equi-marginal allocation",
+     "classic": "balance across what we consume",
+     "text": [
+      "The Gītā says yoga is not for one who eats too much or too little, sleeps too much or too little. It prescribes balance across food, recreation, work and sleep. This is equi-marginal logic applied to a day: shift effort from where it adds little to where it adds more."
+     ],
+     "quote": "<i>nātyaśnatas tu yogo 'sti na caikāntam anaśnataḥ.</i> <span class=\"ref\">Bhagavad Gītā 6.16–17</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Consumer surplus",
+     "classic": "contentment",
+     "text": [
+      "Consumer surplus measures the value received above the price paid. The Yoga Sūtras name contentment (<i>santoṣa</i>) as a source of the highest happiness, and the Īśa Upaniṣad advises enjoying what one has without coveting another's wealth. Both locate satisfaction in what is received, not in the price."
+     ],
+     "quote": "<i>santoṣād anuttamaḥ sukhalābhaḥ.</i> <span class=\"ref\">Yoga Sūtra 2.42; Īśa Upaniṣad 1</span>"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "slug": "indifference-curves",
+   "title": "Indifference Curve Analysis",
+   "scope": "The ordinal approach: utility is ranked, not measured. Consumers compare bundles and choose the one they prefer within their budget.",
+   "group": "economics",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<p>The ordinal approach drops utils. It asks only whether a consumer prefers bundle A to bundle B, and it uses two tools, the <b>indifference curve</b> and the <b>budget constraint</b>, to find the choice. Its assumptions: a <b>rational consumer</b> who prefers more to less; <b>complete</b> preferences (every bundle can be ranked); <b>transitivity</b> (if A is preferred to B and B to C, then A is preferred to C); <b>divisible</b> goods; <b>non-satiation</b> (more is preferred); and no cardinal measurement of utility.</p>"
+    },
+    {
+     "id": "indifference-curve",
+     "title": "Indifference curve",
+     "html": "<p>An indifference curve (IC) shows all combinations of two goods that give the same satisfaction. Its properties:</p>\n<ul>\n<li><b>Downward sloping:</b> more of X requires less of Y to keep satisfaction the same.</li>\n<li><b>Convex to the origin:</b> reflects a diminishing marginal rate of substitution.</li>\n<li><b>Never intersect:</b> each IC represents one distinct level of utility.</li>\n<li><b>Higher IC, higher utility:</b> curves farther from the origin are preferred.</li>\n</ul>"
+    },
+    {
+     "id": "marginal-rate-of-substitution-mrs",
+     "title": "Marginal rate of substitution (MRS)",
+     "html": "<p>MRS is the rate at which a consumer will give up one good to gain one more unit of another, holding satisfaction constant. As the consumer has more of X and less of Y, willingness to give up Y falls, so MRS diminishes and the curve becomes convex.</p>"
+    },
+    {
+     "id": "budget-line",
+     "title": "Budget line",
+     "html": "<p>The budget line shows every bundle of two goods the consumer can buy with a given income at given prices. Conditions: income fixed, prices constant, entire income spent, two goods considered. Its slope is −Px/Py, the opportunity cost of one good in units of the other. Bundles on or inside the line are affordable; those outside are not.</p>"
+    },
+    {
+     "id": "consumer-equilibrium",
+     "title": "Consumer equilibrium",
+     "html": "<p>The consumer reaches the highest affordable IC where the IC touches the budget line. At this point of tangency, MRS = Px/Py, so the slope of the IC equals the slope of the budget line.</p>\n<figure>\n<svg viewBox=\"0 0 360 225\" width=\"100%\" style=\"max-width:440px;display:block\" role=\"img\" aria-label=\"Indifference curves tangent to a budget line\">\n<line x1=\"40\" y1=\"10\" x2=\"40\" y2=\"200\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"40\" y1=\"200\" x2=\"350\" y2=\"200\" stroke=\"#201e1d\" stroke-width=\"2\"/>\n<polyline points=\"80,75 100,117 120,137 140,150 190,167 240,175 340,183\" fill=\"none\" stroke=\"#9b9797\" stroke-width=\"2.5\"/>\n<polyline points=\"95,36 100,50 110,71 120,88 140,110 160,125 190,140 220,150 280,163 340,170\" fill=\"none\" stroke=\"#201e1d\" stroke-width=\"3\"/>\n<polyline points=\"130,44 140,60 160,83 190,107 240,130 290,144 340,153\" fill=\"none\" stroke=\"#9b9797\" stroke-width=\"2.5\"/>\n<line x1=\"40\" y1=\"50\" x2=\"280\" y2=\"200\" stroke=\"#ec3013\" stroke-width=\"3\"/>\n<circle cx=\"160\" cy=\"125\" r=\"5\" fill=\"#ec3013\"/>\n<text x=\"168\" y=\"121\" font-size=\"12\" font-weight=\"800\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\">E</text>\n<text x=\"342\" y=\"157\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#605d5d\">IC₃</text>\n<text x=\"326\" y=\"164\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\" dy=\"-12\">IC₂</text>\n<text x=\"342\" y=\"187\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#605d5d\">IC₁</text>\n<text x=\"44\" y=\"46\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#ae1800\" dx=\"-2\" dy=\"-6\">Budget line</text>\n<text x=\"44\" y=\"16\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\" dx=\"4\">Good Y</text>\n<text x=\"290\" y=\"216\" font-size=\"10.5\" font-family=\"Archivo,sans-serif\" fill=\"#201e1d\">Good X</text>\n</svg>\n<figcaption>IC₃ lies above the budget line and cannot be reached. IC₁ is affordable but not the best. E, where IC₂ touches the line, gives the highest attainable satisfaction.</figcaption>\n</figure>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Basis</th><th>Cardinal approach</th><th>Ordinal approach</th></tr></thead>\n<tbody>\n<tr><td>Measurement</td><td>Utility measured in utils</td><td>Utility ranked; no numerical measure</td></tr>\n<tr><td>Tools</td><td>TU and MU</td><td>Indifference curves and MRS</td></tr>\n<tr><td>Equilibrium</td><td>MU per rupee equalised</td><td>MRS = price ratio (Px/Py)</td></tr>\n<tr><td>Focus</td><td>Absolute satisfaction</td><td>Relative preference</td></tr>\n<tr><td>Practicality</td><td>Measurement is difficult</td><td>More practical, widely used</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Memory cue: cardinal asks <i>how much?</i> Ordinal asks <i>which is preferred?</i></p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Ranking preferences",
+     "classic": "the better and the pleasant",
+     "text": [
+      "The Kaṭha Upaniṣad sets out a ranking, not a measurement: the good (<i>śreyas</i>) and the pleasant (<i>preyas</i>) both present themselves, and the wise person examines them and chooses. It is a classical statement of ordinal choice, where the question is which option is preferred."
+     ],
+     "quote": "<i>śreyaś ca preyaś ca manuṣyam etas tau samparītya vivinakti dhīraḥ.</i> <span class=\"ref\">Kaṭha Upaniṣad 1.2.2</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "The budget line",
+     "classic": "spreading effort across three aims",
+     "text": [
+      "Kauṭilya says to enjoy pleasures without breaking the claims of right conduct and wealth, or to pursue the three aims in balance, each supporting the others. This is an allocation across competing goods under a constraint, with the constraint stated in moral terms."
+     ],
+     "quote": "<i>dharmārthāvirodhena kāmaṃ seveta.</i> <span class=\"ref\">Arthaśāstra 1.7.3</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Indifference",
+     "classic": "equanimity",
+     "text": [
+      "The Gītā advises treating pleasure and pain, gain and loss, victory and defeat alike (<i>sukha-duḥkhe same kṛtvā</i>). Indifference between bundles is not that teaching, and the resemblance is in the word only. The text is about steadiness of mind under outcomes, not about equal-satisfaction trade-offs."
+     ],
+     "quote": "<span class=\"ref\">Bhagavad Gītā 2.38; 2.48</span>"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "slug": "market-structures",
+   "title": "Market Structures",
+   "scope": "How markets are classified by the number of sellers, the product and ease of entry, and how that fixes price and profit.",
+   "group": "economics",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Feature</th><th>Perfect competition</th><th>Monopolistic competition</th><th>Oligopoly</th><th>Monopoly</th></tr></thead>\n<tbody>\n<tr><td>Sellers</td><td>Very many</td><td>Many</td><td>Few</td><td>One</td></tr>\n<tr><td>Product</td><td>Homogeneous</td><td>Differentiated</td><td>Homogeneous or differentiated</td><td>Unique, no close substitute</td></tr>\n<tr><td>Entry</td><td>Free</td><td>Relatively easy</td><td>Difficult</td><td>Blocked</td></tr>\n<tr><td>Price control</td><td>None (price taker)</td><td>Limited</td><td>Considerable</td><td>High (price maker)</td></tr>\n<tr><td>Demand curve</td><td>Horizontal</td><td>Downward sloping</td><td>Kinked, indeterminate</td><td>Downward sloping</td></tr>\n<tr><td>Revenue</td><td>AR = MR = P</td><td>AR &gt; MR</td><td>MR has a gap</td><td>AR &gt; MR</td></tr>\n<tr><td>Non-price competition</td><td>None</td><td>Significant (advertising)</td><td>Very strong</td><td>None</td></tr>\n<tr><td>Long-run profit</td><td>Normal</td><td>Normal</td><td>Supernormal possible</td><td>Supernormal possible</td></tr>\n<tr><td>Examples</td><td>Wheat, rice</td><td>Restaurants, clothing, cosmetics</td><td>Automobiles, airlines, steel, cement</td><td>Local electricity board, patented drugs</td></tr>\n</tbody></table></div>\n<p><b>Normal profit</b> is the minimum return needed to keep a firm in an industry. <b>Supernormal profit</b> is any return above it.</p>"
+    },
+    {
+     "id": "price-determination",
+     "title": "Price determination",
+     "html": "<p>Every profit-maximising firm in every structure sets output where <b>marginal cost equals marginal revenue (MC = MR)</b>. What differs is the price it can charge at that output.</p>\n<ul>\n<li><b>Perfect competition:</b> the firm cannot influence price, so P = MR, and it equals MC at equilibrium. Price taker.</li>\n<li><b>Monopolistic competition:</b> P &gt; MR, so the firm has partial price control, with product differentiation and heavy advertising.</li>\n<li><b>Oligopoly:</b> firms are interdependent. The <b>kinked demand curve</b> says rivals match a price cut but ignore a price rise, so demand is flat above the prevailing price and steep below it. The kink leaves a gap in the MR curve, which explains price rigidity.</li>\n<li><b>Monopoly:</b> P &gt; MR, with full control over price, and supernormal profit can persist because entry is blocked.</li>\n</ul>"
+    },
+    {
+     "id": "price-discrimination-dumping-and-reverse-dumping",
+     "title": "Price discrimination, dumping and reverse dumping",
+     "html": "<p><b>Price discrimination</b> is charging different prices for the same product to different buyers or markets when the difference is not due to cost. It needs three conditions: the seller has <b>monopoly power</b>, the markets can be <b>separated</b> with resale prevented, and <b>elasticity differs</b> across markets. Degrees: <i>first</i> charges each buyer their individual willingness to pay; <i>second</i> prices by quantity or blocks; <i>third</i> divides buyers into market segments. Electricity charged at different rates to domestic, commercial and industrial users is a common example. <b>Reverse dumping</b> is international price discrimination in which a firm sells abroad at a higher price than at home.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Oligopoly and collusion",
+     "classic": "traders who combine",
+     "text": [
+      "The Arthaśāstra, in its chapter on the control of traders, names the problem of merchants who combine to hold back goods and fix prices for gain, and prescribes penalties. This is cartel behaviour, the oligopolist's temptation, and an early case for competition policy."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra, Book 4 (control of traders)</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Price discrimination",
+     "classic": "different margins for different goods",
+     "text": [
+      "The Superintendent of Commerce permits a different profit margin on local goods and on foreign goods. It is regulated differential pricing by market. The state, not the seller, sets the difference, and the reason given is protection of the buyer, not extraction of surplus."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Monopoly power exercised by the state",
+     "classic": null,
+     "text": [
+      "Book 2 describes enterprises such as mines and the manufacture of certain goods placed under state superintendents. These are public monopolies in the modern sense, run with accountability for revenue and quality."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra, Book 2 (superintendents of mines and manufactures)</span>"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "slug": "national-income-and-inflation",
+   "title": "National Income and Inflation",
+   "scope": "How an economy's output and income are measured, and what happens when the general price level keeps rising.",
+   "group": "economics",
+   "blocks": [
+    {
+     "id": "national-income",
+     "title": "National income",
+     "html": "<p>National income is the monetary value of all <b>final</b> goods and services produced in an economy over a year, measured at factor cost. Counting only final output avoids double counting. Four methods measure it, and in principle all give the same answer: <b>output = income = expenditure = value added</b>.</p>\n<ul>\n<li><b>Product (output) method:</b> value of output minus intermediate consumption.</li>\n<li><b>Income method:</b> NI = W + R + I + P (wages, rent, interest, profit).</li>\n<li><b>Expenditure method:</b> C + I + G + (X − M).</li>\n<li><b>Value-added method:</b> sum of the value added at each production stage.</li>\n</ul>"
+    },
+    {
+     "id": "concepts-and-formulas",
+     "title": "Concepts and formulas",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Concept</th><th>Meaning</th><th>Formula</th></tr></thead>\n<tbody>\n<tr><td>GDP</td><td>Market value of final goods and services produced within domestic borders</td><td>C + I + G + (X − M): consumption, investment, government expenditure, exports minus imports</td></tr>\n<tr><td>GNP</td><td>Income earned by a country's residents at home and abroad</td><td>GDP + net factor income from abroad (NFIA)</td></tr>\n<tr><td>NNP</td><td>GNP after allowing for depreciation</td><td>GNP − depreciation</td></tr>\n<tr><td>National income</td><td>Factor income at factor cost</td><td>NNP at market price − indirect taxes + subsidies</td></tr>\n<tr><td>Personal income</td><td>Income actually received by individuals before direct taxes</td><td>NI − undistributed profits − corporate taxes + transfers</td></tr>\n<tr><td>Disposable income</td><td>Income left after personal taxes</td><td>PI − personal taxes</td></tr>\n<tr><td>Per capita income</td><td>Average income per person; a standard-of-living indicator</td><td>NI ÷ population</td></tr>\n</tbody></table></div>\n<p>The flow runs GDP → GNP → NNP → national income → personal income → disposable income.</p>"
+    },
+    {
+     "id": "inflation",
+     "title": "Inflation",
+     "html": "<p>Inflation is a persistent rise in the general price level, which lowers purchasing power. Three causes: <b>demand-pull</b> (aggregate demand exceeds what the economy can supply, so prices rise), <b>cost-push</b> (production costs rise and are passed on) and <b>built-in</b> (a wage-price spiral driven by expectations of future inflation).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Term</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Walking inflation</td><td>Moderate, roughly 3–10%; erodes purchasing power gradually</td></tr>\n<tr><td>Running inflation</td><td>Rapid, roughly 10–20%; signals an overheating economy</td></tr>\n<tr><td>Hyperinflation</td><td>Extreme and uncontrolled, above 50% a month; usually ends in currency collapse</td></tr>\n<tr><td>Disinflation</td><td>The inflation rate slows; prices still rise, but more slowly</td></tr>\n<tr><td>Deflation</td><td>The price level falls</td></tr>\n<tr><td>Stagflation</td><td>High inflation together with high unemployment and stagnant growth</td></tr>\n</tbody></table></div>"
+    },
+    {
+     "id": "measuring-inflation",
+     "title": "Measuring inflation",
+     "html": "<div class=\"eq\">CPI = current basket price ÷ base price × 100 · WPI = current wholesale price ÷ base price × 100 · GDP deflator = nominal GDP ÷ real GDP × 100</div>\n<p><b>CPI</b> tracks consumer-level prices and the cost of living. <b>WPI</b> tracks bulk and producer prices and excludes services. The <b>GDP deflator</b> covers every good and service in the economy and uses a changing basket.</p>"
+    },
+    {
+     "id": "effects-and-control",
+     "title": "Effects and control",
+     "html": "<p>Moderate inflation can lift spending, investment, production and employment. High inflation cuts purchasing power and savings, deepens inequality and raises uncertainty. Four sets of tools are used to control it:</p>\n<ul>\n<li><b>Monetary policy:</b> central bank raises interest rates and reserve ratios, uses open market operations.</li>\n<li><b>Fiscal policy:</b> government lowers spending and raises taxes.</li>\n<li><b>Price control measures:</b> price ceilings, subsidies, rationing.</li>\n<li><b>Supply-side measures:</b> raise production, remove supply bottlenecks, improve efficiency and logistics.</li>\n</ul>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "National accounts",
+     "classic": "the sources of revenue",
+     "text": [
+      "The Arthaśāstra lists the heads of the state's revenue: fortified cities, countryside, mines, irrigation works, forests, herds and trade routes. It pairs them with an accounts office that records income and expenditure. It is an early sectoral accounting of an economy."
+     ],
+     "quote": "<i>durgaṃ rāṣṭraṃ khaniḥ setuḥ vanaṃ vrajo vaṇikpathaś ca.</i> <span class=\"ref\">Arthaśāstra 2.6.1; accounts in Book 2</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Fiscal policy",
+     "classic": "taxing lightly, like the bee",
+     "text": [
+      "Manu advises taking tax in small amounts, as a leech, a calf and a bee take their food. Kālidāsa describes a king who takes tax as the sun takes water, to return it many times over. Taxation is tied to a limit and to a return for the public."
+     ],
+     "quote": "“As the bee takes honey little by little, so the king should draw taxes.” <i>yathālpālpam adanty ādyaṃ vāryaukovatsaṭpadāḥ.</i> <span class=\"ref\">Manusmṛti 7.129; Raghuvaṃśa 1.18</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Price control measures",
+     "classic": "regulation and relief",
+     "text": [
+      "Where price ceilings, rationing and stock management appear in modern inflation policy, the Arthaśāstra describes the superintendent of commerce fixing prices and prescribes relief measures in calamity. It also provides for official regulation of the mint. The state is expected to act on prices directly when markets fail."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16; 4.3</span>"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "slug": "business-ethics-and-csr",
+   "title": "Business Ethics and CSR",
+   "scope": "Moral principles applied to commercial decisions, and a firm's responsibility to the society it operates in.",
+   "group": "ethics",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Term</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Ethics</td><td>Standards and codes that guide right behaviour</td></tr>\n<tr><td>Morals</td><td>Personal beliefs about right and wrong</td></tr>\n<tr><td>Values</td><td>Deeply held principles about what is important</td></tr>\n</tbody></table></div>\n<p><b>Business ethics</b> applies moral principles to business decisions, balancing profit with social welfare. It builds trust and reputation, promotes fairness and accountability, and supports long-term sustainability.</p>"
+    },
+    {
+     "id": "principles-of-business-ethics",
+     "title": "Principles of business ethics",
+     "html": "<p>Impartiality (fairness and equality); legal compliance; accountability (responsibility with transparency); trust and honesty; fair practices (ethical pricing and competition, anti-corruption); due diligence (assess risks and consequences); social obligation (benefit society); stakeholder interest (employees, customers, investors, community).</p>"
+    },
+    {
+     "id": "ethical-issue-and-ethical-dilemma",
+     "title": "Ethical issue and ethical dilemma",
+     "html": "<p>An <b>ethical issue</b> is a business action that violates moral principles, such as data falsification, insider trading or labour exploitation. An <b>ethical dilemma</b> is a choice between conflicting moral values or obligations, for example layoffs against avoiding bankruptcy. Three checks help: who is affected, which values conflict, and the reminder that what is legal is not always ethical.</p>"
+    },
+    {
+     "id": "decision-approaches-and-theories",
+     "title": "Decision approaches and theories",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Approach</th><th>Question it asks</th></tr></thead>\n<tbody>\n<tr><td>Utilitarian</td><td>Which action gives the greatest good to the greatest number?</td></tr>\n<tr><td>Rights</td><td>Does it protect individual rights and freedoms?</td></tr>\n<tr><td>Justice</td><td>Is treatment fair and equitable?</td></tr>\n<tr><td>Common good</td><td>Does it serve community welfare and shared benefits?</td></tr>\n<tr><td>Virtue ethics</td><td>What would a person of honesty, courage and compassion do?</td></tr>\n</tbody></table></div>\n<p>At the level of theory: <b>teleological</b> ethics judges by consequences (ethical egoism, utilitarianism, eudaimonism); <b>deontological</b> ethics judges by duty and principle, regardless of outcome (rights theory, social contract, social justice); <b>virtue ethics</b> looks at the decision-maker's moral character (prudence, courage, integrity, responsibility); <b>meta-ethics</b> asks about the nature and meaning of ethical principles; and <b>applied ethics</b> addresses concrete problems in business, medicine and the environment.</p>"
+    },
+    {
+     "id": "corporate-social-responsibility",
+     "title": "Corporate social responsibility",
+     "html": "<p>CSR integrates social, environmental and economic responsibility into business operations. It aims at shared value, where business success and social welfare reinforce each other, and its outcomes include a better corporate image, investor attraction, employee morale, compliance and sustainable development.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Year</th><th>CSR in India</th></tr></thead>\n<tbody>\n<tr><td>2009</td><td>CSR guidelines introduced</td></tr>\n<tr><td>2011</td><td>National Voluntary Guidelines, nine principles</td></tr>\n<tr><td>2013</td><td>CSR provisions introduced in company law</td></tr>\n<tr><td>2014</td><td>India became the first country to legislate CSR</td></tr>\n</tbody></table></div>\n<p><b>Applicability:</b> a company that meets any one of these thresholds: net worth of ₹500 crore or more, turnover of ₹1,000 crore or more, or net profit of ₹5 crore or more. <b>Spend:</b> at least 2% of the average net profit of the preceding three years. <b>Focus areas</b> include education, the environment and rural development.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Business ethics",
+     "classic": "the graduate's code",
+     "text": [
+      "The Taittirīya Upaniṣad's farewell instruction to students turns on conduct: speak the truth, follow right conduct, and do only blameless actions. It then gives a method for giving, which is relevant to CSR: give with faith, in abundance, with modesty, and with a sense of responsibility."
+     ],
+     "quote": "<i>satyaṃ vada, dharmaṃ cara.</i> “Speak the truth; practise right conduct.” <i>śraddhayā deyam, śriyā deyam, hriyā deyam.</i> <span class=\"ref\">Taittirīya Upaniṣad 1.11.1–3</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Profit and social welfare",
+     "classic": "sharing what is earned",
+     "text": [
+      "A Ṛgvedic hymn says the one who eats alone eats sin alone. The Gītā adds that those who cook only for themselves eat sin, and that one should act with an eye to the welfare of the world. The pairing speaks to the tension at the centre of business ethics."
+     ],
+     "quote": "<i>kevalāgho bhavati kevalādī.</i> “He who eats alone eats only sin.” <span class=\"ref\">Ṛgveda 10.117.6; Bhagavad Gītā 3.13, 3.20</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Stakeholder interest",
+     "classic": "delight in the welfare of all beings",
+     "text": [
+      "The Gītā describes those who are devoted to the welfare of all beings as reaching the supreme. The phrase is an old statement of the stakeholder view."
+     ],
+     "quote": "<i>sarvabhūtahite ratāḥ.</i> <span class=\"ref\">Bhagavad Gītā 5.25; 12.4</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Virtue ethics",
+     "classic": "the divine endowment",
+     "text": [
+      "The Gītā lists the qualities of a person oriented to the good: fearlessness, purity of heart, charity, self-control, straightforwardness, non-violence, truthfulness and others. This is a virtue list, and it is paired with a list of opposing vices."
+     ],
+     "quote": "<i>abhayaṃ sattvasaṃśuddhir dānaṃ damaś ca.</i> <span class=\"ref\">Bhagavad Gītā 16.1–3</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Ethical dilemma",
+     "classic": "Arjuna's confusion",
+     "text": [
+      "The Gītā begins with a dilemma. Arjuna says his mind is confused about duty and asks to be taught. Later the text admits that the course of action is hard to understand. It does not claim that dilemmas are easy."
+     ],
+     "quote": "<i>dharmasammūḍhacetāḥ.</i> “My mind confused about duty.” <i>gahanā karmaṇo gatiḥ.</i> “The way of action is deep.” <span class=\"ref\">Bhagavad Gītā 2.7; 4.17</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Duty, consequences and character together",
+     "classic": null,
+     "text": [
+      "Modern theory sets deontology, teleology and virtue against each other. The Gītā can be read as holding all three: act from duty (<i>svadharma</i>), stay even-minded about results, and aim at the welfare of all, from a trained character. It is a synthesis offered for reflection, since the Gītā does not use these categories."
+     ],
+     "quote": null
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "slug": "corporate-governance",
+   "title": "Corporate Governance and Value-Based Organisations",
+   "scope": "How a company is directed and controlled, and what changes when values, not only profit, shape its culture and strategy.",
+   "group": "ethics",
+   "blocks": [
+    {
+     "id": "overview",
+     "title": null,
+     "html": "<p><b>Corporate governance</b> is the system of rules, practices and processes by which a company is directed and controlled so that stakeholder interests are balanced.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Theory</th><th>View of the manager</th></tr></thead>\n<tbody>\n<tr><td>Agency theory</td><td>Managers (agents) may act in their own interest against the shareholders (principals). The conflict is managed through audits and performance incentives.</td></tr>\n<tr><td>Stewardship theory</td><td>Managers are trustworthy stewards of the company, not self-interested agents.</td></tr>\n</tbody></table></div>\n<p>The <b>OECD Principles</b> are international governance guidelines covering shareholder rights, equitable treatment, transparency and the role of stakeholders.</p>"
+    },
+    {
+     "id": "value-based-organisation-vbo",
+     "title": "Value-based organisation (VBO)",
+     "html": "<p>A VBO is an organisation in which ethical values shape culture, leadership and strategy, and societal contribution ranks alongside profit. At the top of its hierarchy sits the <b>vision statement</b>, the long-term aspirational direction. A core success factor is <b>trust</b>, built through consistent ethical conduct and shared values.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Agency problem",
+     "classic": "the tasting of the king's wealth",
+     "text": [
+      "Kauṭilya assumes the agency problem. Officials who handle funds will find it hard not to take some, he says, and he prescribes audits, rotation of posts and an accounts office. These are the safeguards that agency theory recommends."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.9 (conduct and embezzlement by officials)</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Stewardship",
+     "classic": "holding wealth in trust",
+     "text": [
+      "The Īśa Upaniṣad opens by saying that all of this is pervaded by the divine, and advises enjoying through renunciation, without coveting anyone's wealth. Wealth is held in trust, which is the stewardship stance."
+     ],
+     "quote": "<i>īśāvāsyam idaṃ sarvam… mā gṛdhaḥ kasya svid dhanam.</i> <span class=\"ref\">Īśa Upaniṣad 1</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Stakeholder-first leadership",
+     "classic": null,
+     "text": [
+      "Kauṭilya's line on the ruler's happiness (chapter 1) is also a governance principle: the head of the institution measures success by the welfare of those it serves."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 1.19.34</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Trust and transparency",
+     "classic": "truth",
+     "text": [
+      "The Muṇḍaka Upaniṣad states that truth alone prevails, and the national motto draws on it. For a VBO, trust built on consistent truthful conduct is the structural asset, and transparency in disclosure is its practice."
+     ],
+     "quote": "<i>satyam eva jayate nānṛtam.</i> “Truth alone triumphs, not falsehood.” <span class=\"ref\">Muṇḍaka Upaniṣad 3.1.6</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Vision",
+     "classic": "a shared purpose",
+     "text": [
+      "The Saṃjñāna hymn asks for common aim, common heart and common mind, so that all may live well together. It is the language of a vision statement held by everyone in the organisation."
+     ],
+     "quote": "<i>samānī va ākūtiḥ samānā hṛdayāni vaḥ.</i> <span class=\"ref\">Ṛgveda 10.191.4</span>"
+    }
+   ]
+  }
+ ]
+}
