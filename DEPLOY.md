@@ -83,6 +83,20 @@ Either way, you add the MX records they give you. These don't clash with the Ver
 - Signing in at `/signin` sends an email, and the link opens `/welcome`.
 - Optionally, add the site to [Google Search Console](https://search.google.com/search-console) using a DNS TXT record, and submit `https://myvedaverse.in/sitemap.xml`.
 
+## 6. Getting found on Google
+
+A new site isn't in Google's index until Google has found it, and that doesn't happen on its own for days or weeks. Tell Google directly:
+
+1. Open [Google Search Console](https://search.google.com/search-console) and add a **Domain** property for `myvedaverse.in`. Verify it with the DNS TXT record Google shows, added at your registrar next to the records from section 3. If you can't edit DNS, add a **URL prefix** property for `https://myvedaverse.in` instead and verify it with the HTML tag: copy the `content` value into a `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` environment variable on Vercel, redeploy, then press Verify.
+2. Under **Sitemaps**, submit `https://myvedaverse.in/sitemap.xml`.
+3. Under **URL inspection**, paste `https://myvedaverse.in/`, then **Request indexing**.
+4. Do the same in [Bing Webmaster Tools](https://www.bing.com/webmasters) (you can import the site from Search Console). Its tag goes in `NEXT_PUBLIC_BING_SITE_VERIFICATION`.
+5. Check progress with a search for `site:myvedaverse.in`. Expect it to appear within a few days, and to rank for the name "Veda Verse" before it ranks for anything broader.
+
+Things that help once it's indexed: links from other sites (a profile page, a post, a college or community page that links to `https://myvedaverse.in`), and new pages for specific concepts, since each is something people can search for.
+
+What the site already does for search, so you don't have to: a fast static home page, a title and description sized for results, a canonical address, a sitemap and `robots.txt`, structured data naming the site, a branded favicon, and a share image. The product behind sign-in is kept out of the index on purpose.
+
 ## Using a different host
 
 Anything that runs Node works, including Railway, Render, Fly.io or a VPS with `npm ci && npm run build && npm start` behind nginx. Set the same four variables, point the A/CNAME records at that host, and get HTTPS from the host or from Let's Encrypt. Static-only hosting, such as shared cPanel hosting without Node, can't run it, because sign-in and the product need a server.

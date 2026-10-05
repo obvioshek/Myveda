@@ -1,9 +1,4 @@
-// The Veda Verse mark: two overlapping circles, terracotta and sage.
+// The Veda Verse mark: a single red square.
 export default function BrandMark() {
-  return (
-    <span className="mark" aria-hidden="true">
-      <span className="mark-a" />
-      <span className="mark-b" />
-    </span>
-  );
+  return <span className="sq" aria-hidden="true" />;
 }

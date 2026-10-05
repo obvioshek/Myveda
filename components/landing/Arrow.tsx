@@ -1,8 +1,8 @@
 // The arrow used on links and buttons (Lucide "arrow-right", at the design
-// system's heavier stroke).
+// system's stroke).
 export default function Arrow({ size = 16 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
     </svg>
   );

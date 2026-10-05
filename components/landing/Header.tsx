@@ -2,26 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 import { NAV } from "@/content/landing";
-import Arrow from "./Arrow";
 import BrandMark from "./Brand";
-import { LAST_KEY, useDevice } from "./device";
+import { signInLabel, useAccount } from "./account";
 
-export interface Account { href: string; label: string }
-
-// Sticky header with a thin reading-progress bar. A returning visitor, known
-// only from this device, sees a quiet "Continue" link back to their concept.
-export default function Header({ account }: { account: Account | null }) {
-  const [scrolled, setScrolled] = useState(false);
+// Sticky header with a thin red reading-progress rule along its foot and a
+// native <details> menu on small screens.
+export default function Header() {
+  const account = useAccount();
   const bar = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDetailsElement>(null);
-  const last = useDevice(LAST_KEY);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     let raf = 0;
     const tick = () => {
       raf = 0;
-      const d = document.documentElement;
-      const max = d.scrollHeight - window.innerHeight;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
       const pct = max > 0 ? Math.min(1, window.scrollY / max) * 100 : 0;
       if (bar.current) bar.current.style.width = `${pct}%`;
       setScrolled(window.scrollY > 8);
@@ -47,15 +43,15 @@ export default function Header({ account }: { account: Account | null }) {
           {NAV.map(n => <a key={n.href} href={n.href}>{n.label}</a>)}
         </nav>
         <div className="top-end">
-          {last && <a className="continue" href="#s2">Continue: {last}<Arrow size={15} /></a>}
-          {account && <a className="btn btn-ghost hide-md" href={account.href}>{account.label === "Sign in" ? "Sign in (optional)" : account.label}</a>}
-          <a className="btn btn-primary" href="#s2">Start reading</a>
+          {account && <a className="btn btn-ghost hide-md" href={account.href}>{signInLabel(account)}</a>}
+          <a className="btn btn-primary" href="#inside">Start reading</a>
           <details className="mnav" ref={menu}>
-            <summary aria-label="Menu">Menu</summary>
+            <summary aria-label="Menu">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></svg>
+            </summary>
             <nav aria-label="Sections (mobile)">
-              {last && <a className="mnav-continue" href="#s2" onClick={close}>Continue: {last}</a>}
               {NAV.map(n => <a key={n.href} href={n.href} onClick={close}>{n.label}</a>)}
-              {account && <a href={account.href} onClick={close}>{account.label === "Sign in" ? "Sign in (optional)" : account.label}</a>}
+              {account && <a href={account.href} onClick={close}>{signInLabel(account)}</a>}
             </nav>
           </details>
         </div>
