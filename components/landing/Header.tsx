@@ -3,14 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { NAV } from "@/content/landing";
 import BrandMark from "./Brand";
-
-export interface Account { href: string; label: string }
-
-const signInLabel = (a: Account) => (a.label === "Sign in" ? "Sign in (optional)" : a.label);
+import { signInLabel, useAccount } from "./account";
 
 // Sticky header with a thin red reading-progress rule along its foot and a
 // native <details> menu on small screens.
-export default function Header({ account }: { account: Account | null }) {
+export default function Header() {
+  const account = useAccount();
   const bar = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDetailsElement>(null);
   const [scrolled, setScrolled] = useState(false);

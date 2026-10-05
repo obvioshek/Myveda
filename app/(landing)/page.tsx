@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Header, { type Account } from "@/components/landing/Header";
+import Header from "@/components/landing/Header";
+import AccountLink from "@/components/landing/AccountLink";
 import BrandMark from "@/components/landing/Brand";
 import ContinueBand from "@/components/landing/ContinueBand";
 import HeroPair from "@/components/landing/HeroPair";
@@ -10,18 +11,8 @@ import ConceptLink from "@/components/landing/ConceptLink";
 import SearchLink from "@/components/landing/SearchLink";
 import Toast from "@/components/landing/Toast";
 import Arrow from "@/components/landing/Arrow";
-import { currentMember, demoLoginEnabled } from "@/lib/app/session";
-import { hasSupabase } from "@/lib/backend";
 import { siteUrl } from "@/lib/site";
 import { CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
-
-// Signing in is optional. A member who is already in is offered the way back
-// into the product; with sign-in switched off, nothing is offered at all.
-async function account(): Promise<Account | null> {
-  const me = await currentMember();
-  if (me) return { href: me.onboardedAt ? "/home" : "/welcome", label: "Open Veda Verse" };
-  return hasSupabase() || demoLoginEnabled() ? { href: "/signin", label: "Sign in" } : null;
-}
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -32,14 +23,29 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
 
 const Rule = () => <div className="wrap"><div className="rule" /></div>;
 
-export default async function LandingPage() {
-  const acct = await account();
+export default function LandingPage() {
   const base = siteUrl();
+  // What search engines read about the site itself: who publishes it, what it is
+  // called (including the domain and the older "My Veda Verse" name people may
+  // search for), and what this page is.
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": `${base}/#org`, name: "Veda Verse", url: `${base}/`, email: CONTACT_EMAIL, description: "An independent team in India explaining management concepts alongside India's classical thought." },
-      { "@type": "WebSite", "@id": `${base}/#site`, name: "Veda Verse", url: `${base}/`, publisher: { "@id": `${base}/#org` }, inLanguage: "en-IN" },
+      {
+        "@type": "Organization", "@id": `${base}/#org`, name: "Veda Verse", alternateName: ["My Veda Verse", "myvedaverse.in"],
+        url: `${base}/`, email: CONTACT_EMAIL, logo: { "@type": "ImageObject", url: `${base}/logo.png`, width: 512, height: 512 },
+        description: "An independent team in India explaining management concepts alongside India's classical thought.",
+        areaServed: "IN", knowsLanguage: ["en"],
+      },
+      {
+        "@type": "WebSite", "@id": `${base}/#site`, name: "Veda Verse", alternateName: ["My Veda Verse", "myvedaverse.in"],
+        url: `${base}/`, publisher: { "@id": `${base}/#org` }, inLanguage: "en-IN",
+      },
+      {
+        "@type": "WebPage", "@id": `${base}/#page`, url: `${base}/`, name: "Veda Verse: Learn Management with India's Classical Thought",
+        isPartOf: { "@id": `${base}/#site` }, about: { "@id": `${base}/#org` }, inLanguage: "en-IN",
+        description: "Management concepts explained one clear idea at a time, each read alongside the Arthashastra, the Bhagavad Gita or the Thirukkural.",
+      },
     ],
   };
 
@@ -47,7 +53,7 @@ export default async function LandingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <a className="skip" href="#top">Skip to content</a>
-      <Header account={acct} />
+      <Header />
 
       <main id="top">
         <ContinueBand />
@@ -206,7 +212,7 @@ export default async function LandingPage() {
           <nav className="foot-col" aria-label="Contact">
             <span className="label">Contact</span>
             <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
-            {acct && <a href={acct.href}>{acct.label === "Sign in" ? "Sign in (optional)" : acct.label}</a>}
+            <AccountLink />
             <Link href="/privacy">Privacy</Link>
           </nav>
         </div>

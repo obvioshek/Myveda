@@ -34,6 +34,7 @@ Copy `.env.example` to `.env`. Use `.env` rather than `.env.local`, because the 
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Email magic-link sign-in. A member's profile is created the first time they sign in, and they start with onboarding. |
 | `NEXT_PUBLIC_SITE_URL` | The site's public address, used in the sign-in email link, canonical and share tags, `robots.txt` and the sitemap. Defaults to `https://myvedaverse.in` in production and `http://localhost:3000` in development. |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` | Sends the early list's confirmation emails. Without them, addresses are saved but no confirmation goes out. With GoDaddy email, use `smtpout.secureserver.net`, port `465`, and the mailbox's address and password. |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Optional. The `content` value of Google Search Console's or Bing Webmaster Tools' HTML-tag verification, if you verify the site that way instead of with a DNS record. See DEPLOY.md, "Getting found on Google". |
 | `DEMO_LOGIN` | `1` allows signing in as a seeded member without email; `0` turns it off. It is on by default in development and off in production. **Never enable it on a real deployment**, because it lets anyone act as any member. |
 
 ## The product
