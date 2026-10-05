@@ -10,6 +10,7 @@ import AreaSearch from "@/components/landing/AreaSearch";
 import ConceptLink from "@/components/landing/ConceptLink";
 import SearchLink from "@/components/landing/SearchLink";
 import Toast from "@/components/landing/Toast";
+import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import { CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
@@ -54,7 +55,7 @@ export default function LandingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <a className="skip" href="#top">Skip to content</a>
-      <Header />
+      <Header chaptersPanel={<ChaptersMenu variant="panel" />} chaptersList={<ChaptersMenu variant="list" />} />
 
       <main id="top">
         <ContinueBand />

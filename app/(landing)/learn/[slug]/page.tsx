@@ -4,9 +4,13 @@ import { notFound } from "next/navigation";
 import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
 import ChapterNav from "@/components/learn/ChapterNav";
+import LessonCard from "@/components/learn/LessonCard";
+import LessonLens from "@/components/learn/LessonLens";
 import Pairings from "@/components/learn/Pairings";
+import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import { CHAPTERS, HOW, TEXTS_USED, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, neighbours, termsForChapter, GLOSSARY_PATH } from "@/content/learn";
+import { lessonsFor } from "@/content/learn/lessons";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -40,6 +44,12 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const ev = evidence(c);
   const { prev, next } = neighbours(c);
   const terms = termsForChapter(c.n);
+  // A chapter with guided lessons teaches each concept in place, passages included.
+  const lessons = lessonsFor(c.slug);
+  const used = new Set((lessons ?? []).flatMap(l => l.lens.map(n => n.pairing)));
+  const loose = c.pairings.filter((_, i) => !used.has(i));
+  const showLens = loose.length > 0;
+  const firstId = lessons?.[0]?.blockId;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -77,23 +87,49 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           <p className="lede">{c.scope}</p>
           <div className="ch-facts">
             <div><Meter documented={ev.documented} view={ev.view} /><span>{ev.total} classical passages: {ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}</span></div>
-            <a className="btn btn-secondary" href="#lens">Jump to the Ancient lens<Arrow /></a>
+            <a className="btn btn-secondary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
           </div>
         </div>
       </header>
 
       <div className="wrap ch-grid">
-        <ChapterNav chapter={c} hasTerms={terms.length > 0} />
+        <ChapterNav chapter={c} hasTerms={terms.length > 0} showLens={showLens} />
 
         <div className="ch-main">
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
             <div className="ch-part-head"><span className="label red">Part one</span><h2 id="concepts-h">The concepts</h2></div>
-            {c.blocks.map(b => (
-              <div key={b.id} id={b.id} className="ch-block">
-                {b.title && <h3>{b.title}</h3>}
-                <div className="prose" dangerouslySetInnerHTML={html(b.html)} />
-              </div>
-            ))}
+            {lessons && (
+              <>
+                <div className="ch-legend">
+                  <div><Tag kind="documented" /><p>{HOW.documented}</p></div>
+                  <div><Tag kind="view" /><p>{HOW.view}</p></div>
+                </div>
+                <p className="ci-fine">{HOW.translations} Open any concept below to work through it.</p>
+              </>
+            )}
+            {c.blocks.map(b => {
+              const li = lessons?.findIndex(l => l.blockId === b.id) ?? -1;
+              if (lessons && li >= 0) {
+                const lesson = lessons[li];
+                return (
+                  <LessonCard
+                    key={b.id}
+                    lesson={lesson}
+                    index={li}
+                    total={lessons.length}
+                    path={chapterPath(c.slug)}
+                    detail={<div dangerouslySetInnerHTML={html(b.html)} />}
+                    lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
+                  />
+                );
+              }
+              return (
+                <div key={b.id} id={b.id} className="ch-block">
+                  {b.title && <h3>{b.title}</h3>}
+                  <div className="prose" dangerouslySetInnerHTML={html(b.html)} />
+                </div>
+              );
+            })}
             {terms.length > 0 && (
               <div id="terms" className="ch-terms">
                 <h3>Terms from the glossary</h3>
@@ -104,6 +140,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             )}
           </section>
 
+          {showLens && (
           <section id="lens" className="ch-part ch-lens" aria-labelledby="lens-h">
             <div className="ch-part-head"><span className="label red">Part two</span><h2 id="lens-h">Ancient lens</h2></div>
             <div className="ch-legend">
@@ -111,9 +148,10 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
               <div><Tag kind="view" /><p>{HOW.view}</p></div>
             </div>
             {c.lensNote && <p className="cue">{c.lensNote}</p>}
-            <Pairings items={c.pairings} />
+            <Pairings items={loose} />
             <p className="ci-fine">{HOW.translations}</p>
           </section>
+          )}
 
           <nav className="ch-next" aria-label="Chapters">
             {prev ? (
@@ -138,6 +176,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           </details>
         </div>
       </div>
+      <Toast />
     </PageShell>
   );
 }

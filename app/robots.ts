@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       disallow: [
-        "/api/", "/auth/", "/early-list", "/welcome", "/home", "/read/", "/note/", "/q/", "/c$", "/c/", "/u/",
+        "/api/", "/auth/", "/search-index.json", "/early-list", "/welcome", "/home", "/read/", "/note/", "/q/", "/c$", "/c/", "/u/",
         "/discover", "/t/", "/library", "/inbox", "/signin",
       ],
     },
