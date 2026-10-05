@@ -134,7 +134,7 @@ const lessons: Lesson[] = [
     lead: "CSR integrates social, environmental and economic responsibility into business operations.",
     check: [
       ask("How much must a company spend on CSR?", "At least 2% of the average net profit of the preceding three years", ["2% of turnover", "5% of net worth", "2% of last year's loss"], "That is the stated spend."),
-      ask("In which year did India become the first country to legislate CSR?", "2014", ["2009", "2011", "2013"], "Guidelines came in 2009, voluntary guidelines in 2011 and company-law provisions in 2013."),
+      ask("In which year did mandatory CSR spending under the Companies Act, 2013 come into force, making India the first country to require it?", "2014", ["2009", "2011", "2016"], "Guidelines came in 2009 and voluntary guidelines in 2011; the Companies Act, 2013 made CSR spending mandatory from 1 April 2014."),
       ask("Which are CSR focus areas?", "Education, the environment and rural development", ["Advertising", "Dividends", "Mergers"], "They are among the focus areas the chapter names."),
     ],
     lens: [
@@ -144,7 +144,7 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "CSR integrates social, environmental and economic responsibility into business operations.",
-        "India: guidelines 2009, voluntary guidelines 2011, company law 2013, first country to legislate CSR in 2014.",
+        "India: guidelines 2009, voluntary guidelines 2011, company law 2013, CSR spending mandatory from 2014, the first country to require it.",
         "Applies to a company with net worth of ₹500 crore or more, turnover of ₹1,000 crore or more, or net profit of ₹5 crore or more.",
         "Spend at least 2% of the average net profit of the preceding three years.",
       ],

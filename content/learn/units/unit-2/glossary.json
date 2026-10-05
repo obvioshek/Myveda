@@ -150,7 +150,7 @@
   "id": "factor-comparison",
   "letter": "F",
   "term": "Factor Comparison",
-  "def": "A quantitative job evaluation method that ranks new jobs against benchmark jobs with known, agreed-upon pay rates.",
+  "def": "A quantitative job evaluation method that compares jobs, factor by factor, with benchmark jobs whose pay rates are agreed.",
   "chapter": 14
  },
  {
@@ -269,7 +269,7 @@
   "id": "internal-recruitment",
   "letter": "I",
   "term": "Internal Recruitment",
-  "def": "Filling vacancies by promoting or transferring existing employees.",
+  "def": "Filling vacancies from within the organisation's existing network, chiefly through job posting, promotions and transfers, and also by rehiring former employees or reconsidering previous applicants.",
   "chapter": 12
  },
  {
@@ -374,7 +374,7 @@
   "id": "learning",
   "letter": "L",
   "term": "Learning",
-  "def": "A permanent change in behaviour or knowledge acquired through experience, observation or practice.",
+  "def": "A relatively permanent change in behaviour or knowledge acquired through experience, observation or practice.",
   "chapter": 3
  },
  {
@@ -458,7 +458,7 @@
   "id": "organisational-justice",
   "letter": "O",
   "term": "Organisational Justice",
-  "def": "Employees' perceptions of fairness in the workplace, covering both outcomes and the treatment used to reach them.",
+  "def": "Employees' perceptions of fairness in the workplace, covering outcomes, the processes used to reach them, and how people are treated.",
   "chapter": 9
  },
  {
@@ -507,7 +507,7 @@
   "id": "ranking-system",
   "letter": "R",
   "term": "Ranking System",
-  "def": "A simple, subjective job evaluation method comparing jobs directly based on overall complexity.",
+  "def": "A simple, non-quantitative job evaluation method that compares and ranks whole jobs by their overall worth.",
   "chapter": 14
  },
  {
@@ -668,7 +668,7 @@
   "id": "whistle-blowers-protection-act-2014",
   "letter": "W",
   "term": "Whistle Blowers Protection Act, 2014",
-  "def": "India's primary law protecting the identity and employment of whistleblowers against retaliation.",
+  "def": "An Indian law setting up a mechanism to receive public-interest disclosures of corruption, wilful misuse of power or criminal offences by public servants, and to protect those who make them against victimisation. Enacted, but not yet brought into force.",
   "chapter": 9
  },
  {

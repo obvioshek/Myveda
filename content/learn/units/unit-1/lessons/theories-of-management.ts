@@ -18,7 +18,7 @@ const lessons: Lesson[] = [
       ask("What is the classical school's central idea?", "Replace rule of thumb with systematic management", ["Productivity follows social and psychological factors", "There is no single best way to manage", "Create, share and use knowledge as a resource"], "The others belong to the neoclassical, contingency and contemporary schools."),
     ],
     lens: [
-      { pairing: 0, adds: "A written-down structure of departments, each with duties and checks, more than two thousand years ago.", differs: "Book 2 sets out departments of a state. The classical school's own claim is that work can be studied and a best method found." },
+      { pairing: 0, adds: "A written-down structure of departments, each with duties and checks, roughly two thousand years ago.", differs: "Book 2 sets out departments of a state. The classical school's own claim is that work can be studied and a best method found." },
     ],
     reflect: "Where in your own work is a task still done by habit rather than by studying the best method?",
     summary: {
@@ -44,7 +44,7 @@ const lessons: Lesson[] = [
     lead: "People are social and emotional beings, so morale, communication and teamwork shape results.",
     check: [
       ask("What did the Hawthorne studies find?", "Productivity follows social and psychological factors, not physical conditions alone", ["Productivity follows physical conditions alone", "Productivity follows pay alone", "Productivity follows the length of the hierarchy"], "That finding is the heart of the neoclassical school."),
-      ask("Which name belongs to the neoclassical school?", "Elton Mayo", ["F. W. Taylor", "Chester Barnard", "Peter Drucker"], "Elton Mayo, in the 1920s and 1930s."),
+      ask("Which name belongs to the neoclassical school?", "Elton Mayo", ["F. W. Taylor", "Henri Fayol", "Peter Drucker"], "Elton Mayo, in the 1920s and 1930s."),
       ask("Which style of leadership does the school favour?", "Participative leadership, with attention to relationships", ["Strict one-way command", "Leadership by rule of thumb", "No leadership at all"], "Employees are social and emotional beings, so participative leadership and attention to relationships matter."),
     ],
     lens: [

@@ -14,7 +14,7 @@ const lessons: Lesson[] = [
     },
     lead: "Recruitment builds a pool of candidates, from inside and outside the organisation.",
     check: [
-      ask("Which is an internal source of recruitment?", "Employee referrals", ["Campus recruitment", "Headhunting", "Job fairs"], "The others are external sources."),
+      ask("Which is an internal source of recruitment?", "Job posting", ["Campus recruitment", "Headhunting", "Job fairs"], "Job posting announces the vacancy inside the organisation; the others are external sources."),
       ask("What does external recruitment bring that internal recruitment cannot?", "A wider talent pool and fresh perspectives", ["Lower cost", "Faster hiring", "Higher morale among existing staff"], "Those are the benefits of internal recruitment."),
     ],
     lens: [],

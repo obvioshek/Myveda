@@ -42,6 +42,8 @@
   --color-surface: #eae9e9;
   --color-text: #201e1d;
   --color-accent: #ec3013;
+  /* The red for areas that carry text: deep enough for 4.5:1 with light text. */
+  --color-accent-fill: #cf2810;
   --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
   --soft: color-mix(in srgb, var(--color-text) 72%, transparent);
   --body: color-mix(in srgb, var(--color-text) 82%, transparent);
@@ -102,9 +104,9 @@ h2 { margin-left: -.04em; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.08
 .btn-xl { min-height: 56px; padding: 0 24px; font-size: 15px; }
 .btn.wide { min-width: 240px; }
 .btn-primary, .btn-primary:hover { color: var(--color-bg); }
-.btn-primary { background: var(--color-accent); border-color: var(--color-accent); }
-.btn-primary:hover { background: var(--color-accent-600); border-color: var(--color-accent-600); }
-.btn-primary:active { background: var(--color-accent-700); border-color: var(--color-accent-700); }
+.btn-primary { background: var(--color-accent-fill); border-color: var(--color-accent-fill); }
+.btn-primary:hover { background: var(--color-accent-700); border-color: var(--color-accent-700); }
+.btn-primary:active { background: var(--color-accent-800); border-color: var(--color-accent-800); }
 .btn-secondary { border-color: var(--color-text); color: var(--color-text); }
 .btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); color: var(--color-text); }
 .btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
@@ -115,7 +117,7 @@ h2 { margin-left: -.04em; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.08
 .btn-light:hover { background: var(--color-surface); border-color: var(--color-surface); }
 .btn-outline-light, .btn-outline-light:hover { color: var(--color-bg); }
 .btn-outline-light { border-color: var(--color-bg); }
-.btn-outline-light:hover { background: var(--color-accent-600); }
+.btn-outline-light:hover { background: var(--color-accent-700); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .input { width: 100%; min-height: 48px; padding: 0 16px; border: 2px solid var(--color-text); border-radius: 0; background: var(--color-bg); color: var(--color-text); font-size: 16px; caret-color: var(--color-accent); }
 .input:focus-visible { outline-offset: 0; border-color: var(--color-accent); }
@@ -181,7 +183,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .pair { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 16px; border: 2px solid var(--color-text); }
 .pair-cell { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: clamp(24px, 3vw, 40px); }
 .pair-cell.stack { display: grid; border-top: 2px solid var(--color-text); transition: background .42s ease, color .42s ease; }
-.pair-cell.stack.open { background: var(--color-accent); color: var(--color-bg); }
+.pair-cell.stack.open { background: var(--color-accent-fill); color: var(--color-bg); }
 .layer { grid-area: 1 / 1; display: flex; flex-direction: column; gap: 14px; transition: opacity .26s ease; }
 .layer.closed .btn { align-self: flex-start; margin-top: auto; min-width: 260px; }
 .layer.opened { gap: 18px; opacity: 0; transition: opacity .42s ease .14s; }
@@ -193,7 +195,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .pair-q { font-size: clamp(26px, 2.8vw, 34px); line-height: 1.12; letter-spacing: -.015em; font-weight: 800; }
 .pair-p { max-width: 58ch; color: var(--body); font-size: 17px; line-height: 28px; }
 .x { display: grid; place-items: center; width: 40px; height: 40px; margin-left: auto; border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
-.x:hover { background: var(--color-accent-600); }
+.x:hover { background: var(--color-accent-700); }
 .pair-sa { font: clamp(24px, 2.4vw, 30px)/1.55 var(--font-deva); }
 .pair-en { margin-top: auto; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -.01em; font-weight: 800; }
 .pair .reveal { grid-column: 1 / -1; }
@@ -263,7 +265,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .pair-2 .cell { gap: 10px; border: 0; }
 .pair-2 .cell + .cell { border-top: 2px solid var(--color-text); }
 .pair-2 .cell p { font-size: 16px; line-height: 26px; }
-.pair-2 .cell.red { background: var(--color-accent); color: var(--color-bg); }
+.pair-2 .cell.red { background: var(--color-accent-fill); color: var(--color-bg); }
 .reflect { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .reflect-q { max-width: 28ch; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.25; letter-spacing: -.01em; font-weight: 800; }
 .note { display: flex; flex-direction: column; align-self: stretch; gap: 8px; max-width: 620px; }
@@ -279,7 +281,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 
 /* 4 · Ancient Lens */
 .verse { display: grid; grid-template-columns: minmax(0, 1fr); border: 2px solid var(--color-accent); }
-.verse-red { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: clamp(28px, 4vw, 48px); background: var(--color-accent); color: var(--color-bg); }
+.verse-red { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: clamp(28px, 4vw, 48px); background: var(--color-accent-fill); color: var(--color-bg); }
 .verse-ta { font: 400 clamp(22px, 2.3vw, 28px)/1.6 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
 .verse-cap .more { align-self: flex-start; margin-top: 6px; }
 .pair-differ .more { flex-basis: 100%; }
@@ -312,7 +314,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .more { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 8px; font-weight: 600; }
 
 /* ---------- Closing band ---------- */
-.closing { background: var(--color-accent); color: var(--color-bg); }
+.closing { background: var(--color-accent-fill); color: var(--color-bg); }
 .closing-in { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px 72px; align-items: end; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
 .motto { display: flex; flex-direction: column; gap: 20px; }
 .motto-sa { font: clamp(26px, 3vw, 38px)/1.4 var(--font-deva); }

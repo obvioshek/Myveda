@@ -51,7 +51,7 @@ const lessons: Lesson[] = [
       ask("The organising process runs from purpose and goals through…", "Inputs, activities and tasks, to outputs, with monitoring and a feedback loop", ["Planning to controlling only", "Hiring to firing", "Buying to selling"], "Feedback drives improvement."),
     ],
     lens: [
-      { pairing: 1, adds: "A layered administration with a regular ratio: officers over one village, ten, twenty, a hundred and a thousand.", differs: "Manu prescribes tiers of local administration for a polity. The chapter's span of control is about how many people one manager supervises." },
+      { pairing: 1, adds: "A layered administration: officers over one village, ten, twenty, a hundred and a thousand, each reporting upward.", differs: "Manu prescribes tiers of local administration for a polity. The chapter's span of control is about how many people one manager supervises." },
       { pairing: 4, adds: "A cycle with inputs, transformation, outputs and a return, which whoever refuses to turn lives in vain.", differs: "The Gītā's wheel of sacrifice is a picture of exchange between beings and nature. The chapter's process is a way to organise work." },
     ],
     reflect: "How many people report to your manager, and what does that do to how decisions are made?",

@@ -47,7 +47,7 @@ const lessons: Lesson[] = [
       ask("Which group role is the dominator?", "An individual role", ["A task role", "A relationship role", "A formal role"], "Task roles plan; relationship roles motivate."),
     ],
     lens: [
-      { pairing: 1, adds: "Counting people as ours and theirs is called small-minded; the world itself is a family.", differs: "The verse is a moral teaching. Managing diversity uses specific techniques and rules, such as zero tolerance for harassment." },
+      { pairing: 1, adds: "Counting people as kin and not kin is called small-minded; the whole earth is a family.", differs: "The verse is a moral teaching. Managing diversity uses specific techniques and rules, such as zero tolerance for harassment." },
     ],
     reflect: "Which of the seven techniques does your organisation do best, and which not at all?",
     summary: {
@@ -70,7 +70,7 @@ const lessons: Lesson[] = [
         { label: "Probably not", reveal: "Right. Hofstede found large differences, such as Japan's competitiveness against Sweden's emphasis on cooperation." },
       ],
     },
-    lead: "Hofstede's five dimensions describe how national cultures differ at work.",
+    lead: "Five of Hofstede's dimensions describe how national cultures differ at work; a sixth, indulgence versus restraint, was added in 2010.",
     check: [
       ask("Which dimension concerns how much hierarchy and authority are accepted?", "Power distance", ["Uncertainty avoidance", "Individualism", "Time orientation"], "High power distance accepts hierarchy; low prefers equality."),
       ask("In the chapter's examples, which country is low on uncertainty avoidance?", "Singapore", ["France", "Japan", "China"], "France is high: structure and risk avoidance."),
@@ -78,7 +78,7 @@ const lessons: Lesson[] = [
     lens: [
       { pairing: 2, adds: "An instruction to examine the customs of regions, guilds and families before settling a matter.", differs: "Manu writes about settling disputes in a kingdom. Cross-cultural management is about working effectively across nations." },
     ],
-    reflect: "Where would your own culture sit on each of Hofstede's five dimensions?",
+    reflect: "Where would your own culture sit on each of these five Hofstede dimensions?",
     summary: {
       points: [
         "Cross-cultural OB: how cultural differences affect behaviour in multicultural workplaces.",
