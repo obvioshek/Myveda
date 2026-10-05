@@ -145,7 +145,7 @@ const principles: Lesson[] = [
       q: "Which skill matters most at the very top of an organisation?",
       choices: [
         { label: "Technical skill", reveal: "Technical skill leans toward lower management. At the top, Katz's emphasis is on conceptual skill: seeing the organisation as a whole." },
-        { label: "Conceptual skill", reveal: "Yes. Lower management leans on technical skill, middle management on human and technical, and top management on conceptual. Human skill matters at every level." },
+        { label: "Conceptual skill", reveal: "Yes. Lower management leans on technical skill, middle management on human skill with a balance of all three, and top management on conceptual. Human skill matters at every level." },
       ],
     },
     lead: "A manager needs three skills, and the mix changes with rank.",
@@ -180,7 +180,7 @@ const principles: Lesson[] = [
         "Conceptual skill is seeing the organisation as a whole and connecting strategy to its parts.",
         "Design skill is not one of Katz's three.",
       ],
-      memory: "Lower: technical. Middle: human and technical. Top: conceptual.",
+      memory: "Lower: technical. Middle: human (a balance). Top: conceptual.",
     },
   },
   {

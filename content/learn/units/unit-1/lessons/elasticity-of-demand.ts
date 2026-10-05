@@ -44,7 +44,7 @@ const lessons: Lesson[] = [
     check: [
       ask("PED equal to 1 is called…", "Unitary", ["Elastic", "Inelastic", "Perfectly elastic"], "Quantity changes in proportion to price."),
       ask("A vertical demand curve is…", "Perfectly inelastic", ["Perfectly elastic", "Unitary", "Elastic"], "Quantity does not change at any price."),
-      ask("A flatter demand curve means demand is…", "More elastic: quantity changes more than price", ["More inelastic", "Unitary", "Zero"], "A steeper curve is more inelastic."),
+      ask("A flatter demand curve means demand is…", "More elastic: quantity responds more to a given price change", ["More inelastic", "Unitary", "Zero"], "At the same price and quantity, a flatter curve is more elastic and a steeper one less elastic."),
     ],
     lens: [],
     reflect: "Which everyday good has a nearly vertical demand curve for you?",

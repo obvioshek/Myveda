@@ -23,7 +23,7 @@ export const NAV = [
 // its passage is in a chapter.
 export const QUESTIONS = [
   { n: "01", fact: "The Arthashastra says catching an official who embezzles is as hard as telling when a fish drinks water.", question: "Is the agency problem older than the company?", concept: "Corporate governance", ref: "Arthaśāstra 2.9", chapter: "corporate-governance", pairing: 0 },
-  { n: "02", fact: "Kautilya tested a minister’s integrity in secret before giving him office.", question: "Would his method be acceptable today?", concept: "Selection", ref: "Arthaśāstra 1.10", chapter: "recruitment-and-selection", pairing: 1 },
+  { n: "02", fact: "Kautilya tested a minister’s integrity in secret before assigning him to a post.", question: "Would his method be acceptable today?", concept: "Selection", ref: "Arthaśāstra 1.10", chapter: "recruitment-and-selection", pairing: 1 },
   { n: "03", fact: "The Tirukkural asks who could ever ruin a ruler who keeps friends willing to rebuke him.", question: "Why do teams still punish the person who disagrees?", concept: "Groupthink", ref: "Tirukkuṟaḷ 447", chapter: "group-behaviour-and-leadership", pairing: 3 },
 ];
 

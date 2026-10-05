@@ -6,29 +6,29 @@ const lessons: Lesson[] = [
     name: "National income",
     intro: "The value of everything an economy produces in a year.",
     before: {
-      q: "Do the four methods of measuring national income give four different answers?",
+      q: "Do the three methods of measuring national income give three different answers?",
       choices: [
-        { label: "Yes", reveal: "In principle they all give the same answer: output = income = expenditure = value added." },
-        { label: "No", reveal: "Right. In principle all four give the same answer: output = income = expenditure = value added." },
+        { label: "Yes", reveal: "In principle all three give the same answer: output (value added) = income = expenditure." },
+        { label: "No", reveal: "Right. In principle all three give the same answer: output (value added) = income = expenditure." },
       ],
     },
     lead: "National income is the value of all final goods and services produced in a year, at factor cost.",
     check: [
       ask("Counting only final output avoids…", "Double counting", ["Inflation", "Taxes", "Imports"], "Intermediate goods are already inside the final price."),
-      ask("The expenditure method is…", "C + I + G + (X − M)", ["W + R + I + P", "Output minus intermediate consumption", "The sum of value added at each stage"], "Consumption, investment, government expenditure, and exports minus imports."),
+      ask("The expenditure method is…", "C + I + G + (X − M)", ["W + R + I + P", "Output minus intermediate consumption", "NI ÷ population"], "Consumption, investment, government expenditure, and exports minus imports."),
       ask("The income method is…", "NI = W + R + I + P", ["C + I + G + (X − M)", "NI ÷ population", "Nominal GDP ÷ real GDP"], "Wages, rent, interest and profit."),
     ],
     lens: [
       { pairing: 0, adds: "A list of revenue heads (fortified cities, countryside, mines, irrigation works, forests, herds and trade routes), with an accounts office recording income and expenditure.", differs: "The Arthaśāstra records a state's revenue. National income counts the final value of what an economy produces." },
     ],
-    reflect: "Which of the four methods, product, income, expenditure or value added, would be easiest to apply to your own household?",
+    reflect: "Which of the three methods, product (value added), income or expenditure, would be easiest to apply to your own household?",
     summary: {
       points: [
         "National income: the monetary value of all final goods and services produced over a year, at factor cost.",
-        "Four methods: product (output), income, expenditure and value added.",
+        "Three methods: product (value added), income and expenditure.",
         "In principle all give the same answer.",
       ],
-      memory: "Output = income = expenditure = value added.",
+      memory: "Output = income = expenditure.",
     },
   },
   {

@@ -20,7 +20,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 0, adds: "Three qualities that mix in every person and colour food, work and faith alike.", differs: "The guṇas are a metaphysical account of nature. Trait theories measure dispositions with tests and statistics." },
-      { pairing: 1, adds: "Disposition persists even in the wise: people act in keeping with their own nature.", differs: "The Gītā goes on to ask what repression can achieve. Personality theory says traits are stable but allows that behaviour can be learnt and changed." },
+      { pairing: 1, adds: "Disposition persists even in the wise: people act in keeping with their own nature.", differs: "The verse asks what mere restraint can achieve, though the next verse urges not falling under the sway of likes and dislikes. Personality theory says traits are stable but allows that behaviour can be learnt and changed." },
     ],
     reflect: "Which of the Big Five traits do you think is strongest in you, and how does it show at work or in study?",
     summary: {

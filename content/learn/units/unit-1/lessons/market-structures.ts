@@ -15,7 +15,7 @@ const lessons: Lesson[] = [
     lead: "Markets are classified by the number of sellers, the product and the ease of entry.",
     check: [
       ask("Which structure has few sellers and difficult entry?", "Oligopoly", ["Perfect competition", "Monopoly", "Monopolistic competition"], "Examples: automobiles, airlines, steel and cement."),
-      ask("Long-run profit under perfect and monopolistic competition is…", "Normal", ["Supernormal", "Always zero", "Negative"], "Supernormal profit is possible under oligopoly and monopoly."),
+      ask("Long-run profit under perfect and monopolistic competition is…", "Normal", ["Supernormal", "Unlimited", "Negative"], "Supernormal profit is possible under oligopoly and monopoly."),
       ask("Wheat and rice are examples of…", "Perfect competition", ["Monopoly", "Oligopoly", "Monopolistic competition"], "Homogeneous products, very many sellers and free entry."),
     ],
     lens: [

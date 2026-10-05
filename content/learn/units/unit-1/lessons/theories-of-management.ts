@@ -44,7 +44,7 @@ const lessons: Lesson[] = [
     lead: "People are social and emotional beings, so morale, communication and teamwork shape results.",
     check: [
       ask("What did the Hawthorne studies find?", "Productivity follows social and psychological factors, not physical conditions alone", ["Productivity follows physical conditions alone", "Productivity follows pay alone", "Productivity follows the length of the hierarchy"], "That finding is the heart of the neoclassical school."),
-      ask("Which name belongs to the neoclassical school?", "Elton Mayo", ["F. W. Taylor", "Chester Barnard", "Peter Drucker"], "Elton Mayo, in the 1920s and 1930s."),
+      ask("Which name belongs to the neoclassical school?", "Elton Mayo", ["F. W. Taylor", "Henri Fayol", "Peter Drucker"], "Elton Mayo, in the 1920s and 1930s."),
       ask("Which style of leadership does the school favour?", "Participative leadership, with attention to relationships", ["Strict one-way command", "Leadership by rule of thumb", "No leadership at all"], "Employees are social and emotional beings, so participative leadership and attention to relationships matter."),
     ],
     lens: [

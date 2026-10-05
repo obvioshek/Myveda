@@ -44,7 +44,7 @@ const lessons: Lesson[] = [
     lead: "The Act makes employers liable for injury arising out of and in the course of employment.",
     check: [
       ask("Which does the Act cover?", "Accidents, occupational diseases and employment-related death", ["Only accidents on public roads", "Only illnesses outside work", "Salary disputes"], "Injury must arise out of and in the course of employment."),
-      ask("The amount of compensation depends on…", "The injury, the percentage of disability and the wage level", ["The employer's profits", "The employee's age alone", "The number of years of service only"], "Those three factors."),
+      ask("The amount of compensation depends on…", "The injury, the percentage of disability, the wage level and the worker's age", ["The employer's profits", "The employee's age alone", "The number of years of service only"], "Age enters through the statutory 'relevant factor', alongside the injury, the disability and the wage."),
     ],
     lens: [
       { pairing: 1, adds: "Provision that the families of servants who die at their work receive their food and wages.", differs: "Kauṭilya provides for a royal administration's servants. The Act gives a legal right to compensation across industries." },
@@ -54,7 +54,7 @@ const lessons: Lesson[] = [
       points: [
         "Financial protection for employees injured at work or suffering occupational diseases.",
         "Employer liability; dependants' claims; medical examination; prompt notice; penalties.",
-        "Amount depends on injury, disability percentage and wage level.",
+        "Amount depends on injury, disability percentage, wage level and age.",
       ],
       memory: "Injury at work brings compensation.",
     },
@@ -72,7 +72,7 @@ const lessons: Lesson[] = [
     },
     lead: "Each plan rewards efficiency differently, from shared savings to differential piece rates.",
     check: [
-      ask("Which plan pays a bonus in proportion to the time saved against standard time, rising at a diminishing rate?", "Rowan plan", ["Halsey plan", "Gantt task and bonus system", "Bedaux plan"], "Rowan: T × R + ((S − T) ÷ S) × T × R."),
+      ask("Which plan pays a bonus equal to the time wage multiplied by the ratio of time saved to standard time?", "Rowan plan", ["Halsey plan", "Gantt task and bonus system", "Bedaux plan"], "Rowan: T × R + ((S − T) ÷ S) × T × R."),
       ask("Which plan uses two piece rates, higher above the standard and lower below it?", "Taylor's differential piece rate", ["Emerson's efficiency plan", "Halsey plan", "Rowan plan"], "A strong incentive that may cause stress."),
       ask("A worker takes 6 hours for a 10-hour job at ₹50 an hour. Halsey earnings are…", "₹400", ["₹300", "₹500", "₹350"], "6 × 50 + 50% × 4 × 50 = 300 + 100 = ₹400."),
     ],
@@ -80,7 +80,7 @@ const lessons: Lesson[] = [
     reflect: "Which incentive plan would you prefer as an employee, and which as an employer?",
     summary: {
       points: [
-        "Halsey: time wage plus 50% of time saved. Rowan: bonus in proportion to time saved.",
+        "Halsey: time wage plus 50% of time saved. Rowan: bonus = time wage × share of standard time saved.",
         "Bedaux: base pay plus Bedaux points. Emerson: bonus rising with efficiency from two-thirds.",
         "Gantt: time rate plus a bonus for meeting the standard. Taylor: differential piece rates.",
       ],

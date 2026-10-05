@@ -37,14 +37,14 @@ const lessons: Lesson[] = [
     before: {
       q: "Did HR departments exist in the early factories?",
       choices: [
-        { label: "Yes", reveal: "Not as we know them. Early factories focused on supervision and discipline; personnel departments came after the Second World War." },
-        { label: "No", reveal: "Right. Personnel departments grew in the 1940s and 1950s; strategic HRM came in the 2000s." },
+        { label: "Yes", reveal: "Not as we know them. Early factories focused on supervision and discipline; personnel departments spread widely only after the Second World War." },
+        { label: "No", reveal: "Right. Personnel departments grew in the 1940s and 1950s; strategic HRM became the dominant approach from the 2000s." },
       ],
     },
     lead: "HRM moved from administrative control, to a focus on people, to a strategic role.",
     check: [
       ask("Which stage is linked to Elton Mayo, social factors and morale?", "Human relations (1920s–1930s)", ["Scientific management", "Modern HRM", "Strategic HRM"], "Scientific management is Taylor's stage."),
-      ask("HR information systems, analytics and a global workforce belong to…", "Strategic HRM (2000s onward)", ["Post-war personnel", "TQM and globalisation", "The Industrial Revolution"], "TQM brought quality and employee involvement."),
+      ask("HR information systems, analytics and a global workforce belong to…", "Strategic HRM (2000s onward)", ["Post-war personnel", "TQM and globalisation", "The Industrial Revolution"], "Technology, analytics and global teams mark the strategic HRM era, from the 2000s."),
     ],
     lens: [],
     reflect: "Which stage does the HR function in an organisation you know still resemble?",

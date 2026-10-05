@@ -129,7 +129,7 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. It brings early detection, trust, an ethical culture and prevention of major scandals." },
       ],
     },
-    lead: "Whistleblowing protects organisations too, and Indian law requires and protects it.",
+    lead: "Whistleblowing protects organisations too, and Indian law requires vigil mechanisms and provides for protecting whistleblowers.",
     check: [
       ask("Which law requires vigil mechanisms of specified companies?", "Companies Act, 2013", ["Whistle Blowers Protection Act, 2014", "Employees' Compensation Act, 1923", "SEBI Act, 1992 alone"], "The Companies Act also provides for the Serious Fraud Investigation Office."),
       ask("The Whistle Blowers Protection Act, 2014 concerns disclosures about…", "Corruption or misuse of power by public servants", ["Private disputes between employees", "Product quality complaints", "Tax returns"], "It also protects those who make such disclosures."),

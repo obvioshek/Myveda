@@ -318,7 +318,7 @@
   "id": "national-income",
   "letter": "N",
   "term": "National Income",
-  "def": "The total monetary value of all final goods and services produced within a country over a year, measured at factor cost.",
+  "def": "The total money value of all final goods and services produced by a country's normal residents over a year, including net factor income from abroad, measured at factor cost (NNP at factor cost).",
   "chapter": 11
  },
  {
@@ -400,9 +400,9 @@
  },
  {
   "id": "piece-rate-system",
-  "letter": "P",
-  "term": "Piece-Rate System",
-  "def": "Taylor's wage system linking pay directly to output, intended to motivate higher productivity.",
+  "letter": "D",
+  "term": "Differential Piece-Rate System",
+  "def": "Taylor's wage system paying a higher rate per piece to workers who meet the standard output and a lower rate to those who fall short, linking pay to output.",
   "chapter": 1
  },
  {
