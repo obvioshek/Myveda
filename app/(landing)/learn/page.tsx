@@ -45,7 +45,7 @@ export default function LearnIndex() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <ContinueBand home={false} />
+      <ContinueBand />
 
       <section className="wrap ci-hero" aria-labelledby="learn-h">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />{UNITS.length === 1 ? `Unit 1 · ${UNITS[0].title}` : `${UNITS.length} units`}</span>

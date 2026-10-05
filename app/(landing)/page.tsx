@@ -4,17 +4,13 @@ import AccountLink from "@/components/landing/AccountLink";
 import BrandMark from "@/components/landing/Brand";
 import ContinueBand from "@/components/landing/ContinueBand";
 import HeroPair from "@/components/landing/HeroPair";
-import InsideBox from "@/components/landing/InsideBox";
-import FullConcept from "@/components/landing/FullConcept";
-import AreaSearch from "@/components/landing/AreaSearch";
-import ConceptLink from "@/components/landing/ConceptLink";
-import SearchLink from "@/components/landing/SearchLink";
 import Toast from "@/components/landing/Toast";
 import ChaptersMenu from "@/components/learn/ChaptersMenu";
+import { Tag } from "@/components/learn/Evidence";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
-import { CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
-import { CHAPTERS, UNITS, chapterPath, deva } from "@/content/learn";
+import { COMMUNITY_HREF, CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, deva, passageHref } from "@/content/learn";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -27,6 +23,9 @@ const Rule = () => <div className="wrap"><div className="rule" /></div>;
 
 export default function LandingPage() {
   const base = siteUrl();
+  const concepts = CHAPTERS.reduce((a, c) => a + c.blocks.length, 0);
+  const passages = CHAPTERS.reduce((a, c) => a + c.pairings.length, 0);
+  const first = CHAPTERS[0];
   // What search engines read about the site itself: who publishes it, what it is
   // called (including the domain and the older "My Veda Verse" name people may
   // search for), and what this page is.
@@ -61,23 +60,23 @@ export default function LandingPage() {
         <ContinueBand />
 
         <section className="wrap hero" aria-labelledby="hero-h">
-          <span className="eyebrow"><i className="sq" aria-hidden="true" />Management, explained, with India&apos;s classical thought</span>
-          <h1 id="hero-h"><span>Learn the idea.</span><span className="red">Then see how the classics saw it.</span></h1>
+          <span className="eyebrow"><i className="sq" aria-hidden="true" />Management, read alongside India&apos;s classical thought</span>
+          <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Clear explanations of motivation, leadership, strategy, finance and more, each read alongside the Arthashastra, the Gita or the Thirukkural, with every verse checked against its source.</p>
+            <p className="lede">Whom do you trust with the work? When is a reward fair? Why do people follow one leader and not another? A course answers with theories from the last hundred years. Here you learn those theories plainly, then read them beside the Arthaśāstra, the Gītā and the Tirukkuṟaḷ, which asked the same questions long before, and see where the two agree and where they part.</p>
             <div className="hero-actions">
               <div className="btn-row">
-                <ConceptLink concept="Selection" href="#concept" className="btn btn-primary btn-lg wide">Start with today&apos;s idea<Arrow /></ConceptLink>
-                <a href="#explore" className="btn btn-secondary btn-lg">Explore ten areas</a>
+                <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
+                <a href={COMMUNITY_HREF} className="btn btn-secondary btn-lg">Join the community</a>
               </div>
               <div className="promise">
-                <span>Open to everyone</span><i aria-hidden="true" />
+                <span>Free to read</span><i aria-hidden="true" />
                 <span>No sign-in needed</span><i aria-hidden="true" />
-                <span>English &amp; <span lang="hi" style={{ fontFamily: "var(--font-deva)" }}>हिन्दी</span></span>
+                <span>Every passage referenced</span>
               </div>
             </div>
           </div>
-          <HeroPair />
+          <HeroPair href={passageHref("principles-of-management", 5)} />
         </section>
 
         <Rule />
@@ -85,24 +84,17 @@ export default function LandingPage() {
           <Eyebrow num="१">Questions worth a second look</Eyebrow>
           <h2 id="q-h" style={{ maxWidth: "22ch" }}>Some questions are older than management. <span className="red">Their answers still argue with ours.</span></h2>
           <div className="grid g3">
-            {QUESTIONS.map(c => {
-              const body = (
-                <>
+            {QUESTIONS.map(c => (
+              <article key={c.n} className="cell qcell">
+                <b className="n">{c.n}</b>
+                <p className="qfact">{c.fact}</p>
+                <p className="qq">{c.question}</p>
+                <Link href={passageHref(c.chapter, c.pairing)} prefetch={false} className="qlink">
                   <span className="qlink-t"><b>{c.concept}</b><span>{c.ref}</span></span>
                   <span className="qgo"><Arrow /></span>
-                </>
-              );
-              return (
-                <article key={c.n} className="cell qcell">
-                  <b className="n">{c.n}</b>
-                  <p className="qfact">{c.fact}</p>
-                  <p className="qq">{c.question}</p>
-                  {c.search
-                    ? <SearchLink term={c.search} className="qlink">{body}</SearchLink>
-                    : <ConceptLink concept={c.concept} href="#concept" className="qlink">{body}</ConceptLink>}
-                </article>
-              );
-            })}
+                </Link>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -120,32 +112,33 @@ export default function LandingPage() {
               ))}
             </ol>
           </div>
-          <InsideBox />
-        </section>
-
-        <FullConcept />
-
-        <Rule />
-        <section className="wrap sec" id="explore" aria-labelledby="areas-h">
-          <AreaSearch>
-            <Eyebrow num="३">Explore</Eyebrow>
-            <h2 id="areas-h">Ten areas. <span className="red">One connected whole.</span></h2>
-            <p className="sub">Start anywhere. Every area links to the others, the way real decisions do.</p>
-          </AreaSearch>
+          <div className="honest">
+            <span className="label red">Honest about every link</span>
+            <p className="honest-h">Not every parallel is a proof. Each passage says which kind it is.</p>
+            <div className="honest-row"><Tag kind="documented" /><p>{HOW.documented}</p></div>
+            <div className="honest-row"><Tag kind="view" /><p>{HOW.view}</p></div>
+            <dl className="honest-stats">
+              <div><dt>Chapters</dt><dd>{CHAPTERS.length}</dd></div>
+              <div><dt>Concepts</dt><dd>{concepts}</dd></div>
+              <div><dt>Cited passages</dt><dd>{passages}</dd></div>
+              <div><dt>Glossary terms</dt><dd>{GLOSSARY.length}</dd></div>
+            </dl>
+            <Link href={chapterPath(first.slug)} className="btn btn-primary btn-lg">Try the first chapter<Arrow /></Link>
+          </div>
         </section>
 
         <Rule />
         <section className="wrap sec" id="chapters" aria-labelledby="chapters-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="४">Read</Eyebrow>
-              <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each one ends with the classics.</span></h2>
+              <Eyebrow num="३">Read</Eyebrow>
+              <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each idea, then its ancient lens.</span></h2>
             </div>
             <div className="chap-cta">
-              <p className="sub">Management and managerial economics, organisational behaviour and HRM: from Fayol and Taylor to elasticity, motivation, leadership and job evaluation. Every concept opens in place: the idea, a quick check, the classical passage beside it, and a one-page summary.</p>
+              <p className="sub">From Fayol and Taylor to elasticity and market structures, from motivation and leadership to job evaluation and strategic HRM. Start with any chapter; each stands on its own, and your progress stays on your device.</p>
               <div className="btn-row">
-                <Link href="/learn" className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
-                <Link href="/learn/glossary" className="btn btn-secondary btn-lg">Browse the glossary</Link>
+                <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
+                <Link href={GLOSSARY_PATH} className="btn btn-secondary btn-lg">Browse the glossary</Link>
               </div>
             </div>
           </div>
@@ -171,23 +164,23 @@ export default function LandingPage() {
         <section className="wrap sec" id="texts" aria-labelledby="texts-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="५">Ancient Lens</Eyebrow>
-              <h2 id="texts-h">Ten texts, <span className="red">read the way one reads Aristotle or Confucius.</span></h2>
+              <Eyebrow num="४">Ancient Lens</Eyebrow>
+              <h2 id="texts-h">Old texts, <span className="red">read the way one reads Aristotle or Confucius.</span></h2>
             </div>
-            <p className="sub">Every verse is shown with its original, a transliteration, a credited translation and an exact reference.</p>
+            <p className="sub">Not as scripture to obey, and not as proof that the ancients knew it all, but as serious thinkers on the same problems. Every passage carries its reference, so you can check it against your own edition.</p>
           </div>
           <figure className="verse">
             <div className="verse-red">
-              <p className="verse-sa" lang="sa">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br />मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥</p>
-              <p className="verse-en">“Your right is to the action alone, never to its fruits.”</p>
+              <p className="verse-ta" lang="ta">இதனை இதனால் இவன்முடிக்கும் என்றாய்ந்து<br />அதனை அவன்கண் விடல்.</p>
+              <p className="verse-en">“Judge that this person can do this task by these means, then leave the task to them.”</p>
             </div>
             <figcaption className="verse-cap">
-              <div><span className="label">Transliteration</span><span className="verse-tr" lang="sa-Latn">karmaṇy evādhikāras te mā phaleṣu kadācana<br />mā karma-phala-hetur bhūr mā te saṅgo ’stv akarmaṇi</span></div>
-              <div className="cap-row"><span className="label">What it means</span><span>Put your effort into the work itself. The outcome depends on more than you, so don’t make it the reason you act, and don’t let it become a reason to stop acting.</span></div>
-              <div className="cap-row"><span className="label">Reference</span><b>Bhagavad Gītā 2.47</b></div>
+              <div><span className="label">Transliteration</span><span className="verse-tr" lang="ta-Latn">itaṉai itaṉāl ivaṉ muṭikkum eṉṟu āyntu<br />ataṉai avaṉkaṇ viṭal</span></div>
+              <div className="cap-row"><span className="label">What it means</span><span>Before you hand over work, weigh the person, the task and the means together. Once you have, trust them with it. Job analysis and delegation, in two lines.</span></div>
+              <div className="cap-row"><span className="label">Reference</span><b>Tirukkuṟaḷ 517</b><Link className="more" href={passageHref("human-resource-management", 0)} prefetch={false}>Read it in its chapter<Arrow /></Link></div>
             </figcaption>
           </figure>
-          <ul className="names" aria-label="The ten texts">
+          <ul className="names" aria-label="The texts the chapters quote">
             {TEXTS.map(t => <li key={t} lang="sa-Latn">{t}</li>)}
           </ul>
         </section>
@@ -196,15 +189,16 @@ export default function LandingPage() {
         <section className="wrap sec" aria-label="Community and practice">
           <div className="grid g2">
             <div className="cell big" id="together">
-              <Eyebrow num="६">Together</Eyebrow>
-              <h2 className="h-sm">You understand an idea best <span className="red">when you explain it to someone else.</span></h2>
-              <p>Concept discussions, study circles (<i lang="sa-Latn">Saṅgha</i>) and structured debates (<i lang="sa-Latn">Śāstrārtha</i>). No sign-in needed to read, appreciate, comment or share. No follower counts. No endless feed.</p>
+              <Eyebrow num="५">Community</Eyebrow>
+              <h2 className="h-sm">An idea becomes yours <span className="red">when you explain it to someone else.</span></h2>
+              <p>Read with a study circle (<i lang="sa-Latn">Saṅgha</i>), ask about a concept you are stuck on, and share notes with people reading the same chapter. No follower counts. No endless feed.</p>
+              <a className="more" href={COMMUNITY_HREF}>Open the community<Arrow /></a>
             </div>
             <div className="cell big" id="practice">
-              <Eyebrow num="७">Practice</Eyebrow>
+              <Eyebrow num="६">Practice</Eyebrow>
               <h2 className="h-sm">Studying for an exam or a course? <span className="red">The same pages hold up when the stakes are higher.</span></h2>
-              <p>Every concept covers what a postgraduate management course expects, from first principles to strategy.</p>
-              <Link className="more" href="/learn">Read the chapters<Arrow /></Link>
+              <p>Each concept covers the terms, formulas and examples a postgraduate management course expects, and every lesson ends in a one-page summary. The revision sheets gather them all, ready to print.</p>
+              <Link className="more" href={REVISION_PATH}>Open the revision sheets<Arrow /></Link>
             </div>
           </div>
         </section>
@@ -218,8 +212,8 @@ export default function LandingPage() {
             <div className="closing-cta">
               <h2 id="closing-h">Start with one idea today.</h2>
               <div className="btn-row">
-                <ConceptLink concept="Selection" href="#concept" className="btn btn-light btn-lg">Today&apos;s idea: Selection<Arrow /></ConceptLink>
-                <a href="#together" className="btn btn-outline-light btn-lg">Join a study circle</a>
+                <Link href={chapterPath(first.slug)} className="btn btn-light btn-lg">Begin with Chapter 1<Arrow /></Link>
+                <a href={COMMUNITY_HREF} className="btn btn-outline-light btn-lg">Join the community</a>
               </div>
             </div>
           </div>
@@ -230,20 +224,19 @@ export default function LandingPage() {
         <div className="wrap foot-grid">
           <div className="foot-about">
             <span className="foot-brand"><BrandMark />Veda Verse</span>
-            <p>Learn management one clear idea at a time, and see each idea through India&apos;s classical thought.</p>
+            <p>Management one clear idea at a time, each read beside India&apos;s classical thought, with every passage referenced.</p>
           </div>
           <nav className="foot-col" aria-label="Learn">
             <span className="label">Learn</span>
-            <a href="#explore">Explore ten areas</a>
-            <Link href="/learn">All chapters</Link>
-            <Link href="/learn/glossary">Glossary</Link>
-            <a href="#inside">Sample concept</a>
+            <Link href={LEARN_PATH}>All chapters</Link>
+            <Link href={GLOSSARY_PATH}>Glossary</Link>
+            <Link href={REVISION_PATH}>Revision sheets</Link>
             <a href="#practice">For exam students</a>
-            <a href="#together">Community</a>
+            <a href={COMMUNITY_HREF}>Community</a>
           </nav>
           <nav className="foot-col" aria-label="About">
             <span className="label">About</span>
-            <a href="#texts">The ten texts</a>
+            <a href="#texts">The texts</a>
             <a href="#steps">How concepts are taught</a>
           </nav>
           <nav className="foot-col" aria-label="Contact">

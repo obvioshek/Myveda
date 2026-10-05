@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import { NAV } from "@/content/landing";
 import BrandMark from "./Brand";
 import SiteSearch from "@/components/learn/SiteSearch";
-import { signInLabel, useAccount } from "./account";
+import { signInLabel, signInOnly, useAccount } from "./account";
 
 // Sticky header with a thin red reading-progress rule along its foot and a
 // native <details> menu on small screens.
 export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel: React.ReactNode; chaptersList: React.ReactNode }) {
-  const account = useAccount();
+  const account = signInOnly(useAccount());
   const bar = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDetailsElement>(null);
   const [scrolled, setScrolled] = useState(false);

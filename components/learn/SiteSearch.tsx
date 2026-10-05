@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { openConcept, searchAreas } from "@/components/landing/device";
 import type { SearchEntry, SearchKind } from "@/content/learn/search";
 
-const LABEL: Record<SearchKind, string> = { concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens", area: "Home page" };
-const RANK: Record<SearchKind, number> = { chapter: 8, concept: 6, term: 5, passage: 3, area: 1 };
-const START = ["Fayol's 14 principles", "Elasticity of Demand", "Selection", "Consumer surplus", "Kinked demand curve", "Inflation"];
+const LABEL: Record<SearchKind, string> = { concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens" };
+const RANK: Record<SearchKind, number> = { chapter: 8, concept: 6, term: 5, passage: 3 };
+const START = ["Fayol's 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "Kinked demand curve", "Job evaluation and its methods"];
 
 // Plain letters only, so "kautilya" finds Kauṭilya and "gita" finds Gītā.
 const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -42,7 +41,6 @@ function rank(rows: Row[], query: string): Row[] {
 // come as you type, and a result takes you to the right part of the right page.
 export default function SiteSearch() {
   const router = useRouter();
-  const path = usePathname();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -96,19 +94,6 @@ export default function SiteSearch() {
     setOpen(false);
     setQ("");
     setActive(0);
-    if (e.k === "area") {
-      const term = decodeURIComponent(e.h.split("find=")[1]?.split("#")[0] ?? "");
-      if (path === "/") {
-        searchAreas(term);
-        document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
-        return;
-      }
-    }
-    if (e.h === "/#concept" && path === "/") {
-      openConcept("Selection");
-      document.getElementById("concept")?.scrollIntoView({ behavior: "smooth" });
-      return;
-    }
     router.push(e.h);
   };
 
@@ -163,7 +148,7 @@ export default function SiteSearch() {
               ))}
             </ul>
             {q.trim() && rows && list.length === 0 && (
-              <p className="srch-none">Nothing on “{q.trim()}” yet. <Link href="/#explore" onClick={() => setOpen(false)}>Browse the ten areas</Link> to see what is coming.</p>
+              <p className="srch-none">Nothing on “{q.trim()}” yet. <Link href="/learn" onClick={() => setOpen(false)}>Browse all chapters</Link>, or try a shorter word.</p>
             )}
             <p className="srch-foot">Press <kbd>/</kbd> to search from any page. <kbd>↑</kbd> <kbd>↓</kbd> to move, <kbd>Enter</kbd> to open, <kbd>Esc</kbd> to close.</p>
           </div>
