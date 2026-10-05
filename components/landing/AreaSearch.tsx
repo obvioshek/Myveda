@@ -14,6 +14,14 @@ export default function AreaSearch({ children }: { children: React.ReactNode }) 
 
   useEffect(() => onSearchAreas(setQ), []);
 
+  // A result from the site search on another page arrives as /?find=term#explore.
+  useEffect(() => {
+    const find = new URLSearchParams(window.location.search).get("find");
+    if (!find) return;
+    const t = window.setTimeout(() => setQ(find), 0);
+    return () => window.clearTimeout(t);
+  }, []);
+
   let matched = 0;
   const areas = AREAS.map(a => {
     const hits = needle ? a.concepts.filter(k => k.toLowerCase().includes(needle)) : [];

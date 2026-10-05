@@ -132,9 +132,34 @@
    "group": "management",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
-     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>School</th><th>Period</th><th>Key names</th><th>Focus and contribution</th></tr></thead>\n<tbody>\n<tr><td>Classical</td><td>Late 19th to early 20th century</td><td>F. W. Taylor, Henri Fayol</td><td>Efficiency, structure and productivity. Scientific study of work, time and motion studies, differential piece-rate, administrative principles, division of work, unity of command, scalar chain. Central idea: replace rule of thumb with systematic management.</td></tr>\n<tr><td>Neoclassical</td><td>1920s–1930s</td><td>Elton Mayo</td><td>Human relations, motivation, communication, teamwork and morale. The Hawthorne studies found that productivity follows social and psychological factors, not physical conditions alone. Employees are social and emotional beings, so participative leadership and attention to relationships matter.</td></tr>\n<tr><td>Systems (modern)</td><td>Mid-20th century to present</td><td>Chester Barnard, Ludwig von Bertalanffy</td><td>The organisation is an open system of interdependent subsystems (production, finance, HR and others) interacting with its environment. A change in one subsystem affects the rest. Key words: interdependence, integration, coordination, feedback, synergy. Think of the whole, not isolated parts.</td></tr>\n<tr><td>Contingency</td><td>1960s to present</td><td>Fred Fiedler, Paul Lawrence, Jay Lorsch</td><td>There is no single best way to manage. Effectiveness depends on the fit between structure, environment, technology and people. The manager analyses the situation, adapts the approach, and improves results.</td></tr>\n<tr><td>Contemporary</td><td>Late 20th century to present</td><td>W. Edwards Deming, Peter Drucker, Ikujiro Nonaka</td><td>Two streams. Total Quality Management: continuous improvement and customer satisfaction through teamwork. Knowledge management: create, share and use knowledge so it becomes a competitive resource. Together they stress learning culture, innovation, adaptability, customer trust and employee contribution.</td></tr>\n</tbody></table></div>\n<p>The sequence reads as a series of shifts: from <b>tasks and structure</b> to <b>people</b>; from people to the <b>interconnected organisation</b>; from one system to <b>situation-specific</b> management; and from adaptation to <b>continuous improvement and knowledge</b>.</p>"
+     "id": "classical-school",
+     "title": "Classical school",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>Late 19th to early 20th century</td></tr><tr><td>Key names</td><td>F. W. Taylor, Henri Fayol</td></tr></tbody></table></div>\n<p>Efficiency, structure and productivity. Scientific study of work, time and motion studies, differential piece-rate, administrative principles, division of work, unity of command, scalar chain. Central idea: replace rule of thumb with systematic management.</p>"
+    },
+    {
+     "id": "neoclassical-school",
+     "title": "Neoclassical school",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>1920s–1930s</td></tr><tr><td>Key names</td><td>Elton Mayo</td></tr></tbody></table></div>\n<p>Human relations, motivation, communication, teamwork and morale. The Hawthorne studies found that productivity follows social and psychological factors, not physical conditions alone. Employees are social and emotional beings, so participative leadership and attention to relationships matter.</p>"
+    },
+    {
+     "id": "systems-approach",
+     "title": "Systems approach",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>Mid-20th century to present</td></tr><tr><td>Key names</td><td>Chester Barnard, Ludwig von Bertalanffy</td></tr></tbody></table></div>\n<p>The organisation is an open system of interdependent subsystems (production, finance, HR and others) interacting with its environment. A change in one subsystem affects the rest. Key words: interdependence, integration, coordination, feedback, synergy. Think of the whole, not isolated parts.</p>"
+    },
+    {
+     "id": "contingency-approach",
+     "title": "Contingency approach",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>1960s to present</td></tr><tr><td>Key names</td><td>Fred Fiedler, Paul Lawrence, Jay Lorsch</td></tr></tbody></table></div>\n<p>There is no single best way to manage. Effectiveness depends on the fit between structure, environment, technology and people. The manager analyses the situation, adapts the approach, and improves results.</p>"
+    },
+    {
+     "id": "contemporary-approaches",
+     "title": "Contemporary approaches",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><tbody><tr><td>Period</td><td>Late 20th century to present</td></tr><tr><td>Key names</td><td>W. Edwards Deming, Peter Drucker, Ikujiro Nonaka</td></tr></tbody></table></div>\n<p>Two streams. Total Quality Management: continuous improvement and customer satisfaction through teamwork. Knowledge management: create, share and use knowledge so it becomes a competitive resource. Together they stress learning culture, innovation, adaptability, customer trust and employee contribution.</p>"
+    },
+    {
+     "id": "from-one-school-to-the-next",
+     "title": "From one school to the next",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table><thead><tr><th>School</th><th>Period</th><th>Key names</th></tr></thead><tbody><tr><td>Classical</td><td>Late 19th to early 20th century</td><td>F. W. Taylor, Henri Fayol</td></tr><tr><td>Neoclassical</td><td>1920s–1930s</td><td>Elton Mayo</td></tr><tr><td>Systems (modern)</td><td>Mid-20th century to present</td><td>Chester Barnard, Ludwig von Bertalanffy</td></tr><tr><td>Contingency</td><td>1960s to present</td><td>Fred Fiedler, Paul Lawrence, Jay Lorsch</td></tr><tr><td>Contemporary</td><td>Late 20th century to present</td><td>W. Edwards Deming, Peter Drucker, Ikujiro Nonaka</td></tr></tbody></table></div>\n<p>The sequence reads as a series of shifts: from <b>tasks and structure</b> to <b>people</b>; from people to the <b>interconnected organisation</b>; from one system to <b>situation-specific</b> management; and from adaptation to <b>continuous improvement and knowledge</b>.</p>"
     }
    ],
    "lensNote": null,
@@ -203,8 +228,8 @@
    "group": "management",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "what-communication-is",
+     "title": "What communication is",
      "html": "<p><b>Forms.</b> Verbal, non-verbal, written and digital. Good communication gives an organisation clarity, coordination, cooperation, better relationships and a shared sense of objectives.</p>"
     },
     {
@@ -271,8 +296,8 @@
    "group": "management",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "what-a-decision-rests-on",
+     "title": "What a decision rests on",
      "html": "<p>Decisions rest on three foundations: <b>logic</b>, <b>analysis</b> and <b>intuition</b>. Done well, they improve efficiency, effectiveness, adaptability, competitiveness and organisational performance.</p>"
     },
     {
@@ -429,8 +454,8 @@
    "group": "economics",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "what-business-economics-is",
+     "title": "What business economics is",
      "html": "<p>Business economics applies economic principles and methods to real business situations. The decisions it informs include production, pricing, investment and risk management.</p>"
     },
     {
@@ -516,8 +541,8 @@
    "group": "economics",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "measuring-elasticity",
+     "title": "Measuring elasticity: PED, YED and XED",
      "html": "<p>If a small change in the determinant brings a large change in quantity, demand is <b>highly elastic</b>. If a large change brings only a small change, it is <b>inelastic</b>. Businesses use elasticity to set prices, forecast revenue, plan taxation and promotions, and judge which products respond most to change.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Measure</th><th>Formula</th><th>Reading</th><th>Worked example</th></tr></thead>\n<tbody>\n<tr><td>PED, price elasticity</td><td>% change in quantity demanded ÷ % change in price</td><td>&gt; 1 elastic, = 1 unitary, &lt; 1 inelastic</td><td>Price up 10%, quantity down 20%: PED = 2, elastic.</td></tr>\n<tr><td>YED, income elasticity</td><td>% change in quantity demanded ÷ % change in income</td><td>&gt; 1 luxury; between 0 and 1 necessity; 0 neutral; &lt; 0 inferior</td><td>Income up 10%, demand up 15%: YED = 1.5, luxury good.</td></tr>\n<tr><td>XED, cross elasticity</td><td>% change in quantity of A ÷ % change in price of B</td><td>Positive: substitutes. Negative: complements. Zero: unrelated.</td><td>Coffee price up 20%, tea demand up 10%: XED = +0.5, substitutes.</td></tr>\n</tbody></table></div>"
     },
     {
@@ -639,8 +664,8 @@
    "group": "economics",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "the-ordinal-approach",
+     "title": "The ordinal approach",
      "html": "<p>The ordinal approach drops utils. It asks only whether a consumer prefers bundle A to bundle B, and it uses two tools, the <b>indifference curve</b> and the <b>budget constraint</b>, to find the choice. Its assumptions: a <b>rational consumer</b> who prefers more to less; <b>complete</b> preferences (every bundle can be ranked); <b>transitivity</b> (if A is preferred to B and B to C, then A is preferred to C); <b>divisible</b> goods; <b>non-satiation</b> (more is preferred); and no cardinal measurement of utility.</p>"
     },
     {
@@ -703,8 +728,8 @@
    "group": "economics",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "the-four-market-structures",
+     "title": "The four market structures",
      "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Feature</th><th>Perfect competition</th><th>Monopolistic competition</th><th>Oligopoly</th><th>Monopoly</th></tr></thead>\n<tbody>\n<tr><td>Sellers</td><td>Very many</td><td>Many</td><td>Few</td><td>One</td></tr>\n<tr><td>Product</td><td>Homogeneous</td><td>Differentiated</td><td>Homogeneous or differentiated</td><td>Unique, no close substitute</td></tr>\n<tr><td>Entry</td><td>Free</td><td>Relatively easy</td><td>Difficult</td><td>Blocked</td></tr>\n<tr><td>Price control</td><td>None (price taker)</td><td>Limited</td><td>Considerable</td><td>High (price maker)</td></tr>\n<tr><td>Demand curve</td><td>Horizontal</td><td>Downward sloping</td><td>Kinked, indeterminate</td><td>Downward sloping</td></tr>\n<tr><td>Revenue</td><td>AR = MR = P</td><td>AR &gt; MR</td><td>MR has a gap</td><td>AR &gt; MR</td></tr>\n<tr><td>Non-price competition</td><td>None</td><td>Significant (advertising)</td><td>Very strong</td><td>None</td></tr>\n<tr><td>Long-run profit</td><td>Normal</td><td>Normal</td><td>Supernormal possible</td><td>Supernormal possible</td></tr>\n<tr><td>Examples</td><td>Wheat, rice</td><td>Restaurants, clothing, cosmetics</td><td>Automobiles, airlines, steel, cement</td><td>Local electricity board, patented drugs</td></tr>\n</tbody></table></div>\n<p><b>Normal profit</b> is the minimum return needed to keep a firm in an industry. <b>Supernormal profit</b> is any return above it.</p>"
     },
     {
@@ -821,8 +846,8 @@
    "group": "ethics",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "ethics-morals-and-values",
+     "title": "Ethics, morals and values",
      "html": "<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Term</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Ethics</td><td>Standards and codes that guide right behaviour</td></tr>\n<tr><td>Morals</td><td>Personal beliefs about right and wrong</td></tr>\n<tr><td>Values</td><td>Deeply held principles about what is important</td></tr>\n</tbody></table></div>\n<p><b>Business ethics</b> applies moral principles to business decisions, balancing profit with social welfare. It builds trust and reputation, promotes fairness and accountability, and supports long-term sustainability.</p>"
     },
     {
@@ -912,8 +937,8 @@
    "group": "ethics",
    "blocks": [
     {
-     "id": "overview",
-     "title": null,
+     "id": "corporate-governance-theories",
+     "title": "Corporate governance",
      "html": "<p><b>Corporate governance</b> is the system of rules, practices and processes by which a company is directed and controlled so that stakeholder interests are balanced.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Table, scrolls sideways on narrow screens\" tabindex=\"0\"><table>\n<thead><tr><th>Theory</th><th>View of the manager</th></tr></thead>\n<tbody>\n<tr><td>Agency theory</td><td>Managers (agents) may act in their own interest against the shareholders (principals). The conflict is managed through audits and performance incentives.</td></tr>\n<tr><td>Stewardship theory</td><td>Managers are trustworthy stewards of the company, not self-interested agents.</td></tr>\n</tbody></table></div>\n<p>The <b>OECD Principles</b> are international governance guidelines covering shareholder rights, equitable treatment, transparency and the role of stakeholders.</p>"
     },
     {

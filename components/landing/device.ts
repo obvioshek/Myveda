@@ -8,6 +8,7 @@ import { useSyncExternalStore } from "react";
 // every access is wrapped and the page works without it.
 
 export const LAST_KEY = "vv-last";
+export const LAST_HREF_KEY = "vv-last-href";
 export const NOTE_KEY = "vv-note";
 
 const CHANGE = "vv-device-change";
@@ -64,10 +65,11 @@ export function onRevealConcept(handler: () => void) {
   return () => window.removeEventListener(CONCEPT, handler);
 }
 
-// Opening a concept saves it as the place to continue from and opens the sample
-// concept on the page. Concept pages don't exist yet, and Selection is the one
-// concept with content, so it is the one that opens.
-export function openConcept(name: string, announce = true) {
+// Opening a concept saves it as the place to continue from. With no `href` it
+// opens the sample concept on the home page (Selection); with one, Continue
+// leads back to that lesson's own page.
+export function openConcept(name: string, announce = true, href = "") {
+  writeDevice(LAST_HREF_KEY, href);
   writeDevice(LAST_KEY, name);
   if (announce) showToast(`${name} saved to Continue`);
   window.dispatchEvent(new Event(CONCEPT));

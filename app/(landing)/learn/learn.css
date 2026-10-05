@@ -93,7 +93,7 @@
 .prose td:first-child { color: var(--color-text); font-weight: 800; }
 .prose tbody tr:last-child td { border-bottom: 0; }
 .prose figure { display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 2px solid var(--color-text); background: var(--color-neutral-100); }
-.prose figure svg { height: auto; }
+.prose figure svg { height: auto; overflow: visible; }
 .prose figcaption { max-width: 60ch; color: var(--soft); font-size: 14px; line-height: 22px; }
 
 /* ---------- The Ancient lens ---------- */
@@ -165,3 +165,40 @@
 .ch-chips a:hover { background: var(--color-text); color: var(--color-bg); }
 .ci-ref { display: flex; flex-direction: column; padding-top: clamp(24px, 3vw, 40px); }
 .ci-ref .ci { min-height: 0; }
+
+/* ---------- Guided lessons (a concept taught in five steps) ---------- */
+.ls { border: 2px solid var(--color-text); scroll-margin-top: 88px; }
+.ls-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; }
+.ls-title { margin-top: 4px; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; letter-spacing: -.015em; }
+.ls-sub { max-width: 58ch; margin-top: 6px; color: var(--body); font-size: 15px; line-height: 24px; }
+.ls-head .btn { min-width: 220px; }
+.ls-before { display: flex; flex-direction: column; gap: 14px; padding: 22px 24px 28px; border-top: 2px solid var(--color-divider); }
+.ls-before .reveal { margin-top: -14px; }
+.ls-body { display: flex; flex-direction: column; padding: 0 24px 8px; border-top: 2px solid var(--color-divider); }
+.ls-core, .ls-checks, .ls-lens, .ls-sum { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.ls-core .core { max-width: 62ch; }
+
+.ck { display: flex; flex-direction: column; gap: 12px; }
+.ck + .ck { padding-top: 24px; border-top: 2px solid var(--color-divider); }
+.ck-q { max-width: 52ch; font-size: 19px; font-weight: 800; letter-spacing: -.005em; line-height: 26px; }
+.ck-opts { display: flex; flex-direction: column; max-width: 560px; }
+.ck-opt { width: 100%; min-height: 48px; padding-block: 10px; text-align: left; white-space: normal; }
+.ck-opt + .ck-opt { margin-top: -2px; }
+.ck-opt.right, .ck-opt.right:hover { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); }
+.ck-opt.wrong, .ck-opt.wrong:hover { border-color: var(--color-accent); background: var(--color-accent-100); color: var(--color-accent-800); }
+.ck .reveal { margin-top: -12px; }
+.ck-a { max-width: 60ch; padding-top: 14px; color: var(--body); font-size: 16px; line-height: 26px; }
+.ck-a b { color: var(--color-text); }
+
+.ls-lens-in { display: flex; flex-direction: column; gap: 28px; }
+.ls-lens .lp-list { border-top: 0; }
+.ls-lens .lp:first-child .lp-main { padding-top: 0; }
+.ls-lens .lp:first-child .lp-q { margin-top: 0; }
+.lp-cmp { grid-column: 1 / -1; margin-bottom: 28px; }
+.ls-sum { align-items: flex-start; }
+.ls-sum .pair-2 { align-self: stretch; }
+.ls-points { display: flex; flex-direction: column; gap: 10px; padding-left: 20px; list-style: square; }
+.ls-points li { color: var(--body); font-size: 16px; line-height: 25px; }
+.ls-points li::marker { color: var(--color-accent); }
+.ch-part > .ch-legend + .ci-fine { margin-top: -16px; }
+@media (max-width: 479px) { .ls-head, .ls-before { padding-inline: 18px; } .ls-body { padding-inline: 18px; } .ls-head .btn { width: 100%; } }
