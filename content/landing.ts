@@ -9,11 +9,13 @@ export const CONTACT_EMAIL = "admin@myvedaverse.in";
 // anyone else is sent to sign in first.
 export const COMMUNITY_HREF = "/home";
 
+// The header links: the chapters (with their drop-down), the two reference pages,
+// the community, and the footer's "about" block.
 export const NAV = [
   { href: "#chapters", label: "Chapters" },
-  { href: "#steps", label: "How it works" },
+  { href: "/learn/glossary", label: "Glossary" },
+  { href: "/learn/revision", label: "Revision" },
   { href: COMMUNITY_HREF, label: "Community" },
-  { href: "#practice", label: "For exam students" },
   { href: "#about", label: "About" },
 ];
 
@@ -27,12 +29,13 @@ export const QUESTIONS = [
   { n: "03", fact: "The Tirukkural asks who could ever ruin a ruler who keeps friends willing to rebuke him.", question: "Why do teams still punish the person who disagrees?", concept: "Groupthink", ref: "Tirukkuṟaḷ 447", chapter: "group-behaviour-and-leadership", pairing: 3 },
 ];
 
-export const STEPS = [
-  { name: "Core Idea", line: "What it means, how it works, its types and the thinkers behind it" },
-  { name: "Check Yourself", line: "A few quick questions, each answered with the reasoning" },
-  { name: "Ancient Lens", line: "A cited passage, what it adds, and where it differs" },
-  { name: "Reflect & Discuss", line: "One question to sit with, and a place to write your answer" },
-  { name: "One-page Summary", line: "The whole idea in a few lines, to revise from or share" },
+// What the community offers, as the app actually works (see the README's product
+// table): keep each line true to a feature that exists.
+export const COMMUNITY_POINTS = [
+  { name: "Ask about a concept", line: "Answers are grouped by how they help: the one that helped, ones that build on it, and the views that disagree." },
+  { name: "Read with others", line: "Circles, boards, cohorts and practice groups, each with its own threads and rules." },
+  { name: "Know what is sourced", line: "Posts keep what is documented, with its source, apart from what is told." },
+  { name: "Quiet by design", line: "No counts or trending alerts, and notifications held overnight, from 10 pm to 8 am." },
 ];
 
 // The texts the chapters quote from. Add one here only once a chapter cites it.
