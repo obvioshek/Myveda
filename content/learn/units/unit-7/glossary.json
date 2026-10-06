@@ -1,0 +1,954 @@
+[
+ {
+  "id": "4as",
+  "letter": "A",
+  "term": "4As",
+  "def": "Sheth and Sisodia's buyer-side view of the marketing mix: acceptability, affordability, accessibility and awareness.",
+  "chapter": 1
+ },
+ {
+  "id": "advertising",
+  "letter": "A",
+  "term": "Advertising",
+  "def": "Any paid, non-personal presentation of ideas, goods or services by an identified sponsor.",
+  "chapter": 7
+ },
+ {
+  "id": "aida",
+  "letter": "A",
+  "term": "AIDA",
+  "def": "A response model: attention, interest, desire, action; usually credited to E. St. Elmo Lewis.",
+  "chapter": 7
+ },
+ {
+  "id": "aio-model",
+  "letter": "A",
+  "term": "AIO Model",
+  "def": "A way of profiling consumer lifestyle through activities, interests and opinions.",
+  "chapter": 8
+ },
+ {
+  "id": "attitude-consumer",
+  "letter": "A",
+  "term": "Attitude (Consumer)",
+  "def": "A learned predisposition to respond favourably or unfavourably toward a product, brand or idea.",
+  "chapter": 8
+ },
+ {
+  "id": "augmented-product",
+  "letter": "A",
+  "term": "Augmented Product",
+  "def": "The product level that adds services and benefits such as delivery, warranty and after-sales service.",
+  "chapter": 3
+ },
+ {
+  "id": "automatic-vending",
+  "letter": "A",
+  "term": "Automatic Vending",
+  "def": "Non-store retailing through unmanned machines that sell around the clock.",
+  "chapter": 11
+ },
+ {
+  "id": "brand",
+  "letter": "B",
+  "term": "Brand",
+  "def": "A name, term, sign, symbol or design, or a combination, that identifies a seller's goods and differentiates them from competitors'.",
+  "chapter": 4
+ },
+ {
+  "id": "brand-equity",
+  "letter": "B",
+  "term": "Brand Equity",
+  "def": "The added value a brand gives a product in customers' minds, shown in their perceptions, preferences and behaviour.",
+  "chapter": 4
+ },
+ {
+  "id": "brand-extension",
+  "letter": "B",
+  "term": "Brand Extension",
+  "def": "Using an established brand name to enter a new product category.",
+  "chapter": 4
+ },
+ {
+  "id": "brand-portfolio",
+  "letter": "B",
+  "term": "Brand Portfolio",
+  "def": "All the brands and brand lines a firm offers in a category or segment, each with a role such as flanker or prestige brand.",
+  "chapter": 4
+ },
+ {
+  "id": "brand-resonance-model",
+  "letter": "B",
+  "term": "Brand Resonance Model",
+  "def": "Keller's pyramid of brand building: salience, performance and imagery, judgements and feelings, and resonance.",
+  "chapter": 4
+ },
+ {
+  "id": "brandasset-valuator",
+  "letter": "B",
+  "term": "BrandAsset Valuator",
+  "def": "Young and Rubicam's brand equity model with four pillars: energised differentiation, relevance, esteem and knowledge.",
+  "chapter": 4
+ },
+ {
+  "id": "buyclass-framework",
+  "letter": "B",
+  "term": "Buyclass Framework",
+  "def": "Robinson, Faris and Wind's classification of business purchases into straight rebuy, modified rebuy and new task.",
+  "chapter": 8
+ },
+ {
+  "id": "buyer-persona",
+  "letter": "B",
+  "term": "Buyer Persona",
+  "def": "A fictional profile of an ideal customer, used to target marketing.",
+  "chapter": 10
+ },
+ {
+  "id": "buygrid-model",
+  "letter": "B",
+  "term": "Buygrid Model",
+  "def": "Robinson, Faris and Wind's grid crossing the three buyclasses with eight stages (buyphases) of the industrial buying process.",
+  "chapter": 8
+ },
+ {
+  "id": "buying-centre",
+  "letter": "B",
+  "term": "Buying Centre",
+  "def": "Everyone involved in an organisational purchase: users, influencers, buyers, deciders and gatekeepers, with initiators and approvers.",
+  "chapter": 8
+ },
+ {
+  "id": "4cs",
+  "letter": "C",
+  "term": "4Cs",
+  "def": "Lauterborn's customer-side restatement of the 4Ps: customer solution, cost, convenience and communication.",
+  "chapter": 1
+ },
+ {
+  "id": "category-extension",
+  "letter": "C",
+  "term": "Category Extension",
+  "def": "Using a brand to enter a product category different from its original one.",
+  "chapter": 4
+ },
+ {
+  "id": "channel-intermediary",
+  "letter": "C",
+  "term": "Channel Intermediary",
+  "def": "A wholesaler, retailer, agent or broker that helps move a product from producer to consumer.",
+  "chapter": 6
+ },
+ {
+  "id": "churn",
+  "letter": "C",
+  "term": "Churn",
+  "def": "The rate at which customers stop doing business with a firm over a period.",
+  "chapter": 10
+ },
+ {
+  "id": "co-branding",
+  "letter": "C",
+  "term": "Co-Branding",
+  "def": "Putting two or more established brand names on one product.",
+  "chapter": 4
+ },
+ {
+  "id": "cognitive-dissonance",
+  "letter": "C",
+  "term": "Cognitive Dissonance",
+  "def": "Discomfort after a purchase caused by doubt about the choice; ‘buyer's remorse’.",
+  "chapter": 8
+ },
+ {
+  "id": "common-carrier",
+  "letter": "C",
+  "term": "Common Carrier",
+  "def": "A transport firm serving set routes on a schedule, open to all shippers at standard rates.",
+  "chapter": 6
+ },
+ {
+  "id": "conjunctive-rule",
+  "letter": "C",
+  "term": "Conjunctive Rule",
+  "def": "A decision rule in which a product must meet a minimum acceptable level on every attribute.",
+  "chapter": 8
+ },
+ {
+  "id": "core-product",
+  "letter": "C",
+  "term": "Core Product",
+  "def": "The basic benefit or need the customer is really buying.",
+  "chapter": 3
+ },
+ {
+  "id": "cost-plus-pricing",
+  "letter": "C",
+  "term": "Cost-Plus Pricing",
+  "def": "Setting price by adding a standard mark-up to cost.",
+  "chapter": 5
+ },
+ {
+  "id": "customer-lifetime-value-clv",
+  "letter": "C",
+  "term": "Customer Lifetime Value (CLV)",
+  "def": "The present value of the profits a customer will bring over the whole relationship.",
+  "chapter": 10
+ },
+ {
+  "id": "derived-demand",
+  "letter": "D",
+  "term": "Derived Demand",
+  "def": "Demand for business goods that comes from demand for the consumer goods they help produce.",
+  "chapter": 8
+ },
+ {
+  "id": "direct-marketing",
+  "letter": "D",
+  "term": "Direct Marketing",
+  "def": "One-to-one communication designed to get an immediate, measurable response.",
+  "chapter": 13
+ },
+ {
+  "id": "discount-store",
+  "letter": "D",
+  "term": "Discount Store",
+  "def": "A retailer selling standard goods at low prices, with low margins and high volume.",
+  "chapter": 11
+ },
+ {
+  "id": "disjunctive-rule",
+  "letter": "D",
+  "term": "Disjunctive Rule",
+  "def": "A decision rule in which a product is accepted if it meets a high standard on any one key attribute.",
+  "chapter": 8
+ },
+ {
+  "id": "distribution-channel",
+  "letter": "D",
+  "term": "Distribution Channel",
+  "def": "The set of organisations, direct or through intermediaries, through which a product passes from producer to final consumer.",
+  "chapter": 6
+ },
+ {
+  "id": "evoked-set",
+  "letter": "E",
+  "term": "Evoked Set",
+  "def": "The brands a buyer actively considers when evaluating alternatives.",
+  "chapter": 8
+ },
+ {
+  "id": "exchange-theory",
+  "letter": "E",
+  "term": "Exchange Theory",
+  "def": "In social marketing, the idea that a behaviour change must offer benefits that outweigh its perceived costs.",
+  "chapter": 13
+ },
+ {
+  "id": "exclusive-distribution",
+  "letter": "E",
+  "term": "Exclusive Distribution",
+  "def": "Distribution through one or very few dealers in each area; typical of luxury and specialty goods.",
+  "chapter": 6
+ },
+ {
+  "id": "exporting",
+  "letter": "E",
+  "term": "Exporting",
+  "def": "Entering a foreign market by selling home-produced goods there, directly or through intermediaries.",
+  "chapter": 12
+ },
+ {
+  "id": "fdi-foreign-direct-investment",
+  "letter": "F",
+  "term": "FDI (Foreign Direct Investment)",
+  "def": "Entering a foreign market by building or buying production facilities there: the highest risk and full control.",
+  "chapter": 12
+ },
+ {
+  "id": "flanker-brand",
+  "letter": "F",
+  "term": "Flanker Brand",
+  "def": "A lower-priced ‘fighter’ brand launched to protect a flagship brand from competitors.",
+  "chapter": 4
+ },
+ {
+  "id": "franchise-organisation",
+  "letter": "F",
+  "term": "Franchise Organisation",
+  "def": "A contractual system of outlets run under a franchisor's brand and system, for a fee.",
+  "chapter": 11
+ },
+ {
+  "id": "gatekeeper",
+  "letter": "G",
+  "term": "Gatekeeper",
+  "def": "A buying-centre member who controls the flow of information to the others.",
+  "chapter": 8
+ },
+ {
+  "id": "green-marketing",
+  "letter": "G",
+  "term": "Green Marketing",
+  "def": "Marketing environmentally sustainable products and practices.",
+  "chapter": 13
+ },
+ {
+  "id": "green-product",
+  "letter": "G",
+  "term": "Green Product",
+  "def": "A product whose making, purchase and use allow economic development without polluting or depleting natural resources.",
+  "chapter": 13
+ },
+ {
+  "id": "greenwashing",
+  "letter": "G",
+  "term": "Greenwashing",
+  "def": "Making false or exaggerated environmental claims about a product.",
+  "chapter": 13
+ },
+ {
+  "id": "guerrilla-marketing",
+  "letter": "G",
+  "term": "Guerrilla Marketing",
+  "def": "Unconventional, low-cost tactics designed to surprise audiences and create buzz.",
+  "chapter": 13
+ },
+ {
+  "id": "habitual-buying",
+  "letter": "H",
+  "term": "Habitual Buying",
+  "def": "Low-involvement buying where brands differ little, needing minimal decision-making; salt is the usual example.",
+  "chapter": 8
+ },
+ {
+  "id": "heterogeneity-service",
+  "letter": "H",
+  "term": "Heterogeneity (Service)",
+  "def": "The variability of service quality depending on who provides it, when, where and how.",
+  "chapter": 9
+ },
+ {
+  "id": "holistic-marketing",
+  "letter": "H",
+  "term": "Holistic Marketing",
+  "def": "Kotler and Keller's view of marketing as one connected system: relationship, integrated, internal and performance marketing.",
+  "chapter": 1
+ },
+ {
+  "id": "horizontal-marketing-system",
+  "letter": "H",
+  "term": "Horizontal Marketing System",
+  "def": "Cooperation between unrelated firms at the same level of a channel to exploit an opportunity.",
+  "chapter": 6
+ },
+ {
+  "id": "idic-model",
+  "letter": "I",
+  "term": "IDIC Model",
+  "def": "Peppers and Rogers' one-to-one marketing steps: identify, differentiate, interact, customise.",
+  "chapter": 10
+ },
+ {
+  "id": "industrial-buying-behaviour",
+  "letter": "I",
+  "term": "Industrial Buying Behaviour",
+  "def": "The process by which organisations establish needs and choose among products and suppliers for production, operations or resale.",
+  "chapter": 8
+ },
+ {
+  "id": "inseparability",
+  "letter": "I",
+  "term": "Inseparability",
+  "def": "The service characteristic that production and consumption happen together.",
+  "chapter": 9
+ },
+ {
+  "id": "intangibility",
+  "letter": "I",
+  "term": "Intangibility",
+  "def": "The service characteristic that it cannot be seen, touched or tried before purchase.",
+  "chapter": 9
+ },
+ {
+  "id": "integrated-marketing-communications",
+  "letter": "I",
+  "term": "Integrated Marketing Communications",
+  "def": "Coordinating all promotion tools to deliver one clear, consistent message.",
+  "chapter": 7
+ },
+ {
+  "id": "intensive-distribution",
+  "letter": "I",
+  "term": "Intensive Distribution",
+  "def": "Placing a product in as many outlets as possible; typical of convenience goods.",
+  "chapter": 6
+ },
+ {
+  "id": "interactive-marketing",
+  "letter": "I",
+  "term": "Interactive Marketing",
+  "def": "The employee-customer side of the service triangle, where the service is delivered.",
+  "chapter": 9
+ },
+ {
+  "id": "internal-marketing",
+  "letter": "I",
+  "term": "Internal Marketing",
+  "def": "Hiring, training and motivating employees to serve customers well.",
+  "chapter": 9
+ },
+ {
+  "id": "inventory-carrying-costs",
+  "letter": "I",
+  "term": "Inventory Carrying Costs",
+  "def": "The costs of holding stock: storage, capital, taxes and insurance, depreciation and obsolescence.",
+  "chapter": 6
+ },
+ {
+  "id": "joint-venture-market-entry",
+  "letter": "J",
+  "term": "Joint Venture (Market Entry)",
+  "def": "Entering a foreign market in partnership with a local firm, sharing ownership, control and risk.",
+  "chapter": 12
+ },
+ {
+  "id": "kirana-store",
+  "letter": "K",
+  "term": "Kirana Store",
+  "def": "A traditional Indian neighbourhood store, now modernising with self-service, credit, home delivery and digital ordering.",
+  "chapter": 11
+ },
+ {
+  "id": "lexicographic-rule",
+  "letter": "L",
+  "term": "Lexicographic Rule",
+  "def": "A decision rule that compares brands on the most important attribute first.",
+  "chapter": 8
+ },
+ {
+  "id": "licensing",
+  "letter": "L",
+  "term": "Licensing",
+  "def": "Entering a foreign market by letting a local firm use a process, trademark or patent for a royalty.",
+  "chapter": 12
+ },
+ {
+  "id": "line-extension",
+  "letter": "L",
+  "term": "Line Extension",
+  "def": "A new item in an existing product category under the same brand name, such as a new flavour or size.",
+  "chapter": 4
+ },
+ {
+  "id": "loyalty-pyramid",
+  "letter": "L",
+  "term": "Loyalty Pyramid",
+  "def": "Aaker's levels of brand loyalty: switchers, habitual buyers, satisfied buyers with switching costs, brand likers, committed buyers.",
+  "chapter": 4
+ },
+ {
+  "id": "market-logistics",
+  "letter": "M",
+  "term": "Market Logistics",
+  "def": "Planning, implementing and controlling the physical flow of goods and information from origin to point of use, to meet customer needs at a profit; also called physical distribution.",
+  "chapter": 6
+ },
+ {
+  "id": "market-segmentation",
+  "letter": "M",
+  "term": "Market Segmentation",
+  "def": "Dividing a market into distinct groups of buyers with similar needs, characteristics or behaviour.",
+  "chapter": 2
+ },
+ {
+  "id": "marketing-automation",
+  "letter": "M",
+  "term": "Marketing Automation",
+  "def": "Software that automates routine marketing tasks such as scheduling posts, nurturing leads and tracking campaigns.",
+  "chapter": 13
+ },
+ {
+  "id": "marketing-concept",
+  "letter": "M",
+  "term": "Marketing Concept",
+  "def": "The philosophy that success comes from knowing target customers' needs and satisfying them better than competitors.",
+  "chapter": 1
+ },
+ {
+  "id": "marketing-funnel",
+  "letter": "M",
+  "term": "Marketing Funnel",
+  "def": "The stages from awareness to loyalty, with conversion rates between them that reveal where customers drop out.",
+  "chapter": 10
+ },
+ {
+  "id": "marketing-mix",
+  "letter": "M",
+  "term": "Marketing Mix",
+  "def": "The controllable tools, product, price, place and promotion, that a firm blends to get the response it wants.",
+  "chapter": 1
+ },
+ {
+  "id": "marketing-myopia",
+  "letter": "M",
+  "term": "Marketing Myopia",
+  "def": "Levitt's term for defining a business by its product rather than by the need it serves.",
+  "chapter": 1
+ },
+ {
+  "id": "merchandising-conglomerate",
+  "letter": "M",
+  "term": "Merchandising Conglomerate",
+  "def": "A corporation owning several diversified retail brands and formats.",
+  "chapter": 11
+ },
+ {
+  "id": "modified-rebuy",
+  "letter": "M",
+  "term": "Modified Rebuy",
+  "def": "A business buying situation in which products, prices or suppliers are re-evaluated because needs have changed.",
+  "chapter": 8
+ },
+ {
+  "id": "multibrand-strategy",
+  "letter": "M",
+  "term": "Multibrand Strategy",
+  "def": "Launching new brands in an existing category to capture different segments.",
+  "chapter": 4
+ },
+ {
+  "id": "native-advertising",
+  "letter": "N",
+  "term": "Native Advertising",
+  "def": "Paid content that blends into its surrounding medium and should be labelled as sponsored.",
+  "chapter": 13
+ },
+ {
+  "id": "new-product-development-npd",
+  "letter": "N",
+  "term": "New Product Development (NPD)",
+  "def": "The process of taking a product from idea generation to commercialisation, in eight steps.",
+  "chapter": 3
+ },
+ {
+  "id": "new-task-buying",
+  "letter": "N",
+  "term": "New Task Buying",
+  "def": "A first-time organisational purchase needing extensive research and many decision-makers.",
+  "chapter": 8
+ },
+ {
+  "id": "niche-marketing",
+  "letter": "N",
+  "term": "Niche Marketing",
+  "def": "Focusing on a narrow, well-defined and often underserved group.",
+  "chapter": 2
+ },
+ {
+  "id": "non-store-retailing",
+  "letter": "N",
+  "term": "Non-Store Retailing",
+  "def": "Selling to consumers outside fixed stores: direct selling, direct marketing, vending and buying services.",
+  "chapter": 11
+ },
+ {
+  "id": "objective-and-task-method",
+  "letter": "O",
+  "term": "Objective-and-Task Method",
+  "def": "Setting the promotion budget by costing the tasks needed to reach defined objectives; the most logical method.",
+  "chapter": 7
+ },
+ {
+  "id": "off-price-retailer",
+  "letter": "O",
+  "term": "Off-Price Retailer",
+  "def": "A store selling leftover, surplus or irregular branded goods below regular prices.",
+  "chapter": 11
+ },
+ {
+  "id": "one-to-one-marketing",
+  "letter": "O",
+  "term": "One-to-One Marketing",
+  "def": "Treating each customer as a segment of one.",
+  "chapter": 10
+ },
+ {
+  "id": "order-point",
+  "letter": "O",
+  "term": "Order Point",
+  "def": "The stock level at which a new order is placed, balancing the risk of stockout against the cost of overstock.",
+  "chapter": 6
+ },
+ {
+  "id": "penetration-pricing",
+  "letter": "P",
+  "term": "Penetration Pricing",
+  "def": "Launching at a low price to win market share quickly.",
+  "chapter": 5
+ },
+ {
+  "id": "performance-marketing",
+  "letter": "P",
+  "term": "Performance Marketing",
+  "def": "Marketing in which the advertiser pays only when a measurable action, such as a click, lead or sale, occurs.",
+  "chapter": 13
+ },
+ {
+  "id": "perishability",
+  "letter": "P",
+  "term": "Perishability",
+  "def": "The service characteristic that it cannot be stored; unused capacity is lost.",
+  "chapter": 9
+ },
+ {
+  "id": "permission-marketing",
+  "letter": "P",
+  "term": "Permission Marketing",
+  "def": "Seeking customers' consent before sending them marketing messages.",
+  "chapter": 10
+ },
+ {
+  "id": "personal-selling",
+  "letter": "P",
+  "term": "Personal Selling",
+  "def": "Face-to-face presentation by a salesperson to make sales and build relationships.",
+  "chapter": 7
+ },
+ {
+  "id": "points-of-difference-pods",
+  "letter": "P",
+  "term": "Points of Difference (PODs)",
+  "def": "Attributes or benefits customers strongly associate with a brand and believe they could not find to the same extent in competitors.",
+  "chapter": 2
+ },
+ {
+  "id": "points-of-parity-pops",
+  "letter": "P",
+  "term": "Points of Parity (POPs)",
+  "def": "Associations, not unique to the brand, that it needs to be credible in its category or to neutralise a rival's advantages.",
+  "chapter": 2
+ },
+ {
+  "id": "positioning",
+  "letter": "P",
+  "term": "Positioning",
+  "def": "Designing an offering and image to occupy a distinct, valued place in the target customer's mind.",
+  "chapter": 2
+ },
+ {
+  "id": "private-label",
+  "letter": "P",
+  "term": "Private Label",
+  "def": "A brand created and owned by a retailer or wholesaler; a store brand.",
+  "chapter": 11
+ },
+ {
+  "id": "product-life-cycle",
+  "letter": "P",
+  "term": "Product Life Cycle",
+  "def": "The stages a product's sales and profits pass through: introduction, growth, maturity and decline.",
+  "chapter": 3
+ },
+ {
+  "id": "product-line",
+  "letter": "P",
+  "term": "Product Line",
+  "def": "A group of closely related products made or sold by the same firm.",
+  "chapter": 3
+ },
+ {
+  "id": "product-mix",
+  "letter": "P",
+  "term": "Product Mix",
+  "def": "All the product lines and items a firm offers, measured by width, length, depth and consistency.",
+  "chapter": 3
+ },
+ {
+  "id": "promotion-mix",
+  "letter": "P",
+  "term": "Promotion Mix",
+  "def": "The blend of advertising, sales promotion, personal selling, public relations and direct marketing.",
+  "chapter": 7
+ },
+ {
+  "id": "psychic-proximity",
+  "letter": "P",
+  "term": "Psychic Proximity",
+  "def": "A preference for entering countries with a similar language, culture and legal system.",
+  "chapter": 12
+ },
+ {
+  "id": "psychological-pricing",
+  "letter": "P",
+  "term": "Psychological Pricing",
+  "def": "Pricing that works on perceptions, such as odd prices, reference prices and price as a signal of quality.",
+  "chapter": 5
+ },
+ {
+  "id": "pull-strategy",
+  "letter": "P",
+  "term": "Pull Strategy",
+  "def": "Promoting to final consumers so that they ask channel members for the product.",
+  "chapter": 7
+ },
+ {
+  "id": "push-strategy",
+  "letter": "P",
+  "term": "Push Strategy",
+  "def": "Promoting to channel members, who then promote to final buyers.",
+  "chapter": 7
+ },
+ {
+  "id": "reach-and-frequency",
+  "letter": "R",
+  "term": "Reach and Frequency",
+  "def": "In media planning, how many people see an ad at least once, and how often the average person sees it.",
+  "chapter": 7
+ },
+ {
+  "id": "relationship-marketing",
+  "letter": "R",
+  "term": "Relationship Marketing",
+  "def": "Building long-term relationships with customers, employees and partners rather than focusing on single transactions.",
+  "chapter": 10
+ },
+ {
+  "id": "retailer-cooperative",
+  "letter": "R",
+  "term": "Retailer Cooperative",
+  "def": "Independent retailers who set up a joint buying organisation and run joint promotions.",
+  "chapter": 11
+ },
+ {
+  "id": "reverse-logistics",
+  "letter": "R",
+  "term": "Reverse Logistics",
+  "def": "Managing returns, recalls, repairs, recycling and excess stock back through the supply chain.",
+  "chapter": 6
+ },
+ {
+  "id": "roadblock-marketing",
+  "letter": "R",
+  "term": "Roadblock Marketing",
+  "def": "Advertising on many channels at the same time so the audience meets the message wherever it turns.",
+  "chapter": 13
+ },
+ {
+  "id": "rural-marketing",
+  "letter": "R",
+  "term": "Rural Marketing",
+  "def": "Marketing designed for rural consumers, often framed by availability, affordability, acceptability and awareness.",
+  "chapter": 13
+ },
+ {
+  "id": "sales-promotion",
+  "letter": "S",
+  "term": "Sales Promotion",
+  "def": "Short-term incentives to encourage trial or purchase, aimed at consumers, the trade or the sales force.",
+  "chapter": 7
+ },
+ {
+  "id": "selective-distribution",
+  "letter": "S",
+  "term": "Selective Distribution",
+  "def": "Distribution through more than one but fewer than all willing outlets; typical of shopping goods.",
+  "chapter": 6
+ },
+ {
+  "id": "service-brand",
+  "letter": "S",
+  "term": "Service Brand",
+  "def": "A brand built mainly on delivering a service, which depends on consistently high service delivery.",
+  "chapter": 9
+ },
+ {
+  "id": "service-triangle",
+  "letter": "S",
+  "term": "Service Triangle",
+  "def": "The links between company, employees and customers: internal, external and interactive marketing.",
+  "chapter": 9
+ },
+ {
+  "id": "servqual",
+  "letter": "S",
+  "term": "SERVQUAL",
+  "def": "A model measuring the gap between expected and perceived service on five dimensions: reliability, assurance, tangibles, empathy, responsiveness.",
+  "chapter": 9
+ },
+ {
+  "id": "seven-ps-of-services",
+  "letter": "S",
+  "term": "Seven Ps of Services",
+  "def": "Booms and Bitner's services mix: product, price, place, promotion, people, process and physical evidence.",
+  "chapter": 9
+ },
+ {
+  "id": "shopper-marketing",
+  "letter": "S",
+  "term": "Shopper Marketing",
+  "def": "Influencing buyers at the point of purchase, where most purchase decisions are made.",
+  "chapter": 11
+ },
+ {
+  "id": "skimming-pricing",
+  "letter": "S",
+  "term": "Skimming Pricing",
+  "def": "Launching at a high price for buyers who value novelty, then lowering it over time.",
+  "chapter": 5
+ },
+ {
+  "id": "social-marketing",
+  "letter": "S",
+  "term": "Social Marketing",
+  "def": "Using marketing techniques to influence behaviour that benefits individuals and society.",
+  "chapter": 13
+ },
+ {
+  "id": "societal-marketing-concept",
+  "letter": "S",
+  "term": "Societal Marketing Concept",
+  "def": "The philosophy that a firm should serve both customers' wants and society's long-term well-being.",
+  "chapter": 1
+ },
+ {
+  "id": "sprinkler-approach",
+  "letter": "S",
+  "term": "Sprinkler Approach",
+  "def": "Entering many countries at the same time to gain first-mover advantage.",
+  "chapter": 12
+ },
+ {
+  "id": "stp",
+  "letter": "S",
+  "term": "STP",
+  "def": "Segmentation, targeting and positioning: the sequence at the heart of marketing strategy.",
+  "chapter": 2
+ },
+ {
+  "id": "straight-rebuy",
+  "letter": "S",
+  "term": "Straight Rebuy",
+  "def": "A routine business purchase from an established supplier with little evaluation.",
+  "chapter": 8
+ },
+ {
+  "id": "sub-brand",
+  "letter": "S",
+  "term": "Sub-brand",
+  "def": "A brand formed by combining a new name with an existing brand name, as in Cadbury Dairy Milk Silk.",
+  "chapter": 4
+ },
+ {
+  "id": "supply-chain-management",
+  "letter": "S",
+  "term": "Supply Chain Management",
+  "def": "Managing the whole chain from procurement through manufacturing to delivery, across organisations.",
+  "chapter": 6
+ },
+ {
+  "id": "targeting",
+  "letter": "T",
+  "term": "Targeting",
+  "def": "Evaluating segments and choosing which to serve.",
+  "chapter": 2
+ },
+ {
+  "id": "trade-off-logistics",
+  "letter": "T",
+  "term": "Trade-off (Logistics)",
+  "def": "The tension between customer service level and total logistics cost: more of one usually means more of the other.",
+  "chapter": 6
+ },
+ {
+  "id": "upselling",
+  "letter": "U",
+  "term": "Upselling",
+  "def": "Persuading a customer to buy a higher-value version or an add-on.",
+  "chapter": 10
+ },
+ {
+  "id": "utility-marketing",
+  "letter": "U",
+  "term": "Utility (Marketing)",
+  "def": "The value that makes a product able to satisfy a want: form, place, time, possession or information utility.",
+  "chapter": 1
+ },
+ {
+  "id": "value-proposition",
+  "letter": "V",
+  "term": "Value Proposition",
+  "def": "The full set of benefits on which a brand is positioned and that it promises to deliver.",
+  "chapter": 2
+ },
+ {
+  "id": "value-based-pricing",
+  "letter": "V",
+  "term": "Value-Based Pricing",
+  "def": "Setting price by the customer's perceived value rather than by cost.",
+  "chapter": 5
+ },
+ {
+  "id": "variety-seeking-buying",
+  "letter": "V",
+  "term": "Variety-Seeking Buying",
+  "def": "Low-involvement buying where buyers switch among clearly different brands for variety.",
+  "chapter": 8
+ },
+ {
+  "id": "vertical-marketing-system",
+  "letter": "V",
+  "term": "Vertical Marketing System",
+  "def": "A channel in which producer, wholesaler and retailer act as one unified system: corporate, contractual or administered.",
+  "chapter": 6
+ },
+ {
+  "id": "voluntary-chain",
+  "letter": "V",
+  "term": "Voluntary Chain",
+  "def": "Independent retailers organised by a wholesaler for group buying and common merchandising.",
+  "chapter": 11
+ },
+ {
+  "id": "waterfall-approach",
+  "letter": "W",
+  "term": "Waterfall Approach",
+  "def": "Entering foreign markets one at a time, in sequence, for controlled expansion and learning.",
+  "chapter": 12
+ },
+ {
+  "id": "webster-and-wind-model",
+  "letter": "W",
+  "term": "Webster and Wind Model",
+  "def": "A model of organisational buying in which environmental, organisational, interpersonal and individual factors influence the buying centre.",
+  "chapter": 8
+ },
+ {
+  "id": "wholesaler",
+  "letter": "W",
+  "term": "Wholesaler",
+  "def": "An intermediary that buys in bulk from producers and resells to retailers or other businesses.",
+  "chapter": 6
+ },
+ {
+  "id": "yield-management",
+  "letter": "Y",
+  "term": "Yield Management",
+  "def": "Managing demand and capacity so the right services reach the right customers at the right places, times and prices.",
+  "chapter": 9
+ },
+ {
+  "id": "zero-level-channel",
+  "letter": "Z",
+  "term": "Zero-Level Channel",
+  "def": "A direct channel in which the producer sells straight to the consumer.",
+  "chapter": 6
+ },
+ {
+  "id": "zone-of-tolerance",
+  "letter": "Z",
+  "term": "Zone of Tolerance",
+  "def": "The range between desired and adequate service within which variations in service go largely unnoticed.",
+  "chapter": 9
+ }
+]

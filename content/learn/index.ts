@@ -24,7 +24,7 @@ export const HOW = {
 };
 
 // Edit when chapter text changes; the sitemap reports it as the last-modified date.
-export const CONTENT_UPDATED = "2026-10-05";
+export const CONTENT_UPDATED = "2026-10-06";
 
 export const LEARN_PATH = "/learn";
 export const GLOSSARY_PATH = "/learn/glossary";

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, deva, type Unit } from "@/content/learn";
 
 function Chapters({ unit, grouped }: { unit: Unit; grouped: boolean }) {
@@ -38,7 +39,8 @@ function More() {
 
 // Every chapter by name, for the header. As a panel it drops down when the
 // pointer rests on "Chapters" (or focus reaches it); as a list it sits inside the
-// phone menu. One unit is shown by its groups; several units get a column each.
+// phone menu. One unit is shown by its groups; several units get a column each
+// (two inner columns of chapters when there are two units, one when there are more).
 // Links here don't prefetch, so a hidden menu doesn't download every chapter.
 export default function ChaptersMenu({ variant }: { variant: "panel" | "list" }) {
   const grouped = UNITS.length === 1;
@@ -48,7 +50,7 @@ export default function ChaptersMenu({ variant }: { variant: "panel" | "list" })
   }
   return (
     <div className="menu-panel">
-      <div className={grouped ? "wrap cm-in" : "wrap cm-in cm-units"}>
+      <div className={grouped ? "wrap cm-in" : UNITS.length > 2 ? "wrap cm-in cm-units cm-many" : "wrap cm-in cm-units"} style={grouped ? undefined : ({ "--units": UNITS.length } as CSSProperties)}>
         {units}
         <div className="cm-col cm-more"><span className="label red">Reference</span><More /></div>
       </div>

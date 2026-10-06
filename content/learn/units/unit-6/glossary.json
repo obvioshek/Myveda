@@ -1,0 +1,506 @@
+[
+ {
+  "id": "acquisition",
+  "letter": "A",
+  "term": "Acquisition",
+  "def": "A cooperative strategy in which one firm buys a controlling interest in another, which loses its independent identity.",
+  "chapter": 8
+ },
+ {
+  "id": "ansoff-matrix",
+  "letter": "A",
+  "term": "Ansoff Matrix",
+  "def": "Igor Ansoff's 2 × 2 grid of growth strategies: market penetration, product development, market development and diversification, by existing or new products and markets.",
+  "chapter": 7
+ },
+ {
+  "id": "backward-integration",
+  "letter": "B",
+  "term": "Backward Integration",
+  "def": "A vertical integration strategy in which a firm acquires or controls its suppliers and sources of inputs.",
+  "chapter": 7
+ },
+ {
+  "id": "balanced-scorecard",
+  "letter": "B",
+  "term": "Balanced Scorecard",
+  "def": "Kaplan and Norton's framework linking strategy to measures from four perspectives: financial, customer, internal process, and learning and growth.",
+  "chapter": 9
+ },
+ {
+  "id": "bcg-growth-share-matrix",
+  "letter": "B",
+  "term": "BCG Growth-Share Matrix",
+  "def": "The Boston Consulting Group's portfolio tool, placing each business unit by market growth rate and relative market share into stars, cash cows, question marks and dogs.",
+  "chapter": 6
+ },
+ {
+  "id": "blue-ocean-strategy",
+  "letter": "B",
+  "term": "Blue Ocean Strategy",
+  "def": "Kim and Mauborgne's approach of creating uncontested market space instead of competing in existing (‘red ocean’) markets.",
+  "chapter": 3
+ },
+ {
+  "id": "business-portfolio-analysis",
+  "letter": "B",
+  "term": "Business Portfolio Analysis",
+  "def": "Evaluating and balancing a diversified firm's mix of business units with tools such as the BCG and GE–McKinsey matrices.",
+  "chapter": 6
+ },
+ {
+  "id": "business-level-strategy",
+  "letter": "B",
+  "term": "Business-Level Strategy",
+  "def": "Strategy for how one business unit will compete in its market, made by SBU heads.",
+  "chapter": 3
+ },
+ {
+  "id": "cash-cow",
+  "letter": "C",
+  "term": "Cash Cow",
+  "def": "A BCG cell: high market share in a low-growth market, generating surplus cash for other units.",
+  "chapter": 6
+ },
+ {
+  "id": "combination-strategy",
+  "letter": "C",
+  "term": "Combination Strategy",
+  "def": "Following several strategies at once across different units, such as expanding one business while retrenching another.",
+  "chapter": 8
+ },
+ {
+  "id": "commander-approach",
+  "letter": "C",
+  "term": "Commander Approach",
+  "def": "Bourgeois and Brodwin's implementation approach in which top management decides the strategy and instructs others to carry it out.",
+  "chapter": 9
+ },
+ {
+  "id": "competitive-advantage",
+  "letter": "C",
+  "term": "Competitive Advantage",
+  "def": "A firm's ability to outperform rivals, through lower cost, differentiation or a well-defended focus.",
+  "chapter": 3
+ },
+ {
+  "id": "complementors",
+  "letter": "C",
+  "term": "Complementors",
+  "def": "Firms whose products add value to an industry's own; sometimes called a sixth force.",
+  "chapter": 4
+ },
+ {
+  "id": "co-opetition",
+  "letter": "C",
+  "term": "Co-opetition",
+  "def": "Brandenburger and Nalebuff's term for firms competing and cooperating at the same time.",
+  "chapter": 8
+ },
+ {
+  "id": "core-competence",
+  "letter": "C",
+  "term": "Core Competence",
+  "def": "Prahalad and Hamel's bundle of skills and technologies that lets a firm deliver distinctive value across several businesses and is hard to imitate.",
+  "chapter": 5
+ },
+ {
+  "id": "corporate-strategy",
+  "letter": "C",
+  "term": "Corporate Strategy",
+  "def": "Top-level strategy setting the scope of the firm: which businesses to compete in and how to allocate resources among them.",
+  "chapter": 3
+ },
+ {
+  "id": "crescive-approach",
+  "letter": "C",
+  "term": "Crescive Approach",
+  "def": "Bourgeois and Brodwin's implementation approach in which strategy grows from ideas proposed by lower-level employees.",
+  "chapter": 9
+ },
+ {
+  "id": "deliberate-strategy",
+  "letter": "D",
+  "term": "Deliberate Strategy",
+  "def": "In Mintzberg's terms, strategy realised as originally intended.",
+  "chapter": 1
+ },
+ {
+  "id": "differentiation-strategy",
+  "letter": "D",
+  "term": "Differentiation Strategy",
+  "def": "Porter's generic strategy of winning by offering unique features customers value and will pay a premium for.",
+  "chapter": 3
+ },
+ {
+  "id": "diversification",
+  "letter": "D",
+  "term": "Diversification",
+  "def": "Growth by entering new products and markets; related (seeking synergy) or unrelated (conglomerate).",
+  "chapter": 7
+ },
+ {
+  "id": "divestment",
+  "letter": "D",
+  "term": "Divestment",
+  "def": "A retrenchment strategy of selling or shedding a business unit that no longer fits the corporate strategy.",
+  "chapter": 8
+ },
+ {
+  "id": "dog",
+  "letter": "D",
+  "term": "Dog",
+  "def": "A BCG cell: low market share in a low-growth market; usually harvested or divested.",
+  "chapter": 6
+ },
+ {
+  "id": "emergent-strategy",
+  "letter": "E",
+  "term": "Emergent Strategy",
+  "def": "A pattern of action that forms over time without, or despite, deliberate intentions.",
+  "chapter": 1
+ },
+ {
+  "id": "entry-barriers",
+  "letter": "E",
+  "term": "Entry Barriers",
+  "def": "Obstacles such as scale economies, capital needs, brand loyalty and regulation that deter new firms from entering an industry.",
+  "chapter": 4
+ },
+ {
+  "id": "environmental-scanning",
+  "letter": "E",
+  "term": "Environmental Scanning",
+  "def": "The first step of the strategic management process: gathering and analysing information on internal and external factors.",
+  "chapter": 1
+ },
+ {
+  "id": "expansion-strategy",
+  "letter": "E",
+  "term": "Expansion Strategy",
+  "def": "A grand strategy of growth through greater market presence, sales or scope.",
+  "chapter": 7
+ },
+ {
+  "id": "focus-strategy",
+  "letter": "F",
+  "term": "Focus Strategy",
+  "def": "Porter's generic strategy of competing in a narrow segment, through cost focus or differentiation focus.",
+  "chapter": 3
+ },
+ {
+  "id": "forward-integration",
+  "letter": "F",
+  "term": "Forward Integration",
+  "def": "A vertical integration strategy in which a firm gains control over distribution and direct access to customers.",
+  "chapter": 7
+ },
+ {
+  "id": "functional-strategy",
+  "letter": "F",
+  "term": "Functional Strategy",
+  "def": "Departmental strategy (production, marketing, finance, HR) that supports the business strategy and maximises resource productivity.",
+  "chapter": 3
+ },
+ {
+  "id": "ge-mckinsey-matrix",
+  "letter": "G",
+  "term": "GE–McKinsey Matrix",
+  "def": "A 3 × 3 portfolio grid plotting industry attractiveness against business unit strength, with invest, hold and harvest zones.",
+  "chapter": 6
+ },
+ {
+  "id": "generic-strategies",
+  "letter": "G",
+  "term": "Generic Strategies",
+  "def": "Porter's three broad routes to competitive advantage: cost leadership, differentiation and focus.",
+  "chapter": 3
+ },
+ {
+  "id": "global-strategy",
+  "letter": "G",
+  "term": "Global Strategy",
+  "def": "An international strategy of standardised products worldwide for maximum efficiency.",
+  "chapter": 8
+ },
+ {
+  "id": "harvest-strategy",
+  "letter": "H",
+  "term": "Harvest Strategy",
+  "def": "Deliberately reducing investment in a business unit to maximise short-term cash flow before exit.",
+  "chapter": 8
+ },
+ {
+  "id": "horizontal-integration",
+  "letter": "H",
+  "term": "Horizontal Integration",
+  "def": "Merging with or acquiring competitors at the same stage of the value chain.",
+  "chapter": 7
+ },
+ {
+  "id": "industry-life-cycle",
+  "letter": "I",
+  "term": "Industry Life Cycle",
+  "def": "The stages an industry passes through: embryonic, growth, shakeout, maturity and decline (or, simply, introduction, growth, maturity, decline).",
+  "chapter": 4
+ },
+ {
+  "id": "integration-strategy",
+  "letter": "I",
+  "term": "Integration Strategy",
+  "def": "Combining activities along the value chain, backward, forward or horizontally, to reduce cost and increase control.",
+  "chapter": 7
+ },
+ {
+  "id": "internationalisation",
+  "letter": "I",
+  "term": "Internationalisation",
+  "def": "Expanding operations beyond the home market, typically from exporting through joint ventures to local production.",
+  "chapter": 8
+ },
+ {
+  "id": "joint-venture",
+  "letter": "J",
+  "term": "Joint Venture",
+  "def": "A cooperative strategy in which two or more firms create a new, jointly owned entity, sharing investment, risk and profit.",
+  "chapter": 8
+ },
+ {
+  "id": "key-success-factors",
+  "letter": "K",
+  "term": "Key Success Factors",
+  "def": "The few factors in an industry that most determine a firm's ability to compete successfully.",
+  "chapter": 3
+ },
+ {
+  "id": "liquidation",
+  "letter": "L",
+  "term": "Liquidation",
+  "def": "A retrenchment strategy of shutting a business down and selling its assets when recovery is impossible.",
+  "chapter": 8
+ },
+ {
+  "id": "logical-incrementalism",
+  "letter": "L",
+  "term": "Logical Incrementalism",
+  "def": "Quinn's mode of strategy-making: a clear mission, with strategy emerging through experiment and partial commitments.",
+  "chapter": 1
+ },
+ {
+  "id": "market-development",
+  "letter": "M",
+  "term": "Market Development",
+  "def": "An Ansoff strategy of taking existing products into new markets.",
+  "chapter": 7
+ },
+ {
+  "id": "market-penetration",
+  "letter": "M",
+  "term": "Market Penetration",
+  "def": "An Ansoff strategy of selling more existing products in existing markets; the lowest-risk option.",
+  "chapter": 7
+ },
+ {
+  "id": "mckinsey-7-s-framework",
+  "letter": "M",
+  "term": "McKinsey 7-S Framework",
+  "def": "A model of seven interdependent elements to be aligned: strategy, structure, systems, shared values, style, staff and skills.",
+  "chapter": 5
+ },
+ {
+  "id": "merger",
+  "letter": "M",
+  "term": "Merger",
+  "def": "A cooperative strategy in which two firms combine into one entity.",
+  "chapter": 8
+ },
+ {
+  "id": "mission-statement",
+  "letter": "M",
+  "term": "Mission Statement",
+  "def": "A statement of the organisation's purpose: what it does, whom it serves and what makes it distinctive.",
+  "chapter": 2
+ },
+ {
+  "id": "multi-domestic-strategy",
+  "letter": "M",
+  "term": "Multi-Domestic Strategy",
+  "def": "An international strategy that tailors products and marketing to each local market.",
+  "chapter": 8
+ },
+ {
+  "id": "objectives-strategic",
+  "letter": "O",
+  "term": "Objectives (Strategic)",
+  "def": "Specific, measurable, time-bound targets that put broader goals into operation.",
+  "chapter": 2
+ },
+ {
+  "id": "ocat",
+  "letter": "O",
+  "term": "OCAT",
+  "def": "Organisational Capacity Assessment Tool: a diagnostic that rates internal performance on specific dimensions to find gaps and capacity.",
+  "chapter": 5
+ },
+ {
+  "id": "operational-strategy",
+  "letter": "O",
+  "term": "Operational Strategy",
+  "def": "The lowest level of strategy, for a plant, territory or section to meet immediate targets, made by operating managers.",
+  "chapter": 3
+ },
+ {
+  "id": "pestel-analysis",
+  "letter": "P",
+  "term": "PESTEL Analysis",
+  "def": "A framework for the macro-environment: political, economic, social, technological, environmental and legal factors.",
+  "chapter": 4
+ },
+ {
+  "id": "porters-five-forces",
+  "letter": "P",
+  "term": "Porter's Five Forces",
+  "def": "A model of industry competition: threat of new entrants, supplier power, buyer power, threat of substitutes and rivalry.",
+  "chapter": 4
+ },
+ {
+  "id": "product-development",
+  "letter": "P",
+  "term": "Product Development",
+  "def": "An Ansoff strategy of offering new products to existing markets.",
+  "chapter": 7
+ },
+ {
+  "id": "question-mark",
+  "letter": "Q",
+  "term": "Question Mark",
+  "def": "A BCG cell: low market share in a high-growth market; needs heavy investment to build, or else is phased out.",
+  "chapter": 6
+ },
+ {
+  "id": "related-diversification",
+  "letter": "R",
+  "term": "Related Diversification",
+  "def": "Entering new but related businesses to exploit synergies with existing operations.",
+  "chapter": 7
+ },
+ {
+  "id": "resource-based-view",
+  "letter": "R",
+  "term": "Resource-Based View",
+  "def": "The theory that lasting competitive advantage comes from valuable, rare, hard-to-imitate internal resources rather than industry position alone.",
+  "chapter": 5
+ },
+ {
+  "id": "retrenchment",
+  "letter": "R",
+  "term": "Retrenchment",
+  "def": "A grand strategy of reducing the scope or size of operations to stabilise the firm, through turnaround, divestment or liquidation.",
+  "chapter": 8
+ },
+ {
+  "id": "star",
+  "letter": "S",
+  "term": "Star",
+  "def": "A BCG cell: high market share in a high-growth market; earns much but needs heavy investment.",
+  "chapter": 6
+ },
+ {
+  "id": "strategic-alliance",
+  "letter": "S",
+  "term": "Strategic Alliance",
+  "def": "A cooperative agreement between firms on specific goals, in which each remains independent.",
+  "chapter": 8
+ },
+ {
+  "id": "strategic-business-unit-sbu",
+  "letter": "S",
+  "term": "Strategic Business Unit (SBU)",
+  "def": "A division, product line or brand with its own mission and objectives that can be planned independently.",
+  "chapter": 6
+ },
+ {
+  "id": "strategic-decision",
+  "letter": "S",
+  "term": "Strategic Decision",
+  "def": "A long-term, high-risk decision made at the top in line with the mission, committing major resources and setting direction.",
+  "chapter": 3
+ },
+ {
+  "id": "strategic-intent",
+  "letter": "S",
+  "term": "Strategic Intent",
+  "def": "An organisation's ambitious long-term aspiration to win a desired position, which focuses and stretches its resources.",
+  "chapter": 2
+ },
+ {
+  "id": "strategic-management",
+  "letter": "S",
+  "term": "Strategic Management",
+  "def": "The art and science of formulating, implementing and evaluating cross-functional decisions that enable an organisation to achieve its objectives (Fred David).",
+  "chapter": 1
+ },
+ {
+  "id": "strategy",
+  "letter": "S",
+  "term": "Strategy",
+  "def": "The organisation's plan for using limited resources to reach its long-term objectives: the means to its ends.",
+  "chapter": 1
+ },
+ {
+  "id": "swot-analysis",
+  "letter": "S",
+  "term": "SWOT Analysis",
+  "def": "An audit of internal strengths and weaknesses and external opportunities and threats, bridging analysis and strategy formulation.",
+  "chapter": 5
+ },
+ {
+  "id": "tows-matrix",
+  "letter": "T",
+  "term": "TOWS Matrix",
+  "def": "Weihrich's extension of SWOT that pairs internal and external factors to generate SO, ST, WO and WT strategies.",
+  "chapter": 5
+ },
+ {
+  "id": "transnational-strategy",
+  "letter": "T",
+  "term": "Transnational Strategy",
+  "def": "An international strategy that combines high global efficiency with high local responsiveness.",
+  "chapter": 8
+ },
+ {
+  "id": "turnaround-strategy",
+  "letter": "T",
+  "term": "Turnaround Strategy",
+  "def": "A retrenchment strategy of restructuring an underperforming business to return it to profitability.",
+  "chapter": 8
+ },
+ {
+  "id": "unrelated-diversification",
+  "letter": "U",
+  "term": "Unrelated Diversification",
+  "def": "Entering industries unrelated to existing ones, mainly to spread risk.",
+  "chapter": 7
+ },
+ {
+  "id": "value-chain",
+  "letter": "V",
+  "term": "Value Chain",
+  "def": "Porter's division of a firm's activities into primary and support activities, to locate the sources of cost and value.",
+  "chapter": 5
+ },
+ {
+  "id": "vision-statement-unit-6",
+  "letter": "V",
+  "term": "Vision Statement",
+  "def": "A statement of the organisation's aspired future state: where it wants to be.",
+  "chapter": 2
+ },
+ {
+  "id": "vrio-framework",
+  "letter": "V",
+  "term": "VRIO Framework",
+  "def": "Barney's four tests for a resource that can give sustained advantage: valuable, rare, costly to imitate, and organised to capture value.",
+  "chapter": 5
+ }
+]

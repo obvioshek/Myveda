@@ -7,7 +7,7 @@ import type { SearchEntry, SearchKind } from "@/content/learn/search";
 
 const LABEL: Record<SearchKind, string> = { concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens" };
 const RANK: Record<SearchKind, number> = { chapter: 8, concept: 6, term: 5, passage: 3 };
-const START = ["Fayol's 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "Kinked demand curve", "Job evaluation and its methods"];
+const START = ["Fayol's 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "SWOT Analysis", "Product Life Cycle"];
 
 // Plain letters only, so "kautilya" finds Kauṭilya and "gita" finds Gītā.
 const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
