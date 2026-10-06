@@ -8,7 +8,7 @@ import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import { Tag } from "@/components/learn/Evidence";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
-import { COMMUNITY_HREF, CONTACT_EMAIL, QUESTIONS, STEPS, TEXTS } from "@/content/landing";
+import { COMMUNITY_HREF, COMMUNITY_POINTS, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, deva, passageHref } from "@/content/learn";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
@@ -19,6 +19,11 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
 }
 
 const Rule = () => <div className="wrap"><div className="rule" /></div>;
+
+const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const count = (n: number) => WORDS[n] ?? String(n);
+// "A, B and C"
+const listed = (xs: string[]) => xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
 
 export default function LandingPage() {
   const base = siteUrl();
@@ -98,49 +103,26 @@ export default function LandingPage() {
         </section>
 
         <Rule />
-        <section className="wrap sec split" id="steps" aria-labelledby="steps-h">
-          <div className="sec-copy">
-            <Eyebrow num="२">How every concept is taught</Eyebrow>
-            <h2 id="steps-h">Five steps. <span className="red">The same every time, so you always know where you are.</span></h2>
-            <ol className="steps">
-              {STEPS.map((s, i) => (
-                <li key={s.name}>
-                  <b className="n">{`0${i + 1}`}</b>
-                  <div><span className="step-name">{s.name}</span><span className="step-line">{s.line}</span></div>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div className="honest">
-            <span className="label red">Honest about every link</span>
-            <p className="honest-h">Not every parallel is a proof. Each passage says which kind it is.</p>
-            <div className="honest-row"><Tag kind="documented" /><p>{HOW.documented}</p></div>
-            <div className="honest-row"><Tag kind="view" /><p>{HOW.view}</p></div>
-            <dl className="honest-stats">
-              <div><dt>Chapters</dt><dd>{CHAPTERS.length}</dd></div>
-              <div><dt>Concepts</dt><dd>{concepts}</dd></div>
-              <div><dt>Cited passages</dt><dd>{passages}</dd></div>
-              <div><dt>Glossary terms</dt><dd>{GLOSSARY.length}</dd></div>
-            </dl>
-            <Link href={chapterPath(first.slug)} className="btn btn-primary btn-lg">Try the first chapter<Arrow /></Link>
-          </div>
-        </section>
-
-        <Rule />
         <section className="wrap sec" id="chapters" aria-labelledby="chapters-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="३">Read</Eyebrow>
+              <Eyebrow num="२">Read</Eyebrow>
               <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each idea, then its ancient lens.</span></h2>
             </div>
             <div className="chap-cta">
-              <p className="sub">From Fayol and Taylor to elasticity and market structures, from motivation and leadership to job evaluation and strategic HRM. Start with any chapter; each stands on its own, and your progress stays on your device.</p>
+              <p className="sub">{count(UNITS.length).replace(/^./, ch => ch.toUpperCase())} {UNITS.length === 1 ? "unit" : "units"} so far: {listed(UNITS.map(u => u.short))}. Every concept opens into a question to try first, the idea itself, a quick check, its ancient lens and a one-page summary. Start with any chapter; your progress stays on your device.</p>
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
                 <Link href={GLOSSARY_PATH} className="btn btn-secondary btn-lg">Browse the glossary</Link>
               </div>
             </div>
           </div>
+          <dl className="honest-stats site-stats">
+            <div><dt>Chapters</dt><dd>{CHAPTERS.length}</dd></div>
+            <div><dt>Concepts</dt><dd>{concepts}</dd></div>
+            <div><dt>Cited passages</dt><dd>{passages}</dd></div>
+            <div><dt>Glossary terms</dt><dd>{GLOSSARY.length}</dd></div>
+          </dl>
           {UNITS.map(u => (
             <div key={u.id} className="chap-unit">
               {UNITS.length > 1 && <h3 className="chap-unit-h"><span className="label red">Unit {u.n}</span>{u.title}</h3>}
@@ -163,7 +145,7 @@ export default function LandingPage() {
         <section className="wrap sec" id="texts" aria-labelledby="texts-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="४">Ancient Lens</Eyebrow>
+              <Eyebrow num="३">Ancient Lens</Eyebrow>
               <h2 id="texts-h">Old texts, <span className="red">read the way one reads Aristotle or Confucius.</span></h2>
             </div>
             <p className="sub">Not as scripture to obey, and not as proof that the ancients knew it all, but as serious thinkers on the same problems. Every passage carries its reference, so you can check it against your own edition.</p>
@@ -182,24 +164,29 @@ export default function LandingPage() {
           <ul className="names" aria-label="The texts the chapters quote">
             {TEXTS.map(t => <li key={t} lang="sa-Latn">{t}</li>)}
           </ul>
+          <div className="honest honest-wide">
+            <p className="honest-h">Not every parallel is a proof. <span className="red">Each passage says which kind it is.</span></p>
+            <div className="honest-row"><Tag kind="documented" /><p>{HOW.documented}</p></div>
+            <div className="honest-row"><Tag kind="view" /><p>{HOW.view}</p></div>
+          </div>
         </section>
 
         <Rule />
-        <section className="wrap sec" aria-label="Community and practice">
-          <div className="grid g2">
-            <div className="cell big" id="together">
-              <Eyebrow num="५">Community</Eyebrow>
-              <h2 className="h-sm">An idea becomes yours <span className="red">when you explain it to someone else.</span></h2>
-              <p>Read with a study circle (<i lang="sa-Latn">Saṅgha</i>), ask about a concept you are stuck on, and share notes with people reading the same chapter. No follower counts. No endless feed.</p>
-              <a className="more" href={COMMUNITY_HREF}>Open the community<Arrow /></a>
-            </div>
-            <div className="cell big" id="practice">
-              <Eyebrow num="६">Practice</Eyebrow>
-              <h2 className="h-sm">Studying for an exam or a course? <span className="red">The same pages hold up when the stakes are higher.</span></h2>
-              <p>Each concept covers the terms, formulas and examples a postgraduate management course expects, and every lesson ends in a one-page summary. The revision sheets gather them all, ready to print.</p>
-              <Link className="more" href={REVISION_PATH}>Open the revision sheets<Arrow /></Link>
-            </div>
+        <section className="wrap sec split" id="together" aria-labelledby="together-h">
+          <div className="sec-copy">
+            <Eyebrow num="४">Community</Eyebrow>
+            <h2 id="together-h">An idea becomes yours <span className="red">when you explain it to someone else.</span></h2>
+            <p className="sub">The chapters are free to read without an account. The community is where readers ask, answer and read together; it needs a sign-in.</p>
+            <a className="btn btn-secondary btn-lg" href={COMMUNITY_HREF}>Open the community<Arrow /></a>
           </div>
+          <ol className="steps together">
+            {COMMUNITY_POINTS.map((s, i) => (
+              <li key={s.name}>
+                <b className="n">{`0${i + 1}`}</b>
+                <div><span className="step-name">{s.name}</span><span className="step-line">{s.line}</span></div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className="closing" aria-labelledby="closing-h">
@@ -230,13 +217,12 @@ export default function LandingPage() {
             <Link href={LEARN_PATH}>All chapters</Link>
             <Link href={GLOSSARY_PATH}>Glossary</Link>
             <Link href={REVISION_PATH}>Revision sheets</Link>
-            <a href="#practice">For exam students</a>
             <a href={COMMUNITY_HREF}>Community</a>
           </nav>
           <nav className="foot-col" aria-label="About">
             <span className="label">About</span>
             <a href="#texts">The texts</a>
-            <a href="#steps">How concepts are taught</a>
+            <a href="#questions">Questions worth a second look</a>
           </nav>
           <nav className="foot-col" aria-label="Contact">
             <span className="label">Contact</span>
@@ -247,7 +233,7 @@ export default function LandingPage() {
         <div className="wrap wordmark-wrap"><span className="wordmark" aria-hidden="true">Veda Verse<span className="red">.</span></span></div>
         <div className="wrap">
           <div className="foot-base">
-            <span>Covers the full breadth of a postgraduate management curriculum, from first principles to strategy.</span>
+            <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <span className="end">Set in Archivo and Tiro Devanagari Sanskrit.</span>
           </div>

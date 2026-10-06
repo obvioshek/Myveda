@@ -39,7 +39,7 @@ export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel:
     <header className={scrolled ? "top scrolled" : "top"}>
       <div className="top-in">
         <a className="brand" href="#top" aria-label="Veda Verse, back to top"><BrandMark />Veda Verse</a>
-        <nav className="top-links" aria-label="Sections">
+        <nav className="top-links" aria-label="Site">
           {NAV.map(n => n.href === "#chapters"
             ? <div key={n.href} className="has-menu"><a href={n.href}>{n.label}</a>{chaptersPanel}</div>
             : <a key={n.href} href={n.href}>{n.label}</a>)}
@@ -51,7 +51,7 @@ export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel:
             <summary aria-label="Menu">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></svg>
             </summary>
-            <nav aria-label="Sections (mobile)">
+            <nav aria-label="Site (mobile)">
               {NAV.map(n => n.href === "#chapters"
                 ? <details key={n.href} className="mnav-sub"><summary>{n.label}</summary>{chaptersList}</details>
                 : <a key={n.href} href={n.href} onClick={close}>{n.label}</a>)}

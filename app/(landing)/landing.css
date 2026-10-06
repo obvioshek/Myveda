@@ -250,6 +250,14 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .honest-stats dt { color: var(--soft); font-size: 13px; font-weight: 600; }
 .honest-stats dd { font-size: 30px; line-height: 34px; font-weight: 800; letter-spacing: -.02em; }
 @media (min-width: 560px) { .honest-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.site-stats { margin: 4px 0 8px; }
+.honest-wide { align-items: stretch; margin-top: 8px; }
+.honest-wide .honest-h { max-width: 36ch; }
+@media (min-width: 900px) {
+  .honest-wide { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 40px; }
+  .honest-wide .honest-h { grid-column: 1 / -1; }
+}
+.steps.together { margin-top: 0; }
 .choices { display: flex; flex-wrap: wrap; }
 .choices .btn { min-width: 150px; border-color: var(--color-text); transition: background-color .28s, color .28s; }
 .choices .btn + .btn { margin-left: -2px; }
