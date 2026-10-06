@@ -89,6 +89,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "logistics-decisions",
+    name: "The four logistics decisions",
+    intro: "Order processing, warehousing, inventory and transportation.",
+    before: {
+      q: "Should a firm aim to keep enough stock to fill every order at once?",
+      choices: [
+        { label: "Yes", reveal: "Not usually. Inventory cost rises at an accelerating rate as the service level approaches 100 per cent." },
+        { label: "Not usually", reveal: "Right. Inventory cost rises faster and faster as the service level nears 100 per cent." },
+      ],
+    },
+    lead: "Logistics rests on four decisions: how to handle orders, where to store, how much to hold, and how to ship.",
+    check: [
+      ask("The stock level at which a new order is placed is the…", "Order (reorder) point", ["Order quantity", "Carrying cost", "Service level"], "It balances stockout risk against overstock cost."),
+      ask("Warehouses that move goods out as soon as possible are…", "Distribution warehouses", ["Storage warehouses", "Public warehouses", "Private warehouses"], "Storage warehouses hold goods for moderate to long periods."),
+      ask("For the lowest transport cost, shippers usually choose…", "Water or pipeline", ["Air", "Road", "Rail and air together"], "Air, rail and road lead for speed."),
+      ask("A transport firm serving set routes on a schedule, open to all shippers, is a…", "Common carrier", ["Contract carrier", "Private carrier", "Freight forwarder"], "A contract carrier sells transport to others on contract."),
+    ],
+    lens: [],
+    reflect: "Think of an online order you placed. Which of the four decisions most shaped how fast and in what condition it arrived?",
+    summary: {
+      points: [
+        "Order processing aims to shorten the order-to-payment cycle.",
+        "Warehousing trades delivery speed against cost; postponement matches offers to demand.",
+        "Inventory balances order-processing and carrying costs; transport weighs speed, dependability and cost across modes and carriers.",
+      ],
+      memory: "Order processing, warehousing, inventory, transportation.",
+    },
+  },
+  {
     blockId: "supply-chain-management",
     name: "Supply chain management",
     intro: "The whole chain, from procurement to distribution.",

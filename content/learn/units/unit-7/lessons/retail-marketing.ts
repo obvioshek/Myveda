@@ -61,7 +61,7 @@ const lessons: Lesson[] = [
   },
   {
     blockId: "trends-in-indian-retail",
-    name: "Recent trends in Indian retail",
+    name: "Trends in Indian and world retail",
     intro: "Organised, online, digital and reaching smaller towns.",
     before: {
       q: "Is the neighbourhood kirana store being left behind?",

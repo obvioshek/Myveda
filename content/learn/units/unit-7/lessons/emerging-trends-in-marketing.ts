@@ -33,6 +33,34 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "green-marketing-in-practice",
+    name: "Green marketing in practice",
+    intro: "The green mix, practices, strategies and principles.",
+    before: {
+      q: "Will buyers always pay more for a green product?",
+      choices: [
+        { label: "Always", reveal: "Only when they see added value, such as better performance, design or health benefits." },
+        { label: "Only for added value", reveal: "Right. Green pricing works when buyers see added value." },
+      ],
+    },
+    lead: "Green marketing applies the marketing mix to products that conserve resources and avoid pollution.",
+    check: [
+      ask("Which three things do companies check for eco-friendliness?", "Raw materials, the product and its packaging", ["Price, promotion and place", "Staff, suppliers and shareholders", "Advertising, PR and sales"], "These are the three factors the chapter names."),
+      ask("Defining the mission in broad social terms rather than product terms is…", "Sense-of-mission marketing", ["Innovative marketing", "Customer-value marketing", "Consumer-oriented marketing"], "It is one of Kotler and Armstrong's principles of sustainable marketing."),
+      ask("Claiming green habits a firm does not practise is…", "Greenwashing", ["Green positioning", "Green disposal", "Societal marketing"], "It misleads buyers and erodes trust."),
+    ],
+    lens: [],
+    reflect: "Find a product that claims to be green. Which part of its mix supports the claim, and is there any sign of greenwashing?",
+    summary: {
+      points: [
+        "Green products conserve resources and avoid pollution; firms check materials, product and packaging.",
+        "The green mix and four strategies: design, positioning, pricing, disposal.",
+        "Five sustainable marketing principles; beware greenwashing.",
+      ],
+      memory: "Green product, price, place and promotion.",
+    },
+  },
+  {
     blockId: "online-and-direct-marketing",
     name: "Online and direct marketing",
     intro: "Targeted, measurable marketing that asks for a response.",
@@ -58,6 +86,34 @@ const lessons: Lesson[] = [
         "Direct marketing: one-to-one, immediate and measurable response, strong call to action.",
       ],
       memory: "Targeted, measurable and paid for by results.",
+    },
+  },
+  {
+    blockId: "digital-marketing",
+    name: "Digital marketing",
+    intro: "Internet, e- and digital marketing, its methods and how to plan it.",
+    before: {
+      q: "Is an electronic billboard part of digital marketing?",
+      choices: [
+        { label: "No", reveal: "It is. Digital marketing covers all marketing through digital interfaces, online or not." },
+        { label: "Yes", reveal: "Right. Digital marketing is the widest term and includes offline digital channels." },
+      ],
+    },
+    lead: "Digital marketing is the widest of three overlapping terms, and offers reach, targeting and measurable results.",
+    check: [
+      ask("Which term adds relationship building, email and CRM to internet marketing?", "E-marketing", ["Digital marketing", "Native advertising", "Search engine marketing"], "Digital marketing is wider still."),
+      ask("Paid content that blends into the surrounding medium is…", "Native advertising", ["Affiliate marketing", "Marketing automation", "SEO"], "It should be labelled sponsored or promoted."),
+      ask("The first step in building a digital marketing strategy is to…", "Identify marketing goals", ["Choose channels", "Set benchmarks", "Make adjustments"], "Then the sales process, personas, channels, benchmarks and adjustments."),
+    ],
+    lens: [],
+    reflect: "Pick a small business you know. Which basic digital methods would you start it with, and what benchmark would show they work?",
+    summary: {
+      points: [
+        "Internet marketing sits within e-marketing, which sits within digital marketing.",
+        "Methods include SEO, SEM, PPC, social media, email, affiliate, content, native ads and automation.",
+        "Benefits: reach, low entry cost, measurable ROI, targeting, flexibility; budgets scale from basic to advanced.",
+      ],
+      memory: "Goals, sales process, personas, channels, benchmarks, adjustment.",
     },
   },
   {

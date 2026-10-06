@@ -98,6 +98,13 @@
   "chapter": 8
  },
  {
+  "id": "buyer-persona",
+  "letter": "B",
+  "term": "Buyer Persona",
+  "def": "A fictional profile of an ideal customer, used to target marketing.",
+  "chapter": 10
+ },
+ {
   "id": "buygrid-model",
   "letter": "B",
   "term": "Buygrid Model",
@@ -152,6 +159,13 @@
   "term": "Cognitive Dissonance",
   "def": "Discomfort after a purchase caused by doubt about the choice; ‘buyer's remorse’.",
   "chapter": 8
+ },
+ {
+  "id": "common-carrier",
+  "letter": "C",
+  "term": "Common Carrier",
+  "def": "A transport firm serving set routes on a schedule, open to all shippers at standard rates.",
+  "chapter": 6
  },
  {
   "id": "conjunctive-rule",
@@ -280,6 +294,13 @@
   "chapter": 13
  },
  {
+  "id": "green-product",
+  "letter": "G",
+  "term": "Green Product",
+  "def": "A product whose making, purchase and use allow economic development without polluting or depleting natural resources.",
+  "chapter": 13
+ },
+ {
   "id": "greenwashing",
   "letter": "G",
   "term": "Greenwashing",
@@ -378,6 +399,13 @@
   "chapter": 9
  },
  {
+  "id": "inventory-carrying-costs",
+  "letter": "I",
+  "term": "Inventory Carrying Costs",
+  "def": "The costs of holding stock: storage, capital, taxes and insurance, depreciation and obsolescence.",
+  "chapter": 6
+ },
+ {
   "id": "joint-venture-market-entry",
   "letter": "J",
   "term": "Joint Venture (Market Entry)",
@@ -434,11 +462,25 @@
   "chapter": 2
  },
  {
+  "id": "marketing-automation",
+  "letter": "M",
+  "term": "Marketing Automation",
+  "def": "Software that automates routine marketing tasks such as scheduling posts, nurturing leads and tracking campaigns.",
+  "chapter": 13
+ },
+ {
   "id": "marketing-concept",
   "letter": "M",
   "term": "Marketing Concept",
   "def": "The philosophy that success comes from knowing target customers' needs and satisfying them better than competitors.",
   "chapter": 1
+ },
+ {
+  "id": "marketing-funnel",
+  "letter": "M",
+  "term": "Marketing Funnel",
+  "def": "The stages from awareness to loyalty, with conversion rates between them that reveal where customers drop out.",
+  "chapter": 10
  },
  {
   "id": "marketing-mix",
@@ -474,6 +516,13 @@
   "term": "Multibrand Strategy",
   "def": "Launching new brands in an existing category to capture different segments.",
   "chapter": 4
+ },
+ {
+  "id": "native-advertising",
+  "letter": "N",
+  "term": "Native Advertising",
+  "def": "Paid content that blends into its surrounding medium and should be labelled as sponsored.",
+  "chapter": 13
  },
  {
   "id": "new-product-development-npd",
@@ -523,6 +572,13 @@
   "term": "One-to-One Marketing",
   "def": "Treating each customer as a segment of one.",
   "chapter": 10
+ },
+ {
+  "id": "order-point",
+  "letter": "O",
+  "term": "Order Point",
+  "def": "The stock level at which a new order is placed, balancing the risk of stockout against the cost of overstock.",
+  "chapter": 6
  },
  {
   "id": "penetration-pricing",
@@ -700,6 +756,13 @@
   "chapter": 6
  },
  {
+  "id": "service-brand",
+  "letter": "S",
+  "term": "Service Brand",
+  "def": "A brand built mainly on delivering a service, which depends on consistently high service delivery.",
+  "chapter": 9
+ },
+ {
   "id": "service-triangle",
   "letter": "S",
   "term": "Service Triangle",
@@ -719,6 +782,13 @@
   "term": "Seven Ps of Services",
   "def": "Booms and Bitner's services mix: product, price, place, promotion, people, process and physical evidence.",
   "chapter": 9
+ },
+ {
+  "id": "shopper-marketing",
+  "letter": "S",
+  "term": "Shopper Marketing",
+  "def": "Influencing buyers at the point of purchase, where most purchase decisions are made.",
+  "chapter": 11
  },
  {
   "id": "skimming-pricing",
@@ -859,6 +929,13 @@
   "term": "Wholesaler",
   "def": "An intermediary that buys in bulk from producers and resells to retailers or other businesses.",
   "chapter": 6
+ },
+ {
+  "id": "yield-management",
+  "letter": "Y",
+  "term": "Yield Management",
+  "def": "Managing demand and capacity so the right services reach the right customers at the right places, times and prices.",
+  "chapter": 9
  },
  {
   "id": "zero-level-channel",

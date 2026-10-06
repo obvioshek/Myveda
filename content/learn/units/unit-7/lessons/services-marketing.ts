@@ -116,6 +116,34 @@ const lessons: Lesson[] = [
       memory: "Internal, external, interactive: promise, enable, deliver.",
     },
   },
+  {
+    blockId: "excellence-in-services",
+    name: "Excellence in services and service brands",
+    intro: "What well-managed service firms do.",
+    before: {
+      q: "Is a customer complaint bad news for a service firm?",
+      choices: [
+        { label: "Bad news", reveal: "It can be a gift. A complaint handled well can keep a customer who would otherwise leave quietly." },
+        { label: "A chance", reveal: "Right. Firms that encourage complaints and fix problems on the spot earn more." },
+      ],
+    },
+    lead: "Excellent service firms share a strategic concept, committed leaders, high standards, profit tiers, monitoring and good complaint handling.",
+    check: [
+      ask("McDonald's measures its outlets on QSCV, which stands for…", "Quality, service, cleanliness and value", ["Quality, speed, cost and variety", "Quantity, service, choice and value", "Quality, safety, courtesy and visibility"], "It is an example of top-management commitment."),
+      ask("Pampering high-value customers while serving low-value ones more economically is…", "Profit tiers", ["Yield management", "Internal marketing", "Mystery shopping"], "Customers in high-profit tiers get special service."),
+      ask("Which is NOT one of the four dimensions of brand experience?", "Financial", ["Sensory", "Affective", "Intellectual"], "The four are sensory, affective, behavioural and intellectual."),
+    ],
+    lens: [],
+    reflect: "Recall a service problem you complained about. Did the firm turn it into a reason to stay or a reason to leave?",
+    summary: {
+      points: [
+        "A customer-obsessed strategic concept and top-management commitment.",
+        "High standards, profit tiers and monitoring through VOC measures and mystery shopping.",
+        "Welcoming and resolving complaints; service brands must turn intangibles into a defined experience.",
+      ],
+      memory: "Customer-obsessed, committed, high standards, tiers, monitoring, complaints welcomed.",
+    },
+  },
 ];
 
 export default lessons;
