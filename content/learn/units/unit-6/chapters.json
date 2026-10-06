@@ -1,0 +1,504 @@
+{
+ "textsUsed": "Tirukkuṟaḷ (couplet numbers); Kauṭilya's Arthaśāstra (Kangle numbering).",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "strategy-and-strategic-management",
+   "title": "Strategy and Strategic Management: Concept and Process",
+   "scope": "What strategy is, what strategic management adds, the four-step process, and how strategic decisions actually get made.",
+   "group": "foundations",
+   "blocks": [
+    {
+     "id": "what-strategy-is",
+     "title": "What strategy is",
+     "html": "<p>A <b>strategy</b> is an organisation's plan for using its limited resources to reach its objectives in an uncertain world. It integrates the organisation's activities, commits resources for the long term, and takes account of how customers, competitors and employees are likely to behave.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Definitions of strategy\" tabindex=\"0\"><table>\n<thead><tr><th>Writer</th><th>Strategy is…</th></tr></thead>\n<tbody>\n<tr><td>Alfred Chandler, <i>Strategy and Structure</i> (1962)</td><td>the determination of the basic long-term goals and objectives of an enterprise, and the adoption of courses of action and the allocation of resources necessary for carrying out these goals</td></tr>\n<tr><td>Thompson and Strickland</td><td>the <b>means</b> (actions) by which the <b>ends</b> (objectives) are achieved</td></tr>\n<tr><td>Michael Porter, <i>Competitive Strategy</i> (1980)</td><td>a combination of the ends for which the firm is striving and the means by which it is seeking to get there</td></tr>\n<tr><td>Michael Porter, “What Is Strategy?” (1996)</td><td>being different: deliberately choosing a different set of activities to deliver a unique mix of value</td></tr>\n</tbody></table></div>\n<p><b>Features.</b> Strategy is needed because the future cannot be foreseen. It deals with long-term developments (new products, methods and markets) rather than routine operations. It anticipates the behaviour of customers, competitors and employees. And it is a roadmap that sets the organisation's direction, building on its strengths and blunting the advantages of competitors.</p>\n<p>Henry Mintzberg (1987) noted that the word is used in five senses, his <b>five Ps</b>: strategy as a <b>plan</b>, a <b>ploy</b> to outwit a rival, a <b>pattern</b> in a stream of actions, a <b>position</b> in the market, and a <b>perspective</b>, the organisation's way of seeing the world.</p>\n<p class=\"cue\">Strategy bridges the gap between where we are and where we want to be.</p>"
+    },
+    {
+     "id": "what-strategic-management-is",
+     "title": "What strategic management is",
+     "html": "<p><b>Strategic management</b> is the stream of decisions and actions through which an organisation develops and carries out strategies to achieve its objectives. It is found in businesses, cooperatives, government bodies and non-profits alike.</p>\n<p>Fred R. David defines it as “the art and science of formulating, implementing and evaluating cross-functional decisions that enable an organization to achieve its objectives”. It integrates management, marketing, finance and accounting, production and operations, research and development, and information systems.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Further definitions of strategic management\" tabindex=\"0\"><table>\n<thead><tr><th>Writer</th><th>Strategic management…</th></tr></thead>\n<tbody>\n<tr><td>Bracker</td><td>analyses a firm's internal and external environments to make the best use of its resources in relation to its objectives</td></tr>\n<tr><td>Jemison</td><td>is the process by which general managers of complex organisations develop and use a strategy to co-align the organisation's competence with the opportunities and constraints in its environment</td></tr>\n<tr><td>Van Cauwenbergh and Cool</td><td>deals with the formulation (policy) and implementation (organisation) of calculated behaviour in new situations, and is the basis for later administration when the circumstances repeat</td></tr>\n<tr><td>Schendel and Cool</td><td>is the entrepreneur's work of starting organisations and, since corporations live on, of renewing them</td></tr>\n</tbody></table></div>\n<p><b>Strategic planning</b> is often used as a synonym, more in business than in academic writing. In a narrower sense strategic planning means formulation only, while strategic management covers formulation, implementation and evaluation.</p>\n<p><b>Against long-range planning.</b> In David's contrast, strategic management seeks to exploit and create new and different opportunities for tomorrow; long-range planning tries to optimise for tomorrow the trends of today.</p>\n<p><b>Objectives.</b> To exploit and create new opportunities; to give managers a framework linking actions, context and performance; to win a competitive position and sustain it by acquiring and deploying the right resources and by monitoring the environment; to respond to key stakeholders; and to find, attract and keep customers. The resulting <b>strategic plan</b> is the company's game plan: a set of hard choices among good alternatives that commits it to particular markets, policies and operations.</p>"
+    },
+    {
+     "id": "strategic-management-process",
+     "title": "The strategic management process",
+     "html": "<p>The process has four steps, carried out in order when a strategy is first made and revisited whenever the situation demands.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The four steps of strategic management\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1 Environmental scanning</td><td>Collecting, scrutinising and passing on information about the internal and external factors that affect the organisation: its strengths and weaknesses, opportunities and threats</td></tr>\n<tr><td>2 Strategy formulation</td><td>Deciding the best course of action to reach the objectives: corporate, business and functional strategies</td></tr>\n<tr><td>3 Strategy implementation</td><td>Putting the chosen strategy into action: designing the structure, allocating resources, setting up decision processes and managing people</td></tr>\n<tr><td>4 Strategy evaluation</td><td>Reviewing the internal and external factors on which the strategy rests, measuring performance, and taking corrective action</td></tr>\n</tbody></table></div>\n<p>The process is a continuing cycle of analysing, planning, doing and checking. Evaluation feeds back into scanning, so strategy is adjusted as conditions change. Its aim is <b>strategic alignment</b>: making the organisation's resources, structure and capabilities support its long-term objectives.</p>\n<p class=\"cue\">Scan, formulate, implement, evaluate, and begin again.</p>"
+    },
+    {
+     "id": "modes-of-strategic-decision-making",
+     "title": "Modes of strategic decision-making",
+     "html": "<p>Henry Mintzberg (1973) described three typical ways in which strategy actually gets made.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Mintzberg's three modes of strategy-making\" tabindex=\"0\"><table>\n<thead><tr><th>Mode</th><th>How strategy is made</th><th>Typical of</th></tr></thead>\n<tbody>\n<tr><td>Entrepreneurial</td><td>One powerful individual, usually the founder, makes bold, risky decisions guided by a personal vision. The search for opportunities comes first; problems are secondary.</td><td>Young, founder-led firms</td></tr>\n<tr><td>Adaptive</td><td>Reactive, step-by-step solutions to existing problems, with much bargaining over priorities. Strategy is fragmented and moves the organisation forward in small steps; Charles Lindblom (1959) called this “muddling through”.</td><td>Universities, large hospitals, many government agencies</td></tr>\n<tr><td>Planning</td><td>Analysts gather information systematically, generate alternatives and choose rationally among them, both seeking new opportunities and solving existing problems.</td><td>Large corporations</td></tr>\n</tbody></table></div>\n<p><b>Logical incrementalism</b>, a fourth mode, was added by James Brian Quinn (<i>Strategies for Change</i>, 1980). Top management first sets a reasonably clear mission and objectives; strategy then emerges through probing the future, experimenting and learning from a series of partial commitments rather than one grand plan. It suits a fast-changing environment, a need to build consensus, and a need to develop resources before committing the whole company.</p>\n<p><b>Deliberate and emergent strategy</b> (Mintzberg and James Waters, 1985). A <b>deliberate</b> strategy is realised as intended. An <b>emergent</b> strategy is a pattern of action that forms over time without, or despite, intentions. The strategy an organisation actually follows, its <b>realised</b> strategy, is usually a mix of the two, while some intended strategy is never realised.</p>\n<p class=\"cue\">Strategy can be planned, improvised, bargained over or learned along the way.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Weighing means against ends",
+     "classic": "loss, gain and yield",
+     "text": [
+      "The Kuṟaḷ asks that before any action one weigh what will be lost, what will be gained, and what yield will follow. That is the core of a strategy: choosing a course of action and committing resources only after counting its costs and returns."
+     ],
+     "quote": "“Weigh what will be lost, what will be gained, and the yield that will follow; then act.” <span lang=\"ta\" class=\"ta\">அழிவதூஉம் ஆவதூஉம் ஆகி வழிபயக்கும் ஊதியமும் சூழ்ந்து செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 461</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "The strategic management process",
+     "classic": "end, obstacles and gain",
+     "text": [
+      "Before acting, the Kuṟaḷ says, look at how the work will end, what obstacles stand in the way, and what gain it will bring. The process asks the same of a strategy: scanning for obstacles, formulating toward an end, and evaluating whether the gain arrived. The couplet is about a single undertaking, not a continuing cycle."
+     ],
+     "quote": "“Consider how the work will end, the obstacles in its way, and the great gain it will bring; then act.” <span lang=\"ta\" class=\"ta\">முடிவும் இடையூறும் முற்றியாங்கு எய்தும் படுபயனும் பார்த்துச் செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 676</span>"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "slug": "strategic-intent",
+   "title": "Strategic Intent: Vision, Mission, Goals and Objectives",
+   "scope": "The hierarchy of purpose that tells everyone where the organisation is heading, why it exists and what it must achieve.",
+   "group": "foundations",
+   "blocks": [
+    {
+     "id": "strategic-intent-and-hierarchy",
+     "title": "Strategic intent and the hierarchy of purpose",
+     "html": "<p><b>Strategic intent</b>, a term made famous by Gary Hamel and C. K. Prahalad (1989), is an organisation's long-term aspiration to win a desired position, with a strong competitive focus. It stretches the organisation's resources and core competencies toward goals that may at first seem out of reach, and in doing so it clarifies priorities, focuses effort and motivates people.</p>\n<p>Strategic intent is expressed through a hierarchy, each level supporting the next, so that daily activity stays aligned with the long-term vision.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The hierarchy of strategic intent\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Answers</th><th>Nature</th></tr></thead>\n<tbody>\n<tr><td>Vision</td><td>Where do we want to be?</td><td>The future aspiration</td></tr>\n<tr><td>Mission</td><td>Why do we exist, what do we do and for whom?</td><td>The organisation's purpose now</td></tr>\n<tr><td>Goals</td><td>What broad results must we achieve?</td><td>Broad desired outcomes</td></tr>\n<tr><td>Objectives</td><td>What exactly, by how much and by when?</td><td>Specific, measurable, time-bound targets</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Vision, mission, goals, objectives: from aspiration to target.</p>"
+    },
+    {
+     "id": "vision-and-mission",
+     "title": "Vision and mission",
+     "html": "<p>A <b>vision statement</b> says where the organisation wants to be in future, or where it should be to best meet its stakeholders' needs. It describes dreams and aspirations, gives a shared sense of direction, and guides decisions and planning. An effective vision is clear and unambiguous, in harmony with the organisation's culture and values, realistic, short enough to remember, and shared by everyone in the organisation.</p>\n<p>A <b>mission statement</b> describes the role through which the organisation serves its stakeholders. It says what the organisation does (its present capabilities), whom it serves, and what makes it distinctive, and so provides the frame within which strategies are made. It is usually written at the top with the chief executive's lead, though units may have their own. A mission may need redefining as the organisation grows, but its fundamentals should be kept.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Vision and mission compared\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Vision</th><th>Mission</th></tr></thead>\n<tbody>\n<tr><td>Question</td><td>Where do we want to be?</td><td>What do we do, for whom, and why?</td></tr>\n<tr><td>Time</td><td>The future</td><td>The present</td></tr>\n<tr><td>Purpose</td><td>Inspire and give direction</td><td>Define scope and purpose; frame strategy</td></tr>\n</tbody></table></div>\n<p>A mission statement usually has three parts: the purpose, the core values that shape behaviour, and the main goals. A good mission is <b>feasible</b>, <b>clear</b> enough to act on, <b>inspiring</b>, <b>precise</b> (neither too broad nor too narrow), <b>distinctive</b> and <b>credible</b> to all stakeholders.</p>\n<p>Examples: Google's mission is “to organize the world's information and make it universally accessible and useful”; Microsoft's, since 2015, is “to empower every person and every organization on the planet to achieve more”.</p>"
+    },
+    {
+     "id": "goals-and-objectives",
+     "title": "Goals and objectives",
+     "html": "<p>A <b>goal</b> is a desired future state that the organisation tries to reach. Goals make the mission concrete and coordinate the work of different departments. Well-made goals are precise and measurable, address critical issues, are realistic yet challenging, are to be reached within a set time, and include non-financial as well as financial results.</p>\n<p><b>Objectives</b> are the specific targets the organisation aims to reach over a period; they are the foundation of planning, and policies are made to achieve them. They are set by top management. Effective objectives are <b>multiple</b> rather than single, cover both the <b>short</b> and the <b>long term</b>, are <b>flexible</b> enough to respond to change, and are feasible and operational. The common test is <b>SMART</b>: specific, measurable, achievable, realistic and time-bound (the acronym comes from George Doran, 1981, who had ‘assignable’ where ‘achievable’ now usually stands).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Long-term and short-term objectives\" tabindex=\"0\"><table>\n<thead><tr><th>Horizon</th><th>Typical areas</th></tr></thead>\n<tbody>\n<tr><td>Long-term</td><td>Competitive position, technological leadership, profitability, return on investment, employee relations and productivity, corporate image</td></tr>\n<tr><td>Short-term</td><td>Immediate steps that support them, such as where to locate a store, its size, the number of staff and the launch marketing plan</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Goals make the mission concrete; objectives make goals measurable.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Strategic intent",
+     "classic": "aiming high",
+     "text": [
+      "Strategic intent sets an aspiration beyond present resources. The Kuṟaḷ asks that every thought be of rising high, and says that such aims keep their worth even when they fail. The couplet is about a person's ambition, not an organisation's competitive goal."
+     ],
+     "quote": "“Let all your thoughts be of rising high; even if the aim is thwarted, it keeps the nature of success.” <span lang=\"ta\" class=\"ta\">உள்ளுவ தெல்லாம் உயர்வுள்ளல் மற்றது தள்ளினுந் தள்ளாமை நீர்த்து.</span> <span class=\"ref\">Tirukkuṟaḷ 596</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Realistic objectives",
+     "classic": "knowing one's strength",
+     "text": [
+      "Good objectives are challenging but feasible. The Kuṟaḷ warns that many who did not know their own strength set out in a rush of zeal and broke down halfway. Read beside the previous couplet, it marks the other limit: aim high, but within what can be done."
+     ],
+     "quote": "“Many, not knowing their own strength, set out in a rush of zeal and broke down halfway.” <span lang=\"ta\" class=\"ta\">உடைத்தம் வலியறியார் ஊக்கத்தின் ஊக்கி இடைக்கண் முரிந்தார் பலர்.</span> <span class=\"ref\">Tirukkuṟaḷ 473</span>"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "slug": "strategic-decisions-and-levels-of-strategy",
+   "title": "Strategic Decisions and Levels of Strategy",
+   "scope": "What makes a decision strategic, and how strategy is made at the corporate, business, functional and operating levels.",
+   "group": "foundations",
+   "blocks": [
+    {
+     "id": "strategic-decisions",
+     "title": "What makes a decision strategic",
+     "html": "<p><b>Strategic decisions</b> are made in line with the organisation's mission and goals and shape its future direction. They require thinking about scenarios that may or may not happen.</p>\n<p><b>Characteristics.</b> Strategic decisions commit major resources, whether acquiring new ones or reorganising and reallocating existing ones. They match the organisation's capabilities to the threats and opportunities around it. They define the scope of its activities, what it wants to be and to be about. They involve major change, are complex, are made at the top, and carry much uncertainty and risk because they concern the future.</p>\n<p>H. Igor Ansoff (<i>Corporate Strategy</i>, 1965) distinguished three kinds of decision. The source sheet's table for these has the time spans and frequencies of the last two swapped; the version below follows the standard account.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Strategic, administrative and operational decisions\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Strategic</th><th>Administrative</th><th>Operational</th></tr></thead>\n<tbody>\n<tr><td>Made by</td><td>Top management</td><td>Middle management</td><td>Lower and operating management</td></tr>\n<tr><td>Time span</td><td>Long term</td><td>Medium term</td><td>Short term</td></tr>\n<tr><td>Frequency</td><td>Infrequent, often one-off</td><td>Periodic</td><td>Daily, routine</td></tr>\n<tr><td>Guided by</td><td>The mission and vision</td><td>Strategic decisions</td><td>Strategic and administrative decisions</td></tr>\n<tr><td>Concerned with</td><td>The direction, scope and growth of the whole organisation</td><td>Structuring and organising resources and people to carry out strategy</td><td>Efficient day-to-day production and service</td></tr>\n</tbody></table></div>\n<p><b>Example.</b> Deciding to compete on cost is strategic. Deciding how to reorganise departments and staffing to achieve it is administrative. Scheduling shifts and ordering materials within the new budget is operational.</p>\n<p class=\"cue\">Strategic decisions are few, far-reaching and hard to reverse.</p>"
+    },
+    {
+     "id": "levels-of-strategy",
+     "title": "Four levels of strategy",
+     "html": "<p>In a diversified company, with several lines of business under one umbrella, strategy is made at four levels, each named after the level that makes it.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The four levels of strategy\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Question it answers</th><th>Made by</th></tr></thead>\n<tbody>\n<tr><td>Corporate</td><td>Which industries and markets should we be in, and how should resources be divided among them?</td><td>Top management and the board</td></tr>\n<tr><td>Business</td><td>How should this business compete in its market?</td><td>Heads of strategic business units (SBUs)</td></tr>\n<tr><td>Functional</td><td>How will each department (production, marketing, finance, HR) support the business strategy and get the most from its resources?</td><td>Functional heads</td></tr>\n<tr><td>Operational</td><td>How will a plant, sales territory or section meet its immediate targets?</td><td>Operating and field managers, with help from middle managers</td></tr>\n</tbody></table></div>\n<p>Corporate strategy sets long-term direction and affects every business under the umbrella. Business strategy is formulated in line with it. Functional strategies support the business strategy, and operating strategies carry out the functional ones, often one for each set of annual objectives.</p>\n<p><b>Example.</b> A business that competes on low cost needs a production strategy that cuts operating costs and an HR strategy that keeps a lean workforce of highly qualified people; its marketing and financial strategies must fit the same aim. In a single-business firm the corporate and business levels merge.</p>\n<p class=\"cue\">Corporate: where to compete. Business: how to compete. Functional and operational: how to deliver.</p>"
+    },
+    {
+     "id": "business-level-strategy",
+     "title": "Business-level strategy: competing and cooperating",
+     "html": "<p>Business strategy is the set of actions a business unit uses to gain a <b>competitive advantage</b>: the ability to outperform rivals. It is made up of <b>competitive</b> strategies, which aim to win customers away from rivals, and <b>cooperative</b> strategies, in which a firm works with others to gain advantage together. Lasting success needs a <b>sustainable</b> competitive advantage, one rivals cannot quickly copy.</p>\n<p>Michael Porter (<i>Competitive Strategy</i>, 1980) named three <b>generic strategies</b>, set by two choices: whether to compete on cost or on uniqueness, and whether to target the broad market or a narrow segment.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Porter's generic strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>Target</th><th>Source of advantage</th></tr></thead>\n<tbody>\n<tr><td>Cost leadership</td><td>Broad market</td><td>The lowest costs in the industry, allowing lower prices or higher margins</td></tr>\n<tr><td>Differentiation</td><td>Broad market</td><td>Unique features that customers value and will pay a premium for</td></tr>\n<tr><td>Cost focus</td><td>A narrow segment</td><td>Lower cost in serving that segment</td></tr>\n<tr><td>Differentiation focus</td><td>A narrow segment</td><td>Meeting that segment's special needs better than broad competitors</td></tr>\n</tbody></table></div>\n<p>Porter warned that a firm trying to do everything without committing to one of these risks being <b>stuck in the middle</b>, with no clear advantage.</p>\n<p><b>Blue ocean strategy</b> (W. Chan Kim and Renée Mauborgne, 2005) takes another route: instead of fighting rivals in existing markets, the ‘red oceans’, it creates uncontested market space where competition is irrelevant.</p>\n<p><b>Key success factors</b> are the few things in an industry that most decide whether a firm can compete successfully, such as distribution reach in packaged foods or reliability in airlines.</p>\n<p class=\"cue\">Low cost or different; broad or focused.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Focus strategy",
+     "classic": "the crocodile in deep water",
+     "text": [
+      "In deep water the crocodile overcomes all others; out of the water, others overcome it. A focus strategy rests on the same insight: choose the segment where your strengths decide the contest. The couplet is about choosing a battleground, not a market."
+     ],
+     "quote": "“In deep water the crocodile prevails; out of the water, others prevail over it.” <span lang=\"ta\" class=\"ta\">நெடும்புனலுள் வெல்லும் முதலை அடும்புனலின் நீங்கின் அதனைப் பிற.</span> <span class=\"ref\">Tirukkuṟaḷ 495</span>"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "slug": "external-analysis",
+   "title": "External Analysis: PESTEL, Five Forces and Industry Life Cycle",
+   "scope": "How a firm reads the world outside it: the macro-environment, the forces that shape competition in its industry, and the industry's stage of life.",
+   "group": "analysis",
+   "blocks": [
+    {
+     "id": "what-external-analysis-is",
+     "title": "What external analysis is",
+     "html": "<p><b>External analysis</b>, also called environmental analysis, examines the world outside the firm. At the industry level it looks at competitive structure, the firm's competitive position, and the industry's dynamics and history; at the macro level it looks at economic, global, political, social, demographic and technological conditions. Its purpose is to find the <b>opportunities</b> and <b>threats</b> that will drive profitability, growth and volatility.</p>\n<p><b>External and internal analysis.</b> External analysis asks how outside factors such as industry trends affect the business. Internal analysis looks at the business itself: its resources, processes and culture. Strategy needs both.</p>\n<p><b>Benefits.</b> It encourages growth into new areas; it helps the firm anticipate and adapt to change, as restaurants that turned to cloud kitchens during the Covid-19 lockdowns did; and it shows where the firm can set itself apart from competitors.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Elements of an external analysis\" tabindex=\"0\"><table>\n<thead><tr><th>Element</th><th>What to examine</th></tr></thead>\n<tbody>\n<tr><td>Supply chain</td><td>The whole path from raw materials to finished goods reaching the customer, compared with industry benchmarks</td></tr>\n<tr><td>Industry</td><td>Its present risks and opportunities, current size, projected growth, and alternative industries to explore</td></tr>\n<tr><td>Economic trends</td><td>Interest rates, inflation, trade rules and the risk of recession, and how they will affect profits</td></tr>\n<tr><td>Competitors</td><td>The forces that set the level of competition (Porter's five forces)</td></tr>\n<tr><td>Market demographics</td><td>Customers' age, income, location, interests, and how the product improves their lives</td></tr>\n<tr><td>Industry life cycle</td><td>The stage the industry has reached</td></tr>\n<tr><td>PEST or PESTEL</td><td>The broad political, economic, social, technological, environmental and legal setting</td></tr>\n</tbody></table></div>\n<p><b>Environmental scanning</b>, the first step of the strategic management process, is the continuing search for this information.</p>"
+    },
+    {
+     "id": "pestel-analysis",
+     "title": "PEST and PESTEL analysis",
+     "html": "<p><b>PEST analysis</b> examines the Political, Economic, Social and Technological landscape. <b>PESTEL</b> extends it with Environmental and Legal factors. It is used in corporate planning and to weigh the pros and cons of a business strategy.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"PESTEL factors\" tabindex=\"0\"><table>\n<thead><tr><th>Factor</th><th>Examples</th></tr></thead>\n<tbody>\n<tr><td>Political</td><td>Tax policy, trade restrictions, tariffs, bureaucracy, government stability</td></tr>\n<tr><td>Economic</td><td>Growth rates, interest rates, exchange rates, inflation, unemployment</td></tr>\n<tr><td>Social</td><td>Culture and perceptions, health consciousness, population growth, age distribution, attitudes to careers</td></tr>\n<tr><td>Technological</td><td>R&D activity, automation, technology incentives, the rate of technological change</td></tr>\n<tr><td>Environmental</td><td>Weather, climate change, pollution, natural disasters such as floods, droughts and heat waves, and the growing pressure for sustainable operations</td></tr>\n<tr><td>Legal</td><td>Industry regulation, licences and permits, labour laws, consumer protection, competition law, intellectual property</td></tr>\n</tbody></table></div>\n<p><b>Political or legal?</b> Political factors concern the relationship between business and government; legal factors are the laws that define what a business may or may not do. They meet when government passes legislation that changes how businesses operate.</p>\n<p class=\"cue\">Political, Economic, Social, Technological, Environmental, Legal.</p>"
+    },
+    {
+     "id": "porters-five-forces",
+     "title": "Porter's five forces",
+     "html": "<p>Michael Porter's <b>five forces model</b> (Harvard Business Review, 1979) analyses the competition in an industry. Its point is that competition comes not only from rivals: the collective strength of five forces sets an industry's profit potential and so its attractiveness. Where the forces are intense, as in airlines, almost no firm earns attractive returns; where they are mild, as in soft drinks, there is room for higher returns.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Porter's five forces\" tabindex=\"0\"><table>\n<thead><tr><th>Force</th><th>Stronger (worse for the industry) when…</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Threat of new entrants</td><td>Entry barriers are low. Barriers include economies of scale, brand loyalty, large capital needs, accumulated experience, government licensing and limited access to distribution.</td><td>Low to medium in airlines and telecom: aircraft, spectrum and licences cost a great deal</td></tr>\n<tr><td>Bargaining power of suppliers</td><td>Suppliers are few or concentrated, inputs have no substitutes, switching suppliers is costly, or the supplier's product is unique</td><td>Very high in airlines, which depend on a few makers of aircraft and on fuel</td></tr>\n<tr><td>Bargaining power of buyers</td><td>Buyers are few or buy in bulk, products are standard, and switching is cheap. Online price comparison has raised buyer power.</td><td>High in mobile phones and FMCG</td></tr>\n<tr><td>Threat of substitutes</td><td>Other products meet the same need at a better price-performance and switching is easy</td><td>Energy drinks and coffee both meet the need to stay alert</td></tr>\n<tr><td>Rivalry among existing competitors</td><td>Competitors are many and of similar size, growth is slow, switching costs are low, fixed costs are high, and exit barriers (long-term loans, specialised assets) keep firms in. A low concentration ratio signals intense rivalry.</td><td>High in Indian aviation: low-cost carriers, high fixed costs and similar-sized players</td></tr>\n</tbody></table></div>\n<p>Firms can reduce buyer power through loyalty programmes and differentiation, and entry threat by building scale and brand.</p>\n<p><b>A sixth factor: complementors.</b> Some writers add the power of firms that make <b>complements</b>, products that add value to the industry's own (Andy Grove of Intel proposed it as a sixth force; Adam Brandenburger and Barry Nalebuff's <i>Co-opetition</i>, 1996, put complementors in their ‘value net’). Weak or unattractive complements can slow an industry's growth. Porter treats complements as a factor that affects the five forces rather than a force of its own.</p>\n<p class=\"cue\">Entrants, suppliers, buyers, substitutes, rivalry.</p>"
+    },
+    {
+     "id": "industry-life-cycle",
+     "title": "The industry life cycle",
+     "html": "<p>The <b>industry life cycle</b> describes the stages an industry passes through over time. The simple version has four: <b>introduction</b> (low sales, high costs), <b>growth</b> (rising sales and profits, new entrants), <b>maturity</b> (saturation) and <b>decline</b> (falling demand, firms leave). Profitability usually peaks in growth and maturity.</p>\n<p>Charles Hill and Gareth Jones describe five stages and what each means for competition. The source sheet says the threat of entry is low in the growth stage; in their account it is at its highest then, though fast growth keeps rivalry low.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Five stages of the industry life cycle\" tabindex=\"0\"><table>\n<thead><tr><th>Stage</th><th>Competitive conditions</th></tr></thead>\n<tbody>\n<tr><td>Embryonic (start-up)</td><td>Little competition. Barriers to entry rest on access to key technological know-how rather than scale or brand.</td></tr>\n<tr><td>Growth</td><td>Demand grows fast. Few firms have scale or brand loyalty yet, so the threat of new entrants is at its highest; but rapid growth absorbs newcomers, so rivalry stays low.</td></tr>\n<tr><td>Shakeout</td><td>Growth slows. Rivalry becomes intense, firms cut prices, and weaker ones leave.</td></tr>\n<tr><td>Maturity</td><td>The market is saturated. Entry barriers rise, so the threat of new entrants falls; firms segment the market and avoid price wars.</td></tr>\n<tr><td>Decline</td><td>Demand falls. Rivalry among the established firms intensifies, especially where exit barriers are high.</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Embryonic, growth, shakeout, maturity, decline.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Environmental scanning",
+     "classic": "the ruler's duty to know",
+     "text": [
+      "The Kuṟaḷ makes it the ruler's work to know quickly everything that happens, to everyone, at all times, and the couplets around it describe the agents who gather that knowledge. Environmental scanning is the same continuing watch over the world outside the organisation."
+     ],
+     "quote": "“To know quickly all that happens to everyone, at all times, is the ruler's work.” <span lang=\"ta\" class=\"ta\">எல்லார்க்கும் எல்லாம் நிகழ்பவை எஞ்ஞான்றும் வல்லறிதல் வேந்தன் தொழில்.</span> <span class=\"ref\">Tirukkuṟaḷ 582</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Adapting to the macro-environment",
+     "classic": "moving with the world",
+     "text": [
+      "PESTEL analysis exists so that a firm can change as its environment changes. The Kuṟaḷ calls it wisdom to live as the world lives, moving with it. The couplet is about personal conduct, not about scanning political or economic trends."
+     ],
+     "quote": "“As the world moves, so to move with the world is wisdom.” <span lang=\"ta\" class=\"ta\">எவ்வ துறைவது உலகம் உலகத்தோடு அவ்வ துறைவ தறிவு.</span> <span class=\"ref\">Tirukkuṟaḷ 426</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Competition beyond the rival",
+     "classic": "four strengths to weigh",
+     "text": [
+      "Porter's point is that a firm must look beyond its direct rival. The Kuṟaḷ likewise asks for four strengths to be weighed before acting: of the task itself, of oneself, of the opponent, and of the allies on each side. It concerns a single undertaking against a foe rather than the structure of an industry."
+     ],
+     "quote": "“Weigh the strength the deed demands, your own strength, your opponent's strength and the strength of allies; then act.” <span lang=\"ta\" class=\"ta\">வினைவலியும் தன்வலியும் மாற்றான் வலியும் துணைவலியும் தூக்கிச் செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 471</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Timing in the industry life cycle",
+     "classic": "the crow and the owl",
+     "text": [
+      "What works depends on the stage an industry has reached. The Kuṟaḷ says that the crow defeats the owl by day, and that rulers who would win need the right time. The point it shares with the life cycle is timing; the couplet does not describe stages."
+     ],
+     "quote": "“By day the crow defeats the owl; rulers who would defeat their foes need the right time.” <span lang=\"ta\" class=\"ta\">பகல்வெல்லும் கூகையைக் காக்கை இகல்வெல்லும் வேந்தர்க்கு வேண்டும் பொழுது.</span> <span class=\"ref\">Tirukkuṟaḷ 481</span>"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "slug": "internal-analysis",
+   "title": "Internal Analysis: Resources, Capabilities and SWOT",
+   "scope": "How a firm looks inward: the tools of internal analysis, the resource-based view, VRIO, the McKinsey 7-S model, and SWOT and TOWS.",
+   "group": "analysis",
+   "blocks": [
+    {
+     "id": "what-internal-analysis-is",
+     "title": "What internal analysis is",
+     "html": "<p>An <b>internal analysis</b> examines the organisation's own resources, assets and processes, tangible and intangible, to find where it can grow or must change. Paired with external analysis, it gives a full picture of how the firm works on its own and within its industry.</p>\n<p><b>Why it matters.</b> It identifies the company's <b>strengths</b> (the quality of its people, the resources it has, brand recognition), its structural <b>weaknesses</b> (poor training, outdated technology, weak communication between departments), <b>opportunities</b> for growth, likely <b>threats</b>, which usually come from outside, and its <b>viability</b>: a niche that sets it apart from competitors, often the long-term aim.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Internal analysis tools\" tabindex=\"0\"><table>\n<thead><tr><th>Tool</th><th>What it does</th></tr></thead>\n<tbody>\n<tr><td>Gap analysis</td><td>Finds the gap between a business goal and the current state; used to locate weaknesses</td></tr>\n<tr><td>Strategy evaluation</td><td>Checks at regular intervals whether the firm is meeting the objectives in its plan</td></tr>\n<tr><td>SWOT analysis</td><td>A broad overview of strengths, weaknesses, opportunities and threats</td></tr>\n<tr><td>VRIO analysis</td><td>Tests which resources can give a lasting advantage</td></tr>\n<tr><td>OCAT (Organisational Capacity Assessment Tool)</td><td>Rates internal performance on specific dimensions to find areas of strength or growth</td></tr>\n<tr><td>McKinsey 7-S framework</td><td>Checks that seven elements of the organisation are aligned</td></tr>\n<tr><td>Core competencies analysis</td><td>Identifies the combination of abilities that sets the business apart from competitors</td></tr>\n<tr><td>Value chain analysis</td><td>Breaks the firm into activities to find where it creates value and cost</td></tr>\n</tbody></table></div>\n<p><b>The value chain</b> (Michael Porter, <i>Competitive Advantage</i>, 1985) divides a firm's activities into <b>primary activities</b> (inbound logistics, operations, outbound logistics, marketing and sales, and service) and <b>support activities</b> (firm infrastructure, human resource management, technology development and procurement). Advantage comes from performing these activities at lower cost or in a way that creates more value than rivals do.</p>"
+    },
+    {
+     "id": "resource-based-view",
+     "title": "The resource-based view",
+     "html": "<p>The <b>resource-based view</b> (RBV) holds that lasting competitive advantage comes mainly from inside the firm: from the resources and capabilities it already has, rather than from its position in the industry. It took shape in the 1980s and 1990s in the work of Birger Wernerfelt (“A Resource-Based View of the Firm”, 1984), C. K. Prahalad and Gary Hamel, J.-C. Spender, Robert Grant and Jay Barney.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Tangible and intangible resources\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>Examples</th><th>As a source of advantage</th></tr></thead>\n<tbody>\n<tr><td>Tangible</td><td>Property, land, plant, products, financial capital</td><td>Can usually be bought on the market, so rivals can match them quickly; they give little lasting advantage</td></tr>\n<tr><td>Intangible</td><td>Reputation and goodwill, brands and trademarks, intellectual property, culture, know-how</td><td>Built over time and not for sale, so hard to imitate; the main source of lasting advantage</td></tr>\n</tbody></table></div>\n<p><b>Two assumptions.</b> Resources are <b>heterogeneous</b>: they differ from firm to firm, which is why firms facing the same environment can follow different strategies. And they are <b>immobile</b>: they do not move easily between firms, at least in the short run, so rivals cannot quickly copy them. Intangible resources are more immobile than tangible ones.</p>\n<p><b>Core competence</b> (Prahalad and Hamel, 1990) is a bundle of skills and technologies that lets a firm deliver distinctive value across several businesses. Their three tests: it gives access to a wide variety of markets, it contributes significantly to the benefits customers perceive, and it is difficult for competitors to imitate.</p>\n<p class=\"cue\">Look inside: lasting advantage lies in what rivals cannot buy or copy.</p>"
+    },
+    {
+     "id": "vrio-framework",
+     "title": "The VRIO framework",
+     "html": "<p>Owning heterogeneous, immobile resources is not enough to sustain an advantage. Jay Barney (1991) proposed four tests, <b>VRIN</b>: valuable, rare, inimitable and non-substitutable. Barney later recast them as <b>VRIO</b>, replacing non-substitutability with organisation.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The four VRIO questions\" tabindex=\"0\"><table>\n<thead><tr><th>Question</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Valuable?</td><td>Does the resource let the firm raise the value it offers customers, through differentiation or lower cost, or exploit an opportunity or neutralise a threat?</td></tr>\n<tr><td>Rare?</td><td>Is it held by only one or a very few firms? If many have it, it brings only parity.</td></tr>\n<tr><td>Costly to imitate?</td><td>Would rivals find it difficult or expensive to copy or substitute? If not, any advantage is temporary.</td></tr>\n<tr><td>Organised to capture value?</td><td>Are the firm's structure, systems and processes set up to use it fully, for example by putting talented people in the right roles?</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"What each VRIO result means\" tabindex=\"0\"><table>\n<thead><tr><th>Valuable</th><th>Rare</th><th>Costly to imitate</th><th>Organised</th><th>Result</th></tr></thead>\n<tbody>\n<tr><td>No</td><td></td><td></td><td></td><td>Competitive disadvantage</td></tr>\n<tr><td>Yes</td><td>No</td><td></td><td></td><td>Competitive parity</td></tr>\n<tr><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Temporary competitive advantage</td></tr>\n<tr><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>Unused competitive advantage</td></tr>\n<tr><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Sustained competitive advantage</td></tr>\n</tbody></table></div>\n<p><b>Using it:</b> identify the firm's potential key resources; test each against the four questions; then develop and nurture those that pass.</p>\n<p class=\"cue\">Valuable, Rare, costly to Imitate, Organised.</p>"
+    },
+    {
+     "id": "mckinsey-7s",
+     "title": "The McKinsey 7-S framework",
+     "html": "<p>The <b>McKinsey 7-S framework</b> (Robert Waterman, Tom Peters and Julien Phillips, 1980, developed with Richard Pascale and Anthony Athos) says an organisation is effective when seven interdependent elements are aligned. It put the ‘soft’ human side of organisations alongside the traditional tangibles of capital and equipment as a key to performance.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The seven S's\" tabindex=\"0\"><table>\n<thead><tr><th>Element</th><th>Type</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Strategy</td><td>Hard</td><td>The plan for gaining advantage</td></tr>\n<tr><td>Structure</td><td>Hard</td><td>How the organisation is divided and who reports to whom</td></tr>\n<tr><td>Systems</td><td>Hard</td><td>The procedures and processes of daily work</td></tr>\n<tr><td>Shared values</td><td>Soft</td><td>The core beliefs at the centre, linking all the others</td></tr>\n<tr><td>Style</td><td>Soft</td><td>How leaders behave</td></tr>\n<tr><td>Staff</td><td>Soft</td><td>The people and how they are developed</td></tr>\n<tr><td>Skills</td><td>Soft</td><td>The organisation's distinctive capabilities</td></tr>\n</tbody></table></div>\n<p>The <b>hard</b> elements are tangible and easier to define and manage; the <b>soft</b> ones are intangible, shaped by culture, and harder to change. <b>Shared values</b> sit at the centre as the glue. Because the elements are interdependent, a change in one usually needs changes in the others, and misalignment causes friction. Good alignment improves coordination and helps strategy get implemented.</p>\n<p class=\"cue\">Hard: strategy, structure, systems. Soft: shared values, style, staff, skills.</p>"
+    },
+    {
+     "id": "swot-and-tows",
+     "title": "SWOT and TOWS",
+     "html": "<p><b>SWOT analysis</b> sums up the internal audit, <b>strengths</b> and <b>weaknesses</b>, and the external audit, <b>opportunities</b> and <b>threats</b>. It bridges analysis and strategy formulation.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The four SWOT elements\" tabindex=\"0\"><table>\n<thead><tr><th>Source</th><th>Helpful</th><th>Harmful</th></tr></thead>\n<tbody>\n<tr><td>Internal</td><td><b>Strengths</b>: capabilities and resources that give an advantage</td><td><b>Weaknesses</b>: limitations that reduce performance and need improving</td></tr>\n<tr><td>External</td><td><b>Opportunities</b>: favourable conditions to exploit</td><td><b>Threats</b>: unfavourable forces to guard against</td></tr>\n</tbody></table></div>\n<p>The <b>TOWS matrix</b> (Heinz Weihrich, 1982) goes one step further: it pairs the internal and external factors to generate strategies.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The TOWS matrix\" tabindex=\"0\"><table>\n<thead><tr><th>Internal factors</th><th>Opportunities</th><th>Threats</th></tr></thead>\n<tbody>\n<tr><td>Strengths</td><td><b>SO</b> (maxi-maxi): use strengths to seize opportunities</td><td><b>ST</b> (maxi-mini): use strengths to counter threats</td></tr>\n<tr><td>Weaknesses</td><td><b>WO</b> (mini-maxi): use opportunities to overcome weaknesses</td><td><b>WT</b> (mini-mini): reduce weaknesses and avoid threats</td></tr>\n</tbody></table></div>\n<p class=\"cue\">SWOT lists the factors; TOWS turns them into strategies.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Finding internal weaknesses",
+     "classic": "calamities of the constituents",
+     "text": [
+      "Book 8 of the Arthaśāstra examines the calamities (<i>vyasana</i>) that can befall each constituent of the state (ruler, ministers, countryside, fort, treasury, army and ally) and debates which is the more serious, so that the ruler knows where to act first. That is an internal audit of weaknesses, ranked by how much harm each does."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 8.1</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "The resource-based view",
+     "classic": "knowing what one can do",
+     "text": [
+      "The RBV says advantage comes from knowing and building on what the firm itself has. The Kuṟaḷ says nothing is beyond those who know what they are able to do, learn what must be known, and stay with it. The couplet speaks of a person's capacities; the RBV adds the tests of rarity and imitability."
+     ],
+     "quote": "“Nothing is out of reach for those who know what they can do, learn what is to be known, and hold to it.” <span lang=\"ta\" class=\"ta\">ஒல்வ தறிவது அறிந்ததன் கண்தங்கிச் செல்வார்க்குச் செல்லாதது இல்.</span> <span class=\"ref\">Tirukkuṟaḷ 472</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "SWOT before a campaign",
+     "classic": "power, place and time",
+     "text": [
+      "Book 9 of the Arthaśāstra opens with knowing the relative strength and weakness of oneself and the enemy in power, place and time before setting out on a campaign. SWOT sets the same comparison, of one's own strengths and weaknesses against the conditions outside, before choosing a course."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 9.1</span>"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "slug": "portfolio-analysis",
+   "title": "Business Portfolio Analysis: BCG and GE–McKinsey Matrices",
+   "scope": "How a firm with many businesses decides which to build, hold, harvest or sell.",
+   "group": "analysis",
+   "blocks": [
+    {
+     "id": "designing-the-business-portfolio",
+     "title": "Designing the business portfolio",
+     "html": "<p>A company's <b>business portfolio</b> is the collection of businesses and products that make it up. Guided by its mission and objectives, management should plan the portfolio that best fits the company's strengths and weaknesses to the opportunities in its environment. Large firms such as Nestlé or Hindustan Unilever manage complex portfolios of businesses and brands.</p>\n<p><b>Two steps.</b> First, analyse the current portfolio and decide which businesses should get more, less or no investment. Second, shape the future portfolio with strategies for growth and for downsizing.</p>\n<p>The units analysed are <b>strategic business units</b> (SBUs): a company division, a product line within a division, or sometimes a single product or brand, with its own mission and objectives that can be planned independently.</p>\n<p><b>Portfolio analysis</b> rates each SBU on two dimensions: the <b>attractiveness</b> of its market or industry, and the <b>strength</b> of its position there. Strong resources go to the more profitable businesses; weaker ones are phased down or dropped. Businesses that fit the firm's core philosophy and competencies deserve support.</p>\n<p class=\"cue\">Rate each business on market attractiveness and its own strength.</p>"
+    },
+    {
+     "id": "bcg-matrix",
+     "title": "The BCG growth-share matrix",
+     "html": "<p>The best-known portfolio method was developed by the <b>Boston Consulting Group</b> under Bruce Henderson around 1970. Each SBU is placed on a grid by its <b>market growth rate</b> (the vertical axis, a measure of market attractiveness) and its <b>relative market share</b> (the horizontal axis, its share compared with the largest competitor, a measure of strength). Each SBU is drawn as a circle whose area is proportional to its sales.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The four BCG cells\" tabindex=\"0\"><table>\n<thead><tr><th>Cell</th><th>Growth and share</th><th>Cash</th><th>Usual strategy</th></tr></thead>\n<tbody>\n<tr><td>Star</td><td>High growth, high share</td><td>Earns much but needs heavy investment to keep up with growth</td><td>Build or hold</td></tr>\n<tr><td>Cash cow</td><td>Low growth, high share</td><td>Established; needs little investment and produces surplus cash to fund other SBUs</td><td>Hold, or harvest (‘milk’)</td></tr>\n<tr><td>Question mark (problem child)</td><td>High growth, low share</td><td>Needs a lot of cash just to hold its share</td><td>Build into a star, or phase out</td></tr>\n<tr><td>Dog</td><td>Low growth, low share</td><td>May generate enough cash to maintain itself, but no more</td><td>Harvest or divest</td></tr>\n</tbody></table></div>\n<p>For each SBU the firm can <b>build</b> share by investing more, <b>hold</b> share at its current level, <b>harvest</b> short-term cash flow whatever the long-term effect, or <b>divest</b> by selling or phasing it out and using the resources elsewhere.</p>\n<p><b>Movement over time.</b> Many SBUs start as question marks, become stars if they succeed, turn into cash cows as market growth slows, and finally become dogs. The firm needs a steady flow of new products so that some become stars and later cash cows that fund the rest.</p>\n<p><b>Limits.</b> Two single measures stand in for attractiveness and strength; high market share does not always mean high profit; and a ‘dog’ may still have strategic value.</p>\n<p class=\"cue\">Stars, cash cows, question marks, dogs: build, hold, harvest, divest.</p>"
+    },
+    {
+     "id": "ge-mckinsey-matrix",
+     "title": "The GE–McKinsey nine-cell matrix",
+     "html": "<p>The <b>GE–McKinsey matrix</b> was developed in the early 1970s by McKinsey and Company for General Electric, which needed a way to decide where to invest across its many SBUs. It plots <b>industry (market) attractiveness</b> on the vertical axis against <b>business unit strength</b> (competitive position) on the horizontal axis.</p>\n<p>Each axis is a <b>weighted score</b> built from several factors, then divided into high, medium and low, giving a 3 × 3 grid of <b>nine cells</b>, a finer assessment than the BCG's four.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Factors behind each GE–McKinsey axis\" tabindex=\"0\"><table>\n<thead><tr><th>Axis</th><th>Typical factors</th></tr></thead>\n<tbody>\n<tr><td>Industry attractiveness (external)</td><td>Market size and growth rate, profitability, pricing trends, competitive intensity, buyer and supplier power, entry barriers and the threat of substitutes, overall risk, demand variability, room to differentiate, technology development</td></tr>\n<tr><td>Business unit strength (internal)</td><td>Market share and its growth, profit margins, cash flow and relative cost position, brand strength and customer loyalty, quality and innovation, financial resources, management strength</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"GE–McKinsey zones\" tabindex=\"0\"><table>\n<thead><tr><th>Zone</th><th>Where</th><th>Strategy</th></tr></thead>\n<tbody>\n<tr><td>Invest / grow</td><td>The three cells where attractiveness and strength are both high, or one high and the other medium</td><td>Invest to grow; protect strengths; raise productivity</td></tr>\n<tr><td>Selectivity / earnings (hold)</td><td>The three diagonal cells of average overall position</td><td>Invest selectively in profitable, low-risk segments; manage for earnings</td></tr>\n<tr><td>Harvest / divest</td><td>The three cells where both are low, or one low and the other medium</td><td>Minimise investment; harvest cash or sell, and move resources to stronger areas</td></tr>\n</tbody></table></div>\n<p><b>BCG and GE–McKinsey compared.</b> The BCG uses one measure on each axis and four cells; the GE–McKinsey uses composite, weighted scores and nine cells, so it is richer but more subjective.</p>\n<p class=\"cue\">Nine cells, three zones: grow, hold, harvest.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Cash cows and cash flow",
+     "classic": "income and outflow",
+     "text": [
+      "The BCG logic is that the cash cows' surplus must cover what the question marks and stars consume. The Kuṟaḷ says that even a small income does no harm so long as the outflow does not grow wider than the inflow. It speaks of a ruler's or household's treasury, not of business units."
+     ],
+     "quote": "“Though the channel of income be narrow, there is no harm if the channel of outflow is not wider.” <span lang=\"ta\" class=\"ta\">ஆகாறு அளவிட்டி தாயினுங் கேடில்லை போகாறு அகலாக் கடை.</span> <span class=\"ref\">Tirukkuṟaḷ 478</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Holding and investing",
+     "classic": "the heron's patience",
+     "text": [
+      "The GE–McKinsey zones say when to wait and when to commit: hold in the middle, invest where the position is strong. The Kuṟaḷ advises keeping still like the heron while the season is unfavourable, and striking like its beak when the moment is right. It is advice about timing an attack, not about allocating capital."
+     ],
+     "quote": "“When the time is not ripe, keep still like the heron; when the moment comes, strike like its beak.” <span lang=\"ta\" class=\"ta\">கொக்கொக்க கூம்பும் பருவத்து மற்றதன் குத்தொக்க சீர்த்த இடத்து.</span> <span class=\"ref\">Tirukkuṟaḷ 490</span>"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "slug": "growth-strategies",
+   "title": "Corporate Strategies: Growth, Integration and Diversification",
+   "scope": "The grand strategies a corporation can choose, Ansoff's growth matrix, and the ways a firm can grow by integrating or diversifying.",
+   "group": "choice",
+   "blocks": [
+    {
+     "id": "grand-strategies",
+     "title": "Grand strategies: the strategy wheel",
+     "html": "<p><b>Corporate strategy</b> sets the scope of the firm: which businesses to be in and how to allocate resources among them. Its broad options, the <b>grand strategies</b>, are often drawn as a strategy wheel.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Corporate-level strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>What it does</th></tr></thead>\n<tbody>\n<tr><td>Stability</td><td>Keeps the present business and scope, making only small improvements; suits a firm content with its position or waiting for clarity</td></tr>\n<tr><td>Growth (expansion)</td><td>Increases size, market share or revenue by expanding existing or new businesses</td></tr>\n<tr><td>Integration</td><td>Gains control over more of the value chain, backward, forward or horizontally</td></tr>\n<tr><td>Diversification</td><td>Enters new products or markets to spread risk and find new growth</td></tr>\n<tr><td>Cooperation</td><td>Works with other firms through mergers, acquisitions, joint ventures and alliances</td></tr>\n<tr><td>Retrenchment</td><td>Reduces or restructures operations to restore efficiency and profitability</td></tr>\n<tr><td>Combination</td><td>Follows two or more of these at once or in sequence, for example expanding one business while retrenching another</td></tr>\n</tbody></table></div>\n<p>The source's strategy wheel lists the last six; the classic grouping of grand strategies (William Glueck) is <b>stability, expansion, retrenchment and combination</b>, with integration, diversification and cooperation treated as routes to expansion.</p>\n<p class=\"cue\">Stability, expansion, retrenchment, or a combination.</p>"
+    },
+    {
+     "id": "expansion-and-concentration",
+     "title": "Expansion strategy and concentration",
+     "html": "<p>An <b>expansion</b> (growth) strategy seeks faster growth, higher profits, a larger market share, economies of scale or a bigger brand. It redefines the business, either by widening its scope (new products, markets or functions) or by substantially increasing the effort put into the present business. It is often called the ‘entrepreneurial’ strategy and is usually seen as the way to improve performance, but strategists must tell desirable expansion from undesirable.</p>\n<p><b>Why firms expand.</b> In a volatile environment growth may be needed to survive; top managers find growth satisfying and rewarding; some believe it benefits society; and growth brings experience-curve and scale advantages.</p>\n<p><b>Five routes to expansion:</b> concentration, integration, diversification, cooperation and internationalisation. The last four have their own sections; concentration is described here.</p>\n<p><b>Concentration</b> (also called intensification, focus or specialisation) converges resources on one or a few of the firm's businesses, using proven technology for an identified market. It builds on existing competence and avoids major change, but puts many eggs in one basket: a shift in prices, customer sentiment or rival offers can undo it. It takes three forms, which are three cells of the Ansoff matrix.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Three forms of concentration\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>What it involves</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Market penetration</td><td>Gaining share in present markets with present products, through better quality or productivity and more marketing</td><td>Easiest in a growing market, where newcomers can gain share while leaders still grow; harder in static and mature markets, where leaders' cost advantages protect them; in declining markets share comes as rivals exit. Collaboration can help in mature markets.</td></tr>\n<tr><td>Market development</td><td>Keeping present products while entering new segments, finding new uses, or moving into new regions</td><td>Suits capital-intensive firms whose distinctive competence lies in the product; many capital-goods makers grew by opening overseas markets as old ones saturated. Exporting is a form of it.</td></tr>\n<tr><td>Product development</td><td>Creating new or improved products for present markets</td><td>Wet-shaving firms create successive waves of demand with new razor systems; Tata Ace (the ‘Chhota Haathi’) created a new category of small commercial vehicle.</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Concentrate: penetrate the market, develop the market, or develop the product.</p>"
+    },
+    {
+     "id": "ansoff-matrix",
+     "title": "Ansoff's product-market growth matrix",
+     "html": "<p>The <b>Ansoff matrix</b>, or product/market expansion grid, comes from H. Igor Ansoff's article “Strategies for Diversification” (<i>Harvard Business Review</i>, 1957). Ansoff saw two ways to grow: by changing <b>what</b> is sold (products) and <b>who</b> it is sold to (markets). Combined, they give four options, and each move into a new quadrant raises the risk.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The Ansoff matrix\" tabindex=\"0\"><table>\n<thead><tr><th>Markets</th><th>Existing products</th><th>New products</th></tr></thead>\n<tbody>\n<tr><td>Existing markets</td><td><b>Market penetration</b> (lowest risk)</td><td><b>Product development</b></td></tr>\n<tr><td>New markets</td><td><b>Market development</b></td><td><b>Diversification</b> (highest risk)</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"The four growth strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>How</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Market penetration</td><td>Sell more of existing products in existing markets: lower prices, more promotion and distribution, or buy a competitor. Works best where the market is still growing.</td><td>Telecom companies' introductory offers; Coca-Cola and HUL's heavy marketing and wide distribution</td></tr>\n<tr><td>Product development</td><td>Develop new products for existing customers through R&D, acquiring a product, or partnerships. Product and promotion change, so the risk is higher.</td><td>Carmakers launching electric models for increasingly green-minded buyers; Apple's new iPhone models</td></tr>\n<tr><td>Market development</td><td>Take existing products to new markets: new segments, new regions at home, or abroad. Place and promotion change. Works best with proprietary technology, profitable new customers, and buyers who behave like existing ones.</td><td>IKEA expanding from culturally close markets to China, the Middle East and India</td></tr>\n<tr><td>Diversification</td><td>New products for new markets. The riskiest option, since both product and market are unfamiliar, but it opens new revenue streams; related diversification lowers the risk.</td><td>A leather-shoe maker starting soaps and detergents</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Penetration, product development, market development, diversification: risk rises as you leave home.</p>"
+    },
+    {
+     "id": "integration-strategies",
+     "title": "Integration strategies",
+     "html": "<p><b>Integration</b> combines activities along the value chain to reduce cost, secure supplies or markets, and increase control.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Types of integration\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>What the firm does</th><th>Gains</th></tr></thead>\n<tbody>\n<tr><td>Backward (vertical)</td><td>Acquires or controls its suppliers and sources of inputs</td><td>Reliable supply of raw materials; less dependence on suppliers; better control of quality and cost</td></tr>\n<tr><td>Forward (vertical)</td><td>Acquires or controls distributors, retailers or sales channels to reach customers directly</td><td>Market access, closer customer relationships, higher margins</td></tr>\n<tr><td>Horizontal</td><td>Merges with or acquires competitors at the same stage of the value chain</td><td>Larger market share, less competition, economies of scale</td></tr>\n</tbody></table></div>\n<p>Vertical integration is sometimes listed as a third type of diversification, since the firm moves into activities it once bought from suppliers or left to distributors.</p>\n<p class=\"cue\">Backward to suppliers, forward to customers, horizontal to rivals.</p>"
+    },
+    {
+     "id": "diversification-strategies",
+     "title": "Diversification strategies",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Related and unrelated diversification\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Related (concentric)</th><th>Unrelated (conglomerate)</th></tr></thead>\n<tbody>\n<tr><td>What it is</td><td>New products or businesses related to existing ones</td><td>Expansion into entirely new industries</td></tr>\n<tr><td>Logic</td><td>Exploits operational and marketing <b>synergies</b>: shared technology, brand, channels and core competencies</td><td>Spreads risk across unrelated sectors and reduces dependence on one industry</td></tr>\n<tr><td>Risk</td><td>Relatively lower</td><td>Higher; needs new capabilities and investment</td></tr>\n<tr><td>Example</td><td>A leather-shoe maker adding leather wallets, accessories or sports shoes</td><td>The same firm making detergents and soap</td></tr>\n</tbody></table></div>\n<p>In Ansoff's own terms, <b>horizontal</b> diversification means new products, often technologically unrelated, sold to the firm's existing customers, and <b>concentric</b> diversification means new products that draw on the firm's existing technology or marketing; the source sheet uses ‘horizontal’ loosely for related diversification.</p>\n<p>Diversification moves the firm away from both its current products and its current markets at once. It is really a set of strategies, which can be internal or external, related or unrelated, horizontal or vertical, and active or passive. Unrelated diversification reduces exposure to one industry's downturn, since profits in one business can offset losses in another. Example: ITC, long known for cigarettes and hotels, diversified into stationery (Classmate), personal care (Fiama, Vivel) and packaged foods (Bingo, Sunfeast).</p>\n<p class=\"cue\">Related for synergy; unrelated for spreading risk.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Choosing a grand strategy",
+     "classic": "the six measures",
+     "text": [
+      "Kauṭilya lists six measures of foreign policy: peace by treaty, war, staying quiet, marching, seeking shelter with a stronger power, and the double policy of peace with one party and war with another. He matches the choice to the ruler's strength relative to others: peace when weaker, war when stronger, staying quiet when neither can harm the other, marching when much stronger, shelter when without strength, and the double policy when an undertaking needs a helper. Grand strategy makes the same match between the firm's position and stability, expansion, retrenchment or a combination; the double policy resembles a combination strategy."
+     ],
+     "quote": "<i>sandhi-vigraha-āsana-yāna-saṃśraya-dvaidhībhāvāḥ ṣāḍguṇyam.</i> “Peace, war, staying quiet, marching, seeking shelter and the double policy make up the six measures.” <span class=\"ref\">Arthaśāstra 7.1</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "The risk of moving far from home",
+     "classic": "beyond the branch tip",
+     "text": [
+      "Ansoff's matrix says risk rises with each step away from known products and markets. The Kuṟaḷ warns that one who climbs beyond the tip of a branch and still goes on will lose his life. The couplet is about overreaching one's strength, not about markets."
+     ],
+     "quote": "“Those who have climbed to the branch's tip and climb further end their lives.” <span lang=\"ta\" class=\"ta\">நுனிக்கொம்பர் ஏறினார் அஃதிறந் தூக்கின் உயிர்க்கிறுதி ஆகி விடும்.</span> <span class=\"ref\">Tirukkuṟaḷ 476</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Backward integration",
+     "classic": "the treasury and the mines",
+     "text": [
+      "Kauṭilya says the treasury has its source in mines and the army arises from the treasury, and he puts mines and their products under state superintendents. Owning the source of one's key inputs is the idea behind backward integration; Kauṭilya argues it for a state, not a firm."
+     ],
+     "quote": "<i>ākaraprabhavaḥ kośaḥ, kośād daṇḍaḥ prajāyate.</i> “The treasury has its source in the mines; from the treasury the army is born.” <span class=\"ref\">Arthaśāstra 2.12</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Synergy in related diversification",
+     "classic": "an elephant to catch an elephant",
+     "text": [
+      "Related diversification uses what a firm already does to win the next business. The Kuṟaḷ compares accomplishing one task by means of another to catching a wild elephant with a trained one. It is a general maxim about leverage, not about choosing businesses."
+     ],
+     "quote": "“Accomplishing one task by means of another is like catching an elephant with an elephant.” <span lang=\"ta\" class=\"ta\">வினையான் வினையாக்கிக் கோடல் நனைகவுள் யானையால் யானையாத் தற்று.</span> <span class=\"ref\">Tirukkuṟaḷ 678</span>"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "slug": "cooperation-internationalisation-and-retrenchment",
+   "title": "Cooperative, International and Retrenchment Strategies",
+   "scope": "Growing with other firms, growing across borders, and shrinking to survive.",
+   "group": "choice",
+   "blocks": [
+    {
+     "id": "cooperative-strategies",
+     "title": "Cooperative strategies",
+     "html": "<p><b>Cooperative expansion</b> means working with other firms for mutual benefit: growth, innovation, market access and shared resources. Brandenburger and Nalebuff called the mix of competing and cooperating <b>co-opetition</b> (1996).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Forms of cooperative strategy\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>What happens</th><th>Shorthand</th></tr></thead>\n<tbody>\n<tr><td>Merger</td><td>Two companies combine into one entity, integrating ownership, operations and management</td><td>A + B = C</td></tr>\n<tr><td>Acquisition (takeover)</td><td>One company buys a controlling interest in another, which loses its independent identity</td><td>A + B = A</td></tr>\n<tr><td>Joint venture</td><td>Two or more firms create a new, jointly owned entity, sharing investment, risk and profit; the parents continue</td><td>A + B → C, with A and B still in business</td></tr>\n<tr><td>Strategic alliance</td><td>Firms cooperate on specific objectives while remaining legally independent</td><td>A and B work together</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Indian examples of cooperative strategy\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Merger</td><td>Vodafone India and Idea Cellular combined as Vodafone Idea (2018)</td></tr>\n<tr><td>Acquisition</td><td>Tata Steel's purchase of Corus (2007); Tata Motors' purchase of Jaguar Land Rover (2008)</td></tr>\n<tr><td>Joint venture</td><td>Tata Starbucks, owned equally by Tata Consumer Products and Starbucks; Vistara, owned by Tata Sons and Singapore Airlines until it merged into Air India in 2024</td></tr>\n<tr><td>Strategic alliance</td><td>Airlines in global alliances such as Star Alliance, which share routes and lounges while remaining independent</td></tr>\n</tbody></table></div>\n<p>The source sheet gives Maruti Suzuki and Tata–Starbucks as strategic alliances. Both are better classed as joint ventures, since each created a jointly owned company.</p>\n<p>These strategies let a firm expand quickly, enter new markets and technologies, share risk, and strengthen its competitive position. Working with a competitor makes sense when the gain from cooperating outweighs any advantage of going it alone: it can bring operational efficiency or a larger market for both.</p>\n<p class=\"cue\">Merge, acquire, venture jointly, or ally.</p>"
+    },
+    {
+     "id": "internationalisation-strategies",
+     "title": "Internationalisation strategies",
+     "html": "<p><b>Internationalisation</b> is the process of expanding beyond the home market. Firms typically progress from <b>exporting</b>, through licensing and <b>joint ventures</b>, to <b>local manufacturing</b> and wholly owned subsidiaries, taking on more commitment and risk at each stage.</p>\n<p><b>Why firms go abroad.</b> Slow growth or limited room at home, which drove much Japanese expansion; the chance to launch products sooner abroad than at home; host-country import restrictions or local-content rules that make local production better than exporting; incentives offered by host governments; following customers abroad, as Japanese carmakers' suppliers did when the carmakers built plants in the United States; and access to raw materials or technology. Before entering, firms weigh the market's size (GNP), population growth, competitors' activity and whether to produce at home or abroad.</p>\n<p>Building on Christopher Bartlett and Sumantra Ghoshal (<i>Managing Across Borders</i>, 1989), textbooks classify international strategies by two pressures: for <b>cost reduction</b> (global efficiency) and for <b>local responsiveness</b>.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Four international strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Cost pressure</th><th>Low pressure for local responsiveness</th><th>High pressure for local responsiveness</th></tr></thead>\n<tbody>\n<tr><td>High pressure for cost reduction</td><td><b>Global</b>: standardised products worldwide for maximum efficiency</td><td><b>Transnational</b>: high efficiency and high responsiveness together, learning across countries</td></tr>\n<tr><td>Low pressure for cost reduction</td><td><b>International</b>: transfer home-country products and skills abroad with little adaptation</td><td><b>Multi-domestic</b>: tailor products and marketing to each local market</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Global, multi-domestic, international, transnational.</p>"
+    },
+    {
+     "id": "retrenchment-and-combination",
+     "title": "Retrenchment and combination strategies",
+     "html": "<p><b>Retrenchment</b> stabilises a firm in crisis by restructuring, selling or closing parts of it to cut costs, streamline operations or steady cash flow. Firms retrench when they are doing poorly, when stakeholders press for better performance, or when better opportunities lie elsewhere. The response scales with the crisis: turnaround for a minor one, divestment of some units for a moderate one, and liquidation for a serious one.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Retrenchment strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>What it involves</th></tr></thead>\n<tbody>\n<tr><td>Turnaround</td><td>Restructuring an underperforming business to return it to profitability: cutting costs, changing management, refocusing products</td></tr>\n<tr><td>Divestment</td><td>Selling or shedding a business unit that no longer fits the corporate strategy, to raise cash and focus</td></tr>\n<tr><td>Harvest</td><td>Deliberately reducing investment in a unit to maximise short-term cash flow before exit</td></tr>\n<tr><td>Liquidation</td><td>Shutting the business down and selling its assets when recovery is impossible; the last resort</td></tr>\n</tbody></table></div>\n<p><b>What drives divestment:</b> negative cash flow, sustained losses, poor fit with the core business, a better use for the assets, an obsolete offering, rising costs or a small, static market share. It often follows a failed turnaround. <b>Liquidation</b> treats the unit as a failure, after heavy losses, obsolete assets or technology, a failed strategy or poor management.</p>\n<p><b>Combination strategy</b> mixes stability, expansion and retrenchment, either at the same time in different units or in sequence over time, for example expanding a promising business while retrenching a declining one. William Glueck listed the possibilities: stability in some areas and expansion in others, stability with retrenchment, retrenchment with expansion, or all three in different parts of the company, with still more options when the changes are phased over time. It suits large, multi-industry firms in fast-changing environments, firms whose products are at different stages of the life cycle or whose divisions perform unevenly, and diversified firms in a recession.</p>\n<p class=\"cue\">Turn around, divest, harvest, or liquidate; or combine.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Sharing in a joint venture",
+     "classic": "undertakings in partnership",
+     "text": [
+      "The Arthaśāstra sets rules for undertakings in partnership (<i>saṃbhūya-samutthāna</i>): those who work together divide their earnings as agreed or equally, and it says what happens when a partner withdraws. A joint venture likewise rests on an agreement about how investment, risk and profit are shared."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 3.14</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Strategic alliances",
+     "classic": "winning over the unallied",
+     "text": [
+      "Alliances turn potential rivals into partners. The Kuṟaḷ says it is more urgent to win over those not yet allied than to do good to friends. It is advice to a ruler about enemies, not to a firm about competitors."
+     ],
+     "quote": "“More urgent than doing good to friends is winning over those who are not yet allied.” <span lang=\"ta\" class=\"ta\">நட்டார்க்கு நல்ல செயலின் விரைந்ததே ஒட்டாரை ஒட்டிக் கொளல்.</span> <span class=\"ref\">Tirukkuṟaḷ 679</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Why firms retrench",
+     "classic": "the overloaded cart",
+     "text": [
+      "Retrenchment often follows overexpansion. The Kuṟaḷ says that even a cart loaded with peacock feathers, the lightest of loads, will break its axle if loaded too much. It warns against excess generally, not about business scope."
+     ],
+     "quote": "“Even a cart loaded with peacock feathers will break its axle if it is loaded too heavily.” <span lang=\"ta\" class=\"ta\">பீலிபெய் சாகாடும் அச்சிறும் அப்பண்டஞ் சால மிகுத்துப் பெயின்.</span> <span class=\"ref\">Tirukkuṟaḷ 475</span>"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "slug": "strategy-implementation-and-evaluation",
+   "title": "Strategy Implementation and Evaluation",
+   "scope": "Turning strategy into action, five ways leaders go about it, and how strategy is checked and corrected.",
+   "group": "choice",
+   "blocks": [
+    {
+     "id": "strategy-implementation",
+     "title": "Strategy implementation",
+     "html": "<p><b>Strategy implementation</b> is the phase in which a formulated strategy is turned into concrete actions, tasks and programmes. It bridges planning and results. It is essential for growth and sustainability; when it fails, resources are wasted and the organisation drifts.</p>\n<p><b>What it involves.</b> Designing a structure that fits the strategy (Alfred Chandler's finding, from the history of large American firms, was that <b>structure follows strategy</b>); allocating resources; setting policies, procedures and decision processes; developing and motivating people; building a supportive culture and leadership; and setting up information and reward systems. The McKinsey 7-S framework is a checklist for this alignment.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Features of strategy implementation\" tabindex=\"0\"><table>\n<thead><tr><th>Feature</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Action-oriented</td><td>Management's job extends from making plans to turning them into action</td></tr>\n<tr><td>Varied skills</td><td>It needs a wide range of knowledge, attitudes and abilities</td></tr>\n<tr><td>Wide involvement</td><td>Top, middle and lower management all take part; top management must communicate the strategy clearly, and middle managers play an active role</td></tr>\n<tr><td>Wide scope</td><td>Almost any managerial or administrative action can be part of it</td></tr>\n<tr><td>Integrated process</td><td>Its activities depend on one another, so it must be handled as a whole</td></tr>\n</tbody></table></div>\n<p><b>Formulation and implementation differ.</b> Formulation is mainly intellectual, positions forces before action and needs analysis and intuition; implementation is mainly operational, manages forces during action and needs motivation, coordination and leadership across many people.</p>\n<p class=\"cue\">A strategy is only as good as its execution.</p>"
+    },
+    {
+     "id": "challenges-and-forms-of-implementation",
+     "title": "Challenges and forms of implementation",
+     "html": "<p>Poor execution leaves employees without clear objectives, misallocates resources, and weakens structure, leadership and communication. Implementation is resource-intensive, and its common pitfalls are well known.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Common challenges in executing strategy\" tabindex=\"0\"><table>\n<thead><tr><th>Challenge</th><th>Remedy</th></tr></thead>\n<tbody>\n<tr><td>Weak strategy</td><td>Set distinct milestones, clear timelines and precise roles; start small and expand</td></tr>\n<tr><td>Poor goal-setting</td><td>Adopt one goal-setting method across the organisation, such as objectives and key results (<b>OKRs</b>) or SMART goals</td></tr>\n<tr><td>Lack of alignment</td><td>Stop routine, non-strategic work from crowding out strategic priorities</td></tr>\n<tr><td>Ineffective training</td><td>Train the people expected to carry out the strategy, and follow up</td></tr>\n<tr><td>Lack of resources</td><td>Budget for consultants, training and technology; use in-house expertise; scale up as early objectives are met</td></tr>\n<tr><td>Lack of communication</td><td>Communicate openly from the top down</td></tr>\n<tr><td>Lack of follow-through</td><td>Hold regular formal reviews and adjust the plan</td></tr>\n<tr><td>People not connected to the strategy</td><td>Link strategic goals to people's own interests: new skills, more responsibility, cross-functional ‘strategy teams’</td></tr>\n<tr><td>No measures or leading indicators</td><td>Set measurable goals and track them; ‘you manage what you measure’</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Three forms of implementation\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>What it covers</th></tr></thead>\n<tbody>\n<tr><td>Structural</td><td>Communicating plans and policies to units, enlisting support, providing a suitable structure and climate, allocating resources among competing uses, and setting control points to check progress</td></tr>\n<tr><td>Behavioural (leadership)</td><td>Leadership, the relationship in which one person influences others to work willingly toward shared goals, is the key factor in implementation</td></tr>\n<tr><td>Functional and operational</td><td>Functional strategies, short-term game plans for production, finance, marketing and personnel, spell out how the grand strategy will be carried out in each area</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Clear goals, alignment, training, resources, communication, follow-through, measures.</p>"
+    },
+    {
+     "id": "approaches-to-implementation",
+     "title": "Five approaches to implementation",
+     "html": "<p>L. J. Bourgeois and David Brodwin (1984) described five ways chief executives go about implementing strategy. The source sheet lists four of them under ‘challenges’; they are approaches, and there are five.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Bourgeois and Brodwin's five approaches\" tabindex=\"0\"><table>\n<thead><tr><th>Approach</th><th>How it works</th><th>Strength and weakness</th></tr></thead>\n<tbody>\n<tr><td>Commander</td><td>Top management formulates the strategy and instructs others to carry it out, with little involvement from them</td><td>Clear and quick; but separates thinkers from doers and may lack commitment</td></tr>\n<tr><td>Organisational change</td><td>Top management decides the strategy, then changes structure, systems and incentives to drive it through</td><td>Uses the organisation's levers; but can be slow and costly</td></tr>\n<tr><td>Collaborative</td><td>Managers at different levels formulate the strategy together, so they own it</td><td>More commitment and better information; but slower and may compromise</td></tr>\n<tr><td>Cultural</td><td>Employees are empowered and managers act as coaches, building a culture and shared commitment so everyone works toward the strategy</td><td>Deep commitment; but takes time and suits educated, motivated staff</td></tr>\n<tr><td>Crescive</td><td>Strategy ‘grows’ from ideas proposed by lower-level employees; top management judges and supports them</td><td>Encourages innovation and adapts to change; but loosens top-down control</td></tr>\n</tbody></table></div>\n<p>The approaches run from simply telling subordinates to carry out a strategy to empowering them to formulate and carry out strategies of their own. The <b>change</b> approach uses powerful behavioural tools and can push through harder strategies than the commander approach, but attends more to economic and political factors than to social ones. The <b>collaborative</b> approach, often run through brainstorming sessions, brings in the views of managers closer to operations, though a negotiated strategy may end up a compromise and those whose views were not heeded may lose interest. The <b>cultural</b> approach extends participation to lower levels; it suits organisations, often high-growth technology firms, that can afford to build supportive values, though lower-level staff may lack the perspective to shape strategy. In the <b>crescive</b> approach (‘crescive’ means growing), goals are stated loosely at the top and refined from below; top management shapes employees' ideas of what proposals would be supported and then acts as a judge rather than a master strategist. It considers the broadest set of factors: economic, social, political and behavioural.</p>\n<p class=\"cue\">Commander, change, collaborative, cultural, crescive.</p>"
+    },
+    {
+     "id": "applying-the-7s-model",
+     "title": "Applying the McKinsey 7-S model",
+     "html": "<p>The 7-S model is often used to implement strategy because it shows how the parts of an organisation must change together. Its common uses are to facilitate organisational change, to implement a new strategy, to see how each area may change in future, and to align departments and processes in a merger or acquisition. The hard elements (strategy, structure, systems) are easier to identify and manage; the soft ones are harder to manage but are the foundation of the organisation and more likely to give sustained advantage. All seven deserve equal attention.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Questions for each element\" tabindex=\"0\"><table>\n<thead><tr><th>Element</th><th>Questions to ask</th></tr></thead>\n<tbody>\n<tr><td>Strategy</td><td>What is our strategy? How do we meet competitive pressure, changing customer demands and environmental issues?</td></tr>\n<tr><td>Structure</td><td>How is the organisation divided, and what is the hierarchy? How do departments coordinate? Is decision-making centralised or decentralised, and should it be?</td></tr>\n<tr><td>Systems</td><td>What main systems run the organisation (finance, HR, communications)? Where are the controls, and how are they monitored?</td></tr>\n<tr><td>Shared values</td><td>What are the core values and the culture? How strong are they?</td></tr>\n<tr><td>Style</td><td>How participative is leadership, and how effective? Are employees competitive or cooperative? Are teams real or only nominal?</td></tr>\n<tr><td>Staff</td><td>What positions and specialisations exist? Which need filling? Are there gaps in competencies?</td></tr>\n<tr><td>Skills</td><td>What are our strongest skills? Are there skill gaps? Can current staff do the job?</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Five steps in using the 7-S model\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What it involves</th></tr></thead>\n<tbody>\n<tr><td>1 Identify misaligned areas</td><td>Answer the questions for the present situation and look for gaps and inconsistencies; for example, a strategy built on quick product launches clashing with a slow, conflict-ridden matrix structure</td></tr>\n<tr><td>2 Determine the optimal design</td><td>With top management, decide what alignment the organisation wants to reach</td></tr>\n<tr><td>3 Decide where and what to change</td><td>Draw up the action plan for realigning the elements</td></tr>\n<tr><td>4 Make the changes</td><td>Put the plan into effect with the right people, inside or from outside</td></tr>\n<tr><td>5 Review continuously</td><td>The seven elements keep changing, and a change in one affects the others</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Find the misfits, design the fit, plan, change, keep reviewing.</p>"
+    },
+    {
+     "id": "strategy-evaluation-and-control",
+     "title": "Strategy evaluation and control",
+     "html": "<p><b>Strategy evaluation</b> is the last step of the process. Fred David lists three activities: reviewing the internal and external factors on which the present strategy rests, measuring performance against objectives, and taking corrective action. It ensures that the strategy and its implementation still meet the organisation's objectives.</p>\n<p><b>Strategic control</b> keeps watch while the strategy runs. Georg Schreyögg and Horst Steinmann (1987) named four kinds: <b>premise control</b> (are the assumptions still valid?), <b>implementation control</b> (are the steps working?), <b>strategic surveillance</b> (a broad watch for anything that may affect the strategy) and <b>special alert control</b> (a rapid response to sudden, unexpected events).</p>\n<p>The <b>balanced scorecard</b> (Robert Kaplan and David Norton, <i>Harvard Business Review</i>, 1992) links strategy to measures from four perspectives, so that financial results are not the only test.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The balanced scorecard\" tabindex=\"0\"><table>\n<thead><tr><th>Perspective</th><th>Question</th></tr></thead>\n<tbody>\n<tr><td>Financial</td><td>How do we look to shareholders?</td></tr>\n<tr><td>Customer</td><td>How do customers see us?</td></tr>\n<tr><td>Internal business process</td><td>What must we excel at?</td></tr>\n<tr><td>Learning and growth</td><td>Can we continue to improve and create value?</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Review the premises, measure the results, correct the course.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "The implementation gap",
+     "classic": "easy to say",
+     "text": [
+      "The Kuṟaḷ says it is easy for anyone to say a thing, and hard to do it as it was said. That is the implementation gap: formulating a strategy is the easier half, and carrying it out as intended is the harder."
+     ],
+     "quote": "“Saying is easy for anyone; hard it is to do as one has said.” <span lang=\"ta\" class=\"ta\">சொல்லுதல் யார்க்கும் எளிய அரியவாம் சொல்லிய வண்ணம் செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 664</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Commitment in execution",
+     "classic": "firmness of the planner",
+     "text": [
+      "Every approach to implementation needs people committed to the plan. The Kuṟaḷ says that those who plan will gain what they planned, as they planned it, if they are firm in carrying it out. It speaks of an individual's resolve, not of how a leader builds commitment in others."
+     ],
+     "quote": "“Those who plan will gain what they planned, just as they planned it, if they are firm of will.” <span lang=\"ta\" class=\"ta\">எண்ணிய எண்ணியாங்கு எய்துவர் எண்ணியார் திண்ணியர் ஆகப் பெறின்.</span> <span class=\"ref\">Tirukkuṟaḷ 666</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Corrective action",
+     "classic": "diagnose, then treat",
+     "text": [
+      "Evaluation looks for what has gone wrong, why, and what will fix it. The Kuṟaḷ's physician examines the disease, then its cause, then the remedy that will relieve it, and acts accordingly. The couplet is about medicine; strategy evaluation applies the same order of diagnosis."
+     ],
+     "quote": "“Examine the disease, examine its cause, examine what will relieve it, and act accordingly.” <span lang=\"ta\" class=\"ta\">நோய்நாடி நோய்முதல் நாடி அதுதணிக்கும் வாய்நாடி வாய்ப்பச் செயல்.</span> <span class=\"ref\">Tirukkuṟaḷ 948</span>"
+    }
+   ]
+  }
+ ]
+}

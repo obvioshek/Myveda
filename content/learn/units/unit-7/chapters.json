@@ -1,0 +1,622 @@
+{
+ "textsUsed": "Tirukkuṟaḷ (couplet numbers); Kauṭilya's Arthaśāstra (Kangle numbering); Manusmṛti; Atharvaveda.",
+ "chapters": [
+  {
+   "n": 1,
+   "slug": "marketing-concepts",
+   "title": "Marketing: Core Concepts, Philosophies and the Marketing Mix",
+   "scope": "What marketing is, how the idea of it has changed, and the mixes (4Ps, 4Cs, 4As) used to plan it.",
+   "group": "foundations",
+   "blocks": [
+    {
+     "id": "what-marketing-is",
+     "title": "What marketing is",
+     "html": "<p>The <b>American Marketing Association</b> (definition approved 2017) defines marketing as “the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large”. Philip Kotler calls it the social and managerial process by which individuals and groups obtain what they need and want through creating and exchanging products and value with others. Kotler and Keller's shortest definition is “meeting needs profitably”.</p>\n<p>Marketing is not simply the art of selling, as it is sometimes described. Peter Drucker argued the opposite: the aim of marketing is to know and understand the customer so well that the product fits and sells itself, which makes selling superfluous.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Needs, wants and demands\" tabindex=\"0\"><table>\n<thead><tr><th>Concept</th><th>Meaning</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Need</td><td>A state of felt deprivation: basic requirements such as food, safety and belonging</td><td>Hunger</td></tr>\n<tr><td>Want</td><td>The form a need takes, shaped by culture and individual personality</td><td>A dosa, or a burger</td></tr>\n<tr><td>Demand</td><td>A want backed by the ability and willingness to pay</td><td>Buying a ₹120 dosa at a restaurant</td></tr>\n</tbody></table></div>\n<p>Needs may be physical (food, clothing, shelter), social (belonging, affection, recognition) or individual (knowledge, self-expression). Example: the need is to quench thirst, the want is water, and the demand is a particular brand of bottled water the buyer can pay for.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Exchange and transaction\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Exchange</th><th>Transaction</th></tr></thead>\n<tbody>\n<tr><td>Meaning</td><td>The process of obtaining a desired product from someone by offering something of value in return</td><td>A trade of values between two parties, the unit of exchange</td></tr>\n<tr><td>Involves</td><td>At least two parties, each with something the other values, free to accept or reject</td><td>At least two things of value, agreed conditions, a time and a place</td></tr>\n<tr><td>Example</td><td>Barter</td><td>A purchase, or a banking transaction</td></tr>\n</tbody></table></div>\n<p>Marketing works through exchange, which takes place because the buyer expects satisfaction from the product's <b>utility</b>, the value that makes it able to satisfy a want.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Kinds of utility\" tabindex=\"0\"><table>\n<thead><tr><th>Utility</th><th>Value added by…</th></tr></thead>\n<tbody>\n<tr><td>Form</td><td>Turning materials into a usable product; created mainly by production, guided by marketing research</td></tr>\n<tr><td>Place</td><td>Making the product available where buyers want it</td></tr>\n<tr><td>Time</td><td>Making it available when they want it</td></tr>\n<tr><td>Possession</td><td>Transferring ownership, helped by credit and easy payment</td></tr>\n<tr><td>Information</td><td>Telling buyers that the product exists and what it does</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"What can be marketed\" tabindex=\"0\"><table>\n<thead><tr><th>Entity</th><th>Examples</th></tr></thead>\n<tbody>\n<tr><td>Goods</td><td>Packaged foods, cars, phones</td></tr>\n<tr><td>Services</td><td>Airlines, banking, repairs; many offers, such as a restaurant meal, mix goods and services</td></tr>\n<tr><td>Events</td><td>Trade shows, sporting events, festivals</td></tr>\n<tr><td>Experiences</td><td>Theme parks, river rafting, bungee jumping</td></tr>\n<tr><td>Persons</td><td>Artists, performers, sportspeople, politicians</td></tr>\n<tr><td>Places</td><td>Cities, states and countries: ‘Incredible India’, Kerala's ‘God's Own Country’</td></tr>\n<tr><td>Properties</td><td>Real estate, financial property such as shares</td></tr>\n<tr><td>Organisations</td><td>Companies, universities, the armed forces recruiting</td></tr>\n<tr><td>Information</td><td>Encyclopaedias, data, maps</td></tr>\n<tr><td>Ideas</td><td>Social causes and new practices, such as digital payments</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Need, want plus buying power, demand.</p>"
+    },
+    {
+     "id": "states-of-demand",
+     "title": "States of demand",
+     "html": "<p>Marketers manage demand, not just respond to it. Philip Kotler (1973) described eight <b>states of demand</b>, each calling for a different marketing task.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Eight states of demand\" tabindex=\"0\"><table>\n<thead><tr><th>State</th><th>Situation</th><th>Marketing task</th></tr></thead>\n<tbody>\n<tr><td>Negative demand</td><td>Much of the market dislikes the product and may even pay to avoid it, as with vaccinations or dental work</td><td><b>Conversional</b> marketing: find out why, and change attitudes through redesign, lower prices or promotion</td></tr>\n<tr><td>No demand</td><td>Buyers are unaware of the product or uninterested in it</td><td><b>Stimulational</b> marketing: connect the product's benefits to people's needs</td></tr>\n<tr><td>Latent demand</td><td>A strong need exists that no existing product satisfies, as for a truly affordable electric car</td><td><b>Developmental</b> marketing: measure the potential market and develop the product</td></tr>\n<tr><td>Declining demand</td><td>Buyers are buying less, or moving to newer products</td><td><b>Remarketing</b>: reverse the decline with new markets, features or communication</td></tr>\n<tr><td>Irregular demand</td><td>Purchases vary by season, day or hour, as with raincoats or mosquito repellent</td><td><b>Synchromarketing</b>: smooth demand with flexible pricing and promotion</td></tr>\n<tr><td>Full demand</td><td>Buyers are buying all the products put on the market</td><td><b>Maintenance</b> marketing: keep quality up and watch satisfaction</td></tr>\n<tr><td>Overfull demand</td><td>More buyers want the product than can be satisfied, as with train tickets in the holiday season</td><td><b>Demarketing</b>: reduce demand temporarily, for example by raising prices or cutting promotion</td></tr>\n<tr><td>Unwholesome demand</td><td>The product has undesirable social consequences, as with tobacco</td><td><b>Countermarketing</b>: persuade people to give it up, through warnings, high prices or reduced availability</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Negative, none, latent, declining, irregular, full, overfull, unwholesome.</p>"
+    },
+    {
+     "id": "marketing-philosophies",
+     "title": "How marketing philosophies evolved",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Marketing management philosophies\" tabindex=\"0\"><table>\n<thead><tr><th>Concept</th><th>Belief</th><th>Focus</th></tr></thead>\n<tbody>\n<tr><td>Production</td><td>Consumers prefer products that are widely available and cheap</td><td>Efficient production and wide distribution</td></tr>\n<tr><td>Product</td><td>Consumers prefer the best quality, performance and features</td><td>Continuous product improvement; risks ‘marketing myopia’</td></tr>\n<tr><td>Selling</td><td>Consumers will not buy enough unless persuaded</td><td>Aggressive selling and promotion of what the firm makes</td></tr>\n<tr><td>Marketing</td><td>The key is to know the target market's needs and satisfy them better than competitors</td><td>Customer needs: ‘sense and respond’ rather than ‘make and sell’</td></tr>\n<tr><td>Societal marketing</td><td>The firm should also serve consumers' and society's long-term well-being</td><td>Company profit, consumer wants and society's interests together</td></tr>\n<tr><td>Holistic marketing</td><td>Everything matters; the business is one connected system</td><td>Breadth and interdependence of all marketing activity</td></tr>\n</tbody></table></div>\n<p><b>Marketing myopia</b> (Theodore Levitt, 1960) is defining a business by its product rather than by the need it meets, as railways did by seeing themselves in the railroad business rather than in transport. Levitt also drew the contrast between selling, which focuses on the <b>seller's</b> need to turn products into cash, and marketing, which focuses on the <b>buyer's</b> needs. Selling works <b>inside-out</b>, from the factory; marketing works <b>outside-in</b>, from the market.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Selling and marketing compared\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Selling</th><th>Marketing</th></tr></thead>\n<tbody>\n<tr><td>Emphasis</td><td>The product</td><td>Customers' needs and wants</td></tr>\n<tr><td>Sequence</td><td>Make the product first, then work out how to sell it</td><td>Find out what customers want, then design the product to satisfy it</td></tr>\n<tr><td>Profit</td><td>From sales volume</td><td>From customer satisfaction and keeping customers over the long run</td></tr>\n<tr><td>Viewpoint</td><td>The seller's needs</td><td>The buyer's needs</td></tr>\n</tbody></table></div>\n<p><b>Holistic marketing</b> (Kotler and Keller) has four components: <b>relationship</b> marketing (lasting ties with customers, employees and partners), <b>integrated</b> marketing (all activities combined to create, communicate and deliver value), <b>internal</b> marketing (hiring, training and motivating staff to serve customers well, from top management down) and <b>performance</b> marketing (financial returns and the wider ethical, social and environmental effects). Earlier editions named the fourth <b>socially responsible marketing</b>, the label the source sheet uses.</p>\n<p class=\"cue\">Production, product, selling, marketing, societal, holistic.</p>"
+    },
+    {
+     "id": "the-marketing-mix",
+     "title": "The marketing mix: 4Ps, 4Cs and 4As",
+     "html": "<p>The <b>marketing mix</b> is the set of controllable tools a firm blends to get the response it wants from its target market. Neil Borden popularised the term (his 1964 article describes using it from 1949); E. Jerome McCarthy (1960) grouped the tools into the <b>4Ps</b>. Robert Lauterborn (1990) restated them from the customer's side as the <b>4Cs</b>, and Jagdish Sheth and Rajendra Sisodia offered the <b>4As</b>, also from the buyer's viewpoint.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The 4Ps, 4Cs and 4As\" tabindex=\"0\"><table>\n<thead><tr><th>4Ps (seller)</th><th>4Cs (Lauterborn)</th><th>4As (Sheth and Sisodia)</th></tr></thead>\n<tbody>\n<tr><td>Product</td><td>Customer solution (value)</td><td>Acceptability: does it meet the customer's functional and psychological needs?</td></tr>\n<tr><td>Price</td><td>Customer cost</td><td>Affordability: are customers able and willing to pay?</td></tr>\n<tr><td>Place</td><td>Convenience</td><td>Accessibility: can customers readily get it?</td></tr>\n<tr><td>Promotion</td><td>Communication</td><td>Awareness: do customers know about it and what it does?</td></tr>\n</tbody></table></div>\n<p>Services add three more Ps (people, process and physical evidence), covered in the services chapter.</p>\n<p class=\"cue\">Product, price, place, promotion, seen from the buyer's side.</p>"
+    },
+    {
+     "id": "forces-reshaping-marketing",
+     "title": "Forces reshaping marketing",
+     "html": "<p>Kotler and Keller name the major societal forces that keep changing what marketers must do. Strategies that are not revised as these forces change soon lose their relevance.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Societal forces behind new marketing behaviour\" tabindex=\"0\"><table>\n<thead><tr><th>Force</th><th>What it means</th></tr></thead>\n<tbody>\n<tr><td>Network information technology</td><td>The digital revolution allows more accurate production, more targeted communication and more relevant pricing</td></tr>\n<tr><td>Globalisation</td><td>Cheaper transport and communication let firms sell in, and consumers buy from, almost any country</td></tr>\n<tr><td>Deregulation and privatisation</td><td>Opening industries to competition, and turning public companies over to private ownership</td></tr>\n<tr><td>Heightened competition</td><td>Domestic and foreign brands compete hard, raising marketing costs and shrinking margins</td></tr>\n<tr><td>Industry convergence</td><td>Industry boundaries blur, as computing and consumer electronics have merged</td></tr>\n<tr><td>Retail transformation</td><td>Stores compete with TV shopping and e-commerce, and respond by selling an experience</td></tr>\n<tr><td>Disintermediation</td><td>Online sellers bypass traditional channels; traditional firms respond with <b>re-intermediation</b>, becoming ‘brick-and-click’ rather than ‘pure-click’</td></tr>\n<tr><td>Consumer buying power, information and participation</td><td>Buyers compare prices and features anywhere, at any time, find information in depth, and influence peers and public opinion</td></tr>\n<tr><td>Consumer resistance</td><td>Seeing fewer real differences between products, buyers are less loyal, more price- and quality-sensitive, and less tolerant of unwanted marketing</td></tr>\n</tbody></table></div>\n<p><b>New capabilities.</b> The same forces give marketers new tools: the internet as an information and sales channel with worldwide reach; richer data about markets and individual customers; social media and brand communities to amplify messages and buzz; permission-based ads, coupons and samples; mobile, location-based marketing near the point of sale; mass customisation of products; online recruiting, training and internal communication; and cost savings from comparing suppliers online and running reverse auctions.</p>\n<p class=\"cue\">Technology, globalisation and empowered buyers keep changing the task.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Customer-oriented trade",
+     "classic": "guarding others' interests",
+     "text": [
+      "The Kuṟaḷ says the proper trade of traders is to guard the interests of others as their own. The marketing concept rests on the same reversal of view, from what the seller wants to sell to what the buyer needs."
+     ],
+     "quote": "“For those who trade, true trade is to care for others' goods and interests as their own.” <span lang=\"ta\" class=\"ta\">வாணிகம் செய்வார்க்கு வாணிகம் பேணிப் பிறவும் தமபோல் செயின்.</span> <span class=\"ref\">Tirukkuṟaḷ 120</span>"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "slug": "segmentation-targeting-and-positioning",
+   "title": "Segmentation, Targeting and Positioning",
+   "scope": "How a firm divides a market, chooses whom to serve, and earns a distinct place in their minds.",
+   "group": "foundations",
+   "blocks": [
+    {
+     "id": "market-segmentation",
+     "title": "Market segmentation",
+     "html": "<p><b>STP</b>, segmentation, targeting and positioning, is the sequence at the heart of marketing strategy. <b>Market segmentation</b> divides a market into distinct groups of buyers with similar needs, characteristics or behaviour, who might want different products or marketing.</p>\n<p>Segments can be defined by <b>descriptive</b> characteristics (geographic, demographic, psychographic), checking whether the groups differ in needs or responses; or by <b>behavioural</b> responses (benefits sought, usage occasions, brands), checking whether each response group has a distinct profile. Do car buyers who want quality rather than a low price differ in age, income or lifestyle?</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Levels of marketing\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Approach</th><th>What it does</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Macro</td><td>Mass (undifferentiated) marketing</td><td>Mass production, distribution and promotion of one product for all buyers: ‘one size fits all’</td><td>One advertisement for milk aimed at every household</td></tr>\n<tr><td>Micro</td><td>Segment marketing</td><td>Different offers for large groups with similar wants, buying power and habits</td><td>Term insurance plans for young earners</td></tr>\n<tr><td>Micro</td><td>Niche marketing</td><td>A narrower group with distinct needs, often willing to pay a premium</td><td>Luxury watches and sports cars</td></tr>\n<tr><td>Micro</td><td>Local marketing</td><td>Programmes tailored to the needs of local customers: cities, neighbourhoods, stores</td><td>A neighbourhood bakery or florist</td></tr>\n<tr><td>Micro</td><td>Individual marketing</td><td>The ultimate level: customised or one-to-one marketing</td><td>A custom-made wedding dress; made-to-order car interiors</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Bases for segmenting consumer markets\" tabindex=\"0\"><table>\n<thead><tr><th>Basis</th><th>Variables</th></tr></thead>\n<tbody>\n<tr><td>Geographic</td><td>Country, region, state, city size, urban or rural, climate</td></tr>\n<tr><td>Demographic</td><td>Age, gender, income, education, occupation, family size and life cycle, religion</td></tr>\n<tr><td>Psychographic</td><td>Lifestyle, personality, values and interests; lifestyle is often measured by activities, interests and opinions (the <b>AIO</b> approach of William Wells and Douglas Tigert, 1971)</td></tr>\n<tr><td>Behavioural</td><td>Occasions (weddings, birthdays), benefits sought (quality, service, economy), user status (non-user, ex-user, first-time user), usage rate (light, heavy), loyalty status (none, medium, strong), readiness stage (unaware, aware, intending to buy), attitude to the product</td></tr>\n</tbody></table></div>\n<p>Demographic variables are popular because they are linked to needs and easy to measure; even a segment described by personality has to be linked back to demographics to estimate its size and choose media to reach it. Psychographics adds psychology: people with the same demographics can have very different lifestyles, personalities and values.</p>\n<p><b>Business markets</b> are segmented by <b>demographic or firmographic</b> variables (industry, company size, location), <b>operating</b> variables (technology used, user status, customer capabilities), <b>purchasing approaches</b> (purchasing policies, buying criteria, how buying is organised), <b>situational</b> factors (urgency, order size) and the <b>personal characteristics</b> of the buyers. This nested approach is Thomas Bonoma and Benson Shapiro's (1983).</p>\n<p><b>Useful segments</b> are measurable, substantial (large and profitable enough), accessible, differentiable (they respond differently) and actionable (the firm can design programmes for them).</p>\n<p class=\"cue\">Geographic, demographic, psychographic, behavioural.</p>"
+    },
+    {
+     "id": "targeting",
+     "title": "Targeting",
+     "html": "<p><b>Targeting</b> is choosing which segments to serve. Each segment is evaluated on its <b>size and growth</b>, its <b>structural attractiveness</b> (competition, substitutes, buyer and supplier power), and its fit with the firm's <b>objectives and resources</b>.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Five patterns of target market selection\" tabindex=\"0\"><table>\n<thead><tr><th>Pattern</th><th>What the firm serves</th></tr></thead>\n<tbody>\n<tr><td>Single-segment concentration</td><td>One segment with one product</td></tr>\n<tr><td>Selective specialisation</td><td>Several unrelated segments, each attractive on its own</td></tr>\n<tr><td>Product specialisation</td><td>One product sold to several segments</td></tr>\n<tr><td>Market specialisation</td><td>Many needs of one particular customer group, with several products</td></tr>\n<tr><td>Full market coverage</td><td>All customer groups with all the products they need, by undifferentiated or differentiated marketing</td></tr>\n</tbody></table></div>\n<p><b>Examples.</b> A luxury watchmaker concentrates on one high-end segment. A maker of nuts and bolts that sells different types to car makers, electrical-equipment makers and builders practises product specialisation. A firm selling an assortment of products only to ice-cream makers practises market specialisation. Only very large firms, such as Hindustan Unilever, Nestlé or Coca-Cola in non-alcoholic drinks, can attempt full market coverage.</p>\n<p>These five patterns follow Derek Abell (1980) and are used by Kotler and Keller. Seen as strategies, targeting runs from <b>undifferentiated</b> (mass) marketing, through <b>differentiated</b> (segmented) and <b>concentrated</b> (niche) marketing, to <b>micromarketing</b>.</p>\n<p class=\"cue\">Evaluate the segments, then choose a pattern of coverage.</p>"
+    },
+    {
+     "id": "positioning",
+     "title": "Positioning",
+     "html": "<p><b>Positioning</b> is designing the firm's offering and image to occupy a distinct, valued place in the minds of the target market. Al Ries and Jack Trout made the idea famous (<i>Positioning: The Battle for Your Mind</i>, 1981): positioning is not what you do to a product but what you do to the prospect's mind.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Points of difference and points of parity\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>Meaning</th><th>Role</th></tr></thead>\n<tbody>\n<tr><td>Points of difference (PODs)</td><td>Attributes or benefits that customers strongly associate with the brand, rate positively, and believe they could not find to the same extent in a competitor</td><td>Give customers a reason to choose the brand</td></tr>\n<tr><td>Points of parity (POPs)</td><td>Associations that are not unique but are needed for the brand to be credible in its category, or that neutralise a competitor's points of difference</td><td>Remove reasons not to choose it</td></tr>\n</tbody></table></div>\n<p>This pairing is Kevin Lane Keller's. A <b>value proposition</b> is the full set of benefits on which the brand is positioned, often summed up as more for more, more for the same, the same for less, less for much less, or more for less.</p>\n<p>Brands can be positioned on <b>attributes</b>, <b>benefits</b>, <b>use or application</b>, <b>user</b>, <b>competitor</b>, <b>product class</b>, or <b>price and quality</b>.</p>\n<p class=\"cue\">Positioning lives in the customer's mind, not in the product.</p>"
+    },
+    {
+     "id": "differentiation-and-the-positioning-bulls-eye",
+     "title": "Differentiation and the brand bull's-eye",
+     "html": "<p>A firm positions its offer by <b>differentiating</b> it from competitors'. Kotler and Keller name five main bases.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Bases of differentiation\" tabindex=\"0\"><table>\n<thead><tr><th>Basis</th><th>Variables</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Product</td><td>Form, features, performance, conformance, durability, reliability, repairability, style, design</td><td>Phones that compete on design and performance</td></tr>\n<tr><td>Services</td><td>Ordering ease, delivery, installation, customer training, customer consulting, maintenance and repair, returns</td><td>Pizza chains competing on delivery time; air-conditioner makers on installation</td></tr>\n<tr><td>Personnel</td><td>Competence, courtesy, credibility, reliability, responsiveness, communication</td><td>Service firms depend heavily on their people</td></tr>\n<tr><td>Channel</td><td>Coverage, expertise, performance</td><td>E-commerce and other delivery-dependent businesses</td></tr>\n<tr><td>Image</td><td>Symbols (such as McDonald's golden arches), atmosphere, media, events and sponsorships</td><td>Brands built on a recognisable identity</td></tr>\n</tbody></table></div>\n<p><b>Is it a real point of difference?</b> Keller's three tests: it must be <b>desirable</b> to consumers (personally relevant), <b>deliverable</b> by the company (it has the resources and commitment to create and keep the association profitably), and <b>differentiating</b> from competitors (seen as distinctive and superior).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Two kinds of points of parity\" tabindex=\"0\"><table>\n<thead><tr><th>Kind</th><th>Meaning</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Category POPs</td><td>What consumers see as essential for a credible offer in the category: necessary but not sufficient for choice; they change with technology, law and trends</td><td>A travel agency must book flights and hotels, advise on packages and offer payment options</td></tr>\n<tr><td>Competitive POPs</td><td>Associations designed to negate a competitor's points of difference, or a weakness created by the brand's own points of difference</td><td>A low-priced brand reassuring buyers on quality</td></tr>\n</tbody></table></div>\n<p><b>The brand-positioning bull's-eye</b> (Kotler and Keller) communicates the positioning to everyone in the organisation. At its centre are the <b>brand mantra</b> (the brand's essence in a few words) and the key points of parity and difference; around them are the <b>reasons to believe</b>, facts that support those points; the outer ring holds the brand's <b>values, personality or character</b> and its <b>executional properties and visual identity</b>. Boxes beside it record the inputs (the target consumer and a key insight; the competitive need and rival brands) and the output: the ideal consumer takeaway.</p>\n<p class=\"cue\">Differentiate on product, services, people, channel or image; test it as desirable, deliverable, differentiating.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Knowing the segment",
+     "classic": "knowing the assembly",
+     "text": [
+      "Segmentation starts from the fact that different audiences need different offers. The Kuṟaḷ asks speakers who are pure and know the range of words to study the assembly before they speak. It is about addressing a gathering, not about dividing a market."
+     ],
+     "quote": "“Those of pure mind who know the range of words should study the assembly and then speak.” <span lang=\"ta\" class=\"ta\">அவையறிந்து ஆராய்ந்து சொல்லுக சொல்லின் தொகையறிந்த தூய்மை யவர்.</span> <span class=\"ref\">Tirukkuṟaḷ 711</span>"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "slug": "product-decisions",
+   "title": "Product Decisions: Levels, New Products and the Life Cycle",
+   "scope": "What a product is to a buyer, how new products are developed and adopted, and how strategy changes as a product ages.",
+   "group": "mix",
+   "blocks": [
+    {
+     "id": "product-levels-and-classification",
+     "title": "Product levels and classification",
+     "html": "<p>A <b>product</b> is anything offered to a market to satisfy a want or need: physical goods, services, experiences, events, places, ideas and more. Buyers see it at several levels, each adding customer value.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Three levels of a product (Kotler and Armstrong)\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Meaning</th><th>Example: a smartphone</th></tr></thead>\n<tbody>\n<tr><td>Core product (core customer value)</td><td>The basic benefit or problem-solving service the buyer is really seeking</td><td>Staying connected</td></tr>\n<tr><td>Actual product</td><td>The tangible offer: features, quality, design, brand name and packaging</td><td>The phone itself, its brand and box</td></tr>\n<tr><td>Augmented product</td><td>Extra services and benefits: delivery, installation, warranty, after-sales service, support</td><td>Warranty, repair network, cloud backup</td></tr>\n</tbody></table></div>\n<p>Kotler and Keller describe <b>five</b> levels in a customer-value hierarchy: core benefit, basic product, expected product, augmented product, and potential product (all the changes it might undergo in future). Competition increasingly takes place at the augmented level.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Consumer products by how they are bought\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>Buying behaviour</th><th>Examples</th></tr></thead>\n<tbody>\n<tr><td>Convenience</td><td>Bought often, quickly, with little comparison</td><td>Soap, newspapers, snacks</td></tr>\n<tr><td>Shopping</td><td>Compared on quality, price and style before buying</td><td>Furniture, clothing, appliances</td></tr>\n<tr><td>Specialty</td><td>Unique features or brand; buyers make a special effort</td><td>Luxury watches, designer clothes</td></tr>\n<tr><td>Unsought</td><td>Not known of, or not normally thought of buying</td><td>Life insurance, blood donation</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Core benefit, actual product, augmented product.</p>"
+    },
+    {
+     "id": "new-product-development",
+     "title": "New product development and adoption",
+     "html": "<p>Kotler and Armstrong describe <b>new product development</b> (NPD) in eight steps. The source sheet gives seven; it leaves out marketing strategy development.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The eight steps of new product development\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1 Idea generation</td><td>Systematic search for ideas from customers, employees, competitors, suppliers and R&D</td></tr>\n<tr><td>2 Idea screening</td><td>Dropping poor ideas early, since costs rise at each later step</td></tr>\n<tr><td>3 Concept development and testing</td><td>Turning the idea into a detailed concept and testing it with target customers</td></tr>\n<tr><td>4 Marketing strategy development</td><td>Planning the target market, positioning, price, distribution and marketing budget</td></tr>\n<tr><td>5 Business analysis</td><td>Estimating sales, costs and profits to see if they meet the firm's objectives</td></tr>\n<tr><td>6 Product development</td><td>Building a working prototype and testing it</td></tr>\n<tr><td>7 Test marketing</td><td>Trying the product and its marketing in realistic market settings</td></tr>\n<tr><td>8 Commercialisation</td><td>Full launch: deciding when, where, to whom and how</td></tr>\n</tbody></table></div>\n<p><b>Adoption.</b> Everett Rogers (<i>Diffusion of Innovations</i>, 1962) grouped adopters by how early they take up an innovation: <b>innovators</b> (2.5 per cent), <b>early adopters</b> (13.5), <b>early majority</b> (34), <b>late majority</b> (34) and <b>laggards</b> (16).</p>\n<p class=\"cue\">Generate, screen, test the concept, plan the strategy, analyse, develop, test-market, launch.</p>"
+    },
+    {
+     "id": "product-life-cycle",
+     "title": "The product life cycle",
+     "html": "<p>The <b>product life cycle</b> (PLC) traces a product's sales and profits over its life. Each stage calls for a different strategy (Theodore Levitt, “Exploit the Product Life Cycle”, 1965, is a classic account).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Product life cycle stages and strategy\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Introduction</th><th>Growth</th><th>Maturity</th><th>Decline</th></tr></thead>\n<tbody>\n<tr><td>Sales</td><td>Low</td><td>Rising fast</td><td>Peak</td><td>Falling</td></tr>\n<tr><td>Profits</td><td>Negative or low</td><td>Rising</td><td>High</td><td>Declining</td></tr>\n<tr><td>Customers</td><td>Innovators</td><td>Early adopters</td><td>Middle majority</td><td>Laggards</td></tr>\n<tr><td>Competitors</td><td>Few</td><td>Growing</td><td>Stable, then declining</td><td>Declining</td></tr>\n<tr><td>Marketing objective</td><td>Create awareness and trial</td><td>Maximise market share</td><td>Maximise profit while defending share</td><td>Cut spending and milk the brand</td></tr>\n<tr><td>Product</td><td>Basic product</td><td>Extensions, service, warranty</td><td>Diversify brands and models</td><td>Phase out weak items</td></tr>\n<tr><td>Price</td><td>Cost-plus, or skimming</td><td>Price to penetrate</td><td>Match or beat competitors</td><td>Cut price</td></tr>\n<tr><td>Distribution</td><td>Selective</td><td>Intensive</td><td>More intensive</td><td>Selective: drop unprofitable outlets</td></tr>\n<tr><td>Promotion</td><td>Build awareness among early adopters and dealers</td><td>Build awareness and interest in the mass market</td><td>Stress brand differences and benefits</td><td>Reduce to the minimum needed to keep loyal customers</td></tr>\n</tbody></table></div>\n<p>Not every product follows the smooth curve. <b>Styles</b> come and go in cycles, <b>fashions</b> rise slowly and decline slowly, and <b>fads</b> rise and collapse quickly.</p>\n<p class=\"cue\">Introduce, grow, mature, decline: change the mix at each stage.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "The rise and fall of demand",
+     "classic": "the theatre crowd",
+     "text": [
+      "The PLC describes sales that gather, peak and fall away. The Kuṟaḷ compares great wealth to a theatre crowd: it gathers like the audience for a show, and leaves as the crowd disperses when the show ends. The couplet is about the impermanence of riches, not about products."
+     ],
+     "quote": "“Great wealth gathers like the crowd at a play, and goes as that crowd disperses.” <span lang=\"ta\" class=\"ta\">கூத்தாட்டு அவைக்குழாத் தற்றே பெருஞ்செல்வம் போக்கும் அதுவிளிந் தற்று.</span> <span class=\"ref\">Tirukkuṟaḷ 332</span>"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "slug": "brand-management",
+   "title": "Brand Management: Equity, Strategy and Loyalty",
+   "scope": "What a brand is worth, the decisions that build it, how brands are extended, and how loyal their buyers become.",
+   "group": "mix",
+   "blocks": [
+    {
+     "id": "brands-and-brand-equity",
+     "title": "Brands and brand equity",
+     "html": "<p>A <b>brand</b>, in the AMA's definition, is a name, term, sign, symbol or design, or a combination of them, intended to identify the goods or services of one seller and to differentiate them from competitors. A <b>brand strategy</b> is the long-term plan to build, position and sustain the brand; unlike a campaign, it is long-term and emotion-driven, aiming at growth, customer loyalty and a strong market position.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Brand equity and brand value\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Brand equity</th><th>Brand value</th></tr></thead>\n<tbody>\n<tr><td>Meaning</td><td>The added value a brand gives a product in customers' minds</td><td>The brand's financial worth</td></tr>\n<tr><td>Nature</td><td>Trust, preference and loyalty</td><td>A monetary asset</td></tr>\n<tr><td>Shows in</td><td>Customers paying a premium, as for Apple</td><td>Valuations in mergers and acquisitions</td></tr>\n</tbody></table></div>\n<p><b>Kevin Lane Keller</b> defines customer-based brand equity as the differential effect that brand knowledge has on consumer response to the marketing of that brand. Brand equity is reflected in the perceptions, preferences and behaviour related to all aspects of the brand's marketing. If customers respond no differently to a branded product than to an unbranded one, the product is essentially a commodity, and competition will probably be based on price.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Two models of brand equity\" tabindex=\"0\"><table>\n<thead><tr><th>Model</th><th>Components</th></tr></thead>\n<tbody>\n<tr><td>David Aaker (1991)</td><td>Brand loyalty, brand awareness, perceived quality, brand associations, and other proprietary assets such as patents</td></tr>\n<tr><td>Keller's customer-based brand equity pyramid</td><td>Salience (identity), then performance and imagery (meaning), then judgements and feelings (response), and at the top resonance (relationship)</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Equity lives in customers' minds; value is what the brand is worth in money.</p>"
+    },
+    {
+     "id": "brand-strategy-decisions",
+     "title": "Major brand strategy decisions",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Brand strategy decisions (Kotler and Armstrong)\" tabindex=\"0\"><table>\n<thead><tr><th>Decision</th><th>Options</th></tr></thead>\n<tbody>\n<tr><td>Brand positioning</td><td>On product <b>attributes</b>, on <b>benefits</b>, or, the strongest, on <b>beliefs and values</b> that carry emotional weight</td></tr>\n<tr><td>Brand name selection</td><td>A good name suggests the benefits, is easy to say and remember, distinctive, extendable, translatable, legally protectable, and free of bad meanings in other languages</td></tr>\n<tr><td>Brand sponsorship</td><td>Manufacturer's (national) brand, private (store) brand, licensed brand, or co-branding</td></tr>\n<tr><td>Brand development</td><td>Line extensions, brand extensions, multibrands or new brands</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Naming strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>How it works</th></tr></thead>\n<tbody>\n<tr><td>Individual names</td><td>A separate name for each product; one failure does not harm the company name</td></tr>\n<tr><td>Blanket family name</td><td>One name for all products; new products gain acceptance quickly</td></tr>\n<tr><td>Separate family names</td><td>A different family name for each category</td></tr>\n<tr><td>Corporate name with individual names</td><td>The company name legitimises the product, the individual name gives it its own identity</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Brand terms\" tabindex=\"0\"><table>\n<thead><tr><th>Term</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Brand line</td><td>All products sold under one brand</td></tr>\n<tr><td>Brand mix (assortment)</td><td>All the brand lines a seller offers</td></tr>\n<tr><td>Branded variants</td><td>Versions of a brand made for particular retailers or channels, as Maruti Suzuki sells different models through its Arena and Nexa showrooms</td></tr>\n<tr><td>Licensed product</td><td>A product carrying a brand that its owner has licensed to another manufacturer</td></tr>\n</tbody></table></div>\n<p>When developing a brand, a firm can use <b>new</b> brand elements, leverage <b>existing</b> ones, or combine the two.</p>\n<p class=\"cue\">Position, name, sponsor, develop.</p>"
+    },
+    {
+     "id": "brand-extensions",
+     "title": "Brand extensions",
+     "html": "<p>A <b>brand extension</b> uses an established (<b>parent</b>) brand to launch a new product. A parent brand that supports several extensions is a <b>family</b> or <b>master</b> brand. A <b>sub-brand</b> combines a new name with an existing one, as in Cadbury Dairy Milk Silk.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Line and category extensions\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>What changes</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Line extension</td><td>A new item in the same category under the same brand: new flavours, forms, sizes or packaging</td><td>A new noodle variety under a noodle brand</td></tr>\n<tr><td>Category extension</td><td>The brand enters a different product category</td><td>A noodle brand launching ketchup</td></tr>\n</tbody></table></div>\n<p>Kotler and Armstrong's four brand development choices form a grid: <b>line extensions</b> (existing brand, existing category), <b>brand extensions</b> (existing brand, new category), <b>multibrands</b> (new brands in an existing category, to capture different segments) and <b>new brands</b> (new brand, new category). A <b>flanker</b> or <b>fighter brand</b> is a lower-priced brand launched to protect the flagship from competitors.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Advantages and limitations of brand extension\" tabindex=\"0\"><table>\n<thead><tr><th>Advantages</th><th>Limitations</th></tr></thead>\n<tbody>\n<tr><td>Lower perceived risk for buyers; quicker acceptance</td><td><b>Brand dilution</b>: the brand's meaning blurs</td></tr>\n<tr><td>Lower marketing and launch costs</td><td>Consumer confusion</td></tr>\n<tr><td>Can strengthen the parent brand</td><td>Retailer resistance to more variants</td></tr>\n<tr><td>Wider market coverage</td><td>Cannibalisation of the parent's sales; a failure can hurt the parent; a missed chance to build a new brand</td></tr>\n</tbody></table></div>\n<p><b>Co-branding</b> puts two established brands on one product, so each brand's strength supports the other.</p>\n<p class=\"cue\">Extend the line, extend the brand, add brands, or start anew.</p>"
+    },
+    {
+     "id": "brand-loyalty",
+     "title": "Brand loyalty",
+     "html": "<p><b>Brand loyalty</b> is a customer's commitment to buy a brand again and recommend it despite competitors' efforts. David Aaker (1991) arranged its levels in a pyramid, from no loyalty at the base to full commitment at the top. The source sheet's glossary garbles the order; the version below follows Aaker.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Aaker's brand loyalty pyramid, from base to top\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Buyer</th></tr></thead>\n<tbody>\n<tr><td>1 Switchers</td><td>Price-sensitive and indifferent; no loyalty to any brand</td></tr>\n<tr><td>2 Habitual buyers</td><td>Satisfied or at least not dissatisfied; no reason to change</td></tr>\n<tr><td>3 Satisfied buyers with switching costs</td><td>Would lose time, money or risk by changing</td></tr>\n<tr><td>4 Brand likers</td><td>Like the brand and regard it as a friend</td></tr>\n<tr><td>5 Committed buyers</td><td>Proud to use the brand and recommend it</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Switchers, habitual, switching costs, likers, committed.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Brand equity",
+     "classic": "renown as the gain",
+     "text": [
+      "Brand equity is reputation that has become an asset. The Kuṟaḷ says that to give and to live with renown is the only real gain of life. It speaks of a person's good name earned through generosity, not of a commercial brand."
+     ],
+     "quote": "“To give, and to live with renown: there is no other gain for a life.” <span lang=\"ta\" class=\"ta\">ஈதல் இசைபட வாழ்தல் அதுவல்லது ஊதியம் இல்லை உயிர்க்கு.</span> <span class=\"ref\">Tirukkuṟaḷ 231</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Co-branding",
+     "classic": "fame from good company",
+     "text": [
+      "Co-branding lends one brand the standing of another. The Kuṟaḷ says that goodness of mind brings prosperity, and good company brings every kind of renown. It is about a person's associates, not about brand partnerships."
+     ],
+     "quote": "“Goodness of mind brings prosperity to people; goodness of company brings all renown.” <span lang=\"ta\" class=\"ta\">மனநலம் மன்னுயிர்க் காக்கம் இனநலம் எல்லாப் புகழும் தரும்.</span> <span class=\"ref\">Tirukkuṟaḷ 457</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "The risk of dilution",
+     "classic": "a spot on the moon",
+     "text": [
+      "A weak extension is seen at once because the parent is so well known. The Kuṟaḷ says a fault in those of noble family stands out like the spot on the moon high in the sky. Its subject is conduct and lineage, not brands."
+     ],
+     "quote": "“A fault in the well-born stands out like the spot on the moon high in the sky.” <span lang=\"ta\" class=\"ta\">குடிப்பிறந்தார் கண்விளங்கும் குற்றம் விசும்பின் மதிக்கண் மறுப்போல் உயர்ந்து.</span> <span class=\"ref\">Tirukkuṟaḷ 957</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Committed buyers",
+     "classic": "friendship that does not withdraw",
+     "text": [
+      "At the top of Aaker's pyramid, committed buyers forgive a lapse. The Kuṟaḷ says those whose friendship has grown out of love do not withdraw their love even when the friend does them harm. It describes friendship, not a customer's tie to a brand."
+     ],
+     "quote": "“Those whose friendship grew from love do not give up that love even when the friend brings them ruin.” <span lang=\"ta\" class=\"ta\">அழிவந்த செய்யினும் அன்பறார் அன்பின் வழிவந்த கேண்மை யவர்.</span> <span class=\"ref\">Tirukkuṟaḷ 807</span>"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "slug": "pricing-decisions",
+   "title": "Pricing Decisions: Objectives, Factors and Strategies",
+   "scope": "Why firms price as they do, what limits them, and the main pricing strategies.",
+   "group": "mix",
+   "blocks": [
+    {
+     "id": "pricing-objectives-and-factors",
+     "title": "Pricing objectives and factors",
+     "html": "<p><b>Price</b> is the amount charged for a product, or the sum of the values customers give up to have it. It is the only element of the mix that produces revenue; the others are costs. It is also the most flexible element, since it can be changed quickly, and cost, price and revenue all depend on one another.</p>\n<p><b>Who sets prices.</b> In small firms the owner often does; in large ones, division and product-line managers do, within objectives and policies set by top management. Where pricing is critical, as in aerospace, railways and oil, firms often have a pricing department. Sales, production and finance managers, and government, also influence prices.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Pricing objectives\" tabindex=\"0\"><table>\n<thead><tr><th>Objective</th><th>What the firm does</th></tr></thead>\n<tbody>\n<tr><td>Survival</td><td>Prices just to cover variable costs and some fixed costs, to stay in business through overcapacity, intense competition or changing wants</td></tr>\n<tr><td>Maximum current profit</td><td>Sets the price that gives the highest short-run profit</td></tr>\n<tr><td>Maximum market share (penetration)</td><td>Sets a low price to attract buyers quickly and gain share, expecting lower unit costs with volume</td></tr>\n<tr><td>Maximum market skimming</td><td>Sets a high initial price for early adopters, then lowers it over time</td></tr>\n<tr><td>Product-quality leadership</td><td>Prices high to signal and pay for superior quality</td></tr>\n</tbody></table></div>\n<p>Other objectives include pricing low to discourage new entrants, pricing to keep the loyalty and support of channel members, pricing for a sales promotion, and pricing one product to help the sales of others.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Factors affecting price\" tabindex=\"0\"><table>\n<thead><tr><th>Internal</th><th>External</th></tr></thead>\n<tbody>\n<tr><td>Costs (the floor for price)</td><td>Customers' perceived value and demand, including price elasticity (the ceiling)</td></tr>\n<tr><td>Overall marketing objectives and positioning</td><td>Competitors' prices and offers</td></tr>\n<tr><td>The rest of the marketing mix</td><td>The economy: inflation, recession, interest rates</td></tr>\n<tr><td>Brand image</td><td>Government regulation and channel members' reactions</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Costs set the floor, customer value the ceiling, competitors the range between.</p>"
+    },
+    {
+     "id": "setting-the-price",
+     "title": "Setting the price",
+     "html": "<p><b>Consumer psychology.</b> Economists traditionally treated consumers as ‘price takers’ who accept prices at face value. Marketers know that buyers actively interpret prices in the light of past purchases, advertising, sales calls, friends and family, and what they see at the point of sale. Buying decisions rest on how consumers <b>perceive</b> prices, not on the stated price. Buyers may have a lower threshold, below which a price signals poor quality, and an upper threshold, above which the product seems not worth the money.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Kotler and Keller's six steps in setting price\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>What it involves</th></tr></thead>\n<tbody>\n<tr><td>1 Select the pricing objective</td><td>Survival, maximum current profit, maximum market share, maximum market skimming or product-quality leadership</td></tr>\n<tr><td>2 Determine demand</td><td>Different prices lead to different demand, depending on the market (pure competition, monopolistic competition, oligopoly, pure monopoly) and on price elasticity. Demand sets the ceiling.</td></tr>\n<tr><td>3 Estimate costs</td><td>Fixed, variable, total and average costs set the floor. In <b>target costing</b> the firm starts from the price the market will pay and designs the product to meet the cost that allows</td></tr>\n<tr><td>4 Analyse competitors' costs, prices and offers</td><td>The <b>three Cs</b>: the company's costs (the floor), competitors' prices (an orienting point), and customers' perceived value (the ceiling)</td></tr>\n<tr><td>5 Select a pricing method</td><td>Cost-based: mark-up or target-return pricing. Value-based: perceived-value pricing, or value pricing (high quality at a fairly low price). Competition-based: going-rate or sealed-bid (auction) pricing</td></tr>\n<tr><td>6 Select the final price</td><td>Considering psychological pricing, the influence of the other mix elements, company pricing policies, and the effect on distributors, the sales force, competitors and government</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Objective, demand, costs, competitors, method, final price.</p>"
+    },
+    {
+     "id": "pricing-strategies",
+     "title": "Pricing strategies",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Main pricing strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>How it works</th><th>Suits</th></tr></thead>\n<tbody>\n<tr><td>Cost-plus (mark-up)</td><td>Adds a standard mark-up to cost</td><td>Simple; ignores demand and competition</td></tr>\n<tr><td>Target-return (break-even)</td><td>Sets the price that gives a target return on investment</td><td>Utilities and regulated firms</td></tr>\n<tr><td>Value-based (perceived value)</td><td>Sets price from buyers' perception of value, not from cost</td><td>Differentiated products</td></tr>\n<tr><td>Going-rate (competition-based)</td><td>Prices at or near competitors' prices</td><td>Commodities and oligopolies</td></tr>\n<tr><td>Market skimming</td><td>High launch price, lowered over time</td><td>Innovative products, buyers willing to pay, few competitors able to enter quickly</td></tr>\n<tr><td>Market penetration</td><td>Low launch price to win share fast</td><td>Price-sensitive markets where costs fall with volume and low prices deter competitors</td></tr>\n<tr><td>Psychological</td><td>Uses price perceptions: odd prices such as ₹99, reference prices, price as a signal of quality</td><td>Consumer goods</td></tr>\n<tr><td>Differential (discriminatory)</td><td>Different prices to different customers, product forms, places or times, not reflecting cost differences</td><td>Students' discounts, peak and off-peak fares</td></tr>\n<tr><td>Bundle</td><td>Several products together at a reduced price</td><td>Combos, packaged services</td></tr>\n</tbody></table></div>\n<p><b>A correction.</b> The source sheet's glossary says penetration pricing means launching low and then raising the price. Penetration aims to win share with a low price; it does not require a later rise, and many penetration prices stay low.</p>\n<p class=\"cue\">Skim when buyers pay for novelty; penetrate when volume lowers cost.</p>"
+    },
+    {
+     "id": "adapting-the-price",
+     "title": "Adapting the price",
+     "html": "<p>Firms rarely set one price. They build a <b>price structure</b> that reflects differences in geography, segment, timing, order size, delivery, guarantees and service, so the firm seldom earns the same profit on every unit it sells. Kotler and Keller name four kinds of price adaptation.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Geographical pricing and countertrade\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>How it works</th></tr></thead>\n<tbody>\n<tr><td>Geographical pricing</td><td>Deciding what to charge customers in different places: whether to charge distant buyers more for shipping, how to handle exchange rates, and how to be paid</td></tr>\n<tr><td>Barter</td><td>Buyer and seller exchange goods directly, with no money and no third party</td></tr>\n<tr><td>Compensation deal</td><td>The seller takes part of the payment in cash and the rest in products</td></tr>\n<tr><td>Buyback arrangement</td><td>The seller supplies a plant, equipment or technology and accepts part payment in products made with it</td></tr>\n<tr><td>Offset</td><td>The seller is paid in full in cash but agrees to spend a substantial amount in that country within a set time</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Discounts and allowances\" tabindex=\"0\"><table>\n<thead><tr><th>Kind</th><th>Given for</th></tr></thead>\n<tbody>\n<tr><td>Cash discount</td><td>Paying bills promptly</td></tr>\n<tr><td>Quantity discount</td><td>Buying large volumes</td></tr>\n<tr><td>Functional (trade) discount</td><td>Channel members who perform functions such as selling, storing and record-keeping</td></tr>\n<tr><td>Seasonal discount</td><td>Buying out of season</td></tr>\n<tr><td>Allowance</td><td>Extra payment for resellers who join special programmes, such as trade-in or promotional allowances</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Promotional pricing\" tabindex=\"0\"><table>\n<thead><tr><th>Technique</th><th>How it works</th></tr></thead>\n<tbody>\n<tr><td>Loss-leader pricing</td><td>Cutting the price of well-known brands to draw traffic into the store</td></tr>\n<tr><td>Special-event pricing</td><td>Special prices in certain seasons, such as year-end offers</td></tr>\n<tr><td>Special-customer pricing</td><td>Prices offered only to certain customers</td></tr>\n<tr><td>Cash rebates</td><td>Cash back for buying within a set period</td></tr>\n<tr><td>Low-interest financing and longer payment terms</td><td>Cheap credit, or loans stretched to lower monthly payments, instead of a price cut</td></tr>\n<tr><td>Warranties and service contracts</td><td>Adding free or low-cost cover</td></tr>\n<tr><td>Psychological discounting</td><td>Setting an artificially high reference price and offering big ‘savings’ from it; it misleads buyers if the ‘was’ price was never really charged</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Differentiated pricing\" tabindex=\"0\"><table>\n<thead><tr><th>Kind</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Customer-segment pricing</td><td>Lower museum fees for students and senior citizens</td></tr>\n<tr><td>Product-form pricing</td><td>A large bottle of water priced lower per litre than a small one, not in proportion to cost</td></tr>\n<tr><td>Image pricing</td><td>The same perfume sold at two prices in different bottles with different names and images</td></tr>\n<tr><td>Channel pricing</td><td>A soft drink costing more in a fine restaurant than from a vending machine</td></tr>\n<tr><td>Location pricing</td><td>Different prices for seats at a stadium, though each costs the same to provide</td></tr>\n<tr><td>Time pricing</td><td>Prices that vary by season, day or hour, such as peak and off-peak tariffs</td></tr>\n</tbody></table></div>\n<p>Differentiated pricing is <b>price discrimination</b>: selling the same product at two or more prices that do not reflect differences in cost.</p>\n<p class=\"cue\">Geography, discounts, promotions, differentiation.</p>"
+    },
+    {
+     "id": "price-quality-strategies",
+     "title": "Price-quality strategies",
+     "html": "<p>When a firm enters a market or launches a product, it must decide where to place it on a <b>price-quality map</b>. Where buyers lack information about quality, they tend to take price as its signal. Kotler describes nine price-quality strategies.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Nine price-quality strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Product quality</th><th>High price</th><th>Medium price</th><th>Low price</th></tr></thead>\n<tbody>\n<tr><td>High</td><td>1 Premium strategy</td><td>2 High-value strategy</td><td>3 Super-value strategy</td></tr>\n<tr><td>Medium</td><td>4 Overcharging strategy</td><td>5 Medium-value strategy</td><td>6 Good-value strategy</td></tr>\n<tr><td>Low</td><td>7 Rip-off strategy</td><td>8 False-economy strategy</td><td>9 Economy strategy</td></tr>\n</tbody></table></div>\n<p>The diagonal strategies (1, 5 and 9) can coexist in the same market, one firm offering high quality at a high price and another low quality at a low price, so long as there are buyers who want each. Strategies 2, 3 and 6 attack the diagonal by offering more quality for the price. Strategies 4, 7 and 8 overprice the product for its quality; customers will feel cheated and complain, so they are hard to sustain.</p>\n<p class=\"cue\">Price should match quality; more quality for the price attacks, less quality for the price fails.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Cost and market factors in price",
+     "classic": "fixing rates after reckoning",
+     "text": [
+      "Manu tells the king to fix the buying and selling rates of goods after weighing where they come from and where they go, how long they have been stored, and the gain and loss on them, and to review those rates publicly every five nights or every fortnight. These are the cost and market factors any price still has to reckon with, though the verse describes prices set by the ruler, not by firms."
+     ],
+     "quote": "<i>āgamaṃ nirgamaṃ sthānaṃ tathā vṛddhikṣayāv ubhau / vicārya sarvapaṇyānāṃ kārayet krayavikrayau.</i> “After weighing the arrival and dispatch, the storage, and the gain and loss of all goods, he should fix their buying and selling prices.” <span class=\"ref\">Manusmṛti 8.401; review at 8.402</span>"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "slug": "distribution-logistics-and-supply-chain",
+   "title": "Place: Distribution Channels, Logistics and Supply Chains",
+   "scope": "How products reach customers: the channels they pass through, the logistics that move them, and the supply chain behind them.",
+   "group": "mix",
+   "blocks": [
+    {
+     "id": "distribution-channels",
+     "title": "Distribution channels",
+     "html": "<p>A <b>distribution channel</b> (marketing channel) is the set of interdependent organisations that make a product available for use or consumption. <b>Channel intermediaries</b> (wholesalers, retailers, agents and brokers) move products from producer to consumer and perform functions such as information, promotion, negotiation, ordering, financing, risk-taking, physical distribution and payment.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Types of channel\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>How it works</th></tr></thead>\n<tbody>\n<tr><td>Direct</td><td>The producer sells straight to the final customer, without intermediaries</td></tr>\n<tr><td>Indirect</td><td>The producer uses intermediaries such as wholesalers and retailers</td></tr>\n<tr><td>Hybrid (multichannel)</td><td>The producer combines direct and indirect channels for reach and convenience</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Channel levels in consumer markets\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>Path</th></tr></thead>\n<tbody>\n<tr><td>Zero-level (direct)</td><td>Producer → consumer</td></tr>\n<tr><td>One-level</td><td>Producer → retailer → consumer</td></tr>\n<tr><td>Two-level</td><td>Producer → wholesaler → retailer → consumer</td></tr>\n<tr><td>Three-level</td><td>Producer → wholesaler → jobber or agent → retailer → consumer</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Distribution intensity\" tabindex=\"0\"><table>\n<thead><tr><th>Intensity</th><th>Number of outlets</th><th>Typical goods</th></tr></thead>\n<tbody>\n<tr><td>Intensive</td><td>As many as possible</td><td>Convenience goods: soap, biscuits, soft drinks</td></tr>\n<tr><td>Selective</td><td>More than one but fewer than all willing dealers</td><td>Shopping goods: appliances, furniture</td></tr>\n<tr><td>Exclusive</td><td>One or very few dealers in each area</td><td>Specialty and luxury goods: premium cars, designer labels</td></tr>\n</tbody></table></div>\n<p><b>Vertical marketing systems</b> unify producer, wholesaler and retailer: <b>corporate</b> (common ownership), <b>contractual</b> (franchises, voluntary chains, retailer cooperatives) and <b>administered</b> (coordination by a dominant member).</p>\n<p class=\"cue\">Direct or through intermediaries; intensive, selective or exclusive.</p>"
+    },
+    {
+     "id": "market-logistics",
+     "title": "Market logistics",
+     "html": "<p><b>Market logistics</b>, also called <b>physical distribution</b> or marketing logistics, is planning, implementing and controlling the physical flow of materials, final goods and related information from points of origin to points of use, to meet customer requirements at a profit. Peter Drucker called distribution “the economy's dark continent” (1962) for the savings it hid; physical distribution has since grown into supply chain management.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Inbound, outbound and reverse logistics\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>Flow</th><th>Aim</th></tr></thead>\n<tbody>\n<tr><td>Inbound</td><td>Raw materials and inputs from suppliers to the factory and warehouse: procurement, receiving, storage</td><td>Smooth production</td></tr>\n<tr><td>Outbound</td><td>Finished goods from the warehouse to customers and retailers: order processing, picking, packing, shipping</td><td>Customer satisfaction</td></tr>\n<tr><td>Reverse</td><td>Returns, recalls, repairs, recycling and excess stock back through the chain</td><td>Recover value and build trust</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Market logistics decisions\" tabindex=\"0\"><table>\n<thead><tr><th>Decision</th><th>Key question</th></tr></thead>\n<tbody>\n<tr><td>Order processing</td><td>How quickly can we go from order to payment?</td></tr>\n<tr><td>Warehousing</td><td>How many warehouses, and where?</td></tr>\n<tr><td>Inventory</td><td>When to reorder (the reorder point) and how much (the order quantity)?</td></tr>\n<tr><td>Transportation</td><td>Which mode, judged by cost, speed and reliability?</td></tr>\n</tbody></table></div>\n<p><b>Trade-offs.</b> The ideal is the right goods in the right place at the right time at the lowest cost, but no system can both maximise service and minimise cost. Higher service needs more inventory and faster transport; less inventory risks stockouts; cheaper packaging risks damage; rail is cheaper than air but slower.</p>\n<p>Kotler and Keller plan market logistics in four steps: decide the value proposition to customers (delivery speed, accuracy, billing); choose the channel design and network (direct or through intermediaries, how many warehouses and where); develop operational excellence in forecasting, warehousing, transport and materials; and implement with information systems, equipment, policies and continuous improvement. An <b>integrated logistics system</b> ties materials management, material flow and physical distribution together with technology such as point-of-sale data, barcodes, electronic data interchange (EDI), electronic funds transfer and satellite tracking.</p>\n<p class=\"cue\">Right goods, right place, right time, lowest cost: trade-offs throughout.</p>"
+    },
+    {
+     "id": "supply-chain-management",
+     "title": "Supply chain management",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Logistics and supply chain management\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Logistics</th><th>Supply chain management (SCM)</th></tr></thead>\n<tbody>\n<tr><td>Scope</td><td>Movement and storage of goods, mainly within one organisation</td><td>The whole chain from procurement through manufacturing to distribution</td></tr>\n<tr><td>Relation</td><td>A part of SCM</td><td>The wider whole</td></tr>\n<tr><td>Coordination</td><td>Internal</td><td>Across many organisations</td></tr>\n<tr><td>Goal</td><td>Efficient logistics operations</td><td>Competitive advantage through an efficient, responsive chain</td></tr>\n</tbody></table></div>\n<p>The Supply Chain Council's <b>SCOR</b> model names five core processes: <b>plan</b>, <b>source</b>, <b>make</b>, <b>deliver</b> and <b>return</b>. Good SCM improves quality and customer service, reduces risk, raises profitability, and helps suppliers and buyers innovate together, as at Amazon, Flipkart, P&amp;G, PepsiCo and Nestlé.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Supply chain drivers (Michael Hugos)\" tabindex=\"0\"><table>\n<thead><tr><th>Driver</th><th>For responsiveness</th><th>For efficiency</th></tr></thead>\n<tbody>\n<tr><td>Production</td><td>Excess capacity, flexible methods, many smaller plants</td><td>Little excess capacity, specialised plants</td></tr>\n<tr><td>Inventory</td><td>High stock of a wide range</td><td>Low stock of a narrower range</td></tr>\n<tr><td>Location</td><td>Many facilities close to customers</td><td>Few central facilities serving wide areas</td></tr>\n<tr><td>Transportation</td><td>Frequent shipments by fast, flexible modes</td><td>Fewer, larger shipments by slower, cheaper modes</td></tr>\n<tr><td>Information</td><td>Timely, accurate data shared widely</td><td>Lower information costs</td></tr>\n</tbody></table></div>\n<p><b>Green supply chain</b> practices include route optimisation, consolidating shipments, recyclable packaging and cutting the carbon footprint.</p>\n<p class=\"cue\">Plan, source, make, deliver, return; responsive or efficient.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Inventory and safety stock",
+     "classic": "the storehouse",
+     "text": [
+      "The Arthaśāstra's superintendent of the storehouse is told to keep half of the stored stock in reserve against calamities for the people, to use the other half, and to replace old stock with new. Safety stock and stock rotation are the same disciplines in modern inventory management."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.15</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Choosing transport routes",
+     "classic": "comparing trade routes",
+     "text": [
+      "Kauṭilya compares trade routes. Earlier teachers preferred water routes as cheaper and easier; Kauṭilya prefers land routes as less liable to obstruction and danger, and among land routes he prefers the southern one for the goods it yields in quantity. Weighing routes by cost, risk and what they deliver is the same reasoning as a supply chain's choice of transport."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 7.12</span>"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "slug": "promotion-decisions",
+   "title": "Promotion Decisions: The Communication Mix and Budget",
+   "scope": "The tools a firm uses to communicate with its market, how they are combined, and how the budget is set.",
+   "group": "mix",
+   "blocks": [
+    {
+     "id": "promotion-mix",
+     "title": "The promotion mix",
+     "html": "<p>The <b>promotion mix</b> (marketing communications mix) is the blend of tools a company uses to communicate customer value and build customer relationships.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The five promotion tools\" tabindex=\"0\"><table>\n<thead><tr><th>Tool</th><th>Meaning</th><th>Strengths</th></tr></thead>\n<tbody>\n<tr><td>Advertising</td><td>Any paid form of non-personal presentation of ideas, goods or services by an identified sponsor</td><td>Reaches large audiences at low cost per exposure; builds image</td></tr>\n<tr><td>Sales promotion</td><td>Short-term incentives to encourage purchase: coupons, discounts, contests, samples</td><td>Quick response; boosts short-term sales</td></tr>\n<tr><td>Personal selling</td><td>Personal presentation by the sales force to make sales and build relationships</td><td>Two-way, adaptable; best at the stage of conviction and purchase</td></tr>\n<tr><td>Public relations</td><td>Building good relations with the public through publicity, events and handling of stories</td><td>Credible; reaches people who avoid advertising</td></tr>\n<tr><td>Direct and digital marketing</td><td>Direct connections with targeted individuals: mail, email, phone, SMS, online and mobile</td><td>Targeted, immediate, measurable</td></tr>\n</tbody></table></div>\n<p>Kotler and Keller list eight modes of communication, adding <b>events and experiences</b>, <b>online and social media</b>, <b>mobile</b> marketing and <b>word of mouth</b>. <b>Integrated marketing communications</b> (IMC) coordinates all of them to deliver one clear, consistent message.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Push and pull strategies\" tabindex=\"0\"><table>\n<thead><tr><th>Strategy</th><th>How it works</th><th>Main tools</th></tr></thead>\n<tbody>\n<tr><td>Push</td><td>The producer promotes to channel members, who promote to final buyers</td><td>Personal selling and trade promotion</td></tr>\n<tr><td>Pull</td><td>The producer promotes to final consumers, who ask channel members for the product</td><td>Advertising and consumer promotion</td></tr>\n</tbody></table></div>\n<p><b>AIDA</b> (attention, interest, desire, action), usually credited to E. St. Elmo Lewis (1898), is the oldest model of how buyers respond to communication.</p>\n<p class=\"cue\">Advertising, sales promotion, personal selling, PR, direct marketing.</p>"
+    },
+    {
+     "id": "promotion-budget",
+     "title": "Setting the promotion budget",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Four methods of setting the promotion budget\" tabindex=\"0\"><table>\n<thead><tr><th>Method</th><th>How it works</th><th>Weakness</th></tr></thead>\n<tbody>\n<tr><td>Affordable</td><td>Spend what the company thinks it can afford after other costs</td><td>Ignores promotion's effect on sales; budget varies year to year</td></tr>\n<tr><td>Percentage of sales</td><td>Spend a set percentage of current or forecast sales</td><td>Treats sales as the cause of promotion rather than its result</td></tr>\n<tr><td>Competitive parity</td><td>Match competitors' spending</td><td>Competitors' needs and wisdom may differ</td></tr>\n<tr><td>Objective and task</td><td>Define objectives, set the tasks to achieve them, cost the tasks; the total is the budget</td><td>Demanding to estimate, but the most logical</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Objective and task is the most logical method.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Persuasive communication",
+     "classic": "speech that binds",
+     "text": [
+      "Advertising aims to hold its audience and reach even those not yet listening. The Kuṟaḷ describes true speech as speech that binds its hearers and makes even those who were not listening want to hear. It is about eloquence, not paid media."
+     ],
+     "quote": "“True speech binds those who hear it and makes even those who did not hear it long for it.” <span lang=\"ta\" class=\"ta\">கேட்டார்ப் பிணிக்கும் தகையவாய்க் கேளாரும் வேட்ப மொழிவதாம் சொல்.</span> <span class=\"ref\">Tirukkuṟaḷ 643</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "The affordable method",
+     "classic": "giving within one's means",
+     "text": [
+      "The affordable method sets spending by what the firm can bear. The Kuṟaḷ says to give according to the measure of one's means: that is the way to give while keeping one's wealth. The couplet concerns a ruler's or householder's gifts, not a promotion budget."
+     ],
+     "quote": "“Give with knowledge of the measure of your means; that is the way to give while guarding your wealth.” <span lang=\"ta\" class=\"ta\">ஆற்றின் அளவறிந்து ஈக அதுபொருள் போற்றி வழங்கு நெறி.</span> <span class=\"ref\">Tirukkuṟaḷ 477</span>"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "slug": "consumer-and-industrial-buying-behaviour",
+   "title": "Consumer and Industrial Buying Behaviour",
+   "scope": "Why and how people and organisations buy: the influences on them, the decision process, the rules they use, and how business buying differs.",
+   "group": "buyers",
+   "blocks": [
+    {
+     "id": "consumer-behaviour-and-its-influences",
+     "title": "Consumer behaviour and its influences",
+     "html": "<p><b>Consumer behaviour</b> is the study of how individuals, groups and organisations select, buy, use and dispose of goods, services, ideas or experiences to satisfy their needs and wants (Kotler). Leon Schiffman and Leslie Lazar Kanuk define it as the behaviour consumers display in searching for, purchasing, using, evaluating and disposing of products and services that they expect will satisfy their needs. It draws on psychology, sociology, anthropology and economics, and is complex, dynamic, goal-oriented and shaped by perception.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Factors influencing consumer behaviour\" tabindex=\"0\"><table>\n<thead><tr><th>Factor</th><th>Variables</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Cultural</td><td>Culture, subculture, social class</td><td>Culture is the most basic cause of wants; subcultures (ethnic, religious, regional) form niche markets; class shapes lifestyle and access</td></tr>\n<tr><td>Social</td><td>Reference groups, family, roles and status</td><td>Primary groups (family, friends) and secondary groups (professional bodies) shape attitudes; buying roles are initiator, influencer, decider, buyer and user</td></tr>\n<tr><td>Personal</td><td>Age and life-cycle stage, occupation, economic situation, lifestyle, personality and self-concept</td><td>Lifestyle is measured by activities, interests and opinions (AIO)</td></tr>\n<tr><td>Psychological</td><td>Motivation, perception, learning, beliefs and attitudes</td><td>Maslow's and Herzberg's theories; selective attention, distortion and retention; learning by experience; attitudes are lasting and hard to change</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Cultural, social, personal, psychological.</p>"
+    },
+    {
+     "id": "buying-decision-process",
+     "title": "The buying decision process",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"The five stages of the buying decision process\" tabindex=\"0\"><table>\n<thead><tr><th>Stage</th><th>What happens</th></tr></thead>\n<tbody>\n<tr><td>1 Need recognition</td><td>The buyer recognises a gap between the actual and the desired state, triggered by internal stimuli (hunger) or external ones (an advertisement)</td></tr>\n<tr><td>2 Information search</td><td>Internal search of memory and experience; external search among family, friends, experts, reviews and advertising</td></tr>\n<tr><td>3 Evaluation of alternatives</td><td>Comparing options on criteria such as price, brand, features and quality, within the <b>evoked set</b></td></tr>\n<tr><td>4 Purchase decision</td><td>Forming an intention and buying; others' attitudes and unexpected situations can intervene</td></tr>\n<tr><td>5 Post-purchase behaviour</td><td>Satisfaction leads to repurchase and loyalty; dissatisfaction to returns and complaints</td></tr>\n</tbody></table></div>\n<p><b>The evoked set.</b> From the total set of brands available, a buyer is aware of some (the awareness set), considers fewer (the consideration or evoked set), and chooses among a few (the choice set).</p>\n<p><b>Cognitive dissonance</b> (Leon Festinger, 1957) is the discomfort after purchase caused by doubt about the choice, often called buyer's remorse. Marketers reduce it with reassurance, guarantees and after-sales contact. Satisfaction depends on the gap between expectations and perceived performance.</p>\n<p><b>Involvement</b> decides how much of this process a buyer goes through, from routine to extensive decisions.</p>\n<p class=\"cue\">Need, search, evaluate, buy, reflect.</p>"
+    },
+    {
+     "id": "types-of-buying-behaviour",
+     "title": "Types of buying behaviour",
+     "html": "<p>Henry Assael classified buying behaviour by the buyer's <b>involvement</b> and the <b>differences between brands</b>.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Assael's four types of buying behaviour\" tabindex=\"0\"><table>\n<thead><tr><th>Brand differences</th><th>High involvement</th><th>Low involvement</th></tr></thead>\n<tbody>\n<tr><td>Significant differences between brands</td><td><b>Complex buying</b>: buying a car. The marketer gives detailed information and trials.</td><td><b>Variety-seeking</b>: soft drinks, biscuits. Buyers switch for variety; leaders keep shelf space and remind, challengers offer deals and novelty.</td></tr>\n<tr><td>Few differences between brands</td><td><b>Dissonance-reducing</b>: buying a carpet. The marketer provides reassurance and after-sales support.</td><td><b>Habitual</b>: salt. Buyers buy by habit; marketers use price, promotion and repetition to build familiarity.</td></tr>\n</tbody></table></div>\n<p class=\"cue\">High involvement and real differences make buying complex.</p>"
+    },
+    {
+     "id": "decision-rules-and-models",
+     "title": "Decision rules and models of buyer behaviour",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Non-compensatory decision rules\" tabindex=\"0\"><table>\n<thead><tr><th>Rule</th><th>How the buyer chooses</th><th>Marketing implication</th></tr></thead>\n<tbody>\n<tr><td>Conjunctive</td><td>Sets a minimum acceptable level on every attribute and chooses the first brand that meets all of them</td><td>Make sure the product meets the minimum on everything</td></tr>\n<tr><td>Disjunctive</td><td>Sets a high standard on one or a few key attributes and accepts a brand that meets any of them</td><td>Highlight a standout feature</td></tr>\n<tr><td>Lexicographic</td><td>Ranks the attributes and compares brands on the most important first, moving to the next only if there is a tie</td><td>Excel on the attribute buyers rank first</td></tr>\n</tbody></table></div>\n<p>These rules are <b>non-compensatory</b>: a weakness on one attribute cannot be made up by strength on another. Under <b>compensatory</b> rules, such as Martin Fishbein's expectancy-value model, a buyer weighs all attributes together, so strengths can offset weaknesses.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Models of buyer behaviour\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>Explains buying by…</th></tr></thead>\n<tbody>\n<tr><td>Economic (Marshallian)</td><td>Rational choice to maximise satisfaction within a budget</td></tr>\n<tr><td>Psychological</td><td>Learning and conditioning (Pavlovian), unconscious motives (Freudian), needs (Maslow)</td></tr>\n<tr><td>Sociological (Veblenian)</td><td>Family, social class, reference groups and culture</td></tr>\n<tr><td>Comprehensive</td><td>Combining these: the Nicosia model (1966), the Engel–Kollat–Blackwell model (1968) and the Howard–Sheth model (1969)</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Conjunctive: every minimum. Disjunctive: one high standard. Lexicographic: the top attribute first.</p>"
+    },
+    {
+     "id": "industrial-buying-behaviour",
+     "title": "Industrial (organisational) buying behaviour",
+     "html": "<p><b>Organisational buying</b>, in Frederick Webster and Yoram Wind's definition, is the decision-making process by which formal organisations establish the need for purchased products and services, and identify, evaluate and choose among alternative brands and suppliers.</p>\n<p><b>How business markets differ:</b> fewer, larger buyers; close supplier-customer relationships; professional purchasing by trained buyers; several people influencing each decision; geographically concentrated buyers; and <b>derived demand</b>: demand for business goods comes from demand for the consumer goods they help produce, so it is fairly inelastic in the short run and fluctuates more.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Buying situations: the buyclass framework\" tabindex=\"0\"><table>\n<thead><tr><th>Buyclass</th><th>What happens</th><th>Risk</th></tr></thead>\n<tbody>\n<tr><td>Straight rebuy</td><td>Routine reorder from an established supplier with little evaluation</td><td>Low</td></tr>\n<tr><td>Modified rebuy</td><td>The buyer re-evaluates products, prices or suppliers because needs have changed</td><td>Medium</td></tr>\n<tr><td>New task</td><td>A first-time purchase needing extensive research and many decision-makers</td><td>High</td></tr>\n</tbody></table></div>\n<p>The buyclasses and the <b>buygrid</b> come from Patrick Robinson, Charles Faris and Yoram Wind (<i>Industrial Buying and Creative Marketing</i>, 1967). The buygrid crosses the three buyclasses with eight <b>buyphases</b>: problem recognition, general need description, product specification, supplier search, proposal solicitation, supplier selection, order-routine specification, and performance review.</p>\n<p>The <b>buying centre</b> is everyone involved in a purchase decision. Webster and Wind (1972) named five roles: <b>users</b>, <b>influencers</b>, <b>buyers</b>, <b>deciders</b> and <b>gatekeepers</b> (who control the flow of information); later writers add <b>initiators</b> and <b>approvers</b>. Their model groups the influences on organisational buying into four kinds: <b>environmental</b>, <b>organisational</b>, <b>interpersonal</b> and <b>individual</b>.</p>\n<p class=\"cue\">Straight rebuy, modified rebuy, new task.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Reference group influence",
+     "classic": "water takes the soil's nature",
+     "text": [
+      "The Kuṟaḷ says that just as water changes its nature with the soil it flows through, people's understanding takes on the nature of the company they keep. That is the reference group effect: the groups we belong to and look to shape what we think and want."
+     ],
+     "quote": "“As water changes with the nature of the soil, so a person's understanding takes the nature of their company.” <span lang=\"ta\" class=\"ta\">நிலத்தியல்பால் நீர்திரிந் தற்றாகும் மாந்தர்க்கு இனத்தியல்ப தாகும் அறிவு.</span> <span class=\"ref\">Tirukkuṟaḷ 452</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Post-purchase regret",
+     "classic": "what you will grieve over",
+     "text": [
+      "Cognitive dissonance is regret after a choice. The Kuṟaḷ warns against doing what will later make one cry, ‘what have I done?’, and if it has been done, not to do it again. It speaks of wrong actions generally, not purchases."
+     ],
+     "quote": "“Do nothing that will make you grieve, ‘what have I done!’; and if you have, better not do such things again.” <span lang=\"ta\" class=\"ta\">எற்றென்று இரங்குவ செய்யற்க செய்வானேல் மற்றன்ன செய்யாமை நன்று.</span> <span class=\"ref\">Tirukkuṟaḷ 655</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Expert evaluation in organisational buying",
+     "classic": "examining goods for the treasury",
+     "text": [
+      "The Arthaśāstra devotes a chapter to examining precious goods, gems, pearls and the like, before they are accepted into the treasury, with their qualities and defects set out so that experts can judge them. Professional, specification-based examination of what an organisation buys is the same practice in an industrial buying centre."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.11</span>"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "slug": "services-marketing",
+   "title": "Services Marketing",
+   "scope": "How services differ from goods, the extended marketing mix, how service quality is measured, and the three kinds of services marketing.",
+   "group": "buyers",
+   "blocks": [
+    {
+     "id": "characteristics-of-services",
+     "title": "Services and their characteristics",
+     "html": "<p>A <b>service</b> is any act or performance one party offers another that is essentially intangible and does not result in the ownership of anything (Kotler). <b>Services marketing</b> creates value through experiences, processes and interactions; it is relationship-oriented, and customer interaction is critical.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Characteristics of services\" tabindex=\"0\"><table>\n<thead><tr><th>Characteristic</th><th>Meaning</th><th>Example</th><th>Marketing response</th></tr></thead>\n<tbody>\n<tr><td>Intangibility</td><td>Cannot be seen, tasted, felt or heard before purchase</td><td>Insurance, legal advice</td><td>Make it tangible with evidence: facilities, staff, testimonials</td></tr>\n<tr><td>Inseparability</td><td>Produced and consumed at the same time; the provider is part of the service</td><td>A doctor's consultation</td><td>Train the people who deliver it; manage customers' participation</td></tr>\n<tr><td>Variability (heterogeneity)</td><td>Quality depends on who provides it, when, where and how</td><td>Restaurant service</td><td>Standardise processes, train staff, track satisfaction</td></tr>\n<tr><td>Perishability</td><td>Cannot be stored for later sale or use; unused capacity is lost</td><td>Empty airline seats</td><td>Match supply and demand: differential pricing, reservations, part-time staff</td></tr>\n<tr><td>Lack of ownership</td><td>The customer gets an experience or access, not ownership</td><td>Education, tourism</td><td>Build membership and loyalty</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Intangible, inseparable, variable, perishable, not owned.</p>"
+    },
+    {
+     "id": "services-marketing-mix",
+     "title": "The services marketing mix: 7Ps",
+     "html": "<p>Bernard Booms and Mary Jo Bitner (1981) added three Ps to the four for services.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The 7Ps of services marketing\" tabindex=\"0\"><table>\n<thead><tr><th>P</th><th>Focus</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Product</td><td>The core and supplementary services</td><td>A bank loan</td></tr>\n<tr><td>Price</td><td>Value-based and flexible pricing</td><td>A subscription fee</td></tr>\n<tr><td>Place</td><td>Accessibility and delivery</td><td>Branches and mobile apps</td></tr>\n<tr><td>Promotion</td><td>Communication</td><td>Advertising, public relations</td></tr>\n<tr><td>People</td><td>Everyone who takes part in delivering the service</td><td>Receptionists, agents</td></tr>\n<tr><td>Process</td><td>The procedures and flow by which the service is delivered</td><td>A booking system</td></tr>\n<tr><td>Physical evidence</td><td>The setting and tangible cues</td><td>Offices, uniforms, brochures</td></tr>\n</tbody></table></div>\n<p class=\"cue\">The 4Ps plus people, process and physical evidence.</p>"
+    },
+    {
+     "id": "service-quality-and-servqual",
+     "title": "Service quality and SERVQUAL",
+     "html": "<p><b>SERVQUAL</b> (A. Parasuraman, Valarie Zeithaml and Leonard Berry, 1988) measures service quality as the gap between customers' <b>expectations</b> and their <b>perceptions</b> of performance, on five dimensions. It grew out of the same authors' <b>gaps model</b> (1985).</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The five SERVQUAL dimensions (RATER)\" tabindex=\"0\"><table>\n<thead><tr><th>Dimension</th><th>Meaning</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>Reliability</td><td>Performing the promised service dependably and accurately</td><td>On-time delivery</td></tr>\n<tr><td>Assurance</td><td>Employees' knowledge and courtesy, and their ability to convey trust and confidence</td><td>Skilled, courteous staff</td></tr>\n<tr><td>Tangibles</td><td>The appearance of physical facilities, equipment, staff and materials</td><td>A modern office</td></tr>\n<tr><td>Empathy</td><td>Caring, individual attention</td><td>Personalised care</td></tr>\n<tr><td>Responsiveness</td><td>Willingness to help customers and give prompt service</td><td>Quick support</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"The gaps model of service quality\" tabindex=\"0\"><table>\n<thead><tr><th>Gap</th><th>Between</th></tr></thead>\n<tbody>\n<tr><td>1 Knowledge gap</td><td>Customers' expectations and management's perception of them</td></tr>\n<tr><td>2 Standards gap</td><td>Management's perceptions and the service quality specifications</td></tr>\n<tr><td>3 Delivery gap</td><td>The specifications and the service actually delivered</td></tr>\n<tr><td>4 Communication gap</td><td>The service delivered and what is promised to customers</td></tr>\n<tr><td>5 Customer gap</td><td>Expected and perceived service; the result of gaps 1 to 4</td></tr>\n</tbody></table></div>\n<p>The <b>zone of tolerance</b> (Zeithaml, Berry and Parasuraman, 1993) is the range between the <b>desired</b> and the <b>adequate</b> service level, within which variation in service goes largely unnoticed.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Models of customer satisfaction\" tabindex=\"0\"><table>\n<thead><tr><th>Model</th><th>Satisfaction depends on…</th></tr></thead>\n<tbody>\n<tr><td>Expectancy disconfirmation (Richard Oliver, 1980)</td><td>Comparing performance with expectations: performance above expectation satisfies, below it dissatisfies</td></tr>\n<tr><td>Performance-only</td><td>Performance alone; useful for new services where customers have few expectations</td></tr>\n<tr><td>Rational expectations</td><td>Expectations formed by logical evaluation, then matched against performance</td></tr>\n<tr><td>Expectations as artefact</td><td>The expectations themselves, which shape how performance is perceived; managing expectations improves satisfaction</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Reliability, Assurance, Tangibles, Empathy, Responsiveness.</p>"
+    },
+    {
+     "id": "the-service-triangle",
+     "title": "The service triangle",
+     "html": "<p>The <b>service triangle</b> links the <b>company</b>, its <b>employees</b> and its <b>customers</b>. Each side is a kind of marketing, and all three are needed for good service.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The three kinds of services marketing\" tabindex=\"0\"><table>\n<thead><tr><th>Kind</th><th>Between</th><th>Focus</th></tr></thead>\n<tbody>\n<tr><td>Internal marketing</td><td>Company and employees</td><td>Hiring, training and motivating staff to serve customers well; building a service culture</td></tr>\n<tr><td>External marketing</td><td>Company and customers</td><td>Preparing, pricing, distributing and promoting the service: making promises</td></tr>\n<tr><td>Interactive marketing</td><td>Employees and customers</td><td>The service encounter, where promises are kept or broken and relationships are built</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Internal, external, interactive: promise, enable, deliver.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Responsiveness",
+     "classic": "help given in time",
+     "text": [
+      "SERVQUAL's responsiveness is the willingness to help promptly. The Kuṟaḷ says that help given at the right time, however small, is greater than the world. It is about kindness between people, not about service firms."
+     ],
+     "quote": "“Help given in time of need, though small in itself, is far greater than the world.” <span lang=\"ta\" class=\"ta\">காலத்தி னாற்செய்த நன்றி சிறிதெனினும் ஞாலத்தின் மாணப் பெரிது.</span> <span class=\"ref\">Tirukkuṟaḷ 102</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "The service encounter",
+     "classic": "the anicham flower",
+     "text": [
+      "Interactive marketing happens in the moment of contact. The Kuṟaḷ says the anicham flower withers when smelt, but a guest withers at a mere cold look. It concerns a host's hospitality, which is also the root idea of the service encounter."
+     ],
+     "quote": "“The anicham flower withers when smelt; a guest withers when the host's face turns cold.” <span lang=\"ta\" class=\"ta\">மோப்பக் குழையும் அனிச்சம் முகந்திரிந்து நோக்கக் குழையும் விருந்து.</span> <span class=\"ref\">Tirukkuṟaḷ 90</span>"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "slug": "customer-relationship-marketing",
+   "title": "Customer Relationship Marketing",
+   "scope": "Building lasting customer relationships: relationship marketing and CRM, one-to-one and permission marketing, retention and loyalty, and the CRM value chain.",
+   "group": "buyers",
+   "blocks": [
+    {
+     "id": "relationship-marketing-and-crm",
+     "title": "Relationship marketing and CRM",
+     "html": "<p><b>Relationship marketing</b>, a term Leonard Berry introduced in 1983, builds long-term relationships with customers, employees and partners rather than focusing on single transactions. Its aims are customer retention, long-term engagement, loyalty and higher profitability.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"CRMk and CRM\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Customer relationship marketing (CRMk)</th><th>Customer relationship management (CRM)</th></tr></thead>\n<tbody>\n<tr><td>What it is</td><td>A strategy focused on long-term relationships rather than one-time sales</td><td>A technology-driven system for managing customer interactions and data</td></tr>\n<tr><td>Provides</td><td>Direction: whom to keep and how</td><td>A central customer database, personalised communication, better service</td></tr>\n</tbody></table></div>\n<p>CRM records every <b>customer touch point</b>, any occasion on which a customer meets the brand: marketing emails, service calls, website visits, store visits and loyalty programmes. The internet has moved marketing from mass marketing to <b>personalised</b> marketing through email, websites, call centres and databases.</p>\n<p><b>Why retention matters.</b> Keeping customers usually costs less than winning new ones. Frederick Reichheld and W. Earl Sasser (1990) found that cutting customer defections by 5 per cent could raise profits by 25 to 85 per cent, depending on the industry. <b>Customer lifetime value</b> (CLV) is the present value of the profits a customer will bring over the whole relationship; <b>churn</b> is the rate at which customers leave.</p>\n<p class=\"cue\">CRMk is the strategy; CRM is the technology.</p>"
+    },
+    {
+     "id": "one-to-one-and-permission-marketing",
+     "title": "One-to-one and permission marketing",
+     "html": "<p><b>One-to-one marketing</b> (Don Peppers and Martha Rogers, <i>The One to One Future</i>, 1993) treats each customer as a segment of one. Their <b>IDIC</b> model has four steps, and suits complex products that need continuing engagement.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"The IDIC model\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>Focus</th></tr></thead>\n<tbody>\n<tr><td>Identify</td><td>Know each customer individually; build the customer database</td></tr>\n<tr><td>Differentiate</td><td>Rank customers by their value (CLV) and their needs</td></tr>\n<tr><td>Interact</td><td>Engage customers in personalised, cost-efficient dialogue</td></tr>\n<tr><td>Customise</td><td>Tailor products, services and messages to each customer</td></tr>\n</tbody></table></div>\n<p><b>Permission marketing</b> (Seth Godin, 1999) asks for the customer's consent before sending marketing messages, so that communication is anticipated, personal and relevant; it is the opposite of <b>interruption</b> marketing. In <b>participatory marketing</b>, customers help to develop and promote products. Empowered customers now act as co-creators, advocates and content creators; friends and family remain the strongest source of influence, followed by online reviews and influencers.</p>\n<p class=\"cue\">Identify, Differentiate, Interact, Customise.</p>"
+    },
+    {
+     "id": "customer-retention-and-loyalty",
+     "title": "Customer retention and loyalty",
+     "html": "<p><b>Churn</b> has common causes: poor service, unmet expectations, billing errors and complex processes. To manage it, a firm measures its retention rate, identifies why customers leave, compares the cost of keeping them with the profit they bring, and improves what it controls.</p>\n<p><b>Customer base management</b> (Kotler and Keller) aims to reduce churn, increase the length of relationships, raise each customer's value through <b>cross-selling</b> and <b>up-selling</b>, make low-profit customers more profitable or let them go, and give high-value customers disproportionate attention. Customers can be segmented by loyalty, profitability and engagement, and a <b>marketing funnel</b> (awareness, interest, purchase, loyalty) shows where they drop out.</p>\n<p><b>Building loyalty.</b> Leonard Berry and A. Parasuraman (1991) described three levels of relationship marketing, each binding the customer more tightly.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Three ways to bind customers\" tabindex=\"0\"><table>\n<thead><tr><th>Level</th><th>How</th><th>Examples</th></tr></thead>\n<tbody>\n<tr><td>Financial benefits</td><td>Rewards that lower the customer's cost</td><td>Discounts, cashback, frequency programmes</td></tr>\n<tr><td>Social benefits</td><td>Personal ties with staff and other customers</td><td>Exclusive events, communities, club memberships</td></tr>\n<tr><td>Structural ties</td><td>Links built into the customer's own systems</td><td>Technology integration, customised solutions</td></tr>\n</tbody></table></div>\n<p>Other loyalty builders: superior products and experiences, listening to the voice of the customer, easy complaint channels, and recognising employees who serve customers well.</p>\n<p class=\"cue\">Financial, social, structural: each binds more tightly.</p>"
+    },
+    {
+     "id": "crm-value-chain-and-process",
+     "title": "The CRM value chain and process",
+     "html": "<p>Francis Buttle's <b>CRM value chain</b> (2004) has five primary stages: <b>customer portfolio analysis</b> (which customers to serve), <b>customer intimacy</b> (knowing them), <b>network development</b> (with suppliers, partners and employees), <b>value proposition development</b>, and <b>managing the customer lifecycle</b> (acquisition, retention, development). They rest on four supporting conditions: <b>leadership and culture</b>, <b>data and IT</b>, <b>people</b> and <b>processes</b>. The source sheet's version leaves out customer intimacy.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"A five-step CRM process\" tabindex=\"0\"><table>\n<thead><tr><th>Step</th><th>Aim</th></tr></thead>\n<tbody>\n<tr><td>1 Generate brand awareness</td><td>Make target customers know the brand</td></tr>\n<tr><td>2 Acquire leads</td><td>Draw interested prospects into contact</td></tr>\n<tr><td>3 Convert leads into customers</td><td>Turn prospects into buyers</td></tr>\n<tr><td>4 Provide quality customer support</td><td>Keep customers satisfied</td></tr>\n<tr><td>5 Drive upselling</td><td>Grow each customer's value with higher-value or added products</td></tr>\n</tbody></table></div>\n<p>CRM systems help with lead and contact management, tracking interactions, spotting opportunities and keeping customer data; cloud-based CRM adds flexibility and access from anywhere.</p>\n<p class=\"cue\">Awareness, leads, conversion, support, upselling.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Financial and social bonds",
+     "classic": "giving and kind words",
+     "text": [
+      "Berry and Parasuraman's first two levels bind customers by rewards and by personal ties. The Kuṟaḷ says that one who is generous in giving and speaks kindly will be surrounded by kin, ring upon ring. It describes how a person keeps relatives close, not how a firm keeps customers."
+     ],
+     "quote": "“One who gives and speaks kindly will be surrounded by kin, ring upon ring.” <span lang=\"ta\" class=\"ta\">கொடுத்தலும் இன்சொலும் ஆற்றின் அடுக்கிய சுற்றத்தால் சுற்றப் படும்.</span> <span class=\"ref\">Tirukkuṟaḷ 525</span>"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "slug": "retail-marketing",
+   "title": "Retail Marketing",
+   "scope": "What retailers do, the kinds of store and non-store retailers, how retailers organise, and recent trends in Indian retail.",
+   "group": "markets",
+   "blocks": [
+    {
+     "id": "retailing-and-store-retailers",
+     "title": "Retailing and store retailers",
+     "html": "<p><b>Retailing</b> is all the activities involved in selling goods or services directly to final consumers for their personal, non-business use. The retailer is the final link in the distribution channel: it connects manufacturers with consumers, creates satisfaction, and passes customer feedback back up the chain. Retail channels include physical stores, mail order, telephone, vending machines and online stores.</p>\n<p>Kotler and Armstrong classify store retailers by the <b>amount of service</b>, the <b>product line</b> sold, <b>relative prices</b>, and how they are <b>organised</b>. Supermarkets are classified by product line.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Retailers by amount of service\" tabindex=\"0\"><table>\n<thead><tr><th>Service level</th><th>Feature</th></tr></thead>\n<tbody>\n<tr><td>Self-service</td><td>Customers serve themselves; lowest prices</td></tr>\n<tr><td>Self-selection</td><td>Customers shop on their own, with help available</td></tr>\n<tr><td>Limited service</td><td>More help, credit and returns, and knowledgeable staff</td></tr>\n<tr><td>Full service</td><td>Salespeople help throughout; premium stores</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Major types of store retailer\" tabindex=\"0\"><table>\n<thead><tr><th>Type</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>Specialty store</td><td>A narrow but deep product line, with expert advice</td></tr>\n<tr><td>Department store</td><td>Several product lines, each run as a separate department</td></tr>\n<tr><td>Supermarket</td><td>A large, low-cost, low-margin, high-volume, self-service store for groceries and household products</td></tr>\n<tr><td>Convenience store</td><td>A small store near homes, open long hours, selling a limited line of fast-moving goods</td></tr>\n<tr><td>Drug store (pharmacy)</td><td>Medicines and health products, sometimes with clinics</td></tr>\n<tr><td>Discount store</td><td>Standard goods at lower prices, accepting lower margins for higher volume</td></tr>\n<tr><td>Hard discounter</td><td>A limited assortment at very low prices</td></tr>\n<tr><td>Off-price retailer</td><td>Leftover, surplus or irregular branded goods below regular prices, as in factory outlets</td></tr>\n<tr><td>Superstore</td><td>A very large store for routinely bought food and non-food items, with services; includes <b>category killers</b>, which carry a deep assortment in one line</td></tr>\n<tr><td>Catalogue showroom</td><td>A broad selection of discounted branded goods, ordered from a catalogue</td></tr>\n</tbody></table></div>\n<p class=\"cue\">By service, by product line, by price, by organisation.</p>"
+    },
+    {
+     "id": "non-store-and-corporate-retailing",
+     "title": "Non-store and corporate retailing",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Non-store retailing\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>How it works</th></tr></thead>\n<tbody>\n<tr><td>Direct selling</td><td>Personal selling at home or work, including multi-level marketing</td></tr>\n<tr><td>Direct marketing</td><td>Mail, telemarketing, TV shopping and the internet</td></tr>\n<tr><td>Automatic vending</td><td>Unmanned machines selling around the clock; convenience and impulse goods</td></tr>\n<tr><td>Buying service</td><td>Serves a specific clientele, often employees of large organisations, who get discounts from selected retailers</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"Corporate retail organisations\" tabindex=\"0\"><table>\n<thead><tr><th>Form</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>Corporate chain</td><td>Two or more outlets under common ownership and control, with central buying and merchandising</td></tr>\n<tr><td>Voluntary chain</td><td>Independent retailers organised by a wholesaler for group buying and common merchandising</td></tr>\n<tr><td>Retailer cooperative</td><td>Independent retailers who set up a central buying organisation and run joint promotions</td></tr>\n<tr><td>Consumer cooperative</td><td>A retail firm owned by its customers, who share the profits</td></tr>\n<tr><td>Franchise organisation</td><td>A contractual system in which franchisees run outlets under the franchisor's brand and system, for a fee</td></tr>\n<tr><td>Merchandising conglomerate</td><td>A corporation owning several diversified retail brands and formats</td></tr>\n</tbody></table></div>\n<p><b>Private labels</b> (store brands) are a retailer's own brands, as Marks &amp; Spencer, Benetton and The Body Shop sell. They give the retailer more control over price and quality, higher margins and stronger customer loyalty.</p>\n<p class=\"cue\">Chain, voluntary chain, cooperative, franchise, conglomerate.</p>"
+    },
+    {
+     "id": "trends-in-indian-retail",
+     "title": "Recent trends in Indian retail",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Trends in Indian retail\" tabindex=\"0\"><table>\n<thead><tr><th>Trend</th><th>What is happening</th></tr></thead>\n<tbody>\n<tr><td>Demographic change</td><td>Dual-income and nuclear families with more discretionary spending</td></tr>\n<tr><td>Convenience shopping</td><td>Malls and organised retail offering one-stop shopping</td></tr>\n<tr><td>Online retail</td><td>Rapid growth of e-commerce as internet use spreads</td></tr>\n<tr><td>Technology</td><td>Barcode scanners, CCTV, digital signage and retail automation</td></tr>\n<tr><td>Digital payments</td><td>Cards, UPI and digital wallets reducing cash use</td></tr>\n<tr><td>Expansion</td><td>Growth into Tier-II and Tier-III cities</td></tr>\n<tr><td>Kirana modernisation</td><td>Neighbourhood stores adding self-service, home delivery, credit and digital ordering</td></tr>\n<tr><td>Partnerships</td><td>Alliances and joint ventures that share investment and risk</td></tr>\n<tr><td>Government policy</td><td>FDI rules: 100 per cent in single-brand retail through the automatic route since 2018; up to 51 per cent in multi-brand retail with government approval since 2012</td></tr>\n<tr><td>Smarter consumers</td><td>Researching products online before buying</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Organised, online, digital and reaching smaller towns.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Trust at the point of sale",
+     "classic": "honest weights and measures",
+     "text": [
+      "The Arthaśāstra appoints a superintendent of weights and measures to make and stamp the standard ones, and in Book 4 fines traders who cheat buyers with false weights and measures. A retailer's business still rests on that trust at the point of sale."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.19; traders at 4.2</span>"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "slug": "international-marketing",
+   "title": "International Marketing",
+   "scope": "Why firms go abroad, how they choose and enter foreign markets, and the steps of the global marketing process.",
+   "group": "markets",
+   "blocks": [
+    {
+     "id": "going-international",
+     "title": "Going international",
+     "html": "<p><b>International marketing</b> applies marketing principles across national borders to satisfy diverse customer needs. Global leaders such as Coca-Cola, Samsung, Honda and Sony draw on advantages in R&amp;D, scale, global logistics, marketing expertise and finance. Supply chains are global too: Kotler and Keller's example is Otis Elevator, which drew door systems from France, gears from Spain, electronics from Germany and motors from Japan, with systems integration in the United States.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Opportunities and risks abroad\" tabindex=\"0\"><table>\n<thead><tr><th>Why go international</th><th>Risks</th></tr></thead>\n<tbody>\n<tr><td>Higher market growth</td><td>Different customer preferences</td></tr>\n<tr><td>Economies of scale</td><td>Cultural differences</td></tr>\n<tr><td>Spreading risk across markets</td><td>Regulatory complexity</td></tr>\n<tr><td>Competitive advantage</td><td>Political and economic instability</td></tr>\n<tr><td>Serving existing customers who have gone global</td><td>Currency fluctuations</td></tr>\n</tbody></table></div>\n<div class=\"tb\" role=\"region\" aria-label=\"The internationalisation process\" tabindex=\"0\"><table>\n<thead><tr><th>Stage</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>No regular export activity: domestic operations only</td></tr>\n<tr><td>2</td><td>Exports through independent agents</td></tr>\n<tr><td>3</td><td>Export department and sales subsidiaries abroad</td></tr>\n<tr><td>4</td><td>Production and marketing facilities abroad</td></tr>\n</tbody></table></div>\n<p>Commitment and risk rise from stage to stage. This stepwise pattern follows the Uppsala studies of Swedish firms (Jan Johanson and Finn Wiedersheim-Paul, 1975).</p>\n<p><b>The global marketing process:</b> identify and evaluate opportunities, decide the market entry strategy, develop the marketing programme, implement it, and monitor and control.</p>\n<p class=\"cue\">Domestic, agents, subsidiaries, production abroad.</p>"
+    },
+    {
+     "id": "selecting-foreign-markets",
+     "title": "Selecting foreign markets",
+     "html": "<p>Firms weigh <b>product suitability</b>, <b>geographic proximity</b>, <b>economic potential</b> and <b>political stability</b>. Many prefer <b>psychic proximity</b>: countries with a similar language, culture and legal system, as US firms have often entered Canada, the UK and Australia first.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Waterfall and sprinkler approaches\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Waterfall</th><th>Sprinkler</th></tr></thead>\n<tbody>\n<tr><td>Entry</td><td>Country by country, in sequence</td><td>Many countries at once</td></tr>\n<tr><td>Risk and investment</td><td>Lower; learning from each market</td><td>Higher investment</td></tr>\n<tr><td>Advantage</td><td>Controlled expansion and learning</td><td>First-mover advantage before rivals copy</td></tr>\n<tr><td>Examples</td><td>BMW, General Electric</td><td>Microsoft's simultaneous worldwide launch of Windows</td></tr>\n</tbody></table></div>\n<p><b>Emerging markets</b>, notably the BRICS (Brazil, Russia, India, China, South Africa), offer untapped demand, high growth and an expanding middle class. Winning there calls for affordable prices, adapted products and local marketing, as with Unilever's small, affordable sachets and Colgate-Palmolive's video vans touring rural India.</p>\n<p class=\"cue\">Similar markets first, or many at once.</p>"
+    },
+    {
+     "id": "modes-of-entry",
+     "title": "Modes of entry",
+     "html": "<p>Kotler and Keller arrange entry modes in order of increasing commitment, risk, control and profit potential.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Modes of international market entry\" tabindex=\"0\"><table>\n<thead><tr><th>Mode</th><th>How it works</th><th>Investment</th><th>Risk</th><th>Control</th></tr></thead>\n<tbody>\n<tr><td>Indirect exporting</td><td>Selling through independent intermediaries at home</td><td>Low</td><td>Low</td><td>Low</td></tr>\n<tr><td>Direct exporting</td><td>The company handles its own exports, through its own export department, branches or agents</td><td>Medium</td><td>Medium</td><td>Higher</td></tr>\n<tr><td>Licensing</td><td>A foreign firm gets the right to use a process, trademark or patent for a royalty; also management contracts, contract manufacturing and franchising (as Marriott, Hyatt and McDonald's use)</td><td>Low</td><td>Low</td><td>Low; the licensee may become a competitor</td></tr>\n<tr><td>Joint venture</td><td>Partnership with local firms sharing ownership, risk and profit</td><td>Medium</td><td>Shared</td><td>Shared</td></tr>\n<tr><td>Direct investment (FDI)</td><td>Building or buying production facilities abroad</td><td>Very high</td><td>High</td><td>Full</td></tr>\n</tbody></table></div>\n<p>Joint ventures bring local expertise, shared resources and easier government approval, and have been common in China and India. FDI gives full control, lower production cost in some markets, a strong local image and better market access.</p>\n<p class=\"cue\">Export, license, joint venture, invest: more commitment, more control.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Trading abroad",
+     "classic": "trade in foreign territory",
+     "text": [
+      "The Arthaśāstra's director of trade, for trade in a foreign land, is to compare the price and value of the goods to be exchanged, and to reckon the duties, road cess, escort charges, ferry dues and other costs before judging the profit; he should also seek the friendship of officials along the way. That is a foreign-market assessment of cost, price and access before entry."
+     ],
+     "quote": "<span class=\"ref\">Arthaśāstra 2.16</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Choosing where to enter",
+     "classic": "first see the place",
+     "text": [
+      "Market selection comes before entry. The Kuṟaḷ says to begin no undertaking and to despise no enemy until one has seen the place from which to act. It is military advice about ground, not about countries as markets."
+     ],
+     "quote": "“Begin no undertaking and scorn no foe until you have found the place to act from.” <span lang=\"ta\" class=\"ta\">தொடங்கற்க எவ்வினையும் எள்ளற்க முற்றும் இடங்கண்ட பின்அல் லது.</span> <span class=\"ref\">Tirukkuṟaḷ 491</span>"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "slug": "emerging-trends-in-marketing",
+   "title": "Emerging Trends in Marketing",
+   "scope": "Social and green marketing, online and direct marketing, rural marketing, and unconventional tactics such as guerrilla and roadblock marketing.",
+   "group": "markets",
+   "blocks": [
+    {
+     "id": "social-and-green-marketing",
+     "title": "Social marketing and green marketing",
+     "html": "<p><b>Social marketing</b> applies commercial marketing techniques to influence behaviour that benefits individuals and society. Philip Kotler and Gerald Zaltman introduced the idea in 1971. Its key components are a target audience, a desired behaviour change, <b>exchange theory</b> (the change must offer benefits that outweigh its perceived costs) and a marketing mix. India's pulse polio and Swachh Bharat campaigns are examples.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Social marketing at a glance\" tabindex=\"0\"><table>\n<tbody>\n<tr><td>Objectives</td><td>Behaviour change, community development, public participation, social welfare</td></tr>\n<tr><td>Strategies</td><td>Media and social media campaigns, community engagement, partnerships with NGOs and government</td></tr>\n<tr><td>Challenges</td><td>Cultural sensitivity; measuring long-term impact</td></tr>\n</tbody></table></div>\n<p><b>Green marketing</b> markets environmentally sustainable products and practices: eco-friendly products, sustainable processes, eco-labelling and green advertising. Its aims are to promote eco-friendly consumption and build a responsible brand image; its tools include transparency, CSR initiatives and attention to the whole product life cycle. Its main risk is <b>greenwashing</b>: false or exaggerated environmental claims, which breed consumer scepticism. Green products may also cost more to make.</p>\n<p class=\"cue\">Sell behaviour change for society; sell sustainability honestly.</p>"
+    },
+    {
+     "id": "online-and-direct-marketing",
+     "title": "Online and direct marketing",
+     "html": "<p><b>Online (digital) marketing</b> uses digital platforms for targeted, measurable and scalable customer engagement, aiming at brand awareness, website traffic, conversion and engagement.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Components of online marketing\" tabindex=\"0\"><table>\n<thead><tr><th>Component</th><th>Purpose</th></tr></thead>\n<tbody>\n<tr><td>Search engine optimisation (SEO)</td><td>Improve search rankings</td></tr>\n<tr><td>Content marketing</td><td>Blogs, videos and e-books that attract and inform</td></tr>\n<tr><td>Social media marketing</td><td>Customer engagement</td></tr>\n<tr><td>Email marketing</td><td>Personalised communication</td></tr>\n<tr><td>Pay-per-click (PPC) advertising</td><td>Paid clicks and traffic</td></tr>\n</tbody></table></div>\n<p>Strategies include <b>inbound</b> marketing (drawing customers with useful content), <b>affiliate</b> marketing and <b>influencer</b> marketing. In <b>performance marketing</b> advertisers pay only when a measurable action, such as a click, lead or sale, occurs. Challenges include data privacy (in India, the Digital Personal Data Protection Act, 2023), ad blockers and changing algorithms.</p>\n<p><b>Direct marketing</b> is one-to-one communication designed to get an immediate, measurable response: direct mail, telemarketing, email, catalogues and direct-response advertising. It relies on personalisation, a strong call to action, and tracking response and return on investment; its challenges are intrusiveness, managing the customer database and complying with regulations.</p>\n<p class=\"cue\">Targeted, measurable and paid for by results.</p>"
+    },
+    {
+     "id": "rural-marketing",
+     "title": "Rural marketing",
+     "html": "<p><b>Rural marketing</b> designs strategies for rural consumers: penetrating rural markets, meeting local needs and helping raise living standards. It needs efficient distribution, affordable prices (small packs and sachets), products adapted to rural conditions, and promotion in local languages.</p>\n<p>Indian practitioners often frame rural marketing in four As: <b>availability</b>, <b>affordability</b>, <b>acceptability</b> and <b>awareness</b>. Strategies use local opinion leaders, weekly markets (<i>haats</i>), agriculture-linked marketing, folk media and street campaigns. Challenges are logistics, poor infrastructure and cultural and linguistic diversity.</p>\n<p class=\"cue\">Available, affordable, acceptable, known.</p>"
+    },
+    {
+     "id": "guerrilla-and-roadblock-marketing",
+     "title": "Guerrilla and roadblock marketing",
+     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Guerrilla and roadblock marketing\" tabindex=\"0\"><table>\n<thead><tr><th>Aspect</th><th>Guerrilla marketing</th><th>Roadblock marketing</th></tr></thead>\n<tbody>\n<tr><td>Idea</td><td>Creative, unconventional, low-cost tactics that surprise people and create buzz (Jay Conrad Levinson, <i>Guerrilla Marketing</i>, 1984)</td><td>Advertising on many channels at the same time, so the audience meets the message wherever it turns</td></tr>\n<tr><td>Objectives</td><td>Attention, viral publicity, brand recall</td><td>Maximum reach, high recall, strong visibility</td></tr>\n<tr><td>Tactics</td><td>Street marketing, viral campaigns, experiential marketing</td><td>Prime-time TV roadblocks, digital and radio roadblocks, coordinated media buying</td></tr>\n<tr><td>Challenges</td><td>Legal permissions, ethical concerns, hard-to-measure returns</td><td>High cost, keeping the message consistent, ad fatigue</td></tr>\n</tbody></table></div>\n<p class=\"cue\">Guerrilla surprises cheaply; roadblock saturates expensively.</p>"
+    }
+   ],
+   "lensNote": null,
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Green marketing",
+     "classic": "what is taken, may it grow back",
+     "text": [
+      "Green marketing asks that consumption leave the earth able to renew itself. The Atharvaveda's hymn to the Earth prays that what is dug from her may quickly grow again, and that her vitals and heart not be wounded. It is a prayer, not a policy, but it states the idea of renewal plainly."
+     ],
+     "quote": "<i>yat te bhūme vikhanāmi kṣipraṃ tad api rohatu.</i> “What I dig from you, O Earth, may that quickly grow again.” <span class=\"ref\">Atharvaveda 12.1.35</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Greenwashing",
+     "classic": "water in an unbaked pot",
+     "text": [
+      "Greenwashing wins sales with false claims. The Kuṟaḷ says that wealth gained by deceit and kept is like water poured into an unbaked clay pot: it will not hold. It speaks of deceit in general, not of environmental claims."
+     ],
+     "quote": "“Guarding wealth gained by deceit is like keeping water in a pot of unbaked clay.” <span lang=\"ta\" class=\"ta\">சலத்தால் பொருள்செய்தே மார்த்தல் பசுமண் கலத்துள்நீர் பெய்திரீஇ யற்று.</span> <span class=\"ref\">Tirukkuṟaḷ 660</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Rural markets",
+     "classic": "the world follows the plough",
+     "text": [
+      "Rural marketing starts from the size and importance of the farm economy. The Kuṟaḷ says that however the world turns, it follows the plough, and so farming, though hard, is foremost. It praises agriculture; it does not speak of markets."
+     ],
+     "quote": "“However it wanders, the world follows the plough; so farming, though toilsome, is foremost.” <span lang=\"ta\" class=\"ta\">சுழன்றும்ஏர்ப் பின்னது உலகம் அதனால் உழந்தும் உழவே தலை.</span> <span class=\"ref\">Tirukkuṟaḷ 1031</span>"
+    }
+   ]
+  }
+ ]
+}
