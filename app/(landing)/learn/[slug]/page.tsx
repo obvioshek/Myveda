@@ -80,25 +80,50 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
 
       <header className="wrap ch-head">
-        <nav className="ch-crumbs" aria-label="Breadcrumb">
-          <Link href={LEARN_PATH}>Chapters</Link>
-          <span aria-hidden="true">/</span>
-          <span>{many ? `Unit ${unit.n} · ` : ""}Chapter {c.n} of {c.total}</span>
-        </nav>
-        <div className="ch-title">
-          <span className="ch-numeral" lang="sa" aria-hidden="true">{deva(c.n)}</span>
-          <h1>{c.title}</h1>
+        <div className="ch-intro">
+          <nav className="ch-crumbs" aria-label="Breadcrumb">
+            <Link href={LEARN_PATH}>Chapters</Link>
+            <span aria-hidden="true">/</span>
+            <span>{many && <>Unit {unit.n}<span className="ch-crumb-unit"> · {unit.short}</span> · </>}Chapter {c.n} of {c.total}</span>
+          </nav>
+          <div className="ch-title">
+            <span className="ch-numeral" lang="sa" aria-hidden="true">{deva(c.n)}</span>
+            <h1>{c.title}</h1>
+          </div>
+          <p className="ch-scope">{c.scope}</p>
+          <div className="ch-actions">
+            <a className="btn btn-primary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
+            {lessons && <LessonsToggle />}
+          </div>
         </div>
-        <p className="ch-scope">{c.scope}</p>
-        <div className="ch-facts">
-          <span className="ch-fact"><Meter documented={ev.documented} view={ev.view} />{ev.total} passages: {ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}</span>
-          <span className="ch-fact">About {c.minutes} min</span>
-          {lessons && <span className="ch-fact"><Progress ids={conceptIds(c)} /></span>}
-        </div>
-        <div className="ch-actions">
-          <a className="btn btn-primary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
-          {lessons && <LessonsToggle />}
-        </div>
+
+        {/* The chapter at a glance: what it holds, how far the reader has got, what
+            the passage labels mean, and where it leads. */}
+        <aside className="ch-glance" aria-label="This chapter at a glance">
+          <span className="label red">At a glance</span>
+          <dl className="ch-stats">
+            <div><dt>Concepts</dt><dd>{c.blocks.length}</dd></div>
+            <div><dt>Minutes</dt><dd>{c.minutes}</dd></div>
+            <div><dt>Passages</dt><dd>{ev.total}</dd></div>
+          </dl>
+          {ev.total > 0 && (
+            <details className="ch-legend">
+              <summary>
+                <span className="ch-ev"><Meter documented={ev.documented} view={ev.view} />{ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}</span>
+                <span className="ch-legend-q">What do these mean?</span>
+              </summary>
+              <p><Tag kind="documented" /> {HOW.documented}</p>
+              <p><Tag kind="view" /> {HOW.view}</p>
+            </details>
+          )}
+          {lessons && <div className="ch-prog"><span className="ch-glance-k">Progress</span><Progress ids={conceptIds(c)} /></div>}
+          {next && (
+            <Link href={chapterPath(next.slug)} className="ch-upnext" prefetch={false}>
+              <span className="ch-glance-k">Up next · Chapter {next.n}</span>
+              <b>{next.title}</b>
+            </Link>
+          )}
+        </aside>
       </header>
 
       <div className="wrap ch-grid">
@@ -107,12 +132,6 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
         <div className="ch-main">
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
             <div className="ch-part-head"><span className="label red">Part one</span><h2 id="concepts-h">The concepts</h2></div>
-            {lessons && (
-              <div className="ch-key">
-                <p><Tag kind="documented" /> {HOW.documented}</p>
-                <p><Tag kind="view" /> {HOW.view}</p>
-              </div>
-            )}
             {c.blocks.map(b => {
               const li = lessons?.findIndex(l => l.blockId === b.id) ?? -1;
               if (lessons && li >= 0) {
