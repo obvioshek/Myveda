@@ -32,6 +32,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "brand-equity-models",
+    name: "Brand equity models",
+    intro: "BAV, BrandZ, Keller's resonance model and Aaker's model.",
+    before: {
+      q: "Does a well-known brand always have strong brand equity?",
+      choices: [
+        { label: "Yes", reveal: "Not necessarily. In the BrandAsset Valuator, declining brands show high knowledge but lower esteem, relevance and differentiation." },
+        { label: "No", reveal: "Right. A declining brand can be widely known yet weak in esteem, relevance and differentiation." },
+      ],
+    },
+    lead: "Equity models describe what a strong brand is made of and the steps by which it is built.",
+    check: [
+      ask("In the BrandAsset Valuator, energised differentiation and relevance together give…", "Brand strength", ["Brand stature", "Brand resonance", "Brand salience"], "Esteem and knowledge together give brand stature."),
+      ask("The top level of the BrandZ brand dynamics pyramid is…", "Bonding", ["Presence", "Performance", "Advantage"], "Bonded consumers spend more on the brand."),
+      ask("In Keller's resonance model, the base building block is…", "Salience", ["Resonance", "Feelings", "Imagery"], "Resonance is at the top."),
+      ask("Which is NOT one of Aaker's five components of brand equity?", "Brand stature", ["Brand loyalty", "Perceived quality", "Brand associations"], "Stature belongs to the BrandAsset Valuator."),
+    ],
+    lens: [],
+    reflect: "Choose a brand you are loyal to. Which level of the BrandZ pyramid are you at, and what moved you there?",
+    summary: {
+      points: [
+        "BAV: differentiation, relevance, esteem, knowledge; strength and stature form the power grid.",
+        "BrandZ: presence, relevance, performance, advantage, bonding.",
+        "Keller: identity, meaning, response, relationships, on six blocks from salience to resonance; Aaker: five assets.",
+      ],
+      memory: "BAV's four pillars, BrandZ's pyramid, Keller's resonance, Aaker's five assets.",
+    },
+  },
+  {
     blockId: "brand-strategy-decisions",
     name: "Major brand strategy decisions",
     intro: "Position, name, sponsor and develop the brand.",
@@ -57,6 +86,34 @@ const lessons: Lesson[] = [
         "Sponsorship: manufacturer's, private, licensed or co-branding; development: line extensions, brand extensions, multibrands, new brands.",
       ],
       memory: "Position, name, sponsor, develop.",
+    },
+  },
+  {
+    blockId: "brand-portfolios",
+    name: "Brand portfolios",
+    intro: "Why firms keep several brands, and the roles they play.",
+    before: {
+      q: "Why would a firm keep a brand whose sales are falling?",
+      choices: [
+        { label: "It wouldn't", reveal: "It might. A cash-cow brand can stay profitable with almost no marketing support, so the firm milks its remaining equity." },
+        { label: "To milk it", reveal: "Right. A cash-cow brand stays profitable with almost no marketing support." },
+      ],
+    },
+    lead: "A brand portfolio uses several brands in a category, each with a role.",
+    check: [
+      ask("A brand positioned against competitors so the flagship can keep its position is a…", "Flanker brand", ["Cash cow", "Prestige brand", "Licensed brand"], "Flankers are also called fighter brands."),
+      ask("A low-priced brand that draws customers in to be traded up later is a…", "Low-end entry brand", ["High-end prestige brand", "Flanker brand", "Private label"], "Retailers like these traffic builders."),
+      ask("Which is a reason to have several brands in one category?", "To keep variety-seeking consumers who would otherwise switch", ["To reduce shelf space", "To avoid all internal competition", "To raise advertising costs"], "Others: more shelf space, internal competition, economies of scale."),
+    ],
+    lens: [],
+    reflect: "Pick a carmaker or a consumer-goods firm. Which of its brands is a flanker, which a prestige brand, and which an entry brand?",
+    summary: {
+      points: [
+        "A brand portfolio is all the brands and lines a firm offers in a category or segment.",
+        "Reasons: shelf presence, variety-seekers, internal competition, economies of scale.",
+        "Roles: flankers, cash cows, low-end entry brands, high-end prestige brands.",
+      ],
+      memory: "Flankers, cash cows, entry brands, prestige brands.",
     },
   },
   {

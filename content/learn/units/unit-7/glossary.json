@@ -70,6 +70,27 @@
   "chapter": 4
  },
  {
+  "id": "brand-portfolio",
+  "letter": "B",
+  "term": "Brand Portfolio",
+  "def": "All the brands and brand lines a firm offers in a category or segment, each with a role such as flanker or prestige brand.",
+  "chapter": 4
+ },
+ {
+  "id": "brand-resonance-model",
+  "letter": "B",
+  "term": "Brand Resonance Model",
+  "def": "Keller's pyramid of brand building: salience, performance and imagery, judgements and feelings, and resonance.",
+  "chapter": 4
+ },
+ {
+  "id": "brandasset-valuator",
+  "letter": "B",
+  "term": "BrandAsset Valuator",
+  "def": "Young and Rubicam's brand equity model with four pillars: energised differentiation, relevance, esteem and knowledge.",
+  "chapter": 4
+ },
+ {
   "id": "buyclass-framework",
   "letter": "B",
   "term": "Buyclass Framework",
@@ -292,6 +313,13 @@
   "term": "Holistic Marketing",
   "def": "Kotler and Keller's view of marketing as one connected system: relationship, integrated, internal and performance marketing.",
   "chapter": 1
+ },
+ {
+  "id": "horizontal-marketing-system",
+  "letter": "H",
+  "term": "Horizontal Marketing System",
+  "def": "Cooperation between unrelated firms at the same level of a channel to exploit an opportunity.",
+  "chapter": 6
  },
  {
   "id": "idic-model",
@@ -525,6 +553,13 @@
   "chapter": 10
  },
  {
+  "id": "personal-selling",
+  "letter": "P",
+  "term": "Personal Selling",
+  "def": "Face-to-face presentation by a salesperson to make sales and build relationships.",
+  "chapter": 7
+ },
+ {
   "id": "points-of-difference-pods",
   "letter": "P",
   "term": "Points of Difference (PODs)",
@@ -557,6 +592,20 @@
   "letter": "P",
   "term": "Product Life Cycle",
   "def": "The stages a product's sales and profits pass through: introduction, growth, maturity and decline.",
+  "chapter": 3
+ },
+ {
+  "id": "product-line",
+  "letter": "P",
+  "term": "Product Line",
+  "def": "A group of closely related products made or sold by the same firm.",
+  "chapter": 3
+ },
+ {
+  "id": "product-mix",
+  "letter": "P",
+  "term": "Product Mix",
+  "def": "All the product lines and items a firm offers, measured by width, length, depth and consistency.",
   "chapter": 3
  },
  {
@@ -595,6 +644,13 @@
   "chapter": 7
  },
  {
+  "id": "reach-and-frequency",
+  "letter": "R",
+  "term": "Reach and Frequency",
+  "def": "In media planning, how many people see an ad at least once, and how often the average person sees it.",
+  "chapter": 7
+ },
+ {
   "id": "relationship-marketing",
   "letter": "R",
   "term": "Relationship Marketing",
@@ -628,6 +684,13 @@
   "term": "Rural Marketing",
   "def": "Marketing designed for rural consumers, often framed by availability, affordability, acceptability and awareness.",
   "chapter": 13
+ },
+ {
+  "id": "sales-promotion",
+  "letter": "S",
+  "term": "Sales Promotion",
+  "def": "Short-term incentives to encourage trial or purchase, aimed at consumers, the trade or the sales force.",
+  "chapter": 7
  },
  {
   "id": "selective-distribution",
@@ -761,6 +824,13 @@
   "term": "Variety-Seeking Buying",
   "def": "Low-involvement buying where buyers switch among clearly different brands for variety.",
   "chapter": 8
+ },
+ {
+  "id": "vertical-marketing-system",
+  "letter": "V",
+  "term": "Vertical Marketing System",
+  "def": "A channel in which producer, wholesaler and retailer act as one unified system: corporate, contractual or administered.",
+  "chapter": 6
  },
  {
   "id": "voluntary-chain",

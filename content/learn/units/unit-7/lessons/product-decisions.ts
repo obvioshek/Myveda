@@ -30,6 +30,34 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "product-mix-and-product-lines",
+    name: "Product mix and product lines",
+    intro: "Items, lines and the four dimensions of the mix.",
+    before: {
+      q: "Is a toothpaste sold in three sizes one product or three?",
+      choices: [
+        { label: "One product", reveal: "It is one product with several variants. The number of variants in a line is the depth of the mix." },
+        { label: "Three items", reveal: "Right. Each size is a separate item; the number of variants is the depth of the mix." },
+      ],
+    },
+    lead: "The product mix is all the lines and items a firm sells, measured by width, length, depth and consistency.",
+    check: [
+      ask("A group of closely related products sold by the same firm is a…", "Product line", ["Product mix", "Product item", "Product class"], "The product mix is the complete set of lines and items."),
+      ask("The total number of items across all product lines is the mix's…", "Length", ["Width", "Depth", "Consistency"], "Width counts lines; depth counts variants."),
+      ask("A toothpaste in three formulations and three sizes has a depth of…", "9", ["3", "6", "1"], "Three formulations times three sizes."),
+    ],
+    lens: [],
+    reflect: "Pick a company whose products you buy. How wide is its product mix, and which line is deepest?",
+    summary: {
+      points: [
+        "Product item, product line and product mix (assortment).",
+        "Width: number of lines. Length: total items. Depth: variants per product. Consistency: how related the lines are.",
+        "Each dimension is a way to grow the mix.",
+      ],
+      memory: "Width: lines. Length: items. Depth: variants. Consistency: relatedness.",
+    },
+  },
+  {
     blockId: "new-product-development",
     name: "New product development and adoption",
     intro: "Eight steps from idea to launch, and who adopts first.",

@@ -25,10 +25,38 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Five tools: advertising, sales promotion, personal selling, public relations, direct and digital marketing.",
-        "Kotler and Keller add events and experiences, online and social, mobile, and word of mouth; IMC coordinates them.",
+        "Kotler and Keller list eight modes, adding events and experiences, interactive and word-of-mouth marketing; IMC keeps every brand contact consistent.",
         "Push works through channel members; pull works through final consumers.",
       ],
       memory: "Advertising, sales promotion, personal selling, PR, direct marketing.",
+    },
+  },
+  {
+    blockId: "developing-effective-communications",
+    name: "Developing effective communications",
+    intro: "From target audience to measuring results.",
+    before: {
+      q: "Is getting consumers to recognise a brand harder than getting them to recall it unprompted?",
+      choices: [
+        { label: "Harder", reveal: "It is the other way round. Recognition is easier to achieve than recall." },
+        { label: "Easier", reveal: "Right. Recognition is easier to achieve than recall." },
+      ],
+    },
+    lead: "Effective communication moves from audience and objectives to message, channels, budget, mix and results.",
+    check: [
+      ask("A new-to-the-world product must first establish…", "Category need", ["Brand purchase intention", "Brand attitude", "Brand loyalty"], "Buyers must first see a need for the category."),
+      ask("An ad that shows what kind of person uses a brand uses…", "A transformational appeal", ["An informational appeal", "A demonstration", "A comparison"], "Informational appeals elaborate on attributes and benefits."),
+      ask("Neighbours, friends and family talking to buyers form…", "Social channels", ["Advocate channels", "Expert channels", "Media channels"], "Advocate channels are company salespeople; expert channels are independent experts."),
+    ],
+    lens: [],
+    reflect: "Recall an advertisement that persuaded you. Was its appeal informational or transformational, and who was the source?",
+    summary: {
+      points: [
+        "Steps: audience, objectives, design, channels, budget, mix, results.",
+        "Objectives: category need, brand awareness, brand attitude, brand purchase intention.",
+        "Design: message, creative (informational or transformational) and source; channels are personal or non-personal.",
+      ],
+      memory: "Audience, objectives, design, channels, budget, mix, results.",
     },
   },
   {
@@ -59,6 +87,62 @@ const lessons: Lesson[] = [
         "Objective and task costs the tasks needed to reach objectives.",
       ],
       memory: "Objective and task is the most logical method.",
+    },
+  },
+  {
+    blockId: "advertising",
+    name: "Advertising",
+    intro: "Its qualities, the 5 Ms, objectives and media.",
+    before: {
+      q: "Is advertising only an expense?",
+      choices: [
+        { label: "Only an expense", reveal: "It is treated as a current expense, but part of it is really an investment in brand equity and loyalty." },
+        { label: "Partly an investment", reveal: "Right. Part of advertising builds brand equity and customer loyalty." },
+      ],
+    },
+    lead: "Advertising decisions follow the 5 Ms: mission, money, message, media and measurement.",
+    check: [
+      ask("Advertising that aims to convince current buyers they made the right choice is…", "Reinforcement advertising", ["Reminder advertising", "Informative advertising", "Persuasive advertising"], "Reminder advertising stimulates repeat purchase."),
+      ask("The number of people exposed to an ad at least once is its…", "Reach", ["Frequency", "Impact", "Clutter"], "Frequency is how often the average person is exposed."),
+      ask("Which is NOT one of the 5 Ms of advertising?", "Market", ["Mission", "Media", "Measurement"], "The fifth M is money."),
+    ],
+    lens: [],
+    reflect: "Pick a current advertisement. Is its objective to inform, persuade, remind or reinforce, and how would you measure whether it worked?",
+    summary: {
+      points: [
+        "Paid, non-personal, by an identified sponsor; pervasive, expressive, impersonal and controlled.",
+        "5 Ms: mission, money, message, media, measurement.",
+        "Objectives: inform, persuade, remind, reinforce; media weigh reach, frequency and impact.",
+      ],
+      memory: "Mission, money, message, media, measurement.",
+    },
+  },
+  {
+    blockId: "sales-promotion-and-personal-selling",
+    name: "Sales promotion and personal selling",
+    intro: "Short-term incentives, and selling face to face.",
+    before: {
+      q: "Is ‘buy two, get one free’ a coupon?",
+      choices: [
+        { label: "A coupon", reveal: "It is a price pack, a reduced-price pack. A coupon is a certificate giving a stated saving." },
+        { label: "A price pack", reveal: "Right. It is a reduced-price pack; a banded pack bundles related products." },
+      ],
+    },
+    lead: "Sales promotion gives a reason to buy now; personal selling persuades buyers one at a time.",
+    check: [
+      ask("A contest differs from a sweepstakes because a contest…", "Has entries judged by a panel", ["Is a draw of names", "Gives cash back on proof of purchase", "Is a trade promotion"], "A sweepstakes is a draw."),
+      ask("A payment to retailers for setting up a special display is a…", "Display allowance", ["Price-off", "Free goods offer", "Rebate"], "It is a trade promotion tool."),
+      ask("A main disadvantage of personal selling is that it…", "Reaches relatively few people at high cost", ["Gives no feedback", "Builds no trust", "Cannot be adapted to the buyer"], "Its strengths are feedback, trust and persuasion."),
+    ],
+    lens: [],
+    reflect: "Which sales promotion last made you buy something sooner than you planned? Which of the three benefits did it use?",
+    summary: {
+      points: [
+        "Sales promotion: consumer, trade and sales-force promotions; benefits are attention, incentive and invitation.",
+        "Consumer tools include samples, coupons, rebates, price packs, premiums, prizes; trade tools include price-offs, allowances and free goods.",
+        "Personal selling: two-way, trusted and persuasive, but costly, labour-intensive and limited in reach.",
+      ],
+      memory: "Sales promotion buys action now; personal selling builds conviction.",
     },
   },
 ];

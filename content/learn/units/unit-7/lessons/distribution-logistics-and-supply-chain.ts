@@ -16,7 +16,7 @@ const lessons: Lesson[] = [
     check: [
       ask("Producer → wholesaler → retailer → consumer is a…", "Two-level channel", ["One-level channel", "Zero-level channel", "Three-level channel"], "Each intermediary between producer and consumer adds a level."),
       ask("Appliances and furniture usually get which distribution intensity?", "Selective", ["Intensive", "Exclusive", "Zero-level"], "More than one but fewer than all willing dealers."),
-      ask("A franchise is an example of which vertical marketing system?", "Contractual", ["Corporate", "Administered", "Hybrid"], "Contractual systems include franchises, voluntary chains and retailer cooperatives."),
+      ask("Brokers and sales agents who negotiate for the producer but never take title are…", "Agents", ["Merchants", "Facilitators", "Retailers"], "Merchants take title; facilitators neither take title nor negotiate."),
     ],
     lens: [],
     reflect: "Pick a product you bought recently. How many levels did its channel have, and how intensive is its distribution?",
@@ -24,9 +24,37 @@ const lessons: Lesson[] = [
       points: [
         "Intermediaries perform information, promotion, negotiation, ordering, financing, risk-taking, physical distribution and payment.",
         "Channels are direct, indirect or hybrid, from zero-level to three-level.",
-        "Intensity: intensive, selective or exclusive; vertical marketing systems are corporate, contractual or administered.",
+        "Intermediaries are merchants, agents or facilitators; intensity is intensive, selective or exclusive.",
       ],
       memory: "Direct or through intermediaries; intensive, selective or exclusive.",
+    },
+  },
+  {
+    blockId: "channel-systems",
+    name: "Channel systems and push and pull",
+    intro: "Vertical, horizontal and multichannel systems, and how producers manage intermediaries.",
+    before: {
+      q: "Is a horizontal marketing system a merger between two firms?",
+      choices: [
+        { label: "Yes", reveal: "No. It is cooperation between unrelated firms at the same level of the channel, often through a joint venture or alliance; the firms usually stay separate." },
+        { label: "No", reveal: "Right. Firms at the same level cooperate, often through a joint venture or alliance, and usually stay separate." },
+      ],
+    },
+    lead: "Channels can be unified vertically, joined horizontally, or run in parallel, and producers can push through the trade or pull through consumers.",
+    check: [
+      ask("A channel unified because one member owns the others is a…", "Corporate VMS", ["Contractual VMS", "Administered VMS", "Horizontal marketing system"], "A contractual VMS joins independent firms by contract; an administered one relies on a powerful member."),
+      ask("Soft-drink bottlers licensed to bottle and distribute are an example of…", "A manufacturer-sponsored wholesaler franchise", ["A service-firm-sponsored retailer franchise", "A retailer cooperative", "A corporate VMS"], "There are three kinds of franchise."),
+      ask("A pull strategy suits markets where…", "Brand loyalty is high and the brand is chosen before the store visit", ["The product is an impulse item", "Brand loyalty is low", "The brand is chosen in the store"], "Push suits low loyalty and in-store choice."),
+    ],
+    lens: [],
+    reflect: "Think of a product you buy. Does its maker mainly push it through shops or pull you towards it? What tells you?",
+    summary: {
+      points: [
+        "VMS: corporate, contractual (voluntary chains, retailer cooperatives, franchises) and administered.",
+        "Horizontal systems join firms at the same level; multichannel marketing uses several channels at once.",
+        "Push through the trade, or pull through consumers; reverse-flow and service channels matter too.",
+      ],
+      memory: "Conventional, vertical, horizontal, multichannel; push or pull.",
     },
   },
   {
