@@ -2,14 +2,16 @@ import Link from "next/link";
 import Header from "@/components/landing/Header";
 import BrandMark from "@/components/landing/Brand";
 import ContinueBand from "@/components/landing/ContinueBand";
-import HeroPair from "@/components/landing/HeroPair";
+import HeroTry from "@/components/landing/HeroTry";
+import QuestionCards from "@/components/landing/QuestionCards";
+import UnitTabs from "@/components/landing/UnitTabs";
+import LabelGame from "@/components/landing/LabelGame";
 import Toast from "@/components/landing/Toast";
 import ChaptersMenu from "@/components/learn/ChaptersMenu";
-import { Tag } from "@/components/learn/Evidence";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import { COMMUNITY_HREF, COMMUNITY_POINTS, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, deva, passageHref } from "@/content/learn";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -20,16 +22,31 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
 
 const Rule = () => <div className="wrap"><div className="rule" /></div>;
 
+// Real passages for the "Documented, or a view?" game: chapter slug and passage
+// index. Pick a mix of both kinds, from different texts.
+const GAME = [
+  { slug: "strategy-implementation-and-evaluation", pairing: 0 },
+  { slug: "strategic-decisions-and-levels-of-strategy", pairing: 0 },
+  { slug: "growth-strategies", pairing: 0 },
+];
+
 const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 const count = (n: number) => WORDS[n] ?? String(n);
-// "A, B and C"
-const listed = (xs: string[]) => xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
 
 export default function LandingPage() {
   const base = siteUrl();
   const concepts = CHAPTERS.reduce((a, c) => a + c.blocks.length, 0);
   const passages = CHAPTERS.reduce((a, c) => a + c.pairings.length, 0);
   const first = CHAPTERS[0];
+  const cards = QUESTIONS.map(({ chapter, pairing, ...q }) => ({ ...q, href: passageHref(chapter, pairing) }));
+  const tabs = UNITS.map(u => ({
+    id: u.id, n: u.n, title: u.title, blurb: u.blurb,
+    chapters: u.chapters.map(c => ({ slug: c.slug, href: chapterPath(c.slug), n: deva(c.n), title: c.title, minutes: c.minutes, ids: conceptIds(c) })),
+  }));
+  const game = GAME.flatMap(({ slug, pairing }) => {
+    const p = chapterBySlug(slug)?.pairings[pairing];
+    return p ? [{ id: `${slug}-${pairing}`, modern: p.modern, classic: p.classic ?? "", kind: p.kind, quote: p.quote ?? "", why: p.text[0], href: passageHref(slug, pairing) }] : [];
+  });
   // What search engines read about the site itself: who publishes it, what it is
   // called (including the domain and the older "My Veda Verse" name people may
   // search for), and what this page is.
@@ -67,7 +84,7 @@ export default function LandingPage() {
           <span className="eyebrow"><i className="sq" aria-hidden="true" />Management, read alongside India&apos;s classical thought</span>
           <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Whom do you trust with the work? When is a reward fair? Why do people follow one leader and not another? A course answers with theories from the last hundred years. Here you learn those theories plainly, then read them beside the Arthaśāstra, the Gītā and the Tirukkuṟaḷ, which asked the same questions long before, and see where the two agree and where they part.</p>
+            <p className="lede">Each management idea, plainly. Then the Arthaśāstra, the Gītā or the Tirukkuṟaḷ on the same question, and where the two part ways.</p>
             <div className="hero-actions">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
@@ -80,26 +97,14 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <HeroPair href={passageHref("principles-of-management", 5)} />
+          <HeroTry href={passageHref("principles-of-management", 5)} />
         </section>
 
         <Rule />
         <section className="wrap sec" id="questions" aria-labelledby="q-h">
           <Eyebrow num="१">Questions worth a second look</Eyebrow>
           <h2 id="q-h" style={{ maxWidth: "22ch" }}>Some questions are older than management. <span className="red">Their answers still argue with ours.</span></h2>
-          <div className="grid g3">
-            {QUESTIONS.map(c => (
-              <article key={c.n} className="cell qcell">
-                <b className="n">{c.n}</b>
-                <p className="qfact">{c.fact}</p>
-                <p className="qq">{c.question}</p>
-                <Link href={passageHref(c.chapter, c.pairing)} prefetch={false} className="qlink">
-                  <span className="qlink-t"><b>{c.concept}</b><span>{c.ref}</span></span>
-                  <span className="qgo"><Arrow /></span>
-                </Link>
-              </article>
-            ))}
-          </div>
+          <QuestionCards cards={cards} />
         </section>
 
         <Rule />
@@ -110,7 +115,6 @@ export default function LandingPage() {
               <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each idea, then its ancient lens.</span></h2>
             </div>
             <div className="chap-cta">
-              <p className="sub">{count(UNITS.length).replace(/^./, ch => ch.toUpperCase())} {UNITS.length === 1 ? "unit" : "units"} so far: {listed(UNITS.map(u => u.short))}. Every concept opens into a question to try first, the idea itself, a quick check, its ancient lens and a one-page summary. Start with any chapter; your progress stays on your device.</p>
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
                 <Link href={GLOSSARY_PATH} className="btn btn-secondary btn-lg">Browse the glossary</Link>
@@ -123,22 +127,7 @@ export default function LandingPage() {
             <div><dt>Cited passages</dt><dd>{passages}</dd></div>
             <div><dt>Glossary terms</dt><dd>{GLOSSARY.length}</dd></div>
           </dl>
-          {UNITS.map(u => (
-            <div key={u.id} className="chap-unit">
-              {UNITS.length > 1 && <h3 className="chap-unit-h"><span className="label red">Unit {u.n}</span>{u.title}</h3>}
-              <ol className="grid g3 chap">
-                {u.chapters.map(c => (
-                  <li key={c.slug} className="cell chap-c">
-                    <Link href={chapterPath(c.slug)} prefetch={false}>
-                      <span className="chap-n" lang="sa" aria-hidden="true">{deva(c.n)}</span>
-                      <span className="chap-t">{c.title}</span>
-                      <Arrow />
-                    </Link>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ))}
+          <UnitTabs units={tabs} />
         </section>
 
         <Rule />
@@ -148,7 +137,7 @@ export default function LandingPage() {
               <Eyebrow num="३">Ancient Lens</Eyebrow>
               <h2 id="texts-h">Old texts, <span className="red">read the way one reads Aristotle or Confucius.</span></h2>
             </div>
-            <p className="sub">Not as scripture to obey, and not as proof that the ancients knew it all, but as serious thinkers on the same problems. Every passage carries its reference, so you can check it against your own edition.</p>
+            <p className="sub">Not scripture to obey, not proof that the ancients knew it all: serious thinkers on the same problems, each passage referenced.</p>
           </div>
           <figure className="verse">
             <div className="verse-red">
@@ -164,11 +153,7 @@ export default function LandingPage() {
           <ul className="names" aria-label="The texts the chapters quote">
             {TEXTS.map(t => <li key={t} lang="sa-Latn">{t}</li>)}
           </ul>
-          <div className="honest honest-wide">
-            <p className="honest-h">Not every parallel is a proof. <span className="red">Each passage says which kind it is.</span></p>
-            <div className="honest-row"><Tag kind="documented" /><p>{HOW.documented}</p></div>
-            <div className="honest-row"><Tag kind="view" /><p>{HOW.view}</p></div>
-          </div>
+          <LabelGame items={game} />
         </section>
 
         <Rule />
@@ -176,7 +161,7 @@ export default function LandingPage() {
           <div className="sec-copy">
             <Eyebrow num="४">Community</Eyebrow>
             <h2 id="together-h">An idea becomes yours <span className="red">when you explain it to someone else.</span></h2>
-            <p className="sub">The chapters are free to read without an account. The community is where readers ask, answer and read together; it needs a sign-in.</p>
+            <p className="sub">Reading needs no account. Asking and answering does.</p>
             <a className="btn btn-secondary btn-lg" href={COMMUNITY_HREF}>Open the community<Arrow /></a>
           </div>
           <ol className="steps together">
