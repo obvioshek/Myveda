@@ -3,15 +3,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
-import ChapterNav from "@/components/learn/ChapterNav";
 import LessonCard from "@/components/learn/LessonCard";
 import LessonLens from "@/components/learn/LessonLens";
 import Pairings from "@/components/learn/Pairings";
 import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
-import Progress from "@/components/learn/Progress";
-import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, conceptIds, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import ReadingBar from "@/components/learn/ReadingBar";
+import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -79,8 +78,10 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
     <PageShell wide note="Spotted a mistake?">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
 
-      <header className="wrap ch-head">
-        <div className="ch-intro">
+      {/* A single wide column: the header, a slim reading strip that sticks under
+          the site header, and the concepts. Nothing sits beside the text. */}
+      <div className="wrap ch-layout">
+        <header className="ch-head">
           <nav className="ch-crumbs" aria-label="Breadcrumb">
             <Link href={LEARN_PATH}>Chapters</Link>
             <span aria-hidden="true">/</span>
@@ -91,43 +92,33 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <h1>{c.title}</h1>
           </div>
           <p className="ch-scope">{c.scope}</p>
+          <div className="ch-meta">
+            <span>{c.blocks.length} {c.blocks.length === 1 ? "concept" : "concepts"}</span>
+            <span>About {c.minutes} min</span>
+            {ev.total > 0 && (
+              <details className="ch-legend">
+                <summary><Meter documented={ev.documented} view={ev.view} />{ev.total} {ev.total === 1 ? "passage" : "passages"}: {ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}<span className="ch-legend-q">What these mean</span></summary>
+                <div className="ch-legend-body">
+                  <p><Tag kind="documented" /> {HOW.documented}</p>
+                  <p><Tag kind="view" /> {HOW.view}</p>
+                </div>
+              </details>
+            )}
+          </div>
           <div className="ch-actions">
             <a className="btn btn-primary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
             {lessons && <LessonsToggle />}
           </div>
-        </div>
+        </header>
 
-        {/* The chapter at a glance: what it holds, how far the reader has got, what
-            the passage labels mean, and where it leads. */}
-        <aside className="ch-glance" aria-label="This chapter at a glance">
-          <span className="label red">At a glance</span>
-          <dl className="ch-stats">
-            <div><dt>Concepts</dt><dd>{c.blocks.length}</dd></div>
-            <div><dt>Minutes</dt><dd>{c.minutes}</dd></div>
-            <div><dt>Passages</dt><dd>{ev.total}</dd></div>
-          </dl>
-          {ev.total > 0 && (
-            <details className="ch-legend">
-              <summary>
-                <span className="ch-ev"><Meter documented={ev.documented} view={ev.view} />{ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}</span>
-                <span className="ch-legend-q">What do these mean?</span>
-              </summary>
-              <p><Tag kind="documented" /> {HOW.documented}</p>
-              <p><Tag kind="view" /> {HOW.view}</p>
-            </details>
-          )}
-          {lessons && <div className="ch-prog"><span className="ch-glance-k">Progress</span><Progress ids={conceptIds(c)} /></div>}
-          {next && (
-            <Link href={chapterPath(next.slug)} className="ch-upnext" prefetch={false}>
-              <span className="ch-glance-k">Up next · Chapter {next.n}</span>
-              <b>{next.title}</b>
-            </Link>
-          )}
-        </aside>
-      </header>
-
-      <div className="wrap ch-grid">
-        <ChapterNav chapter={c} hasTerms={terms.length > 0} showLens={showLens} />
+        <ReadingBar
+          slug={c.slug}
+          items={(lessons ?? []).map(l => ({ id: l.blockId, name: l.name }))}
+          terms={terms.map(t => ({ id: t.id, term: t.term, def: t.def }))}
+          unitLabel={many ? `Unit ${unit.n} · ${unit.short}` : "All chapters"}
+          chapters={unit.chapters.map(ch => ({ href: chapterPath(ch.slug), n: deva(ch.n), title: ch.title, current: ch.slug === c.slug }))}
+          glossary={GLOSSARY_PATH}
+        />
 
         <div className="ch-main">
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
@@ -155,14 +146,6 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 </div>
               );
             })}
-            {terms.length > 0 && (
-              <div id="terms" className="ch-terms">
-                <h3>Terms from the glossary</h3>
-                <ul className="ch-chips">
-                  {terms.map(t => <li key={t.id}><Link href={`${GLOSSARY_PATH}#${t.id}`} prefetch={false}>{t.term}</Link></li>)}
-                </ul>
-              </div>
-            )}
             {lessons && <p className="ci-fine">{HOW.translations}</p>}
           </section>
 
