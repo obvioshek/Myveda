@@ -99,7 +99,9 @@ const lessons: Lesson[] = [
       ask("A dynamic, entrepreneurial culture that values innovation is…", "Adhocracy", ["Clan", "Market", "Hierarchy"], "Adhocracy creates."),
       ask("Which is more immediate and changeable?", "Climate", ["Culture", "Both equally", "Neither"], "Culture is deep-rooted and relatively stable."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 1, adds: "Fear named as the first thing to remove, before any structure or rule.", differs: "The poem is about a nation's freedom. Climate research studies how members of one organisation perceive it, and measures it." },
+    ],
     reflect: "Which of the four culture types fits your organisation best, and what is its climate like this month?",
     summary: {
       points: [

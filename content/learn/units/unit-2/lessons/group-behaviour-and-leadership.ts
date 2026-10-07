@@ -78,6 +78,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 2, adds: "Four qualities that must never fail: fearlessness, generosity, wisdom and energy.", differs: "The Kuṟaḷ describes a king. Modern lists add empathy, communication and ethics as traits of effective leaders." },
+      { pairing: 4, adds: "Respect is given to the match between word and deed, not to rank.", differs: "Tukaram offers reverence. Leadership theory treats credibility as one source of influence among several." },
     ],
     reflect: "Which leadership style do you fall back on under pressure, and what does it cost your team?",
     summary: {

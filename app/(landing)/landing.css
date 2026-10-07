@@ -76,6 +76,20 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 ::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 [lang="sa"], [lang="sa-Latn"] { font-family: var(--font-deva); }
+/* Original-language passages are shown in their own scripts. Devanagari (Sanskrit,
+   Pali, Hindi, Marathi) uses the site's Tiro face; the other scripts use the
+   fonts every current phone and computer already has, so no page downloads
+   more for them. */
+[lang="pi"], [lang="hi"], [lang="mr"] { font-family: var(--font-deva); }
+[lang="pa"] { font-family: "Noto Sans Gurmukhi", "Raavi", "Gurmukhi MN", "Nirmala UI", sans-serif; }
+[lang="bn"], [lang="as"] { font-family: "Noto Sans Bengali", "Vrinda", "Bangla MN", "Nirmala UI", sans-serif; }
+[lang="gu"] { font-family: "Noto Sans Gujarati", "Shruti", "Gujarati MT", "Nirmala UI", sans-serif; }
+[lang="or"] { font-family: "Noto Sans Oriya", "Kalinga", "Oriya MN", "Nirmala UI", sans-serif; }
+[lang="te"] { font-family: "Noto Sans Telugu", "Gautami", "Telugu MN", "Nirmala UI", sans-serif; }
+[lang="kn"] { font-family: "Noto Sans Kannada", "Tunga", "Kannada MN", "Nirmala UI", sans-serif; }
+[lang="ml"] { font-family: "Noto Sans Malayalam", "Kartika", "Malayalam MN", "Nirmala UI", sans-serif; }
+[lang="ta"] { font-family: "Noto Sans Tamil", "Latha", "Tamil MN", "Nirmala UI", sans-serif; }
+[lang="bo"] { font-family: "Noto Serif Tibetan", "Microsoft Himalaya", "Kailasa", "Jomolhari", serif; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: 0; top: -64px; z-index: 60; background: var(--color-text); color: var(--color-bg); padding: 12px 18px; font-weight: 800; }
 .skip:focus { top: 0; color: var(--color-bg); }
@@ -264,7 +278,8 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .tally { color: var(--soft); font-size: 14px; font-weight: 600; }
 .names-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 24px; }
 .names { display: flex; flex-wrap: wrap; gap: 6px 20px; }
-.names li { font-size: 15px; font-weight: 600; }
+.names li { display: inline-flex; align-items: baseline; gap: 6px; font-size: 15px; font-weight: 600; }
+.names li span { color: var(--soft); font-size: 12.5px; font-weight: 600; }
 .chap { grid-template-columns: minmax(0, 1fr); }
 .chap-c { padding: 0; }
 .chap-c a { display: flex; align-items: center; gap: 16px; height: 100%; min-height: 84px; padding: 18px 24px; color: var(--color-text); transition: background .2s, box-shadow .2s; }
@@ -527,6 +542,8 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .lg-pair { font-size: 15px; line-height: 22px; color: var(--body); }
 .lg-pair b { color: var(--color-text); }
 .lg-quote { font-size: 17px; line-height: 26px; font-weight: 600; }
+.lg-quote .og { display: block; margin-top: 8px; color: var(--color-accent-800); font-size: 17px; font-weight: 400; line-height: 1.6; }
+.lg-quote i { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: var(--body); }
 .lg-quote .ta { display: block; margin-top: 8px; color: var(--color-accent-800); font: 400 15px/1.7 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
 .lg-quote .ref { display: block; margin-top: 8px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .lg-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }

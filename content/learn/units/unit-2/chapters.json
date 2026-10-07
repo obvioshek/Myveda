@@ -47,7 +47,7 @@
      "text": [
       "Theory Y assumes that people can direct themselves and will seek responsibility. The Gītā asks each person to raise themselves by their own effort and not let themselves sink, which treats self-direction as a human capacity. The verse is about inner discipline, not about a manager's assumptions."
      ],
-     "quote": "“Lift yourself by yourself; do not let yourself sink.” <i>uddhared ātmanātmānaṃ nātmānam avasādayet.</i> <span class=\"ref\">Bhagavad Gītā 6.5</span>"
+     "quote": "“Lift yourself by yourself; do not let yourself sink.” <span lang=\"sa\" class=\"og\">उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।</span> <i lang=\"sa-Latn\">uddhared ātmanātmānaṃ nātmānam avasādayet.</i> <span class=\"ref\">Bhagavad Gītā 6.5</span>"
     }
    ]
   },
@@ -83,7 +83,7 @@
      "text": [
       "The Gītā describes three qualities born of nature (<i>sattva</i>, <i>rajas</i> and <i>tamas</i>) that bind every person and mix in different proportions, and later sorts food, work and faith by them. A modern reader may see a trait theory: stable dispositions that shape behaviour. The <i>guṇas</i> are a metaphysical account, not a measured personality test."
      ],
-     "quote": "“Sattva, rajas and tamas, the qualities born of nature, bind the embodied self.” <i>sattvaṃ rajas tama iti guṇāḥ prakṛti-sambhavāḥ.</i> <span class=\"ref\">Bhagavad Gītā 14.5</span>"
+     "quote": "“Sattva, rajas and tamas, the qualities born of nature, bind the embodied self.” <span lang=\"sa\" class=\"og\">सत्त्वं रजस्तम इति गुणाः प्रकृतिसम्भवाः ।</span> <i lang=\"sa-Latn\">sattvaṃ rajas tama iti guṇāḥ prakṛti-sambhavāḥ.</i> <span class=\"ref\">Bhagavad Gītā 14.5</span>"
     },
     {
      "kind": "documented",
@@ -92,7 +92,7 @@
      "text": [
       "Personality is defined as a relatively consistent pattern. The Gītā observes that even a wise person acts in keeping with their own nature, and that all beings follow theirs: a person's disposition persists from one situation to the next."
      ],
-     "quote": "“Even the wise act in keeping with their own nature; beings follow their nature.” <i>sadṛśaṃ ceṣṭate svasyāḥ prakṛter jñānavān api, prakṛtiṃ yānti bhūtāni.</i> <span class=\"ref\">Bhagavad Gītā 3.33</span>"
+     "quote": "“Even the wise act in keeping with their own nature; beings follow their nature.” <span lang=\"sa\" class=\"og\">सदृशं चेष्टते स्वस्याः प्रकृतेर्ज्ञानवानपि । प्रकृतिं यान्ति भूतानि ।</span> <i lang=\"sa-Latn\">sadṛśaṃ ceṣṭate svasyāḥ prakṛter jñānavān api, prakṛtiṃ yānti bhūtāni.</i> <span class=\"ref\">Bhagavad Gītā 3.33</span>"
     },
     {
      "kind": "documented",
@@ -119,7 +119,16 @@
      "text": [
       "The Gītā says each person's faith takes the shape of their nature, and that a person is made of their faith. Attitude theory makes a narrower claim, a learned tendency to respond in a consistent way, but both see a settled inner stance shaping action."
      ],
-     "quote": "“A person is made of their faith: as their faith is, so are they.” <i>śraddhāmayo ’yaṃ puruṣo yo yac-chraddhaḥ sa eva saḥ.</i> <span class=\"ref\">Bhagavad Gītā 17.3</span>"
+     "quote": "“A person is made of their faith: as their faith is, so are they.” <span lang=\"sa\" class=\"og\">श्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः ।</span> <i lang=\"sa-Latn\">śraddhāmayo ’yaṃ puruṣo yo yac-chraddhaḥ sa eva saḥ.</i> <span class=\"ref\">Bhagavad Gītā 17.3</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Self-serving bias",
+     "classic": "others' faults and one's own",
+     "text": [
+      "The Dhammapada observes that people see others' faults easily and their own with difficulty, sifting the first like chaff and hiding the second like a gambler hiding a losing throw. That is the asymmetry attribution research later measured: we explain others' failures by their character and our own by circumstance."
+     ],
+     "quote": "“The faults of others are easy to see, one's own hard to see. One winnows others' faults like chaff, but hides one's own, as a cheat hides a losing throw.” <span lang=\"pi\" class=\"og\">सुदस्सं वज्जमञ्ञेसं । अत्तनो पन दुद्दसं । परेसं हि सो वज्जानि ओपुनाति यथा भुसं । अत्तनो पन छादेति कलिं व कितवा सठो ।</span> <i lang=\"pi-Latn\">sudassaṃ vajjam aññesaṃ, attano pana duddasaṃ; paresaṃ hi so vajjāni opunāti yathā bhusaṃ; attano pana chādeti kaliṃ va kitavā saṭho.</i> <span class=\"ref\">Dhammapada 252 (Pali)</span>"
     }
    ]
   },
@@ -160,7 +169,7 @@
      "text": [
       "Manu lists ten marks of dharma: steadiness, forgiveness, self-control, not stealing, purity, restraint of the senses, wisdom, learning, truthfulness and freedom from anger. Most are ways of acting rather than end goals, close to Rokeach's instrumental values such as honesty and responsibility. Manu does not divide ends from means this way, so the comparison is a reading."
      ],
-     "quote": "<i>dhṛtiḥ kṣamā damo ’steyaṃ śaucam indriya-nigrahaḥ, dhīr vidyā satyam akrodho daśakaṃ dharma-lakṣaṇam.</i> “Steadiness, forgiveness, self-control, not stealing, purity, restraint of the senses, wisdom, learning, truth and freedom from anger: these ten are the marks of dharma.” <span class=\"ref\">Manusmṛti 6.92</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">धृतिः क्षमा दमोऽस्तेयं शौचमिन्द्रियनिग्रहः । धीर्विद्या सत्यमक्रोधो दशकं धर्मलक्षणम् ।</span> <i lang=\"sa-Latn\">dhṛtiḥ kṣamā damo ’steyaṃ śaucam indriya-nigrahaḥ, dhīr vidyā satyam akrodho daśakaṃ dharma-lakṣaṇam.</i> “Steadiness, forgiveness, self-control, not stealing, purity, restraint of the senses, wisdom, learning, truth and freedom from anger: these ten are the marks of dharma.” <span class=\"ref\">Manusmṛti 6.92</span>"
     },
     {
      "kind": "documented",
@@ -169,7 +178,7 @@
      "text": [
       "Patañjali says practice becomes firmly grounded when it is kept up for a long time, without interruption and with care. Learning theory describes the same result, a lasting change through practice, and adds that rewards and observation also shape it."
      ],
-     "quote": "“Practice becomes firmly grounded when it is pursued for a long time, without a break, and with devotion.” <i>sa tu dīrgha-kāla-nairantarya-satkārāsevito dṛḍha-bhūmiḥ.</i> <span class=\"ref\">Yoga Sūtra 1.14</span>"
+     "quote": "“Practice becomes firmly grounded when it is pursued for a long time, without a break, and with devotion.” <span lang=\"sa\" class=\"og\">स तु दीर्घकालनैरन्तर्यसत्कारासेवितो दृढभूमिः ।</span> <i lang=\"sa-Latn\">sa tu dīrgha-kāla-nairantarya-satkārāsevito dṛḍha-bhūmiḥ.</i> <span class=\"ref\">Yoga Sūtra 1.14</span>"
     },
     {
      "kind": "documented",
@@ -178,7 +187,7 @@
      "text": [
       "Bandura's social learning theory holds that people learn by watching and imitating others. The Gītā observes that people do what the best among them do, and follow the standard those people set."
      ],
-     "quote": "“Whatever the best person does, others do too; the world follows the standard they set.” <i>yad yad ācarati śreṣṭhas tat tad evetaro janaḥ, sa yat pramāṇaṃ kurute lokas tad anuvartate.</i> <span class=\"ref\">Bhagavad Gītā 3.21</span>"
+     "quote": "“Whatever the best person does, others do too; the world follows the standard they set.” <span lang=\"sa\" class=\"og\">यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः । स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ।</span> <i lang=\"sa-Latn\">yad yad ācarati śreṣṭhas tat tad evetaro janaḥ, sa yat pramāṇaṃ kurute lokas tad anuvartate.</i> <span class=\"ref\">Bhagavad Gītā 3.21</span>"
     },
     {
      "kind": "view",
@@ -187,7 +196,7 @@
      "text": [
       "The Taittirīya Upaniṣad describes the person as five layers, each within the last: food, breath, mind, understanding and bliss. A modern reader may see Maslow's climb from physiological needs to self-actualisation. The Upaniṣad describes the self, not a sequence of needs at work, so the link is a reading."
      ],
-     "quote": "“Within it is another self.” <i>anyo ’ntara ātmā.</i> <span class=\"ref\">Taittirīya Upaniṣad 2.1–2.5</span>"
+     "quote": "“Within it is another self.” <span lang=\"sa\" class=\"og\">अन्योऽन्तर आत्मा ।</span> <i lang=\"sa-Latn\">anyo ’ntara ātmā.</i> <span class=\"ref\">Taittirīya Upaniṣad 2.1–2.5</span>"
     },
     {
      "kind": "view",
@@ -237,7 +246,7 @@
      "text": [
       "The Gītā tells Arjuna to do the work that is his, because action is better than inaction. Social loafing is the opposite habit inside a group: holding back because others will cover. The verse speaks to one person's duty, not to group work, so the link is a reading."
      ],
-     "quote": "“Do your allotted work, for action is better than inaction.” <i>niyataṃ kuru karma tvaṃ karma jyāyo hy akarmaṇaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.8</span>"
+     "quote": "“Do your allotted work, for action is better than inaction.” <span lang=\"sa\" class=\"og\">नियतं कुरु कर्म त्वं कर्म ज्यायो ह्यकर्मणः ।</span> <i lang=\"sa-Latn\">niyataṃ kuru karma tvaṃ karma jyāyo hy akarmaṇaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.8</span>"
     },
     {
      "kind": "view",
@@ -265,6 +274,15 @@
       "The Kuṟaḷ asks who could ruin a ruler who keeps advisers willing to rebuke him. Groupthink is the failure of that check: harmony is valued above critical evaluation, and the objections are never voiced."
      ],
      "quote": "“Who can ruin the ruler who keeps advisers willing to rebuke him?” <span lang=\"ta\" class=\"ta\">இடிக்குந் துணையாரை யாள்வாரை யாரே கெடுக்குந் தகைமை யவர்.</span> <span class=\"ref\">Tirukkuṟaḷ 447</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Credibility",
+     "classic": "one who acts as he speaks",
+     "text": [
+      "Tukaram says he will bow to the feet of whoever acts as he speaks. Leadership research finds credibility, doing what you say you will do, at the base of followers' trust. Tukaram is honouring a devotee, not describing a manager, so the link is a reading."
+     ],
+     "quote": "“Whoever acts as he speaks, I will bow to his feet.” <span lang=\"mr\" class=\"og\">बोले तैसा चाले । त्याचीं वंदीन पाउलें ॥</span> <i lang=\"mr-Latn\">bole taisā chāle, tyācīṃ vandīn pāuleṃ.</i> <span class=\"ref\">Tukārām Gāthā 4291 (Marathi; Wikisource numbering)</span>"
     }
    ]
   },
@@ -314,7 +332,16 @@
      "text": [
       "The Kaṭha Upaniṣad pictures the self as a rider in a chariot: the body is the chariot, the intellect the charioteer and the mind the reins. A modern reader may see the Adult ego state as the charioteer, steering learned habit and raw feeling. The Upaniṣad describes the self's journey, so this is a reading, not Berne's model."
      ],
-     "quote": "“Know the self as the rider, the body as the chariot, the intellect as the charioteer and the mind as the reins.” <i>ātmānaṃ rathinaṃ viddhi śarīraṃ ratham eva tu, buddhiṃ tu sārathiṃ viddhi manaḥ pragraham eva ca.</i> <span class=\"ref\">Kaṭha Upaniṣad 1.3.3</span>"
+     "quote": "“Know the self as the rider, the body as the chariot, the intellect as the charioteer and the mind as the reins.” <span lang=\"sa\" class=\"og\">आत्मानं रथिनं विद्धि शरीरं रथमेव तु । बुद्धिं तु सारथिं विद्धि मनः प्रग्रहमेव च ।</span> <i lang=\"sa-Latn\">ātmānaṃ rathinaṃ viddhi śarīraṃ ratham eva tu, buddhiṃ tu sārathiṃ viddhi manaḥ pragraham eva ca.</i> <span class=\"ref\">Kaṭha Upaniṣad 1.3.3</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Feedback and the blind area",
+     "classic": "keep your critic close",
+     "text": [
+      "Kabir advises keeping a critic close, even housing him in your courtyard, because he cleans your nature without soap or water. The Johari window says the blind area, what others see in us and we do not, shrinks only through feedback. Both treat criticism from others as the way to see yourself."
+     ],
+     "quote": "“Keep your critic close; give him a hut in your courtyard. Without water, without soap, he makes your nature clean.” <span lang=\"hi\" class=\"og\">निन्दक नियरे राखिये, आंगन कुटी छवाय । बिन पानी साबुन बिना, निरमल करे सुभाय ॥</span> <i lang=\"hi-Latn\">nindak niyare rākhiye, āṅgan kuṭī chhavāy; bin pānī sābun binā, nirmal kare subhāy.</i> <span class=\"ref\">Kabīr, sākhī (Hindi)</span>"
     }
    ]
   },
@@ -355,7 +382,16 @@
      "text": [
       "Kauṭilya opens his chapter on the ruler's duties by observing that when the ruler is active his servants become active too, and when he is careless they grow careless and eat into his work. Culture theory says the same of founders and top managers: their conduct becomes the standard."
      ],
-     "quote": "“When the ruler is active, his servants rise with him; when he is careless, they are careless too.” <i>rājānam utthitam anūttiṣṭhante bhṛtyāḥ; pramādyantam anupramādyanti.</i> <span class=\"ref\">Arthaśāstra 1.19.1–2</span>"
+     "quote": "“When the ruler is active, his servants rise with him; when he is careless, they are careless too.” <span lang=\"sa\" class=\"og\">राजानमुत्थितमनूत्तिष्ठन्ते भृत्याः । प्रमाद्यन्तमनुप्रमाद्यन्ति ।</span> <i lang=\"sa-Latn\">rājānam utthitam anūttiṣṭhante bhṛtyāḥ; pramādyantam anupramādyanti.</i> <span class=\"ref\">Arthaśāstra 1.19.1–2</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Climate of openness",
+     "classic": "where the mind is without fear",
+     "text": [
+      "Tagore's poem asks for a place where the mind is without fear, the head held high and knowledge free. A people-oriented or innovation-oriented climate rests on the same conditions: people speak up when they are not afraid, and ideas move when knowledge is shared. Tagore was praying for a country, so the comparison is a reading."
+     ],
+     "quote": "“Where the mind is without fear and the head is held high; where knowledge is free.” <span lang=\"bn\" class=\"og\">চিত্ত যেথা ভয়শূন্য, উচ্চ যেথা শির, জ্ঞান যেথা মুক্ত</span> <i lang=\"bn-Latn\">chitto jetha bhoyshunyo, uchcho jetha shir, gyan jetha mukto</i> <span class=\"ref\">Rabindranath Tagore, Naivedya 72 (Bengali, 1901); his English in Gitanjali 35</span>"
     }
    ]
   },
@@ -396,7 +432,7 @@
      "text": [
       "A Ṛgvedic hymn says that what is real is one, and the wise speak of it in many ways. Read for the workplace, it treats differences of expression as compatible with a shared core, the premise of inclusion rather than mere tolerance. The hymn is about naming the divine, so the link is a reading."
      ],
-     "quote": "“Truth is one; the wise call it by many names.” <i>ekaṃ sad viprā bahudhā vadanti.</i> <span class=\"ref\">Ṛgveda 1.164.46</span>"
+     "quote": "“Truth is one; the wise call it by many names.” <span lang=\"sa\" class=\"og\">एकं सद्विप्रा बहुधा वदन्ति ।</span> <i lang=\"sa-Latn\">ekaṃ sad viprā bahudhā vadanti.</i> <span class=\"ref\">Ṛgveda 1.164.46</span>"
     },
     {
      "kind": "view",
@@ -405,7 +441,7 @@
      "text": [
       "A verse found in the Mahā Upaniṣad, with a close variant in the Hitopadeśa and the Pañcatantra, says that only the narrow-minded count people as kin and not kin; for the large-hearted, the whole world is one family. In-groups and out-groups are exactly that counting."
      ],
-     "quote": "“‘This one is kin, that one is not’ is the reckoning of the small-minded; for those of noble conduct, the whole earth is a family.” <i>ayaṃ bandhur ayaṃ neti gaṇanā laghucetasām, udāracaritānāṃ tu vasudhaiva kuṭumbakam.</i> <span class=\"ref\">Mahā Upaniṣad 6.71</span>"
+     "quote": "“‘This one is kin, that one is not’ is the reckoning of the small-minded; for those of noble conduct, the whole earth is a family.” <span lang=\"sa\" class=\"og\">अयं बन्धुरयं नेति गणना लघुचेतसाम् । उदारचरितानां तु वसुधैव कुटुम्बकम् ।</span> <i lang=\"sa-Latn\">ayaṃ bandhur ayaṃ neti gaṇanā laghucetasām, udāracaritānāṃ tu vasudhaiva kuṭumbakam.</i> <span class=\"ref\">Mahā Upaniṣad 6.71</span>"
     },
     {
      "kind": "documented",
@@ -414,7 +450,16 @@
      "text": [
       "Manu tells the ruler, in settling matters, to take account of the customs of castes, of regions, of guilds and of families. Guilds (<i>śreṇī</i>) were the trade associations of the time, so this is an early instruction to recognise each group's own norms and give effect to them, which is what cross-cultural management asks."
      ],
-     "quote": "<i>jāti-jānapadān dharmān śreṇī-dharmāṃś ca dharmavit, samīkṣya kula-dharmāṃś ca sva-dharmaṃ pratipādayet.</i> “One who knows the law should examine the customs of castes, regions, guilds and families, and then establish the law particular to each.” <span class=\"ref\">Manusmṛti 8.41</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">जातिजानपदान्धर्मान्श्रेणीधर्मांश्च धर्मवित् । समीक्ष्य कुलधर्मांश्च स्वधर्मं प्रतिपादयेत् ।</span> <i lang=\"sa-Latn\">jāti-jānapadān dharmān śreṇī-dharmāṃś ca dharmavit, samīkṣya kula-dharmāṃś ca sva-dharmaṃ pratipādayet.</i> “One who knows the law should examine the customs of castes, regions, guilds and families, and then establish the law particular to each.” <span class=\"ref\">Manusmṛti 8.41</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Inclusion",
+     "classic": "one caste, one religion, one God",
+     "text": [
+      "Narayana Guru's best-known saying, one caste, one religion, one God for humankind, was a challenge to caste division in Kerala. Diversity management also rejects exclusion, but it goes about it differently: it names differences in order to respect them, where the Guru said the dividing lines had no basis."
+     ],
+     "quote": "“One caste, one religion, one God for humankind.” <span lang=\"ml\" class=\"og\">ഒരു ജാതി, ഒരു മതം, ഒരു ദൈവം മനുഷ്യന്</span> <i lang=\"ml-Latn\">oru jāti, oru matam, oru daivam manuṣyanŭ.</i> <span class=\"ref\">Śrī Nārāyaṇa Guru (Malayalam)</span>"
     }
    ]
   },
@@ -460,7 +505,7 @@
      "text": [
       "The Gītā's portrait of a person of steady wisdom: undisturbed in sorrow, without craving in pleasure, free of attachment, fear and anger. Emotional regulation aims at a similar steadiness, though emotional intelligence also values recognising emotions, not only rising above them."
      ],
-     "quote": "“Undisturbed in sorrow, free of craving in pleasure, without attachment, fear or anger: such a person is called steady in wisdom.” <i>duḥkheṣv anudvigna-manāḥ sukheṣu vigata-spṛhaḥ, vīta-rāga-bhaya-krodhaḥ sthita-dhīr munir ucyate.</i> <span class=\"ref\">Bhagavad Gītā 2.56</span>"
+     "quote": "“Undisturbed in sorrow, free of craving in pleasure, without attachment, fear or anger: such a person is called steady in wisdom.” <span lang=\"sa\" class=\"og\">दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः । वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते ।</span> <i lang=\"sa-Latn\">duḥkheṣv anudvigna-manāḥ sukheṣu vigata-spṛhaḥ, vīta-rāga-bhaya-krodhaḥ sthita-dhīr munir ucyate.</i> <span class=\"ref\">Bhagavad Gītā 2.56</span>"
     },
     {
      "kind": "documented",
@@ -469,7 +514,7 @@
      "text": [
       "The Gītā praises the person who, measuring by themselves, sees the joy and sorrow of others as equal to their own. That is empathy, one of the four parts of emotional intelligence."
      ],
-     "quote": "“Who, by comparison with themself, sees the joy and sorrow of all beings as their own is held to be the highest yogin.” <i>ātmaupamyena sarvatra samaṃ paśyati yo ’rjuna, sukhaṃ vā yadi vā duḥkhaṃ sa yogī paramo mataḥ.</i> <span class=\"ref\">Bhagavad Gītā 6.32</span>"
+     "quote": "“Who, by comparison with themself, sees the joy and sorrow of all beings as their own is held to be the highest yogin.” <span lang=\"sa\" class=\"og\">आत्मौपम्येन सर्वत्र समं पश्यति योऽर्जुन । सुखं वा यदि वा दुःखं स योगी परमो मतः ।</span> <i lang=\"sa-Latn\">ātmaupamyena sarvatra samaṃ paśyati yo ’rjuna, sukhaṃ vā yadi vā duḥkhaṃ sa yogī paramo mataḥ.</i> <span class=\"ref\">Bhagavad Gītā 6.32</span>"
     },
     {
      "kind": "view",
@@ -487,7 +532,16 @@
      "text": [
       "The Gītā says discipline removes sorrow for one who is moderate in eating and recreation, measured in effort at work, and regular in sleep and waking. Exercise, rest and time management, the individual approaches to stress, are that same moderation."
      ],
-     "quote": "“For one moderate in food and recreation, measured in effort at work, and regular in sleep and waking, discipline destroys sorrow.” <i>yuktāhāra-vihārasya yukta-ceṣṭasya karmasu, yukta-svapnāvabodhasya yogo bhavati duḥkha-hā.</i> <span class=\"ref\">Bhagavad Gītā 6.17</span>"
+     "quote": "“For one moderate in food and recreation, measured in effort at work, and regular in sleep and waking, discipline destroys sorrow.” <span lang=\"sa\" class=\"og\">युक्ताहारविहारस्य युक्तचेष्टस्य कर्मसु । युक्तस्वप्नावबोधस्य योगो भवति दुःखहा ।</span> <i lang=\"sa-Latn\">yuktāhāra-vihārasya yukta-ceṣṭasya karmasu, yukta-svapnāvabodhasya yogo bhavati duḥkha-hā.</i> <span class=\"ref\">Bhagavad Gītā 6.17</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Coping with stress",
+     "classic": "if there is a remedy",
+     "text": [
+      "Śāntideva gives a two-line test for distress: if something can be remedied, dismay is unnecessary; if it cannot, dismay does not help. That is the split stress research makes between problem-focused coping, acting on what can be changed, and managing one's response to what cannot."
+     ],
+     "quote": "“If there is a remedy, what use is dismay? And if there is no remedy, what use is dismay?” <span lang=\"sa\" class=\"og\">यद्यस्त्येव प्रतीकारो दौर्मनस्येन तत्र किम् । अथ नास्ति प्रतीकारो दौर्मनस्येन तत्र किम् ।</span> <i lang=\"sa-Latn\">yady asty eva pratīkāro daurmanasyena tatra kim, atha nāsti pratīkāro daurmanasyena tatra kim.</i> <span lang=\"bo\" class=\"og\">གལ་ཏེ་བཅོས་སུ་ཡོད་ན་ནི། །དེ་ལ་མི་དགར་ཅི་ཞིག་ཡོད། །གལ་ཏེ་བཅོས་སུ་མེད་ན་ནི། །དེ་ལ་མི་དགའ་བྱས་ཅི་ཕན། །</span> <i lang=\"bo-Latn\">gal te bcos su yod na ni, de la mi dgar ci zhig yod, gal te bcos su med na ni, de la mi dga' byas ci phan.</i> <span class=\"ref\">Śāntideva, Bodhicaryāvatāra 6.10 (Sanskrit; Tibetan in the Derge Tengyur, Toh 3871)</span>"
     }
    ]
   },
@@ -570,6 +624,15 @@
       "Kauṭilya warns the ruler not to keep people with business waiting at his door: a ruler who is hard to reach is made, by those around him, to confuse what should and should not be done. Internal reporting channels serve a similar purpose in a company, a way for bad news to reach the top past the inner circle. Kauṭilya is writing about petitions to a king, so the link is a reading."
      ],
      "quote": "<span class=\"ref\">Arthaśāstra 1.19</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Interpersonal justice",
+     "classic": "do not despise, do not belittle",
+     "text": [
+      "Basavanna's vacana lists what not to do: steal, kill, lie, rage, despise others, praise yourself, belittle the person in front of you, and calls this purity inside and out. Interpersonal justice asks for dignity, respect and courtesy in how people are treated. The vacana is a personal code, so the link is a reading."
+     ],
+     "quote": "“Do not steal, do not kill, do not lie, do not rage, do not despise others, do not praise yourself, do not belittle the one before you. This is inner purity; this is outer purity.” <span lang=\"kn\" class=\"og\">ಕಳಬೇಡ, ಕೊಲಬೇಡ, ಹುಸಿಯ ನುಡಿಯಲು ಬೇಡ, ಮುನಿಯ ಬೇಡ, ಅನ್ಯರಿಗೆ ಅಸಹ್ಯಪಡಬೇಡ, ತನ್ನ ಬಣ್ಣಿಸಬೇಡ, ಇದಿರ ಹಳಿಯಲು ಬೇಡ. ಇದೇ ಅಂತರಂಗಶುದ್ಧಿ, ಇದೇ ಬಹಿರಂಗಶುದ್ಧಿ.</span> <i lang=\"kn-Latn\">kaḷabēḍa, kolabēḍa, husiya nuḍiyalu bēḍa, muniya bēḍa, anyarige asahyapaḍabēḍa, tanna baṇṇisabēḍa, idira haḷiyalu bēḍa. idē antaraṅgaśuddhi, idē bahiraṅgaśuddhi.</i> <span class=\"ref\">Basavaṇṇa, vacana (Kannada)</span>"
     }
    ]
   },
@@ -706,6 +769,15 @@
       "The Kuṟaḷ warns that trusting someone who has not been tested, and doubting someone who has, both bring endless trouble. It is the case for a careful selection process, and for trusting its result once it is done."
      ],
      "quote": "“To trust the untested, and to doubt the one you have tested, both bring endless sorrow.” <span lang=\"ta\" class=\"ta\">தேரான் தெளிவும் தெளிந்தான்கண் ஐயுறவும் தீரா இடும்பை தரும்.</span> <span class=\"ref\">Tirukkuṟaḷ 510</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Selection tests",
+     "classic": "salt and camphor",
+     "text": [
+      "Vemana notes that salt and camphor look alike, and only tasting shows the difference; so too among people. Selection tests exist for the same reason: applicants who look alike on paper differ once their abilities are tried. Vemana is speaking of character in general, so this is a reading."
+     ],
+     "quote": "“Salt and camphor look alike, but taste them and they differ. Among people, too, the worthy are different. Listen, Vema.” <span lang=\"te\" class=\"og\">ఉప్పు కప్పురంబు ఒక్క పోలికనుండు, చూడ చూడ రుచుల జాడ వేరు, పురుషులందు పుణ్యపురుషులు వేరయా, విశ్వదాభిరామ వినుర వేమ</span> <i lang=\"te-Latn\">uppu kappurambu okka pōlikanuṇḍu, chūḍa chūḍa ruchula jāḍa vēru, puruṣulandu puṇyapuruṣulu vērayā, viśvadābhirāma vinura vēma.</i> <span class=\"ref\">Vēmana, padyam (Telugu)</span>"
     }
    ]
   },

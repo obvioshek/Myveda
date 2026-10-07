@@ -78,6 +78,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 3, adds: "Harsh words where kind ones are possible are like unripe fruit chosen over ripe.", differs: "The Kuṟaḷ is about speech in general. Interactional justice also requires honest, timely and adequate explanations." },
+      { pairing: 5, adds: "Respect framed as restraint: the list is mostly about what not to say or show to others.", differs: "Interactional justice is about how decisions are explained and people treated at work. The vacana is a whole moral code for life." },
     ],
     reflect: "How would you tell a colleague that their proposal was rejected, so that they still felt respected?",
     summary: {

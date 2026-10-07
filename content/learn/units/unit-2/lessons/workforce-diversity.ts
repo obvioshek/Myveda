@@ -19,6 +19,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 0, adds: "A shared core that the wise express in many ways.", differs: "The hymn is about naming the divine. Workforce diversity is about fair treatment of real differences at work, so the link is a reading." },
+      { pairing: 3, adds: "A reformer's case that the categories used to exclude people were never real.", differs: "The Guru dissolves the categories. Diversity management keeps them in view so that no one is treated unfairly because of them." },
     ],
     reflect: "Which dimension of diversity is least visible where you work or study?",
     summary: {

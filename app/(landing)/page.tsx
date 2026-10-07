@@ -65,7 +65,7 @@ export default function LandingPage() {
       {
         "@type": "WebPage", "@id": `${base}/#page`, url: `${base}/`, name: "Veda Verse: Learn Management with India's Classical Thought",
         isPartOf: { "@id": `${base}/#site` }, about: { "@id": `${base}/#org` }, inLanguage: "en-IN",
-        description: "Management concepts explained one clear idea at a time, each read alongside the Arthashastra, the Bhagavad Gita or the Thirukkural.",
+        description: "Management concepts explained one clear idea at a time, each read alongside India's classical texts and thinkers, from the Arthashastra and the Thirukkural to Kabir and Basavanna, shown in their own languages.",
       },
     ],
   };
@@ -83,7 +83,7 @@ export default function LandingPage() {
           <span className="eyebrow"><i className="sq" aria-hidden="true" />A place to read and question management ideas</span>
           <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Each management idea in plain words, set beside what the Arthaśāstra, the Gītā or the Tirukkuṟaḷ said about the same problem. Then a community where every answer says how the writer knows.</p>
+            <p className="lede">Each management idea in plain words, set beside what India&apos;s thinkers, from the Arthaśāstra and the Tirukkuṟaḷ to Kabīr and Basavaṇṇa, said about the same problem, in their own words and scripts. Then a community where every answer says how the writer knows.</p>
             <div className="hero-actions">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
@@ -140,7 +140,7 @@ export default function LandingPage() {
           <div className="names-row">
             <span className="label">Quoted so far</span>
             <ul className="names" aria-label="The texts the chapters quote">
-              {TEXTS.map(t => <li key={t} lang="sa-Latn">{t}</li>)}
+              {TEXTS.map(t => <li key={t.name}>{t.name}<span>{t.lang}</span></li>)}
             </ul>
           </div>
         </section>

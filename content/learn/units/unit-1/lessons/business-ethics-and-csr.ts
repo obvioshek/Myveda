@@ -139,6 +139,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 1, adds: "“He who eats alone eats only sin”: a call to share what is earned, with an eye to the welfare of the world.", differs: "The Ṛgveda and Gītā lines are about sharing food and acting for the world's welfare. India's CSR law sets thresholds and a share of profit." },
+      { pairing: 6, adds: "Two tests in one line: how the money was earned, and whether some of it was given away by the earner.", differs: "CSR in India is a legal duty with thresholds and a 2% rule. The salok describes a personal discipline, freely chosen." },
     ],
     reflect: "Which cause would you want a company you work for to spend its CSR funds on, and why?",
     summary: {

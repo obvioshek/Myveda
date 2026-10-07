@@ -132,6 +132,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 3, adds: "Moderation in food, recreation, effort and sleep as the way to remove sorrow.", differs: "The Gītā describes a discipline for life. Stress management adds organisational measures, such as job redesign, that no individual can apply alone." },
+      { pairing: 4, adds: "A first question to ask under pressure: can anything be done about this?", differs: "Śāntideva aims at equanimity as a spiritual practice. Stress management adds organisational remedies, such as job redesign and support, that change the situation itself." },
     ],
     reflect: "Which individual approach could you start this week, and which organisational one would you ask for?",
     summary: {

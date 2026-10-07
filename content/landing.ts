@@ -40,5 +40,24 @@ export const COMMUNITY_NOTES = [
   { name: "You choose the label", line: "The app may suggest one; you always have the last word." },
 ];
 
-// The texts the chapters quote from. Add one here only once a chapter cites it.
-export const TEXTS = ["Arthaśāstra", "Bhagavad Gītā", "Tirukkuṟaḷ", "Ṛgveda", "Atharvaveda", "Upaniṣads", "Manusmṛti", "Yoga Sūtras"];
+// The texts and voices the chapters quote, with the language each passage is
+// shown in. Add one here only once a chapter cites it.
+export const TEXTS: { name: string; lang: string }[] = [
+  { name: "Arthaśāstra", lang: "Sanskrit" },
+  { name: "Bhagavad Gītā", lang: "Sanskrit" },
+  { name: "Ṛgveda and Atharvaveda", lang: "Sanskrit" },
+  { name: "Upaniṣads", lang: "Sanskrit" },
+  { name: "Manusmṛti", lang: "Sanskrit" },
+  { name: "Yoga Sūtras", lang: "Sanskrit" },
+  { name: "Tattvārtha Sūtra", lang: "Sanskrit, Jain" },
+  { name: "Bodhicaryāvatāra", lang: "Sanskrit and Tibetan" },
+  { name: "Dhammapada", lang: "Pali" },
+  { name: "Tirukkuṟaḷ", lang: "Tamil" },
+  { name: "Guru Granth Sahib", lang: "Punjabi" },
+  { name: "Kabīr and Rahīm", lang: "Hindi" },
+  { name: "Tukārām", lang: "Marathi" },
+  { name: "Tagore", lang: "Bengali" },
+  { name: "Nārāyaṇa Guru", lang: "Malayalam" },
+  { name: "Basavaṇṇa", lang: "Kannada" },
+  { name: "Vēmana", lang: "Telugu" },
+];
