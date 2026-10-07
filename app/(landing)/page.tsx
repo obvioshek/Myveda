@@ -74,7 +74,7 @@ export default function LandingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <a className="skip" href="#top">Skip to content</a>
-      <Header chaptersPanel={<ChaptersMenu variant="panel" />} chaptersList={<ChaptersMenu variant="list" />} />
+      <Header chaptersPanel={<ChaptersMenu variant="panel" href="#chapters" />} chaptersList={<ChaptersMenu variant="list" />} />
 
       <main id="top">
         <ContinueBand />

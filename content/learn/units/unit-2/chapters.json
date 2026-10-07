@@ -5,6 +5,7 @@
    "n": 1,
    "slug": "organisational-behaviour",
    "title": "Organisational Behaviour: Significance and Theories",
+   "short": "Organisational Behaviour",
    "scope": "What organisational behaviour studies, and how management thought moved from efficiency to people to systems and situations.",
    "group": "ob",
    "blocks": [
@@ -55,6 +56,7 @@
    "n": 2,
    "slug": "personality-perception-and-attitude",
    "title": "Personality, Perception and Attitude",
+   "short": "Personality, Perception, Attitude",
    "scope": "Who a person is, how they read the world, and the stance they take toward it: three building blocks of individual behaviour at work.",
    "group": "ob",
    "blocks": [
@@ -213,6 +215,7 @@
    "n": 4,
    "slug": "group-behaviour-and-leadership",
    "title": "Group Behaviour, Teams and Leadership",
+   "short": "Groups, Teams and Leadership",
    "scope": "How people act together: kinds of groups and their norms, how teams develop, how leaders lead, and the forces at work inside a group.",
    "group": "ob",
    "blocks": [
@@ -290,6 +293,7 @@
    "n": 5,
    "slug": "interpersonal-behaviour",
    "title": "Interpersonal Behaviour and Transactional Analysis",
+   "short": "Interpersonal Behaviour",
    "scope": "How people communicate and respond to one another, the skills that make it work, and Eric Berne's transactional analysis.",
    "group": "ob",
    "blocks": [
@@ -349,6 +353,7 @@
    "n": 6,
    "slug": "organisational-culture-and-climate",
    "title": "Organisational Culture and Climate",
+   "short": "Culture and Climate",
    "scope": "The shared meaning that makes one organisation unlike another, how it is built and kept, and how it feels to work there.",
    "group": "ob",
    "blocks": [
@@ -399,6 +404,7 @@
    "n": 7,
    "slug": "workforce-diversity",
    "title": "Workforce Diversity and Cross-Cultural Behaviour",
+   "short": "Workforce Diversity",
    "scope": "Recognising and respecting differences at work, managing them fairly, and working well across national cultures.",
    "group": "ob",
    "blocks": [
@@ -467,6 +473,7 @@
    "n": 8,
    "slug": "emotions-and-stress",
    "title": "Emotions and Stress Management",
+   "short": "Emotions and Stress",
    "scope": "Emotions, moods and emotional intelligence at work, and the causes, effects and management of work stress.",
    "group": "ob",
    "blocks": [
@@ -549,6 +556,7 @@
    "n": 9,
    "slug": "organisational-justice-and-whistleblowing",
    "title": "Organisational Justice and Whistleblowing",
+   "short": "Justice and Whistleblowing",
    "scope": "Whether people see their workplace as fair in outcomes, processes and treatment, and how wrongdoing can be reported safely.",
    "group": "ob",
    "blocks": [
@@ -830,6 +838,7 @@
    "n": 14,
    "slug": "job-analysis-evaluation-and-design",
    "title": "Job Analysis, Evaluation and Design",
+   "short": "Job Analysis and Design",
    "scope": "Studying jobs, writing them down, judging their worth and shaping them: analyse, document, evaluate, design.",
    "group": "hrm",
    "blocks": [
@@ -925,6 +934,7 @@
    "n": 16,
    "slug": "strategic-hrm",
    "title": "Strategic Human Resource Management",
+   "short": "Strategic HRM",
    "scope": "Aligning HR with the organisation's strategy, so that its people become a lasting source of advantage.",
    "group": "hrm",
    "blocks": [

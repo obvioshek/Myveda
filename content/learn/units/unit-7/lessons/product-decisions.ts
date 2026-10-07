@@ -71,7 +71,7 @@ const lessons: Lesson[] = [
     lead: "New products move through eight steps from idea generation to commercialisation.",
     check: [
       ask("Estimating sales, costs and profits against the firm's objectives is…", "Business analysis", ["Concept testing", "Test marketing", "Idea screening"], "It is step 5, after marketing strategy development."),
-      ask("Which step does the source sheet leave out?", "Marketing strategy development", ["Test marketing", "Business analysis", "Idea screening"], "Kotler and Armstrong give eight steps; the source sheet gives seven."),
+      ask("Which of Kotler and Armstrong's eight steps do short lists often leave out?", "Marketing strategy development", ["Test marketing", "Business analysis", "Idea screening"], "Kotler and Armstrong give eight steps; many study notes give seven and skip marketing strategy development."),
       ask("In Rogers' adopter groups, the early majority is…", "34 per cent", ["13.5 per cent", "16 per cent", "2.5 per cent"], "Innovators 2.5, early adopters 13.5, early and late majority 34 each, laggards 16."),
     ],
     lens: [],

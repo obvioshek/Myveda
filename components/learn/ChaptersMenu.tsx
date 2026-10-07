@@ -1,59 +1,45 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, deva, type Unit } from "@/content/learn";
+import { GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, conceptIds } from "@/content/learn";
+import ChapterPanel, { type MenuUnit } from "./ChapterPanel";
 
-function Chapters({ unit, grouped }: { unit: Unit; grouped: boolean }) {
-  const list = (chapters: Unit["chapters"]) => (
-    <ol>
-      {chapters.map(c => (
-        <li key={c.slug}>
-          <Link href={chapterPath(c.slug)} prefetch={false}><span className="cm-n" lang="sa" aria-hidden="true">{deva(c.n)}</span><span>{c.title}</span></Link>
-        </li>
+const MORE = [
+  { href: LEARN_PATH, label: "All chapters" },
+  { href: GLOSSARY_PATH, label: "Glossary, A to Z" },
+  { href: REVISION_PATH, label: "Revision sheets" },
+];
+
+// Only what the menu shows: short titles, groups and the concept ids that
+// progress is counted from. Links don't prefetch, so a closed menu downloads
+// nothing.
+const MENU: MenuUnit[] = UNITS.map(u => ({
+  id: u.id, n: u.n, short: u.short,
+  groups: u.groups.map(g => ({ key: g.key, label: g.label })),
+  chapters: u.chapters.map(c => ({ slug: c.slug, href: chapterPath(c.slug), n: c.n, title: c.short ?? c.title, group: c.group, ids: conceptIds(c) })),
+}));
+
+// Every chapter, for the header. "panel" is the wide-screen menu (it brings its
+// own "Chapters" control, a link on narrow screens); "list" sits inside the phone
+// menu, a unit at a time.
+export default function ChaptersMenu({ variant, href = LEARN_PATH }: { variant: "panel" | "list"; href?: string }) {
+  if (variant === "panel") return <ChapterPanel units={MENU} href={href} more={MORE} />;
+  return (
+    <div className="cm-list">
+      {MENU.map(u => (
+        <details key={u.id} className="cm-unit">
+          <summary>Unit {u.n} · {u.short}</summary>
+          {u.groups.map(g => (
+            <div key={g.key} className="cm-col">
+              <span className="label red">{g.label}</span>
+              <ol>
+                {u.chapters.filter(c => c.group === g.key).map(c => (
+                  <li key={c.slug}><Link href={c.href} prefetch={false}><span className="cm-n">{c.n}</span><span>{c.title}</span></Link></li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </details>
       ))}
-    </ol>
-  );
-  if (!grouped) {
-    return <div className="cm-col"><span className="label red">Unit {unit.n} · {unit.short}</span>{list(unit.chapters)}</div>;
-  }
-  return (
-    <>
-      {unit.groups.map(g => (
-        <div key={g.key} className="cm-col">
-          <span className="label red">{g.label}</span>
-          {list(unit.chapters.filter(c => c.group === g.key))}
-        </div>
-      ))}
-    </>
-  );
-}
-
-function More() {
-  return (
-    <>
-      <Link href={LEARN_PATH} prefetch={false}>All chapters</Link>
-      <Link href={GLOSSARY_PATH} prefetch={false}>Glossary, A to Z</Link>
-      <Link href={REVISION_PATH} prefetch={false}>Revision sheets</Link>
-    </>
-  );
-}
-
-// Every chapter by name, for the header. As a panel it drops down when the
-// pointer rests on "Chapters" (or focus reaches it); as a list it sits inside the
-// phone menu. One unit is shown by its groups; several units get a column each
-// (two inner columns of chapters when there are two units, one when there are more).
-// Links here don't prefetch, so a hidden menu doesn't download every chapter.
-export default function ChaptersMenu({ variant }: { variant: "panel" | "list" }) {
-  const grouped = UNITS.length === 1;
-  const units = UNITS.map(u => <Chapters key={u.id} unit={u} grouped={grouped} />);
-  if (variant === "list") {
-    return <div className="cm-list">{units}<div className="cm-col cm-more"><More /></div></div>;
-  }
-  return (
-    <div className="menu-panel">
-      <div className={grouped ? "wrap cm-in" : UNITS.length > 2 ? "wrap cm-in cm-units cm-many" : "wrap cm-in cm-units"} style={grouped ? undefined : ({ "--units": UNITS.length } as CSSProperties)}>
-        {units}
-        <div className="cm-col cm-more"><span className="label red">Reference</span><More /></div>
-      </div>
+      <div className="cm-col cm-more">{MORE.map(m => <Link key={m.href} href={m.href} prefetch={false}>{m.label}</Link>)}</div>
     </div>
   );
 }

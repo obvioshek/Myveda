@@ -66,7 +66,7 @@ const lessons: Lesson[] = [
     before: {
       q: "Are commander, collaborative and cultural best called challenges of implementation?",
       choices: [
-        { label: "Challenges", reveal: "No. The source sheet lists four of them under ‘challenges’, but Bourgeois and Brodwin described them as approaches, and there are five." },
+        { label: "Challenges", reveal: "No. They are sometimes listed as four ‘challenges’, but Bourgeois and Brodwin described them as approaches, and there are five." },
         { label: "Approaches", reveal: "Right. Bourgeois and Brodwin (1984) described five approaches: commander, organisational change, collaborative, cultural and crescive." },
       ],
     },

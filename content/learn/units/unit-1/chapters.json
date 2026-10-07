@@ -10,6 +10,7 @@
    "n": 1,
    "slug": "principles-of-management",
    "title": "Management: Concept, Principles, Roles and Skills",
+   "short": "Management and Its Principles",
    "scope": "What management is, how the classical writers said it should be done, and the roles and skills the job demands.",
    "group": "management",
    "blocks": [
@@ -1152,6 +1153,7 @@
    "n": 14,
    "slug": "corporate-governance",
    "title": "Corporate Governance and Value-Based Organisations",
+   "short": "Corporate Governance",
    "scope": "How a company is directed and controlled, and what changes when values, not only profit, shape its culture and strategy.",
    "group": "ethics",
    "blocks": [

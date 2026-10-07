@@ -172,7 +172,7 @@ const lessons: Lesson[] = [
       points: [
         "Loyalty: buying again and recommending despite competitors' efforts.",
         "Aaker (1991): switchers, habitual buyers, satisfied buyers with switching costs, brand likers, committed buyers.",
-        "The order follows Aaker, not the garbled glossary in the source sheet.",
+        "The order follows Aaker; study notes often muddle it.",
       ],
       memory: "Switchers, habitual, switching costs, likers, committed.",
     },

@@ -41,7 +41,7 @@ export default function Header({ chaptersPanel, chaptersList }: { chaptersPanel:
         <a className="brand" href="#top" aria-label="Veda Verse, back to top"><BrandMark />Veda Verse</a>
         <nav className="top-links" aria-label="Site">
           {NAV.map(n => n.href === "#chapters"
-            ? <div key={n.href} className="has-menu"><a href={n.href}>{n.label}</a>{chaptersPanel}</div>
+            ? <div key={n.href} className="has-menu">{chaptersPanel}</div>
             : <a key={n.href} href={n.href}>{n.label}</a>)}
         </nav>
         <div className="top-end">

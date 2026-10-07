@@ -9,7 +9,7 @@ export const CONTACT_EMAIL = "admin@myvedaverse.in";
 // anyone else is sent to sign in first.
 export const COMMUNITY_HREF = "/home";
 
-// The header links: the chapters (with their drop-down), the two reference pages
+// The header links: the chapters (with their menu), the two reference pages
 // and the community section of the home page, which shows how it works before
 // anyone is asked to sign in.
 export const NAV = [
