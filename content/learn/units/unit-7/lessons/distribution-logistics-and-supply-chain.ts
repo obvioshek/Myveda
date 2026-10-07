@@ -136,6 +136,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 1, adds: "Kauṭilya weighing trade routes: water routes are cheaper, land routes less liable to obstruction and danger, and the southern land route yields goods in quantity.", differs: "Kauṭilya compares routes for a state's trade. SCM adds the SCOR processes and Hugos' drivers balancing responsiveness against efficiency." },
+      { pairing: 2, adds: "Interdependence stated as a fact of life, not a strategy chosen for advantage.", differs: "The sūtra describes how all beings are bound together. SCM coordinates firms by contract, information and shared targets." },
     ],
     reflect: "Think of an online seller you use. Does its supply chain seem built more for responsiveness or for efficiency? What tells you?",
     summary: {

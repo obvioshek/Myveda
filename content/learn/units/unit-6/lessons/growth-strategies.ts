@@ -133,7 +133,7 @@ const lessons: Lesson[] = [
     check: [
       ask("Unrelated diversification is also called…", "Conglomerate", ["Concentric", "Horizontal integration", "Market penetration"], "Related diversification is also called concentric."),
       ask("Which carries relatively lower risk?", "Related diversification", ["Unrelated diversification", "Entering an unfamiliar industry", "Conglomerate expansion"], "Unrelated diversification needs new capabilities and investment."),
-      ask("In Ansoff's own terms, horizontal diversification means…", "New products sold to existing customers", ["Taking over a supplier", "Old products in new regions", "Any related diversification"], "The source sheet uses ‘horizontal’ loosely for related diversification."),
+      ask("In Ansoff's own terms, horizontal diversification means…", "New products sold to existing customers", ["Taking over a supplier", "Old products in new regions", "Any related diversification"], "‘Horizontal’ is often used loosely for any related diversification; Ansoff meant new products for existing customers."),
     ],
     lens: [
       { pairing: 3, adds: "Accomplishing one task by means of another is like catching a wild elephant with a trained one.", differs: "The couplet is a general maxim about leverage. Related diversification applies it to choosing businesses that share technology, brand, channels and competencies." },

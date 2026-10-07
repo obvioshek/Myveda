@@ -6,7 +6,7 @@ import "./landing.css";
 // Titles stay under about 60 characters and the description under about 160,
 // which is what search results show before cutting them off.
 const title = "Veda Verse: Learn Management with India's Classical Thought";
-const description = "Management concepts explained one idea at a time, each read alongside the Arthashastra, the Bhagavad Gita or the Thirukkural. Open to everyone, no sign-in.";
+const description = "Management concepts explained one idea at a time, each read alongside India's classical texts and thinkers, in their own languages. Open to everyone, no sign-in.";
 
 export const viewport: Viewport = {
   themeColor: "#F3F2F2",

@@ -10,6 +10,7 @@
    "n": 1,
    "slug": "principles-of-management",
    "title": "Management: Concept, Principles, Roles and Skills",
+   "short": "Management and Its Principles",
    "scope": "What management is, how the classical writers said it should be done, and the roles and skills the job demands.",
    "group": "management",
    "blocks": [
@@ -48,7 +49,7 @@
      "text": [
       "The Gītā argues that each person performs best in the work that fits their own nature, and that taking up another's task is riskier. A modern reader will see specialisation. The traditional varṇa reading is contested, so treat this as a statement about fit between person and task."
      ],
-     "quote": "“Better one's own duty, imperfectly done, than another's duty done well.” <i>śreyān svadharmo viguṇaḥ paradharmāt svanuṣṭhitāt.</i> <span class=\"ref\">Bhagavad Gītā 3.35; also 18.45–47</span>"
+     "quote": "“Better one's own duty, imperfectly done, than another's duty done well.” <span lang=\"sa\" class=\"og\">श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात् ।</span> <i lang=\"sa-Latn\">śreyān svadharmo viguṇaḥ paradharmāt svanuṣṭhitāt.</i> <span class=\"ref\">Bhagavad Gītā 3.35; also 18.45–47</span>"
     },
     {
      "kind": "documented",
@@ -57,7 +58,7 @@
      "text": [
       "Kauṭilya ties the ruler's own wellbeing to the wellbeing of those ruled. Power is held against an obligation to deliver results for others."
      ],
-     "quote": "“In the happiness of his subjects lies the king's happiness; in their welfare, his welfare.” <i>prajāsukhe sukhaṃ rājñaḥ prajānāṃ ca hite hitam.</i> <span class=\"ref\">Arthaśāstra 1.19.34</span>"
+     "quote": "“In the happiness of his subjects lies the king's happiness; in their welfare, his welfare.” <span lang=\"sa\" class=\"og\">प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् ।</span> <i lang=\"sa-Latn\">prajāsukhe sukhaṃ rājñaḥ prajānāṃ ca hite hitam.</i> <span class=\"ref\">Arthaśāstra 1.19.34</span>"
     },
     {
      "kind": "documented",
@@ -66,7 +67,7 @@
      "text": [
       "The closing hymn of the Ṛgveda asks for shared movement, shared speech and a single purpose, which is Fayol's one plan and one team spirit."
      ],
-     "quote": "“Move together, speak together, let your minds be of one accord.” <i>saṃ gacchadhvaṃ saṃ vadadhvaṃ saṃ vo manāṃsi jānatām.</i> <span class=\"ref\">Ṛgveda 10.191.2; common purpose at 10.191.4</span>"
+     "quote": "“Move together, speak together, let your minds be of one accord.” <span lang=\"sa\" class=\"og\">सं गच्छध्वं सं वदध्वं सं वो मनांसि जानताम् ।</span> <i lang=\"sa-Latn\">saṃ gacchadhvaṃ saṃ vadadhvaṃ saṃ vo manāṃsi jānatām.</i> <span class=\"ref\">Ṛgveda 10.191.2; common purpose at 10.191.4</span>"
     },
     {
      "kind": "documented",
@@ -75,7 +76,7 @@
      "text": [
       "Kauṭilya names sustained effort as the root of prosperity. The Gītā describes the ideal doer as combining resolve with enthusiasm (<i>utsāha</i>)."
      ],
-     "quote": "“The root of wealth is activity; its absence brings ruin.” <i>arthasya mūlam utthānam anarthasya viparyayaḥ.</i> <span class=\"ref\">Arthaśāstra 1.19.35; Bhagavad Gītā 18.26</span>"
+     "quote": "“The root of wealth is activity; its absence brings ruin.” <span lang=\"sa\" class=\"og\">अर्थस्य मूलमुत्थानमनर्थस्य विपर्ययः ।</span> <i lang=\"sa-Latn\">arthasya mūlam utthānam anarthasya viparyayaḥ.</i> <span class=\"ref\">Arthaśāstra 1.19.35; Bhagavad Gītā 18.26</span>"
     },
     {
      "kind": "documented",
@@ -84,7 +85,7 @@
      "text": [
       "The Gītā defines yoga in terms of work done skilfully, which is close to Taylor's concern with doing a task the best way."
      ],
-     "quote": "“Yoga is skill in action.” <i>yogaḥ karmasu kauśalam.</i> <span class=\"ref\">Bhagavad Gītā 2.50</span>"
+     "quote": "“Yoga is skill in action.” <span lang=\"sa\" class=\"og\">योगः कर्मसु कौशलम् ।</span> <i lang=\"sa-Latn\">yogaḥ karmasu kauśalam.</i> <span class=\"ref\">Bhagavad Gītā 2.50</span>"
     },
     {
      "kind": "view",
@@ -93,7 +94,7 @@
      "text": [
       "Piece-rate ties reward to output. The Gītā tells the worker to commit fully to the action while not clinging to its reward. These work at different layers: the first is how a firm designs pay, the second is the worker's inner stance toward results. A firm can do the first and still invite the second."
      ],
-     "quote": "“You have a claim on action alone, never on its fruits.” <i>karmaṇy evādhikāras te mā phaleṣu kadācana.</i> <span class=\"ref\">Bhagavad Gītā 2.47</span>"
+     "quote": "“You have a claim on action alone, never on its fruits.” <span lang=\"sa\" class=\"og\">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।</span> <i lang=\"sa-Latn\">karmaṇy evādhikāras te mā phaleṣu kadācana.</i> <span class=\"ref\">Bhagavad Gītā 2.47</span>"
     },
     {
      "kind": "documented",
@@ -102,7 +103,7 @@
      "text": [
       "The Gītā notes that people copy those they regard as best, which is human skill working through example. It also describes the clear kind of knowledge as seeing one undivided reality in all beings, which parallels conceptual skill."
      ],
-     "quote": "“Whatever the best person does, others do too.” <i>yad yad ācarati śreṣṭhas tat tad evetaro janaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.21; see also 18.20</span>"
+     "quote": "“Whatever the best person does, others do too.” <span lang=\"sa\" class=\"og\">यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः ।</span> <i lang=\"sa-Latn\">yad yad ācarati śreṣṭhas tat tad evetaro janaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.21; see also 18.20</span>"
     },
     {
      "kind": "documented",
@@ -111,7 +112,7 @@
      "text": [
       "Fayol's equity asks for fair treatment of all. The Gītā describes the wise as seeing a learned person, a cow, an elephant and an outcast with the same regard, and as even-minded toward friend and foe."
      ],
-     "quote": "<i>sama-darśinaḥ.</i> “Those who see with equal regard.” <span class=\"ref\">Bhagavad Gītā 5.18; 6.9</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">समदर्शिनः ।</span> <i lang=\"sa-Latn\">sama-darśinaḥ.</i> “Those who see with equal regard.” <span class=\"ref\">Bhagavad Gītā 5.18; 6.9</span>"
     }
    ]
   },
@@ -212,7 +213,7 @@
      "text": [
       "The closing hymn of the Ṛgveda asks people to move together, speak together and be of one mind. Coordination is that unity of action, arranged deliberately across departments and levels."
      ],
-     "quote": "“Move together, speak together, let your minds be of one accord.” <i>saṃ gacchadhvaṃ saṃ vadadhvaṃ saṃ vo manāṃsi jānatām.</i> <span class=\"ref\">Ṛgveda 10.191.2</span>"
+     "quote": "“Move together, speak together, let your minds be of one accord.” <span lang=\"sa\" class=\"og\">सं गच्छध्वं सं वदध्वं सं वो मनांसि जानताम् ।</span> <i lang=\"sa-Latn\">saṃ gacchadhvaṃ saṃ vadadhvaṃ saṃ vo manāṃsi jānatām.</i> <span class=\"ref\">Ṛgveda 10.191.2</span>"
     },
     {
      "kind": "view",
@@ -230,7 +231,7 @@
      "text": [
       "Controlling compares results with a standard and corrects. The Gītā places the first controller inside the person, and recommends measured habits in eating, rest and work."
      ],
-     "quote": "“Lift yourself by yourself.” <i>uddhared ātmanātmānam.</i> <span class=\"ref\">Bhagavad Gītā 6.5; moderation at 6.17</span>"
+     "quote": "“Lift yourself by yourself.” <span lang=\"sa\" class=\"og\">उद्धरेदात्मनात्मानम् ।</span> <i lang=\"sa-Latn\">uddhared ātmanātmānam.</i> <span class=\"ref\">Bhagavad Gītā 6.5; moderation at 6.17</span>"
     }
    ]
   },
@@ -305,7 +306,7 @@
      "text": [
       "The peace invocation of the Taittirīya Upaniṣad is a teacher-and-student prayer for shared protection, shared nourishment and shared effort. The Gītā's portrait of the dear devotee begins with having no hatred toward any being, and with friendliness and compassion."
      ],
-     "quote": "“May we be protected together, nourished together, and work together with vigour.” <i>saha nāv avatu saha nau bhunaktu saha vīryaṃ karavāvahai.</i> <span class=\"ref\">Taittirīya Upaniṣad, Brahmānandavallī (opening invocation); Bhagavad Gītā 12.13</span>"
+     "quote": "“May we be protected together, nourished together, and work together with vigour.” <span lang=\"sa\" class=\"og\">सह नाववतु सह नौ भुनक्तु सह वीर्यं करवावहै ।</span> <i lang=\"sa-Latn\">saha nāv avatu saha nau bhunaktu saha vīryaṃ karavāvahai.</i> <span class=\"ref\">Taittirīya Upaniṣad, Brahmānandavallī (opening invocation); Bhagavad Gītā 12.13</span>"
     },
     {
      "kind": "documented",
@@ -314,7 +315,7 @@
      "text": [
       "The invocation of the Īśa and Bṛhadāraṇyaka Upaniṣads treats the part and the whole as inseparable. The Gītā describes a cycle in which beings and the forces of nature sustain each other: an open system with inputs, outputs and feedback."
      ],
-     "quote": "“That is whole, this is whole; from the whole the whole arises.” <i>pūrṇam adaḥ pūrṇam idam pūrṇāt pūrṇam udacyate.</i> <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 5.1.1</span> “Nourishing one another, you will attain the highest good.” <i>parasparaṃ bhāvayantaḥ śreyaḥ param avāpsyatha.</i> <span class=\"ref\">Bhagavad Gītā 3.11; cycle at 3.14–16</span>"
+     "quote": "“That is whole, this is whole; from the whole the whole arises.” <span lang=\"sa\" class=\"og\">पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते ।</span> <i lang=\"sa-Latn\">pūrṇam adaḥ pūrṇam idam pūrṇāt pūrṇam udacyate.</i> <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 5.1.1</span> “Nourishing one another, you will attain the highest good.” <span lang=\"sa\" class=\"og\">परस्परं भावयन्तः श्रेयः परमवाप्स्यथ ।</span> <i lang=\"sa-Latn\">parasparaṃ bhāvayantaḥ śreyaḥ param avāpsyatha.</i> <span class=\"ref\">Bhagavad Gītā 3.11; cycle at 3.14–16</span>"
     },
     {
      "kind": "documented",
@@ -323,7 +324,7 @@
      "text": [
       "Classical Indian ethics is explicitly situational. The Gītā judges a gift by whether it is given in the right place, at the right time, to the right person, a three-part test that is the contingency principle in miniature."
      ],
-     "quote": "<i>deśe kāle ca pātre ca.</i> “In the right place, at the right time, to the right recipient.” <span class=\"ref\">Bhagavad Gītā 17.20</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">देशे काले च पात्रे च ।</span> <i lang=\"sa-Latn\">deśe kāle ca pātre ca.</i> “In the right place, at the right time, to the right recipient.” <span class=\"ref\">Bhagavad Gītā 17.20</span>"
     },
     {
      "kind": "documented",
@@ -332,7 +333,7 @@
      "text": [
       "Continuous improvement rests on repeated practice. The Gītā says an unsteady mind is brought under control through practice (<i>abhyāsa</i>) and detachment."
      ],
-     "quote": "<i>abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate.</i> <span class=\"ref\">Bhagavad Gītā 6.35</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">अभ्यासेन तु कौन्तेय वैराग्येण च गृह्यते ।</span> <i lang=\"sa-Latn\">abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate.</i> <span class=\"ref\">Bhagavad Gītā 6.35</span>"
     },
     {
      "kind": "documented",
@@ -341,7 +342,7 @@
      "text": [
       "The Gītā describes knowledge being transferred by humility, questioning and service, and calls knowledge the supreme purifier. Knowledge here is shared in relationship, not stored."
      ],
-     "quote": "“Learn it by humble approach, by questioning, by service.” <i>tad viddhi praṇipātena paripraśnena sevayā.</i> <span class=\"ref\">Bhagavad Gītā 4.34; 4.38</span>"
+     "quote": "“Learn it by humble approach, by questioning, by service.” <span lang=\"sa\" class=\"og\">तद्विद्धि प्रणिपातेन परिप्रश्नेन सेवया ।</span> <i lang=\"sa-Latn\">tad viddhi praṇipātena paripraśnena sevayā.</i> <span class=\"ref\">Bhagavad Gītā 4.34; 4.38</span>"
     }
    ]
   },
@@ -402,7 +403,7 @@
      "text": [
       "A Ṛgvedic hymn compares the wise shaping speech with the mind to sifting grain through a sieve. That is encoding as a deliberate act. Another hymn says speech has four measured parts, three kept hidden and one spoken. Later grammarians, notably Bhartṛhari, developed this into stages running from the unspoken idea to uttered sound, which maps loosely onto idea, encoding and transmission."
      ],
-     "quote": "“Where the wise shaped speech with the mind, as grain is sifted with a sieve.” <i>saktum iva titaünā punanto yatra dhīrā manasā vācam akrata.</i> <span class=\"ref\">Ṛgveda 10.71.2; four parts of speech at 1.164.45</span>"
+     "quote": "“Where the wise shaped speech with the mind, as grain is sifted with a sieve.” <span lang=\"sa\" class=\"og\">सक्तुमिव तितउना पुनन्तो यत्र धीरा मनसा वाचमक्रत ।</span> <i lang=\"sa-Latn\">saktum iva titaünā punanto yatra dhīrā manasā vācam akrata.</i> <span class=\"ref\">Ṛgveda 10.71.2; four parts of speech at 1.164.45</span>"
     },
     {
      "kind": "documented",
@@ -411,7 +412,7 @@
      "text": [
       "The Bṛhadāraṇyaka Upaniṣad says the Self is to be seen, heard, reflected on and deeply absorbed; later Vedānta reads this as a three-stage path: listen, reflect, then assimilate. Understanding is completed by the listener's own work, as in decoding and feedback."
      ],
-     "quote": "<i>śrotavyo mantavyo nididhyāsitavyaḥ.</i> “To be heard, reflected on, deeply absorbed.” <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 2.4.5</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">श्रोतव्यो मन्तव्यो निदिध्यासितव्यः ।</span> <i lang=\"sa-Latn\">śrotavyo mantavyo nididhyāsitavyaḥ.</i> “To be heard, reflected on, deeply absorbed.” <span class=\"ref\">Bṛhadāraṇyaka Upaniṣad 2.4.5</span>"
     },
     {
      "kind": "documented",
@@ -420,7 +421,7 @@
      "text": [
       "The Gītā sets three tests for speech: it should not agitate, it should be true, and it should be pleasant and beneficial. Manu's formula pairs truth with pleasantness and cautions against an unpleasant truth. The Gītā's verse also includes the test of benefit."
      ],
-     "quote": "“Speech that causes no distress, that is true, pleasant and beneficial.” <i>anudvegakaraṃ vākyaṃ satyaṃ priyahitaṃ ca yat.</i> <span class=\"ref\">Bhagavad Gītā 17.15; Manusmṛti 4.138</span>"
+     "quote": "“Speech that causes no distress, that is true, pleasant and beneficial.” <span lang=\"sa\" class=\"og\">अनुद्वेगकरं वाक्यं सत्यं प्रियहितं च यत् ।</span> <i lang=\"sa-Latn\">anudvegakaraṃ vākyaṃ satyaṃ priyahitaṃ ca yat.</i> <span class=\"ref\">Bhagavad Gītā 17.15; Manusmṛti 4.138</span>"
     },
     {
      "kind": "documented",
@@ -429,7 +430,7 @@
      "text": [
       "The Gītā traces how strong emotion distorts what a person hears and remembers: anger leads to delusion, delusion to loss of memory, and loss of memory to loss of judgement. It is a compact account of why stress, fear and bias block a message."
      ],
-     "quote": "<i>krodhād bhavati sammohaḥ sammohāt smṛtivibhramaḥ.</i> <span class=\"ref\">Bhagavad Gītā 2.63</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">क्रोधाद्भवति सम्मोहः सम्मोहात्स्मृतिविभ्रमः ।</span> <i lang=\"sa-Latn\">krodhād bhavati sammohaḥ sammohāt smṛtivibhramaḥ.</i> <span class=\"ref\">Bhagavad Gītā 2.63</span>"
     }
    ]
   },
@@ -470,7 +471,7 @@
      "text": [
       "Kauṭilya holds that every undertaking begins with deliberation, and lists five parts to it: the means of starting the work, the men and material available, the division of place and time, remedies against failure, and the accomplishment of the aim. That reads as a decision process: define, gather resources, schedule, manage risk, review results."
      ],
-     "quote": "<i>mantrapūrvāḥ sarvārambhāḥ.</i> “All undertakings are preceded by counsel.” <span class=\"ref\">Arthaśāstra 1.15.2; five limbs at 1.15.42</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">मन्त्रपूर्वाः सर्वारम्भाः ।</span> <i lang=\"sa-Latn\">mantrapūrvāḥ sarvārambhāḥ.</i> “All undertakings are preceded by counsel.” <span class=\"ref\">Arthaśāstra 1.15.2; five limbs at 1.15.42</span>"
     },
     {
      "kind": "documented",
@@ -479,7 +480,7 @@
      "text": [
       "At the end of the Gītā, Kṛṣṇa lays out his teaching and hands the decision to Arjuna after full reflection. The process is advice, analysis, and a choice that remains the decider's own."
      ],
-     "quote": "“Reflect on this fully, then do as you wish.” <i>vimṛśyaitad aśeṣeṇa yathecchasi tathā kuru.</i> <span class=\"ref\">Bhagavad Gītā 18.63</span>"
+     "quote": "“Reflect on this fully, then do as you wish.” <span lang=\"sa\" class=\"og\">विमृश्यैतदशेषेण यथेच्छसि तथा कुरु ।</span> <i lang=\"sa-Latn\">vimṛśyaitad aśeṣeṇa yathecchasi tathā kuru.</i> <span class=\"ref\">Bhagavad Gītā 18.63</span>"
     },
     {
      "kind": "documented",
@@ -488,7 +489,7 @@
      "text": [
       "The Gītā names five factors behind any action: the seat or base, the doer, the instruments, the effort, and circumstance beyond control. As an implementation checklist it covers location, people, tools, effort, and the uncertainty that remains."
      ],
-     "quote": "<span class=\"ref\">Bhagavad Gītā 18.14</span>"
+     "quote": "“The base, the doer, the various instruments, the many separate efforts, and providence as the fifth.” <span lang=\"sa\" class=\"og\">अधिष्ठानं तथा कर्ता करणं च पृथग्विधम् । विविधाश्च पृथक्चेष्टा दैवं चैवात्र पञ्चमम् ।</span> <i lang=\"sa-Latn\">adhiṣṭhānaṃ tathā kartā karaṇaṃ ca pṛthagvidham, vividhāś ca pṛthak ceṣṭā daivaṃ caivātra pañcamam.</i> <span class=\"ref\">Bhagavad Gītā 18.14</span>"
     },
     {
      "kind": "documented",
@@ -497,7 +498,7 @@
      "text": [
       "The Gītā classifies the deciding faculty (<i>buddhi</i>) by quality. The clear kind distinguishes what should be done from what should not, what is to be feared from what is not, and what binds from what frees."
      ],
-     "quote": "<i>pravṛttiṃ ca nivṛttiṃ ca kāryākārye bhayābhaye.</i> <span class=\"ref\">Bhagavad Gītā 18.30</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">प्रवृत्तिं च निवृत्तिं च कार्याकार्ये भयाभये ।</span> <i lang=\"sa-Latn\">pravṛttiṃ ca nivṛttiṃ ca kāryākārye bhayābhaye.</i> <span class=\"ref\">Bhagavad Gītā 18.30</span>"
     },
     {
      "kind": "view",
@@ -506,7 +507,7 @@
      "text": [
       "The Yoga Sūtras describe a stage of concentrated insight called <i>ṛtaṃbharā prajñā</i>, which carries truth. It is a classical name for disciplined intuition, a different thing from a hunch."
      ],
-     "quote": "<i>ṛtaṃbharā tatra prajñā.</i> <span class=\"ref\">Yoga Sūtra 1.48</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">ऋतंभरा तत्र प्रज्ञा ।</span> <i lang=\"sa-Latn\">ṛtaṃbharā tatra prajñā.</i> <span class=\"ref\">Yoga Sūtra 1.48</span>"
     },
     {
      "kind": "view",
@@ -515,7 +516,7 @@
      "text": [
       "Kauṭilya's account of the seven constituents of a state (ruler, minister, territory, fortress, treasury, army, ally) is an inventory of strengths and weaknesses, used before deciding whether to act. It works as an audit in the way SWOT does."
      ],
-     "quote": "<i>svāmy-amātya-janapada-durga-kośa-daṇḍa-mitrāṇi prakṛtayaḥ.</i> <span class=\"ref\">Arthaśāstra 6.1.1</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">स्वाम्यमात्यजनपददुर्गकोशदण्डमित्राणि प्रकृतयः ।</span> <i lang=\"sa-Latn\">svāmy-amātya-janapada-durga-kośa-daṇḍa-mitrāṇi prakṛtayaḥ.</i> <span class=\"ref\">Arthaśāstra 6.1.1</span>"
     }
    ]
   },
@@ -571,7 +572,7 @@
      "text": [
       "Kauṭilya argues that no ruler can govern alone. Sovereignty needs helpers, so appoint counsellors and listen to them. This is the case for delegation, with the listening that makes it work."
      ],
-     "quote": "“Kingship is possible only with assistance; one wheel alone does not move.” <i>sahāyasādhyaṃ rājatvaṃ cakram ekaṃ na vartate.</i> <span class=\"ref\">Arthaśāstra 1.7.9</span>"
+     "quote": "“Kingship is possible only with assistance; one wheel alone does not move.” <span lang=\"sa\" class=\"og\">सहायसाध्यं राजत्वं चक्रमेकं न वर्तते ।</span> <i lang=\"sa-Latn\">sahāyasādhyaṃ rājatvaṃ cakram ekaṃ na vartate.</i> <span class=\"ref\">Arthaśāstra 1.7.9</span>"
     },
     {
      "kind": "documented",
@@ -598,7 +599,7 @@
      "text": [
       "The Atharvaveda speaks of the <i>sabhā</i> and <i>samiti</i> as two deliberative assemblies, daughters of Prajāpati. They are group bodies where decisions were made by discussion, which a modern reader may compare to self-managed circles. The comparison is loose: these were assemblies of a polity."
      ],
-     "quote": "<i>sabhā ca mā samitiś cāvatām.</i> <span class=\"ref\">Atharvaveda 7.12.1</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">सभा च मा समितिश्चावताम् ।</span> <i lang=\"sa-Latn\">sabhā ca mā samitiś cāvatām.</i> <span class=\"ref\">Atharvaveda 7.12.1</span>"
     },
     {
      "kind": "documented",
@@ -607,7 +608,7 @@
      "text": [
       "The Gītā's wheel of sacrifice has inputs, transformation, outputs and a return, and says whoever refuses to turn it lives in vain. As a picture of purpose, input, activity, output and feedback, it parallels the organising process."
      ],
-     "quote": "<i>evaṃ pravartitaṃ cakraṃ nānuvartayatīha yaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.14–16</span>"
+     "quote": "“Whoever here does not keep turning the wheel thus set in motion…” <span lang=\"sa\" class=\"og\">एवं प्रवर्तितं चक्रं नानुवर्तयतीह यः ।</span> <i lang=\"sa-Latn\">evaṃ pravartitaṃ cakraṃ nānuvartayatīha yaḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.14–16</span>"
     }
    ]
   },
@@ -673,7 +674,7 @@
      "text": [
       "The last chapter of the Arthaśāstra defines <i>artha</i> in terms of people's livelihood and the land they live on, and names the science as the means of acquiring and protecting that land. Livelihood, resources and the means to secure them sit close to the wealth, welfare and scarcity definitions above."
      ],
-     "quote": "<i>manuṣyāṇāṃ vṛttir arthaḥ.</i> “The livelihood of people is wealth.” <span class=\"ref\">Arthaśāstra 15.1.1</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">मनुष्याणां वृत्तिरर्थः ।</span> <i lang=\"sa-Latn\">manuṣyāṇāṃ vṛttir arthaḥ.</i> “The livelihood of people is wealth.” <span class=\"ref\">Arthaśāstra 15.1.1</span>"
     },
     {
      "kind": "view",
@@ -691,7 +692,7 @@
      "text": [
       "Manu observes that desire is not quenched by consuming, as fire grows when fed with ghee. The Gītā says pleasures born of contact have a beginning and an end. The two lines sit on either side of the diminishing marginal utility debate: satisfaction per unit declines while the appetite persists."
      ],
-     "quote": "“Desire is never quenched by enjoyment of desires; it only grows, like fire fed with ghee.” <i>na jātu kāmaḥ kāmānām upabhogena śāmyati.</i> <span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
+     "quote": "“Desire is never quenched by enjoyment of desires; it only grows, like fire fed with ghee.” <span lang=\"sa\" class=\"og\">न जातु कामः कामानामुपभोगेन शाम्यति ।</span> <i lang=\"sa-Latn\">na jātu kāmaḥ kāmānām upabhogena śāmyati.</i> <span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
     },
     {
      "kind": "view",
@@ -700,7 +701,7 @@
      "text": [
       "The Gītā's portrait of the over-proud mind includes boasting of wealth and birth: “who else is my equal?” That is the motive behind status buying. The same text notes that ordinary people follow whatever the eminent do, which describes imitation demand."
      ],
-     "quote": "<i>āḍhyo 'bhijanavān asmi ko 'nyo 'sti sadṛśo mayā.</i> <span class=\"ref\">Bhagavad Gītā 16.15; 3.21</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">आढ्योऽभिजनवानस्मि कोऽन्योऽस्ति सदृशो मया ।</span> <i lang=\"sa-Latn\">āḍhyo 'bhijanavān asmi ko 'nyo 'sti sadṛśo mayā.</i> <span class=\"ref\">Bhagavad Gītā 16.15; 3.21</span>"
     },
     {
      "kind": "documented",
@@ -723,39 +724,39 @@
     {
      "id": "measuring-elasticity",
      "title": "Measuring elasticity: PED, YED and XED",
-     "html": "<p>If a small change in the determinant brings a large change in quantity, demand is <b>highly elastic</b>. If a large change brings only a small change, it is <b>inelastic</b>. Businesses use elasticity to set prices, forecast revenue, plan taxation and promotions, and judge which products respond most to change.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Measuring elasticity: PED, YED and XED\" tabindex=\"0\"><table>\n<thead><tr><th>Measure</th><th>Formula</th><th>Reading</th><th>Worked example</th></tr></thead>\n<tbody>\n<tr><td>PED, price elasticity</td><td>% change in quantity demanded ÷ % change in price</td><td>|PED| &gt; 1 elastic, = 1 unitary, &lt; 1 inelastic (sign ignored)</td><td>Price up 10%, quantity down 20%: PED = −2, so |PED| = 2: elastic.</td></tr>\n<tr><td>YED, income elasticity</td><td>% change in quantity demanded ÷ % change in income</td><td>&gt; 1 luxury; between 0 and 1 necessity; 0 neutral; &lt; 0 inferior</td><td>Income up 10%, demand up 15%: YED = 1.5, luxury good.</td></tr>\n<tr><td>XED, cross elasticity</td><td>% change in quantity of A ÷ % change in price of B</td><td>Positive: substitutes. Negative: complements. Zero: unrelated.</td><td>Coffee price up 20%, tea demand up 10%: XED = +0.5, substitutes.</td></tr>\n</tbody></table></div>"
+     "html": "<p class=\"why\">A chai stall raises the price of a cup from ₹10 to ₹12. Will it take in more money, or less? That depends on how many customers walk away, and elasticity is the number that answers it.</p>\n<div class=\"def\"><p><span class=\"k\">In plain words</span>Elasticity measures how strongly buyers react to a change. It compares percentages, so it works the same for a ₹10 cup of tea and a ₹10 lakh car.</p><p><span class=\"k\">Exam definition</span>Price elasticity of demand is the ratio of the percentage change in quantity demanded to the percentage change in price (Alfred Marshall).</p></div>\n<p>If a small change brings a large change in quantity, demand is <b>elastic</b>. If a large change brings only a small change, it is <b>inelastic</b>. There are three measures, one for each kind of change.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Measuring elasticity: PED, YED and XED\" tabindex=\"0\"><table>\n<thead><tr><th>Measure</th><th>Formula</th><th>Reading</th><th>Example</th></tr></thead>\n<tbody>\n<tr><td>PED, price elasticity</td><td>% change in quantity demanded ÷ % change in price</td><td>|PED| &gt; 1 elastic, = 1 unitary, &lt; 1 inelastic (sign ignored)</td><td>Price up 10%, cups sold down 20%: PED = −2, elastic.</td></tr>\n<tr><td>YED, income elasticity</td><td>% change in quantity demanded ÷ % change in income</td><td>&gt; 1 luxury; between 0 and 1 necessity; 0 neutral; &lt; 0 inferior</td><td>Incomes up 10%, restaurant meals up 15%: YED = 1.5, a luxury.</td></tr>\n<tr><td>XED, cross elasticity</td><td>% change in quantity of A ÷ % change in price of B</td><td>Positive: substitutes. Negative: complements. Zero: unrelated.</td><td>Coffee up 20%, tea sales up 10%: XED = +0.5, substitutes.</td></tr>\n</tbody></table></div>\n<p><b>Back to the chai stall.</b> At ₹10 it sells 200 cups a day and takes ₹2,000. At ₹12, a 20% rise, two things could happen:</p>\n<ul><li>Sales fall to 150 cups, a 25% fall. PED = −25 ÷ 20 = −1.25, elastic. Takings fall to ₹1,800.</li><li>Sales fall to 180 cups, a 10% fall. PED = −10 ÷ 20 = −0.5, inelastic. Takings rise to ₹2,160.</li></ul>\n<p class=\"mixup\"><b>Don't confuse elasticity with slope.</b> Slope compares raw changes, such as cups per rupee. Elasticity compares percentages. Along a straight-line demand curve the slope is the same everywhere, but elasticity is high at high prices and low at low prices.</p>\n<p class=\"cue\">Elastic: buyers react more than the price moved. Inelastic: they react less.</p>"
     },
     {
      "id": "methods-of-measuring-price-elasticity",
      "title": "Methods of measuring price elasticity",
-     "html": "<p>Price elasticity is measured in four standard ways.</p>\n<p><b>1. Proportionate (percentage) method.</b></p>\n<div class=\"eq\">e = (ΔQ ÷ Q) ÷ (ΔP ÷ P) = (ΔQ ÷ ΔP) × (P ÷ Q)</div>\n<p><b>2. Point method.</b> At a point on a straight-line demand curve, elasticity equals the <b>lower segment ÷ upper segment</b> of the line, measured from that point to the two axes. It is 1 at the midpoint, infinite where the line meets the price axis, and 0 where it meets the quantity axis.</p>\n<p><b>3. Arc (midpoint) method,</b> for a stretch of the curve between two points:</p>\n<div class=\"eq\">e = [(Q₂ − Q₁) ÷ ((Q₁ + Q₂) ÷ 2)] ÷ [(P₂ − P₁) ÷ ((P₁ + P₂) ÷ 2)]</div>\n<p>Using averages gives the same answer whether price rises or falls. Example: price rises from 12 to 16 and quantity falls from 80 to 60, so e = (−20 ÷ 70) ÷ (4 ÷ 14) = −1, which is unitary.</p>\n<p><b>4. Total outlay (expenditure) method,</b> Alfred Marshall's: watch what happens to total spending, P × Q, when price changes.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Total outlay method\" tabindex=\"0\"><table>\n<thead><tr><th>When price falls, total outlay…</th><th>When price rises, total outlay…</th><th>Elasticity</th></tr></thead>\n<tbody>\n<tr><td>rises</td><td>falls</td><td>Greater than 1 (elastic)</td></tr>\n<tr><td>stays the same</td><td>stays the same</td><td>Equal to 1 (unitary)</td></tr>\n<tr><td>falls</td><td>rises</td><td>Less than 1 (inelastic)</td></tr>\n</tbody></table></div>\n<p>The total outlay method shows only whether demand is elastic, unitary or inelastic, not the exact value. A unitary demand curve is a <b>rectangular hyperbola</b>, since spending stays constant at every price.</p>"
+     "html": "<p class=\"why\">Measure the same price change from two ends and you can get two different answers. The four methods below exist to settle which number to use.</p>\n<p><b>1. Proportionate (percentage) method.</b> It measures from the starting price and quantity.</p>\n<div class=\"eq\">e = (ΔQ ÷ Q) ÷ (ΔP ÷ P) = (ΔQ ÷ ΔP) × (P ÷ Q)</div>\n<p>It is simple, but the answer depends on the direction of the change. For the chai stall, ₹10 to ₹12 with sales falling from 200 to 150 gives −1.25. The reverse move, ₹12 to ₹10 with sales rising from 150 to 200, gives −2.</p>\n<p><b>2. Point method.</b> At a point on a straight-line demand curve, elasticity equals the <b>lower segment ÷ upper segment</b> of the line, measured from that point to the two axes. It is 1 at the midpoint, infinite where the line meets the price axis, and 0 where it meets the quantity axis. Use it when you have a demand line and want the elasticity at one price.</p>\n<p><b>3. Arc (midpoint) method,</b> for a stretch of the curve between two points:</p>\n<div class=\"eq\">e = [(Q₂ − Q₁) ÷ ((Q₁ + Q₂) ÷ 2)] ÷ [(P₂ − P₁) ÷ ((P₁ + P₂) ÷ 2)]</div>\n<p>Averages make the answer the same in both directions. For the chai stall: (−50 ÷ 175) ÷ (2 ÷ 11) = −0.286 ÷ 0.182 = −1.57, whichever way the price moved.</p>\n<p><b>4. Total outlay (expenditure) method,</b> Alfred Marshall's: watch what happens to total spending, P × Q, when price changes. A kirana store sells 100 packets of biscuits a day at ₹20, taking ₹2,000. At ₹18 it sells 130 and takes ₹2,340. Spending rose as the price fell, so demand is elastic.</p>\n<div class=\"tb\" role=\"region\" aria-label=\"Total outlay method\" tabindex=\"0\"><table>\n<thead><tr><th>When price falls, total outlay…</th><th>When price rises, total outlay…</th><th>Elasticity</th></tr></thead>\n<tbody>\n<tr><td>rises</td><td>falls</td><td>Greater than 1 (elastic)</td></tr>\n<tr><td>stays the same</td><td>stays the same</td><td>Equal to 1 (unitary)</td></tr>\n<tr><td>falls</td><td>rises</td><td>Less than 1 (inelastic)</td></tr>\n</tbody></table></div>\n<p><b>Where it breaks.</b> The total outlay method shows only whether demand is elastic, unitary or inelastic, not the exact value. The point method assumes a straight line, which real demand rarely is.</p>\n<p><b>For exams.</b> Expect an arc calculation with numbers, and the total outlay table as a reasoning question. A unitary demand curve is a <b>rectangular hyperbola</b>, since spending stays the same at every price.</p>"
     },
     {
      "id": "five-degrees-of-price-elasticity",
      "title": "Five degrees of price elasticity",
-     "html": "<div class=\"tb\" role=\"region\" aria-label=\"Five degrees of price elasticity\" tabindex=\"0\"><table>\n<thead><tr><th>Degree</th><th>PED</th><th>Meaning</th></tr></thead>\n<tbody>\n<tr><td>Perfectly elastic</td><td>∞</td><td>A tiny price rise cuts quantity demanded to zero. Horizontal curve.</td></tr>\n<tr><td>Elastic</td><td>&gt; 1</td><td>Quantity changes more than price. Flatter curve.</td></tr>\n<tr><td>Unitary</td><td>= 1</td><td>Quantity changes in proportion to price.</td></tr>\n<tr><td>Inelastic</td><td>&lt; 1</td><td>Quantity changes less than price. Steeper curve.</td></tr>\n<tr><td>Perfectly inelastic</td><td>0</td><td>Quantity does not change at any price. Vertical curve.</td></tr>\n</tbody></table></div>"
+     "html": "<p class=\"why\">Real goods sit between two extremes that almost never occur. Knowing the five reference points makes everything in between easy to place.</p>\n<figure>\n<div class=\"degs\" role=\"img\" aria-label=\"Five demand curves: horizontal, flat, a curve bending toward the axes, steep and vertical\"><div><svg viewBox=\"0 0 106 100\" width=\"100%\" aria-hidden=\"true\"><line x1=\"10\" y1=\"6\" x2=\"10\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"10\" y1=\"96\" x2=\"100\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"12\" y1=\"50\" x2=\"100\" y2=\"50\" stroke=\"#ec3013\" stroke-width=\"3\" fill=\"none\"/></svg><p><b>Perfectly elastic</b> PED = ∞</p></div><div><svg viewBox=\"0 0 106 100\" width=\"100%\" aria-hidden=\"true\"><line x1=\"10\" y1=\"6\" x2=\"10\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"10\" y1=\"96\" x2=\"100\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"16\" y1=\"34\" x2=\"100\" y2=\"74\" stroke=\"#ec3013\" stroke-width=\"3\" fill=\"none\"/></svg><p><b>Elastic</b> PED &gt; 1</p></div><div><svg viewBox=\"0 0 106 100\" width=\"100%\" aria-hidden=\"true\"><line x1=\"10\" y1=\"6\" x2=\"10\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"10\" y1=\"96\" x2=\"100\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><path d=\"M20 8 Q30 80 100 86\" stroke=\"#ec3013\" stroke-width=\"3\" fill=\"none\"/></svg><p><b>Unitary</b> PED = 1</p></div><div><svg viewBox=\"0 0 106 100\" width=\"100%\" aria-hidden=\"true\"><line x1=\"10\" y1=\"6\" x2=\"10\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"10\" y1=\"96\" x2=\"100\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"44\" y1=\"8\" x2=\"64\" y2=\"94\" stroke=\"#ec3013\" stroke-width=\"3\" fill=\"none\"/></svg><p><b>Inelastic</b> PED &lt; 1</p></div><div><svg viewBox=\"0 0 106 100\" width=\"100%\" aria-hidden=\"true\"><line x1=\"10\" y1=\"6\" x2=\"10\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"10\" y1=\"96\" x2=\"100\" y2=\"96\" stroke=\"#201e1d\" stroke-width=\"2\"/><line x1=\"56\" y1=\"8\" x2=\"56\" y2=\"94\" stroke=\"#ec3013\" stroke-width=\"3\" fill=\"none\"/></svg><p><b>Perfectly inelastic</b> PED = 0</p></div></div>\n<figcaption>Price is on the vertical axis and quantity on the horizontal. The flatter the curve at a given point, the more quantity moves for the same change in price.</figcaption>\n</figure>\n<div class=\"tb\" role=\"region\" aria-label=\"Five degrees of price elasticity\" tabindex=\"0\"><table>\n<thead><tr><th>Degree</th><th>PED</th><th>Meaning</th><th>Closest real case</th></tr></thead>\n<tbody>\n<tr><td>Perfectly elastic</td><td>∞</td><td>A tiny price rise cuts quantity demanded to zero. Horizontal curve.</td><td>One farmer selling wheat at the going mandi price; a theoretical limit</td></tr>\n<tr><td>Elastic</td><td>&gt; 1</td><td>Quantity changes more than price. Flatter curve.</td><td>One brand of biscuits among many</td></tr>\n<tr><td>Unitary</td><td>= 1</td><td>Quantity changes in proportion to price; spending stays the same.</td><td>A benchmark rather than a product</td></tr>\n<tr><td>Inelastic</td><td>&lt; 1</td><td>Quantity changes less than price. Steeper curve.</td><td>Salt; petrol in the short run</td></tr>\n<tr><td>Perfectly inelastic</td><td>0</td><td>Quantity does not change at any price. Vertical curve.</td><td>A theoretical limit; life-saving medicine comes close</td></tr>\n</tbody></table></div>\n<p class=\"mixup\"><b>Don't read elasticity from steepness alone.</b> Comparing two curves, flatter means more elastic only at the same price and quantity. Along one straight line, elasticity changes from point to point.</p>\n<p class=\"cue\">Flat is elastic. Steep is inelastic.</p>"
     },
     {
      "id": "what-makes-demand-elastic",
      "title": "What makes demand elastic",
-     "html": "<ul>\n<li><b>Substitutes:</b> more close substitutes mean more elastic demand (butter against margarine).</li>\n<li><b>Nature of the good:</b> necessities are inelastic, luxuries elastic (insulin against a luxury car).</li>\n<li><b>Share of income:</b> expensive items are more elastic than cheap ones (house against salt).</li>\n<li><b>Time period:</b> demand is more elastic over a longer period, as consumers adjust (petrol).</li>\n<li><b>Durability:</b> durable goods are more elastic than non-durable goods (refrigerator against bread).</li>\n</ul>\n<p>Other factors: goods with <b>many uses</b>, such as electricity, have more elastic demand; purchases that can be <b>postponed</b> are more elastic than urgent ones such as medicines; <b>habit</b> makes demand inelastic, as with tobacco; and <b>richer buyers</b> react less to a given price change.</p>"
+     "html": "<p class=\"why\">A rise in the price of salt barely changes how much people buy. A small discount on one phone brand can move its sales sharply. Five things explain the difference.</p>\n<ul>\n<li><b>Substitutes:</b> the more close substitutes, the more elastic the demand. One brand of tea has many; tea as a whole has few. So demand for a single brand is far more elastic than for the category.</li>\n<li><b>Nature of the good:</b> necessities are inelastic, luxuries elastic (salt and insulin against a foreign holiday).</li>\n<li><b>Share of income:</b> things that take a big share of a budget are more elastic than small purchases (a two-wheeler against a box of matches).</li>\n<li><b>Time:</b> demand grows more elastic over time, as people adjust. When petrol prices rise, people still commute next week; over some years, some switch to CNG, electric vehicles or the metro.</li>\n<li><b>Durability:</b> a durable purchase can be put off, so demand is more elastic (a refrigerator against bread).</li>\n</ul>\n<p>Other factors: goods with <b>many uses</b>, such as electricity, have more elastic demand; purchases that can be <b>postponed</b> are more elastic than urgent ones such as medicines; <b>habit</b> makes demand inelastic, as with tobacco; and <b>richer buyers</b> react less to a given price change.</p>\n<p><b>Where it breaks.</b> The factors can pull in opposite directions. Petrol is a necessity with few substitutes in the short run, yet it takes a large share of a commuter's budget. Only data shows which wins.</p>"
     },
     {
      "id": "using-elasticity-in-decisions",
      "title": "Using elasticity in decisions",
-     "html": "<p><b>Pricing:</b> with elastic demand a price cut raises revenue; with inelastic demand a price rise raises revenue. <b>Taxation:</b> taxing inelastic goods raises more revenue. <b>Cross elasticity</b> guides bundling of complements, competition analysis against substitutes, and revenue forecasts when competitors change prices. <b>YED</b> supports market segmentation and shows which products grow with incomes. For two perfect substitutes the cross elasticity tends to infinity.</p>"
+     "html": "<p class=\"why\">A firm raises its price and sales fall. Was that a mistake? Elasticity turns the question into arithmetic.</p>\n<p><b>Pricing.</b> With elastic demand, a price cut raises revenue. With inelastic demand, a price rise raises revenue. For the chai stall that keeps 180 of its 200 customers at ₹12, the rise pays; if only 150 stay, it does not.</p>\n<p><b>Taxation.</b> Governments raise more revenue by taxing goods with inelastic demand, because sales fall little. That is one reason tobacco products in India are taxed at the highest GST rates.</p>\n<p><b>Cross elasticity</b> guides bundling of complements (a printer and its ink), analysis of competition from substitutes, and revenue forecasts when a competitor changes its price. For two perfect substitutes the cross elasticity tends to infinity. <b>Income elasticity</b> supports market segmentation and shows which products will grow as incomes rise.</p>\n<p><b>Where it breaks.</b> Elasticity is measured at one time, at one price, with other things held equal. Competitors may follow a price change, tastes shift, and a short-run elasticity can mislead a long-run decision.</p>\n<p><b>In practice.</b> Firms estimate elasticity from past promotions, price tests in a few markets, and surveys. Online sellers can test two prices on similar customers at the same time.</p>\n<details class=\"deeper\"><summary>Go deeper <span>for practitioners</span></summary>\n<p><b>A decision.</b> You raised the price of a ₹200 product by 8%, and monthly volume fell 3%. Elasticity is about −0.375, so demand is inelastic, and revenue rose about 4.8% (1.08 × 0.97 = 1.048). Before raising the price again, ask whether competitors followed, and whether three months is long enough for buyers to have found alternatives.</p>\n<p><b>Elasticity and margins.</b> For a firm setting price to maximise profit, the margin over marginal cost, as a share of price, equals 1 ÷ |PED| (the Lerner rule). A firm facing an elasticity of −4 should price with a margin of about 25% of price; one facing −2, about 50%. The more elastic its demand, the thinner the margin it can hold.</p>\n<p><b>Links.</b> Pricing decisions (Unit 7) turns these numbers into pricing strategy. Market structures (this unit) explains why a firm in perfect competition faces a perfectly elastic demand curve.</p>\n</details>"
     }
    ],
    "lensNote": "The classical texts have no measure of responsiveness. The links below are thematic: they concern necessities and the handling of scarcity, which is where elasticity matters in practice.",
    "pairings": [
     {
-     "kind": "documented",
+     "kind": "view",
      "modern": "Necessities",
      "classic": "food as the foundation",
      "text": [
-      "The Taittirīya Upaniṣad treats food as the base of life and tells the student not to disparage it, and to make it abundant. Food is the clearest inelastic good: demand barely moves when its price does."
+      "The Taittirīya Upaniṣad treats food as the base of life and tells the student not to disparage it, and to make it abundant. Food is the clearest inelastic good: demand barely moves when its price does. The text says nothing about prices or how buyers respond to them, so the link to elasticity is a reading."
      ],
-     "quote": "<i>annaṃ na nindyāt, tad vratam.</i> “Do not disparage food; that is the vow.” <span class=\"ref\">Taittirīya Upaniṣad 3.7; abundance at 3.9</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">अन्नं न निन्द्यात् । तद्व्रतम् ।</span> <i lang=\"sa-Latn\">annaṃ na nindyāt, tad vratam.</i> “Do not disparage food; that is the vow.” <span class=\"ref\">Taittirīya Upaniṣad 3.7; abundance at 3.9</span>"
     },
     {
      "kind": "view",
@@ -810,7 +811,7 @@
      "text": [
       "The Gītā says that contacts with the senses bring heat and cold, pleasure and pain, and that they come and go. Utility from one unit is not a fixed quantity, which is why measuring it in utils is an assumption and not a fact."
      ],
-     "quote": "<i>āgamāpāyino 'nityās.</i> “They come and go, and are impermanent.” <span class=\"ref\">Bhagavad Gītā 2.14</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">आगमापायिनोऽनित्यास् ।</span> <i lang=\"sa-Latn\">āgamāpāyino 'nityās.</i> “They come and go, and are impermanent.” <span class=\"ref\">Bhagavad Gītā 2.14</span>"
     },
     {
      "kind": "documented",
@@ -819,7 +820,7 @@
      "text": [
       "Manu's line about desire growing under consumption (see chapter 6) and the Gītā's line that contact-born pleasures have a beginning and an end together describe the two halves of the consumer: appetite remains while the satisfaction per unit declines."
      ],
-     "quote": "<span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
+     "quote": "“Pleasures born of contact are sources of sorrow; they have a beginning and an end, and the wise take no delight in them.” <span lang=\"sa\" class=\"og\">ये हि संस्पर्शजा भोगा दुःखयोनय एव ते । आद्यन्तवन्तः कौन्तेय न तेषु रमते बुधः ।</span> <i lang=\"sa-Latn\">ye hi saṃsparśajā bhogā duḥkhayonaya eva te, ādyantavantaḥ kaunteya na teṣu ramate budhaḥ.</i> <span class=\"ref\">Manusmṛti 2.94; Bhagavad Gītā 5.22</span>"
     },
     {
      "kind": "view",
@@ -828,7 +829,7 @@
      "text": [
       "The Gītā says yoga is not for one who eats too much or too little, sleeps too much or too little. It prescribes balance across food, recreation, work and sleep. This is equi-marginal logic applied to a day: shift effort from where it adds little to where it adds more."
      ],
-     "quote": "<i>nātyaśnatas tu yogo 'sti na caikāntam anaśnataḥ.</i> <span class=\"ref\">Bhagavad Gītā 6.16–17</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">नात्यश्नतस्तु योगोऽस्ति न चैकान्तमनश्नतः ।</span> <i lang=\"sa-Latn\">nātyaśnatas tu yogo 'sti na caikāntam anaśnataḥ.</i> <span class=\"ref\">Bhagavad Gītā 6.16–17</span>"
     },
     {
      "kind": "view",
@@ -837,7 +838,7 @@
      "text": [
       "Consumer surplus measures the value received above the price paid. The Yoga Sūtras name contentment (<i>santoṣa</i>) as a source of the highest happiness, and the Īśa Upaniṣad advises enjoying what one has without coveting another's wealth. Both locate satisfaction in what is received, not in the price."
      ],
-     "quote": "<i>santoṣād anuttamaḥ sukhalābhaḥ.</i> <span class=\"ref\">Yoga Sūtra 2.42; Īśa Upaniṣad 1</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">सन्तोषादनुत्तमः सुखलाभः ।</span> <i lang=\"sa-Latn\">santoṣād anuttamaḥ sukhalābhaḥ.</i> <span class=\"ref\">Yoga Sūtra 2.42; Īśa Upaniṣad 1</span>"
     }
    ]
   },
@@ -883,7 +884,7 @@
      "text": [
       "The Kaṭha Upaniṣad sets out a ranking, not a measurement: the good (<i>śreyas</i>) and the pleasant (<i>preyas</i>) both present themselves, and the wise person examines them and chooses. It is a classical statement of ordinal choice, where the question is which option is preferred."
      ],
-     "quote": "<i>śreyaś ca preyaś ca manuṣyam etas tau samparītya vivinakti dhīraḥ.</i> <span class=\"ref\">Kaṭha Upaniṣad 1.2.2</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">श्रेयश्च प्रेयश्च मनुष्यमेतस्तौ सम्परीत्य विविनक्ति धीरः ।</span> <i lang=\"sa-Latn\">śreyaś ca preyaś ca manuṣyam etas tau samparītya vivinakti dhīraḥ.</i> <span class=\"ref\">Kaṭha Upaniṣad 1.2.2</span>"
     },
     {
      "kind": "documented",
@@ -892,7 +893,7 @@
      "text": [
       "Kauṭilya says to enjoy pleasures without breaking the claims of right conduct and wealth, or to pursue the three aims in balance, each supporting the others. This is an allocation across competing goods under a constraint, with the constraint stated in moral terms."
      ],
-     "quote": "<i>dharmārthāvirodhena kāmaṃ seveta.</i> <span class=\"ref\">Arthaśāstra 1.7.3</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">धर्मार्थाविरोधेन कामं सेवेत ।</span> <i lang=\"sa-Latn\">dharmārthāvirodhena kāmaṃ seveta.</i> <span class=\"ref\">Arthaśāstra 1.7.3</span>"
     },
     {
      "kind": "view",
@@ -901,7 +902,7 @@
      "text": [
       "The Gītā advises treating pleasure and pain, gain and loss, victory and defeat alike (<i>sukha-duḥkhe same kṛtvā</i>). Indifference between bundles is not that teaching, and the resemblance is in the word only. The text is about steadiness of mind under outcomes, not about equal-satisfaction trade-offs."
      ],
-     "quote": "<span class=\"ref\">Bhagavad Gītā 2.38; 2.48</span>"
+     "quote": "“Treating pleasure and pain, gain and loss, victory and defeat alike.” <span lang=\"sa\" class=\"og\">सुखदुःखे समे कृत्वा लाभालाभौ जयाजयौ ।</span> <i lang=\"sa-Latn\">sukhaduḥkhe same kṛtvā lābhālābhau jayājayau.</i> <span class=\"ref\">Bhagavad Gītā 2.38; 2.48</span>"
     }
    ]
   },
@@ -1026,7 +1027,7 @@
      "text": [
       "The Arthaśāstra lists the heads of the state's revenue: fortified cities, countryside, mines, irrigation works, forests, herds and trade routes. It pairs them with an accounts office that records income and expenditure. It is an early sectoral accounting of an economy."
      ],
-     "quote": "<i>samāhartā durgaṃ rāṣṭraṃ khaniṃ setuṃ vanaṃ vrajaṃ vaṇikpathaṃ cāvekṣeta.</i> <span class=\"ref\">Arthaśāstra 2.6.1; accounts office at 2.7</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">समाहर्ता दुर्गं राष्ट्रं खनिं सेतुं वनं व्रजं वणिक्पथं चावेक्षेत ।</span> <i lang=\"sa-Latn\">samāhartā durgaṃ rāṣṭraṃ khaniṃ setuṃ vanaṃ vrajaṃ vaṇikpathaṃ cāvekṣeta.</i> <span class=\"ref\">Arthaśāstra 2.6.1; accounts office at 2.7</span>"
     },
     {
      "kind": "documented",
@@ -1035,7 +1036,7 @@
      "text": [
       "Manu advises taking tax in small amounts, as a leech, a calf and a bee take their food. Kālidāsa describes a king who takes tax as the sun takes water, to return it many times over. Taxation is tied to a limit and to a return for the public."
      ],
-     "quote": "“As the bee takes honey little by little, so the king should draw taxes.” <i>yathālpālpam adanty ādyaṃ vāryokovatsaṣaṭpadāḥ.</i> <span class=\"ref\">Manusmṛti 7.129; Raghuvaṃśa 1.18</span>"
+     "quote": "“As the bee takes honey little by little, so the king should draw taxes.” <span lang=\"sa\" class=\"og\">यथाल्पाल्पमदन्त्याद्यं वार्योकोवत्सषट्पदाः ।</span> <i lang=\"sa-Latn\">yathālpālpam adanty ādyaṃ vāryokovatsaṣaṭpadāḥ.</i> <span class=\"ref\">Manusmṛti 7.129; Raghuvaṃśa 1.18</span>"
     },
     {
      "kind": "view",
@@ -1090,7 +1091,7 @@
      "text": [
       "The Taittirīya Upaniṣad's farewell instruction to students turns on conduct: speak the truth, follow right conduct, and do only blameless actions. It then gives a method for giving, which is relevant to CSR: give with faith, in abundance, with modesty, and with a sense of responsibility."
      ],
-     "quote": "<i>satyaṃ vada, dharmaṃ cara.</i> “Speak the truth; practise right conduct.” <i>śraddhayā deyam, śriyā deyam, hriyā deyam.</i> <span class=\"ref\">Taittirīya Upaniṣad 1.11.1–3</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">सत्यं वद । धर्मं चर ।</span> <i lang=\"sa-Latn\">satyaṃ vada, dharmaṃ cara.</i> “Speak the truth; practise right conduct.” <span lang=\"sa\" class=\"og\">श्रद्धया देयम् । श्रिया देयम् । ह्रिया देयम् ।</span> <i lang=\"sa-Latn\">śraddhayā deyam, śriyā deyam, hriyā deyam.</i> <span class=\"ref\">Taittirīya Upaniṣad 1.11.1–3</span>"
     },
     {
      "kind": "documented",
@@ -1099,7 +1100,7 @@
      "text": [
       "A Ṛgvedic hymn says the one who eats alone eats sin alone. The Gītā adds that those who cook only for themselves eat sin, and that one should act with an eye to the welfare of the world. The pairing speaks to the tension at the centre of business ethics."
      ],
-     "quote": "<i>kevalāgho bhavati kevalādī.</i> “He who eats alone eats only sin.” <span class=\"ref\">Ṛgveda 10.117.6; Bhagavad Gītā 3.13, 3.20</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">केवलाघो भवति केवलादी ।</span> <i lang=\"sa-Latn\">kevalāgho bhavati kevalādī.</i> “He who eats alone eats only sin.” <span class=\"ref\">Ṛgveda 10.117.6; Bhagavad Gītā 3.13, 3.20</span>"
     },
     {
      "kind": "documented",
@@ -1108,7 +1109,7 @@
      "text": [
       "The Gītā describes those who are devoted to the welfare of all beings as reaching the supreme. The phrase is an old statement of the stakeholder view."
      ],
-     "quote": "<i>sarvabhūtahite ratāḥ.</i> <span class=\"ref\">Bhagavad Gītā 5.25; 12.4</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">सर्वभूतहिते रताः ।</span> <i lang=\"sa-Latn\">sarvabhūtahite ratāḥ.</i> <span class=\"ref\">Bhagavad Gītā 5.25; 12.4</span>"
     },
     {
      "kind": "documented",
@@ -1117,7 +1118,7 @@
      "text": [
       "The Gītā lists the qualities of a person oriented to the good: fearlessness, purity of heart, charity, self-control, straightforwardness, non-violence, truthfulness and others. This is a virtue list, and it is paired with a list of opposing vices."
      ],
-     "quote": "<i>abhayaṃ sattvasaṃśuddhir jñānayogavyavasthitiḥ, dānaṃ damaś ca…</i> <span class=\"ref\">Bhagavad Gītā 16.1–3</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">अभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थितिः । दानं दमश्च …</span> <i lang=\"sa-Latn\">abhayaṃ sattvasaṃśuddhir jñānayogavyavasthitiḥ, dānaṃ damaś ca…</i> <span class=\"ref\">Bhagavad Gītā 16.1–3</span>"
     },
     {
      "kind": "documented",
@@ -1126,7 +1127,7 @@
      "text": [
       "The Gītā begins with a dilemma. Arjuna says his mind is confused about duty and asks to be taught. Later the text admits that the course of action is hard to understand. It does not claim that dilemmas are easy."
      ],
-     "quote": "<i>dharmasammūḍhacetāḥ.</i> “My mind confused about duty.” <i>gahanā karmaṇo gatiḥ.</i> “The way of action is deep.” <span class=\"ref\">Bhagavad Gītā 2.7; 4.17</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">धर्मसम्मूढचेताः ।</span> <i lang=\"sa-Latn\">dharmasammūḍhacetāḥ.</i> “My mind confused about duty.” <span lang=\"sa\" class=\"og\">गहना कर्मणो गतिः ।</span> <i lang=\"sa-Latn\">gahanā karmaṇo gatiḥ.</i> “The way of action is deep.” <span class=\"ref\">Bhagavad Gītā 2.7; 4.17</span>"
     },
     {
      "kind": "view",
@@ -1136,6 +1137,15 @@
       "Modern theory sets deontology, teleology and virtue against each other. The Gītā can be read as holding all three: act from duty (<i>svadharma</i>), stay even-minded about results, and aim at the welfare of all, from a trained character. It is a synthesis offered for reflection, since the Gītā does not use these categories."
      ],
      "quote": null
+    },
+    {
+     "kind": "view",
+     "modern": "Responsible earning",
+     "classic": "earn by labour, give with your own hand",
+     "text": [
+      "Guru Nanak's salok names two marks of someone who knows the way: they live on what they earn by their own work, and they give part of it away with their own hands. CSR asks a company to earn fairly and to share part of its profit with society. The salok is about a person, not a firm, so the parallel is a reading."
+     ],
+     "quote": "“Those who eat what they earn by their labour, and give some of it from their own hands: Nanak, they know the way.” <span lang=\"pa\" class=\"og\">ਘਾਲਿ ਖਾਇ ਕਿਛੁ ਹਥਹੁ ਦੇਇ ॥ ਨਾਨਕ ਰਾਹੁ ਪਛਾਣਹਿ ਸੇਇ ॥</span> <i lang=\"pa-Latn\">ghāli khāi kichhu hathahu dei, nānak rāhu pachhāṇahi sei.</i> <span class=\"ref\">Guru Granth Sahib, p. 1245 (Guru Nānak, salok in Rāg Sāraṅg)</span>"
     }
    ]
   },
@@ -1143,6 +1153,7 @@
    "n": 14,
    "slug": "corporate-governance",
    "title": "Corporate Governance and Value-Based Organisations",
+   "short": "Corporate Governance",
    "scope": "How a company is directed and controlled, and what changes when values, not only profit, shape its culture and strategy.",
    "group": "ethics",
    "blocks": [
@@ -1175,7 +1186,7 @@
      "text": [
       "The Īśa Upaniṣad opens by saying that all of this is pervaded by the divine, and advises enjoying through renunciation, without coveting anyone's wealth. Wealth is held in trust, which is the stewardship stance."
      ],
-     "quote": "<i>īśāvāsyam idaṃ sarvam… mā gṛdhaḥ kasya svid dhanam.</i> <span class=\"ref\">Īśa Upaniṣad 1</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">ईशावास्यमिदं सर्वम् … मा गृधः कस्य स्विद्धनम् ।</span> <i lang=\"sa-Latn\">īśāvāsyam idaṃ sarvam… mā gṛdhaḥ kasya svid dhanam.</i> <span class=\"ref\">Īśa Upaniṣad 1</span>"
     },
     {
      "kind": "documented",
@@ -1193,7 +1204,7 @@
      "text": [
       "The Muṇḍaka Upaniṣad states that truth alone prevails, and the national motto draws on it. For a VBO, trust built on consistent truthful conduct is the structural asset, and transparency in disclosure is its practice."
      ],
-     "quote": "<i>satyam eva jayate nānṛtam.</i> “Truth alone triumphs, not falsehood.” <span class=\"ref\">Muṇḍaka Upaniṣad 3.1.6</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">सत्यमेव जयते नानृतम् ।</span> <i lang=\"sa-Latn\">satyam eva jayate nānṛtam.</i> “Truth alone triumphs, not falsehood.” <span class=\"ref\">Muṇḍaka Upaniṣad 3.1.6</span>"
     },
     {
      "kind": "documented",
@@ -1202,7 +1213,7 @@
      "text": [
       "The Saṃjñāna hymn asks for common aim, common heart and common mind, so that all may live well together. It is the language of a vision statement held by everyone in the organisation."
      ],
-     "quote": "<i>samānī va ākūtiḥ samānā hṛdayāni vaḥ.</i> <span class=\"ref\">Ṛgveda 10.191.4</span>"
+     "quote": "<span lang=\"sa\" class=\"og\">समानी व आकूतिः समाना हृदयानि वः ।</span> <i lang=\"sa-Latn\">samānī va ākūtiḥ samānā hṛdayāni vaḥ.</i> <span class=\"ref\">Ṛgveda 10.191.4</span>"
     }
    ]
   }

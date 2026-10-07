@@ -75,6 +75,7 @@ const lessons: Lesson[] = [
     lens: [
       { pairing: 0, adds: "Friendship's real purpose: stepping in to correct a friend who goes wrong.", differs: "The Kuṟaḷ speaks of a friend's duty. The Johari window is a model of self-awareness that also includes self-disclosure and the unknown area." },
       { pairing: 1, adds: "A picture of the self in which intellect steers mind and senses, as a charioteer steers horses.", differs: "The Upaniṣad describes the self's journey. Berne's ego states describe patterns of communication, so the comparison is a reading." },
+      { pairing: 2, adds: "A practical instruction: do not just accept criticism, keep the critic near.", differs: "Kabir speaks of the critic who finds fault. The Johari window asks for feedback of every kind, including what others see as strengths." },
     ],
     reflect: "Ask yourself which ego state you speak from most often in meetings. Is it the one the situation needs?",
     summary: {

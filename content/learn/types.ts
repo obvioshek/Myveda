@@ -27,6 +27,8 @@ export type ChapterSource = {
   /** Unique across all units: it is the chapter's address, /learn/<slug>. */
   slug: string;
   title: string;
+  /** A shorter title for menus, when the full one runs long. */
+  short?: string;
   scope: string;
   /** One of the unit's group keys. */
   group: string;

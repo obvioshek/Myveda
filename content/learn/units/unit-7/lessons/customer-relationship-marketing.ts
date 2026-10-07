@@ -76,6 +76,7 @@ const lessons: Lesson[] = [
     ],
     lens: [
       { pairing: 0, adds: "A person generous in giving and kind in speech is surrounded by kin, ring upon ring.", differs: "The couplet describes keeping relatives close. Berry and Parasuraman's levels describe how a firm binds customers, and add structural ties." },
+      { pairing: 1, adds: "The knot: a recovered relationship carries a mark of the break, which is why preventing churn beats winning customers back.", differs: "Rahim speaks of love between people. Retention is measured in rates, costs and lifetime value." },
     ],
     reflect: "Which brand are you loyal to? Is it held by money, by people, or by something built into your routine?",
     summary: {

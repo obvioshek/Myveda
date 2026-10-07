@@ -74,6 +74,7 @@ const lessons: Lesson[] = [
     lens: [
       { pairing: 0, adds: "Four tests of character: virtue, wealth, pleasure and the fear of death.", differs: "The couplet tests character under temptation and threat. Modern selection tests ability, aptitude and personality, openly." },
       { pairing: 1, adds: "Secret trials of integrity, with each person placed where the trials showed they fit.", differs: "Kauṭilya's tests relied on deception. Modern ethics and employment law rule out deceiving a candidate this way." },
+      { pairing: 3, adds: "An image for why first impressions are not enough: the difference shows only in use.", differs: "Vemana judges worth and virtue. Selection tests measure specific abilities against a job's requirements." },
     ],
     reflect: "Which selection test would best predict success in a job you know well?",
     summary: {

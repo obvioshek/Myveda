@@ -52,6 +52,7 @@ const lessons: Lesson[] = [
     lens: [
       { pairing: 2, adds: "A method: look for merits, look for faults, and judge by what outweighs.", differs: "The Kuṟaḷ gives advice for choosing people. Perception research describes the errors themselves and why they happen." },
       { pairing: 3, adds: "Wisdom defined as finding the truth of a message whoever speaks it.", differs: "The couplet is a moral ideal. OB treats judging the source as a predictable error to guard against." },
+      { pairing: 5, adds: "The bias is old enough to have a proverb: others' faults are winnowed in the open, one's own are hidden.", differs: "The verse is a moral warning about honesty with oneself. Attribution research describes a measurable tendency and its causes, without blame." },
     ],
     reflect: "Recall a time you misjudged someone at first. Which perceptual error was at work?",
     summary: {
