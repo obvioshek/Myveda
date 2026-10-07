@@ -10,7 +10,8 @@ import Toast from "@/components/landing/Toast";
 import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
-import { COMMUNITY_HREF, COMMUNITY_POINTS, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
+import ThreadPreview from "@/components/landing/ThreadPreview";
+import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
@@ -19,8 +20,6 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
     <span className="eyebrow"><span className="numeral" lang="sa" aria-hidden="true">{num}</span>{children}</span>
   );
 }
-
-const Rule = () => <div className="wrap"><div className="rule" /></div>;
 
 // Real passages for the "Documented, or a view?" game: chapter slug and passage
 // index. Pick a mix of both kinds, from different texts.
@@ -81,97 +80,94 @@ export default function LandingPage() {
         <ContinueBand />
 
         <section className="wrap hero" aria-labelledby="hero-h">
-          <span className="eyebrow"><i className="sq" aria-hidden="true" />Management, read alongside India&apos;s classical thought</span>
+          <span className="eyebrow"><i className="sq" aria-hidden="true" />A place to read and question management ideas</span>
           <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Each management idea, plainly. Then the Arthaśāstra, the Gītā or the Tirukkuṟaḷ on the same question, and where the two part ways.</p>
+            <p className="lede">Each management idea in plain words, set beside what the Arthaśāstra, the Gītā or the Tirukkuṟaḷ said about the same problem. Then a community where every answer says how the writer knows.</p>
             <div className="hero-actions">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
-                <a href={COMMUNITY_HREF} className="btn btn-secondary btn-lg">Join the community</a>
+                <a href="#community" className="btn btn-secondary btn-lg">See the community<Arrow dir="down" /></a>
               </div>
-              <div className="promise">
-                <span>Free to read</span><i aria-hidden="true" />
-                <span>No sign-in needed</span><i aria-hidden="true" />
-                <span>Every passage referenced</span>
-              </div>
+              <ul className="promise" aria-label="What to expect">
+                <li>Free to read</li>
+                <li>No account to read</li>
+                <li>No likes, no follower counts</li>
+              </ul>
             </div>
           </div>
           <HeroTry href={passageHref("principles-of-management", 5)} />
         </section>
 
-        <Rule />
-        <section className="wrap sec" id="questions" aria-labelledby="q-h">
-          <Eyebrow num="१">Questions worth a second look</Eyebrow>
-          <h2 id="q-h" style={{ maxWidth: "22ch" }}>Some questions are older than management. <span className="red">Their answers still argue with ours.</span></h2>
+        <section className="wrap sec ruled" id="questions" aria-labelledby="q-h">
+          <div className="split end">
+            <div className="sec-copy">
+              <Eyebrow num="१">Questions</Eyebrow>
+              <h2 id="q-h">Some questions are older than management.</h2>
+            </div>
+            <p className="sub">Think about each one first. Then open what a classical text said, with its reference.</p>
+          </div>
           <QuestionCards cards={cards} />
         </section>
 
-        <Rule />
-        <section className="wrap sec" id="chapters" aria-labelledby="chapters-h">
+        <section className="wrap sec ruled" id="chapters" aria-labelledby="chapters-h">
           <div className="split end">
             <div className="sec-copy">
               <Eyebrow num="२">Read</Eyebrow>
-              <h2 id="chapters-h">{CHAPTERS.length} chapters. <span className="red">Each idea, then its ancient lens.</span></h2>
+              <h2 id="chapters-h">{CHAPTERS.length} chapters, one idea at a time.</h2>
+              <p className="sub">A question to answer first, the idea plainly, a quick check, then the ancient lens. Most concepts take a few minutes.</p>
             </div>
             <div className="chap-cta">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
-                <Link href={GLOSSARY_PATH} className="btn btn-secondary btn-lg">Browse the glossary</Link>
+                <Link href={GLOSSARY_PATH} className="btn btn-secondary btn-lg">Glossary</Link>
               </div>
+              <p className="tally">{concepts} concepts · {passages} cited passages · {GLOSSARY.length} glossary terms</p>
             </div>
           </div>
-          <dl className="honest-stats site-stats">
-            <div><dt>Chapters</dt><dd>{CHAPTERS.length}</dd></div>
-            <div><dt>Concepts</dt><dd>{concepts}</dd></div>
-            <div><dt>Cited passages</dt><dd>{passages}</dd></div>
-            <div><dt>Glossary terms</dt><dd>{GLOSSARY.length}</dd></div>
-          </dl>
           <UnitTabs units={tabs} />
         </section>
 
-        <Rule />
-        <section className="wrap sec" id="texts" aria-labelledby="texts-h">
+        <section className="wrap sec ruled" id="texts" aria-labelledby="texts-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="३">Ancient Lens</Eyebrow>
-              <h2 id="texts-h">Old texts, <span className="red">read the way one reads Aristotle or Confucius.</span></h2>
+              <Eyebrow num="३">Trust</Eyebrow>
+              <h2 id="texts-h">Old texts, read as thinkers, not scripture.</h2>
             </div>
-            <p className="sub">Not scripture to obey, not proof that the ancients knew it all: serious thinkers on the same problems, each passage referenced.</p>
+            <p className="sub">Every passage is marked. <b>Documented</b>: the text says it, and the link is a fair reading. <b>My view</b>: an interpretive parallel, offered to think with. Try telling them apart.</p>
           </div>
-          <figure className="verse">
-            <div className="verse-red">
-              <p className="verse-ta" lang="ta">இதனை இதனால் இவன்முடிக்கும் என்றாய்ந்து<br />அதனை அவன்கண் விடல்.</p>
-              <p className="verse-en">“Judge that this person can do this task by these means, then leave the task to them.”</p>
-            </div>
-            <figcaption className="verse-cap">
-              <div><span className="label">Transliteration</span><span className="verse-tr" lang="ta-Latn">itaṉai itaṉāl ivaṉ muṭikkum eṉṟu āyntu<br />ataṉai avaṉkaṇ viṭal</span></div>
-              <div className="cap-row"><span className="label">What it means</span><span>Before you hand over work, weigh the person, the task and the means together. Once you have, trust them with it. Job analysis and delegation, in two lines.</span></div>
-              <div className="cap-row"><span className="label">Reference</span><b>Tirukkuṟaḷ 517</b><Link className="more" href={passageHref("human-resource-management", 0)} prefetch={false}>Read it in its chapter<Arrow /></Link></div>
-            </figcaption>
-          </figure>
-          <ul className="names" aria-label="The texts the chapters quote">
-            {TEXTS.map(t => <li key={t} lang="sa-Latn">{t}</li>)}
-          </ul>
           <LabelGame items={game} />
+          <div className="names-row">
+            <span className="label">Quoted so far</span>
+            <ul className="names" aria-label="The texts the chapters quote">
+              {TEXTS.map(t => <li key={t} lang="sa-Latn">{t}</li>)}
+            </ul>
+          </div>
         </section>
 
-        <Rule />
-        <section className="wrap sec split" id="together" aria-labelledby="together-h">
-          <div className="sec-copy">
-            <Eyebrow num="४">Community</Eyebrow>
-            <h2 id="together-h">An idea becomes yours <span className="red">when you explain it to someone else.</span></h2>
-            <p className="sub">Reading needs no account. Asking and answering does.</p>
-            <a className="btn btn-secondary btn-lg" href={COMMUNITY_HREF}>Open the community<Arrow /></a>
+        <section className="talk" id="community" aria-labelledby="community-h">
+          <div className="wrap talk-in">
+            <div className="talk-head">
+              <Eyebrow num="४">Community</Eyebrow>
+              <h2 id="community-h">Ask, answer, and say how you know.</h2>
+              <p className="sub">The rule the chapters keep, applied to conversation. And no feed to keep up with: notifications wait out the night, from 10 pm to 8 am, and the daily Edition ends.</p>
+            </div>
+            <ThreadPreview />
+            <div className="talk-notes">
+              <ol className="notes" aria-label="What the numbers in the example mark">
+                {COMMUNITY_NOTES.map((s, i) => (
+                  <li key={s.name}>
+                    <i className="tmark" aria-hidden="true">{i + 1}</i>
+                    <div><span className="note-name">{s.name}</span><span className="note-line">{s.line}</span></div>
+                  </li>
+                ))}
+              </ol>
+              <div className="talk-cta">
+                <a className="btn btn-primary btn-lg wide" href={COMMUNITY_HREF}>Join the community<Arrow /></a>
+                <span className="talk-fine">Reading never needs an account. Asking and answering do.</span>
+              </div>
+            </div>
           </div>
-          <ol className="steps together">
-            {COMMUNITY_POINTS.map((s, i) => (
-              <li key={s.name}>
-                <b className="n">{`0${i + 1}`}</b>
-                <div><span className="step-name">{s.name}</span><span className="step-line">{s.line}</span></div>
-              </li>
-            ))}
-          </ol>
         </section>
 
         <section className="closing" aria-labelledby="closing-h">
@@ -181,7 +177,7 @@ export default function LandingPage() {
               <p className="motto-en">“Let noble thoughts come to us from every side.” <span className="nowrap">Ṛgveda 1.89.1</span></p>
             </div>
             <div className="closing-cta">
-              <h2 id="closing-h">Start with one idea today.</h2>
+              <h2 id="closing-h">Read one idea. Then ask about it.</h2>
               <div className="btn-row">
                 <Link href={chapterPath(first.slug)} className="btn btn-light btn-lg">Begin with Chapter 1<Arrow /></Link>
                 <a href={COMMUNITY_HREF} className="btn btn-outline-light btn-lg">Join the community</a>
@@ -195,23 +191,22 @@ export default function LandingPage() {
         <div className="wrap foot-grid">
           <div className="foot-about">
             <span className="foot-brand"><BrandMark />Veda Verse</span>
-            <p>Management one clear idea at a time, each read beside India&apos;s classical thought, with every passage referenced.</p>
+            <p>Management one clear idea at a time, read beside India&apos;s classical thought, and a community where every answer says how the writer knows. Made by an independent team in India.</p>
           </div>
-          <nav className="foot-col" aria-label="Learn">
-            <span className="label">Learn</span>
+          <nav className="foot-col" aria-label="Read">
+            <span className="label">Read</span>
             <Link href={LEARN_PATH}>All chapters</Link>
             <Link href={GLOSSARY_PATH}>Glossary</Link>
             <Link href={REVISION_PATH}>Revision sheets</Link>
-            <a href={COMMUNITY_HREF}>Community</a>
           </nav>
-          <nav className="foot-col" aria-label="About">
-            <span className="label">About</span>
-            <a href="#texts">The texts</a>
-            <a href="#questions">Questions worth a second look</a>
+          <nav className="foot-col" aria-label="Community">
+            <span className="label">Community</span>
+            <a href="#community">How it works</a>
+            <a href={COMMUNITY_HREF}>Join or sign in</a>
           </nav>
           <nav className="foot-col" aria-label="Contact">
             <span className="label">Contact</span>
-            <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <Link href="/privacy">Privacy</Link>
           </nav>
         </div>
@@ -219,7 +214,6 @@ export default function LandingPage() {
         <div className="wrap">
           <div className="foot-base">
             <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <span className="end">Set in Archivo and Tiro Devanagari Sanskrit.</span>
           </div>
         </div>

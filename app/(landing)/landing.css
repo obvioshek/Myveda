@@ -81,7 +81,9 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 .skip:focus { top: 0; color: var(--color-bg); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
 
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--pad); }
+/* One frame for the whole site: the header, the sections and the footer share
+   its edges, so on wide screens the brand lines up with the text below it. */
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 var(--pad); }
 .sq { display: inline-block; flex: none; width: 10px; height: 10px; background: var(--color-accent); }
 .red { color: var(--color-accent); }
 .nowrap { white-space: nowrap; }
@@ -92,14 +94,17 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 .label.dark { color: var(--color-text); }
 .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 13px; line-height: 16px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700); }
 .numeral { margin-right: 6px; font: 44px/44px var(--font-deva); letter-spacing: 0; color: var(--color-accent); }
-h2 { margin-left: -.04em; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -.015em; text-wrap: balance; }
+h2 { max-width: 20ch; margin-left: -.04em; font-size: clamp(32px, 4vw, 52px); line-height: 1.04; letter-spacing: -.025em; text-wrap: balance; }
 .h-sm { font-size: clamp(26px, 2.8vw, 34px); }
 .sub { max-width: 58ch; color: var(--body); font-size: 17px; line-height: 28px; }
 
 /* ---------- Controls ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: flex-start; gap: 16px; min-height: 40px; padding: 0 16px; border: 2px solid transparent; border-radius: 0; background: transparent; color: var(--color-text); font: 800 14px/1.2 var(--font); white-space: nowrap; cursor: pointer; transition: background-color .2s, color .2s; }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
-.btn svg:last-child { margin-left: auto; flex: none; }
+.btn svg:last-child { margin-left: auto; flex: none; transition: transform .24s var(--ease); }
+.btn:hover .arw { transform: translateX(3px); }
+.btn:hover .arw.down { transform: translateY(3px); }
+.btn:active { transform: translateY(1px); }
 .btn-lg { min-height: 48px; padding: 0 20px; font-size: 15px; }
 .btn-xl { min-height: 56px; padding: 0 24px; font-size: 15px; }
 .btn.wide { min-width: 240px; }
@@ -144,12 +149,13 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 /* ---------- Header ---------- */
 .top { position: sticky; top: 0; z-index: 20; background: var(--color-bg); border-bottom: 2px solid transparent; transition: border-color .3s; }
 .top.scrolled { border-bottom-color: var(--color-divider); }
-.top-in { display: flex; align-items: center; gap: 24px; padding: 14px var(--pad); }
+.top-in { display: flex; align-items: center; gap: 24px; max-width: 1320px; margin: 0 auto; padding: 14px var(--pad); }
 .brand { display: flex; align-items: center; gap: 10px; margin-right: auto; color: var(--color-text); font-size: 19px; font-weight: 800; white-space: nowrap; }
 .brand:hover { color: var(--color-text); }
 .brand .sq { width: 14px; height: 14px; }
 .top-links { display: none; align-items: center; gap: 24px; }
-.top-links a { color: var(--color-text); font-size: 14px; }
+.top-links a { padding: 8px 0; color: var(--color-text); font-size: 14px; font-weight: 600; background: linear-gradient(var(--color-accent), var(--color-accent)) left bottom / 0 2px no-repeat; transition: background-size .24s var(--ease), color .2s; }
+.top-links > a:hover { background-size: 100% 2px; }
 .top-links a:hover { color: var(--color-accent-700); }
 .top-end { display: flex; align-items: center; gap: 12px; }
 .progress { position: absolute; left: 0; bottom: -2px; height: 2px; width: 0; background: var(--color-accent); transition: width .12s linear; }
@@ -171,7 +177,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .resume { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; font-weight: 700; }
 
 /* ---------- Hero ---------- */
-.hero { display: flex; flex-direction: column; gap: 32px; padding-top: clamp(56px, 8vw, 104px); padding-bottom: clamp(56px, 7vw, 96px); }
+.hero { display: flex; flex-direction: column; gap: 28px; padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(56px, 7vw, 96px); }
 /* Sized from the hero's own width, so each line of the headline (about 9.7em
    wide) stays whole wherever it fits; phones keep the 48px floor and wrap. */
 .hero { container-type: inline-size; }
@@ -181,8 +187,10 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .intro { padding-top: 28px; border-top: 2px solid var(--color-text); }
 .lede { max-width: 58ch; color: var(--body); font-size: 18px; line-height: 30px; }
 .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
-.promise { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; color: var(--soft); font-size: 14px; }
-.promise i { width: 6px; height: 6px; background: var(--color-accent); }
+@media (max-width: 559px) { .hero-actions, .hero-actions .btn-row { align-self: stretch; } .hero-actions .btn, .talk-cta .btn { flex: 1 1 100%; min-width: 0; } .talk-cta { align-items: stretch; } }
+.promise { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; color: var(--soft); font-size: 14px; }
+.promise li { display: flex; align-items: center; gap: 10px; }
+.promise li::before { content: ""; width: 6px; height: 6px; background: var(--color-accent); }
 
 .x { display: grid; place-items: center; width: 40px; height: 40px; margin-left: auto; border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
 .x:hover { background: var(--color-accent-700); }
@@ -194,6 +202,8 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 
 /* ---------- Sections ---------- */
 .sec { display: flex; flex-direction: column; gap: 36px; padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); }
+.ruled { position: relative; }
+.ruled::before { content: ""; position: absolute; top: 0; left: var(--pad); right: var(--pad); height: 2px; background: var(--color-divider); }
 .sec.split { display: grid; gap: 40px clamp(40px, 5vw, 72px); }
 .sec > h2, .sec > .eyebrow { margin-bottom: -16px; }
 .sec .sec-copy > h2 { margin-bottom: 0; }
@@ -214,19 +224,6 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .lp-tag { display: inline-flex; align-self: flex-start; padding: 2px 8px; font-size: 11px; font-weight: 800; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; vertical-align: 1px; }
 .lp-tag.documented { background: var(--color-text); color: var(--color-bg); }
 .lp-tag.view { padding: 0 6px; border: 2px solid var(--color-text); }
-.steps { display: flex; flex-direction: column; margin-top: 12px; border-top: 2px solid var(--color-divider); }
-.steps li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 12px; padding: 18px 0; border-bottom: 2px solid var(--color-divider); }
-.steps .n { line-height: 24px; }
-.steps li div { display: flex; flex-direction: column; gap: 4px; }
-.step-name { font-size: 18px; line-height: 24px; font-weight: 800; }
-.step-line { color: color-mix(in srgb, var(--color-text) 78%, transparent); font-size: 15px; line-height: 24px; }
-.honest-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-self: stretch; border-top: 2px solid var(--color-text); }
-.honest-stats div { display: flex; flex-direction: column-reverse; gap: 2px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); }
-.honest-stats dt { color: var(--soft); font-size: 13px; font-weight: 600; }
-.honest-stats dd { font-size: 30px; line-height: 34px; font-weight: 800; letter-spacing: -.02em; }
-@media (min-width: 560px) { .honest-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.site-stats { margin: 4px 0 8px; }
-.steps.together { margin-top: 0; }
 .choices { display: flex; flex-wrap: wrap; }
 .choices .btn { min-width: 150px; border-color: var(--color-text); transition: background-color .28s, color .28s; }
 .choices .btn + .btn { margin-left: -2px; }
@@ -260,24 +257,14 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
   .who { display: none; }
 }
 
-/* 4 · Ancient Lens */
-.verse { display: grid; grid-template-columns: minmax(0, 1fr); border: 2px solid var(--color-accent); }
-.verse-red { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: clamp(28px, 4vw, 48px); background: var(--color-accent-fill); color: var(--color-bg); }
-.verse-ta { font: 400 clamp(22px, 2.3vw, 28px)/1.6 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
-.verse-cap .more { align-self: flex-start; margin-top: 6px; }
-.verse-en { max-width: 24ch; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.18; letter-spacing: -.01em; font-weight: 800; }
-.verse-cap { display: flex; flex-direction: column; gap: 22px; padding: clamp(24px, 3vw, 36px); background: var(--color-bg); font-size: 15px; }
-.verse-cap > div { display: flex; flex-direction: column; gap: 6px; }
-.verse-cap .cap-row { padding-top: 20px; border-top: 2px solid var(--color-divider); font-size: 16px; line-height: 26px; }
-.verse-tr { font: italic 16px/26px var(--font-deva); }
-.names { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-.names li { font-family: var(--font); font-size: 15px; font-weight: 600; }
-@media (min-width: 1000px) { .verse { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
-
 /* Chapters */
 .chap-unit { display: flex; flex-direction: column; gap: 12px; }
 .chap-unit-h { display: flex; flex-direction: column; gap: 4px; font-size: 20px; letter-spacing: -.01em; }
-.chap-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.chap-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.tally { color: var(--soft); font-size: 14px; font-weight: 600; }
+.names-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 24px; }
+.names { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.names li { font-size: 15px; font-weight: 600; }
 .chap { grid-template-columns: minmax(0, 1fr); }
 .chap-c { padding: 0; }
 .chap-c a { display: flex; align-items: center; gap: 16px; height: 100%; min-height: 84px; padding: 18px 24px; color: var(--color-text); transition: background .2s, box-shadow .2s; }
@@ -292,6 +279,83 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .big { gap: 16px; padding: clamp(28px, 4vw, 44px); }
 .big p { color: color-mix(in srgb, var(--color-text) 78%, transparent); font-size: 15px; line-height: 24px; }
 .more { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 8px; font-weight: 600; }
+
+/* ---------- Community: an example thread with numbered notes ---------- */
+/* The one band on a surface, so the product reads as a different place from
+   the reading above it. The thread is a sheet laid on that surface: an ink rule
+   and a hard offset shadow, no blur, in keeping with the flat system. */
+.talk { background: var(--color-surface); border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); }
+.talk-in { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "thread" "notes"; gap: 40px clamp(40px, 5vw, 88px); align-items: start; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
+.talk-head { grid-area: head; display: flex; flex-direction: column; gap: 22px; }
+.talk-head h2 { max-width: 14ch; }
+.talk-notes { grid-area: notes; display: flex; flex-direction: column; gap: 28px; }
+.thread { grid-area: thread; }
+.talk-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 4px; }
+.talk-fine { color: var(--soft); font-size: 14px; }
+.tmark { display: inline-grid; place-items: center; flex: none; width: 20px; height: 20px; background: var(--color-accent-fill); color: var(--color-bg); font: normal 800 11px/1 var(--font); }
+.notes { display: flex; flex-direction: column; border-top: 2px solid var(--color-text); }
+.notes li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); }
+.notes .tmark { margin-top: 2px; }
+.notes li div { display: flex; flex-direction: column; gap: 2px; }
+.note-name { font-size: 16px; line-height: 24px; font-weight: 800; }
+.note-line { color: var(--body); font-size: 15px; line-height: 23px; }
+
+.thread { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+.th-sheet { background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: 10px 10px 0 color-mix(in srgb, var(--color-text) 12%, transparent); }
+.th-q { display: flex; flex-direction: column; gap: 10px; padding: clamp(20px, 3vw, 32px); border-bottom: 2px solid var(--color-text); }
+.th-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; color: var(--soft); font-size: 13px; font-weight: 600; }
+.th-meta b { color: var(--color-text); font-size: 15px; }
+.th-title { max-width: 26ch; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.015em; font-weight: 800; }
+.th-ctx { max-width: 60ch; color: var(--body); font-size: 16px; line-height: 25px; }
+.th-by { color: var(--soft); font-size: 14px; font-weight: 700; white-space: nowrap; }
+.th-by::before { content: "— "; }
+.th-group { padding: 4px clamp(20px, 3vw, 32px) 0; }
+.th-group + .th-group, .th-compose { border-top: 2px solid var(--color-divider); }
+.th-gname { display: flex; align-items: center; gap: 10px; padding: 14px 0 2px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .08em; line-height: 20px; text-transform: uppercase; }
+.th-reply { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 14px; padding: 14px 0 16px; }
+.th-reply + .th-reply { border-top: 2px solid color-mix(in srgb, var(--color-text) 12%, transparent); }
+.th-av { display: grid; place-items: center; width: 36px; height: 36px; border: 2px solid var(--color-text); font-size: 12px; font-weight: 800; letter-spacing: .02em; }
+.th-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.th-reason { align-self: flex-start; padding: 2px 8px; border-left: 4px solid var(--color-accent); background: var(--color-accent-100); color: var(--color-accent-800); font-size: 13.5px; font-weight: 700; }
+.th-body { max-width: 62ch; font-size: 16px; line-height: 25px; }
+.th-src { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; color: var(--body); font-size: 13.5px; }
+.th-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin-top: 2px; color: var(--soft); font-size: 13.5px; font-weight: 700; }
+.th-acts > span:first-child { padding: 6px 0; }
+.th-acts button { min-height: 32px; padding: 0; border: 0; background: none; color: var(--color-text); font: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--color-divider); cursor: pointer; transition: text-decoration-color .2s, color .2s; }
+.th-acts button:hover { text-decoration-color: var(--color-accent); }
+.th-acts button[aria-pressed="true"] { color: var(--color-accent-700); text-decoration-color: currentColor; }
+.th-priv { flex-basis: 100%; color: var(--color-text); font-weight: 600; animation: th-in .32s var(--ease); }
+.th-compose { display: flex; flex-direction: column; gap: 10px; padding: 4px clamp(20px, 3vw, 32px) clamp(20px, 3vw, 28px); background: color-mix(in srgb, var(--color-surface) 55%, var(--color-bg)); }
+.th-bases { display: flex; flex-wrap: wrap; gap: 8px; }
+.th-bases button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background-color .2s, color .2s; }
+.th-bases button:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.th-bases button[aria-pressed="true"] { background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
+.th-help { min-height: 24px; color: var(--body); font-size: 14.5px; line-height: 22px; }
+.th-cap { color: var(--soft); font-size: 13.5px; line-height: 20px; }
+
+/* What a contribution rests on, drawn the same way as the passage tags. */
+.vtag { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 2px solid transparent; color: var(--color-text); font-size: 11px; font-weight: 800; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.vtag span { letter-spacing: 0; }
+.vtag.asking { background: var(--color-accent-100); color: var(--color-accent-800); }
+.vtag.documented { background: var(--color-text); color: var(--color-bg); }
+.vtag.lived { background: var(--color-surface); }
+.vtag.told { border: 2px dashed var(--color-text); }
+.vtag.view { border-color: var(--color-text); }
+
+@keyframes th-in { from { opacity: 0; transform: translateY(4px); } }
+/* Replies settle into place as the thread scrolls into view, where the browser can tie
+   motion to scrolling; elsewhere, and for anyone who prefers less motion, they
+   are simply there. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .th-reply, .th-compose { animation: th-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    @keyframes th-rise { from { transform: translateY(16px); } }
+  }
+}
+@media (prefers-reduced-motion: reduce) { .th-priv { animation: none; } }
+@media (min-width: 1000px) {
+  .talk-in { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "head thread" "notes thread"; grid-template-rows: auto 1fr; row-gap: 36px; }
+}
 
 /* ---------- Closing band ---------- */
 .closing { background: var(--color-accent-fill); color: var(--color-bg); }
@@ -310,8 +374,9 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .foot-brand { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; }
 .foot-brand .sq { width: 14px; height: 14px; }
 .foot-about p { max-width: 36ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); font-size: 15px; line-height: 24px; }
-.foot-col { display: flex; flex-direction: column; gap: 10px; }
-.foot-col a { color: var(--color-text); font-size: 15px; }
+.foot-col { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.foot-col .label { margin-bottom: 6px; }
+.foot-col a { padding: 6px 0; color: var(--color-text); font-size: 15px; }
 .foot-col a:hover { color: var(--color-accent-700); }
 .wordmark-wrap { overflow: hidden; }
 .wordmark { display: block; padding: 8px 0 28px; margin-left: -.06em; font-size: clamp(44px, 12vw, 190px); font-weight: 800; line-height: .86; letter-spacing: -.045em; white-space: nowrap; }
@@ -418,7 +483,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .try-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 20px clamp(22px, 3vw, 36px); border-top: 2px solid var(--color-text); }
 .try-foot p { flex: 1 1 420px; font-size: 17px; line-height: 27px; }
 .try-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
-.try-again { padding: 0; border: 0; background: none; color: var(--soft); font: inherit; font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.try-again { min-height: 32px; padding: 0; border: 0; background: none; color: var(--soft); font: inherit; font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .try-again:hover { color: var(--color-text); }
 @media (min-width: 760px) {
   .try-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }

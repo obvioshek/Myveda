@@ -9,14 +9,14 @@ export const CONTACT_EMAIL = "admin@myvedaverse.in";
 // anyone else is sent to sign in first.
 export const COMMUNITY_HREF = "/home";
 
-// The header links: the chapters (with their drop-down), the two reference pages,
-// the community, and the footer's "about" block.
+// The header links: the chapters (with their drop-down), the two reference pages
+// and the community section of the home page, which shows how it works before
+// anyone is asked to sign in.
 export const NAV = [
   { href: "#chapters", label: "Chapters" },
   { href: "/learn/glossary", label: "Glossary" },
   { href: "/learn/revision", label: "Revision" },
-  { href: COMMUNITY_HREF, label: "Community" },
-  { href: "#about", label: "About" },
+  { href: "#community", label: "Community" },
 ];
 
 // Three question cards. Each pairs a fact from a classical text with an open
@@ -29,13 +29,15 @@ export const QUESTIONS = [
   { n: "03", fact: "The Tirukkural asks who could ever ruin a ruler who keeps friends willing to rebuke him.", question: "Why do teams still punish the person who disagrees?", concept: "Groupthink", ref: "Tirukkuṟaḷ 447", chapter: "group-behaviour-and-leadership", pairing: 3 },
 ];
 
-// What the community offers, as the app actually works (see the README's product
-// table): keep each line true to a feature that exists.
-export const COMMUNITY_POINTS = [
-  { name: "Ask about a concept", line: "Answers are grouped by how they help: the one that helped, ones that build on it, and the views that disagree." },
-  { name: "Read with others", line: "Circles, boards, cohorts and practice groups, each with its own threads and rules." },
-  { name: "Know what is sourced", line: "Posts keep what is documented, with its source, apart from what is told." },
-  { name: "Quiet by design", line: "No counts or trending alerts, and notifications held overnight, from 10 pm to 8 am." },
+// The notes beside the example thread, numbered to match its markers. Each is
+// a rule the app enforces (see the README's "Rules the backend enforces"): keep
+// them true to it.
+export const COMMUNITY_NOTES = [
+  { name: "Grouped, never ranked", line: "Replies sit under how they relate: answers, builds on, disagrees. Nothing climbs by votes." },
+  { name: "Every claim says what it rests on", line: "Lived, Told and My view say so plainly. Documented needs a source that points to a page or an entry." },
+  { name: "Disagreeing needs a reason", line: "Said up front, so the argument is about the idea." },
+  { name: "Helpful is private", line: "The writer is thanked in their inbox. Nobody sees a total, not even them." },
+  { name: "You choose the label", line: "The app may suggest one; you always have the last word." },
 ];
 
 // The texts the chapters quote from. Add one here only once a chapter cites it.
