@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
-import ChapterNav from "@/components/learn/ChapterNav";
+import ChapterNav, { UnitChapters } from "@/components/learn/ChapterNav";
 import LessonCard from "@/components/learn/LessonCard";
 import LessonLens from "@/components/learn/LessonLens";
 import Pairings from "@/components/learn/Pairings";
@@ -11,7 +11,10 @@ import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
 import Progress from "@/components/learn/Progress";
-import NowReading from "@/components/learn/NowReading";
+import Contents from "@/components/learn/Contents";
+import TermsList from "@/components/learn/TermsList";
+import ReadingSettings from "@/components/learn/ReadingSettings";
+import { READING_SCRIPT } from "@/components/learn/reading";
 import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, conceptIds, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
@@ -78,12 +81,12 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
 
   return (
     <PageShell wide note="Spotted a mistake?">
+      <script dangerouslySetInnerHTML={{ __html: READING_SCRIPT }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
 
-      {/* One grid for the whole chapter. On wide screens the chapter list runs down
-          the left, the title and concepts sit in the middle, and a reading
-          companion stays beside the text on the right; narrower screens stack
-          them. */}
+      {/* One grid for the whole chapter. On wide screens the text takes the main
+          column and a reading companion stays beside it; narrower screens stack
+          them, with the chapter's contents in a fold-out. */}
       <div className="wrap ch-layout">
         <header className="ch-head">
           <nav className="ch-crumbs" aria-label="Breadcrumb">
@@ -99,10 +102,11 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           <div className="ch-actions">
             <a className="btn btn-primary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
             {lessons && <LessonsToggle />}
+            <ReadingSettings />
           </div>
         </header>
 
-        <ChapterNav chapter={c} hasTerms={terms.length > 0} showLens={showLens} />
+        <ChapterNav chapter={c} showLens={showLens} />
 
         {/* The reading companion: the chapter at a glance, where the reader is,
             the chapter's terms to look up in place, and where it leads. */}
@@ -125,30 +129,19 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
               </details>
             )}
             {lessons && <div className="ch-prog"><span className="ch-glance-k">Progress</span><Progress ids={conceptIds(c)} /></div>}
-            {lessons && <NowReading items={lessons.map(l => ({ id: l.blockId, name: l.name }))} />}
-            {terms.length > 0 && (
-              <div className="ch-sterms">
-                <span className="ch-glance-k">Terms in this chapter</span>
-                <ul>
-                  {terms.slice(0, 10).map(t => (
-                    <li key={t.id}>
-                      <details>
-                        <summary>{t.term}</summary>
-                        <p>{t.def} <Link href={`${GLOSSARY_PATH}#${t.id}`} prefetch={false}>Glossary</Link></p>
-                      </details>
-                    </li>
-                  ))}
-                </ul>
-                {terms.length > 10 && <a className="ch-sterms-all" href="#terms">All {terms.length} terms</a>}
-              </div>
-            )}
-            {next && (
-              <Link href={chapterPath(next.slug)} className="ch-upnext" prefetch={false}>
-                <span className="ch-glance-k">Up next · Chapter {next.n}</span>
-                <b>{next.title}</b>
-              </Link>
-            )}
           </div>
+          {lessons && <Contents slug={c.slug} items={lessons.map(l => ({ id: l.blockId, name: l.name }))} />}
+          {terms.length > 0 && <TermsList terms={terms.map(t => ({ id: t.id, term: t.term, def: t.def }))} glossary={GLOSSARY_PATH} />}
+          <details className="ch-unitlist">
+            <summary><span className="ch-glance-k">{many ? `Unit ${unit.n} · ` : ""}All chapters</span></summary>
+            <div className="rail-body"><UnitChapters current={c} /></div>
+          </details>
+          {next && (
+            <Link href={chapterPath(next.slug)} className="ch-upnext" prefetch={false}>
+              <span className="ch-glance-k">Up next · Chapter {next.n}</span>
+              <b>{next.title}</b>
+            </Link>
+          )}
         </aside>
 
         <div className="ch-main">
@@ -177,14 +170,6 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 </div>
               );
             })}
-            {terms.length > 0 && (
-              <div id="terms" className="ch-terms">
-                <h3>Terms from the glossary</h3>
-                <ul className="ch-chips">
-                  {terms.map(t => <li key={t.id}><Link href={`${GLOSSARY_PATH}#${t.id}`} prefetch={false}>{t.term}</Link></li>)}
-                </ul>
-              </div>
-            )}
             {lessons && <p className="ci-fine">{HOW.translations}</p>}
           </section>
 
