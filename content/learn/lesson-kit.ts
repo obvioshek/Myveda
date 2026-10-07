@@ -9,6 +9,44 @@
 // differ" only compare what the passage and the concept each say. Keep to that
 // when writing more, and leave a step out rather than fill it with a guess.
 
+// ---------- How a concept is explained (the style guide) ----------
+//
+// Every concept in a unit's chapters.json follows the same order. Leave a part
+// out when there is nothing true to say; never fill it to complete the shape.
+//
+//  1. The problem, <p class="why">: a situation where the idea matters, in one
+//     or two sentences, before the idea is named.
+//  2. Two definitions, <div class="def">: "In plain words", one sentence a
+//     newcomer understands; then "Exam definition", the standard wording and
+//     whose it is.
+//  3. An example, Indian where it is natural (a chai stall, a kirana store, a
+//     bank branch, Amul), with real numbers: rupees, and lakh and crore.
+//  4. How it works: the mechanism, a calculation worked step by step, or a
+//     diagram (<figure> with inline SVG) for anything that is a grid, curve,
+//     cycle or sequence.
+//  5. Don't confuse it with, <p class="mixup">: the neighbouring idea readers
+//     mix it up with, and the difference in a line. Common mistakes found in
+//     study notes belong here, phrased as mistakes, never as "the source says".
+//  6. Where it breaks: limits, criticism, and what the evidence shows.
+//  7. In practice and for exams: the decision it helps with, and what exams ask.
+//
+// Then, closed by default, <details class="deeper"><summary>Go deeper</summary>
+// for experienced readers: a short case set as a decision, the finer points of
+// the theory, research findings, and links to other chapters.
+//
+// Language, for readers who often learned management in English as a second
+// language: sentences under about 25 words; active voice, saying who does what;
+// a term defined where it first appears, and one term for one idea; plain words
+// ("pay", not "remuneration") outside the exam definition.
+//
+// Questions in `check`: one that recognises the idea, one that applies it to a
+// short situation, one that needs a calculation or a judgement. Each "why" says
+// why the tempting wrong answer is wrong.
+//
+// Passages: the original in its own script, its wording checked against an
+// edition or a reliable digital text, and "documented" only when the text takes
+// up the same question the concept does; otherwise "view".
+
 export type Check = { q: string; options: string[]; answer: number; why: string };
 export type LensNote = { pairing: number; adds: string; differs: string };
 
