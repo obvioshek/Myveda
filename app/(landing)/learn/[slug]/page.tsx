@@ -3,19 +3,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
-import ChapterNav, { UnitChapters } from "@/components/learn/ChapterNav";
 import LessonCard from "@/components/learn/LessonCard";
 import LessonLens from "@/components/learn/LessonLens";
 import Pairings from "@/components/learn/Pairings";
 import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
-import Progress from "@/components/learn/Progress";
-import Contents from "@/components/learn/Contents";
-import TermsList from "@/components/learn/TermsList";
-import ReadingSettings from "@/components/learn/ReadingSettings";
-import { READING_SCRIPT } from "@/components/learn/reading";
-import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, conceptIds, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import ReadingBar from "@/components/learn/ReadingBar";
+import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -81,12 +76,10 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
 
   return (
     <PageShell wide note="Spotted a mistake?">
-      <script dangerouslySetInnerHTML={{ __html: READING_SCRIPT }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
 
-      {/* One grid for the whole chapter. On wide screens the text takes the main
-          column and a reading companion stays beside it; narrower screens stack
-          them, with the chapter's contents in a fold-out. */}
+      {/* A single wide column: the header, a slim reading strip that sticks under
+          the site header, and the concepts. Nothing sits beside the text. */}
       <div className="wrap ch-layout">
         <header className="ch-head">
           <nav className="ch-crumbs" aria-label="Breadcrumb">
@@ -99,50 +92,33 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <h1>{c.title}</h1>
           </div>
           <p className="ch-scope">{c.scope}</p>
+          <div className="ch-meta">
+            <span>{c.blocks.length} {c.blocks.length === 1 ? "concept" : "concepts"}</span>
+            <span>About {c.minutes} min</span>
+            {ev.total > 0 && (
+              <details className="ch-legend">
+                <summary><Meter documented={ev.documented} view={ev.view} />{ev.total} {ev.total === 1 ? "passage" : "passages"}: {ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}<span className="ch-legend-q">What these mean</span></summary>
+                <div className="ch-legend-body">
+                  <p><Tag kind="documented" /> {HOW.documented}</p>
+                  <p><Tag kind="view" /> {HOW.view}</p>
+                </div>
+              </details>
+            )}
+          </div>
           <div className="ch-actions">
             <a className="btn btn-primary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
             {lessons && <LessonsToggle />}
-            <ReadingSettings />
           </div>
         </header>
 
-        <ChapterNav chapter={c} showLens={showLens} />
-
-        {/* The reading companion: the chapter at a glance, where the reader is,
-            the chapter's terms to look up in place, and where it leads. */}
-        <aside className="ch-side" aria-label="Reading companion">
-          <div className="ch-glance">
-            <span className="label red">At a glance</span>
-            <dl className="ch-stats">
-              <div><dt>Concepts</dt><dd>{c.blocks.length}</dd></div>
-              <div><dt>Minutes</dt><dd>{c.minutes}</dd></div>
-              <div><dt>Passages</dt><dd>{ev.total}</dd></div>
-            </dl>
-            {ev.total > 0 && (
-              <details className="ch-legend">
-                <summary>
-                  <span className="ch-ev"><Meter documented={ev.documented} view={ev.view} />{ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}</span>
-                  <span className="ch-legend-q">What do these mean?</span>
-                </summary>
-                <p><Tag kind="documented" /> {HOW.documented}</p>
-                <p><Tag kind="view" /> {HOW.view}</p>
-              </details>
-            )}
-            {lessons && <div className="ch-prog"><span className="ch-glance-k">Progress</span><Progress ids={conceptIds(c)} /></div>}
-          </div>
-          {lessons && <Contents slug={c.slug} items={lessons.map(l => ({ id: l.blockId, name: l.name }))} />}
-          {terms.length > 0 && <TermsList terms={terms.map(t => ({ id: t.id, term: t.term, def: t.def }))} glossary={GLOSSARY_PATH} />}
-          <details className="ch-unitlist">
-            <summary><span className="ch-glance-k">{many ? `Unit ${unit.n} · ` : ""}All chapters</span></summary>
-            <div className="rail-body"><UnitChapters current={c} /></div>
-          </details>
-          {next && (
-            <Link href={chapterPath(next.slug)} className="ch-upnext" prefetch={false}>
-              <span className="ch-glance-k">Up next · Chapter {next.n}</span>
-              <b>{next.title}</b>
-            </Link>
-          )}
-        </aside>
+        <ReadingBar
+          slug={c.slug}
+          items={(lessons ?? []).map(l => ({ id: l.blockId, name: l.name }))}
+          terms={terms.map(t => ({ id: t.id, term: t.term, def: t.def }))}
+          unitLabel={many ? `Unit ${unit.n} · ${unit.short}` : "All chapters"}
+          chapters={unit.chapters.map(ch => ({ href: chapterPath(ch.slug), n: deva(ch.n), title: ch.title, current: ch.slug === c.slug }))}
+          glossary={GLOSSARY_PATH}
+        />
 
         <div className="ch-main">
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
