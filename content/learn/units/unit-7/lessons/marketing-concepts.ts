@@ -84,7 +84,7 @@ const lessons: Lesson[] = [
       points: [
         "Six philosophies: production, product, selling, marketing, societal and holistic; all still exist today.",
         "Marketing myopia (Levitt, 1960) defines a business by its product, not the need it meets.",
-        "Selling works inside-out from the seller's need; marketing works outside-in from the buyer's.",
+        "Levitt: selling serves the seller's need, marketing the buyer's. Kotler and Armstrong: selling is inside-out, marketing outside-in.",
         "Holistic marketing: relationship, integrated, internal and performance marketing (once called socially responsible).",
       ],
       memory: "Production, product, selling, marketing, societal, holistic.",
@@ -112,7 +112,7 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "The marketing mix is a set of controllable tools; Borden popularised the term, McCarthy (1960) gave the 4Ps.",
-        "Lauterborn's 4Cs (1990): customer solution, customer cost, convenience, communication.",
+        "Lauterborn's 4Cs (1990): consumer wants and needs, cost, convenience, communication.",
         "Sheth and Sisodia's 4As: acceptability, affordability, accessibility, awareness.",
         "Services add people, process and physical evidence.",
       ],

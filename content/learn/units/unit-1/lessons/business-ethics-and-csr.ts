@@ -152,7 +152,7 @@ const lessons: Lesson[] = [
       points: [
         "CSR integrates social, environmental and economic responsibility into business operations, aiming at shared value.",
         "Carroll's pyramid: economic, legal, ethical, philanthropic. CSR is more than charity.",
-        "India: guidelines 2009, voluntary guidelines 2011, company law 2013, CSR spending mandatory from 1 April 2014, the first country to require it.",
+        "India: guidelines 2009, voluntary guidelines 2011, company law 2013, CSR spending mandatory from 1 April 2014, one of the first countries to require it by law.",
         "Applies to a company with net worth of ₹500 crore or more, turnover of ₹1,000 crore or more, or net profit of ₹5 crore or more (any one).",
         "Spend at least 2% of the average net profit of the preceding three years.",
       ],

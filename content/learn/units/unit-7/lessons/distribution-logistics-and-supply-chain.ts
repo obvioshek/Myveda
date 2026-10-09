@@ -72,7 +72,7 @@ const lessons: Lesson[] = [
     },
     lead: "Market logistics gets the right goods to the right place at the right time, at a cost that still leaves a profit.",
     check: [
-      ask("Who called distribution ‘the economy's dark continent’?", "Peter Drucker", ["Philip Kotler", "Theodore Levitt", "Michael Hugos"], "Drucker used the phrase in 1962 for the savings distribution hid. Kotler and Keller are the source of the 30 to 40 per cent cost estimate, not the phrase."),
+      ask("Who called distribution ‘the economy's dark continent’?", "Peter Drucker", ["Philip Kotler", "Theodore Levitt", "Michael Hugos"], "Drucker used the phrase in 1962 for the savings distribution hid. Kotler wrote about market logistics later but did not coin it."),
       ask("A phone maker collects faulty handsets from customers for repair and recycling. This is…", "Reverse logistics", ["Inbound logistics", "Outbound logistics", "Order processing"], "Goods flowing back from users through the chain is reverse logistics. It is often handled with inbound, but inbound proper brings inputs in from suppliers."),
       ask("A firm switches from air to rail freight and saves on transport. Why might it still be worse off?", "Slower delivery ties up working capital and delays payment", ["Rail is always less reliable than air", "Transport costs never affect total cost", "Lower freight costs reduce sales by law"], "Logistics costs interact, so decisions are judged on a total-system basis. A cheaper mode can raise inventory and capital costs elsewhere. Rail is not always less reliable; the cost shift is the point."),
     ],

@@ -118,7 +118,7 @@ const lessons: Lesson[] = [
         "Formal: official channels and the hierarchy. Strength: consistency, clarity and accountability. Examples: reports, memos, meetings.",
         "Informal: natural, unstructured channels. Strength: relationship building and a quick exchange of ideas.",
         "Formal flows downward, upward, horizontally and externally.",
-        "Informal takes five common forms: grapevine, face-to-face, social media, telephone and non-verbal signals.",
+        "Informal travels by the grapevine, casual talk, social media, personal calls and non-verbal signals; the channel, not the medium, makes it informal.",
         "Formal or informal depends on the channel, not on whether words are spoken or written.",
       ],
       memory: "Formal: consistent and accountable. Informal: quick and personal.",

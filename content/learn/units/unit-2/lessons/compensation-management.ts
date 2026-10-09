@@ -8,13 +8,13 @@ const lessons: Lesson[] = [
     before: {
       q: "Is recognition part of compensation?",
       choices: [
-        { label: "No, only money", reveal: "It is: non-monetary rewards (benefits, recognition, perks) are part of compensation alongside wages, incentives and bonuses." },
-        { label: "Yes", reveal: "Right. Compensation includes non-monetary rewards such as benefits, recognition and perks." },
+        { label: "No, only money", reveal: "It is: non-monetary rewards such as recognition are part of compensation, alongside wages, incentives, bonuses and benefits." },
+        { label: "Yes", reveal: "Right. Compensation includes non-monetary rewards such as recognition and praise, as well as money and benefits." },
       ],
     },
     lead: "Compensation is the whole reward for work, money and more, designed to attract, keep and motivate people fairly.",
     check: [
-      ask("Which of these is a monetary reward?", "An incentive", ["Recognition", "A perk", "A benefit"], "Monetary rewards are wages, incentives and bonuses. Benefits can cost the employer money, but they are classed with recognition and perks as non-monetary rewards."),
+      ask("Which of these is a direct monetary reward?", "An incentive", ["Recognition", "Praise at a meeting", "A challenging project"], "Direct monetary rewards are wages, incentives and bonuses. Recognition, praise and the work itself are non-monetary. Benefits such as insurance would be indirect monetary rewards."),
       ask("A Pune software firm loses three developers in a month to a rival that pays ₹1.5 lakh a year more. Which objective is failing?", "Retaining employees, through a lack of external equity", ["Complying with the law", "Internal equity between grades", "Improving productivity"], "The developers left because a rival paid more for similar work: pay is unfair against the market. Internal equity is about fairness between jobs inside the firm."),
       ask("A manager plans to raise everyone's pay to fix low motivation among staff who stay but coast. What does Herzberg's theory suggest?", "Better pay prevents dissatisfaction but will not, alone, create lasting motivation", ["Higher pay is the surest way to lasting motivation", "Pay has no effect on how staff feel", "Pay should be cut to make staff work harder"], "In Herzberg's theory pay is a hygiene factor: poor pay causes dissatisfaction, but good pay alone does not motivate. Saying pay has no effect goes too far the other way."),
     ],
@@ -25,7 +25,7 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Compensation management: rewarding employees for their contribution.",
-        "Monetary: wages, incentives, bonuses. Non-monetary: benefits, recognition, perks.",
+        "Direct monetary: wages, incentives, bonuses. Indirect monetary: benefits and perks. Non-monetary: recognition, the work itself.",
         "Objectives: attract, retain, motivate, equity, productivity, compliance.",
         "Internal equity is fairness between jobs inside the firm; external equity is fairness against the market.",
         "Pay is a hygiene factor: it prevents dissatisfaction but does not motivate on its own.",

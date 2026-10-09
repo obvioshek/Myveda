@@ -35,7 +35,7 @@ const lessons: Lesson[] = [
   {
     blockId: "developing-effective-communications",
     name: "Developing effective communications",
-    intro: "Seven steps, from target audience to measuring results.",
+    intro: "Eight steps, from target audience to managing IMC.",
     before: {
       q: "Is getting consumers to recognise a brand harder than getting them to recall it unprompted?",
       choices: [
@@ -53,7 +53,7 @@ const lessons: Lesson[] = [
     reflect: "Recall an advertisement that persuaded you. Was its appeal informational or transformational, and who was the source?",
     summary: {
       points: [
-        "Steps: audience, objectives, design, channels, budget, mix, results.",
+        "Steps: audience, objectives, design, channels, budget, mix, results, managing IMC.",
         "Objectives: category need, brand awareness, brand attitude, brand purchase intention.",
         "Design: message, creative (informational or transformational) and source.",
         "Channels are personal (advocate, expert, social) or non-personal (media, atmospheres, events).",
