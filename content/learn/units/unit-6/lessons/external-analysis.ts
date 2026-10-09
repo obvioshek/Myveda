@@ -12,11 +12,11 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. Resources, processes and culture belong to internal analysis. External analysis asks how outside factors, such as industry trends, affect the business." },
       ],
     },
-    lead: "External analysis examines the industry and the macro environment to find the opportunities and threats that drive profitability, growth and volatility.",
+    lead: "External analysis studies the industry and the wider world outside the firm to find the opportunities and threats that will drive its profits, growth and volatility.",
     check: [
-      ask("What is the purpose of external analysis?", "To find opportunities and threats", ["To find internal strengths and weaknesses", "To set staff salaries", "To audit the accounts"], "They drive profitability, growth and volatility."),
-      ask("Restaurants turning to cloud kitchens in the Covid-19 lockdowns show which benefit?", "Anticipating and adapting to change", ["Lower interest rates", "Fewer competitors", "Stronger supplier power"], "External analysis helps the firm anticipate and adapt to change."),
-      ask("The continuing search for external information is called…", "Environmental scanning", ["Gap analysis", "Value chain analysis", "Strategy evaluation"], "It is the first step of the strategic management process."),
+      ask("What is the purpose of external analysis?", "To find the opportunities and threats outside the firm", ["To find the firm's own strengths and weaknesses", "To check that the firm's accounts are correct", "To decide each department's budget for the year"], "Opportunities and threats come from outside and drive profitability, growth and volatility. Strengths and weaknesses are the job of internal analysis, the tempting mix-up."),
+      ask("A kirana owner notes a new supermarket nearby and a grocery delivery app entering the area. At which level of external analysis is she working?", "The industry level", ["The macro level", "Internal analysis", "Strategy evaluation"], "The supermarket and the app are competitors in her own industry. The macro level would be wider conditions, such as rising incomes or digital payments, which is why it is the tempting wrong answer."),
+      ask("A bank's planners take note only of the outside trends that support the plan they already favour. Which limit of external analysis does this show?", "Managers notice the signals they expect and dismiss the rest", ["The analysis looks at internal factors instead of external ones", "A framework gives only a snapshot of a moving scene", "The macro level matters less than the industry level"], "Picking only the convenient signals is selective attention. A snapshot is a real limit too, but it describes how quickly the scene changes, not which signals people choose to see."),
     ],
     lens: [
       { pairing: 0, adds: "The ruler's work is to know quickly all that happens, to everyone, at all times, with agents who gather that knowledge.", differs: "The couplet makes knowing a ruler's duty. External analysis adds named elements to examine, such as supply chain, economic trends, competitors and the industry life cycle." },
@@ -24,9 +24,10 @@ const lessons: Lesson[] = [
     reflect: "Think of a local business near you. Which outside change in the last few years has most affected it?",
     summary: {
       points: [
-        "Industry level: competitive structure, position, dynamics; macro level: economic, political, social, demographic, technological conditions.",
+        "Its purpose is to find the opportunities and threats that drive profitability, growth and volatility.",
+        "Industry level: competitive structure, the firm's position, dynamics and history. Macro level: economic, global, political, social, demographic and technological conditions.",
         "Elements include supply chain, industry, economic trends, competitors, demographics, life cycle and PESTEL.",
-        "Strategy needs both external and internal analysis.",
+        "External analysis finds opportunities and threats; internal analysis finds strengths and weaknesses. Strategy needs both.",
       ],
       memory: "Look outside for opportunities and threats.",
     },
@@ -42,11 +43,11 @@ const lessons: Lesson[] = [
         { label: "Legal", reveal: "Right. Legal factors are the laws that define what a business may or may not do. The two meet when government passes legislation that changes how businesses operate." },
       ],
     },
-    lead: "PESTEL scans the Political, Economic, Social, Technological, Environmental and Legal setting.",
+    lead: "PESTEL is a checklist of six kinds of outside change: Political, Economic, Social, Technological, Environmental and Legal.",
     check: [
-      ask("Tariffs and trade restrictions are which kind of factor?", "Political", ["Economic", "Social", "Legal"], "Political factors include tax policy, trade restrictions, tariffs and government stability."),
-      ask("Health consciousness and age distribution are which kind of factor?", "Social", ["Economic", "Technological", "Environmental"], "Social factors include culture, population growth and attitudes to careers."),
-      ask("Which two factors does PESTEL add to PEST?", "Environmental and legal", ["Economic and social", "Ethical and logistic", "Political and technological"], "PEST covers political, economic, social and technological factors."),
+      ask("Which two factors does PESTEL add to PEST?", "Environmental and legal", ["Economic and social", "Ethical and logistic", "Political and technological"], "PEST already covers political, economic, social and technological factors. Ethical and logistic sound plausible but are not part of PESTEL."),
+      ask("A two-wheeler maker finds that higher interest rates are making vehicle loans dearer. Which PESTEL factor is this?", "Economic", ["Political", "Legal", "Social"], "Interest rates are an economic factor. It is tempting to call it political because governments and central banks are involved, but the factor is the cost of borrowing itself."),
+      ask("A team has listed forty PESTEL items for its strategy review. What should it do next?", "Rank them by likelihood and impact, and keep the top few", ["Add more factors until nothing is missed", "Drop the environmental and legal factors", "Treat every item as an equal threat"], "PESTEL is a list, not an analysis: its value comes from ranking. Adding more items makes the long, unranked list worse."),
     ],
     lens: [
       { pairing: 1, adds: "It is wisdom to move as the world moves.", differs: "The couplet is about personal conduct. PESTEL is a structured scan of political, economic and other trends so that a firm can change with its environment." },
@@ -56,6 +57,7 @@ const lessons: Lesson[] = [
       points: [
         "PEST: political, economic, social, technological; PESTEL adds environmental and legal.",
         "Used in corporate planning and to weigh the pros and cons of a strategy.",
+        "Rank the changes by likelihood and impact; the top few become the opportunities and threats in a SWOT.",
         "Political is business and government; legal is the laws that define what business may do.",
       ],
       memory: "Political, Economic, Social, Technological, Environmental, Legal.",
@@ -72,11 +74,11 @@ const lessons: Lesson[] = [
         { label: "Wider than that", reveal: "Right. Porter's point is that five forces together, entrants, suppliers, buyers, substitutes and rivalry, set an industry's profit potential." },
       ],
     },
-    lead: "The collective strength of five forces sets an industry's profit potential and so its attractiveness.",
+    lead: "Five forces, not rivals alone, decide how much profit an industry leaves for its firms.",
     check: [
-      ask("Energy drinks and coffee both meeting the need to stay alert illustrates…", "The threat of substitutes", ["The threat of new entrants", "Supplier power", "Buyer power"], "Substitutes meet the same need at a better price-performance."),
-      ask("Why is supplier power very high in airlines?", "They depend on a few aircraft makers and on fuel", ["Buyers buy in bulk", "Entry barriers are low", "Products are standard"], "Suppliers are few or concentrated and inputs have no substitutes."),
-      ask("How does Porter himself treat complements?", "As a factor that affects the five forces", ["As a sixth force", "As irrelevant", "As a kind of buyer"], "Andy Grove proposed complementors as a sixth force; Porter did not."),
+      ask("For an airline, a video call that replaces a business trip is an example of…", "The threat of substitutes", ["Rivalry among existing firms", "The threat of new entrants", "The bargaining power of buyers"], "A substitute meets the same need in a different way. Another airline on the same route would be a rival, the tempting mix-up."),
+      ask("A city's cafés find that a few landlords own all the good sites and can raise rents at will. Which force is strong?", "The bargaining power of suppliers", ["The bargaining power of buyers", "The threat of substitutes", "Rivalry among existing firms"], "The landlords supply a key input, space, and they are few. Buyer power would come from customers, not from those who supply the cafés."),
+      ask("The four largest firms in an industry hold 8%, 6%, 4% and 2% of the market. What is the CR4, and what does it suggest?", "20%; the market is fragmented, so rivalry is likely intense", ["20%; a few firms dominate, so rivalry is weak", "8%; only the leader's share counts", "40%; concentration is moderate"], "CR4 = 8 + 6 + 4 + 2 = 20%. Four firms hold only a fifth of the market. Reading any CR4 as domination is the tempting error: a CR4 of about 40–60% is usually read as moderate concentration, and only higher figures as a market a few firms dominate."),
     ],
     lens: [
       { pairing: 2, adds: "Weigh four strengths before acting: of the deed, of oneself, of the opponent and of the allies.", differs: "The couplet concerns a single undertaking against a foe. The five forces describe the structure of a whole industry and its profit potential." },
@@ -84,9 +86,11 @@ const lessons: Lesson[] = [
     reflect: "Choose an industry you buy from, such as mobile phones or airlines. Which of the five forces is strongest there?",
     summary: {
       points: [
-        "Forces: new entrants, supplier power, buyer power, substitutes, rivalry.",
+        "Forces: new entrants, supplier power, buyer power, substitutes, rivalry (Porter, 1979).",
         "Intense forces (airlines) leave little profit; mild forces (soft drinks) leave room for higher returns.",
-        "Complementors are sometimes added as a sixth factor; Porter treats them as affecting the five.",
+        "A low concentration ratio, such as a CR4 of 20%, signals intense rivalry.",
+        "A substitute meets the same need in a different way; a rival sells the same product.",
+        "Complementors are sometimes added as a sixth force; Porter treats them as a factor affecting the five.",
       ],
       memory: "Entrants, suppliers, buyers, substitutes, rivalry.",
     },
@@ -102,11 +106,11 @@ const lessons: Lesson[] = [
         { label: "High", reveal: "Right. Few firms have scale or brand loyalty yet, so the threat of entry is at its highest, though rapid growth absorbs newcomers and keeps rivalry low." },
       ],
     },
-    lead: "Industries pass through stages, and each stage changes the competitive conditions.",
+    lead: "Industries are born, grow, mature and decline, and the rules of competition change at each stage.",
     check: [
-      ask("In which stage does rivalry become intense, with price cuts and weaker firms leaving?", "Shakeout", ["Embryonic", "Growth", "Maturity"], "Growth slows in the shakeout stage."),
-      ask("In the embryonic stage, barriers to entry rest on…", "Access to key technological know-how", ["Scale", "Brand loyalty", "High exit barriers"], "There is little competition at this stage."),
-      ask("In maturity, firms typically…", "Segment the market and avoid price wars", ["Leave in large numbers", "Face the highest entry threat", "Enjoy little competition"], "Entry barriers rise, so the threat of new entrants falls."),
+      ask("In Hill and Jones's account, in which stage is the threat of new entrants at its highest?", "Growth", ["Embryonic", "Maturity", "Shakeout"], "In growth, few firms have scale or brand loyalty yet, so entry is easiest. In maturity, the tempting answer, entry barriers have risen and the threat falls."),
+      ask("Sales of a product category have stopped rising fast. Firms are cutting prices and the weaker ones are closing. Which stage is this?", "Shakeout", ["Growth", "Maturity", "Decline"], "Slowing growth, intense rivalry, price cuts and exits mark the shakeout. In decline, demand itself is falling, not just slowing."),
+      ask("Your industry is in the growth stage. Which move best fits?", "Invest to build scale and brand before the shakeout", ["Cut prices hard to start a price war", "Plan an early exit from the market", "Segment the market and protect margins"], "Growth is the time to build the scale and brand that will protect the firm when growth slows. Segmenting and protecting margins is the move for maturity."),
     ],
     lens: [
       { pairing: 3, adds: "By day the crow defeats the owl: those who would win need the right time.", differs: "The couplet shares only the point about timing. It does not describe stages; the life cycle sets out embryonic, growth, shakeout, maturity and decline." },
@@ -116,7 +120,8 @@ const lessons: Lesson[] = [
       points: [
         "Simple version: introduction, growth, maturity, decline; profitability usually peaks in growth and maturity.",
         "Hill and Jones: embryonic, growth, shakeout, maturity, decline.",
-        "Entry threat is highest in growth; rivalry is intense in shakeout and decline.",
+        "Entry threat is highest in growth, though fast growth keeps rivalry low; rivalry is intense in shakeout and decline.",
+        "Growth: build scale and brand. Maturity: segment and protect margins. Decline: lead what remains or leave early.",
       ],
       memory: "Embryonic, growth, shakeout, maturity, decline.",
     },

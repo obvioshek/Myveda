@@ -4,18 +4,19 @@ const lessons: Lesson[] = [
   {
     blockId: "what-a-decision-rests-on",
     name: "What a decision rests on",
-    intro: "Selecting the best course of action from the available alternatives.",
+    intro: "Choosing one course of action from two or more alternatives.",
     before: {
       q: "Does a good decision rest on analysis alone?",
       choices: [
-        { label: "Yes", reveal: "The chapter names three foundations: logic, analysis and intuition." },
+        { label: "Yes", reveal: "Not alone. Decisions rest on three foundations: logic, analysis and intuition." },
         { label: "No", reveal: "Right. Decisions rest on three foundations: logic, analysis and intuition." },
       ],
     },
-    lead: "Decisions rest on three foundations: logic, analysis and intuition.",
+    lead: "A decision is the choice of one option from at least two; it rests on logic, analysis and intuition.",
     check: [
-      ask("Which are the three foundations of a decision?", "Logic, analysis and intuition", ["Plan, organise and control", "Technical, human and conceptual", "Strategic, tactical and operational"], "Those are the foundations. The others are functions, skills and levels."),
-      ask("Done well, decisions improve…", "Efficiency, effectiveness, adaptability, competitiveness and organisational performance", ["Taxation", "The span of control", "Wage rates"], "These are the benefits the chapter lists."),
+      ask("Which are the three foundations of a decision?", "Logic, analysis and intuition", ["Planning, organising and control", "Technical, human and conceptual", "Strategic, tactical and operational"], "Logic, analysis and intuition are what a decision rests on. Strategic, tactical and operational are levels of decision, not its foundations."),
+      ask("Before stocking a new atta brand, a kirana owner checks how many customers asked for it last month and the margin per bag. Which foundation is she using?", "Analysis", ["Intuition", "Logic", "Commitment"], "Checking the facts and figures is analysis. Intuition would be her sense, from years at the counter, of whether her regulars will switch."),
+      ask("A manager considers renewing a supplier contract and chooses to do nothing for now. Is that a decision?", "Yes: choosing not to act is a decision", ["No: nothing was chosen", "No: a decision must lead to an action", "Only if it is written down"], "A decision can be negative: not acting is one of the alternatives, and it is selected. \"Nothing was chosen\" misses that waiting has been chosen over renewing."),
     ],
     lens: [
       { pairing: 4, adds: "A named stage of concentrated insight that carries truth: disciplined intuition, not a hunch.", differs: "The Yoga Sūtras describe a stage of meditative practice. The chapter offers the link as a reading, not as what the text says about management." },
@@ -23,9 +24,10 @@ const lessons: Lesson[] = [
     reflect: "Think of a decision you made recently. How much of it was logic, how much analysis and how much intuition?",
     summary: {
       points: [
-        "Decision making is selecting the best course of action from the available alternatives to reach a goal.",
-        "It rests on logic, analysis and intuition.",
-        "Done well it improves efficiency, effectiveness, adaptability, competitiveness and organisational performance.",
+        "A decision is the choice of one course of action from two or more alternatives, to solve a problem or reach a goal.",
+        "Drucker: whatever a manager does, he does through making decisions.",
+        "It rests on logic, analysis and intuition; each has a weakness.",
+        "It is selective, purposive and made at every level, and not acting can itself be a decision.",
       ],
       memory: "Logic, analysis, intuition.",
     },
@@ -41,20 +43,20 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. Programmed decisions are routine and handled by rules and procedures; non-programmed ones are novel and need judgement and creativity." },
       ],
     },
-    lead: "Decisions can be sorted by programmability, management level, purpose and decision maker.",
+    lead: "Programmed decisions follow a rule; non-programmed ones need judgement. Decisions are also sorted by level, purpose and who decides.",
     check: [
-      ask("A routine, repetitive decision handled by rules, such as travel approval, is…", "Programmed", ["Non-programmed", "Strategic", "Major"], "Launching a new product is the non-programmed example."),
-      ask("Which level of decision turns strategy into action?", "Tactical", ["Strategic", "Operational", "Personal"], "Tactical decisions sit in the middle. Strategic ones are long-term; operational ones are day-to-day."),
-      ask("A high-risk, high-return, long-term decision is…", "Major", ["Minor", "Routine", "Operational"], "Classified by purpose: routine, major or minor."),
+      ask("A routine, repetitive decision handled by rules, such as travel approval, is…", "Programmed", ["Non-programmed", "Strategic", "Major"], "A rule already exists for it, so it is programmed. Launching a new product is the non-programmed kind: novel and needing judgement."),
+      ask("A bank's credit committee approves a large loan to a local factory. Classified by who decides, this is…", "A group, organisational decision", ["An individual, personal decision", "An individual, organisational decision", "A group, personal decision"], "A committee decides together, so it is a group decision, and it is an official decision of the bank, so it is organisational. Personal decisions are made outside an official role."),
+      ask("A bank's standard home-loan approval follows set rules, yet each loan runs to lakhs of rupees. How is it best classified by programmability?", "Programmed, because a rule exists for it", ["Non-programmed, because the stakes are high", "Minor, because it happens often", "Strategic, because large sums are involved"], "Programmability is about whether a rule exists, not about the stakes. High stakes do not make a rule-based decision non-programmed."),
     ],
     lens: [],
     reflect: "Name one programmed and one non-programmed decision from your own week.",
     summary: {
       points: [
-        "Programmability: programmed (routine, by rules) or non-programmed (novel, needing judgement).",
+        "Programmability (Herbert Simon): programmed (routine, by rules) or non-programmed (novel, needing judgement).",
         "Level: strategic (long-term), tactical (turns strategy into action) or operational (day-to-day).",
         "Purpose: routine, major (high risk, high return) or minor (low risk).",
-        "Decision maker: individual, group, personal or organisational.",
+        "Decision maker: individual, group, personal or organisational. One decision carries several labels at once.",
       ],
       memory: "Programmed or not. Strategic, tactical or operational.",
     },
@@ -70,11 +72,11 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. After the choice you implement it, assigning responsibility and resources, then monitor results and correct where needed." },
       ],
     },
-    lead: "Identify, inform, find alternatives, evaluate, select, implement, review.",
+    lead: "Nine steps, from defining the problem to monitoring the result; short form: identify, inform, alternatives, evaluate, select, implement, review.",
     check: [
-      ask("Which step comes first?", "Define the problem and its urgency", ["Develop alternatives", "Choose the best balance", "Monitor results"], "Then gather information, identify and weight the criteria, and develop alternatives."),
-      ask("Alternatives are evaluated against the criteria on…", "Feasibility, cost, risk and outcome", ["Age, rank, tenure and pay", "Span, scale, speed and size", "Price, quantity, income and taste"], "Then the best balance of benefit and risk is chosen."),
-      ask("What is the short form of the process?", "Identify, inform, alternatives, evaluate, select, implement, review", ["Plan, organise, staff, direct, control", "Sender, message, channel, receiver", "Define, delegate, decentralise, direct"], "That is the chapter's short form."),
+      ask("Which step of the rational process comes first?", "Define the problem and its urgency", ["Develop alternatives", "Identify the criteria", "Gather information"], "Everything else depends on knowing what the problem is and how urgent it is. Gathering information comes second, once you know what to look for."),
+      ask("A firm choosing a warehouse decides to judge sites on rent, distance to customers and labour available. These three are its…", "Criteria", ["Alternatives", "Results to monitor", "Implementation steps"], "Criteria are what you judge by. The alternatives are the sites themselves, the things you choose between."),
+      ask("Weights: rent 0.40, distance 0.35, labour 0.25. A site scores 5 on rent, 9 on distance and 7 on labour. What is its weighted score?", "6.90", ["7.00", "6.45", "6.25"], "5 × 0.40 + 9 × 0.35 + 7 × 0.25 = 2.00 + 3.15 + 1.75 = 6.90. 7.00 is the plain average, which ignores the weights."),
     ],
     lens: [
       { pairing: 0, adds: "Five parts to deliberation: the means of starting the work, men and material, the division of place and time, remedies against failure, and the accomplishment of the aim.", differs: "Kauṭilya's five limbs frame deliberation for a ruler. The chapter's process adds weighted criteria for comparing alternatives." },
@@ -87,8 +89,9 @@ const lessons: Lesson[] = [
       points: [
         "Define the problem and its urgency; gather information; identify and weight the criteria; develop alternatives.",
         "Evaluate alternatives on feasibility, cost, risk and outcome; choose the best balance of benefit and risk.",
-        "Implement by assigning responsibility and resources.",
-        "Monitor results and correct where needed.",
+        "Implement by assigning responsibility and resources; monitor results and correct where needed.",
+        "A weighted score multiplies each criterion's score by its weight and adds them up.",
+        "Herbert Simon: bounded rationality leads real managers to satisfice, taking the first option that is good enough.",
       ],
       memory: "Identify, inform, alternatives, evaluate, select, implement, review.",
     },
@@ -100,15 +103,15 @@ const lessons: Lesson[] = [
     before: {
       q: "Is there one tool that suits every decision?",
       choices: [
-        { label: "Yes", reveal: "No. The chapter pairs each technique with what it is best for, such as SWOT for strategy and cost-benefit analysis for investment." },
+        { label: "Yes", reveal: "No. Each technique is best for something, such as SWOT for strategy and cost-benefit analysis for investment." },
         { label: "No", reveal: "Right. Each technique is best for something: SWOT for strategy, cost-benefit analysis for investment, the Delphi method for forecasting." },
       ],
     },
-    lead: "Match the technique to the decision.",
+    lead: "Match the technique to the decision, and remember a tool is only as good as its inputs.",
     check: [
-      ask("Which technique maps alternatives to possible outcomes, for risk analysis?", "Decision tree", ["Delphi method", "Pareto analysis", "Payback analysis"], "A decision tree maps alternatives to possible outcomes."),
-      ask("Which technique uses anonymous expert rounds until consensus forms?", "Delphi method", ["Multi-voting", "Conjoint analysis", "PEST analysis"], "The Delphi method, best for forecasting."),
-      ask("What does Pareto analysis point to?", "The vital few causes behind most problems (the 80/20 principle)", ["The time taken to recover an investment", "Political, economic, social and technological factors", "How customers trade off product features"], "Pareto analysis is used for quality improvement."),
+      ask("Which technique uses anonymous expert rounds until consensus forms?", "Delphi method", ["Multi-voting", "Conjoint analysis", "PEST analysis"], "In the Delphi method experts never meet and answer anonymously, so no one voice dominates. Multi-voting also works in rounds, but its rounds narrow a long list of options by votes, not expert forecasts."),
+      ask("A plant manager wants to find the few causes behind most of the rejected parts. Which technique fits?", "Pareto analysis", ["Conjoint analysis", "Payback analysis", "PEST analysis"], "Pareto analysis finds the vital few causes behind most problems, for quality improvement. Conjoint analysis is about how customers trade off product features."),
+      ask("Stocking 200 Diwali hampers earns ₹60,000 if demand is high (probability 0.6) and loses ₹20,000 if it is low (0.4). What is the expected value?", "₹28,000", ["₹40,000", "₹36,000", "₹44,000"], "0.6 × ₹60,000 + 0.4 × (−₹20,000) = ₹36,000 − ₹8,000 = ₹28,000. ₹36,000 forgets the possible loss."),
     ],
     lens: [
       { pairing: 5, adds: "An inventory of strengths and weaknesses, used before deciding whether to act.", differs: "The chapter offers this as a reading: Kauṭilya's seven elements are a state's inventory, while SWOT also names opportunities and threats." },
@@ -120,6 +123,7 @@ const lessons: Lesson[] = [
         "PEST analysis: market entry. SWOT analysis: strategy. Conjoint analysis: product and pricing.",
         "Pareto analysis: quality improvement. Multi-voting: project selection. Linear programming: production planning.",
         "Payback analysis: capital decisions. Feasibility study: new projects.",
+        "Expected value weights each payoff by its probability; payback ignores what comes after the cost is recovered.",
       ],
       memory: "Match the tool to the decision.",
     },

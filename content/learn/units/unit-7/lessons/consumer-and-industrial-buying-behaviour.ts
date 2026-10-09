@@ -12,11 +12,11 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. Consumer behaviour covers searching, buying, using, evaluating and disposing of goods and services, not just the moment of purchase." },
       ],
     },
-    lead: "Consumer behaviour is how people select, buy, use and dispose of products, shaped by cultural, social, personal and psychological factors.",
+    lead: "Consumer behaviour is how people choose, buy, use and dispose of products, shaped by cultural, social, personal and psychological factors.",
     check: [
-      ask("Which factor does the chapter call the most basic cause of wants?", "Culture", ["Personality", "Reference groups", "Economic situation"], "Culture sits under the cultural factors, with subculture and social class."),
-      ask("Lifestyle is measured by…", "Activities, interests and opinions (AIO)", ["Age and life-cycle stage", "Selective attention and retention", "Initiator, influencer and decider roles"], "Lifestyle is one of the personal factors."),
-      ask("Initiator, influencer, decider, buyer and user are…", "Buying roles, a social factor", ["Stages of the buying process", "Psychological factors", "Types of subculture"], "Roles and status sit with reference groups and family among the social factors."),
+      ask("Which factor is the most basic cause of a person's wants?", "Culture", ["Personality", "Reference groups", "Economic situation"], "Culture sits under the cultural factors, with subculture and social class. Reference groups matter, but they are a social factor and narrower than culture."),
+      ask("A daughter asks for a scooter, her friends recommend a brand, her father chooses it and her mother pays at the showroom. Who is the buyer?", "The mother", ["The father", "The daughter", "The friends"], "The buyer is the person who makes the actual purchase. The father is the decider; the daughter is the initiator and user; the friends are influencers."),
+      ask("A brand wants to reach young professionals who value fitness and travel. Which measure of the personal factors should it use to describe them?", "Activities, interests and opinions (AIO)", ["Age and life-cycle stage alone", "Selective attention and retention", "Primary and secondary groups"], "Lifestyle is measured by AIO, and fitness and travel are interests. Age alone would miss what these buyers do and care about."),
     ],
     lens: [
       { pairing: 0, adds: "An image: water takes on the nature of the soil it flows through, and a person's understanding takes on the nature of their company.", differs: "The couplet is about how company shapes a person's mind. Reference groups are one social factor among the four sets of influences a marketer studies." },
@@ -25,8 +25,8 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Consumer behaviour covers searching for, buying, using, evaluating and disposing of products.",
-        "It draws on psychology, sociology, anthropology and economics, and is complex, dynamic and goal-oriented.",
-        "Four sets of factors: cultural, social, personal and psychological.",
+        "Four sets of factors: cultural, social, personal and psychological, from the broadest to the most personal.",
+        "Buying roles: initiator, influencer, decider, buyer and user; the payer is often not the chooser.",
       ],
       memory: "Cultural, social, personal, psychological.",
     },
@@ -34,7 +34,7 @@ const lessons: Lesson[] = [
   {
     blockId: "buying-decision-process",
     name: "The buying decision process",
-    intro: "Five stages from noticing a need to feeling about the purchase afterwards.",
+    intro: "Five stages from noticing a need to judging the purchase afterwards.",
     before: {
       q: "Is a buyer's decision finished at the till?",
       choices: [
@@ -42,11 +42,11 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. The fifth stage is post-purchase behaviour: satisfaction leads to repurchase and loyalty, dissatisfaction to returns and complaints." },
       ],
     },
-    lead: "Buyers move through need recognition, information search, evaluation, purchase and post-purchase behaviour.",
+    lead: "Buyers move through need recognition, information search, evaluation, purchase and post-purchase behaviour; involvement decides how many stages they go through.",
     check: [
-      ask("The brands a buyer actually considers are called the…", "Evoked set", ["Awareness set", "Choice set", "Total set"], "The buyer is aware of some brands, considers fewer, and chooses among a few."),
-      ask("Who described cognitive dissonance, the discomfort after a purchase?", "Leon Festinger", ["Henry Assael", "Martin Fishbein", "Philip Kotler"], "Festinger (1957); it is often called buyer's remorse."),
-      ask("What decides how much of the process a buyer goes through?", "Involvement", ["The evoked set", "Price alone", "The number of brands"], "Involvement runs from routine to extensive decisions."),
+      ask("The brands a buyer seriously considers are called the…", "Evoked set", ["Awareness set", "Choice set", "Total set"], "The buyer is aware of some brands, considers fewer (the evoked set), and chooses among a few (the choice set). The awareness set is larger: brands known, not all considered."),
+      ask("A week after buying a refrigerator that works perfectly, Ravi wonders whether another brand would have been better. This is…", "Cognitive dissonance", ["Dissatisfaction", "Need recognition", "Variety-seeking"], "Doubt about the choice is dissonance, and it can arise even when the product works well. Dissatisfaction would mean the fridge performed below his expectations."),
+      ask("What should the refrigerator brand do to ease Ravi's doubt?", "Call to check the installation and remind him of the warranty", ["Advertise a new model to him at once", "Offer him a discount on a rival brand", "Do nothing, since the sale is complete"], "Reassurance, guarantees and after-sales contact reduce dissonance. Pushing a new model would feed his doubt rather than ease it."),
     ],
     lens: [
       { pairing: 1, adds: "A rule: do nothing that will make you grieve ‘what have I done’, and if you have, do not do it again.", differs: "The couplet speaks of wrong actions in general, not purchases. Cognitive dissonance is a buyer's doubt after buying, which marketers ease with reassurance and guarantees." },
@@ -56,7 +56,8 @@ const lessons: Lesson[] = [
       points: [
         "Stages: need recognition, information search, evaluation of alternatives, purchase, post-purchase behaviour.",
         "Awareness set, evoked (consideration) set, choice set.",
-        "Cognitive dissonance is eased by reassurance, guarantees and after-sales contact.",
+        "Cognitive dissonance is doubt about the choice, eased by reassurance, guarantees and after-sales contact.",
+        "Satisfaction depends on the gap between expectations and perceived performance.",
       ],
       memory: "Need, search, evaluate, buy, reflect.",
     },
@@ -72,19 +73,20 @@ const lessons: Lesson[] = [
         { label: "Very differently", reveal: "Right. Salt is habitual buying: low involvement and few brand differences. A car is complex buying: high involvement and significant differences." },
       ],
     },
-    lead: "Henry Assael sorted buying behaviour by the buyer's involvement and the differences between brands.",
+    lead: "Henry Assael sorted buying behaviour by the buyer's involvement and the differences between brands, giving four types.",
     check: [
-      ask("High involvement with few differences between brands, as with a carpet, is…", "Dissonance-reducing buying", ["Complex buying", "Variety-seeking buying", "Habitual buying"], "The marketer provides reassurance and after-sales support."),
-      ask("Buyers who switch soft drinks or biscuits for a change show…", "Variety-seeking buying", ["Habitual buying", "Complex buying", "Dissonance-reducing buying"], "Low involvement but significant brand differences."),
-      ask("For complex buying, the marketer should give…", "Detailed information and trials", ["Price deals and repetition", "Only reminders on the shelf", "Nothing beyond the label"], "Price, promotion and repetition suit habitual buying."),
+      ask("High involvement with few differences between brands, as with a carpet, is…", "Dissonance-reducing buying", ["Complex buying", "Variety-seeking buying", "Habitual buying"], "High involvement but similar brands means the buyer decides quickly and seeks comfort afterwards. Complex buying needs real differences between brands."),
+      ask("A shopper buys a different brand of biscuits each week, though she liked last week's. This is…", "Variety-seeking buying", ["Dissonance-reducing buying", "Complex buying", "Habitual buying"], "Low involvement with real brand differences, switching for a change, is variety-seeking. It is not a sign she was dissatisfied with last week's brand."),
+      ask("You are the market leader in a variety-seeking category. What should you mainly do?", "Keep shelf space and remind buyers often", ["Offer deals and novelty to make buyers switch", "Give detailed technical information and trials", "Focus on after-sales reassurance"], "Leaders protect their place on the shelf and keep reminding. Deals and novelty are the challenger's tools for prompting a switch."),
     ],
     lens: [],
     reflect: "Pick something you bought this month. Which of Assael's four types was it, and why?",
     summary: {
       points: [
-        "Two dimensions: involvement (high or low) and differences between brands.",
+        "Two dimensions: the buyer's involvement and the differences between brands.",
         "Complex (car) and dissonance-reducing (carpet) are high involvement.",
-        "Variety-seeking (soft drinks) and habitual (salt) are low involvement.",
+        "Variety-seeking (biscuits) and habitual (salt) are low involvement.",
+        "Involvement belongs to the buyer, not the product.",
       ],
       memory: "High involvement and real differences make buying complex.",
     },
@@ -100,18 +102,18 @@ const lessons: Lesson[] = [
         { label: "It depends on the rule", reveal: "Right. Under non-compensatory rules a weakness cannot be made up; under compensatory rules, such as Fishbein's model, strengths can offset weaknesses." },
       ],
     },
-    lead: "Buyers choose by non-compensatory or compensatory rules, and models explain buying in economic, psychological, sociological or combined terms.",
+    lead: "The same ratings can lead to different choices: buyers choose by conjunctive, disjunctive, lexicographic or compensatory rules.",
     check: [
-      ask("A buyer who sets a minimum on every attribute and takes the first brand meeting all of them uses the…", "Conjunctive rule", ["Disjunctive rule", "Lexicographic rule", "Expectancy-value model"], "The marketer must meet the minimum on everything."),
-      ask("Ranking attributes and comparing on the most important first is the…", "Lexicographic rule", ["Conjunctive rule", "Disjunctive rule", "Compensatory rule"], "The buyer moves to the next attribute only if there is a tie."),
-      ask("Which model explains buying by family, social class, reference groups and culture?", "Sociological (Veblenian)", ["Economic (Marshallian)", "Psychological (Pavlovian)", "Howard–Sheth"], "The Marshallian model sees rational choice within a budget."),
+      ask("Ranking attributes and comparing brands on the most important first is the…", "Lexicographic rule", ["Conjunctive rule", "Disjunctive rule", "Compensatory rule"], "The buyer moves to the next attribute only if there is a tie. The conjunctive rule instead sets a minimum on every attribute."),
+      ask("A buyer will accept any laptop that has either a battery life of 12 hours or more, or a weight under 1 kg. Which rule is this?", "Disjunctive", ["Conjunctive", "Lexicographic", "Compensatory"], "Meeting a high standard on any one key attribute is enough, which is disjunctive (“or”). Conjunctive would require every attribute to pass (“and”)."),
+      ask("Phone X is rated 8 on price and 4 on camera; the buyer's weights are price 0.5 and camera 0.5. What is its compensatory score?", "6.0", ["12.0", "4.0", "8.0"], "0.5 × 8 + 0.5 × 4 = 4 + 2 = 6. 12 adds the ratings without weights; 4 is only the price part."),
     ],
     lens: [],
     reflect: "When you last chose a phone or laptop, did one attribute decide it, or did you weigh everything together?",
     summary: {
       points: [
-        "Non-compensatory rules: conjunctive, disjunctive, lexicographic.",
-        "Compensatory rules, such as Fishbein's expectancy-value model, let strengths offset weaknesses.",
+        "Non-compensatory rules: conjunctive (every minimum), disjunctive (any high standard), lexicographic (top attribute first).",
+        "Compensatory rules, such as Fishbein's expectancy-value model, weigh all attributes so strengths offset weaknesses.",
         "Models: economic, psychological, sociological, and comprehensive (Nicosia, Engel–Kollat–Blackwell, Howard–Sheth).",
       ],
       memory: "Conjunctive: every minimum. Disjunctive: one high standard. Lexicographic: the top attribute first.",
@@ -128,11 +130,11 @@ const lessons: Lesson[] = [
         { label: "Usually several", reveal: "Right. Several people influence each decision; together they form the buying centre: users, influencers, buyers, deciders and gatekeepers." },
       ],
     },
-    lead: "Organisations buy through a professional process, in buying situations that run from a routine reorder to a new task.",
+    lead: "Organisations buy through a professional process, in buying situations from a routine reorder to a new task, with several people in the buying centre.",
     check: [
-      ask("Demand for business goods that comes from demand for consumer goods is…", "Derived demand", ["Elastic demand", "Primary demand", "Habitual demand"], "So it is fairly inelastic in the short run and fluctuates more."),
-      ask("A first-time purchase needing extensive research and many decision-makers is a…", "New task", ["Straight rebuy", "Modified rebuy", "Buyphase"], "It carries the highest risk of the three buyclasses."),
-      ask("In the buying centre, who controls the flow of information?", "Gatekeepers", ["Deciders", "Users", "Influencers"], "Webster and Wind named five roles; later writers add initiators and approvers."),
+      ask("Demand for business goods that comes from demand for consumer goods is…", "Derived demand", ["Elastic demand", "Primary demand", "Habitual demand"], "It is derived from final consumer demand, so it is fairly inelastic in the short run and fluctuates more. It is not elastic: price changes move it little in the short run."),
+      ask("An auto-parts plant drops its usual paint supplier after a price rise and asks three others to quote. This buying situation is a…", "Modified rebuy", ["Straight rebuy", "New task", "Performance review"], "The plant re-evaluates suppliers because conditions changed: a modified rebuy. It is not a new task, since the plant has bought paint before."),
+      ask("You sell robots and the purchase officer decides which sellers get to meet the plant's engineers. Which role is he playing?", "Gatekeeper", ["Decider", "User", "Approver"], "Gatekeepers control the flow of information to the buying centre. The decider settles the final choice, usually someone more senior."),
     ],
     lens: [
       { pairing: 2, adds: "Precious goods examined before entering the treasury, with qualities and defects set out so experts can judge them.", differs: "The passage concerns a treasury's gems and pearls. Industrial buying adds the buyclasses, the buygrid's eight buyphases and the roles of the buying centre." },
@@ -141,8 +143,9 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Business markets: fewer, larger buyers, professional purchasing, several influencers, derived demand.",
-        "Buyclasses: straight rebuy, modified rebuy, new task; crossed with eight buyphases in the buygrid.",
-        "Buying centre: users, influencers, buyers, deciders, gatekeepers; influences are environmental, organisational, interpersonal and individual.",
+        "Buyclasses: straight rebuy, modified rebuy, new task; crossed with eight buyphases in the buygrid (Robinson, Faris and Wind, 1967).",
+        "Buying centre: users, influencers, buyers, deciders, gatekeepers, plus initiators and approvers.",
+        "Influences: environmental, organisational, interpersonal and individual (Webster and Wind).",
       ],
       memory: "Straight rebuy, modified rebuy, new task.",
     },
