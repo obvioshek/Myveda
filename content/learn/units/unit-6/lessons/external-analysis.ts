@@ -78,7 +78,7 @@ const lessons: Lesson[] = [
     check: [
       ask("For an airline, a video call that replaces a business trip is an example of…", "The threat of substitutes", ["Rivalry among existing firms", "The threat of new entrants", "The bargaining power of buyers"], "A substitute meets the same need in a different way. Another airline on the same route would be a rival, the tempting mix-up."),
       ask("A city's cafés find that a few landlords own all the good sites and can raise rents at will. Which force is strong?", "The bargaining power of suppliers", ["The bargaining power of buyers", "The threat of substitutes", "Rivalry among existing firms"], "The landlords supply a key input, space, and they are few. Buyer power would come from customers, not from those who supply the cafés."),
-      ask("The four largest firms in an industry hold 20%, 15%, 10% and 5% of the market. What is the CR4, and what does it suggest?", "50%; no few firms dominate, so rivalry is likely strong", ["50%; a few firms dominate, so rivalry is weak", "20%; the leader alone sets the market", "90%; the industry is highly concentrated"], "CR4 = 20 + 15 + 10 + 5 = 50%. Half the market is spread among many smaller firms. Reading 50% as domination is the tempting error: that would need a figure nearer 90%."),
+      ask("The four largest firms in an industry hold 8%, 6%, 4% and 2% of the market. What is the CR4, and what does it suggest?", "20%; the market is fragmented, so rivalry is likely intense", ["20%; a few firms dominate, so rivalry is weak", "8%; only the leader's share counts", "40%; concentration is moderate"], "CR4 = 8 + 6 + 4 + 2 = 20%. Four firms hold only a fifth of the market. Reading any CR4 as domination is the tempting error: a CR4 of about 40–60% is usually read as moderate concentration, and only higher figures as a market a few firms dominate."),
     ],
     lens: [
       { pairing: 2, adds: "Weigh four strengths before acting: of the deed, of oneself, of the opponent and of the allies.", differs: "The couplet concerns a single undertaking against a foe. The five forces describe the structure of a whole industry and its profit potential." },
@@ -88,7 +88,7 @@ const lessons: Lesson[] = [
       points: [
         "Forces: new entrants, supplier power, buyer power, substitutes, rivalry (Porter, 1979).",
         "Intense forces (airlines) leave little profit; mild forces (soft drinks) leave room for higher returns.",
-        "A low concentration ratio, such as a CR4 of 50%, signals intense rivalry.",
+        "A low concentration ratio, such as a CR4 of 20%, signals intense rivalry.",
         "A substitute meets the same need in a different way; a rival sells the same product.",
         "Complementors are sometimes added as a sixth force; Porter treats them as a factor affecting the five.",
       ],

@@ -46,7 +46,7 @@ const lessons: Lesson[] = [
     lead: "A vision says where the organisation wants to be one day; a mission says what it does now, for whom and why, and frames its strategy.",
     check: [
       ask("A mission statement usually has three parts: the purpose, the core values and…", "The main goals", ["The annual budget", "The organisation chart", "The vision"], "Purpose, core values that shape behaviour, and main goals. The vision is a separate statement about the future, not part of the mission."),
-      ask("A dairy cooperative's statement reads: ‘Every home in the district drinks fresh, fairly priced milk from its own farmers.’ It has not happened yet. Is this a vision or a mission?", "A vision: it describes a future not yet reached", ["A mission: it names whom the dairy serves", "A mission: it states the dairy's values", "Neither: it has no number or date"], "If a statement describes something not yet reached, it is a vision. Mentioning customers does not make it a mission, which says what the organisation does now."),
+      ask("A dairy cooperative's statement reads: ‘Every home in the district drinks fresh, fairly priced milk from its own farmers.’ It has not happened yet. Is this a vision or a mission?", "A vision: it pictures the future the dairy wants", ["A mission: it names whom the dairy serves", "A mission: it states the dairy's values", "Neither: it has no number or date"], "It pictures the future the dairy wants to reach, which is what a vision does. A mission says what the organisation does now, for whom and how; mentioning customers does not make a statement a mission."),
       ask("A firm's mission reads ‘We serve customers.’ Which quality of a good mission does it lack most?", "Precision: it is far too broad", ["Brevity: it is too long", "Feasibility: it cannot be done", "Credibility: no one believes it"], "A precise mission is neither too broad nor too narrow. ‘We serve customers’ could describe any firm, so it guides no choice."),
     ],
     lens: [],
@@ -56,7 +56,7 @@ const lessons: Lesson[] = [
         "Vision: where do we want to be? Future; inspires and gives direction. Clear, realistic, memorable and shared.",
         "Mission: what do we do, for whom and why? Present; defines scope and frames strategy.",
         "A mission has purpose, core values and main goals, and should be feasible, clear, inspiring, precise, distinctive and credible.",
-        "Test: already true today, it is a mission; not yet reached, it is a vision.",
+        "Vision: the future it wants. Mission: what it does now, for whom, and the goals it is working towards.",
       ],
       memory: "Vision looks ahead; mission says what we do now.",
     },
