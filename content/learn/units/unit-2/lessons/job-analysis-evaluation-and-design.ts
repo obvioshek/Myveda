@@ -138,7 +138,9 @@ const lessons: Lesson[] = [
       ask("A panel uses paired comparison on 6 jobs, comparing every job with every other once. How many comparisons does it make?", "15", ["30", "12", "36"], "The number of pairs is 6 × 5 ÷ 2 = 15. Multiplying 6 × 5 without halving gives 30, which counts each pair twice."),
       ask("A firm uses factor comparison, but one key job is underpaid because of old bias. What is the likely effect?", "New jobs rated against it will be underpaid too", ["Rating by factors removes the bias", "Only the key job itself is affected", "The bias disappears once ranking is added"], "Factor comparison uses key jobs' pay as the yardstick, so any unfairness in that pay is copied into every job rated against it. Splitting pay by factors does not correct it."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 3, adds: "Weighting the factors openly is an old idea: the order of the list is the argument.", differs: "Manu ranks his factors once for all. Factor methods choose factors that suit the jobs (skill, effort, responsibility, conditions), have a committee assign points, and keep the weights open to review." },
+    ],
     reflect: "Which method would your own organisation find easiest to defend if staff challenged a grade?",
     summary: {
       points: [

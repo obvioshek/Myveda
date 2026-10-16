@@ -138,7 +138,9 @@ const lessons: Lesson[] = [
       ask("A manager says, \u201cLeave the thinking to me; do as I say.\u201d The clerk replies, \u201cYes sir, whatever you say.\u201d Which pair is this, and what is the long-run risk?", "Parent\u2013Child; the employee's initiative shrinks", ["Adult\u2013Adult; the decision becomes too slow", "Child\u2013Parent; the employee ends up controlling the manager", "Parent\u2013Parent; the two begin to compete over rules"], "The manager speaks as Parent to the employee's Child, which suits both at first. Parent\u2013Parent is tempting, but here the clerk gives up judgement instead of pushing rival rules."),
       ask("When is a Parent\u2013Child transaction most defensible?", "In a fire drill, when a supervisor gives short orders to new staff", ["In a monthly review with experienced staff", "In a planning meeting on next year's targets", "In a talk to coach a capable clerk"], "In an emergency, speed matters and new staff need clear orders. In reviews, planning or coaching it builds dependency, and the Adult\u2013Adult default is better."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 3, adds: "What you say invites a matching answer, so the first transaction shapes the second.", differs: "The verse warns against harshness. The chapter says complementary does not mean good: a polite but unequal exchange can also keep a person small." },
+    ],
     reflect: "In your last three conversations with your manager or team, which of the nine pairs was it? Was it the one the task needed?",
     summary: {
       points: [
@@ -167,7 +169,9 @@ const lessons: Lesson[] = [
       ask("A senior always finishes a junior's work, then snaps when no thanks come. How is this best described?", "An illegitimate Rescuer who keeps the junior dependent, then turns Persecutor", ["A legitimate Rescuer, because helping is always good", "A Victim holding an I'm-not-OK position", "A crossed transaction from the Adult state"], "Help that keeps the junior dependent is a mask, and the switch to Persecutor is typical. A legitimate Rescuer would help the junior become self-reliant."),
       ask("Which statement is NOT true of a psychological game?", "It is a single honest exchange with no hidden message", ["It tends to be repeated", "It makes sense on the surface", "At least one transaction is ulterior"], "A game has three marks: repetition, surface sense and an ulterior transaction. A single honest exchange cannot be a game, because no hidden message is involved."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 4, adds: "Carrying a grievance is what keeps the pattern going.", differs: "The verse speaks of hatred and letting go. The chapter describes three roles that players switch between, and says that a legitimate role is possible when the facts call for it." },
+    ],
     reflect: "Which corner of the triangle do you drift to under pressure, and what would moving to Adult look like?",
     summary: {
       points: [

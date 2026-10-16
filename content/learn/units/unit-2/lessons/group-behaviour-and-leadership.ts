@@ -48,7 +48,9 @@ const lessons: Lesson[] = [
       ask("Staff from design, production, finance and marketing are brought together to launch one product. What type of team is this?", "Cross-functional", ["Problem-solving", "Virtual", "A work group"], "Members come from different areas to do one task, which is cross-functional. Virtual describes only how they connect, by technology across places."),
       ask("A team has skilled members and a clear goal, but no resources and no trust in the organisation. Which part of the effectiveness model is weak?", "Context", ["Composition", "Process", "Synergy"], "Resources, leadership and trust belong to context. Composition is who is on the team, and process is what happens inside it."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 7, adds: "Effort joined towards one end does what separate effort cannot.", differs: "The verse stops at unity. The chapter separates kinds of teams and adds that a team also needs different skills, clear goals and answerability to each other." },
+    ],
     reflect: "Think of a group you have worked in. Was it a work group or a work team, and what made the difference?",
     summary: {
       points: [

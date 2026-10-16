@@ -166,7 +166,9 @@ const lessons: Lesson[] = [
       ask("A firm that wants to innovate hires, trains and rewards people for creativity, cooperation and willingness to take risks. Which perspective is it using?", "Behavioural", ["Systems", "Critical", "Normative (soft)"], "The behavioural view picks HR practices to bring out the behaviours the strategy needs. The systems view would instead ask about competence, behaviour and the environment as parts of an input–output cycle."),
       ask("A firm promises five training days, managers release staff for only two, and employees believe training goes to favourites. Which gap does this show?", "Between intended, actual and perceived HR practices", ["Between hard HRM and soft HRM", "Between input and output in a system", "Between the Michigan and Harvard models"], "Planned training is the intended practice, the two days are the actual practice, and the belief about favourites is the perceived practice. The other gaps are real ideas but do not describe this case."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 1, adds: "A statement can be true from where it is made without being the whole truth.", differs: "The sūtra is a doctrine about reality. The block's four perspectives are named schools of thought about HRM, and each can be tested against what employees actually experience." },
+    ],
     reflect: "Think of an organisation you know. Is its HR language soft and its practice hard, or do the two match?",
     summary: {
       points: [
@@ -196,7 +198,9 @@ const lessons: Lesson[] = [
       ask("A firm closes a management level and cuts staff to run lean. What should HR do first?", "Communicate facts early, so that rumour does not fill the gap", ["Start a continuous improvement programme", "Hire contingent staff without planning", "Wait until the cuts are complete before saying anything"], "Early, factual communication limits rumour. Waiting leaves the gap for rumour to fill."),
       ask("A bakery redesigns its whole flow from order to delivery instead of refining one step each month. What is this?", "Re-engineering", ["Continuous improvement", "Downsizing", "A contingent workforce"], "A radical redesign of how the work is done is re-engineering. Continuous improvement is steady, small and permanent."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 2, adds: "No arrangement is permanent, and HR has to expect its own methods to be replaced.", differs: "The verse is a general truth about impermanence. The block names the particular forces, inside and outside the firm, and says what HR must do about each." },
+    ],
     reflect: "Which outside force is changing the work of HR most in the sector you know best?",
     summary: {
       points: [

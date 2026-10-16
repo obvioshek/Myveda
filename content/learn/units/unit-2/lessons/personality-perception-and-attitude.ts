@@ -176,7 +176,9 @@ const lessons: Lesson[] = [
       ask("A manager says in meetings that women make good engineers, yet keeps giving site visits only to men without noticing. What does this show?", "An implicit attitude that differs from his explicit one", ["High organisational commitment", "Perceived organisational support", "Cognitive dissonance reduced by a changed belief"], "He is unaware of the attitude that guides his assignments, so it is implicit. Dissonance would need him to notice the clash between belief and action."),
       ask("A clerk's request for emergency leave is granted without fuss and she concludes that the bank cares about her. Which job attitude is she showing?", "High perceived organisational support", ["High job involvement", "Strong continuance commitment", "High self-monitoring"], "She believes the organisation values and cares about her, which is POS. Job involvement is about identifying with the job itself, not about the employer's care."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 8, adds: "What a person says and does comes out of the state of mind behind it.", differs: "The verse teaches that mind shapes action and its results. Psychology treats an attitude as one learned state among others, and finds that it predicts behaviour better when it is strong." },
+    ],
     reflect: "Think of a recent time your employer or college showed it did or did not care about you. How did that change your effort?",
     summary: {
       points: [

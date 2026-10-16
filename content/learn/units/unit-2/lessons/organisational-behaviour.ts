@@ -78,7 +78,10 @@ const lessons: Lesson[] = [
       ask("A bank branch manager coaches new officers, listens to their ideas and recognises good work. Which model is she using?", "Supportive", ["Collegial", "Custodial", "Autocratic"], "Leadership that builds participation and meets needs for status and recognition is the supportive model. The collegial model goes further, with partnership and self-discipline, which a coaching manager does not yet claim."),
       ask("A public-sector company has a township, hospital and pension, yet several staff admit they stay only for the benefits. What is the best reading?", "A weakness of the custodial model: security can trap people without raising drive", ["Proof that the system model works, since staff feel secure", "A sign that the autocratic model has been put in place", "A sign that staff are in the collegial model's self-discipline stage"], "Custodial benefits bring dependence and passive cooperation, and can keep staff who would rather leave. The system model aims at psychological ownership, which these staff do not describe."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 4, adds: "The oldest model rests on power, and its defenders say that power protects.", differs: "Manu defends power as protection. The chapter lists it as the first of five models and shows that later models draw more from people." },
+      { pairing: 5, adds: "Partnership starts from a purpose that members hold in common.", differs: "The hymn asks for one mind in a community. The collegial model is a working arrangement: shared purpose, self-discipline and a shared result." },
+    ],
     reflect: "Which model describes the place where you work or study now? Which would suit the work better?",
     summary: {
       points: [
