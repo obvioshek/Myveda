@@ -11,10 +11,12 @@ const unit: UnitSource = {
   n: 2,
   title: "Organisational Behaviour and Human Resource Management",
   short: "Organisational Behaviour and HRM",
-  blurb: "From personality and motivation to leadership, culture and justice, and on to planning, hiring, training, pay and strategic HR.",
+  blurb: "From personality and motivation to leadership, culture and justice, and on to planning, hiring, training, pay, performance, careers, industrial relations and global HR.",
   groups: [
     { key: "ob", label: "Organisational behaviour", blurb: "How people think, feel and act at work: alone, in groups and across cultures." },
     { key: "hrm", label: "Human resource management", blurb: "How organisations plan for, find, develop, reward and keep their people." },
+    { key: "perf", label: "Performance, careers and change", blurb: "How organisations measure performance, grow people's careers and talent, keep them engaged, and change." },
+    { key: "rel", label: "Employee relations and global HR", blurb: "How employers, unions and the law shape work, and how HR crosses borders and looks after the planet." },
   ],
   textsUsed: data.textsUsed,
   chapters: data.chapters as ChapterSource[],
