@@ -32,6 +32,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "types-of-teams-and-team-effectiveness",
+    name: "Types of teams and team effectiveness",
+    intro: "How a team differs from a group, the four types of team, and what makes a team effective.",
+    before: {
+      q: "If you put five people on a project and call them a team, do you have one?",
+      choices: [
+        { label: "Yes", reveal: "Not necessarily. A team needs complementary skills, a shared result and mutual accountability. Otherwise it is only a work group." },
+        { label: "Not necessarily", reveal: "Right. A work group shares information; a work team produces more together than the members would alone." },
+      ],
+    },
+    lead: "A work team produces more than the sum of its members, and it comes in four main types.",
+    check: [
+      ask("Which type of team takes over scheduling and assigning tasks from a former supervisor?", "Self-managed team", ["Problem-solving team", "Cross-functional team", "Virtual team"], "A problem-solving team only suggests improvements. A self-managed team runs its own work."),
+      ask("Staff from design, production, finance and marketing are brought together to launch one product. What type of team is this?", "Cross-functional", ["Problem-solving", "Virtual", "A work group"], "Members come from different areas to do one task, which is cross-functional. Virtual describes only how they connect, by technology across places."),
+      ask("A team has skilled members and a clear goal, but no resources and no trust in the organisation. Which part of the effectiveness model is weak?", "Context", ["Composition", "Process", "Synergy"], "Resources, leadership and trust belong to context. Composition is who is on the team, and process is what happens inside it."),
+    ],
+    lens: [],
+    reflect: "Think of a group you have worked in. Was it a work group or a work team, and what made the difference?",
+    summary: {
+      points: [
+        "A work group shares information; a work team produces more than the sum of its members.",
+        "Four types: problem-solving, self-managed, cross-functional, virtual.",
+        "A multiteam system is a team of teams sharing a higher goal.",
+        "Effectiveness depends on context, composition and process.",
+      ],
+      memory: "Solve, self-manage, cross over, connect virtually.",
+    },
+  },
+  {
     blockId: "team-building-and-tuckmans-stages",
     name: "Team building and Tuckman's stages",
     intro: "How a group becomes a team.",
@@ -59,6 +88,35 @@ const lessons: Lesson[] = [
         "Benefits: trust, creativity, communication, problem-solving.",
       ],
       memory: "Forming, storming, norming, performing, adjourning.",
+    },
+  },
+  {
+    blockId: "belbins-team-roles",
+    name: "Belbin's team roles",
+    intro: "Nine ways of contributing to a team, and why a balanced team needs a mix.",
+    before: {
+      q: "Does a strong team need nine people, one for each of Belbin's roles?",
+      choices: [
+        { label: "Yes", reveal: "No. One person can cover two or three roles. The aim is a balanced mix, not nine bodies." },
+        { label: "No", reveal: "Right. The roles describe contributions, and one person can cover several." },
+      ],
+    },
+    lead: "Belbin's nine roles fall into action, people and thinking groups, and balanced teams cover them all.",
+    check: [
+      ask("Which role did Belbin add after his original eight?", "Specialist", ["Plant", "Shaper", "Teamworker"], "The original eight did not include a role for deep expert knowledge. The Specialist was added later."),
+      ask("A team has many creative ideas but nothing gets finished on time, and errors slip through. Which roles does it most need?", "Implementer and Completer Finisher", ["Plant and Shaper", "Teamworker and Co-ordinator", "Resource Investigator and Specialist"], "Implementers turn ideas into action and Completer Finishers catch errors. Adding more Plants would give more ideas but no more output."),
+      ask("Which is the best use of Belbin's roles in a new project team?", "List the roles the task needs and ask who can cover each", ["Label each person with one fixed role", "Pick the nine most senior people", "Avoid anyone with a weakness"], "Roles are tendencies, not fixed types, and each strength brings an allowable weakness. The aim is balance."),
+    ],
+    lens: [],
+    reflect: "Which two Belbin roles do you most often play? Which one does your current team lack?",
+    summary: {
+      points: [
+        "A team role is a tendency to contribute and interact in a particular way.",
+        "Action: Shaper, Implementer, Completer Finisher.",
+        "People: Co-ordinator, Teamworker, Resource Investigator.",
+        "Thinking: Plant, Monitor Evaluator, Specialist (added later).",
+      ],
+      memory: "Action, people, thinking: three groups of three.",
     },
   },
   {
@@ -92,6 +150,35 @@ const lessons: Lesson[] = [
         "Management copes with complexity; leadership copes with change (Kotter).",
       ],
       memory: "Who they are, what they do, what fits, what they change.",
+    },
+  },
+  {
+    blockId: "trait-theory-and-newer-views-of-leadership",
+    name: "Trait theory and newer views of leadership",
+    intro: "The search for leader traits, why it falls short, and the relationship-based views that followed.",
+    before: {
+      q: "If you knew a person's personality traits, could you tell who will be the best leader?",
+      choices: [
+        { label: "Yes", reveal: "Only partly. Traits help predict who emerges as a leader, but they are weak at telling effective leaders from ineffective ones." },
+        { label: "Only partly", reveal: "Right. Traits predict who emerges as a leader better than who leads effectively." },
+      ],
+    },
+    lead: "Trait theory looks for what leaders are like; later views look at relationships, vision and values.",
+    check: [
+      ask("The \"great man\" idea behind trait theory is linked to…", "Thomas Carlyle", ["Frederick Taylor", "Kurt Lewin", "Robert Blake"], "Carlyle wrote of born heroes shaping history. Lewin is known for leadership styles, not the great man idea."),
+      ask("A manager gives two trusted deputies the best projects and treats the other staff formally. Which theory describes this?", "Leader-member exchange (in-group and out-group)", ["Trait theory", "Servant leadership", "Path-goal theory"], "LMX says a leader forms a different relationship with each follower. Servant leadership would instead focus on helping all followers grow."),
+      ask("What is the main weakness of trait theory?", "Traits predict who emerges as a leader better than who is effective", ["It shows leaders can be trained easily", "It ignores personality altogether", "It says only the situation matters"], "Trait theory does look at personality and assumes traits are largely fixed. Its weakness is predicting effectiveness."),
+    ],
+    lens: [],
+    reflect: "Think of someone you saw lead well. Which of the listed traits did they show, and which did they lack?",
+    summary: {
+      points: [
+        "Trait theory seeks the qualities that set leaders apart; it grew from the great man idea.",
+        "Traits predict who emerges as a leader better than who is effective.",
+        "LMX: different relationships with followers form an in-group and an out-group.",
+        "Charismatic, authentic and servant leadership add vision, honesty and service.",
+      ],
+      memory: "Traits show who rises, not who leads well.",
     },
   },
   {

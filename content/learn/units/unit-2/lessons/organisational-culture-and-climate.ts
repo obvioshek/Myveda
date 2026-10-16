@@ -121,6 +121,36 @@ const lessons: Lesson[] = [
       memory: "Clan collaborates, adhocracy creates, market competes, hierarchy controls.",
     },
   },
+  {
+    blockId: "motives-and-effects-of-climate",
+    name: "Motives and effects of climate",
+    intro: "The six motives a climate arouses, and how climate shapes work.",
+    before: {
+      q: "Do two workplaces with the same rules always arouse the same wants in their staff?",
+      choices: [
+        { label: "Yes", reveal: "Not always. One may reward initiative while the other makes staff wait for orders. That difference is the climate." },
+        { label: "No", reveal: "Right. Climate depends on what the workplace rewards, such as achievement in one and dependency in another." },
+      ],
+    },
+    lead: "A climate arouses certain motives: achievement, affiliation, influence, control, dependency, extension. Through perception, it shapes performance and satisfaction.",
+    check: [
+      ask("Which motive is the urge to be relevant and useful to large groups, including society as a whole?", "Extension", ["Affiliation", "Influence", "Achievement"], "Extension looks beyond the team to the wider community. Affiliation is tempting, but it is about close, friendly relationships."),
+      ask("In a branch, staff wait for the manager's nod before every small decision, and every step is signed off. Which motives dominate?", "Dependency and control", ["Achievement and extension", "Affiliation and influence", "Extension and dependency"], "Waiting to be told is dependency; signing off every step is control. Achievement and extension show up as initiative and wider concern, which this branch lacks."),
+      ask("A survey finds that branches with a positive climate for performance also report better results. What can a careful reader conclude?", "They are linked, but the survey alone does not prove climate causes the results", ["Climate causes the better results", "Better results cause the climate", "Climate and results are unrelated"], "The survey shows a link only. Good results could also lift the mood, so claiming that climate is the cause goes beyond the evidence."),
+    ],
+    lens: [],
+    reflect: "Which motive does your workplace reward most: achievement, affiliation, influence, control, dependency or extension?",
+    summary: {
+      points: [
+        "Six motives mark a climate: achievement, affiliation, influence, control, dependency, extension (Pareek).",
+        "Extension is the urge to be relevant and useful to large groups, including society.",
+        "Control and dependency are often seen as the less healthy climates.",
+        "Employees' perception of the culture affects performance and satisfaction; stronger cultures have more effect.",
+        "Culture describes what members perceive; it does not say whether they like it.",
+      ],
+      memory: "Achievement, affiliation, influence, control, dependency, extension.",
+    },
+  },
 ];
 
 export default lessons;
