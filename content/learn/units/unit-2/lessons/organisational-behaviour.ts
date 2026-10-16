@@ -31,6 +31,65 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "elements-and-disciplines-of-ob",
+    name: "Elements, aims and disciplines of OB",
+    intro: "The four things OB keeps in view, and the sciences it borrows from.",
+    before: {
+      q: "When output falls, is the cause always the workers?",
+      choices: [
+        { label: "Yes, always the workers", reveal: "Not always. The cause may lie in structure, technology or the environment, and a change in one element affects the others." },
+        { label: "It can lie elsewhere", reveal: "Yes. OB looks at people together with structure, technology and the environment." },
+      ],
+    },
+    lead: "OB studies people in relation to structure, technology and the environment, to understand, predict and guide behaviour.",
+    check: [
+      ask("Which list gives the four elements of OB?", "People, structure, technology and environment", ["People, money, markets and machines", "Individuals, groups, teams and leaders", "Planning, organising, leading and controlling"], "The four elements are people, structure, technology and the external environment. Planning, organising, leading and controlling are management functions, not elements of OB."),
+      ask("A mill's managers want to know why group decisions on the night shift keep following whatever the senior weaver says. Which discipline's ideas fit most directly?", "Social psychology, which studies how others influence a person", ["Anthropology, which studies cultures across societies", "Political science, which studies how governments are elected", "Psychology, which studies the individual alone"], "Social psychology covers group decision making and how people are influenced by others. Psychology on its own looks at one person, so it cannot explain why a group follows one member."),
+      ask("A manager says: \"Luthans's aim of control means I should force workers to follow my orders.\" Is she right?", "No, control here means guiding behaviour toward the goal", ["Yes, control means close supervision of every worker", "Yes, but only for the individual level of OB", "No, because OB seeks only to understand and never to influence"], "In Luthans's aims, control means guiding behaviour toward goals, alongside understanding and prediction. Forcing obedience is the autocratic model, which is not what the aim describes."),
+    ],
+    lens: [],
+    reflect: "Think of a problem at work or college. Which of the four elements did you blame first, and which did you overlook?",
+    summary: {
+      points: [
+        "Four elements: people, structure, technology and environment; a change in one reaches the others.",
+        "Luthans's aims: understanding, prediction and control of behaviour.",
+        "OB is multidisciplinary, humanistic, performance-oriented, applications-oriented and uses scientific method.",
+        "Psychology: the individual. Social psychology: influence. Sociology: groups. Anthropology: culture. Political science: power.",
+      ],
+      memory: "People, structure, technology, environment: change one and the rest move.",
+    },
+  },
+  {
+    blockId: "five-models-of-ob",
+    name: "Five models of OB",
+    intro: "Five ways an organisation can treat its people, from power to trust.",
+    before: {
+      q: "Can a firm keep people loyal just by giving them security and benefits?",
+      choices: [
+        { label: "Yes, fully", reveal: "Loyalty is gained, but the custodial model brings only passive cooperation, and some staff stay only for the benefits." },
+        { label: "Loyal, but not enthusiastic", reveal: "Yes. Security wins dependence on the organisation and passive cooperation, not strong drive." },
+      ],
+    },
+    lead: "Autocratic relies on power, custodial on money, supportive on leadership, collegial on partnership, and system on trust.",
+    check: [
+      ask("Which model depends on economic resources and meets the employee's need for security?", "Custodial", ["Autocratic", "Supportive", "Collegial"], "The custodial model uses wages and benefits to win security and loyalty. The autocratic model relies on power and meets only subsistence needs."),
+      ask("A bank branch manager coaches new officers, listens to their ideas and recognises good work. Which model is she using?", "Supportive", ["Collegial", "Custodial", "Autocratic"], "Leadership that builds participation and meets needs for status and recognition is the supportive model. The collegial model goes further, with partnership and self-discipline, which a coaching manager does not yet claim."),
+      ask("A public-sector company has a township, hospital and pension, yet several staff admit they stay only for the benefits. What is the best reading?", "A weakness of the custodial model: security can trap people without raising drive", ["Proof that the system model works, since staff feel secure", "A sign that the autocratic model has been put in place", "A sign that staff are in the collegial model's self-discipline stage"], "Custodial benefits bring dependence and passive cooperation, and can keep staff who would rather leave. The system model aims at psychological ownership, which these staff do not describe."),
+    ],
+    lens: [],
+    reflect: "Which model describes the place where you work or study now? Which would suit the work better?",
+    summary: {
+      points: [
+        "Autocratic: power, obedience, dependence on the boss, subsistence, minimum performance.",
+        "Custodial: economic resources, security and benefits, dependence on the organisation, passive cooperation.",
+        "Supportive: leadership, participation, status and recognition. Collegial: partnership, self-discipline, self-actualisation.",
+        "System: trust and community, psychological ownership, self-motivation, passion and commitment.",
+        "The models are not stages; most firms mix them, and the best one depends on the work.",
+      ],
+      memory: "Power, money, leadership, partnership, trust.",
+    },
+  },
+  {
     blockId: "classical-school-of-management",
     name: "Classical school of management",
     intro: "Efficiency, structure and formal organisation.",
@@ -119,6 +178,35 @@ const lessons: Lesson[] = [
         "Mechanistic structures suit stable markets; organic structures suit changing ones.",
       ],
       memory: "It depends on the situation.",
+    },
+  },
+  {
+    blockId: "socio-technical-approach",
+    name: "Socio-technical approach",
+    intro: "Designing the people side and the technical side together.",
+    before: {
+      q: "If a new system works perfectly on test, will the people who use it accept it?",
+      choices: [
+        { label: "Yes, if it works", reveal: "Not necessarily. If it does not fit how people work, they find workarounds and the output suffers." },
+        { label: "Not necessarily", reveal: "Right. The technical side and the social side must be designed together." },
+      ],
+    },
+    lead: "An organisation is people plus tools inside an environment, and it works best when people and tools are designed together.",
+    check: [
+      ask("Which three parts does the socio-technical approach see in every organisation?", "The social system, the technical system and the environment", ["Inputs, outputs and feedback", "Planning, organising and controlling", "Structure, strategy and staff"], "The approach pairs people with their tools and places both in an environment. Inputs, outputs and feedback belong to the general systems model, which is the wider idea."),
+      ask("A hospital buys records software that nurses cannot use while moving between beds. What does joint optimisation advise?", "Redesign the tools and the nurses' routine together", ["Train the nurses harder and leave the software as it is", "Drop the software, since technology harms the social system", "Let the software supplier decide how wards should work"], "Joint optimisation improves the technical and social systems together. Training alone treats only the social side, and rejecting the software gives up the benefit of the technical side."),
+      ask("Which statement correctly separates the socio-technical approach from the systems approach?", "It focuses on designing people and technology together, one application of systems thinking", ["It rejects systems thinking and treats the organisation as a closed system", "It is the same idea with a different name", "It concerns only the external environment and ignores jobs"], "Systems theory describes connected parts in general. The socio-technical approach applies that thinking to the pairing of people and technology. Calling them the same idea loses that focus."),
+    ],
+    lens: [],
+    reflect: "Recall a tool, app or machine that did not suit how people actually worked. What would a joint design have changed?",
+    summary: {
+      points: [
+        "Every organisation has a social system (people), a technical system (tools, methods) and an environment.",
+        "Effectiveness needs a balance among them: joint optimisation.",
+        "Roots: Trist and the Tavistock Institute's studies of coal mining.",
+        "Modern theory has three approaches: systems, socio-technical and contingency.",
+      ],
+      memory: "Design the people and the tools together.",
     },
   },
 ];
