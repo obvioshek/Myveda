@@ -113,7 +113,7 @@ const lessons: Lesson[] = [
         "Skill development: identify skill gaps, then develop and hone the skills. Its value: innovation, agility, job satisfaction, role mastery.",
         "Soft (behavioural) skills: emotional intelligence, cultural sensitivity, decision-making, negotiation, empathy.",
         "Functional (technical) skills: budgeting, spreadsheet modelling, digital literacy, technical writing. The phrase has other senses elsewhere.",
-        "Management skills (Katz): conceptual, human, technical. Technical skill is also called hard skill. See Principles of Management.",
+        "Management skills (Katz): conceptual, human, technical. Technical skill is sometimes loosely called hard skill, in contrast to soft skills. See Principles of Management.",
       ],
       memory: "Find the gap, build the skill: soft, functional, managerial.",
     },
