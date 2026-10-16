@@ -15,7 +15,7 @@ const lessons: Lesson[] = [
     lead: "Green HRM uses HR policies and practices to build green attitudes, skills and behaviour, so that employees save resources and the firm becomes more sustainable.",
     check: [
       ask("Which description fits green HRM best?", "HR policies, practices and systems that encourage green behaviour among employees", ["Fitting energy-efficient machines and lights across the factory", "A share of profit given to tree-planting in nearby villages", "A rule that all new staff must hold an environmental degree"], "Green HRM works through people management. Efficient machines are technology, handled by engineers and facilities teams, and village projects are CSR spending. Neither changes how employees behave at work."),
-      ask("A board reviews environmental results every quarter, and executive bonuses depend on them. Which of the five dimensions is this?", "Green management and governance", ["Green workplace", "Green function or process model", "Green workforce"], "Board accountability, incentives and reporting belong to governance. Green workplace covers buildings, locations and virtual work, which is the tempting choice, but it says nothing about who answers for results."),
+      ask("An IT campus has fitted LED lights, yet lights stay on in empty meeting rooms. Which response is green HRM?", "Build switch-off habits into induction and team goals, and recognise teams that cut energy use", ["Fit motion sensors in every meeting room", "Give more of the CSR budget to a village school", "Replace the LED lights with a newer model"], "Green HRM changes what people do. Sensors and newer lights are technology: they may help, but they fix the equipment, not the habit. Village projects are CSR and leave the campus's own behaviour unchanged."),
       ask("A plant trained every operator in saving energy, but its old machines cannot be switched off between jobs. In the AMO model, which element is missing?", "Opportunity: operators cannot act on what they know", ["Ability: operators lack the skill", "Motivation: nobody gains from lower use", "Awareness: operators do not know the firm's aims"], "The training supplied ability, but the machines block action, so opportunity is missing. Ability is the tempting answer, but these operators already have the skill."),
     ],
     lens: [],
@@ -25,10 +25,40 @@ const lessons: Lesson[] = [
         "Green HRM: HR policies, practices and systems that encourage green behaviour, so that the organisation is environmentally sensitive, resource-efficient and socially responsible.",
         "It is the people side of environmental management: attitudes, skills and daily habits. Engineers and facilities teams handle the technology.",
         "The chain: green HR practices, green employee behaviour, resource efficiency, environmental sustainability.",
-        "One framework taught in Indian courses lists five dimensions: green products and services, workforce, workplace, function or process model, management and governance.",
+        "Why firms do it: lower costs, meeting expectations, employer brand, employee commitment and responsibility to society.",
         "Limits: the definitions are broad, and much evidence rests on what employees report. Sustainable HRM is the wider idea.",
       ],
       memory: "People change habits; habits change resource use.",
+    },
+  },
+  {
+    blockId: "five-strategic-dimensions-of-green-hrm",
+    name: "Five strategic dimensions of green HRM",
+    intro: "Five areas where a firm's green aims enter its work.",
+    before: {
+      q: "Are green HRM's five dimensions the same as the five key strategic dimensions in Strategic HRM (employer branding, lifecycle and so on)?",
+      choices: [
+        { label: "Yes", reveal: "No. The Strategic HRM list describes how HR moves business results in general. The green list sorts where green aims enter a firm." },
+        { label: "No", reveal: "Right. They are two different lists with similar names." },
+      ],
+    },
+    lead: "One framework taught in Indian courses sorts green HRM into five dimensions: products and services, workforce, workplace, function or process model, and management and governance.",
+    check: [
+      ask("Which list gives the five dimensions of green HRM in order?", "Products and services, workforce, workplace, function or process model, management and governance", ["Employer branding, lifecycle, performance and learning, retention, culture and change", "Recruitment, training, performance, rewards, retention", "Policies, practices, systems, behaviour, outcomes"], "The first option is the green framework. The second option is the list of key strategic dimensions in Strategic HRM, the tempting mix-up, and the others are the HR cycle and a chain of terms."),
+      ask("HR in an auto-parts plant moves hiring, appraisal and training records online. Which dimension is this?", "Green function or process model", ["Green products and services", "Green workplace", "Green management and governance"], "Applying sustainability to the traditional HR functions is the function or process model. Green workplace is the tempting choice, but it covers buildings, locations and virtual work, not the HR processes themselves."),
+      ask("A student quotes the five dimensions as a research model by a named author. What is the sound response?", "Call it a framework taught in Indian courses, whose author is rarely named", ["Cite it as a finding from a named journal study", "Drop it, since it has nothing to do with HR", "Treat it as the only accepted model of green HRM"], "The framework is a useful way to organise ideas, but its origin is rarely named, so it should not be quoted as research evidence or as a named study. Dropping it would lose exam content, and it is not the only model of green HRM."),
+    ],
+    lens: [],
+    reflect: "Take one green step at a workplace you know. Which of the five dimensions does it belong to, and which dimension does the workplace ignore?",
+    summary: {
+      points: [
+        "Five dimensions, in order: green products and services; green workforce; green workplace; green function or process model; green management and governance.",
+        "Products and services: waste and pollution management, resource replacement, sustainable design, adaptive reuse. Workforce: recruiting, training, careers, culture.",
+        "Workplace: buildings, ergonomics, virtual work, energy. Function or process: sustainability in each HR function. Governance: board accountability, incentives, reporting.",
+        "Do not confuse the list with the key strategic dimensions of Strategic HRM.",
+        "The list organises ideas; its dimensions overlap and its author is rarely named.",
+      ],
+      memory: "Products, workforce, workplace, process, governance.",
     },
   },
   {
