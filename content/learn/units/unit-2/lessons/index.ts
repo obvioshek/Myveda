@@ -17,6 +17,9 @@ import strategicHrm from "./strategic-hrm";
 import trainingAndDevelopment from "./training-and-development";
 import valuesLearningAndMotivation from "./values-learning-and-motivation";
 import workforceDiversity from "./workforce-diversity";
+import competencyMappingAndBalancedScorecard from "./competency-mapping-and-balanced-scorecard";
+import performanceManagementAndAppraisal from "./performance-management-and-appraisal";
+import careerPlanningAndDevelopment from "./career-planning-and-development";
 import type { Lesson } from "@/content/learn/lesson-kit";
 
 const lessons: Record<string, Lesson[]> = {
@@ -36,6 +39,9 @@ const lessons: Record<string, Lesson[]> = {
   "job-analysis-evaluation-and-design": jobAnalysisEvaluationAndDesign,
   "compensation-management": compensationManagement,
   "strategic-hrm": strategicHrm,
+  "competency-mapping-and-balanced-scorecard": competencyMappingAndBalancedScorecard,
+  "performance-management-and-appraisal": performanceManagementAndAppraisal,
+  "career-planning-and-development": careerPlanningAndDevelopment,
 };
 
 export default lessons;
