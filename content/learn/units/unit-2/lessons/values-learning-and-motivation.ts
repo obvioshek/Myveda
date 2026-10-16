@@ -121,8 +121,96 @@ const lessons: Lesson[] = [
         "Maslow: physiological, safety, social, esteem, self-actualisation; the first two are lower-order needs.",
         "Herzberg: motivators create satisfaction; hygiene factors, such as pay, only prevent dissatisfaction.",
         "McClelland: achievement, affiliation, power. Vroom: motivation = expectancy × instrumentality × valence, so one weak link pulls it down.",
+        "Reinforcement theory (Skinner): behaviour follows its consequences, with no need to look at inner states.",
       ],
       memory: "Maslow needs, Herzberg two factors, McClelland A-A-P, Vroom E × I × V.",
+    },
+  },
+  {
+    blockId: "self-determination-theory",
+    name: "Self-determination theory",
+    intro: "Why choice, skill and belonging keep people going.",
+    before: {
+      q: "If volunteers happily do a task for free, will paying them always make them do more of it?",
+      choices: [
+        { label: "Yes, pay always adds effort", reveal: "Not always. Some experiments found that rewards for work people already enjoy can reduce their interest, because the work starts to feel controlled." },
+        { label: "Not always", reveal: "Right. Rewards can make an enjoyed task feel controlled by others, which can weaken the motivation that came from within." },
+      ],
+    },
+    lead: "Self-determination theory (Deci and Ryan): meeting the needs for autonomy, competence and relatedness builds motivation that comes from within.",
+    check: [
+      ask("Which set lists the three needs in self-determination theory?", "Autonomy, competence, relatedness", ["Achievement, affiliation, power", "Existence, relatedness, growth", "Expectancy, instrumentality, valence"], "These are Deci and Ryan's three needs. Achievement, affiliation and power are McClelland's; existence, relatedness and growth are Alderfer's; the last set is Vroom's."),
+      ask("A manager checks every step of a clerk's work and lets her make no choices. Which need is she most clearly blocking?", "Autonomy", ["Competence", "Relatedness", "Safety"], "The clerk has no choice or ownership, which is autonomy. Competence would be blocked by work that is far too hard or too trivial, and relatedness by isolation."),
+      ask("A trainee helps colleagues because he enjoys explaining things and has no reward for it. This is…", "Intrinsic motivation", ["Extrinsic motivation", "A hygiene factor", "Positive reinforcement"], "He acts for the activity itself, which is intrinsic motivation. Extrinsic motivation needs a separate result such as pay or praise; \"hygiene factor\" describes a job feature, not the reason the person acts."),
+    ],
+    lens: [],
+    reflect: "Think of a task you did for its own sake. Which of the three needs did it meet?",
+    summary: {
+      points: [
+        "Self-determination theory (Deci and Ryan): three innate needs, autonomy, competence and relatedness.",
+        "Intrinsic motivation is doing something for its own sake; extrinsic is doing it for a separate result.",
+        "Extrinsic motivation is a range, from acting under pressure to accepting the task as one's own.",
+        "Autonomy means a sense of choice, not working alone. Rewards for work people already enjoy can reduce interest.",
+      ],
+      memory: "Autonomy chooses, competence grows, relatedness belongs.",
+    },
+  },
+  {
+    blockId: "goal-setting-theory",
+    name: "Goal-setting theory",
+    intro: "Clear, hard goals that people accept.",
+    before: {
+      q: "Is \"do your best\" a better goal than \"sell 40 sets by Sunday\"?",
+      choices: [
+        { label: "Yes, it is less stressful", reveal: "Research by Locke and Latham found that specific, difficult goals usually produce better performance than vague ones." },
+        { label: "No, it is too vague", reveal: "Right. A specific, difficult goal that the person accepts usually beats \"do your best\"." },
+      ],
+    },
+    lead: "Locke and Latham: specific, difficult goals that people accept, with feedback, raise performance; five principles make a goal work.",
+    check: [
+      ask("Which list gives Locke and Latham's five principles?", "Clarity, challenge, commitment, feedback, task complexity", ["Specific, measurable, attainable, relevant, time-bound", "Autonomy, competence, relatedness, feedback, challenge", "Mastery, vicarious experience, persuasion, arousal, feedback"], "The first is the list from goal-setting theory. The second option is the SMART checklist, a way of wording goals, not the five principles."),
+      ask("An executive who sold 30 sets last year is given a target of 90. She calls it impossible and stops trying. Which principle was ignored?", "Challenge: the goal must stretch but be reachable", ["Clarity: the goal was vague", "Feedback: no news of progress", "Task complexity: the work was too simple"], "The goal was clear, but it was beyond her ability, so she rejected it. Performance rises with difficulty only up to the limit of ability or commitment."),
+      ask("A manager sets a tough target for a brand-new billing system the staff have never used. What is the best adjustment?", "Allow a learning period before the target applies", ["Make the target even harder", "Remove all feedback until the target is met", "Say \"do your best\" and set no goal"], "Task complexity needs extra time and support. A harder target adds pressure to a task people are still learning; dropping goals loses the benefit of clear direction."),
+    ],
+    lens: [],
+    reflect: "Think of a goal you met. Was it clear, challenging, accepted by you and checked along the way?",
+    summary: {
+      points: [
+        "Goal-setting theory (Locke and Latham): specific, difficult goals beat easy and \"do your best\" goals.",
+        "Five principles: clarity, challenge, commitment, feedback, task complexity.",
+        "Performance rises with difficulty up to the limit of ability or commitment, then levels off or falls.",
+        "SMART is a checklist for wording goals; goal-setting theory is the research on why goals work.",
+      ],
+      memory: "Clear, challenging, committed, checked, complexity.",
+    },
+  },
+  {
+    blockId: "self-efficacy-theory",
+    name: "Self-efficacy theory",
+    intro: "The belief that you can do this task.",
+    before: {
+      q: "Will two equally skilled people put equal effort into a task?",
+      choices: [
+        { label: "Yes, skill decides", reveal: "Not necessarily. Bandura showed that belief in one's ability for the task also shapes effort and persistence." },
+        { label: "Not necessarily", reveal: "Right. The person who believes they can succeed tends to try harder and longer." },
+      ],
+    },
+    lead: "Bandura: self-efficacy is the belief that you can do a specific task, built from mastery, watching others, persuasion and how you read your body.",
+    check: [
+      ask("Which source of self-efficacy is usually the strongest?", "Mastery experience: having succeeded at a similar task", ["Social persuasion from others", "Watching a stranger succeed", "Reading nervousness as a sign of failure"], "Past success is real evidence of capability. Persuasion alone is the weakest source, and reading nervousness as failure lowers efficacy."),
+      ask("A nervous trainee watches a batch-mate with similar experience give a calm presentation and feels more confident. Which source is this?", "Vicarious experience", ["Mastery experience", "Social persuasion", "Physiological state"], "She gained confidence by watching a similar person succeed. Mastery would need her own earlier success; persuasion needs encouraging words."),
+      ask("Which statement tells self-efficacy from self-esteem?", "Self-efficacy is about one task; self-esteem is about general worth", ["Self-efficacy is general; self-esteem is about one task", "They mean the same thing", "Self-efficacy is about pay; self-esteem is about status"], "Self-efficacy changes from task to task: a clerk can be sure at accounts and unsure at public speaking. Self-esteem is a broader sense of worth."),
+    ],
+    lens: [],
+    reflect: "Name a task you avoid because you doubt you can do it. Which of the four sources could you use to build confidence?",
+    summary: {
+      points: [
+        "Self-efficacy (Bandura): the belief that you can perform a specific task; higher belief brings more effort and persistence.",
+        "Four sources: mastery experience (strongest), vicarious experience, social persuasion, physiological and emotional states.",
+        "It is task-specific, unlike self-esteem, and closely related to expectancy in Vroom's theory.",
+        "Build it by graded steps, similar role models and honest, specific encouragement.",
+      ],
+      memory: "Do it, watch it, hear it, feel it.",
     },
   },
 ];
