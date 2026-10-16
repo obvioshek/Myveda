@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("A Pune plant needs every employee to show integrity and teamwork. Which type of competency is this?", "Core competency", ["Cross-functional competency", "Functional competency", "Core competence in the Prahalad and Hamel sense"], "Behaviours needed by everyone and tied to the organisation's aims are core competencies. Budgeting, needed by several departments, would be cross-functional; Prahalad and Hamel's term describes a collective strength of the whole firm."),
       ask("A hospital lists \"data analysis\" for its records officers only. Why is it functional, not cross-functional?", "It is a job-specific technical skill", ["It is a trait that cannot be trained", "Every department needs it", "It is a behaviour tied to the hospital's strategy"], "Functional competencies are job-specific hard skills. If many departments needed the same skill, it would be cross-functional."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "A short list of qualities to examine before giving someone responsibility, with character on it as well as knowledge.", differs: "The couplet asks whom to trust. A competency map defines what each role needs and measures it with assessment methods." },
+    ],
     reflect: "List one core, one cross-functional and one functional competency in a job you know well.",
     summary: {
       points: [

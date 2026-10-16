@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("A senior clerk keeps her title, but the branch manager now consults her before every major decision. Which movement is this?", "Radial: she has moved toward the inner circle", ["Vertical: she has been promoted", "Circumferential: she has changed function", "None: nothing about her career has changed"], "Radial movement is gaining trust, influence and access to decisions. It is not vertical, because her rank has not changed."),
       ask("A 30-year-old has just spent four years in a first job, learning from a mentor and making mistakes. Which stage fits best, using the rough ages in the chapter?", "Establishment", ["Exploration", "Mid-career", "Late career"], "Establishment is the first real job, about 25 to 35, with a mentor and mistakes. Exploration comes before the first job, and the ages are rough guides only."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Stages of life are met steadily when they are expected.", differs: "The verse concerns the self across lives. Career stages are an organisational model whose ages vary, and the chapter says that textbooks differ on them." },
+    ],
     reflect: "Think of one move in your own working life. Was it vertical, circumferential or radial?",
     summary: {
       points: [

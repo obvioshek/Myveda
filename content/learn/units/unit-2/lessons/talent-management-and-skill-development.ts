@@ -47,7 +47,9 @@ const lessons: Lesson[] = [
       ask("A firm has many junior vacancies, a modest pay budget and no time for a long search for star candidates. Which strategy fits best?", "Hire promising specialists and develop them", ["Hire only top employees", "Combine both, hiring mostly top performers", "Stop hiring and rely on referrals only"], "Nurturing emerging talent is faster to staff and cheaper per head. Hiring only top people costs more and takes longer to find."),
       ask("A firm can hire one proven manager at ₹30 lakh a year or two promising specialists at ₹12 lakh each. What does the second route cost, and what is the trade?", "₹24 lakh a year, giving up speed of results for lower cost and two people to grow", ["₹24 lakh a year, with no trade-off since two people always outperform one", "₹42 lakh a year, which is why elite hiring is preferred", "₹12 lakh a year, because only one specialist is needed"], "2 × ₹12 lakh = ₹24 lakh. Two specialists cost less but need time to reach the proven manager's level, so the trade-off is real."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "A mentor is chosen with care, and the mentor's worth is judged first.", differs: "The couplet is advice to an individual. Talent management is a system of planning, attracting, developing, retaining and transition, with mentoring as one tool." },
+    ],
     reflect: "For one role in your organisation, would you buy ready talent, grow it, or blend? What would decide it?",
     summary: {
       points: [

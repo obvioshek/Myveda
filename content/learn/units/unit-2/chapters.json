@@ -1172,7 +1172,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "What a role needs in a person",
+     "classic": "four qualities to look for",
+     "text": [
+      "Valluvar lists four qualities to look for in a person before giving him work: affection, knowledge, a clear mind and freedom from greed. Competency mapping asks the same kind of question for every role: which knowledge, skills, attitudes and traits does it need? The couplet puts character beside knowledge, as the chapter does when it says a competency is more than technical skill. It is a reading, since the couplet is about whom to trust and not about a competency model."
+     ],
+     "quote": "“Trust the person in whom these four are found: affection, knowledge, a clear mind and freedom from greed.” <span lang=\"ta\" class=\"ta\">அன்பறிவு தேற்றம் அவாவின்மை இந்நான்கும் நன்குடையான் கட்டே தெளிவு.</span> <span class=\"ref\">Tirukkuṟaḷ 513</span>"
+    }
+   ]
   },
   {
    "n": 18,
@@ -1204,7 +1214,26 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "documented",
+     "modern": "Why watching the work matters",
+     "classic": "tested, yet they differ in the work",
+     "text": [
+      "The Kuṟaḷ warns that even people who have been tested in every way and trusted often turn out different once they do the work. That is why performance management does not end at selection. It sets goals, monitors progress, gives feedback and reviews how the work is actually done."
+     ],
+     "quote": "“Even when people have been tested in every way and trusted, many turn out different in the way they do the work.” <span lang=\"ta\" class=\"ta\">எனைவகையான் தேறியக் கண்ணும் வினைவகையான் வேறாகும் மாந்தர் பலர்.</span> <span class=\"ref\">Tirukkuṟaḷ 514</span>"
+    },
+    {
+     "kind": "documented",
+     "modern": "Rating by what was done",
+     "classic": "deeds are the touchstone",
+     "text": [
+      "The Kuṟaḷ says that each person's own deeds are the touchstone of both greatness and smallness. Rating people by what they have done, and not by liking or reputation, is the remedy the chapter gives for the halo and horn effects and for similarity bias. The chapter adds that the deeds must be noted as they happen, because memory favours recent events."
+     ],
+     "quote": "“Each person's own deeds are the touchstone of greatness and of smallness alike.” <span lang=\"ta\" class=\"ta\">பெருமைக்கும் ஏனைச் சிறுமைக்கும் தத்தம் கருமமே கட்டளைக் கல்.</span> <span class=\"ref\">Tirukkuṟaḷ 505</span>"
+    }
+   ]
   },
   {
    "n": 19,
@@ -1236,7 +1265,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Career stages",
+     "classic": "childhood, youth and old age",
+     "text": [
+      "In Gītā 2.13 Kṛṣṇa points to the body's passage through childhood, youth and old age as an ordinary change that a steady person meets without being bewildered. The five career stages, from exploration to decline, are a working-life version of the same sequence, and the chapter's advice to plan for each stage echoes the steady person who is not surprised by it. The verse is about the self and rebirth, so the link to careers is a reading."
+     ],
+     "quote": "“As the embodied self passes in this body through childhood, youth and old age, so it passes to another body; the steady person is not bewildered by it.” <span lang=\"sa\" class=\"og\">देहिनोऽस्मिन्यथा देहे कौमारं यौवनं जरा । तथा देहान्तरप्राप्तिर्धीरस्तत्र न मुह्यति ।</span> <i lang=\"sa-Latn\">dehino 'smin yathā dehe kaumāraṃ yauvanaṃ jarā; tathā dehāntaraprāptir dhīras tatra na muhyati.</i> <span class=\"ref\">Bhagavad Gītā 2.13</span>"
+    }
+   ]
   },
   {
    "n": 20,
@@ -1268,7 +1307,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Mentoring in the developing phase",
+     "classic": "befriend the wise elders",
+     "text": [
+      "Valluvar advises a person to understand the worth of wise elders who know what is right, and then to choose and keep their friendship. Talent management relies on mentoring in the same way: experienced people pass judgement and know-how to those who are newer. The couplet speaks to the learner choosing a mentor, while the chapter adds the organisation's own part, which is to arrange mentoring and keep knowledge when people leave."
+     ],
+     "quote": "“Understand the worth of wise elders who know what is right, then choose and keep their friendship.” <span lang=\"ta\" class=\"ta\">அறனறிந்து மூத்த அறிவுடையார் கேண்மை திறனறிந்து தேர்ந்து கொளல்.</span> <span class=\"ref\">Tirukkuṟaḷ 441</span>"
+    }
+   ]
   },
   {
    "n": 21,
@@ -1300,7 +1349,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Meaningful work",
+     "classic": "work done for a larger purpose",
+     "text": [
+      "Gītā 3.9 says that work becomes a bond unless it is done for a purpose beyond oneself, and tells Arjuna to act for that purpose without clinging. Kahn's first psychological condition for engagement, in the chapter, is meaningfulness: people give more of themselves when the work matters to them. The verse is spiritual and not psychological, so the link is a reading of a purpose beyond oneself as meaningful work."
+     ],
+     "quote": "“Except for work done as sacrifice, this world is bound by its work; so do your work for that purpose, free from attachment, son of Kuntī.” <span lang=\"sa\" class=\"og\">यज्ञार्थात्कर्मणोऽन्यत्र लोकोऽयं कर्मबन्धनः । तदर्थं कर्म कौन्तेय मुक्तसङ्गः समाचर ।</span> <i lang=\"sa-Latn\">yajñārthāt karmaṇo 'nyatra loko 'yaṃ karmabandhanaḥ; tadarthaṃ karma kaunteya muktasaṅgaḥ samācara.</i> <span class=\"ref\">Bhagavad Gītā 3.9</span>"
+    }
+   ]
   },
   {
    "n": 22,
@@ -1332,7 +1391,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Unfreezing",
+     "classic": "here yesterday, gone today",
+     "text": [
+      "The Kuṟaḷ says that the world's nature is that someone who was here yesterday is gone today. Lewin's model starts from a similar fact: the old way will not last, so people must be prepared to let it go (unfreeze) before a new way can be adopted and then held. The couplet is about impermanence and not about managing it, and the model adds the steps for managing it."
+     ],
+     "quote": "“The world has this nature: the one who was here yesterday is gone today.” <span lang=\"ta\" class=\"ta\">நெருநல் உளனொருவன் இன்றில்லை என்னும் பெருமை உடைத்துஇவ் வுலகு.</span> <span class=\"ref\">Tirukkuṟaḷ 336</span>"
+    }
+   ]
   },
   {
    "n": 23,
@@ -1364,7 +1433,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Settling a dispute",
+     "classic": "hatred ends only by non-hatred",
+     "text": [
+      "The Dhammapada says that enmity is never ended by enmity, only by its absence. The ladder in this chapter, which is to prevent, then conciliate, then adjudicate or arbitrate, rests on a similar belief: a dispute ends best when someone brings the parties to talk and not to escalate. The verse concerns the mind's enmity and says nothing about wages or the law, so the link is a reading."
+     ],
+     "quote": "“Hatred is never ended by hatred in this world; by non-hatred it is ended. This is an ancient law.” <span lang=\"pi\" class=\"og\">न हि वेरेन वेरानि सम्मन्तीध कुदाचनं । अवेरेन च सम्मन्ति । एस धम्मो सनन्तनो ।</span> <i lang=\"pi-Latn\">na hi verena verāni sammantīdha kudācanaṃ; averena ca sammanti, esa dhammo sanantano.</i> <span class=\"ref\">Dhammapada 5 (Pali)</span>"
+    }
+   ]
   },
   {
    "n": 24,
@@ -1396,7 +1475,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Working together after an agreement",
+     "classic": "may we never quarrel",
+     "text": [
+      "A closing chant of the Kaṭha Upaniṣad, said by teacher and student together, asks for shared protection, shared nourishment, shared effort and freedom from quarrel. Collective bargaining aims at something similar between two sides with different interests: an agreement, a period of working together, and fewer disputes. The chant is a prayer in a teaching setting and not a bargaining text, so the link is a reading."
+     ],
+     "quote": "“May we be protected together; may we be nourished together; may we work together with vigour; may what we have studied be bright; may we never quarrel.” <span lang=\"sa\" class=\"og\">सह नाववतु । सह नौ भुनक्तु । सह वीर्यं करवावहै । तेजस्विनावधीतमस्तु मा विद्विषावहै ।</span> <i lang=\"sa-Latn\">saha nāvavatu; saha nau bhunaktu; saha vīryaṃ karavāvahai; tejasvināvadhītam astu mā vidviṣāvahai.</i> <span class=\"ref\">Kaṭha Upaniṣad, closing peace chant (śānti-pāṭha)</span>"
+    }
+   ]
   },
   {
    "n": 25,
@@ -1423,7 +1512,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Why an employer gives back",
+     "classic": "the one who takes without giving",
+     "text": [
+      "Gītā 3.12 calls the person who enjoys what he has received without giving anything back a thief. The trusteeship and functional theories of welfare make a similar claim about employers: the gains come from the workers' effort, and some of them should return to the workers as welfare. The verse speaks of offerings to the gods and not of wages, so the link is a reading."
+     ],
+     "quote": "“The gods, pleased by sacrifice, will give you the enjoyments you desire. One who enjoys what they have given without giving in return is a thief.” <span lang=\"sa\" class=\"og\">इष्टान्भोगान्हि वो देवा दास्यन्ते यज्ञभाविताः । तैर्दत्तानप्रदायैभ्यो यो भुङ्क्ते स्तेन एव सः ।</span> <i lang=\"sa-Latn\">iṣṭān bhogān hi vo devā dāsyante yajñabhāvitāḥ; tair dattān apradāyaibhyo yo bhuṅkte stena eva saḥ.</i> <span class=\"ref\">Bhagavad Gītā 3.12</span>"
+    }
+   ]
   },
   {
    "n": 26,
@@ -1460,7 +1559,26 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "A living wage",
+     "classic": "enough for the family and a guest",
+     "text": [
+      "Kabir asks for enough to feed his family and a guest, and no more. The living wage, the third level in the chapter's wage ladder, rests on that idea of sufficiency: pay should cover a worker's basic needs and a family's. Kabir is praying for his own sufficiency and is not describing wage policy, so the link is a reading."
+     ],
+     "quote": "“Lord, give me only so much that my family is provided for; let me not go hungry, and let no holy man go hungry from my door.” <span lang=\"hi\" class=\"og\">साईं इतना दीजिये, जा मे कुटुम समाय । मैं भी भूखा न रहूँ, साधु ना भूखा जाय ॥</span> <i lang=\"hi-Latn\">sāī itnā dījiye, jā me kuṭum samāy; maiṃ bhī bhūkhā na rahūṃ, sādhu nā bhūkhā jāy.</i> <span class=\"ref\">Kabīr, sākhī (Hindi)</span>"
+    },
+    {
+     "kind": "view",
+     "modern": "Profit sharing",
+     "classic": "share before you eat",
+     "text": [
+      "Valluvar puts sharing one's meal and protecting all living beings first among all the rules the learned have set down. Profit sharing applies the idea to what a firm earns together: a rule agreed in advance gives employees a part, instead of leaving all of it to the owners. The couplet is about food and kindness to living beings and not about firms, so the link is a reading."
+     ],
+     "quote": "“To share one's food and protect all living beings is the first of all the rules the learned have set down.” <span lang=\"ta\" class=\"ta\">பகுத்துண்டு பல்லுயிர் ஓம்புதல் நூலோர் தொகுத்தவற்றுள் எல்லாந் தலை.</span> <span class=\"ref\">Tirukkuṟaḷ 322</span>"
+    }
+   ]
   },
   {
    "n": 27,
@@ -1497,7 +1615,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Learning to live in another country",
+     "classic": "every land is home to the learned",
+     "text": [
+      "The Kuṟaḷ says that to the learned every land is their own land and every town their own town, so why should anyone stop learning before death? Expatriates enter new places and have to learn the host culture, and the chapter's advice on cross-cultural training rests on the same belief that adapting is something learnt. The couplet praises how far learning travels and says nothing about the hard parts of an assignment, such as family adjustment and the return home."
+     ],
+     "quote": "“Every land is his own land and every town his own town: why then does a person not keep learning until he dies?” <span lang=\"ta\" class=\"ta\">யாதானும் நாடாமால் ஊராமால் என்னொருவன் சாந்துணையுங் கல்லாத வாறு.</span> <span class=\"ref\">Tirukkuṟaḷ 397</span>"
+    }
+   ]
   },
   {
    "n": 28,
@@ -1534,7 +1662,17 @@
     }
    ],
    "lensNote": null,
-   "pairings": []
+   "pairings": [
+    {
+     "kind": "view",
+     "modern": "Dependence on nature",
+     "classic": "no rain, no green grass",
+     "text": [
+      "The Kuṟaḷ says that if no drop falls from the sky, not even green grass will be seen. Green HRM begins from a similar fact: an organisation's work depends on natural resources it does not make, so people policies that save paper, energy and water protect the base of the business. The couplet is about rain and dependence, and green HRM is a management practice, so the link is a reading."
+     ],
+     "quote": "“If no drop falls from the sky, not even green grass will be seen here.” <span lang=\"ta\" class=\"ta\">விசும்பின் துளிவீழின் அல்லால்மற் றாங்கே பசும்புல் தலைகாண்பு அரிது.</span> <span class=\"ref\">Tirukkuṟaḷ 16</span>"
+    }
+   ]
   }
  ]
 }

@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("A union says a mill's pay cannot give a family frugal comfort, schooling for children and security in old age. Which standard is it using?", "The living wage", ["The minimum wage", "The fair wage", "The dearness allowance"], "Frugal comfort and insurance against old age mark the living wage. The minimum wage is the tempting answer, but it covers basic needs and efficiency, with only some education and medical care."),
       ask("A wage board is fixing a fair wage for the cement industry. Which fact sets the upper limit it can reach?", "The industry's capacity to pay", ["The cost of a family's bare food, clothing and shelter", "The highest wage paid anywhere in the country", "The wage that workers say they would like"], "A fair wage rises no higher than the industry can pay. The cost of bare necessities is the lower limit, which is the minimum wage."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Enough for the family, with something over for a guest.", differs: "Kabir prays for modest means. A living wage is a standard that an employer or the law sets, and it has to be paid for out of what the firm can bear." },
+    ],
     reflect: "Which of the eight influences on pay matters most in the job you know best, and which matters least?",
     summary: {
       points: [
@@ -78,7 +80,9 @@ const lessons: Lesson[] = [
       ask("A firm credits each employee's profit share to a retirement account, to be paid when the employee retires. Which form is this?", "Deferred distribution", ["Cash distribution", "Distribution in company shares", "Distribution by merit rating"], "Money held back until retirement is deferred. Merit rating is a basis for dividing the pool, not a form of payment."),
       ask("A firm shares 8% of a ₹60 lakh profit among employees in proportion to wages. The wage bill is ₹1.5 crore. What does an employee earning ₹2.4 lakh receive?", "₹7,680", ["₹4,80,000", "₹19,200", "₹3,200"], "The pool is 8% of 60 lakh = ₹4.8 lakh, which is 3.2% of the ₹1.5 crore wage bill, and 3.2% of ₹2.4 lakh is ₹7,680. ₹4.8 lakh is the whole pool, not one person's share."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 1, adds: "Sharing comes first, before one's own meal.", differs: "The couplet speaks of generosity. Profit sharing is a rule agreed in advance, tied to the firm's results and paid in cash, shares or deferred form." },
+    ],
     reflect: "Would profit sharing work better in a firm of 15 people or of 5,000, and why?",
     summary: {
       points: [

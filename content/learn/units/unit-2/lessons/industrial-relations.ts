@@ -76,7 +76,9 @@ const lessons: Lesson[] = [
       ask("A union in one factory stops work to support another union's strike at a different company. What kind of strike is this?", "A sympathy strike", ["An economic strike", "A wildcat strike", "An unfair labour practice strike"], "Supporting another union's strike is a sympathy strike. A wildcat strike is one without the union's approval, which is not what happened here."),
       ask("Which of these is machinery that settles a dispute that has already arisen, and not a method of direct negotiation?", "Conciliation", ["Collective bargaining", "A works committee's monthly meeting", "A union's notice to the employer"], "Conciliation brings in a neutral to help settle the dispute. Collective bargaining is direct talks between the sides, with no third party, so it is a method of negotiation and not statutory machinery."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "A dispute is not ended by raising the heat.", differs: "The verse is a moral rule for individuals. Industrial law adds forums and rules for settling a dispute: committees, conciliation, adjudication and arbitration." },
+    ],
     reflect: "At which rung of the ladder (prevent, conciliate, decide) does most of your workplace's trouble get handled?",
     summary: {
       points: [

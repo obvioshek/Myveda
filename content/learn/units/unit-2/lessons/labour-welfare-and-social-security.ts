@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("An owner announces a new canteen and sports ground the week before wage talks, hoping to calm the workers. Which theory fits?", "Placating theory", ["Public relations theory", "Philanthropic theory", "Functional theory"], "Placating uses timely welfare gestures to calm organised, demanding workers. Public relations aims at the firm's image with workers and the public, not at calming a union before talks."),
       ask("Which statement about the paternalistic or trusteeship theory is correct?", "The employer holds the business in trust for workers and society and acts as their guardian; Gandhi's trusteeship is a related but wider idea", ["Employers help workers only when the state forces them to do so", "Welfare is a way to build goodwill and a good image with the public", "Welfare works only when workers choose the facilities themselves"], "The theory pictures workers as wards of a guardian employer. Gandhi's idea is about holding wealth for society and is not the same thing. Forcing employers is the policing theory."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Taking without giving back is treated as a fault.", differs: "The verse concerns sacrifice and the cycle between gods and people. Welfare theories differ on why an employer should give: duty, charity, pressure, goodwill or productivity." },
+    ],
     reflect: "Think of a welfare scheme you know. Which motive do you think lies behind it, and would workers agree?",
     summary: {
       points: [

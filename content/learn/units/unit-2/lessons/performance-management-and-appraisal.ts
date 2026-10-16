@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("In June a supervisor notices a technician's rejects rising, sits with him and agrees extra practice. Which phase is this?", "Feedback and coaching", ["Performance planning", "Performance review (appraisal)", "Rewards and development"], "Timely help so that people correct course early is phase three. The formal review comes at the end of the period, so it is the tempting but wrong answer."),
       ask("The standard allows 2% rejects. A fitter makes 5,000 parts and 250 are rejected. What is the performance gap in parts?", "150", ["250", "100", "3"], "The standard allows 100 rejects, and 250 − 100 = 150 parts. 250 is the actual figure, 100 is the allowed figure, and 3 is the gap in percentage points, not parts."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "A reason to watch the work itself, not only the record that earned the post.", differs: "The couplet makes one point about people. Performance management is a whole cycle of goals, monitoring, feedback, review and reward." },
+    ],
     reflect: "Think of your last review at work. Which of the five phases did you actually have in the months before it?",
     summary: {
       points: [
@@ -106,7 +108,9 @@ const lessons: Lesson[] = [
       ask("A supervisor rates all ten staff 3 out of 5, though their results differ widely. Which error is this?", "Central tendency", ["Leniency", "Halo effect", "Recency effect"], "Putting everyone in the middle is central tendency. Leniency means marking everyone high, and 3 out of 5 is the middle, not high."),
       ask("A supervisor marks a fitter down for one mistake last month and ignores eleven good months. Which step best prevents this?", "Keep a running record of incidents through the year", ["Rate everyone in a single sitting just before the review", "Let the fitter rate himself instead", "Replace appraisal with a simple ranking"], "A record across the whole period counters the recency effect. A ranking made at the last minute would repeat the problem, because the latest events still stand out."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 1, adds: "The standard for a fair rating is the work done.", differs: "The couplet gives the principle. The chapter adds the methods that make it usable: specific examples, structured scales and more than one rater." },
+    ],
     reflect: "Which rater error are you most likely to make, and what one habit would catch it?",
     summary: {
       points: [

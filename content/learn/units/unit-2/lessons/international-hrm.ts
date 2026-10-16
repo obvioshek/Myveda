@@ -108,7 +108,9 @@ const lessons: Lesson[] = [
       ask("A manager sent to Munich attends a trade event, learns what a large client plans, and reports it to Pune. Which role is this?", "Boundary spanner", ["Network builder", "Transfer of competence and knowledge", "Agent of direct control"], "A boundary spanner gathers information from outside and represents the firm to the world. A network builder forms personal links inside the firm, which is the nearest wrong answer."),
       ask("An assignment fails after eight months because the expatriate's partner could not find work and the family never settled. Which steps most likely failed?", "Selection and support, which should have taken the family into account", ["Performance review, because the host manager rated her too low", "Compensation, because the balance sheet paid too little", "Repatriation, because she was not brought home soon enough"], "Family and partner adjustment is among the most common reasons for failure. Selection checks the family's readiness and support helps with the partner's work. The balance sheet only protects the standard of living."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Learning makes a person at home in unfamiliar places.", differs: "The couplet is about the benefit of learning. International HRM also manages selection, support, pay and repatriation." },
+    ],
     reflect: "Which one of the six expatriate roles would matter most for a manager opening a new office in a country you know?",
     summary: {
       points: [

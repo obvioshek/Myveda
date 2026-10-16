@@ -105,7 +105,9 @@ const lessons: Lesson[] = [
       ask("A college head wants two merged departments to share one timetable. Which action belongs to unfreezing?", "Sharing data on clashes and complaints so staff see why the old way fails", ["Training staff in the new timetable software", "Adding the shared timetable to appraisal criteria", "Retiring the two old timetables"], "Unfreezing prepares people by showing the need. Training is the change stage, and appraisal criteria and retiring old systems belong to refreezing."),
       ask("A critic says Lewin's model suits only stable organisations. Which statement is the critic's point?", "Many organisations change continuously, so there may be no steady state to refreeze into", ["Refreezing is impossible because people dislike rules", "The model ignores the dip in performance", "The model wrongly puts unfreezing first"], "The critique is that the model treats change as one event between stable periods. It does mention the dip, and unfreezing first is the model's own order."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Change is the normal state of things, and it is better met with preparation.", differs: "The couplet states a fact about life. Lewin gives three practical stages for guiding people through a change." },
+    ],
     reflect: "Think of a change you saw fail. Which of the three stages was skipped?",
     summary: {
       points: [

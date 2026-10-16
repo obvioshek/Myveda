@@ -48,7 +48,9 @@ const lessons: Lesson[] = [
       ask("A union collects the wages paid by rival firms and works out what the company can afford, before meeting the owner. Which stage is this?", "Preparation", ["Negotiation", "Agreement", "Implementation"], "Gathering data and setting goals is preparation. Negotiation starts only when offers and counter-offers are exchanged."),
       ask("A bank-sector wage agreement is negotiated for all banks together by their association and the unions. At which level is this bargaining?", "Industry level", ["Plant level", "Individual level", "It is not collective bargaining"], "Many firms bargain together, which is industry level. Plant level means one factory or firm bargaining for itself."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Two parties ask for shared benefit and no quarrel.", differs: "The chant assumes common goals. Bargaining begins from differing interests and reaches an agreement by negotiation." },
+    ],
     reflect: "Which stage do you think weaker unions often skip, and what does that cost them?",
     summary: {
       points: [

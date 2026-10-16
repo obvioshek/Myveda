@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("An IT campus has fitted LED lights, yet lights stay on in empty meeting rooms. Which response is green HRM?", "Build switch-off habits into induction and team goals, and recognise teams that cut energy use", ["Fit motion sensors in every meeting room", "Give more of the CSR budget to a village school", "Replace the LED lights with a newer model"], "Green HRM changes what people do. Sensors and newer lights are technology: they may help, but they fix the equipment, not the habit. Village projects are CSR and leave the campus's own behaviour unchanged."),
       ask("A plant trained every operator in saving energy, but its old machines cannot be switched off between jobs. In the AMO model, which element is missing?", "Opportunity: operators cannot act on what they know", ["Ability: operators lack the skill", "Motivation: nobody gains from lower use", "Awareness: operators do not know the firm's aims"], "The training supplied ability, but the machines block action, so opportunity is missing. Ability is the tempting answer, but these operators already have the skill."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Human activity rests on a natural supply that is not guaranteed.", differs: "The couplet states a dependence. Green HRM turns it into practices in recruitment, training, performance measures and rewards." },
+    ],
     reflect: "Name one habit at your workplace that wastes energy or paper. Which HR tool could change it: selection, training, appraisal or pay?",
     summary: {
       points: [

@@ -18,7 +18,9 @@ const lessons: Lesson[] = [
       ask("An office assistant does exactly what the checklist says, finishes on time and waits to be told the next task. In Gallup's typology she is…", "Not engaged", ["Engaged", "Actively disengaged", "Highly engaged"], "She puts in time but not energy or passion, and waits for instructions: that is \"not engaged\". She is not actively disengaged, because nothing suggests she is unhappy or working against others. \"Highly engaged\" is a level in the four-level scheme, not a Gallup group."),
       ask("A bank keeps almost all its staff for years, but a survey shows most do the minimum. What does this show?", "High retention can sit alongside low engagement", ["Retention proves the staff are engaged", "Engagement and commitment are the same thing", "The survey must be wrong, since people who stay must care"], "People can stay for pay, security or habit and still give little energy. Treating staying as proof of engagement is the tempting mistake; engagement is about the energy brought, not the length of stay."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 0, adds: "Work done for a purpose beyond oneself is given fully and not grudgingly.", differs: "The Gītā aims at freedom from attachment to results. Engagement is measured by employers and is tied to results." },
+    ],
     reflect: "Think of a job you did well and one you only got through. Which of Kahn's three dimensions was missing in the second?",
     summary: {
       points: [
