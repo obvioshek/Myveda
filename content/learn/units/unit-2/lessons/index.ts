@@ -20,6 +20,9 @@ import workforceDiversity from "./workforce-diversity";
 import competencyMappingAndBalancedScorecard from "./competency-mapping-and-balanced-scorecard";
 import performanceManagementAndAppraisal from "./performance-management-and-appraisal";
 import careerPlanningAndDevelopment from "./career-planning-and-development";
+import talentManagementAndSkillDevelopment from "./talent-management-and-skill-development";
+import employeeEngagementAndWorkLifeBalance from "./employee-engagement-and-work-life-balance";
+import organisationDevelopmentAndChange from "./organisation-development-and-change";
 import type { Lesson } from "@/content/learn/lesson-kit";
 
 const lessons: Record<string, Lesson[]> = {
@@ -42,6 +45,9 @@ const lessons: Record<string, Lesson[]> = {
   "competency-mapping-and-balanced-scorecard": competencyMappingAndBalancedScorecard,
   "performance-management-and-appraisal": performanceManagementAndAppraisal,
   "career-planning-and-development": careerPlanningAndDevelopment,
+  "talent-management-and-skill-development": talentManagementAndSkillDevelopment,
+  "employee-engagement-and-work-life-balance": employeeEngagementAndWorkLifeBalance,
+  "organisation-development-and-change": organisationDevelopmentAndChange,
 };
 
 export default lessons;
