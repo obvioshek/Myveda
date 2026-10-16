@@ -28,6 +28,7 @@ import tradeUnionsAndCollectiveBargaining from "./trade-unions-and-collective-ba
 import labourWelfareAndSocialSecurity from "./labour-welfare-and-social-security";
 import wageDeterminationAndProfitSharing from "./wage-determination-and-profit-sharing";
 import internationalHrm from "./international-hrm";
+import greenHrm from "./green-hrm";
 import type { Lesson } from "@/content/learn/lesson-kit";
 
 const lessons: Record<string, Lesson[]> = {
@@ -58,6 +59,7 @@ const lessons: Record<string, Lesson[]> = {
   "labour-welfare-and-social-security": labourWelfareAndSocialSecurity,
   "wage-determination-and-profit-sharing": wageDeterminationAndProfitSharing,
   "international-hrm": internationalHrm,
+  "green-hrm": greenHrm,
 };
 
 export default lessons;
