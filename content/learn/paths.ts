@@ -23,6 +23,9 @@ export const PROBLEMS: { problem: string; slugs: string[] }[] = [
   { problem: "Growing the business", slugs: ["growth-strategies", "cooperation-internationalisation-and-retrenchment", "product-decisions"] },
   { problem: "Making a hard call", slugs: ["decision-making", "business-ethics-and-csr", "strategic-decisions-and-levels-of-strategy"] },
   { problem: "Pressure and conflict at work", slugs: ["emotions-and-stress", "organisational-justice-and-whistleblowing", "organisational-culture-and-climate"] },
+  { problem: "Handling a union or a dispute", slugs: ["industrial-relations", "trade-unions-and-collective-bargaining", "labour-welfare-and-social-security"] },
+  { problem: "Managing performance and careers", slugs: ["performance-management-and-appraisal", "career-planning-and-development", "talent-management-and-skill-development"] },
+  { problem: "Leading a change", slugs: ["organisation-development-and-change", "organisational-culture-and-climate", "employee-engagement-and-work-life-balance"] },
 ];
 
 const missing = [...START_PATH.map(p => p.slug), ...PROBLEMS.flatMap(p => p.slugs)].filter(s => !chapterBySlug(s));

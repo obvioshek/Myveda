@@ -17,6 +17,18 @@ import strategicHrm from "./strategic-hrm";
 import trainingAndDevelopment from "./training-and-development";
 import valuesLearningAndMotivation from "./values-learning-and-motivation";
 import workforceDiversity from "./workforce-diversity";
+import competencyMappingAndBalancedScorecard from "./competency-mapping-and-balanced-scorecard";
+import performanceManagementAndAppraisal from "./performance-management-and-appraisal";
+import careerPlanningAndDevelopment from "./career-planning-and-development";
+import talentManagementAndSkillDevelopment from "./talent-management-and-skill-development";
+import employeeEngagementAndWorkLifeBalance from "./employee-engagement-and-work-life-balance";
+import organisationDevelopmentAndChange from "./organisation-development-and-change";
+import industrialRelations from "./industrial-relations";
+import tradeUnionsAndCollectiveBargaining from "./trade-unions-and-collective-bargaining";
+import labourWelfareAndSocialSecurity from "./labour-welfare-and-social-security";
+import wageDeterminationAndProfitSharing from "./wage-determination-and-profit-sharing";
+import internationalHrm from "./international-hrm";
+import greenHrm from "./green-hrm";
 import type { Lesson } from "@/content/learn/lesson-kit";
 
 const lessons: Record<string, Lesson[]> = {
@@ -36,6 +48,18 @@ const lessons: Record<string, Lesson[]> = {
   "job-analysis-evaluation-and-design": jobAnalysisEvaluationAndDesign,
   "compensation-management": compensationManagement,
   "strategic-hrm": strategicHrm,
+  "competency-mapping-and-balanced-scorecard": competencyMappingAndBalancedScorecard,
+  "performance-management-and-appraisal": performanceManagementAndAppraisal,
+  "career-planning-and-development": careerPlanningAndDevelopment,
+  "talent-management-and-skill-development": talentManagementAndSkillDevelopment,
+  "employee-engagement-and-work-life-balance": employeeEngagementAndWorkLifeBalance,
+  "organisation-development-and-change": organisationDevelopmentAndChange,
+  "industrial-relations": industrialRelations,
+  "trade-unions-and-collective-bargaining": tradeUnionsAndCollectiveBargaining,
+  "labour-welfare-and-social-security": labourWelfareAndSocialSecurity,
+  "wage-determination-and-profit-sharing": wageDeterminationAndProfitSharing,
+  "international-hrm": internationalHrm,
+  "green-hrm": greenHrm,
 };
 
 export default lessons;

@@ -31,6 +31,38 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "case-role-play-and-simulation-methods",
+    name: "Case, role play and simulation methods",
+    intro: "Practising judgement and people skills on made-up problems, away from the job.",
+    before: {
+      q: "Can a manager learn to handle an angry customer by listening to a lecture alone?",
+      choices: [
+        { label: "Yes", reveal: "Only partly. A lecture explains ideas but gives little practice; role play lets the trainee try it and review it." },
+        { label: "No", reveal: "Right. Practice methods such as role play build the skill; a lecture alone gives little practice." },
+      ],
+    },
+    lead: "Cases, incidents, role plays, in-baskets and business games let trainees practise decisions and dealings with people without real consequences.",
+    check: [
+      ask("A trainee acts as a manager facing a pile of letters and memos and must set priorities, delegate and schedule within a time limit. Which method is this?", "In-basket", ["Case study", "Business game", "Incident method"], "The in-basket recreates a manager's desk and tests judgement under time pressure. A case is a written account to analyse, and a business game has teams run an imaginary firm."),
+      ask("A trainer hands six trainees a one-paragraph account of a real dispute between two supervisors. Each decides alone what to do, then the group compares decisions. This is…", "The incident method", ["A case study", "A role play", "A committee assignment"], "A short account of one event, with a decision and a group comparison, is the incident method. A case is longer and detailed enough to analyse a whole situation."),
+      ask("A bank wants new staff to handle angry customers better. Which method fits best?", "Role play, because trainees practise the exchange and can review their own performance", ["A lecture, because it reaches the whole group at once", "A case study, because it trains analysis of written facts", "A conference, because everyone shares views"], "Role play builds interpersonal skill through practice and review. A lecture is tempting for reaching many people, but it gives little practice."),
+    ],
+    lens: [
+      { pairing: 2, adds: "Knowing the words is not the same as being able to act on them.", differs: "The couplet only states the gap. These methods are ways to close it, and the block compares what each method builds." },
+    ],
+    reflect: "Which of these methods would help you most with a decision you face at work?",
+    summary: {
+      points: [
+        "Case study: a detailed problem to analyse; incident method: one short event and a decision.",
+        "Role play: act a part, then review; in-basket: prioritise and delegate under a time limit.",
+        "Business games: teams run an imaginary firm; lectures and conferences give concepts and shared views with little practice.",
+        "Committee assignments are usually listed as on-the-job: a group studies a real problem.",
+        "The learning fades unless trainees can use it at work, and the debrief is where it happens.",
+      ],
+      memory: "Practise the decision before you face it.",
+    },
+  },
+  {
     blockId: "the-training-process",
     name: "The training process",
     intro: "Six steps from need to follow-up, and four levels for judging the result.",
@@ -57,6 +89,7 @@ const lessons: Lesson[] = [
         "Present the operation; performance try-out under supervision; follow up.",
         "Steps 3 to 6 are job instruction training: prepare, present, try out, follow up.",
         "Kirkpatrick's levels: reaction, learning, behaviour, results.",
+        "Needs analysis has three levels (organisation, task, person) and uses observation, interviews, focus groups, surveys, customer feedback and records.",
       ],
       memory: "Needs, participants, preparation, presentation, try-out, follow-up.",
     },
@@ -88,8 +121,41 @@ const lessons: Lesson[] = [
         "Focus: future roles, career growth, leadership potential, the talent pipeline.",
         "Training is short-term and job-specific; development is long-term and career-oriented.",
         "Purpose, not method, decides: the same mentoring can be training or development.",
+        "Textbooks add that training is mostly for operatives and reactive, development for managers and proactive; these are tendencies, not rules.",
       ],
       memory: "Training for now; development for next.",
+    },
+  },
+  {
+    blockId: "induction-orientation-and-onboarding",
+    name: "Induction, orientation and onboarding",
+    intro: "Welcoming a new employee and helping them settle in.",
+    before: {
+      q: "Is a new joiner's first week mainly about learning the job's skills?",
+      choices: [
+        { label: "Yes", reveal: "Partly. Skills come from training; induction first helps the person settle in, meet people and learn the rules." },
+        { label: "No", reveal: "Right. Induction is about settling in. Skill-building is the job of training." },
+      ],
+    },
+    lead: "Induction welcomes and informs a newcomer in three stages: general, specific and follow-up.",
+    check: [
+      ask("Which kind of induction is given by the immediate supervisor and covers the work, expected results and reporting lines?", "Specific induction", ["General induction", "Follow-up induction", "Preboarding"], "Specific induction concerns the job and the place, and the supervisor gives it. General induction covers the whole organisation and usually comes from HR."),
+      ask("Six weeks after a graduate trainee joins, HR asks whether she is satisfied and what difficulties she has met. This is…", "Follow-up induction", ["General induction", "Specific induction", "A training needs analysis"], "Checking satisfaction and counselling a newcomer some weeks after joining is follow-up induction. Specific induction happens at the start, with the supervisor."),
+      ask("A firm gives new joiners a six-hour presentation on day one and nothing afterwards. Many leave within months. What is the likeliest weakness?", "Everything is crammed into one day, with no specific or follow-up stage", ["The presentation should have been given by the supervisor alone", "Induction should be dropped in favour of training", "The presentation left out pay and benefits"], "Overload on day one is the usual fault, and the supervisor's job-level stage and the follow-up are skipped. Replacing induction with training is wrong, since the two do different jobs."),
+    ],
+    lens: [
+      { pairing: 3, adds: "A cold welcome is felt at once, and it is hard to undo.", differs: "The couplet is about manners. Induction is a planned programme covering the job, the people, the rules and the place, with follow-up well after the first day." },
+    ],
+    reflect: "What was missing in your first week at a job, and who could have supplied it?",
+    summary: {
+      points: [
+        "Induction: the planned welcome that helps a new employee settle in and start work.",
+        "Three kinds: general (HR, the organisation), specific (supervisor, the job) and follow-up (satisfaction check after some weeks).",
+        "Benefits: lower early turnover, faster learning, better morale, fewer grievances, a sense of belonging.",
+        "Onboarding is wider: preboarding, induction and orientation, then integration.",
+        "Induction welcomes and informs; training builds job skills.",
+      ],
+      memory: "General, specific, follow-up.",
     },
   },
 ];

@@ -125,6 +125,38 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "why-people-feel-stress-differently",
+    name: "Why people feel stress differently",
+    intro: "The same demand, different strain, and what burnout is.",
+    before: {
+      q: "Two clerks face the same March rush. Does it follow that they feel the same stress?",
+      choices: [
+        { label: "Yes, the demand is the same", reveal: "Not quite. Experience, sense of control and support change how strongly a demand is felt." },
+        { label: "No, people differ", reveal: "Right. Experience, locus of control, support and other things shape the reaction to the same demand." },
+      ],
+    },
+    lead: "Stress depends on task, role and interpersonal demands, and on the person and their support; long unrelieved stress can end in burnout.",
+    check: [
+      ask("A clerk is told to meet speed targets by head office and accuracy targets by the auditor, with no word on which comes first. Which demand is this?", "A role demand (role conflict)", ["A task demand", "An interpersonal demand", "A physiological symptom"], "Conflicting expectations about the part a person plays are role conflict. A task demand concerns the job's design and pace, which is tempting here but not the problem."),
+      ask("Which three signs mark burnout in the classic account?", "Emotional exhaustion, depersonalisation and a lowered sense of accomplishment", ["Role conflict, role ambiguity and role overload", "Task, role and interpersonal demands", "Alarm, resistance and exhaustion"], "These are Maslach's three signs. The role list is about causes of stress, and alarm, resistance and exhaustion are Selye's stages of the body's response."),
+      ask("A manager says the new joiner is just weak because she struggles with the March rush. What is the better judgement?", "Look at the demands, her experience and her support, not only at her", ["Her reaction proves she lacks character", "Stress only affects people with Type A behaviour", "Nothing can be done because stress is personal"], "Experience, control and support change how strongly a demand is felt, and demands can be changed. Blaming the person lets the workload go unexamined."),
+    ],
+    lens: [
+      { pairing: 5, adds: "Pressure is not a fixed amount: it passes, and what it does depends on how it is met.", differs: "The verse says to bear it. The chapter says unrelieved stress leads to burnout and needs real remedies, so endurance alone is not enough." },
+    ],
+    reflect: "Which of the three demands (task, role, interpersonal) weighs most on you now, and who could help?",
+    summary: {
+      points: [
+        "Organisational demands: task, role (conflict, ambiguity, overload) and interpersonal.",
+        "Stressors add up; a small one can tip a person who is already stretched.",
+        "Experience, locus of control, Type A behaviour and support change how stress is felt.",
+        "Burnout: emotional exhaustion, depersonalisation, lowered sense of accomplishment.",
+        "Managers and employees may disagree about what pressure is acceptable.",
+      ],
+      memory: "Same demand, different strain; long strain becomes burnout.",
+    },
+  },
+  {
     blockId: "stress-management",
     name: "Stress management",
     intro: "What individuals and organisations can do.",
@@ -154,6 +186,37 @@ const lessons: Lesson[] = [
         "Individual coping cannot fix a stressor that the job creates.",
       ],
       memory: "Manage stress from both sides.",
+    },
+  },
+  {
+    blockId: "time-management-and-fitting-the-remedy",
+    name: "Time management and fitting the remedy",
+    intro: "Five time-management principles, and matching each organisational measure to the person.",
+    before: {
+      q: "If you have 40 unread emails and one big proposal due next week, what should come first?",
+      choices: [
+        { label: "Clear the easy emails", reveal: "That feels productive but leaves the important task untouched. Rank by importance and urgency first." },
+        { label: "Schedule time for the proposal", reveal: "Right. It is important, so it needs a fixed slot, and email can wait for set times." },
+      ],
+    },
+    lead: "Time management ranks work by importance and urgency and schedules it; organisational measures work best when fitted to the person.",
+    check: [
+      ask("Which is one of the five time-management principles?", "Do the most demanding work when you are most alert", ["Answer every email the moment it arrives", "Work longer hours to clear the backlog", "Start with the easiest tasks of the day"], "Knowing your daily cycle is a principle. Answering at once is the habit the fifth principle warns against."),
+      ask("A task is important but not urgent, such as a proposal due next week. What does the grid say?", "Schedule it", ["Drop it", "Hand it over", "Do it now"], "Important but not urgent work gets a fixed slot before it becomes urgent. Doing it now is tempting, but it is for tasks that are both important and urgent."),
+      ask("A team member prefers routine and clear structure. Why might a job redesign that adds autonomy and responsibility backfire?", "It may raise uncertainty and stress for someone who wants structure", ["Autonomy always lowers stress", "Redesign only suits people with Type A behaviour", "Routine jobs cannot cause stress"], "Redesign helps those who want more control; it can raise uncertainty for those who prefer structure. So the measure must fit the person."),
+    ],
+    lens: [
+      { pairing: 6, adds: "Timing is part of doing the work well, not only effort.", differs: "The couplet gives the principle. The chapter gives ways to rank tasks, such as urgent against important, and warns that the remedy must fit the cause of the stress." },
+    ],
+    reflect: "Which of your tasks this week is important but not urgent, and when will you schedule it?",
+    summary: {
+      points: [
+        "Five principles: daily list, rank by importance and urgency, schedule, use your best hours, cut electronic distractions.",
+        "Other habits: noncompetitive exercise, relaxation, regular short breaks.",
+        "Selection, training, goals, job redesign and voice work best when fitted to the person.",
+        "Time management cannot fix an impossible workload or unclear roles.",
+      ],
+      memory: "List, rank, schedule, protect your best hours.",
     },
   },
 ];

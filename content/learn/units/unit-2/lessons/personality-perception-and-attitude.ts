@@ -34,6 +34,68 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "determinants-of-personality",
+    name: "What shapes personality",
+    intro: "Heredity, culture, family, social groups and the situation.",
+    before: {
+      q: "Two brothers grow up in the same house. Can their personalities still differ a great deal?",
+      choices: [
+        { label: "No, same home, same personality", reveal: "Not so. They share a family and culture, but heredity, friends and later situations differ for each." },
+        { label: "Yes, quite a lot", reveal: "Right. Heredity, different friendships and different situations all shape each person separately." },
+      ],
+    },
+    lead: "Personality is shaped by heredity, culture, family, social groups and the situation; heredity sets a range, not a result.",
+    check: [
+      ask("Which determinant covers the demands of the moment that bring out different sides of the same person?", "Situation", ["Heredity", "Culture", "Family"], "The situation calls forth different aspects of a stable personality. Heredity is what is present at birth, not what the moment demands."),
+      ask("A relaxed clerk turns firm and commanding during a fire drill. Which determinant explains the change best?", "The situation", ["Heredity", "Family upbringing", "Cultural conditioning"], "The new demands of the moment brought out a different side of the same person. Heredity and family explain the clerk's usual calm, not the change."),
+      ask("A trainer says, \"Sixty per cent of your personality is inherited and forty per cent learned.\" What is the best response?", "Heredity and environment work together, so such exact shares cannot be given for one person", ["Correct, because heredity always outweighs learning", "Correct, because culture and family make up the rest", "Wrong, because personality is entirely learned"], "Heredity sets a range and experience fills it in; the two cannot be separated for any one person. Saying it is entirely learned ignores heredity just as much."),
+    ],
+    lens: [
+      { pairing: 6, adds: "Surroundings and company help form character.", differs: "The couplet names only the company. The block lists heredity, environment and situation, and notes that they interact." },
+    ],
+    reflect: "Which of the five determinants shaped you most, and which would you like to change in your workplace?",
+    summary: {
+      points: [
+        "Personality: from Latin persona, the actor's mask; Allport defines it as the dynamic organisation of psychophysical systems that determine characteristic behaviour and thought.",
+        "Determinants: heredity (biological), culture, family, social groups and the situation; many texts use three: heredity, environment, situation.",
+        "Heredity sets a range, not a result; shares of heredity and learning cannot be given exactly.",
+        "A manager cannot change heredity but can change the situation.",
+      ],
+      memory: "Born with it, taught by it, brought out by the moment.",
+    },
+  },
+  {
+    blockId: "dark-triad-and-traits-at-work",
+    name: "The Dark Triad and traits at work",
+    intro: "Three socially undesirable traits, and what other traits predict on the job.",
+    before: {
+      q: "A manager hits every target but takes credit for his team's work. Is a good result enough to call his personality an asset?",
+      choices: [
+        { label: "Yes, results are all that matter", reveal: "Not quite. Some traits help the person while harming others, and in time harm the organisation too." },
+        { label: "Not necessarily", reveal: "Right. Dark traits can produce results and damage trust in the same job." },
+      ],
+    },
+    lead: "The Dark Triad is narcissism, Machiavellianism and psychopathy; other traits such as locus of control, self-esteem and risk-taking predict which job suits whom.",
+    check: [
+      ask("Which three traits make up the Dark Triad?", "Narcissism, Machiavellianism and psychopathy", ["Narcissism, neuroticism and psychopathy", "Machiavellianism, introversion and aggression", "Narcissism, Machiavellianism and low self-esteem"], "The Dark Triad is those three. Neuroticism belongs to the Big Five, and it is not part of the triad."),
+      ask("An employee believes ends justify means, stays emotionally distant and manipulates colleagues to win. Which Dark Triad trait is that?", "Machiavellianism", ["Narcissism", "Psychopathy", "Low self-esteem"], "Manipulation and belief that ends justify means describe Machiavellianism. Narcissism centres on an inflated sense of self-importance and a need for admiration."),
+      ask("A firm needs one person to decide fast in a volatile market and another to check accounts for fraud. Which pairing of risk-taking fits best?", "High risk-taking for the market role, low for the accounts check", ["Low risk-taking for both roles", "High risk-taking for both roles", "Low risk-taking for the market role, high for the accounts check"], "High risk-takers decide faster on less information, which suits the market. A careful person suits checking for fraud, where a guess can miss a problem."),
+    ],
+    lens: [
+      { pairing: 7, adds: "An impressive outer record can cover a manipulative inner purpose.", differs: "The couplet condemns the deceit. The Dark Triad is a research construct with three traits, measured by scales, and a high score is not a verdict on a person." },
+    ],
+    reflect: "Where have you seen charm and results used to hide poor treatment of others, and how could a team have noticed it sooner?",
+    summary: {
+      points: [
+        "Dark Triad (Paulhus and Williams): narcissism, Machiavellianism, psychopathy; these are socially undesirable traits.",
+        "Narcissism: inflated self-importance; Machiavellianism: manipulation, ends justify means; psychopathy: little concern or remorse.",
+        "Internal locus of control suits initiative-heavy jobs; external suits structured, routine ones.",
+        "High risk-takers decide faster on less information; match risk-taking to the job.",
+      ],
+      memory: "Self, schemer, cold: the dark three.",
+    },
+  },
+  {
     blockId: "perception",
     name: "Perception",
     intro: "Selecting, organising and interpreting what we sense.",
@@ -95,6 +157,37 @@ const lessons: Lesson[] = [
         "Cognitive dissonance (Festinger): a clash between attitudes and behaviour is uncomfortable, so people change one or explain it away.",
       ],
       memory: "Think, feel, act.",
+    },
+  },
+  {
+    blockId: "attitude-definitions-and-job-attitudes",
+    name: "Defining attitude; POS and job attitudes",
+    intro: "Standard definitions, explicit and implicit attitudes, and perceived organisational support.",
+    before: {
+      q: "Can a person hold an attitude without knowing it?",
+      choices: [
+        { label: "No, we always know our own attitudes", reveal: "Not always. Implicit attitudes work without awareness yet still affect what we do." },
+        { label: "Yes, some are unconscious", reveal: "Right. These are called implicit attitudes, as against explicit ones, which a person can state." },
+      ],
+    },
+    lead: "Allport, Krech and Crutchfield, and Katz and Stotland define attitude in different words; attitudes can be explicit or implicit, and POS and engagement join the list of job attitudes.",
+    check: [
+      ask("Which definition calls attitude a tendency or predisposition to evaluate an object in a certain way?", "Katz and Stotland", ["Allport", "Krech and Crutchfield", "Festinger"], "That wording is Katz and Stotland's. Allport describes a state of readiness organised through experience, and Festinger is known for cognitive dissonance."),
+      ask("A manager says in meetings that women make good engineers, yet keeps giving site visits only to men without noticing. What does this show?", "An implicit attitude that differs from his explicit one", ["High organisational commitment", "Perceived organisational support", "Cognitive dissonance reduced by a changed belief"], "He is unaware of the attitude that guides his assignments, so it is implicit. Dissonance would need him to notice the clash between belief and action."),
+      ask("A clerk's request for emergency leave is granted without fuss and she concludes that the bank cares about her. Which job attitude is she showing?", "High perceived organisational support", ["High job involvement", "Strong continuance commitment", "High self-monitoring"], "She believes the organisation values and cares about her, which is POS. Job involvement is about identifying with the job itself, not about the employer's care."),
+    ],
+    lens: [
+      { pairing: 8, adds: "What a person says and does comes out of the state of mind behind it.", differs: "The verse teaches that mind shapes action and its results. Psychology treats an attitude as one learned state among others, and finds that it predicts behaviour better when it is strong." },
+    ],
+    reflect: "Think of a recent time your employer or college showed it did or did not care about you. How did that change your effort?",
+    summary: {
+      points: [
+        "Allport: a state of readiness organised through experience; Krech and Crutchfield: an enduring organisation of motivational, emotional, perceptual and cognitive processes; Katz and Stotland: a predisposition to evaluate an object in a certain way.",
+        "Attitudes are learned, directed at objects, vary in strength, and may be explicit (stated) or implicit (unconscious).",
+        "Perceived organisational support (POS): belief that the organisation values contributions and cares about well-being.",
+        "Job attitudes: satisfaction, involvement, organisational commitment, POS and engagement.",
+      ],
+      memory: "Ready, steady, felt: attitude is a readiness shaped by experience.",
     },
   },
 ];

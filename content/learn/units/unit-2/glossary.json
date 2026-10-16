@@ -677,5 +677,1174 @@
   "term": "Whistleblowing",
   "def": "The act of exposing organisational wrongdoing to protect ethical standards, laws and public welfare.",
   "chapter": 9
+ },
+ {
+  "id": "achievement-test",
+  "letter": "A",
+  "term": "Achievement Test",
+  "def": "A psychometric test of what a person has already learned, such as mathematics or language; aptitude tests show what a person can learn.",
+  "chapter": 17
+ },
+ {
+  "id": "assessment-centre",
+  "letter": "A",
+  "term": "Assessment Centre",
+  "def": "A method, not a building: candidates do simulations such as in-basket exercises, role-play and group discussion while trained assessors observe their behaviour.",
+  "chapter": 17
+ },
+ {
+  "id": "competency",
+  "letter": "C",
+  "term": "Competency",
+  "def": "A mix of knowledge, skills, attitudes and traits that shows up as good performance in a role; a demonstrable individual characteristic enabling effective job performance.",
+  "chapter": 17
+ },
+ {
+  "id": "competency-mapping",
+  "letter": "C",
+  "term": "Competency Mapping",
+  "def": "Deciding which competencies each job needs, writing them down, and using them in recruitment, training, appraisal and promotion.",
+  "chapter": 17
+ },
+ {
+  "id": "core-competency-employee",
+  "letter": "C",
+  "term": "Core Competency (Employee)",
+  "def": "A competency everyone in the organisation needs, tied to its aims, such as teamwork or integrity. Not the same as a firm's strategic core competence.",
+  "chapter": 17
+ },
+ {
+  "id": "critical-success-factor",
+  "letter": "C",
+  "term": "Critical Success Factor",
+  "def": "One of the few things that must go right for a job to succeed; found when designing the competency-mapping questionnaire.",
+  "chapter": 17
+ },
+ {
+  "id": "cross-functional-competency",
+  "letter": "C",
+  "term": "Cross-Functional Competency",
+  "def": "A competency many jobs in many departments need, such as computer skills or budgeting; it makes staff versatile and cuts training cost.",
+  "chapter": 17
+ },
+ {
+  "id": "functional-competency",
+  "letter": "F",
+  "term": "Functional Competency",
+  "def": "A technical competency needed by one job or job family, such as data analysis or software development; it gives task proficiency and specialisation.",
+  "chapter": 17
+ },
+ {
+  "id": "functional-job-analysis-fja",
+  "letter": "F",
+  "term": "Functional Job Analysis (FJA)",
+  "def": "Sidney Fine's job analysis method, rating what a worker does in relation to data, people and things; a method, not a form.",
+  "chapter": 17
+ },
+ {
+  "id": "hr-scorecard",
+  "letter": "H",
+  "term": "HR Scorecard",
+  "def": "Becker, Huselid and Ulrich's (2001) adaptation of the balanced scorecard to the HR function, showing how HR practices support strategy.",
+  "chapter": 17
+ },
+ {
+  "id": "key-result-area-kra",
+  "letter": "K",
+  "term": "Key Result Area (KRA)",
+  "def": "An outcome a job is judged on; in competency mapping each one is broken down into key activities.",
+  "chapter": 17
+ },
+ {
+  "id": "learning-and-growth-perspective",
+  "letter": "L",
+  "term": "Learning and Growth Perspective",
+  "def": "The balanced scorecard view of the organisation's own capability: employee skills and training, information systems and culture. Customer retention is not part of it.",
+  "chapter": 17
+ },
+ {
+  "id": "position-analysis-questionnaire-paq",
+  "letter": "P",
+  "term": "Position Analysis Questionnaire (PAQ)",
+  "def": "A standard job analysis questionnaire linking job characteristics to human characteristics; mapping borrows it, but it does not assess a person.",
+  "chapter": 17
+ },
+ {
+  "id": "psychometric-test",
+  "letter": "P",
+  "term": "Psychometric Test",
+  "def": "A standardised test of aptitude or achievement giving a consistent, objective measure of a sample of attributes, not the whole person.",
+  "chapter": 17
+ },
+ {
+  "id": "behaviourally-anchored-rating-scale-bars",
+  "letter": "B",
+  "term": "Behaviourally Anchored Rating Scale (BARS)",
+  "def": "Smith and Kendall's 1963 scale in which each point is described by an example of observable behaviour, not a word like average.",
+  "chapter": 18
+ },
+ {
+  "id": "central-tendency",
+  "letter": "C",
+  "term": "Central Tendency",
+  "def": "A rater error in which everyone is placed in the middle of the scale, playing safe, so the rating tells the firm nothing.",
+  "chapter": 18
+ },
+ {
+  "id": "confidential-report",
+  "letter": "C",
+  "term": "Confidential Report",
+  "def": "A superior's private report on conduct, strengths and weaknesses, common in government service; in its classic form the employee does not see it.",
+  "chapter": 18
+ },
+ {
+  "id": "forced-distribution",
+  "letter": "F",
+  "term": "Forced Distribution",
+  "def": "The rater must spread employees across the scale in fixed shares, assuming a bell curve; it stops all-high ratings but is unfair to a strong team.",
+  "chapter": 18
+ },
+ {
+  "id": "graphic-rating-scale",
+  "letter": "G",
+  "term": "Graphic Rating Scale",
+  "def": "The rater scores traits such as punctuality and teamwork on a scale from poor to excellent and the scores are added; cheap, but vague.",
+  "chapter": 18
+ },
+ {
+  "id": "human-resource-accounting",
+  "letter": "H",
+  "term": "Human Resource Accounting",
+  "def": "An appraisal method that sets the cost of recruiting, training and keeping an employee against the value they generate, in money.",
+  "chapter": 18
+ },
+ {
+  "id": "key-performance-indicator-kpi",
+  "letter": "K",
+  "term": "Key Performance Indicator (KPI)",
+  "def": "A specific, measurable figure used to track performance, such as the percentage of parts rejected.",
+  "chapter": 18
+ },
+ {
+  "id": "management-by-objectives-mbo",
+  "letter": "M",
+  "term": "Management by Objectives (MBO)",
+  "def": "Peter Drucker's 1954 method: manager and employee set goals jointly, then compare actual results with them and set new goals.",
+  "chapter": 18
+ },
+ {
+  "id": "multi-source-feedback-360-degree",
+  "letter": "M",
+  "term": "Multi-Source Feedback (360-Degree)",
+  "def": "Ratings from supervisor, peers, subordinates, customers and the person themself, put together and fed back; many firms use it for development, not pay.",
+  "chapter": 18
+ },
+ {
+  "id": "paired-comparison",
+  "letter": "P",
+  "term": "Paired Comparison",
+  "def": "Each employee is compared with every other, one pair at a time; the one with most wins ranks first. Pairs number N × (N − 1) ÷ 2.",
+  "chapter": 18
+ },
+ {
+  "id": "performance-appraisal",
+  "letter": "P",
+  "term": "Performance Appraisal",
+  "def": "A formal, periodic evaluation of how well a person did in the period just ended; one step within performance management.",
+  "chapter": 18
+ },
+ {
+  "id": "performance-improvement-plan-pip",
+  "letter": "P",
+  "term": "Performance Improvement Plan (PIP)",
+  "def": "A structured, time-limited plan, for example coaching with regular checks, to bring an underperformer up to the standard.",
+  "chapter": 18
+ },
+ {
+  "id": "performance-management",
+  "letter": "P",
+  "term": "Performance Management",
+  "def": "A continuous, strategic yearly routine of agreeing goals, monitoring, giving feedback, reviewing and rewarding, aligning employees' work with organisational goals.",
+  "chapter": 18
+ },
+ {
+  "id": "recency-effect",
+  "letter": "R",
+  "term": "Recency Effect",
+  "def": "A rater error in which the latest events outweigh the whole period, so one recent mistake can cancel months of good work.",
+  "chapter": 18
+ },
+ {
+  "id": "career",
+  "letter": "C",
+  "term": "Career",
+  "def": "The series of jobs and roles a person holds over a working life; Hall: an individually perceived sequence of attitudes and behaviours linked to work experiences.",
+  "chapter": 19
+ },
+ {
+  "id": "career-anchor",
+  "letter": "C",
+  "term": "Career Anchor",
+  "def": "Schein's term for the self-image of talents, motives and values, formed through work experience, that a person will not give up when forced to choose.",
+  "chapter": 19
+ },
+ {
+  "id": "career-cone",
+  "letter": "C",
+  "term": "Career Cone",
+  "def": "Schein's picture of an organisation as a cone in which a career can move in three directions: vertical, circumferential and radial.",
+  "chapter": 19
+ },
+ {
+  "id": "career-development",
+  "letter": "C",
+  "term": "Career Development",
+  "def": "The personal improvements a person makes to carry out a career plan, helped by the organisation; in a broader sense, an ongoing move through career stages.",
+  "chapter": 19
+ },
+ {
+  "id": "career-management",
+  "letter": "C",
+  "term": "Career Management",
+  "def": "The organisation's work, with the individual, of designing and carrying out goals, plans and strategies so employees' needs and the organisation's needs are both met.",
+  "chapter": 19
+ },
+ {
+  "id": "career-mobility",
+  "letter": "C",
+  "term": "Career Mobility",
+  "def": "Movement across grades and positions, upward or downward, or a complete change of occupation, started by the employee or the employer.",
+  "chapter": 19
+ },
+ {
+  "id": "career-path",
+  "letter": "C",
+  "term": "Career Path",
+  "def": "The sequential pattern of jobs that forms a career (Werther and Davis); used interchangeably with career ladder.",
+  "chapter": 19
+ },
+ {
+  "id": "career-planning",
+  "letter": "C",
+  "term": "Career Planning",
+  "def": "The process by which a person selects career goals and the path to those goals (Werther and Davis); the individual's own work.",
+  "chapter": 19
+ },
+ {
+  "id": "career-plateau",
+  "letter": "C",
+  "term": "Career Plateau",
+  "def": "A point in the career path where the chance of promotion is low and the work becomes repetitive; it may be structural or content-based.",
+  "chapter": 19
+ },
+ {
+  "id": "circumferential-movement",
+  "letter": "C",
+  "term": "Circumferential Movement",
+  "def": "In Schein's cone, a move across a functional boundary at the same level, such as from a loans desk to a treasury desk.",
+  "chapter": 19
+ },
+ {
+  "id": "nine-box-grid",
+  "letter": "N",
+  "term": "Nine-Box Grid",
+  "def": "A grid plotting performance against potential for each candidate; a high performer with limited potential is not necessarily a successor.",
+  "chapter": 19
+ },
+ {
+  "id": "personal-development-plan-pdp",
+  "letter": "P",
+  "term": "Personal Development Plan (PDP)",
+  "def": "A written plan of the skills and experience a person will build, with dates, so progress can be tracked.",
+  "chapter": 19
+ },
+ {
+  "id": "radial-movement",
+  "letter": "R",
+  "term": "Radial Movement",
+  "def": "In Schein's cone, a move towards the centre, bringing more trust, influence and access to decisions, without any promotion.",
+  "chapter": 19
+ },
+ {
+  "id": "replacement-chart",
+  "letter": "R",
+  "term": "Replacement Chart",
+  "def": "A simple form of succession planning that names likely successors for each key post and shows how ready each one is.",
+  "chapter": 19
+ },
+ {
+  "id": "elite-talent-hiring",
+  "letter": "E",
+  "term": "Elite Talent Hiring",
+  "def": "Buying ready expertise: it arrives at once and sets a high benchmark, but is costly and may unsettle insiders who were passed over.",
+  "chapter": 20
+ },
+ {
+  "id": "emerging-talent-nurturing",
+  "letter": "E",
+  "term": "Emerging Talent Nurturing",
+  "def": "Growing promising people: cheaper per head and builds loyalty, but slower to deliver, and trained people may leave.",
+  "chapter": 20
+ },
+ {
+  "id": "five-phase-talent-cycle",
+  "letter": "F",
+  "term": "Five-Phase Talent Cycle",
+  "def": "Planning, attracting, developing, retaining and transitioning; the last phase passes on knowledge and readiness, feeding the next round of planning.",
+  "chapter": 20
+ },
+ {
+  "id": "functional-skills",
+  "letter": "F",
+  "term": "Functional Skills",
+  "def": "Technical knowledge needed to run operations and solve problems, such as budgeting or spreadsheet modelling; one of three skill pillars, also called hard skills.",
+  "chapter": 20
+ },
+ {
+  "id": "internal-gig-platform",
+  "letter": "I",
+  "term": "Internal Gig Platform",
+  "def": "A system listing short projects that any employee can take on.",
+  "chapter": 20
+ },
+ {
+  "id": "job-crafting",
+  "letter": "J",
+  "term": "Job Crafting",
+  "def": "Employees reshaping parts of their own tasks or working relationships.",
+  "chapter": 20
+ },
+ {
+  "id": "knowledge-management",
+  "letter": "K",
+  "term": "Knowledge Management",
+  "def": "Capturing and sharing what people know so that it stays in the organisation when they move on; the aim of the transitioning phase.",
+  "chapter": 20
+ },
+ {
+  "id": "learning-experience-platform",
+  "letter": "L",
+  "term": "Learning Experience Platform",
+  "def": "An online system that recommends learning content to each person; one example of a development method, not a requirement.",
+  "chapter": 20
+ },
+ {
+  "id": "passive-candidate",
+  "letter": "P",
+  "term": "Passive Candidate",
+  "def": "Someone who has a job and is not searching, but might move for a good offer.",
+  "chapter": 20
+ },
+ {
+  "id": "pulse-survey",
+  "letter": "P",
+  "term": "Pulse Survey",
+  "def": "A short questionnaire repeated often; it is wasted if nobody acts on the answers.",
+  "chapter": 20
+ },
+ {
+  "id": "seven-step-talent-framework",
+  "letter": "S",
+  "term": "Seven-Step Talent Framework",
+  "def": "A checklist for talent management: specify skills, attract, onboard, learn and develop, appraise, retain, then plan succession.",
+  "chapter": 20
+ },
+ {
+  "id": "skill-development",
+  "letter": "S",
+  "term": "Skill Development",
+  "def": "Intentional effort to build ability to perform, adapt and evolve: first identify skill gaps, then develop and hone the skills.",
+  "chapter": 20
+ },
+ {
+  "id": "soft-skills",
+  "letter": "S",
+  "term": "Soft Skills",
+  "def": "Behavioural skills such as emotional intelligence, negotiation, empathy and communication, which matter most in client handling, leadership and influencing others.",
+  "chapter": 20
+ },
+ {
+  "id": "talent-management",
+  "letter": "T",
+  "term": "Talent Management",
+  "def": "Joined-up HR processes to attract, onboard, develop, motivate and retain high-performing employees, from forecasting need to preparing replacements.",
+  "chapter": 20
+ },
+ {
+  "id": "burnout",
+  "letter": "B",
+  "term": "Burnout",
+  "def": "A syndrome from chronic workplace stress not successfully managed (WHO, ICD-11), marked by exhaustion, cynicism towards the job and reduced effectiveness.",
+  "chapter": 21
+ },
+ {
+  "id": "compressed-work-week",
+  "letter": "C",
+  "term": "Compressed Work Week",
+  "def": "Five 8-hour days become four 10-hour days: the total stays 40 hours and the team gains a free day, but days are longer and more tiring.",
+  "chapter": 21
+ },
+ {
+  "id": "employee-engagement",
+  "letter": "E",
+  "term": "Employee Engagement",
+  "def": "The level of enthusiasm and dedication a person feels towards the job; the energy, attention and care put in beyond the minimum.",
+  "chapter": 21
+ },
+ {
+  "id": "employee-net-promoter-score-enps",
+  "letter": "E",
+  "term": "Employee Net Promoter Score (eNPS)",
+  "def": "From one recommend-us question scored 0 to 10: percentage of promoters (9–10) minus percentage of detractors (0–6); it runs from −100 to +100.",
+  "chapter": 21
+ },
+ {
+  "id": "engagement-cycle",
+  "letter": "E",
+  "term": "Engagement Cycle",
+  "def": "The five-step process of diagnose and design, survey, analyse, act and follow up; follow-up feeds the next round.",
+  "chapter": 21
+ },
+ {
+  "id": "engagement-score",
+  "letter": "E",
+  "term": "Engagement Score",
+  "def": "A summary of survey answers, usually an average or a share of favourable answers; compare a team with its own past score.",
+  "chapter": 21
+ },
+ {
+  "id": "gallup-engagement-groups",
+  "letter": "G",
+  "term": "Gallup Engagement Groups",
+  "def": "Gallup's three groups: engaged, not engaged (time but no energy or passion) and actively disengaged (unhappy and working against colleagues' efforts).",
+  "chapter": 21
+ },
+ {
+  "id": "job-demands-resources-model",
+  "letter": "J",
+  "term": "Job Demands–Resources Model",
+  "def": "High demands with few resources wear people down towards burnout; resources such as support, control and feedback lead towards engagement.",
+  "chapter": 21
+ },
+ {
+  "id": "kahns-dimensions-of-engagement",
+  "letter": "K",
+  "term": "Kahn's Dimensions of Engagement",
+  "def": "William Kahn's (1990) three ways people bring themselves to work roles: physically, cognitively and emotionally.",
+  "chapter": 21
+ },
+ {
+  "id": "kahns-psychological-conditions",
+  "letter": "K",
+  "term": "Kahn's Psychological Conditions",
+  "def": "Kahn's three conditions for engagement: meaningfulness (a return on effort), safety (showing oneself without fear) and availability (resources to invest).",
+  "chapter": 21
+ },
+ {
+  "id": "work-engagement",
+  "letter": "W",
+  "term": "Work Engagement",
+  "def": "Schaufeli and colleagues' (2002) positive, fulfilling state of mind marked by vigour, dedication and absorption; a state of energy, not a trait.",
+  "chapter": 21
+ },
+ {
+  "id": "work-life-balance",
+  "letter": "W",
+  "term": "Work-Life Balance",
+  "def": "The relationship between work and other commitments in life, and how they affect each other; both get the time and energy they need.",
+  "chapter": 21
+ },
+ {
+  "id": "work-life-imbalance",
+  "letter": "W",
+  "term": "Work-Life Imbalance",
+  "def": "When work takes so much time and energy that health or the rest of life begins to suffer; often grows when the boundary is blurred.",
+  "chapter": 21
+ },
+ {
+  "id": "work-family-conflict",
+  "letter": "W",
+  "term": "Work–Family Conflict",
+  "def": "Greenhaus and Beutell's (1985) three forms: time-based, strain-based and behaviour-based conflict between work and family roles.",
+  "chapter": 21
+ },
+ {
+  "id": "action-research",
+  "letter": "A",
+  "term": "Action Research",
+  "def": "Kurt Lewin's cycle of research whose findings go straight into action and whose results are then studied in turn; the classic form of the OD process.",
+  "chapter": 22
+ },
+ {
+  "id": "business-process-re-engineering-bpr",
+  "letter": "B",
+  "term": "Business Process Re-engineering (BPR)",
+  "def": "Hammer and Champy's (1993) radical redesign of a process, starting from what the customer needs, to gain sharply in cost, quality, service and speed.",
+  "chapter": 22
+ },
+ {
+  "id": "change-agent",
+  "letter": "C",
+  "term": "Change Agent",
+  "def": "An OD consultant, inside or outside the organisation, who leads a planned change effort.",
+  "chapter": 22
+ },
+ {
+  "id": "double-loop-learning",
+  "letter": "D",
+  "term": "Double-Loop Learning",
+  "def": "Argyris and Schön's learning that questions the rules and goals themselves; single-loop learning only corrects an error within the current rules.",
+  "chapter": 22
+ },
+ {
+  "id": "force-field-analysis",
+  "letter": "F",
+  "term": "Force-Field Analysis",
+  "def": "Lewin's picture of any present level as a balance between driving forces for change and restraining forces against it; change happens when the balance tips.",
+  "chapter": 22
+ },
+ {
+  "id": "lewins-three-stage-model",
+  "letter": "L",
+  "term": "Lewin's Three-Stage Model",
+  "def": "Kurt Lewin's 1947 model of planned change: unfreezing, changing (moving) and refreezing.",
+  "chapter": 22
+ },
+ {
+  "id": "organisation-development-od",
+  "letter": "O",
+  "term": "Organisation Development (OD)",
+  "def": "A planned, long-term, data-driven effort to improve an organisation's effectiveness, adaptability and health, using behavioural-science knowledge and the involvement of the people concerned.",
+  "chapter": 22
+ },
+ {
+  "id": "organisational-change",
+  "letter": "O",
+  "term": "Organisational Change",
+  "def": "Any modification in an organisation's structure, processes, culture or strategy, planned or unplanned.",
+  "chapter": 22
+ },
+ {
+  "id": "process-consultation",
+  "letter": "P",
+  "term": "Process Consultation",
+  "def": "Edgar Schein's 1969 intervention: a consultant watches how a group communicates and decides, and helps members see and fix it themselves.",
+  "chapter": 22
+ },
+ {
+  "id": "refreezing",
+  "letter": "R",
+  "term": "Refreezing",
+  "def": "Lewin's third stage: reinforcing the new behaviour, for example through targets and appraisal, until it becomes the norm. It does not mean frozen for ever.",
+  "chapter": 22
+ },
+ {
+  "id": "resistance-to-change",
+  "letter": "R",
+  "term": "Resistance to Change",
+  "def": "Opposition to a change, open or quiet, arising from habit, fear of the unknown or fear of losing pay, status or skills.",
+  "chapter": 22
+ },
+ {
+  "id": "sensitivity-training",
+  "letter": "S",
+  "term": "Sensitivity Training",
+  "def": "Unstructured group sessions (a T-group) where members give and receive frank feedback on how they come across, building self-awareness and empathy.",
+  "chapter": 22
+ },
+ {
+  "id": "survey-feedback",
+  "letter": "S",
+  "term": "Survey Feedback",
+  "def": "A questionnaire goes to all; results return to each work group, which discusses them and plans action.",
+  "chapter": 22
+ },
+ {
+  "id": "unfreezing",
+  "letter": "U",
+  "term": "Unfreezing",
+  "def": "Lewin's first stage: preparing people to accept the need for change by showing why the old way no longer works and lowering fear.",
+  "chapter": 22
+ },
+ {
+  "id": "adjudication",
+  "letter": "A",
+  "term": "Adjudication",
+  "def": "A labour court or industrial tribunal hears both sides and gives a binding decision.",
+  "chapter": 23
+ },
+ {
+  "id": "conciliation",
+  "letter": "C",
+  "term": "Conciliation",
+  "def": "A neutral officer helps the parties find an agreement in a dispute but cannot force one.",
+  "chapter": 23
+ },
+ {
+  "id": "dunlops-systems-approach",
+  "letter": "D",
+  "term": "Dunlop's Systems Approach",
+  "def": "John Dunlop's (1958) view of IR as a system of actors, contexts and ideology that produces a web of substantive and procedural rules.",
+  "chapter": 23
+ },
+ {
+  "id": "gandhian-approach",
+  "letter": "G",
+  "term": "Gandhian Approach",
+  "def": "Peace through trusteeship, non-violence and moral persuasion; a strike is allowed only as a last resort, for a just cause and without violence.",
+  "chapter": 23
+ },
+ {
+  "id": "gherao",
+  "letter": "G",
+  "term": "Gherao",
+  "def": "Workers surround managers and stop them leaving; confining people against their will can break criminal law.",
+  "chapter": 23
+ },
+ {
+  "id": "grievance",
+  "letter": "G",
+  "term": "Grievance",
+  "def": "An employee's sense of dissatisfaction or injustice about something connected with the job; it may or may not be justified.",
+  "chapter": 23
+ },
+ {
+  "id": "industrial-dispute",
+  "letter": "I",
+  "term": "Industrial Dispute",
+  "def": "Under the 1947 Act, a dispute between employers and employers, employers and workmen, or workmen and workmen, connected with employment, terms of employment or conditions of labour.",
+  "chapter": 23
+ },
+ {
+  "id": "industrial-relations-ir",
+  "letter": "I",
+  "term": "Industrial Relations (IR)",
+  "def": "The management of relationships among employers, employees, trade unions and government, aiming at industrial harmony and productivity.",
+  "chapter": 23
+ },
+ {
+  "id": "lockout",
+  "letter": "L",
+  "term": "Lockout",
+  "def": "The employer shuts the workplace, or refuses to employ workers, until they accept its terms.",
+  "chapter": 23
+ },
+ {
+  "id": "oxford-approach",
+  "letter": "O",
+  "term": "Oxford Approach",
+  "def": "Allan Flanders's view of IR as the study of the institutions, above all collective bargaining, that regulate jobs and make the rules.",
+  "chapter": 23
+ },
+ {
+  "id": "picketing",
+  "letter": "P",
+  "term": "Picketing",
+  "def": "Workers stand at the gate to persuade others not to work and to draw public attention; peaceful picketing is usually treated as lawful, violence is not.",
+  "chapter": 23
+ },
+ {
+  "id": "pluralist-approach",
+  "letter": "P",
+  "term": "Pluralist Approach",
+  "def": "The view that the organisation holds several groups with different aims, so conflict between management and workers is normal and is managed through bargaining.",
+  "chapter": 23
+ },
+ {
+  "id": "strike",
+  "letter": "S",
+  "term": "Strike",
+  "def": "A group of workers stop work together to press their demands.",
+  "chapter": 23
+ },
+ {
+  "id": "unitary-approach",
+  "letter": "U",
+  "term": "Unitary Approach",
+  "def": "The view that the organisation is one team with one source of authority, management; conflict is rare and comes from poor communication or troublemakers.",
+  "chapter": 23
+ },
+ {
+  "id": "agency-shop",
+  "letter": "A",
+  "term": "Agency Shop",
+  "def": "Workers need not join the union, but all must pay it a fee for bargaining on their behalf.",
+  "chapter": 24
+ },
+ {
+  "id": "arbitration",
+  "letter": "A",
+  "term": "Arbitration",
+  "def": "Settlement of a dispute by a neutral third party whose decision the parties have agreed, or are required, to accept.",
+  "chapter": 24
+ },
+ {
+  "id": "closed-shop",
+  "letter": "C",
+  "term": "Closed Shop",
+  "def": "The employer may hire only union members; in one form, workers must be members before they are hired.",
+  "chapter": 24
+ },
+ {
+  "id": "collective-bargaining",
+  "letter": "C",
+  "term": "Collective Bargaining",
+  "def": "Negotiation between employee representatives, usually a union, and the employer to settle terms and conditions of employment such as wages, benefits and job security.",
+  "chapter": 24
+ },
+ {
+  "id": "collective-bargaining-agreement-cba",
+  "letter": "C",
+  "term": "Collective Bargaining Agreement (CBA)",
+  "def": "The written, signed terms reached through bargaining, running for a fixed period, often a few years.",
+  "chapter": 24
+ },
+ {
+  "id": "craft-union",
+  "letter": "C",
+  "term": "Craft Union",
+  "def": "A union of workers with the same craft, skill or occupation, whatever industry they work in.",
+  "chapter": 24
+ },
+ {
+  "id": "distributive-bargaining",
+  "letter": "D",
+  "term": "Distributive Bargaining",
+  "def": "Win-lose negotiation over a fixed sum, where one side's gain is the other's loss.",
+  "chapter": 24
+ },
+ {
+  "id": "economic-strike",
+  "letter": "E",
+  "term": "Economic Strike",
+  "def": "A strike because talks failed to agree terms of a contract, such as wages, benefits and other conditions of employment.",
+  "chapter": 24
+ },
+ {
+  "id": "industrial-union",
+  "letter": "I",
+  "term": "Industrial Union",
+  "def": "A union of workers of one industry, whatever their craft.",
+  "chapter": 24
+ },
+ {
+  "id": "integrative-bargaining",
+  "letter": "I",
+  "term": "Integrative Bargaining",
+  "def": "Win-win negotiation in which both sides work on shared interests to make the gain bigger.",
+  "chapter": 24
+ },
+ {
+  "id": "sympathy-strike",
+  "letter": "S",
+  "term": "Sympathy Strike",
+  "def": "One union strikes in support of another union's strike.",
+  "chapter": 24
+ },
+ {
+  "id": "trade-union",
+  "letter": "T",
+  "term": "Trade Union",
+  "def": "An organised group of workers formed to protect and promote their collective interests, such as wages, working hours, job security and safe conditions.",
+  "chapter": 24
+ },
+ {
+  "id": "unfair-labour-practice-strike",
+  "letter": "U",
+  "term": "Unfair Labour Practice Strike",
+  "def": "A strike to protest illegal conduct by the employer.",
+  "chapter": 24
+ },
+ {
+  "id": "wildcat-strike",
+  "letter": "W",
+  "term": "Wildcat Strike",
+  "def": "A sudden strike without the union's approval, such as one that breaks out while an agreement is still running.",
+  "chapter": 24
+ },
+ {
+  "id": "code-on-social-security-2020",
+  "letter": "C",
+  "term": "Code on Social Security, 2020",
+  "def": "In force from 21 November 2025, it consolidates the older social security laws into one Code and reaches gig and platform workers.",
+  "chapter": 25
+ },
+ {
+  "id": "employees-state-insurance",
+  "letter": "E",
+  "term": "Employees' State Insurance",
+  "def": "Medical care and cash benefits for insured employees in sickness, maternity and employment injury.",
+  "chapter": 25
+ },
+ {
+  "id": "extra-mural-facilities",
+  "letter": "E",
+  "term": "Extra-Mural Facilities",
+  "def": "Welfare facilities outside the workplace, such as housing, recreation and sports, and education for workers and their children.",
+  "chapter": 25
+ },
+ {
+  "id": "functional-theory",
+  "letter": "F",
+  "term": "Functional Theory",
+  "def": "Welfare as an investment in output: a healthy, contented worker is more productive.",
+  "chapter": 25
+ },
+ {
+  "id": "gratuity",
+  "letter": "G",
+  "term": "Gratuity",
+  "def": "A lump sum the employer alone pays in recognition of long service.",
+  "chapter": 25
+ },
+ {
+  "id": "intra-mural-facilities",
+  "letter": "I",
+  "term": "Intra-Mural Facilities",
+  "def": "Welfare facilities inside the workplace, such as drinking water, washing facilities, canteen, rest rooms, crèche and first-aid room.",
+  "chapter": 25
+ },
+ {
+  "id": "labour-welfare",
+  "letter": "L",
+  "term": "Labour Welfare",
+  "def": "Services, facilities and amenities provided for workers, at or near the workplace, by employers, unions, government and others, over and above wages.",
+  "chapter": 25
+ },
+ {
+  "id": "mutual-welfare-facilities",
+  "letter": "M",
+  "term": "Mutual Welfare Facilities",
+  "def": "Facilities organised by the workers themselves, such as a credit society or a consumer store run by workers or their union.",
+  "chapter": 25
+ },
+ {
+  "id": "paternalistic-theory",
+  "letter": "P",
+  "term": "Paternalistic Theory",
+  "def": "Also called trusteeship: the employer holds the business in trust and looks after workers as a guardian looks after wards.",
+  "chapter": 25
+ },
+ {
+  "id": "placating-theory",
+  "letter": "P",
+  "term": "Placating Theory",
+  "def": "Welfare as a peace offering: timely gestures to calm organised, demanding workers before they press further.",
+  "chapter": 25
+ },
+ {
+  "id": "policing-theory",
+  "letter": "P",
+  "term": "Policing Theory",
+  "def": "Welfare as a legal minimum: employers will not act unless forced and can exploit workers, so the state fixes a minimum standard.",
+  "chapter": 25
+ },
+ {
+  "id": "provident-fund",
+  "letter": "P",
+  "term": "Provident Fund",
+  "def": "Retirement savings built from contributions by both employee and employer during working life, protecting against old age.",
+  "chapter": 25
+ },
+ {
+  "id": "social-security",
+  "letter": "S",
+  "term": "Social Security",
+  "def": "Protection society provides through public arrangements against economic distress when earnings stop or fall because of sickness, maternity, injury, old age or unemployment.",
+  "chapter": 25
+ },
+ {
+  "id": "statutory-welfare-facilities",
+  "letter": "S",
+  "term": "Statutory Welfare Facilities",
+  "def": "Facilities the employer must provide by law, such as the basic amenities in the Factories Act; which factories must provide which depends on the law's conditions.",
+  "chapter": 25
+ },
+ {
+  "id": "bedaux-plan",
+  "letter": "B",
+  "term": "Bedaux Plan",
+  "def": "Pays for time taken plus 75% of the value of time saved against a standard counted in B points; guarantees a time wage.",
+  "chapter": 26
+ },
+ {
+  "id": "code-on-wages-2019",
+  "letter": "C",
+  "term": "Code on Wages, 2019",
+  "def": "In force from 21 November 2025, it consolidates four older laws on payment of wages, minimum wages, bonus and equal remuneration.",
+  "chapter": 26
+ },
+ {
+  "id": "fair-wage",
+  "letter": "F",
+  "term": "Fair Wage",
+  "def": "A wage above the minimum wage but below the living wage; its upper limit is the industry's capacity to pay.",
+  "chapter": 26
+ },
+ {
+  "id": "living-wage",
+  "letter": "L",
+  "term": "Living Wage",
+  "def": "A wage covering essentials plus frugal comfort, such as children's education and insurance against misfortunes; an aim, not a legal floor.",
+  "chapter": 26
+ },
+ {
+  "id": "marginal-productivity-theory",
+  "letter": "M",
+  "term": "Marginal Productivity Theory",
+  "def": "Clark and Wicksteed: a firm hires workers until the value of the last worker's extra output equals the wage.",
+  "chapter": 26
+ },
+ {
+  "id": "merricks-multiple-piece-rate",
+  "letter": "M",
+  "term": "Merrick's Multiple Piece Rate",
+  "def": "Three piece rates: basic rate below 83% of standard output, 110% of it from 83% to 100%, and 120% above 100%; no guaranteed wage.",
+  "chapter": 26
+ },
+ {
+  "id": "minimum-wage",
+  "letter": "M",
+  "term": "Minimum Wage",
+  "def": "The lowest rung of the wage ladder: it covers the worker's family needs and efficiency, and is owed regardless of the industry's capacity to pay.",
+  "chapter": 26
+ },
+ {
+  "id": "priestmans-plan",
+  "letter": "P",
+  "term": "Priestman's Plan",
+  "def": "A group plan in which bonus as a percentage of wages equals the percentage increase in the group's output over the standard; no bonus below standard.",
+  "chapter": 26
+ },
+ {
+  "id": "profit-sharing",
+  "letter": "P",
+  "term": "Profit Sharing",
+  "def": "An agreement by which employees receive a share of profit, fixed in advance, on top of regular wages; paid as cash, company shares or deferred.",
+  "chapter": 26
+ },
+ {
+  "id": "residual-claimant-theory",
+  "letter": "R",
+  "term": "Residual Claimant Theory",
+  "def": "Francis Walker's theory: output is shared among land, labour, capital and enterprise; rent, interest and profit are settled first and wages are what remains.",
+  "chapter": 26
+ },
+ {
+  "id": "scanlon-plan",
+  "letter": "S",
+  "term": "Scanlon Plan",
+  "def": "A group plan: when labour cost falls below a norm share of the sales value of output, the saving is split between employees and company; committees collect suggestions.",
+  "chapter": 26
+ },
+ {
+  "id": "subsistence-wage-theory",
+  "letter": "S",
+  "term": "Subsistence Wage Theory",
+  "def": "Associated with Ricardo: wages settle at the natural price of labour, enough to keep workers alive and numbers steady. Later called the iron law of wages.",
+  "chapter": 26
+ },
+ {
+  "id": "surplus-value-theory",
+  "letter": "S",
+  "term": "Surplus Value Theory",
+  "def": "Karl Marx's theory: labour power is bought at about the cost of keeping the worker going, and the employer keeps the extra value the worker adds.",
+  "chapter": 26
+ },
+ {
+  "id": "wage-fund-theory",
+  "letter": "W",
+  "term": "Wage Fund Theory",
+  "def": "J. S. Mill's (1848) theory that employers hold a fixed fund for wages, so the average wage is the fund divided by the number of workers.",
+  "chapter": 26
+ },
+ {
+  "id": "balance-sheet-approach",
+  "letter": "B",
+  "term": "Balance-Sheet Approach",
+  "def": "An expatriate pay method that aims to keep the home standard of living by paying the gaps in income tax, housing, goods and services, and savings, plus incentives.",
+  "chapter": 27
+ },
+ {
+  "id": "ethnocentric-approach",
+  "letter": "E",
+  "term": "Ethnocentric Approach",
+  "def": "Key posts at head office and in subsidiaries go to PCNs, and head office takes the main decisions; subsidiaries have little autonomy.",
+  "chapter": 27
+ },
+ {
+  "id": "expatriate",
+  "letter": "E",
+  "term": "Expatriate",
+  "def": "An employee sent by the firm to work in a country that is not their own, on a long-term or short-term assignment.",
+  "chapter": 27
+ },
+ {
+  "id": "geocentric-approach",
+  "letter": "G",
+  "term": "Geocentric Approach",
+  "def": "Key posts anywhere, head office included, go to the best person whether PCN, HCN or TCN; the firm works as one global network.",
+  "chapter": 27
+ },
+ {
+  "id": "host-country-national-hcn",
+  "letter": "H",
+  "term": "Host Country National (HCN)",
+  "def": "A citizen of the country where a subsidiary operates.",
+  "chapter": 27
+ },
+ {
+  "id": "international-hrm-ihrm",
+  "letter": "I",
+  "term": "International HRM (IHRM)",
+  "def": "The set of HR activities a firm carries out at the international level to meet its objectives and gain an advantage over competitors at home and abroad.",
+  "chapter": 27
+ },
+ {
+  "id": "morgans-model",
+  "letter": "M",
+  "term": "Morgan's Model",
+  "def": "P. V. Morgan's (1986) three-dimensional model of IHRM: three HR activities (procurement, allocation, utilisation), three country categories and three types of employee.",
+  "chapter": 27
+ },
+ {
+  "id": "multinational-company-mnc",
+  "letter": "M",
+  "term": "Multinational Company (MNC)",
+  "def": "A firm that owns and runs operations in more than one country; the main setting for international HRM.",
+  "chapter": 27
+ },
+ {
+  "id": "parent-country-national-pcn",
+  "letter": "P",
+  "term": "Parent Country National (PCN)",
+  "def": "A citizen of the country where the firm's head office stands; also called a home country employee.",
+  "chapter": 27
+ },
+ {
+  "id": "polycentric-approach",
+  "letter": "P",
+  "term": "Polycentric Approach",
+  "def": "Each subsidiary is run by HCNs as a distinct national unit, with more local autonomy; PCNs hold the key posts at head office.",
+  "chapter": 27
+ },
+ {
+  "id": "regiocentric-approach",
+  "letter": "R",
+  "term": "Regiocentric Approach",
+  "def": "Key posts go to managers from the same geographic region as the unit; staff move within the region but seldom to head office.",
+  "chapter": 27
+ },
+ {
+  "id": "repatriation",
+  "letter": "R",
+  "term": "Repatriation",
+  "def": "Bringing an expatriate home at the end of an assignment and helping them settle back in; four stages: preparation, physical relocation, transition and readjustment.",
+  "chapter": 27
+ },
+ {
+  "id": "reverse-culture-shock",
+  "letter": "R",
+  "term": "Reverse Culture Shock",
+  "def": "The stress of coming home to a place that has changed, and of being a changed person; it belongs to the readjustment stage.",
+  "chapter": 27
+ },
+ {
+  "id": "third-country-national-tcn",
+  "letter": "T",
+  "term": "Third Country National (TCN)",
+  "def": "A citizen of neither the head-office country nor the country where the unit operates.",
+  "chapter": 27
+ },
+ {
+  "id": "adaptive-reuse",
+  "letter": "A",
+  "term": "Adaptive Reuse",
+  "def": "Finding a new use for old materials or products; one item under green products and services.",
+  "chapter": 28
+ },
+ {
+  "id": "amo-model",
+  "letter": "A",
+  "term": "AMO Model",
+  "def": "Ability, motivation and opportunity: green behaviour needs people who are able, motivated and given the opportunity to act.",
+  "chapter": 28
+ },
+ {
+  "id": "five-dimensions-of-green-hrm",
+  "letter": "F",
+  "term": "Five Dimensions of Green HRM",
+  "def": "A teaching framework of five areas: green products and services, workforce, workplace, function or process model, and management and governance. Its author is rarely named.",
+  "chapter": 28
+ },
+ {
+  "id": "green-commuting",
+  "letter": "G",
+  "term": "Green Commuting",
+  "def": "Carpools, public transport for business travel, cycling or walking to work, and loans for low-emission vehicles, to burn less fuel on journeys.",
+  "chapter": 28
+ },
+ {
+  "id": "green-hrm",
+  "letter": "G",
+  "term": "Green HRM",
+  "def": "HR policies, practices and systems that encourage green behaviour among employees, to create an environmentally sensitive, resource-efficient and socially responsible organisation.",
+  "chapter": 28
+ },
+ {
+  "id": "green-kpi",
+  "letter": "G",
+  "term": "Green KPI",
+  "def": "A measurable number showing whether people are making the firm greener, such as electricity used per employee.",
+  "chapter": 28
+ },
+ {
+  "id": "green-policy",
+  "letter": "G",
+  "term": "Green Policy",
+  "def": "The stated rule or aim, such as interviews online wherever possible; unlike a green practice, it need not be what people actually do.",
+  "chapter": 28
+ },
+ {
+  "id": "green-practice",
+  "letter": "G",
+  "term": "Green Practice",
+  "def": "What managers and staff actually do; the gap between policy and practice is where green claims go wrong.",
+  "chapter": 28
+ },
+ {
+  "id": "green-rewards",
+  "letter": "G",
+  "term": "Green Rewards",
+  "def": "Recognition, awards, bonuses linked to green goals, and free bicycles or transport benefits that motivate green behaviour.",
+  "chapter": 28
+ },
+ {
+  "id": "paperless-hr",
+  "letter": "P",
+  "term": "Paperless HR",
+  "def": "Online applications, e-offer letters, digital appraisal forms and payslips, giving less paper and printing.",
+  "chapter": 28
+ },
+ {
+  "id": "sustainable-development-goals-sdgs",
+  "letter": "S",
+  "term": "Sustainable Development Goals (SDGs)",
+  "def": "The 17 goals adopted by UN member states in 2015, to be met by 2030; green HRM bears most on goals 12, 13 and 7.",
+  "chapter": 28
+ },
+ {
+  "id": "sustainable-hrm",
+  "letter": "S",
+  "term": "Sustainable HRM",
+  "def": "A fuller idea than green HRM that adds fair treatment, wellbeing and steady employment for staff, families and communities.",
+  "chapter": 28
+ },
+ {
+  "id": "triple-bottom-line",
+  "letter": "T",
+  "term": "Triple Bottom Line",
+  "def": "People, planet and profit, used with the sustainability goals as a common language for reporting.",
+  "chapter": 28
  }
 ]

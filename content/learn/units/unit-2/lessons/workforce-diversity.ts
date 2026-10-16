@@ -27,11 +27,43 @@ const lessons: Lesson[] = [
       points: [
         "Diversity: differences in age, gender, race, religion, ethnicity, ability and background; in India also language, region and caste.",
         "Managing it: fairness and equity, inclusion, respect, a business link.",
-        "Surface-level differences are seen at once; deep-level ones (values, personality) show over time.",
+        "Surface-level differences are seen at once; deep-level ones show over time. Primary dimensions cannot change; secondary ones can.",
         "Diversity is the mix; inclusion is whether the mix is heard and valued.",
         "Benefits are not automatic: diverse teams can also bring more conflict.",
       ],
       memory: "Inclusion, equal opportunity, respect.",
+    },
+  },
+  {
+    blockId: "benefits-challenges-and-approaches-to-diversity",
+    name: "Benefits, challenges and approaches",
+    intro: "Why firms value diversity, and three ways of going about it.",
+    before: {
+      q: "A firm hires staff who speak its customers' languages. Does that mean it is using its diversity fully?",
+      choices: [
+        { label: "Yes", reveal: "Not necessarily. Matching staff to markets is one approach; it can leave their ideas out of how the work is done." },
+        { label: "Not necessarily", reveal: "Right. Matching staff to markets is only one approach, and it can keep people in niche roles." },
+      ],
+    },
+    lead: "Managed well, diversity brings market reach, better decisions, good relations, lower turnover and goodwill. Firms pursue it through fairness, access and legitimacy, or learning and effectiveness.",
+    check: [
+      ask("Which approach treats differences as a source of insight into how the work itself should be done?", "Learning and effectiveness", ["Discrimination and fairness", "Access and legitimacy", "Equal opportunity alone"], "Learning and effectiveness uses people's differences to rethink the work. Access and legitimacy only matches staff to the market, which is the tempting wrong answer."),
+      ask("A bank posts a woman officer who speaks the local language only to women customers' counters, and nowhere else. Which danger is this?", "People are kept in niche roles serving \"their\" group", ["Newcomers are expected to fit existing ways", "Staff are treated alike and differences ignored", "Leaders are slow to welcome challenge"], "This is the danger of access and legitimacy: diversity stays at the edge of the firm. Expecting newcomers to fit existing ways is the danger of the fairness approach."),
+      ask("A manager says reserving some public-sector posts for disadvantaged groups is just equal opportunity. What is the best judgement?", "It is affirmative action: a positive step to correct past disadvantage", ["It is equal opportunity, because both treat everyone identically", "It is equal opportunity, because it prefers disadvantaged groups", "It is unlawful, because Article 16 forbids all preference"], "Equal opportunity means no one is barred by group; affirmative action takes positive steps. Article 16 guarantees equal opportunity and also allows reservation, so calling it unlawful is wrong."),
+    ],
+    lens: [
+      { pairing: 4, adds: "Birth does not decide a person's worth at work.", differs: "The couplet is a moral principle. The block compares three approaches and warns that a fairness-only approach may stop at hiring and neglect how people are treated afterwards." },
+    ],
+    reflect: "Which of the three approaches does your organisation, or your college, follow in practice?",
+    summary: {
+      points: [
+        "Benefits: market reach, better decisions, better relations, lower turnover, goodwill.",
+        "Challenges: communication gaps, conflict, stereotypes, resistance, slower agreement.",
+        "Thomas and Ely (1996): discrimination and fairness; access and legitimacy; learning and effectiveness.",
+        "Equal opportunity is a fair chance for all; affirmative action is a positive step to correct past disadvantage.",
+        "In India: Articles 15 and 16, plus statutes on harassment, disability, transgender persons and equal pay.",
+      ],
+      memory: "Fairness, access, learning.",
     },
   },
   {
@@ -58,8 +90,8 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Techniques: awareness, shared culture, special care, career development, ending discrimination, preventing harassment, diverse committees.",
-        "Glass ceiling: an invisible barrier to the top jobs.",
-        "In-groups and out-groups create belonging and exclusion.",
+        "Glass ceiling: an invisible barrier to the top jobs; glass cliff: risky posts given in a crisis.",
+        "Groups: command, task, functional; interest, friendship, reference. In-groups and out-groups create belonging and exclusion.",
         "Group roles: task (planner), relationship (motivator), individual (dominator).",
         "Equity can need different arrangements; responsibility and mentoring beat training alone.",
       ],
@@ -98,6 +130,38 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "cross-cultural-models-beyond-hofstede",
+    name: "Cross-cultural models beyond Hofstede",
+    intro: "Hall, Trompenaars, Lewis and cultural intelligence.",
+    before: {
+      q: "Does \"that will be difficult\" always mean the speaker thinks the task is hard?",
+      choices: [
+        { label: "Yes", reveal: "Not everywhere. In high-context cultures it can be a polite, indirect no." },
+        { label: "Not always", reveal: "Right. In high-context cultures meaning sits in the setting and what is left unsaid, so it can be a polite no." },
+      ],
+    },
+    lead: "Hall, Trompenaars and Lewis add maps of communication, values and working style; cultural intelligence is the skill of using such maps with care.",
+    check: [
+      ask("In which type of culture does most of the meaning sit in the setting, the relationship and what is left unsaid?", "High-context", ["Low-context", "Linear-active", "Universalist"], "Hall's high-context cultures carry meaning in context. Low-context cultures put it in explicit words, which is the opposite."),
+      ask("Before a Tokyo meeting, a manager plans to check privately after each \"difficult\" whether it meant no. Which part of cultural intelligence is this?", "Strategy: planning and checking assumptions", ["Knowledge of Japanese customs", "Drive to work across cultures", "Action: adapting gestures and pace"], "Planning and checking assumptions during contact is the metacognitive, or strategy, part. Knowledge is what you already know about the culture."),
+      ask("A colleague says \"Hall calls Japan high-context, so our Tokyo client will never say no directly.\" What is the best judgement?", "A useful first guess, but check with the person in front of you", ["A reliable rule that holds for every Japanese manager", "Useless, because Hall's work has no value", "True only of Japan, never of any other country"], "Models describe tendencies, and people differ within every culture. Calling them worthless goes too far, because they give good questions to start with."),
+    ],
+    lens: [
+      { pairing: 5, adds: "Fitting in with others' ways is a skill that can be learned.", differs: "The couplet is advice to adapt. The models name particular differences, such as high and low context, and how time and relationships are treated." },
+    ],
+    reflect: "Is your own way of speaking high-context or low-context, and how do you know?",
+    summary: {
+      points: [
+        "Hall: high-context cultures carry meaning in setting and silence; low-context cultures in explicit words.",
+        "Trompenaars: seven dimensions, five about relationships plus time and nature.",
+        "Lewis: linear-active, multi-active and reactive.",
+        "Cultural intelligence (Earley and Ang, 2003): drive, knowledge, strategy, action.",
+        "Models are maps, not rules; check with the person.",
+      ],
+      memory: "Context, seven, three, four.",
+    },
+  },
+  {
     blockId: "culture-shock-and-cross-cultural-training",
     name: "Culture shock and cross-cultural training",
     intro: "Adapting to an unfamiliar culture.",
@@ -118,7 +182,7 @@ const lessons: Lesson[] = [
     reflect: "If you were posted abroad next month, which training area would you need most?",
     summary: {
       points: [
-        "Culture shock: difficulty adapting to an unfamiliar culture; caused by language, customs and stress.",
+        "Culture shock: difficulty adapting to an unfamiliar culture; caused by language, customs and stress, and worse when the cultural distance is wide.",
         "U-curve: honeymoon, crisis, adjustment, mastery; research support is weak, so treat it as a warning.",
         "Reduced by training, adjustment support and integration.",
         "Training areas: self-awareness, host-country knowledge, role clarification, intercultural communication, conflict resolution.",

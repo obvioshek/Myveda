@@ -121,6 +121,68 @@ const lessons: Lesson[] = [
       memory: "I'm OK, you're OK.",
     },
   },
+  {
+    blockId: "nine-complementary-transactions",
+    name: "Nine complementary transactions at work",
+    intro: "Every pairing of Parent, Adult and Child between manager and employee.",
+    before: {
+      q: "A manager says, \u201cLeave the thinking to me,\u201d and the employee agrees. Is that a good exchange?",
+      choices: [
+        { label: "Yes, it is smooth", reveal: "It is smooth, which makes it complementary. Smooth is not the same as healthy: over time the employee stops thinking for himself." },
+        { label: "Not necessarily", reveal: "Right. It is a complementary Parent\u2013Child transaction: the talk flows, but the employee's initiative shrinks." },
+      ],
+    },
+    lead: "Three ego states by three give nine complementary pairs; Adult\u2013Adult is the best, and the rest each carry a cost.",
+    check: [
+      ask("In a complementary transaction, how does the reply travel?", "Back from the state that was addressed to the state that spoke", ["From the state that spoke, to a different state", "From a hidden state, while the surface stays Adult", "From the Child, whatever the opening message"], "The lines are parallel because the reply simply reverses the opening message. A reply from an unexpected state would cross the lines and make the transaction crossed."),
+      ask("A manager says, \u201cLeave the thinking to me; do as I say.\u201d The clerk replies, \u201cYes sir, whatever you say.\u201d Which pair is this, and what is the long-run risk?", "Parent\u2013Child; the employee's initiative shrinks", ["Adult\u2013Adult; the decision becomes too slow", "Child\u2013Parent; the employee ends up controlling the manager", "Parent\u2013Parent; the two begin to compete over rules"], "The manager speaks as Parent to the employee's Child, which suits both at first. Parent\u2013Parent is tempting, but here the clerk gives up judgement instead of pushing rival rules."),
+      ask("When is a Parent\u2013Child transaction most defensible?", "In a fire drill, when a supervisor gives short orders to new staff", ["In a monthly review with experienced staff", "In a planning meeting on next year's targets", "In a talk to coach a capable clerk"], "In an emergency, speed matters and new staff need clear orders. In reviews, planning or coaching it builds dependency, and the Adult\u2013Adult default is better."),
+    ],
+    lens: [
+      { pairing: 3, adds: "What you say invites a matching answer, so the first transaction shapes the second.", differs: "The verse warns against harshness. The chapter says complementary does not mean good: a polite but unequal exchange can also keep a person small." },
+    ],
+    reflect: "In your last three conversations with your manager or team, which of the nine pairs was it? Was it the one the task needed?",
+    summary: {
+      points: [
+        "Complementary: the reply reverses the opening message, so the lines are parallel and talk flows.",
+        "Three ego states by three give nine pairs; Adult\u2013Adult is generally best, and Parent\u2013Child suits emergencies.",
+        "The other pairs bring costs: hostility, frustration, role reversal, whim or rivalry.",
+        "Ulterior transactions carry a hidden message and involve at least three ego states.",
+      ],
+      memory: "Smooth talk is not always good talk.",
+    },
+  },
+  {
+    blockId: "scripts-drama-triangle-and-games",
+    name: "Life scripts, the drama triangle and why games are played",
+    intro: "The plot we follow, the three roles we play in it, and why we play games.",
+    before: {
+      q: "Have you ever helped someone until you resented it?",
+      choices: [
+        { label: "Yes", reveal: "That is a common move in the drama triangle: the Rescuer who is not thanked turns Persecutor." },
+        { label: "Not sure", reveal: "Watch for it. Helping that keeps the other person dependent is an illegitimate Rescuer role, and it often ends in resentment." },
+      ],
+    },
+    lead: "A life script is learned early; Karpman's triangle shows three roles people play in it, and games run on those roles.",
+    check: [
+      ask("Who described the drama triangle, and what are its three roles?", "Stephen Karpman: Persecutor, Victim and Rescuer", ["Eric Berne: Parent, Adult and Child", "Thomas Harris: OK, not OK and mixed", "Luft and Ingham: open, blind and hidden"], "Karpman described it in 1968. Berne's Parent, Adult and Child are ego states, a different idea, and the tempting wrong answer."),
+      ask("A senior always finishes a junior's work, then snaps when no thanks come. How is this best described?", "An illegitimate Rescuer who keeps the junior dependent, then turns Persecutor", ["A legitimate Rescuer, because helping is always good", "A Victim holding an I'm-not-OK position", "A crossed transaction from the Adult state"], "Help that keeps the junior dependent is a mask, and the switch to Persecutor is typical. A legitimate Rescuer would help the junior become self-reliant."),
+      ask("Which statement is NOT true of a psychological game?", "It is a single honest exchange with no hidden message", ["It tends to be repeated", "It makes sense on the surface", "At least one transaction is ulterior"], "A game has three marks: repetition, surface sense and an ulterior transaction. A single honest exchange cannot be a game, because no hidden message is involved."),
+    ],
+    lens: [
+      { pairing: 4, adds: "Carrying a grievance is what keeps the pattern going.", differs: "The verse speaks of hatred and letting go. The chapter describes three roles that players switch between, and says that a legitimate role is possible when the facts call for it." },
+    ],
+    reflect: "Which corner of the triangle do you drift to under pressure, and what would moving to Adult look like?",
+    summary: {
+      points: [
+        "Life script (Berne): a programme formed in early childhood under parental influence; it can be rewritten.",
+        "Karpman's drama triangle (1968): Persecutor, Victim, Rescuer; players switch corners.",
+        "Roles are legitimate when the facts call for them and illegitimate when used as masks.",
+        "Games repeat, make surface sense and hold an ulterior transaction; people play for strokes, to reinforce life positions and to avoid intimacy.",
+      ],
+      memory: "Persecutor, Victim, Rescuer: switch corners, switch to Adult.",
+    },
+  },
 ];
 
 export default lessons;
