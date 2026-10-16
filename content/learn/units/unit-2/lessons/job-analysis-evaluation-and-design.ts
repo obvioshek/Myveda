@@ -31,6 +31,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "job-analysis-data-collection",
+    name: "Interviews, questionnaires and diaries",
+    intro: "Ways of collecting facts about a job from the people who do it, when one analyst cannot watch everyone.",
+    before: {
+      q: "Can one analyst learn everything about 1,200 clerks' jobs by watching them?",
+      choices: [
+        { label: "Yes", reveal: "Not in practice. Watching reaches few people and misses thinking work, so analysts also ask jobholders and have them record their own work." },
+        { label: "No", reveal: "Right. That is why interviews, questionnaires and work diaries are used, usually in combination." },
+      ],
+    },
+    lead: "Interviews, questionnaires and diaries let jobholders tell or record their own work; each has a blind spot, so analysts combine them.",
+    check: [
+      ask("Clerks note each task and the time it takes, as they go, over a fortnight. Which method is this?", "Work diary or log", ["Critical incident technique", "Questionnaire", "Micro-motion analysis"], "A diary records the ordinary day as it happens. The critical incident technique is the tempting wrong answer, but it records only the exceptionally good or poor episodes."),
+      ask("An analyst needs to know how often certain tasks occur for 3,000 clerks, quickly and cheaply. Which method fits best?", "A questionnaire", ["Structured interviews with every clerk", "Micro-motion analysis of every clerk", "A work diary for every clerk"], "A questionnaire reaches many people cheaply and gives numbers. Interviewing or filming every clerk would take far too long, and diaries are tiring to keep."),
+      ask("Questionnaires say form-filling help takes little time, but diaries show about an hour a day. What should the analyst do?", "Check the gap with a third source, such as the supervisors", ["Average the two figures", "Accept the questionnaires because more people answered", "Discard the diaries because they are tiring to keep"], "A gap between two methods is a question, not an answer. Averaging hides the reason for the gap, and more respondents do not make a self-report more accurate."),
+    ],
+    lens: [],
+    reflect: "Which of these methods would give the most honest picture of your own week?",
+    summary: {
+      points: [
+        "Interviews can be structured, unstructured or open-ended, with jobholders and supervisors.",
+        "Questionnaires reach many people cheaply; diaries show where the time really goes.",
+        "Work method analysis has two levels: time and motion study, and micro-motion analysis (filming).",
+        "These methods rely on what people say, so combine two and cross-check with supervisors.",
+      ],
+      memory: "Watch it, ask about it, or let the jobholder write it down.",
+    },
+  },
+  {
     blockId: "job-description-and-specification",
     name: "Job description and job specification",
     intro: "What the job involves, and who can do it.",
@@ -88,6 +117,35 @@ const lessons: Lesson[] = [
         "Methods: ranking and grading (non-quantitative); points and factor comparison (quantitative).",
       ],
       memory: "Analyse, document, rate, rank.",
+    },
+  },
+  {
+    blockId: "job-evaluation-methods-compared",
+    name: "Job evaluation methods compared",
+    intro: "What each of the four methods compares, where it works, and where it breaks.",
+    before: {
+      q: "Can a committee rank two hundred jobs by comparing each job with every other?",
+      choices: [
+        { label: "Yes", reveal: "Technically, but it needs 19,900 comparisons. Ranking suits small firms; larger ones use grades, points or factor comparison." },
+        { label: "No", reveal: "Right. The number of comparisons grows far faster than the number of jobs, so ranking breaks down when jobs multiply." },
+      ],
+    },
+    lead: "Ranking and classification compare whole jobs; points and factor comparison compare factors, and each has its own limit.",
+    check: [
+      ask("Which method matches each job to a written description of a grade?", "Classification (grading)", ["Ranking", "Points system", "Factor comparison"], "Classification fixes the grades and their descriptions first and then fits jobs to them. Ranking is the tempting wrong answer, but it compares jobs with one another, not with a fixed description."),
+      ask("A panel uses paired comparison on 6 jobs, comparing every job with every other once. How many comparisons does it make?", "15", ["30", "12", "36"], "The number of pairs is 6 × 5 ÷ 2 = 15. Multiplying 6 × 5 without halving gives 30, which counts each pair twice."),
+      ask("A firm uses factor comparison, but one key job is underpaid because of old bias. What is the likely effect?", "New jobs rated against it will be underpaid too", ["Rating by factors removes the bias", "Only the key job itself is affected", "The bias disappears once ranking is added"], "Factor comparison uses key jobs' pay as the yardstick, so any unfairness in that pay is copied into every job rated against it. Splitting pay by factors does not correct it."),
+    ],
+    lens: [],
+    reflect: "Which method would your own organisation find easiest to defend if staff challenged a grade?",
+    summary: {
+      points: [
+        "Ranking: job against job; quick but subjective. Classification: job against grade description.",
+        "Points: factor scores that total to grades; consistent but costly to set up.",
+        "Factor comparison: factors priced in rupees against key jobs whose pay is agreed to be fair.",
+        "Paired comparison of n jobs needs n(n-1)/2 comparisons: 15 for six jobs.",
+      ],
+      memory: "Job against job, job against grade, factor scores, factor rupees.",
     },
   },
   {
