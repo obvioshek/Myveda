@@ -92,6 +92,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "roles-of-hrm-and-the-hr-manager",
+    name: "Roles of HRM and of the HR manager",
+    intro: "Three roles of the HR function and seven of the HR manager.",
+    before: {
+      q: "Is the HR manager's job only to apply company rules?",
+      choices: [
+        { label: "Yes", reveal: "That is one part, the service role. The HR manager also advises, counsels, mediates, speaks for the company and drives change." },
+        { label: "No", reveal: "Right. The HR manager plays several roles, from counsellor and mediator to change agent." },
+      ],
+    },
+    lead: "The HR function advises, frames policy and provides services; the HR manager also acts as counsellor, mediator, spokesperson, problem solver and change agent.",
+    check: [
+      ask("Which role of the HR function covers payroll, disciplinary records and other personnel services?", "Service role", ["Advisory role", "Functional role", "Humanitarian role"], "The service role puts policies and procedures into effect through services such as payroll. The advisory role gives management advice, and the functional role frames policy."),
+      ask("Two departments quarrel over shared staff, and the HR manager brings both heads to one table to settle it. Which role is this?", "Mediator", ["Counsellor", "Spokesperson", "Humanitarian"], "A mediator acts as peacemaker between individuals, groups or management. A counsellor would advise one employee on a personal or career problem."),
+      ask("A firm has a rule: fill senior posts from within where possible. It also lays down who is told of the vacancy and who interviews. Which statement is right?", "The rule is a policy; the steps are a procedure", ["Both are policies", "The rule is a procedure; the steps are a policy", "Both are procedures"], "A policy is a general guide to decisions, and a procedure gives the steps for applying it. Swapping them is the tempting error."),
+    ],
+    lens: [],
+    reflect: "Which of the seven roles would be hardest for you to play alongside the others?",
+    summary: {
+      points: [
+        "The HR function has three roles: advisory, functional and service.",
+        "A policy is a general guide to decisions; a procedure sets out the steps for applying it.",
+        "The HR manager's seven roles: humanitarian, counsellor, mediator, spokesperson, problem solver, change agent and manager of manpower.",
+        "The roles can conflict: the counsellor needs trust, the spokesperson speaks for management.",
+      ],
+      memory: "Advise, frame, serve; and seven hats for the manager.",
+    },
+  },
+  {
     blockId: "approaches-to-hrm",
     name: "Approaches to HRM, and how HRM differs",
     intro: "Ten approaches; HRM against personnel management and OB.",
@@ -118,6 +147,65 @@ const lessons: Lesson[] = [
         "HRM asks how to manage people; OB asks why people behave as they do.",
       ],
       memory: "HRM manages; OB understands.",
+    },
+  },
+  {
+    blockId: "perspectives-on-hrm",
+    name: "Four perspectives on HRM",
+    intro: "Normative, critical, behavioural and systems views.",
+    before: {
+      q: "When a firm says it values its people, is that always what it practises?",
+      choices: [
+        { label: "Always", reveal: "Not always. The critical perspective points to a gap between the soft language many firms use and the hard control they practise." },
+        { label: "Not always", reveal: "Right. The critical perspective studies this gap between rhetoric and reality." },
+      ],
+    },
+    lead: "Four lenses explain HRM: the normative (hard and soft models), the critical (rhetoric against reality), the behavioural (behaviour links strategy to results) and the systems (inputs, work and outputs).",
+    check: [
+      ask("Which perspective argues that firms speak the soft language of development but practise hard control?", "Critical", ["Normative", "Behavioural", "Systems"], "The critical perspective reacts against the normative view and points to this gap. The normative perspective is the one that sets out the hard and soft models."),
+      ask("A firm that wants to innovate hires, trains and rewards people for creativity, cooperation and willingness to take risks. Which perspective is it using?", "Behavioural", ["Systems", "Critical", "Normative (hard)"], "The behavioural view picks HR practices to bring out the behaviours the strategy needs. The systems view would instead ask about competence, behaviour and the environment as parts of an input–output cycle."),
+      ask("A firm promises five training days, managers release staff for only two, and employees believe training goes to favourites. Which gap does this show?", "Between intended, actual and perceived HR practices", ["Between hard HRM and soft HRM", "Between input and output in a system", "Between the Michigan and Harvard models"], "Planned training is the intended practice, the two days are the actual practice, and the belief about favourites is the perceived practice. The other gaps are real ideas but do not describe this case."),
+    ],
+    lens: [],
+    reflect: "Think of an organisation you know. Is its HR language soft and its practice hard, or do the two match?",
+    summary: {
+      points: [
+        "Normative: how HRM should be done, through the hard (Michigan) and soft (Harvard) models.",
+        "Critical: a gap between rhetoric and reality.",
+        "Behavioural: employee behaviour links strategy to performance.",
+        "Systems: input, throughput and output in an environment; HRM manages competence, behaviour and environment contact.",
+        "Standard causal chain: strategy, HR strategy, practices, outcomes, performance; practices can be intended, actual or perceived.",
+      ],
+      memory: "Should, doubt, behave, system.",
+    },
+  },
+  {
+    blockId: "influences-on-hrm-and-recent-trends",
+    name: "Influences on HRM and recent trends",
+    intro: "Forces inside and outside the firm, and six trends HR must handle.",
+    before: {
+      q: "Does the HR department alone decide its objectives?",
+      choices: [
+        { label: "Yes", reveal: "No. They follow the firm's corporate, operational, marketing and financial strategies and outside forces such as the market, the law and technology." },
+        { label: "No", reveal: "Right. Internal strategies and external forces shape what HR is asked to do." },
+      ],
+    },
+    lead: "HR objectives follow the firm's own strategies and outside forces, and trends such as downsizing and contingent work give HR new tasks.",
+    check: [
+      ask("A change in the law on working hours affects workforce planning and pay. Which kind of influence is it?", "External: political and legal", ["Internal: corporate objectives", "External: market changes", "Internal: financial strategies"], "Laws are outside the firm and political and legal in kind. Corporate objectives and financial strategies are set inside the firm."),
+      ask("A firm closes a management level and cuts staff to run lean. What should HR do first?", "Communicate facts early, so that rumour does not fill the gap", ["Start a continuous improvement programme", "Hire contingent staff without planning", "Wait until the cuts are complete before saying anything"], "Early, factual communication limits rumour. Waiting leaves the gap for rumour to fill."),
+      ask("A bakery redesigns its whole flow from order to delivery instead of refining one step each month. What is this?", "Re-engineering", ["Continuous improvement", "Downsizing", "A contingent workforce"], "A radical redesign of how the work is done is re-engineering. Continuous improvement is steady, small and permanent."),
+    ],
+    lens: [],
+    reflect: "Which outside force is changing the work of HR most in the sector you know best?",
+    summary: {
+      points: [
+        "Internal influences: corporate, operational, marketing and financial strategies.",
+        "External influences: market, economic, technological, social, and political and legal changes.",
+        "Trends: rising expectations and turnover, downsizing, continuous improvement, re-engineering, contingent workforce and decentralised work sites.",
+        "Continuous improvement is incremental; re-engineering is radical.",
+      ],
+      memory: "Inside strategies, outside forces, then the trends.",
     },
   },
 ];
