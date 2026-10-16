@@ -47,7 +47,9 @@ const lessons: Lesson[] = [
       ask("A trainer hands six trainees a one-paragraph account of a real dispute between two supervisors. Each decides alone what to do, then the group compares decisions. This is…", "The incident method", ["A case study", "A role play", "A committee assignment"], "A short account of one event, with a decision and a group comparison, is the incident method. A case is longer and detailed enough to analyse a whole situation."),
       ask("A bank wants new staff to handle angry customers better. Which method fits best?", "Role play, because trainees practise the exchange and can review their own performance", ["A lecture, because it reaches the whole group at once", "A case study, because it trains analysis of written facts", "A conference, because everyone shares views"], "Role play builds interpersonal skill through practice and review. A lecture is tempting for reaching many people, but it gives little practice."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 2, adds: "Knowing the words is not the same as being able to act on them.", differs: "The couplet only states the gap. These methods are ways to close it, and the block compares what each method builds." },
+    ],
     reflect: "Which of these methods would help you most with a decision you face at work?",
     summary: {
       points: [
@@ -141,7 +143,9 @@ const lessons: Lesson[] = [
       ask("Six weeks after a graduate trainee joins, HR asks whether she is satisfied and what difficulties she has met. This is…", "Follow-up induction", ["General induction", "Specific induction", "A training needs analysis"], "Checking satisfaction and counselling a newcomer some weeks after joining is follow-up induction. Specific induction happens at the start, with the supervisor."),
       ask("A firm gives new joiners a six-hour presentation on day one and nothing afterwards. Many leave within months. What is the likeliest weakness?", "Everything is crammed into one day, with no specific or follow-up stage", ["The presentation should have been given by the supervisor alone", "Induction should be dropped in favour of training", "The presentation left out pay and benefits"], "Overload on day one is the usual fault, and the supervisor's job-level stage and the follow-up are skipped. Replacing induction with training is wrong, since the two do different jobs."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 3, adds: "A cold welcome is felt at once, and it is hard to undo.", differs: "The couplet is about manners. Induction is a planned programme covering the job, the people, the rules and the place, with follow-up well after the first day." },
+    ],
     reflect: "What was missing in your first week at a job, and who could have supplied it?",
     summary: {
       points: [

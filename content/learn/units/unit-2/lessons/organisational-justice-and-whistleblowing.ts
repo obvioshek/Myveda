@@ -81,7 +81,9 @@ const lessons: Lesson[] = [
       ask("Meena earns ₹40,000 for 40 hours a week; Sunil earns ₹36,000 for 30 hours. How does Meena's ratio compare with Sunil's, and what does she feel?", "Lower (₹1,000 per weekly hour against ₹1,200): she feels under-rewarded", ["Higher (₹1,000 per weekly hour against ₹800): she feels over-rewarded", "Equal, because both are bank clerks", "Higher, because her monthly pay is larger"], "Meena's ratio is 40,000 ÷ 40 = ₹1,000 a month per weekly hour; Sunil's is 36,000 ÷ 30 = ₹1,200. Her larger pay misleads, because the theory compares pay per unit of input, not the pay itself."),
       ask("A manager hears that a worker who feels under-rewarded has started arriving late and working less carefully. Which response to inequity is this?", "Changing inputs", ["Changing the referent", "Leaving the field", "Distorting perceptions"], "Cutting effort lowers the input side of the ratio. Leaving the field would mean quitting or transferring, which has not happened here."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 6, adds: "Fairness means treating each person according to what their case deserves, not the same for all.", differs: "The couplet speaks of the judge's duty. Adams describes how employees compare their ratios with a colleague's and act on the perceived gap, whether or not the employer meant it." },
+    ],
     reflect: "Whom do you compare yourself with at work? Would a different referent change how fairly you feel paid?",
     summary: {
       points: [
@@ -202,7 +204,9 @@ const lessons: Lesson[] = [
       ask("An auditor suspects her finance head is splitting orders to avoid approval limits. Which feature of the vigil mechanism lets her report safely?", "Direct access to the audit committee chairperson", ["A requirement to report to the finance head first", "Anonymous reports being compulsory by law", "A guarantee that the complaint will always be upheld"], "The mechanism must let a report reach the audit committee chairperson in appropriate cases. The law does not make anonymous reporting compulsory, and a complaint is tested on its merits."),
       ask("A student writes in an exam that SEBI's Clause 49 is the current law for listed-company vigil mechanisms. What is the correct position?", "Clause 49 was replaced by the LODR Regulations, 2015", ["Clause 49 was replaced by the Whistle Blowers Protection Act, 2014", "Clause 49 is the same as Section 177 of the Companies Act", "Clause 49 required all companies to accept anonymous reports"], "LODR 2015 replaced Clause 49 for listed entities. The 2014 Act concerns public servants and is not yet in force, so it replaced nothing."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 7, adds: "Leaders who can hear hard words keep the trust of the people under them.", differs: "The couplet is about the temper of the one in power. A vigil mechanism is a legal arrangement with a channel, access to the audit committee and protection against victimisation." },
+    ],
     reflect: "Does the policy at your organisation let a report bypass the line manager? Do people know how?",
     summary: {
       points: [

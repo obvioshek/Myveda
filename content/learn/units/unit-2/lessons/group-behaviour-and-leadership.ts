@@ -107,7 +107,9 @@ const lessons: Lesson[] = [
       ask("A team has many creative ideas but nothing gets finished on time, and errors slip through. Which roles does it most need?", "Implementer and Completer Finisher", ["Plant and Shaper", "Teamworker and Co-ordinator", "Resource Investigator and Specialist"], "Implementers turn ideas into action and Completer Finishers catch errors. Adding more Plants would give more ideas but no more output."),
       ask("Which is the best use of Belbin's roles in a new project team?", "List the roles the task needs and ask who can cover each", ["Label each person with one fixed role", "Pick the nine most senior people", "Avoid anyone with a weakness"], "Roles are tendencies, not fixed types, and each strength brings an allowable weakness. The aim is balance."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 5, adds: "Contribute through what is natural to you, instead of imitating another member.", differs: "The verse speaks of duty by one's own nature. Belbin describes nine roles and asks the team to cover all of them, with a person often able to play more than one." },
+    ],
     reflect: "Which two Belbin roles do you most often play? Which one does your current team lack?",
     summary: {
       points: [
@@ -169,7 +171,9 @@ const lessons: Lesson[] = [
       ask("A manager gives two trusted deputies the best projects and treats the other staff formally. Which theory describes this?", "Leader-member exchange (in-group and out-group)", ["Trait theory", "Servant leadership", "Path-goal theory"], "LMX says a leader forms a different relationship with each follower. Servant leadership would instead focus on helping all followers grow."),
       ask("What is the main weakness of trait theory?", "Traits predict who emerges as a leader better than who is effective", ["It shows leaders can be trained easily", "It ignores personality altogether", "It says only the situation matters"], "Trait theory does look at personality and assumes traits are largely fixed. Its weakness is predicting effectiveness."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 6, adds: "An old example of describing a leader by a short list of personal qualities.", differs: "The couplet stops at the traits. Later theories ask what leaders do and in what situation, because the traits alone predict poorly." },
+    ],
     reflect: "Think of someone you saw lead well. Which of the listed traits did they show, and which did they lack?",
     summary: {
       points: [

@@ -143,7 +143,9 @@ const lessons: Lesson[] = [
       ask("A manager checks every step of a clerk's work and lets her make no choices. Which need is she most clearly blocking?", "Autonomy", ["Competence", "Relatedness", "Safety"], "The clerk has no choice or ownership, which is autonomy. Competence would be blocked by work that is far too hard or too trivial, and relatedness by isolation."),
       ask("A trainee helps colleagues because he enjoys explaining things and has no reward for it. This is…", "Intrinsic motivation", ["Extrinsic motivation", "A hygiene factor", "Positive reinforcement"], "He acts for the activity itself, which is intrinsic motivation. Extrinsic motivation needs a separate result such as pay or praise; \"hygiene factor\" describes a job feature, not the reason the person acts."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 5, adds: "Effort that is its own reason can outlast effort tied to payment.", differs: "The Gītā asks for detachment from results. The theory says people need autonomy, competence and belonging, and that rewards can help or hurt depending on how they are used." },
+    ],
     reflect: "Think of a task you did for its own sake. Which of the three needs did it meet?",
     summary: {
       points: [
@@ -172,7 +174,9 @@ const lessons: Lesson[] = [
       ask("An executive who sold 30 sets last year is given a target of 90. She calls it impossible and stops trying. Which principle was ignored?", "Challenge: the goal must stretch but be reachable", ["Clarity: the goal was vague", "Feedback: no news of progress", "Task complexity: the work was too simple"], "The goal was clear, but it was beyond her ability, so she rejected it. Performance rises with difficulty only up to the limit of ability or commitment."),
       ask("A manager sets a tough target for a brand-new billing system the staff have never used. What is the best adjustment?", "Allow a learning period before the target applies", ["Make the target even harder", "Remove all feedback until the target is met", "Say \"do your best\" and set no goal"], "Task complexity needs extra time and support. A harder target adds pressure to a task people are still learning; dropping goals loses the benefit of clear direction."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 6, adds: "A high aim raises effort, and falling short of it is not failure.", differs: "The couplet applauds high aims. The theory says a goal must also be specific, accepted and followed by feedback, and that performance falls once the goal is beyond the person's ability or acceptance." },
+    ],
     reflect: "Think of a goal you met. Was it clear, challenging, accepted by you and checked along the way?",
     summary: {
       points: [
@@ -201,7 +205,9 @@ const lessons: Lesson[] = [
       ask("A nervous trainee watches a batch-mate with similar experience give a calm presentation and feels more confident. Which source is this?", "Vicarious experience", ["Mastery experience", "Social persuasion", "Physiological state"], "She gained confidence by watching a similar person succeed. Mastery would need her own earlier success; persuasion needs encouraging words."),
       ask("Which statement tells self-efficacy from self-esteem?", "Self-efficacy is about one task; self-esteem is about general worth", ["Self-efficacy is general; self-esteem is about one task", "They mean the same thing", "Self-efficacy is about pay; self-esteem is about status"], "Self-efficacy changes from task to task: a clerk can be sure at accounts and unsure at public speaking. Self-esteem is a broader sense of worth."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 7, adds: "Firm belief in oneself helps effort to continue.", differs: "The couplet makes resolve a trait. Bandura says efficacy is task-specific and can be built through four sources, so training can raise it." },
+    ],
     reflect: "Name a task you avoid because you doubt you can do it. Which of the four sources could you use to build confidence?",
     summary: {
       points: [

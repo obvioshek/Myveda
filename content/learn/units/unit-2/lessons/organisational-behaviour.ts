@@ -47,7 +47,9 @@ const lessons: Lesson[] = [
       ask("A mill's managers want to know why group decisions on the night shift keep following whatever the senior weaver says. Which discipline's ideas fit most directly?", "Social psychology, which studies how others influence a person", ["Anthropology, which studies cultures across societies", "Political science, which studies how governments are elected", "Psychology, which studies the individual alone"], "Social psychology covers group decision making and how people are influenced by others. Psychology on its own looks at one person, so it cannot explain why a group follows one member."),
       ask("A manager says: \"Luthans's aim of control means I should force workers to follow my orders.\" Is she right?", "No, control here means guiding behaviour toward the goal", ["Yes, control means close supervision of every worker", "Yes, but only for the individual level of OB", "No, because OB seeks only to understand and never to influence"], "In Luthans's aims, control means guiding behaviour toward goals, alongside understanding and prediction. Forcing obedience is the autocratic model, which is not what the aim describes."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 2, adds: "When looking for a cause, look at the doer, the means, the effort and the circumstances together.", differs: "The five factors here are the Gītā's own list. OB's four elements are a modern checklist, and OB also draws on psychology, sociology and anthropology to study them." },
+    ],
     reflect: "Think of a problem at work or college. Which of the four elements did you blame first, and which did you overlook?",
     summary: {
       points: [
@@ -197,7 +199,9 @@ const lessons: Lesson[] = [
       ask("A hospital buys records software that nurses cannot use while moving between beds. What does joint optimisation advise?", "Redesign the tools and the nurses' routine together", ["Train the nurses harder and leave the software as it is", "Drop the software, since technology harms the social system", "Let the software supplier decide how wards should work"], "Joint optimisation improves the technical and social systems together. Training alone treats only the social side, and rejecting the software gives up the benefit of the technical side."),
       ask("Which statement correctly separates the socio-technical approach from the systems approach?", "It focuses on designing people and technology together, one application of systems thinking", ["It rejects systems thinking and treats the organisation as a closed system", "It is the same idea with a different name", "It concerns only the external environment and ignores jobs"], "Systems theory describes connected parts in general. The socio-technical approach applies that thinking to the pairing of people and technology. Calling them the same idea loses that focus."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 3, adds: "The means and the person are considered together when the work is assigned.", differs: "The couplet picks a person to suit a task. The socio-technical approach also changes the tools and the way work is arranged, so that technology suits people, and not only the other way round." },
+    ],
     reflect: "Recall a tool, app or machine that did not suit how people actually worked. What would a joint design have changed?",
     summary: {
       points: [

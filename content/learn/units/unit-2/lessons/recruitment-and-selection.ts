@@ -76,7 +76,9 @@ const lessons: Lesson[] = [
       ask("Which is an external factor affecting recruitment?", "The level of unemployment", ["The firm's recruitment budget", "The firm's human resource plan", "The firm's own recruitment policy"], "Unemployment sits in the labour market, outside the firm. Budget, plan and policy are decided inside the firm, so they are internal factors."),
       ask("A rule says \"fill senior posts from inside first\". A manager now plans to hire two trained welders from outside this quarter. Which is which?", "The rule is policy; the plan for this quarter is strategy", ["The rule is strategy; the plan is policy", "Both are policy", "Both are strategy"], "The policy stands for all hiring over time. The strategy is the plan for one drive. Calling the rule a strategy confuses a permanent rule with a one-off plan."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 4, adds: "A reason to write the rules for hiring down and apply them to everyone.", differs: "The couplet is a warning. A policy also has to fit the budget and legal duties such as reservation of posts in public bodies, none of which the couplet touches." },
+    ],
     reflect: "Does an organisation you know have a written hiring policy, or does each manager decide?",
     summary: {
       points: [
@@ -139,7 +141,9 @@ const lessons: Lesson[] = [
       ask("An interviewer rates a candidate highly on every point because the candidate spoke very fluently. This error is the…", "Halo effect", ["Contrast effect", "Similar-to-me bias", "Stereotyping"], "One good trait coloured the whole judgement, which is the halo effect. The contrast effect would need the previous candidate to be the yardstick."),
       ask("A firm hires 5 people from 250 applicants. What is its selection ratio?", "0.02", ["0.2", "50", "0.002"], "Selection ratio = hired ÷ applicants = 5 ÷ 250 = 0.02, or 1 in 50. The figure 50 is the inverse, applicants per hire, not the ratio."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 5, adds: "Why interviewers lean on a first impression, and why it feels reliable.", differs: "The block names the first impression as an error and asks for planned questions and written scoring, which is a corrective to the couplet." },
+    ],
     reflect: "Recall an interview you sat. Was it structured? Which of the errors might it have shown?",
     summary: {
       points: [

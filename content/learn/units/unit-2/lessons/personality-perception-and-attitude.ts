@@ -50,7 +50,9 @@ const lessons: Lesson[] = [
       ask("A relaxed clerk turns firm and commanding during a fire drill. Which determinant explains the change best?", "The situation", ["Heredity", "Family upbringing", "Cultural conditioning"], "The new demands of the moment brought out a different side of the same person. Heredity and family explain the clerk's usual calm, not the change."),
       ask("A trainer says, \"Sixty per cent of your personality is inherited and forty per cent learned.\" What is the best response?", "Heredity and environment work together, so such exact shares cannot be given for one person", ["Correct, because heredity always outweighs learning", "Correct, because culture and family make up the rest", "Wrong, because personality is entirely learned"], "Heredity sets a range and experience fills it in; the two cannot be separated for any one person. Saying it is entirely learned ignores heredity just as much."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 6, adds: "Surroundings and company help form character.", differs: "The couplet names only the company. The block lists heredity, environment and situation, and notes that they interact." },
+    ],
     reflect: "Which of the five determinants shaped you most, and which would you like to change in your workplace?",
     summary: {
       points: [
@@ -79,7 +81,9 @@ const lessons: Lesson[] = [
       ask("An employee believes ends justify means, stays emotionally distant and manipulates colleagues to win. Which Dark Triad trait is that?", "Machiavellianism", ["Narcissism", "Psychopathy", "Low self-esteem"], "Manipulation and belief that ends justify means describe Machiavellianism. Narcissism centres on an inflated sense of self-importance and a need for admiration."),
       ask("A firm needs one person to decide fast in a volatile market and another to check accounts for fraud. Which pairing of risk-taking fits best?", "High risk-taking for the market role, low for the accounts check", ["Low risk-taking for both roles", "High risk-taking for both roles", "Low risk-taking for the market role, high for the accounts check"], "High risk-takers decide faster on less information, which suits the market. A careful person suits checking for fraud, where a guess can miss a problem."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 7, adds: "An impressive outer record can cover a manipulative inner purpose.", differs: "The couplet condemns the deceit. The Dark Triad is a research construct with three traits, measured by scales, and a high score is not a verdict on a person." },
+    ],
     reflect: "Where have you seen charm and results used to hide poor treatment of others, and how could a team have noticed it sooner?",
     summary: {
       points: [

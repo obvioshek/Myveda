@@ -49,7 +49,9 @@ const lessons: Lesson[] = [
       ask("A bank will open 12 branches in two years and starts campus hiring a year before the first opening, because enough trained people will not be available later. Which feature of HRP is this?", "Adjusting demand and supply", ["Keeping a manpower inventory", "Creating a proper work environment", "Well-defined objectives"], "Starting recruitment well ahead because supply will fall short is adjusting demand and supply. An inventory would record present staff, which is a different feature."),
       ask("A firm lists which assistant managers could run a branch within a year. A colleague says this is the most important part of the plan. What is the best reply?", "It is one feature, the manpower inventory; the plan also needs objectives, needs, adjustment and work environment", ["It is the whole plan, because HRP is only a record of staff", "It is not part of HRP, because inventories belong to recruitment", "It replaces the forecast of needs, so the forecast can be dropped"], "The list is the manpower inventory, one of five features. Treating it as the whole plan ignores that needs must still be forecast and balanced with supply."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 1, adds: "Know what you have before deciding what to do, and weigh it against the work.", differs: "The couplet is a general rule for action. HRP is a continuing process of forecasting demand and supply, with a defined method for each." },
+    ],
     reflect: "Think of a team you know that had the right number of people but the wrong skills. What would a fuller plan have asked?",
     summary: {
       points: [
@@ -136,7 +138,9 @@ const lessons: Lesson[] = [
       ask("Staff at a firm fear that the new staffing plan is a cover for job cuts, and they resist giving information. What is the best remedy?", "Explain the purpose early, involve employees and unions, and prefer voluntary methods", ["Hide the plan until it is complete", "Cut the planning period to one month", "Replace the forecast with the manager's guess"], "Resistance comes from fear, so openness and involvement address it. Hiding the plan feeds the fear."),
       ask("A manager fills each vacancy as it arises and never looks at where the business is heading. Which barrier is this, and what should HR do?", "Short-term pressure; report staffing gaps against the long-term plan", ["Inaccurate forecasts; add a third scenario", "Weak top-management support; cut the budget", "Treating people as numbers; hire by headcount only"], "Filling only today's vacancy is short-term pressure. Reporting gaps against the long-term plan makes tomorrow's need visible. Hiring by headcount only is the opposite of the remedy."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 2, adds: "Planning ahead is the main protection against being caught short.", differs: "The couplet is confident. The chapter lists what makes planning fail in practice and says to review the plan often." },
+    ],
     reflect: "Which barrier is most likely to damage a staffing plan in a workplace you know?",
     summary: {
       points: [

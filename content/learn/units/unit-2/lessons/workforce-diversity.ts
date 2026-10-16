@@ -51,7 +51,9 @@ const lessons: Lesson[] = [
       ask("A bank posts a woman officer who speaks the local language only to women customers' counters, and nowhere else. Which danger is this?", "People are kept in niche roles serving \"their\" group", ["Newcomers are expected to fit existing ways", "Staff are treated alike and differences ignored", "Leaders are slow to welcome challenge"], "This is the danger of access and legitimacy: diversity stays at the edge of the firm. Expecting newcomers to fit existing ways is the danger of the fairness approach."),
       ask("A manager says reserving some public-sector posts for disadvantaged groups is just equal opportunity. What is the best judgement?", "It is affirmative action: a positive step to correct past disadvantage", ["It is equal opportunity, because both treat everyone identically", "It is equal opportunity, because it prefers disadvantaged groups", "It is unlawful, because Article 16 forbids all preference"], "Equal opportunity means no one is barred by group; affirmative action takes positive steps. Article 16 guarantees equal opportunity and also allows reservation, so calling it unlawful is wrong."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 4, adds: "Birth does not decide a person's worth at work.", differs: "The couplet is a moral principle. The block compares three approaches and warns that a fairness-only approach may stop at hiring and neglect how people are treated afterwards." },
+    ],
     reflect: "Which of the three approaches does your organisation, or your college, follow in practice?",
     summary: {
       points: [
@@ -144,7 +146,9 @@ const lessons: Lesson[] = [
       ask("Before a Tokyo meeting, a manager plans to check privately after each \"difficult\" whether it meant no. Which part of cultural intelligence is this?", "Strategy: planning and checking assumptions", ["Knowledge of Japanese customs", "Drive to work across cultures", "Action: adapting gestures and pace"], "Planning and checking assumptions during contact is the metacognitive, or strategy, part. Knowledge is what you already know about the culture."),
       ask("A colleague says \"Hall calls Japan high-context, so our Tokyo client will never say no directly.\" What is the best judgement?", "A useful first guess, but check with the person in front of you", ["A reliable rule that holds for every Japanese manager", "Useless, because Hall's work has no value", "True only of Japan, never of any other country"], "Models describe tendencies, and people differ within every culture. Calling them worthless goes too far, because they give good questions to start with."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 5, adds: "Fitting in with others' ways is a skill that can be learned.", differs: "The couplet is advice to adapt. The models name particular differences, such as high and low context, and how time and relationships are treated." },
+    ],
     reflect: "Is your own way of speaking high-context or low-context, and how do you know?",
     summary: {
       points: [

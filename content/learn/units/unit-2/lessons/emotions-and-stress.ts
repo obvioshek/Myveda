@@ -141,7 +141,9 @@ const lessons: Lesson[] = [
       ask("Which three signs mark burnout in the classic account?", "Emotional exhaustion, depersonalisation and a lowered sense of accomplishment", ["Role conflict, role ambiguity and role overload", "Task, role and interpersonal demands", "Alarm, resistance and exhaustion"], "These are Maslach's three signs. The role list is about causes of stress, and alarm, resistance and exhaustion are Selye's stages of the body's response."),
       ask("A manager says the new joiner is just weak because she struggles with the March rush. What is the better judgement?", "Look at the demands, her experience and her support, not only at her", ["Her reaction proves she lacks character", "Stress only affects people with Type A behaviour", "Nothing can be done because stress is personal"], "Experience, control and support change how strongly a demand is felt, and demands can be changed. Blaming the person lets the workload go unexamined."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 5, adds: "Pressure is not a fixed amount: it passes, and what it does depends on how it is met.", differs: "The verse says to bear it. The chapter says unrelieved stress leads to burnout and needs real remedies, so endurance alone is not enough." },
+    ],
     reflect: "Which of the three demands (task, role, interpersonal) weighs most on you now, and who could help?",
     summary: {
       points: [
@@ -203,7 +205,9 @@ const lessons: Lesson[] = [
       ask("A task is important but not urgent, such as a proposal due next week. What does the grid say?", "Schedule it", ["Drop it", "Hand it over", "Do it now"], "Important but not urgent work gets a fixed slot before it becomes urgent. Doing it now is tempting, but it is for tasks that are both important and urgent."),
       ask("A team member prefers routine and clear structure. Why might a job redesign that adds autonomy and responsibility backfire?", "It may raise uncertainty and stress for someone who wants structure", ["Autonomy always lowers stress", "Redesign only suits people with Type A behaviour", "Routine jobs cannot cause stress"], "Redesign helps those who want more control; it can raise uncertainty for those who prefer structure. So the measure must fit the person."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 6, adds: "Timing is part of doing the work well, not only effort.", differs: "The couplet gives the principle. The chapter gives ways to rank tasks, such as urgent against important, and warns that the remedy must fit the cause of the stress." },
+    ],
     reflect: "Which of your tasks this week is important but not urgent, and when will you schedule it?",
     summary: {
       points: [

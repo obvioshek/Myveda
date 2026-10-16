@@ -47,7 +47,9 @@ const lessons: Lesson[] = [
       ask("An analyst needs to know how often certain tasks occur for 3,000 clerks, quickly and cheaply. Which method fits best?", "A questionnaire", ["Structured interviews with every clerk", "Micro-motion analysis of every clerk", "A work diary for every clerk"], "A questionnaire reaches many people cheaply and gives numbers. Interviewing or filming every clerk would take far too long, and diaries are tiring to keep."),
       ask("Questionnaires say form-filling help takes little time, but diaries show about an hour a day. What should the analyst do?", "Check the gap with a third source, such as the supervisors", ["Average the two figures", "Accept the questionnaires because more people answered", "Discard the diaries because they are tiring to keep"], "A gap between two methods is a question, not an answer. Averaging hides the reason for the gap, and more respondents do not make a self-report more accurate."),
     ],
-    lens: [],
+    lens: [
+      { pairing: 2, adds: "One person's account of a job should be tested against others before it is written down.", differs: "The couplet is about intelligence for a ruler. The chapter's methods are open and ask the jobholder directly, then check against a supervisor and observation." },
+    ],
     reflect: "Which of these methods would give the most honest picture of your own week?",
     summary: {
       points: [
