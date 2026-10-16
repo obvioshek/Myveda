@@ -60,6 +60,36 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "recruitment-planning-strategy-and-policy",
+    name: "Recruitment planning, strategy and policy",
+    intro: "The rules, choices and costs behind every hiring drive.",
+    before: {
+      q: "Should each unit of a firm hire in its own way, with no common rules?",
+      choices: [
+        { label: "Yes, freedom is best", reveal: "A recruitment policy gives the whole firm the same objectives and rules, so hiring is consistent and fair." },
+        { label: "No", reveal: "Right. A policy sets standing rules for all hiring; the strategy then adapts to each drive." },
+      ],
+    },
+    lead: "A policy sets the standing rules, a strategy plans one drive, and costs are checked at the end.",
+    check: [
+      ask("A firm decides to train its own supervisors for a new post instead of hiring trained ones. This is a…", "Make decision", ["Buy decision", "Decentralised decision", "Screening decision"], "Making means developing existing staff for the post. Buying means hiring people already trained, which is the tempting opposite."),
+      ask("Which is an external factor affecting recruitment?", "The level of unemployment", ["The firm's recruitment budget", "The firm's human resource plan", "The firm's own recruitment policy"], "Unemployment sits in the labour market, outside the firm. Budget, plan and policy are decided inside the firm, so they are internal factors."),
+      ask("A rule says \"fill senior posts from inside first\". A manager now plans to hire two trained welders from outside this quarter. Which is which?", "The rule is policy; the plan for this quarter is strategy", ["The rule is strategy; the plan is policy", "Both are policy", "Both are strategy"], "The policy stands for all hiring over time. The strategy is the plan for one drive. Calling the rule a strategy confuses a permanent rule with a one-off plan."),
+    ],
+    lens: [],
+    reflect: "Does an organisation you know have a written hiring policy, or does each manager decide?",
+    summary: {
+      points: [
+        "Five stages: planning, strategy, searching, screening, evaluation and control.",
+        "Strategy choices: make or buy, centralised or decentralised, area, sources.",
+        "Internal factors: policy, HR plan, size and growth, budget, attractiveness. External: labour market, unemployment, laws, competitors, conditions.",
+        "Policy is the permanent rule book; strategy is the plan for one drive.",
+        "Recruitment costs include recruiter pay, advertising, agency fees, overheads and the cost of an empty post.",
+      ],
+      memory: "Plan, strategise, search, screen, evaluate.",
+    },
+  },
+  {
     blockId: "selection-and-selection-tests",
     name: "Selection and selection tests",
     intro: "Choosing the most suitable candidate, one hurdle at a time.",
@@ -85,11 +115,41 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Selection: evaluating applicants and choosing the most suitable one.",
-        "Process: review, screening, shortlisting, interview, tests, verification, medical, offer, onboarding.",
+        "Process: screening, tests, interview, verification, decision, medical, offer. Onboarding follows selection.",
         "Tests: intelligence, aptitude, interest, personality, achievement, trade, dexterity.",
         "Good tests are reliable (consistent) and valid (predict job performance).",
       ],
       memory: "Skills, attitude and values must match the role.",
+    },
+  },
+  {
+    blockId: "interviews-and-the-final-steps-of-selection",
+    name: "Interviews and the final steps of selection",
+    intro: "Types of interview, how they go wrong, and what follows.",
+    before: {
+      q: "Is a relaxed chat with no fixed questions the best way to judge a candidate?",
+      choices: [
+        { label: "Yes", reveal: "It feels natural, but answers cannot be compared and bias creeps in. A structured interview predicts job performance better." },
+        { label: "No", reveal: "Right. Planned, same-for-all questions give comparable and fairer results." },
+      ],
+    },
+    lead: "Structured interviews with written scoring reduce interviewer errors; reference check, medical and final selection follow.",
+    check: [
+      ask("In which interview does every candidate get the same job-related questions, scored against a guide?", "Structured interview", ["Unstructured interview", "Stress interview", "Depth interview"], "Same questions and a scoring guide define a structured interview. A depth interview probes one candidate's background in detail instead."),
+      ask("An interviewer rates a candidate highly on every point because the candidate spoke very fluently. This error is the…", "Halo effect", ["Contrast effect", "Similar-to-me bias", "Stereotyping"], "One good trait coloured the whole judgement, which is the halo effect. The contrast effect would need the previous candidate to be the yardstick."),
+      ask("A firm hires 5 people from 250 applicants. What is its selection ratio?", "0.02", ["0.2", "50", "0.002"], "Selection ratio = hired ÷ applicants = 5 ÷ 250 = 0.02, or 1 in 50. The figure 50 is the inverse, applicants per hire, not the ratio."),
+    ],
+    lens: [],
+    reflect: "Recall an interview you sat. Was it structured? Which of the errors might it have shown?",
+    summary: {
+      points: [
+        "Types: structured, unstructured, semi-structured, individual, panel, group, behavioural, situational, stress, depth.",
+        "An exit interview is held at leaving, not for selection.",
+        "Errors: halo, first impression, contrast, similar-to-me, stereotyping; structure and independent scoring reduce them.",
+        "After the interview: reference and background check, medical examination, final selection and offer.",
+        "Selection ratio = number hired ÷ number of applicants.",
+      ],
+      memory: "Ask all the same, score on paper, check, then offer.",
     },
   },
   {

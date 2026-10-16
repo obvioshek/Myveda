@@ -64,7 +64,7 @@ const lessons: Lesson[] = [
   {
     blockId: "the-hrp-process",
     name: "The HRP process",
-    intro: "Eight steps from strategy to review, and the arithmetic of the gap.",
+    intro: "Seven steps from strategy to review, and the arithmetic of the gap.",
     before: {
       q: "Where should HR planning start: with the number of vacancies, or with the business's goals?",
       choices: [
@@ -74,16 +74,16 @@ const lessons: Lesson[] = [
     },
     lead: "Strategy, forecast demand and supply, find the gap, act, and review: net requirement = demand − supply.",
     check: [
-      ask("Which step comes first in the HRP process?", "Analyse organisational objectives", ["Forecast HR demand", "Identify skill gaps", "Develop HR action plans"], "Everything else follows from the business's goals. Forecasting demand is step 2, because demand can only be estimated once the plan for the business is known."),
-      ask("To close a gap of 34 operators, a plant decides to recruit 30 and retrain 4 people from packing. Which step is this?", "Develop HR action plans", ["Match demand and supply", "Analyse HR supply", "Monitor and control"], "Matching demand and supply (step 6) finds the gap of 34. Deciding how to close it, by recruiting and retraining, is the action plan (step 7)."),
+      ask("Which step comes first in the HRP process?", "Analyse organisational objectives", ["Forecast HR demand", "Analyse skill gaps", "Develop HR action plans"], "Everything else follows from the business's goals. Forecasting demand is step 2, because demand can only be estimated once the plan for the business is known."),
+      ask("To close a gap of 34 operators, a plant decides to recruit 30 and retrain 4 people from packing. Which step is this?", "Develop HR action plans", ["Match demand and supply", "Analyse HR supply", "Monitor and control"], "Matching demand and supply (step 4) finds the gap of 34. Deciding how to close it, by recruiting and retraining, is the action plan (step 6)."),
       ask("A store chain has 50 sales staff and will need 60 next year. About 20% of staff leave each year, and 2 will be promoted to store manager. How many must it recruit or move in?", "22", ["10", "12", "20"], "Supply = 50 − 10 leavers − 2 promoted = 38. Need = 60 − 38 = 22. Answering 20 forgets the promotions; 12 forgets the leavers."),
     ],
     lens: [],
     reflect: "Which step of the HRP process do you think organisations most often skip?",
     summary: {
       points: [
-        "Analyse objectives; forecast demand; analyse supply; identify skill gaps.",
-        "Determine requirements; match demand and supply; develop action plans.",
+        "Analyse objectives; forecast demand (number and type, by department); analyse supply.",
+        "Match demand and supply; analyse skill gaps; develop action plans.",
         "Monitor and control, and update the plan as conditions change.",
         "Net requirement = forecast demand − forecast supply (present staff, less leavers and moves out, plus moves in).",
       ],
@@ -93,7 +93,7 @@ const lessons: Lesson[] = [
   {
     blockId: "methods-of-supply-analysis",
     name: "Methods of supply analysis",
-    intro: "Six ways to see the people you have, and how to measure turnover.",
+    intro: "Four ways to see the people you have, and how to measure turnover.",
     before: {
       q: "Can past resignations help forecast future staffing?",
       choices: [
@@ -112,11 +112,11 @@ const lessons: Lesson[] = [
     summary: {
       points: [
         "Skills inventory; succession planning; turnover analysis.",
-        "Promotion and mobility analysis; job analysis; scenario planning.",
+        "Promotion and mobility analysis, which shows internal movement; Markov analysis and replacement charts refine it.",
         "Turnover rate = separations ÷ average number of employees × 100.",
         "Supply also comes from the outside labour market.",
       ],
-      memory: "Skills, succession, turnover, mobility, jobs, scenarios.",
+      memory: "Skills, succession, turnover, mobility.",
     },
   },
   {
