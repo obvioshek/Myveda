@@ -133,7 +133,7 @@ const lessons: Lesson[] = [
         { label: "No", reveal: "Right. Planned, same-for-all questions give comparable and fairer results." },
       ],
     },
-    lead: "Structured interviews with written scoring reduce interviewer errors; reference check, medical and final selection follow.",
+    lead: "Structured interviews with written scoring reduce interviewer errors; reference check, final selection, medical and offer follow.",
     check: [
       ask("In which interview does every candidate get the same job-related questions, scored against a guide?", "Structured interview", ["Unstructured interview", "Stress interview", "Depth interview"], "Same questions and a scoring guide define a structured interview. A depth interview probes one candidate's background in detail instead."),
       ask("An interviewer rates a candidate highly on every point because the candidate spoke very fluently. This error is the…", "Halo effect", ["Contrast effect", "Similar-to-me bias", "Stereotyping"], "One good trait coloured the whole judgement, which is the halo effect. The contrast effect would need the previous candidate to be the yardstick."),
@@ -146,7 +146,7 @@ const lessons: Lesson[] = [
         "Types: structured, unstructured, semi-structured, individual, panel, group, behavioural, situational, stress, depth.",
         "An exit interview is held at leaving, not for selection.",
         "Errors: halo, first impression, contrast, similar-to-me, stereotyping; structure and independent scoring reduce them.",
-        "After the interview: reference and background check, medical examination, final selection and offer.",
+        "After the interview: reference and background check, final selection, medical examination and offer.",
         "Selection ratio = number hired ÷ number of applicants.",
       ],
       memory: "Ask all the same, score on paper, check, then offer.",
