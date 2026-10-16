@@ -65,6 +65,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "adams-equity-theory",
+    name: "Adams's equity theory",
+    intro: "Comparing your input-outcome ratio with someone else's, and what you do about a gap.",
+    before: {
+      q: "Two colleagues get the same pay, but one works far longer hours. Will both feel equally fairly paid?",
+      choices: [
+        { label: "Yes", reveal: "Not necessarily. People compare pay against effort, not pay alone, so the one working longer hours may feel under-rewarded." },
+        { label: "No", reveal: "Right. Equity theory says people compare the ratio of outcomes to inputs with someone else's ratio." },
+      ],
+    },
+    lead: "Adams's equity theory: people compare their outcome-to-input ratio with a referent's and act to remove any perceived inequity.",
+    check: [
+      ask("In Adams's equity theory, the person with whom someone compares their ratio is called the…", "Referent", ["Mediator", "Benchmark manager", "Input provider"], "The comparison person is the referent. Inputs and outcomes are the two parts of each ratio, not the person compared with."),
+      ask("Meena earns ₹40,000 for 40 hours a week; Sunil earns ₹36,000 for 30 hours. How does Meena's ratio compare with Sunil's, and what does she feel?", "Lower (₹1,000 an hour against ₹1,200): she feels under-rewarded", ["Higher (₹1,000 an hour against ₹800): she feels over-rewarded", "Equal, because both are bank clerks", "Higher, because her monthly pay is larger"], "Meena's ratio is 40,000 ÷ 40 = ₹1,000; Sunil's is 36,000 ÷ 30 = ₹1,200. Her larger pay misleads, because the theory compares pay per unit of input, not the pay itself."),
+      ask("A manager hears that a worker who feels under-rewarded has started arriving late and working less carefully. Which response to inequity is this?", "Changing inputs", ["Changing the referent", "Leaving the field", "Distorting perceptions"], "Cutting effort lowers the input side of the ratio. Leaving the field would mean quitting or transferring, which has not happened here."),
+    ],
+    lens: [],
+    reflect: "Whom do you compare yourself with at work? Would a different referent change how fairly you feel paid?",
+    summary: {
+      points: [
+        "Adams (1963): people compare outcomes ÷ inputs with a referent's ratio.",
+        "Equal ratios bring satisfaction; a lower ratio brings resentment; a higher ratio can bring guilt.",
+        "Ways to restore balance: change inputs, change outcomes, distort perceptions, change the referent, act on the referent, leave.",
+        "Equity theory (a reaction) is not the equity principle (a way to share rewards).",
+      ],
+      memory: "My ratio against theirs: equal is calm, unequal is action.",
+    },
+  },
+  {
     blockId: "interactional-justice",
     name: "Interactional justice",
     intro: "How people are treated and how decisions are explained.",
@@ -154,6 +183,36 @@ const lessons: Lesson[] = [
         "Whistle Blowers Protection Act 2014: disclosures about public servants; enacted, not yet in force.",
       ],
       memory: "Companies Act, SEBI, Whistle Blowers Protection Act.",
+    },
+  },
+  {
+    blockId: "vigil-mechanism-and-safeguards",
+    name: "Vigil mechanism and safeguards",
+    intro: "The safe route inside a company for raising serious concerns, and who must have one.",
+    before: {
+      q: "If a finance head is the person being reported, whom can an employee safely go to?",
+      choices: [
+        { label: "Only the finance head", reveal: "No. A vigil mechanism must allow direct access to the audit committee chairperson in appropriate or exceptional cases." },
+        { label: "The audit committee chairperson", reveal: "Right. The law builds in direct access to the audit committee chairperson so a report can bypass an implicated manager." },
+      ],
+    },
+    lead: "A vigil mechanism is a duty of listed, deposit-taking and large-borrowing companies, with safeguards against victimisation and access to the audit committee chairperson.",
+    check: [
+      ask("Which of these must have a vigil mechanism under the Companies Act, 2013 and its rules?", "A listed company", ["Every private firm with ten employees", "Only public sector banks", "Only companies with a foreign parent"], "Listed companies are covered directly. Deposit-taking companies and those borrowing above ₹50 crore from banks and financial institutions are covered by the rules; size of staff is not the test."),
+      ask("An auditor suspects her finance head is splitting orders to avoid approval limits. Which feature of the vigil mechanism lets her report safely?", "Direct access to the audit committee chairperson", ["A requirement to report to the finance head first", "Anonymous reports being compulsory by law", "A guarantee that the complaint will always be upheld"], "The mechanism must let a report reach the audit committee chairperson in appropriate cases. The law does not make anonymous reporting compulsory, and a complaint is tested on its merits."),
+      ask("A student writes in an exam that SEBI's Clause 49 is the current law for listed-company vigil mechanisms. What is the correct position?", "Clause 49 was replaced by the LODR Regulations, 2015", ["Clause 49 was replaced by the Whistle Blowers Protection Act, 2014", "Clause 49 is the same as Section 177 of the Companies Act", "Clause 49 required all companies to accept anonymous reports"], "LODR 2015 replaced Clause 49 for listed entities. The 2014 Act concerns public servants and is not yet in force, so it replaced nothing."),
+    ],
+    lens: [],
+    reflect: "Does the policy at your organisation let a report bypass the line manager? Do people know how?",
+    summary: {
+      points: [
+        "Section 177(9): listed companies, and by rule deposit-taking companies and those borrowing above ₹50 crore, must have a vigil mechanism.",
+        "Safeguards against victimisation and direct access to the audit committee chairperson are required.",
+        "Clause 49 of the listing agreement gave way to the LODR Regulations, 2015.",
+        "Good policies add confidentiality, several channels, fair investigation and feedback.",
+        "Frivolous reports are screened by the audit committee; the vigil mechanism is not the 2014 Act.",
+      ],
+      memory: "Listed, deposits, ₹50 crore: vigil mechanism, safeguards, audit committee access.",
     },
   },
 ];

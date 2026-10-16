@@ -33,6 +33,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "objectives-features-of-hrp",
+    name: "Objectives and features of HRP",
+    intro: "What a plan aims at, its five features, and why it counts skills as well as heads.",
+    before: {
+      q: "A firm has 96 posts and 96 employees. Is the plan certainly in balance?",
+      choices: [
+        { label: "Yes, the numbers match", reveal: "Not certainly. HRP describes people as well as counting them: if the 96 lack the skills the posts need, the plan has failed." },
+        { label: "Not necessarily", reveal: "Right. Human resources mean skills, knowledge and commitment as well as numbers, so a matching headcount is not enough." },
+      ],
+    },
+    lead: "HRP aims at balance between people available and required, shows five features, and plans for skills and well-being as well as numbers.",
+    check: [
+      ask("Which statement best fits the textbook view of \"human resources\" in HRP?", "Skill, knowledge, values, ability, commitment and motivation, as well as the number of employees", ["Only the number of employees on the payroll", "Only the managers who will be promoted", "Only the wages paid in a year"], "HRP plans for the quality of people as well as their number. The headcount-only answer is the common mistake, and it is why a plan can match on paper and still fail."),
+      ask("A bank will open 12 branches in two years and starts campus hiring a year before the first opening, because enough trained people will not be available later. Which feature of HRP is this?", "Adjusting demand and supply", ["Keeping a manpower inventory", "Creating a proper work environment", "Well-defined objectives"], "Starting recruitment well ahead because supply will fall short is adjusting demand and supply. An inventory would record present staff, which is a different feature."),
+      ask("A firm lists which assistant managers could run a branch within a year. A colleague says this is the most important part of the plan. What is the best reply?", "It is one feature, the manpower inventory; the plan also needs objectives, needs, adjustment and work environment", ["It is the whole plan, because HRP is only a record of staff", "It is not part of HRP, because inventories belong to recruitment", "It replaces the forecast of needs, so the forecast can be dropped"], "The list is the manpower inventory, one of five features. Treating it as the whole plan ignores that needs must still be forecast and balanced with supply."),
+    ],
+    lens: [],
+    reflect: "Think of a team you know that had the right number of people but the wrong skills. What would a fuller plan have asked?",
+    summary: {
+      points: [
+        "Main objective: balance between the people available and the people required.",
+        "Human resources include skill, knowledge, values, commitment and motivation, not only headcount.",
+        "Five features: defined objectives, determining needs, an inventory, adjusting demand and supply, a proper work environment.",
+        "Planning controls cost, gives recruitment and training a target, and shows skill gaps early.",
+      ],
+      memory: "Goals, needs, inventory, adjust, environment.",
+    },
+  },
+  {
     blockId: "the-hrp-process",
     name: "The HRP process",
     intro: "Eight steps from strategy to review, and the arithmetic of the gap.",
@@ -88,6 +117,35 @@ const lessons: Lesson[] = [
         "Supply also comes from the outside labour market.",
       ],
       memory: "Skills, succession, turnover, mobility, jobs, scenarios.",
+    },
+  },
+  {
+    blockId: "factors-and-barriers-in-hrp",
+    name: "Factors and barriers in HRP",
+    intro: "What shapes a plan, how far ahead it looks, and what stops it from working.",
+    before: {
+      q: "Is a union's distrust of a staffing plan a condition the planner must accept, or a problem to solve?",
+      choices: [
+        { label: "A condition to accept", reveal: "It is a barrier, and it can be reduced by explaining the purpose early and involving the union." },
+        { label: "A problem to solve", reveal: "Right. It is a barrier, a failure in how the plan is carried out, not a fixed factor like the labour market." },
+      ],
+    },
+    lead: "Factors such as strategy, uncertainty and time horizon shape a plan; barriers such as stale records and resistance can be fixed.",
+    check: [
+      ask("Which is a barrier to effective HRP rather than a factor affecting it?", "Out-of-date records of staff skills and turnover", ["The stage of growth of the organisation", "The strategy the organisation follows", "The length of the planning period"], "Poor records are a failure in how planning is done, and can be fixed. Stage of growth, strategy and time horizon are conditions that shape the plan."),
+      ask("Staff at a firm fear that the new staffing plan is a cover for job cuts, and they resist giving information. What is the best remedy?", "Explain the purpose early, involve employees and unions, and prefer voluntary methods", ["Hide the plan until it is complete", "Cut the planning period to one month", "Replace the forecast with the manager's guess"], "Resistance comes from fear, so openness and involvement address it. Hiding the plan feeds the fear."),
+      ask("A manager fills each vacancy as it arises and never looks at where the business is heading. Which barrier is this, and what should HR do?", "Short-term pressure; report staffing gaps against the long-term plan", ["Inaccurate forecasts; add a third scenario", "Weak top-management support; cut the budget", "Treating people as numbers; hire by headcount only"], "Filling only today's vacancy is short-term pressure. Reporting gaps against the long-term plan makes tomorrow's need visible. Hiring by headcount only is the opposite of the remedy."),
+    ],
+    lens: [],
+    reflect: "Which barrier is most likely to damage a staffing plan in a workplace you know?",
+    summary: {
+      points: [
+        "Factors: type and strategy, stage of growth, environmental uncertainty, time horizon, information, nature of jobs, outsourcing.",
+        "Plans are commonly short-term (about a year), medium-term and long-term (several years); limits vary.",
+        "Barriers: inaccurate forecasts, poor records, resistance, weak support, treating people as numbers, short-term pressure.",
+        "A factor is a condition to account for; a barrier is a failure in planning that can be fixed.",
+      ],
+      memory: "Factors shape the plan; barriers block it; review often.",
     },
   },
 ];
