@@ -1,3 +1,4 @@
+import { one, type Param } from "@/lib/app/params";
 import Link from "next/link";
 import { db } from "@/src/prisma/db";
 import FeedPost from "@/components/app/FeedPost";
@@ -10,9 +11,10 @@ import { editionDate, now, visitPhrase } from "@/lib/app/time";
 
 export const metadata = { title: "Home" };
 
-export default async function HomePage({ searchParams }: { searchParams: Promise<{ tab?: string; welcome?: string }> }) {
+export default async function HomePage({ searchParams }: { searchParams: Promise<{ tab?: Param; welcome?: Param }> }) {
   const me = await requireMember();
-  const { tab, welcome } = await searchParams;
+  const sp = await searchParams;
+  const tab = one(sp.tab), welcome = one(sp.welcome);
   const following = tab === "following";
   const v = await viewerContext(me);
   const tz = me.timezone || "Asia/Kolkata";

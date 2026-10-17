@@ -4,6 +4,7 @@ import { useEffect, useId, useState } from "react";
 import type { Check, Lesson } from "@/content/learn";
 import { openConcept, showToast, useDevice, writeDevice } from "@/components/landing/device";
 import { onAllLessons, setDone, useDone } from "./progress";
+import { decoded } from "@/lib/app/params";
 
 function Part({ children }: { children: React.ReactNode }) {
   return <span className="part"><i className="sq" aria-hidden="true" />{children}</span>;
@@ -67,7 +68,7 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
   // opens it, then brings it into view once it has room.
   useEffect(() => {
     const check = () => {
-      if (decodeURIComponent(window.location.hash.slice(1)) !== lesson.blockId) return;
+      if (decoded(window.location.hash.slice(1)) !== lesson.blockId) return;
       setOpen(true);
       openConcept(lesson.name, false, `${path}#${lesson.blockId}`);
       window.setTimeout(() => document.getElementById(lesson.blockId)?.scrollIntoView({ block: "start" }), 120);

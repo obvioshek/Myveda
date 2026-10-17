@@ -7,6 +7,7 @@ import Icon from "@/components/app/Icon";
 import AppProvider, { useApp } from "@/components/app/AppProvider";
 import { signOutMember } from "@/actions/app/profile";
 import type { ComposeAudience, PersonRef } from "@/lib/app/types";
+import { decoded } from "@/lib/app/params";
 
 interface ShellProps {
   me: PersonRef;
@@ -33,7 +34,7 @@ function titleFor(path: string) {
   if (path.startsWith("/c")) return "Communities";
   if (path.startsWith("/u/")) return "Profile";
   if (path.startsWith("/discover")) return "Discover";
-  if (path.startsWith("/t/")) return decodeURIComponent(path.slice(3));
+  if (path.startsWith("/t/")) return decoded(path.slice(3)) ?? "Topic";
   if (path.startsWith("/library")) return "Library";
   if (path.startsWith("/inbox")) return "Inbox";
   return "";

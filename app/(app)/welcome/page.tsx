@@ -1,3 +1,4 @@
+import { one, type Param } from "@/lib/app/params";
 import { redirect } from "next/navigation";
 import { db } from "@/src/prisma/db";
 import Onboarding from "@/components/app/Onboarding";
@@ -6,9 +7,9 @@ import { personRef, viewerContext } from "@/lib/app/viewer";
 
 export const metadata = { title: "Welcome" };
 
-export default async function WelcomePage({ searchParams }: { searchParams: Promise<{ replay?: string }> }) {
+export default async function WelcomePage({ searchParams }: { searchParams: Promise<{ replay?: Param }> }) {
   const me = await requireMember();
-  const { replay } = await searchParams;
+  const replay = one((await searchParams).replay);
   if (me.onboardedAt && !replay) redirect("/home");
   const v = await viewerContext(me);
 

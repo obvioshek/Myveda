@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
+import { decoded } from "@/lib/app/params";
 
 export type GlossaryItem = { id: string; letter: string; term: string; def: string; chapterN: number; chapterTitle: string; chapterHref: string; unitN?: number };
 
@@ -20,7 +21,7 @@ export default function GlossaryList({ items }: { items: GlossaryItem[] }) {
   // Mark the term a link pointed at. The browser's :target doesn't update when
   // the app changes the address without a page load, so read the hash directly.
   useEffect(() => {
-    const read = () => setHere(decodeURIComponent(window.location.hash.slice(1)));
+    const read = () => setHere(decoded(window.location.hash.slice(1)) ?? "");
     read();
     window.addEventListener("hashchange", read);
     window.addEventListener("popstate", read);

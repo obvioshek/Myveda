@@ -78,7 +78,7 @@ These live in the server actions in `actions/app/`, not just in the UI:
 - `lib/app/` holds the server-side building blocks: the session (`session.ts`), what the viewer follows and mutes (`viewer.ts`), the Edition and Following feeds (`feed.ts`), a loader per screen, notification delivery (`notify.ts`) and the label rules (`labels.ts`).
 - `actions/app/` holds the server actions. Each returns `{ ok, error }`, so refusals reach the member instead of being swallowed in production.
 - `components/app/` holds the product's client components.
-- The data model is in `src/prisma/contract.prisma`, with migrations in `migrations/`. The product's tables sit alongside the tables of an earlier landing-page demo (`post`, `feedItem`, `reel` and so on), which nothing uses any more. (`prisma/schema.prisma` is an older copy and is not used.)
+- The data model is in `src/prisma/contract.prisma`, with migrations in `migrations/`. The product's tables sit alongside the tables of an earlier landing-page demo (`post`, `feedItem`, `reel` and so on), which nothing uses any more.
 
 ## Database
 
