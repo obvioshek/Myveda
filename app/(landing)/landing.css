@@ -81,7 +81,6 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
    fonts every current phone and computer already has, so no page downloads
    more for them. */
 [lang="pi"], [lang="hi"], [lang="mr"] { font-family: var(--font-deva); }
-[lang="pa"] { font-family: "Noto Sans Gurmukhi", "Raavi", "Gurmukhi MN", "Nirmala UI", sans-serif; }
 [lang="bn"], [lang="as"] { font-family: "Noto Sans Bengali", "Vrinda", "Bangla MN", "Nirmala UI", sans-serif; }
 [lang="gu"] { font-family: "Noto Sans Gujarati", "Shruti", "Gujarati MT", "Nirmala UI", sans-serif; }
 [lang="or"] { font-family: "Noto Sans Oriya", "Kalinga", "Oriya MN", "Nirmala UI", sans-serif; }

@@ -53,7 +53,6 @@ export const TEXTS: { name: string; lang: string }[] = [
   { name: "Bodhicaryāvatāra", lang: "Sanskrit and Tibetan" },
   { name: "Dhammapada", lang: "Pali" },
   { name: "Tirukkuṟaḷ", lang: "Tamil" },
-  { name: "Guru Granth Sahib", lang: "Punjabi" },
   { name: "Kabīr and Rahīm", lang: "Hindi" },
   { name: "Tukārām", lang: "Marathi" },
   { name: "Tagore", lang: "Bengali" },
