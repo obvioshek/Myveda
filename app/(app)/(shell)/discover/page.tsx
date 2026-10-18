@@ -1,3 +1,4 @@
+import { one, type Param } from "@/lib/app/params";
 import Link from "next/link";
 import { db } from "@/src/prisma/db";
 import DiscoverSearch from "@/components/app/DiscoverSearch";
@@ -11,9 +12,10 @@ import { search } from "@/lib/app/search";
 
 export const metadata = { title: "Discover" };
 
-export default async function DiscoverPage({ searchParams }: { searchParams: Promise<{ q?: string; doc?: string }> }) {
+export default async function DiscoverPage({ searchParams }: { searchParams: Promise<{ q?: Param; doc?: Param }> }) {
   const me = await requireMember();
-  const { q = "", doc } = await searchParams;
+  const sp = await searchParams;
+  const q = one(sp.q) ?? "", doc = one(sp.doc);
   const v = await viewerContext(me);
   const query = q.trim();
 

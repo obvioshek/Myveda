@@ -23,7 +23,7 @@ export const BASIS_HELP: Record<ShareBasis, string> = {
 };
 
 export function isBasis(v: unknown): v is Basis {
-  return typeof v === "string" && v in LABELS;
+  return typeof v === "string" && Object.hasOwn(LABELS, v);
 }
 export function isShareBasis(v: unknown): v is ShareBasis {
   return isBasis(v) && v !== "asking";

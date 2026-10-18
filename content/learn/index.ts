@@ -114,6 +114,26 @@ export function chapterTitle(c: Chapter) {
 // missing chapter, a lesson that doesn't match its chapter) fails the build
 // instead of publishing a broken page.
 const RESERVED = new Set(["glossary", "revision"]);
+
+// The text is rendered as HTML, so it may only use markup for formatting:
+// nothing that runs code or loads something from elsewhere.
+const UNSAFE = [
+  [/<\s*\/?\s*(script|iframe|object|embed|style|link|meta|base|form|input|button|textarea|frame|frameset)\b/i, "a disallowed tag"],
+  [/\son[a-z]+\s*=/i, "an event-handler attribute"],
+  [/(href|src|xlink:href|action)\s*=\s*["']?\s*(javascript|data|vbscript):/i, "a script or data URL"],
+] as const;
+function strings(v: unknown, out: string[] = []): string[] {
+  if (typeof v === "string") out.push(v);
+  else if (Array.isArray(v)) for (const x of v) strings(x, out);
+  else if (v && typeof v === "object") for (const x of Object.values(v)) strings(x, out);
+  return out;
+}
+function unsafe(where: string, value: unknown, out: string[]) {
+  for (const text of strings(value)) {
+    for (const [re, what] of UNSAFE) if (re.test(text)) out.push(`${where} contains ${what}: ${text.slice(0, 80)}`);
+  }
+}
+
 function problems(): string[] {
   const out: string[] = [];
   const seen = (label: string, values: string[]) => {
@@ -132,9 +152,11 @@ function problems(): string[] {
       seen(`${u.id}: block id in ${c.slug}`, c.blocks.map(b => b.id));
       const lessons = u.lessons[c.slug];
       if (lessons) for (const p of lessonProblems(c.blocks, c.pairings.length, lessons)) out.push(`${u.id}/${c.slug}: ${p}`);
+      unsafe(`${u.id}/${c.slug}`, [c.blocks, c.pairings, lessons], out);
     }
     for (const slug of Object.keys(u.lessons)) if (!u.chapters.some(c => c.slug === slug)) out.push(`${u.id}: lessons for unknown chapter ${slug}`);
     for (const t of u.glossary) if (!u.chapters.some(c => c.n === t.chapter)) out.push(`${u.id}: term "${t.term}" points at missing chapter ${t.chapter}`);
+    unsafe(`${u.id} glossary`, u.glossary, out);
   }
   return out;
 }

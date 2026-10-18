@@ -4,26 +4,30 @@ import ProfileView from "@/components/app/ProfileView";
 import { requireMember } from "@/lib/app/session";
 import { viewerContext } from "@/lib/app/viewer";
 import { loadProfile } from "@/lib/app/profile";
+import { decoded, one, pick, type Param } from "@/lib/app/params";
 
 const TABS = { answers: "Answers", questions: "Questions" } as const;
 
 export default async function ProfilePage({ params, searchParams }: {
-  params: Promise<{ handle: string }>; searchParams: Promise<{ tab?: string }>;
+  params: Promise<{ handle: string }>; searchParams: Promise<{ tab?: Param }>;
 }) {
   const { handle } = await params;
   const { tab } = await searchParams;
   const me = await requireMember();
+  const h = decoded(handle);
+  if (h === null) notFound();
   const [pr, topics] = await Promise.all([
-    loadProfile(await viewerContext(me), decodeURIComponent(handle)),
+    loadProfile(await viewerContext(me), h),
     db.orm.public.Topic.orderBy(t => t.name.asc()).all(),
   ]);
   if (!pr) notFound();
-  const t = (tab && tab in TABS ? TABS[tab as keyof typeof TABS] : "Posts") as "Posts" | "Answers" | "Questions";
+  const t = pick(TABS, one(tab)) ?? "Posts";
   return <ProfileView pr={pr} tab={t} topics={topics.map(x => x.name)} />;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ handle: string }> }) {
   const { handle } = await params;
-  const u = await db.orm.public.User.select("name").where({ handle: decodeURIComponent(handle) }).first().catch(() => null);
+  const h = decoded(handle);
+  const u = h === null ? null : await db.orm.public.User.select("name").where({ handle: h }).first().catch(() => null);
   return { title: u?.name ?? "Profile" };
 }

@@ -4,11 +4,13 @@ import TopicFollow from "@/components/app/TopicFollow";
 import { requireMember } from "@/lib/app/session";
 import { viewerContext } from "@/lib/app/viewer";
 import { loadTopic } from "@/lib/app/search";
+import { decoded } from "@/lib/app/params";
 
 export default async function TopicPage({ params }: { params: Promise<{ name: string }> }) {
   const { name } = await params;
   const me = await requireMember();
-  const t = await loadTopic(await viewerContext(me), decodeURIComponent(name));
+  const topic = decoded(name);
+  const t = topic === null ? null : await loadTopic(await viewerContext(me), topic);
   if (!t) notFound();
   return (
     <div className="col w760" style={{ gap: 24 }}>
@@ -29,5 +31,5 @@ export default async function TopicPage({ params }: { params: Promise<{ name: st
 
 export async function generateMetadata({ params }: { params: Promise<{ name: string }> }) {
   const { name } = await params;
-  return { title: decodeURIComponent(name) };
+  return { title: decoded(name) ?? "Topic" };
 }
