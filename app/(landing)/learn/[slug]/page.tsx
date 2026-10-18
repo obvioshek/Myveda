@@ -146,7 +146,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 </div>
               );
             })}
-            {lessons && <p className="ci-fine">{HOW.translations}</p>}
+            {lessons && ev.total > 0 && <p className="ci-fine">{HOW.translations}</p>}
           </section>
 
           {showLens && (

@@ -1,3 +1,4 @@
+import { one, type Param } from "@/lib/app/params";
 import InboxView from "@/components/app/InboxView";
 import { requireMember } from "@/lib/app/session";
 import { viewerContext } from "@/lib/app/viewer";
@@ -5,9 +6,9 @@ import { INBOX_FILTERS, loadInbox } from "@/lib/app/inbox";
 
 export const metadata = { title: "Inbox" };
 
-export default async function InboxPage({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
+export default async function InboxPage({ searchParams }: { searchParams: Promise<{ type?: Param }> }) {
   const me = await requireMember();
-  const { type } = await searchParams;
+  const type = one((await searchParams).type);
   // filters travel as slugs (?type=builds-on)
   const filter = INBOX_FILTERS.find(f => f.toLowerCase().replace(/ /g, "-") === (type ?? "").toLowerCase()) ?? "All";
   const inbox = await loadInbox(await viewerContext(me), filter);

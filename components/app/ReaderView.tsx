@@ -83,7 +83,7 @@ export default function ReaderView({ r }: { r: ReaderData }) {
           <Chips bases={r.bases} />
           {r.read && <span>{r.read}</span>}
         </div>
-        {r.title && <h1>{r.title}</h1>}
+        {r.title ? <h1>{r.title}</h1> : <h1 className="sr-only">{r.author ? `A note by ${r.author.name}` : "A note"}</h1>}
         {r.dek && <p className="dek">{r.dek}</p>}
         {house && <div className="muted" style={{ fontSize: 14 }}>Edited by <b style={{ color: "var(--color-text)" }}>{r.editor}</b> · {r.updated}</div>}
         {r.author && (

@@ -25,6 +25,10 @@ export const PROBLEMS: { problem: string; slugs: string[] }[] = [
   { problem: "Pressure and conflict at work", slugs: ["emotions-and-stress", "organisational-justice-and-whistleblowing", "organisational-culture-and-climate"] },
   { problem: "Handling a union or a dispute", slugs: ["industrial-relations", "trade-unions-and-collective-bargaining", "labour-welfare-and-social-security"] },
   { problem: "Managing performance and careers", slugs: ["performance-management-and-appraisal", "career-planning-and-development", "talent-management-and-skill-development"] },
+  { problem: "Reading a company's accounts", slugs: ["preparation-of-financial-statements", "ratio-analysis", "cash-flow-statement"] },
+  { problem: "Costing and pricing a product", slugs: ["cost-accounting-and-cost-sheet", "activity-based-and-life-cycle-costing", "marginal-costing-and-cvp-analysis"] },
+  { problem: "Cutting cost", slugs: ["target-costing-kaizen-costing-and-jit", "standard-costing-and-variance-analysis", "budgeting-and-budgetary-control"] },
+  { problem: "Funding the business", slugs: ["sources-of-finance", "cost-of-capital", "capital-structure-theories"] },
   { problem: "Leading a change", slugs: ["organisation-development-and-change", "organisational-culture-and-climate", "employee-engagement-and-work-life-balance"] },
 ];
 

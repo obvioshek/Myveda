@@ -5,7 +5,9 @@ import { redirect } from 'next/navigation'
 import { hasSupabase } from '../lib/backend'
 import { siteUrl } from '../lib/site'
 
-export async function signInWithEmail(prevState: any, formData: FormData) {
+export interface SignInState { success: string; error: string }
+
+export async function signInWithEmail(_prev: SignInState, formData: FormData): Promise<SignInState> {
   const email = String(formData.get('email') ?? '').trim()
 
   if (!email) {

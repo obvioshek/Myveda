@@ -6,7 +6,8 @@
 import type { UnitSource } from "../types";
 import unit1 from "./unit-1";
 import unit2 from "./unit-2";
+import unit4 from "./unit-4";
 import unit6 from "./unit-6";
 import unit7 from "./unit-7";
 
-export const UNIT_SOURCES: UnitSource[] = [unit1, unit2, unit6, unit7];
+export const UNIT_SOURCES: UnitSource[] = [unit1, unit2, unit4, unit6, unit7];

@@ -5,13 +5,13 @@ import Arrow from "@/components/landing/Arrow";
 import ContinueBand from "@/components/landing/ContinueBand";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence } from "@/content/learn";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
 
-const title = "Management chapters: economics, OB, HRM, strategy and marketing · Veda Verse";
-const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour, HRM, strategy and marketing in plain language, each read alongside passages from India's classical texts and thinkers in their own languages.`;
+const title = "Management chapters: economics, OB, HRM, accounting, finance and more · Veda Verse";
+const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour, HRM, managerial accounting, finance, strategy and marketing in plain language, with passages from India's classical texts and thinkers set beside the ideas they meet.`;
 
 export const metadata: Metadata = {
   title,
@@ -25,9 +25,7 @@ const hours = (min: number) => (min < 90 ? `about ${min} minutes` : `about ${Mat
 
 export default function LearnIndex() {
   const base = siteUrl();
-  // Units the syllabus has but the site does not yet, such as 3 to 5.
-  const have = new Set(UNITS.map(u => u.n));
-  const missing = Array.from({ length: Math.max(...have) }, (_, i) => i + 1).filter(n => !have.has(n));
+  const pending = pendingUnits();
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -54,10 +52,10 @@ export default function LearnIndex() {
       <section className="wrap ci-hero" aria-labelledby="learn-h">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />{UNITS.length === 1 ? `Unit 1 · ${UNITS[0].title}` : `${UNITS.length} units`}</span>
         <h1 id="learn-h"><span>{CHAPTERS.length} chapters.</span><span className="red">Every idea, then its ancient lens.</span></h1>
-        <p className="lede">Each chapter explains the modern concepts in plain language, with the terms, formulas and examples a course expects, then sets passages from India&apos;s classical texts and thinkers beside them, every one with its reference. Start anywhere, or use one of the two ways in below.</p>
+        <p className="lede">Each chapter explains the modern concepts in plain language, with the terms, formulas and examples a course expects, then, where a classical text meets the idea, sets the passage beside it, every one with its reference. Start anywhere, or use one of the two ways in below.</p>
         <nav className="ci-jump" aria-label="Units">
           {UNITS.map(u => <a key={u.id} href={`#${u.id}`}><b>Unit {u.n}</b>{u.short}</a>)}
-          {missing.length > 0 && <span className="ci-soon">Unit{missing.length > 1 ? "s" : ""} {missing.length > 1 ? `${missing[0]} to ${missing[missing.length - 1]}` : missing[0]} {missing.length > 1 ? "are" : "is"} being written</span>}
+          {pending && <span className="ci-soon">{pending}</span>}
         </nav>
       </section>
 
@@ -103,7 +101,7 @@ export default function LearnIndex() {
 
       <section className="wrap ci-how" aria-label="How to read a chapter">
         <div className="grid g3">
-          <div className="cell"><span className="label red">Every concept</span><p>Opens in place: a question before you read, the core idea, a quick check, the Ancient lens, a prompt to reflect on and a one-page summary.</p></div>
+          <div className="cell"><span className="label red">Every concept</span><p>Opens in place: a question before you read, the core idea, a quick check, the Ancient lens where a passage fits, a prompt to reflect on and a one-page summary.</p></div>
           <div className="cell"><Tag kind="documented" /><p>{HOW.documented}</p></div>
           <div className="cell"><Tag kind="view" /><p>{HOW.view}</p></div>
         </div>
@@ -163,7 +161,7 @@ export default function LearnIndex() {
 
       <section className="wrap ci-foot" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
-        <p className="ci-fine">More units are being written. {GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+        <p className="ci-fine">{pending ? `${pending}. ` : ""}{GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       </section>
     </PageShell>
   );
