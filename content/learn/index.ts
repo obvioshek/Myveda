@@ -10,6 +10,7 @@
 // parallel, offered for reflection). Keep that distinction when adding to it.
 
 import { lessonProblems, type Lesson } from "./lesson-kit";
+import { pendingUnitsLabel } from "./pending";
 import type { Chapter, Term, Unit } from "./types";
 import { UNIT_SOURCES } from "./units";
 
@@ -68,6 +69,9 @@ export const UNITS = units;
 export const CHAPTERS = chapters;
 export const GLOSSARY = [...terms].sort((a, b) => a.letter.localeCompare(b.letter) || a.term.localeCompare(b.term, "en", { sensitivity: "base" }));
 
+// "Units 3 and 5 are being written", or null when no unit number is missing.
+export const pendingUnits = () => pendingUnitsLabel(UNITS.map(u => u.n));
+
 export const unitById = (id: string) => UNITS.find(u => u.id === id);
 export const chapterBySlug = (slug: string) => CHAPTERS.find(c => c.slug === slug);
 export const lessonsFor = (slug: string): Lesson[] | null => LESSONS.get(slug) ?? null;
@@ -98,13 +102,17 @@ export const deva = (n: number) => String(n).replace(/\d/g, d => "०१२३�
 
 // The description search results show, under about 160 characters.
 export function chapterDescription(c: Chapter) {
-  const full = `${c.scope} With ${c.pairings.length} cited passages from India's classical texts.`;
+  if (c.pairings.length === 0) return c.scope;
+  const n = c.pairings.length;
+  const full = `${c.scope} With ${n} cited ${n === 1 ? "passage" : "passages"} from India's classical texts.`;
   return full.length <= 160 ? full : c.scope;
 }
 
 // The page title: a descriptive form when it fits in about 65 characters,
-// otherwise the chapter name alone.
+// otherwise the chapter name alone. A chapter with no classical passage doesn't
+// claim to be explained with the classics.
 export function chapterTitle(c: Chapter) {
+  if (c.pairings.length === 0) return `${c.title} · Veda Verse`;
   const long = `${c.title}, explained with the classics · Veda Verse`;
   return long.length <= 65 ? long : `${c.title} · Veda Verse`;
 }

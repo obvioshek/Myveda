@@ -1,0 +1,1157 @@
+[
+ {
+  "id": "absorption-costing",
+  "letter": "A",
+  "term": "Absorption Costing",
+  "def": "Includes fixed manufacturing overhead in the cost of each unit.",
+  "chapter": 7
+ },
+ {
+  "id": "accounting-equation",
+  "letter": "A",
+  "term": "Accounting Equation",
+  "def": "Assets = Liabilities + Equity, the identity that every double entry preserves.",
+  "chapter": 1
+ },
+ {
+  "id": "accounting-standards-as",
+  "letter": "A",
+  "term": "Accounting Standards (AS)",
+  "def": "The older set of Indian accounting standards, which apply to companies not covered by Ind AS.",
+  "chapter": 1
+ },
+ {
+  "id": "accrual-concept",
+  "letter": "A",
+  "term": "Accrual Concept",
+  "def": "Revenues and expenses are recorded when earned or incurred, not when cash is received or paid.",
+  "chapter": 1
+ },
+ {
+  "id": "accrued-income",
+  "letter": "A",
+  "term": "Accrued Income",
+  "def": "Income earned in the period but not yet received.",
+  "chapter": 2
+ },
+ {
+  "id": "activity-based-costing-abc",
+  "letter": "A",
+  "term": "Activity-Based Costing (ABC)",
+  "def": "Allocates overhead to products according to the activities that cause it.",
+  "chapter": 6
+ },
+ {
+  "id": "actual-cost",
+  "letter": "A",
+  "term": "Actual Cost",
+  "def": "The cost actually incurred, compared with the standard.",
+  "chapter": 8
+ },
+ {
+  "id": "agency-cost-theory",
+  "letter": "A",
+  "term": "Agency Cost Theory",
+  "def": "Debt disciplines managers through fixed payments, at the price of monitoring costs and conflicts with lenders.",
+  "chapter": 13
+ },
+ {
+  "id": "application-of-funds",
+  "letter": "A",
+  "term": "Application of Funds",
+  "def": "A long-term outflow that uses funds, such as buying assets, repaying loans or paying dividends.",
+  "chapter": 4
+ },
+ {
+  "id": "asset-turnover-ratio",
+  "letter": "A",
+  "term": "Asset Turnover Ratio",
+  "def": "Net sales divided by total assets; the sales earned from each rupee of assets.",
+  "chapter": 3
+ },
+ {
+  "id": "balance-sheet",
+  "letter": "B",
+  "term": "Balance Sheet",
+  "def": "A statement of what a business owns, owes and has put in by its owners on a single date.",
+  "chapter": 2
+ },
+ {
+  "id": "batch-costing",
+  "letter": "B",
+  "term": "Batch Costing",
+  "def": "A costing method for goods made in distinct lots.",
+  "chapter": 6
+ },
+ {
+  "id": "behavioural-finance",
+  "letter": "B",
+  "term": "Behavioural Finance",
+  "def": "The study of how psychological biases influence financial decisions.",
+  "chapter": 10
+ },
+ {
+  "id": "beta",
+  "letter": "B",
+  "term": "Beta",
+  "def": "A measure of how much a share’s return moves with the market.",
+  "chapter": 12
+ },
+ {
+  "id": "bills-discounting",
+  "letter": "B",
+  "term": "Bills Discounting",
+  "def": "Selling a bill to a bank before it is due, at a discount.",
+  "chapter": 11
+ },
+ {
+  "id": "borrowed-capital",
+  "letter": "B",
+  "term": "Borrowed Capital",
+  "def": "Funds raised from outsiders, repayable with interest.",
+  "chapter": 11
+ },
+ {
+  "id": "break-even-point",
+  "letter": "B",
+  "term": "Break-Even Point",
+  "def": "The sales level at which contribution equals fixed costs, so there is no profit and no loss.",
+  "chapter": 7
+ },
+ {
+  "id": "budgetary-control",
+  "letter": "B",
+  "term": "Budgetary Control",
+  "def": "Continually comparing actual results with budgets, finding variances and acting on them.",
+  "chapter": 9
+ },
+ {
+  "id": "budgeting",
+  "letter": "B",
+  "term": "Budgeting",
+  "def": "Preparing a quantitative financial plan for a period.",
+  "chapter": 9
+ },
+ {
+  "id": "business-entity-concept",
+  "letter": "B",
+  "term": "Business Entity Concept",
+  "def": "The business is treated as separate from its owner, so the owner’s private affairs stay out of its books.",
+  "chapter": 1
+ },
+ {
+  "id": "capital-asset-pricing-model-capm",
+  "letter": "C",
+  "term": "Capital Asset Pricing Model (CAPM)",
+  "def": "Estimates the cost of equity as the risk-free rate plus beta times the market risk premium.",
+  "chapter": 12
+ },
+ {
+  "id": "capital-budgeting",
+  "letter": "C",
+  "term": "Capital Budgeting",
+  "def": "Evaluating long-term investment projects using tools such as NPV, IRR and payback.",
+  "chapter": 10
+ },
+ {
+  "id": "capital-structure",
+  "letter": "C",
+  "term": "Capital Structure",
+  "def": "The mix of debt and equity a firm uses to fund itself.",
+  "chapter": 13
+ },
+ {
+  "id": "cash-budget",
+  "letter": "C",
+  "term": "Cash Budget",
+  "def": "A forecast of cash receipts and payments to manage liquidity.",
+  "chapter": 9
+ },
+ {
+  "id": "cash-equivalents",
+  "letter": "C",
+  "term": "Cash Equivalents",
+  "def": "Short-term, highly liquid investments that convert readily into known amounts of cash with little risk.",
+  "chapter": 5
+ },
+ {
+  "id": "cash-flow-statement",
+  "letter": "C",
+  "term": "Cash Flow Statement",
+  "def": "A statement of cash and cash equivalents received and paid, classified into operating, investing and financing.",
+  "chapter": 5
+ },
+ {
+  "id": "cash-ratio",
+  "letter": "C",
+  "term": "Cash Ratio",
+  "def": "Cash and cash equivalents divided by current liabilities; the strictest liquidity test.",
+  "chapter": 3
+ },
+ {
+  "id": "commercial-paper",
+  "letter": "C",
+  "term": "Commercial Paper",
+  "def": "A short-term unsecured promissory note issued by large firms.",
+  "chapter": 11
+ },
+ {
+  "id": "conservatism-prudence",
+  "letter": "C",
+  "term": "Conservatism (Prudence)",
+  "def": "Provide for expected losses at once, but recognise profits only when realised.",
+  "chapter": 1
+ },
+ {
+  "id": "consistency-convention",
+  "letter": "C",
+  "term": "Consistency Convention",
+  "def": "The same accounting methods are used from year to year so results can be compared.",
+  "chapter": 1
+ },
+ {
+  "id": "contract-costing",
+  "letter": "C",
+  "term": "Contract Costing",
+  "def": "A costing method for large, long projects such as construction.",
+  "chapter": 6
+ },
+ {
+  "id": "contribution",
+  "letter": "C",
+  "term": "Contribution",
+  "def": "Sales less variable cost; what each sale adds towards fixed costs and profit.",
+  "chapter": 7
+ },
+ {
+  "id": "cost-accounting",
+  "letter": "C",
+  "term": "Cost Accounting",
+  "def": "Recording, classifying, analysing and controlling costs to find unit cost and support decisions.",
+  "chapter": 6
+ },
+ {
+  "id": "cost-concept",
+  "letter": "C",
+  "term": "Cost Concept",
+  "def": "Assets are recorded at what was paid for them, whatever they later become worth.",
+  "chapter": 1
+ },
+ {
+  "id": "cost-of-capital",
+  "letter": "C",
+  "term": "Cost of Capital",
+  "def": "The minimum return a firm must earn to satisfy those who supply its funds.",
+  "chapter": 12
+ },
+ {
+  "id": "cost-of-debt-kd",
+  "letter": "C",
+  "term": "Cost of Debt (Kd)",
+  "def": "Interest after tax divided by net proceeds: I(1 − T) ÷ NP.",
+  "chapter": 12
+ },
+ {
+  "id": "cost-of-equity-ke",
+  "letter": "C",
+  "term": "Cost of Equity (Ke)",
+  "def": "The return equity holders expect, estimated by dividend growth, earnings yield or CAPM.",
+  "chapter": 12
+ },
+ {
+  "id": "cost-of-preference-capital-kp",
+  "letter": "C",
+  "term": "Cost of Preference Capital (Kp)",
+  "def": "Preference dividend divided by net proceeds.",
+  "chapter": 12
+ },
+ {
+  "id": "cost-of-retained-earnings-kr",
+  "letter": "C",
+  "term": "Cost of Retained Earnings (Kr)",
+  "def": "The opportunity cost of keeping profits, taken as about equal to the cost of equity.",
+  "chapter": 12
+ },
+ {
+  "id": "cost-sheet",
+  "letter": "C",
+  "term": "Cost Sheet",
+  "def": "A statement that builds up cost stage by stage from prime cost to selling price.",
+  "chapter": 6
+ },
+ {
+  "id": "cost-volume-profit-cvp-analysis",
+  "letter": "C",
+  "term": "Cost-Volume-Profit (CVP) Analysis",
+  "def": "Studies how cost, volume and profit move together.",
+  "chapter": 7
+ },
+ {
+  "id": "creditors-turnover-ratio",
+  "letter": "C",
+  "term": "Creditors Turnover Ratio",
+  "def": "Net credit purchases divided by average payables; how quickly suppliers are paid.",
+  "chapter": 3
+ },
+ {
+  "id": "current-account",
+  "letter": "C",
+  "term": "Current Account",
+  "def": "A current asset or liability, such as stock, debtors, cash or creditors.",
+  "chapter": 4
+ },
+ {
+  "id": "current-ratio",
+  "letter": "C",
+  "term": "Current Ratio",
+  "def": "Current assets divided by current liabilities; a liquidity test with a conventional benchmark of about 2:1.",
+  "chapter": 3
+ },
+ {
+  "id": "debentures",
+  "letter": "D",
+  "term": "Debentures",
+  "def": "Long-term borrowing at a fixed rate of interest; holders are creditors, not owners.",
+  "chapter": 11
+ },
+ {
+  "id": "debt-ratio",
+  "letter": "D",
+  "term": "Debt Ratio",
+  "def": "Total debt divided by total assets; the share of assets financed by debt.",
+  "chapter": 3
+ },
+ {
+  "id": "debt-to-equity-ratio",
+  "letter": "D",
+  "term": "Debt-to-Equity Ratio",
+  "def": "Total debt divided by shareholders’ equity; a measure of financial leverage.",
+  "chapter": 3
+ },
+ {
+  "id": "debtors-turnover-ratio",
+  "letter": "D",
+  "term": "Debtors Turnover Ratio",
+  "def": "Net credit sales divided by average receivables; how quickly customers pay.",
+  "chapter": 3
+ },
+ {
+  "id": "depreciation",
+  "letter": "D",
+  "term": "Depreciation",
+  "def": "The spreading of an asset’s cost over its useful life; it uses no cash and sets none aside.",
+  "chapter": 2
+ },
+ {
+  "id": "direct-cost",
+  "letter": "D",
+  "term": "Direct Cost",
+  "def": "A cost that can be traced to a specific product or job.",
+  "chapter": 6
+ },
+ {
+  "id": "direct-method",
+  "letter": "D",
+  "term": "Direct Method",
+  "def": "Shows cash received from customers and cash paid out, to arrive at cash from operations.",
+  "chapter": 5
+ },
+ {
+  "id": "disclosure-convention",
+  "letter": "D",
+  "term": "Disclosure Convention",
+  "def": "All material information, including contingent liabilities, must be disclosed fully.",
+  "chapter": 1
+ },
+ {
+  "id": "dividend-policy",
+  "letter": "D",
+  "term": "Dividend Policy",
+  "def": "The decision on how much profit to pay out and how much to retain.",
+  "chapter": 10
+ },
+ {
+  "id": "dual-aspect-concept",
+  "letter": "D",
+  "term": "Dual Aspect Concept",
+  "def": "Every transaction has two effects, a debit and an equal credit, so Assets = Liabilities + Equity always holds.",
+  "chapter": 1
+ },
+ {
+  "id": "earnings-per-share-eps",
+  "letter": "E",
+  "term": "Earnings per Share (EPS)",
+  "def": "Net profit divided by the number of shares.",
+  "chapter": 3
+ },
+ {
+  "id": "equity-shares",
+  "letter": "E",
+  "term": "Equity Shares",
+  "def": "Ownership shares with voting rights and a dividend that varies with profit.",
+  "chapter": 11
+ },
+ {
+  "id": "explicit-cost",
+  "letter": "E",
+  "term": "Explicit Cost",
+  "def": "The out-of-pocket cost of raising funds, such as interest or dividends.",
+  "chapter": 12
+ },
+ {
+  "id": "factoring",
+  "letter": "F",
+  "term": "Factoring",
+  "def": "Selling receivables to a financial institution for immediate cash.",
+  "chapter": 11
+ },
+ {
+  "id": "financial-distress",
+  "letter": "F",
+  "term": "Financial Distress",
+  "def": "The trouble a firm faces when it cannot meet its debts, with costs such as lost customers and forced sales.",
+  "chapter": 13
+ },
+ {
+  "id": "financial-leverage",
+  "letter": "F",
+  "term": "Financial Leverage",
+  "def": "Using borrowed money to magnify returns to owners, and the risk with them.",
+  "chapter": 13
+ },
+ {
+  "id": "financial-management",
+  "letter": "F",
+  "term": "Financial Management",
+  "def": "Planning, raising, using and controlling a firm’s funds.",
+  "chapter": 10
+ },
+ {
+  "id": "financing-activities",
+  "letter": "F",
+  "term": "Financing Activities",
+  "def": "Activities that change the size and make-up of owners’ capital and borrowings.",
+  "chapter": 5
+ },
+ {
+  "id": "fixed-budget",
+  "letter": "F",
+  "term": "Fixed Budget",
+  "def": "A budget that does not change whatever the level of activity.",
+  "chapter": 9
+ },
+ {
+  "id": "fixed-cost",
+  "letter": "F",
+  "term": "Fixed Cost",
+  "def": "A cost that stays the same whatever the output, such as rent.",
+  "chapter": 6
+ },
+ {
+  "id": "fixed-overhead-variance",
+  "letter": "F",
+  "term": "Fixed Overhead Variance",
+  "def": "The difference between standard and actual fixed overhead, split into expenditure and volume.",
+  "chapter": 8
+ },
+ {
+  "id": "flexible-budget",
+  "letter": "F",
+  "term": "Flexible Budget",
+  "def": "A budget recalculated for the actual level of activity.",
+  "chapter": 9
+ },
+ {
+  "id": "flow-of-funds",
+  "letter": "F",
+  "term": "Flow of Funds",
+  "def": "A change in working capital, arising only when a current and a non-current account are both affected.",
+  "chapter": 4
+ },
+ {
+  "id": "fund-flow-statement",
+  "letter": "F",
+  "term": "Fund Flow Statement",
+  "def": "A statement of the sources and applications of funds, where funds means working capital.",
+  "chapter": 4
+ },
+ {
+  "id": "funds-from-operations",
+  "letter": "F",
+  "term": "Funds from Operations",
+  "def": "Profit adjusted for non-fund items such as depreciation; the main internal source of funds.",
+  "chapter": 4
+ },
+ {
+  "id": "going-concern-concept",
+  "letter": "G",
+  "term": "Going Concern Concept",
+  "def": "The business is assumed to continue, which is why assets are depreciated rather than valued for sale.",
+  "chapter": 1
+ },
+ {
+  "id": "gross-profit-ratio",
+  "letter": "G",
+  "term": "Gross Profit Ratio",
+  "def": "Gross profit as a percentage of net sales.",
+  "chapter": 3
+ },
+ {
+  "id": "hire-purchase",
+  "letter": "H",
+  "term": "Hire Purchase",
+  "def": "Buying an asset by instalments, with ownership passing after the last one.",
+  "chapter": 11
+ },
+ {
+  "id": "homemade-leverage",
+  "letter": "H",
+  "term": "Homemade Leverage",
+  "def": "Investors borrowing for themselves to copy the effect of a firm’s debt.",
+  "chapter": 13
+ },
+ {
+  "id": "implicit-cost",
+  "letter": "I",
+  "term": "Implicit Cost",
+  "def": "The opportunity cost of using funds, such as earnings kept back.",
+  "chapter": 12
+ },
+ {
+  "id": "ind-as-indian-accounting-standards",
+  "letter": "I",
+  "term": "Ind AS (Indian Accounting Standards)",
+  "def": "India’s accounting standards, converged with IFRS; they apply to companies in notified classes.",
+  "chapter": 1
+ },
+ {
+  "id": "indirect-cost",
+  "letter": "I",
+  "term": "Indirect Cost",
+  "def": "A cost that cannot be traced to one product and is shared among products.",
+  "chapter": 6
+ },
+ {
+  "id": "indirect-method",
+  "letter": "I",
+  "term": "Indirect Method",
+  "def": "Starts with profit and adjusts for non-cash items and changes in working capital.",
+  "chapter": 5
+ },
+ {
+  "id": "interest-coverage-ratio",
+  "letter": "I",
+  "term": "Interest Coverage Ratio",
+  "def": "Earnings before interest and tax divided by interest; how many times interest is covered.",
+  "chapter": 3
+ },
+ {
+  "id": "interest-tax-shield",
+  "letter": "I",
+  "term": "Interest Tax Shield",
+  "def": "The tax saved because interest is deductible.",
+  "chapter": 12
+ },
+ {
+  "id": "internal-rate-of-return-irr",
+  "letter": "I",
+  "term": "Internal Rate of Return (IRR)",
+  "def": "The discount rate at which a project’s NPV is zero.",
+  "chapter": 10
+ },
+ {
+  "id": "inventory-turnover-ratio",
+  "letter": "I",
+  "term": "Inventory Turnover Ratio",
+  "def": "Cost of goods sold divided by average inventory; how many times stock is sold and replaced.",
+  "chapter": 3
+ },
+ {
+  "id": "investing-activities",
+  "letter": "I",
+  "term": "Investing Activities",
+  "def": "Buying and selling long-term assets and investments that are not cash equivalents.",
+  "chapter": 5
+ },
+ {
+  "id": "job-costing",
+  "letter": "J",
+  "term": "Job Costing",
+  "def": "A costing method for customised, one-off orders.",
+  "chapter": 6
+ },
+ {
+  "id": "journal-entry",
+  "letter": "J",
+  "term": "Journal Entry",
+  "def": "The first record of a transaction, written in date order with its debit and credit.",
+  "chapter": 2
+ },
+ {
+  "id": "key-budget-factor",
+  "letter": "K",
+  "term": "Key Budget Factor",
+  "def": "The limiting factor, often sales, that decides which budget is prepared first.",
+  "chapter": 9
+ },
+ {
+  "id": "labour-cost-variance-lcv",
+  "letter": "L",
+  "term": "Labour Cost Variance (LCV)",
+  "def": "Standard labour cost for the actual output less the actual cost; rate, efficiency and idle-time parts.",
+  "chapter": 8
+ },
+ {
+  "id": "labour-efficiency-variance-lev",
+  "letter": "L",
+  "term": "Labour Efficiency Variance (LEV)",
+  "def": "Standard rate times the difference between standard hours and hours actually worked.",
+  "chapter": 8
+ },
+ {
+  "id": "labour-idle-time-variance-litv",
+  "letter": "L",
+  "term": "Labour Idle Time Variance (LITV)",
+  "def": "Idle hours times the standard rate; always adverse.",
+  "chapter": 8
+ },
+ {
+  "id": "labour-rate-variance-lrv",
+  "letter": "L",
+  "term": "Labour Rate Variance (LRV)",
+  "def": "Hours paid times the difference between standard and actual wage rate.",
+  "chapter": 8
+ },
+ {
+  "id": "lease-financing",
+  "letter": "L",
+  "term": "Lease Financing",
+  "def": "Using an asset for rent without owning it.",
+  "chapter": 11
+ },
+ {
+  "id": "ledger-account",
+  "letter": "L",
+  "term": "Ledger Account",
+  "def": "A running account to which journal entries are posted, grouped by head such as cash or sales.",
+  "chapter": 2
+ },
+ {
+  "id": "leverage-irrelevance-theory",
+  "letter": "L",
+  "term": "Leverage Irrelevance Theory",
+  "def": "Financing mix does not affect value in a perfect market, because investors can lever or unlever themselves.",
+  "chapter": 13
+ },
+ {
+  "id": "margin-of-safety",
+  "letter": "M",
+  "term": "Margin of Safety",
+  "def": "Actual sales less break-even sales; how far sales can fall before a loss.",
+  "chapter": 7
+ },
+ {
+  "id": "marginal-cost-of-capital-mcc",
+  "letter": "M",
+  "term": "Marginal Cost of Capital (MCC)",
+  "def": "The cost of raising the next increment of capital.",
+  "chapter": 12
+ },
+ {
+  "id": "marginal-costing",
+  "letter": "M",
+  "term": "Marginal Costing",
+  "def": "Treats only variable costs as product costs; fixed costs are charged to the period.",
+  "chapter": 7
+ },
+ {
+  "id": "market-timing-theory",
+  "letter": "M",
+  "term": "Market Timing Theory",
+  "def": "Firms issue equity when they think it is overvalued and avoid it when undervalued.",
+  "chapter": 13
+ },
+ {
+  "id": "master-budget",
+  "letter": "M",
+  "term": "Master Budget",
+  "def": "A consolidation of all functional budgets, with a projected profit and loss account and balance sheet.",
+  "chapter": 9
+ },
+ {
+  "id": "matching-concept",
+  "letter": "M",
+  "term": "Matching Concept",
+  "def": "Expenses are set against the revenue they helped earn in the same period.",
+  "chapter": 1
+ },
+ {
+  "id": "material-cost-variance-mcv",
+  "letter": "M",
+  "term": "Material Cost Variance (MCV)",
+  "def": "Standard cost of material for the actual output less the actual cost; the sum of price and usage variances.",
+  "chapter": 8
+ },
+ {
+  "id": "material-mix-variance-mmv",
+  "letter": "M",
+  "term": "Material Mix Variance (MMV)",
+  "def": "The part of usage variance due to using materials in a different proportion from the standard.",
+  "chapter": 8
+ },
+ {
+  "id": "material-price-variance-mpv",
+  "letter": "M",
+  "term": "Material Price Variance (MPV)",
+  "def": "Actual quantity times the difference between standard and actual price.",
+  "chapter": 8
+ },
+ {
+  "id": "material-usage-variance-muv",
+  "letter": "M",
+  "term": "Material Usage Variance (MUV)",
+  "def": "Standard price times the difference between standard and actual quantity.",
+  "chapter": 8
+ },
+ {
+  "id": "material-yield-variance-myv",
+  "letter": "M",
+  "term": "Material Yield Variance (MYV)",
+  "def": "The part of usage variance due to actual output differing from the output the input should give.",
+  "chapter": 8
+ },
+ {
+  "id": "materiality-convention",
+  "letter": "M",
+  "term": "Materiality Convention",
+  "def": "Only items large enough to affect users’ decisions need detailed treatment.",
+  "chapter": 1
+ },
+ {
+  "id": "modiglianimiller-proposition-i",
+  "letter": "M",
+  "term": "Modigliani–Miller Proposition I",
+  "def": "In a perfect market with no taxes, a firm’s value does not depend on its capital structure.",
+  "chapter": 13
+ },
+ {
+  "id": "modiglianimiller-proposition-ii",
+  "letter": "M",
+  "term": "Modigliani–Miller Proposition II",
+  "def": "The cost of equity rises with leverage: Ke = Ko + (Ko − Kd) × D/E.",
+  "chapter": 13
+ },
+ {
+  "id": "money-measurement-concept",
+  "letter": "M",
+  "term": "Money Measurement Concept",
+  "def": "Only events that can be expressed in money are recorded in the books.",
+  "chapter": 1
+ },
+ {
+  "id": "net-income-ni-theory",
+  "letter": "N",
+  "term": "Net Income (NI) Theory",
+  "def": "Holds that more debt lowers the overall cost of capital and raises value.",
+  "chapter": 13
+ },
+ {
+  "id": "net-operating-income-noi-theory",
+  "letter": "N",
+  "term": "Net Operating Income (NOI) Theory",
+  "def": "Holds that the overall cost of capital and value do not change with the debt-equity mix.",
+  "chapter": 13
+ },
+ {
+  "id": "net-present-value-npv",
+  "letter": "N",
+  "term": "Net Present Value (NPV)",
+  "def": "Discounted future cash inflows less the initial outlay; accept a project if positive.",
+  "chapter": 10
+ },
+ {
+  "id": "net-profit-ratio",
+  "letter": "N",
+  "term": "Net Profit Ratio",
+  "def": "Net profit as a percentage of net sales.",
+  "chapter": 3
+ },
+ {
+  "id": "non-cash-transaction",
+  "letter": "N",
+  "term": "Non-Cash Transaction",
+  "def": "A transaction that uses no cash, such as buying a machine by issuing shares; left out of the statement.",
+  "chapter": 5
+ },
+ {
+  "id": "non-current-account",
+  "letter": "N",
+  "term": "Non-Current Account",
+  "def": "A long-term account, such as share capital, reserves, long-term loans or fixed assets.",
+  "chapter": 4
+ },
+ {
+  "id": "notes-to-accounts",
+  "letter": "N",
+  "term": "Notes to Accounts",
+  "def": "Explanatory disclosures with the statements, covering accounting policies, contingent liabilities and the detail behind figures.",
+  "chapter": 2
+ },
+ {
+  "id": "operating-activities",
+  "letter": "O",
+  "term": "Operating Activities",
+  "def": "The firm’s principal revenue-producing activities and other activities that are not investing or financing.",
+  "chapter": 5
+ },
+ {
+  "id": "outstanding-expense",
+  "letter": "O",
+  "term": "Outstanding Expense",
+  "def": "A cost already incurred but not yet paid, added to the year’s expenses and shown as a liability.",
+  "chapter": 2
+ },
+ {
+  "id": "overheads",
+  "letter": "O",
+  "term": "Overheads",
+  "def": "Indirect costs of production, administration and selling that cannot be traced to a unit.",
+  "chapter": 6
+ },
+ {
+  "id": "owned-capital",
+  "letter": "O",
+  "term": "Owned Capital",
+  "def": "Funds provided by the owners; permanent, with no obligation to repay.",
+  "chapter": 11
+ },
+ {
+  "id": "p-v-ratio",
+  "letter": "P",
+  "term": "P/V Ratio",
+  "def": "Contribution as a percentage of sales; also called the profit-volume ratio.",
+  "chapter": 7
+ },
+ {
+  "id": "payback-period",
+  "letter": "P",
+  "term": "Payback Period",
+  "def": "The time taken for a project’s cash inflows to recover its initial outlay.",
+  "chapter": 10
+ },
+ {
+  "id": "pecking-order-theory",
+  "letter": "P",
+  "term": "Pecking Order Theory",
+  "def": "Firms prefer internal funds, then debt, and new equity last.",
+  "chapter": 13
+ },
+ {
+  "id": "periodicity-concept",
+  "letter": "P",
+  "term": "Periodicity Concept",
+  "def": "The business’s continuing life is divided into periods, usually a year, for reporting.",
+  "chapter": 1
+ },
+ {
+  "id": "preference-shares",
+  "letter": "P",
+  "term": "Preference Shares",
+  "def": "Shares with a fixed dividend and priority over equity, usually without voting rights.",
+  "chapter": 11
+ },
+ {
+  "id": "prepaid-expense",
+  "letter": "P",
+  "term": "Prepaid Expense",
+  "def": "A cost paid in advance for a later period, taken out of this year’s expenses and shown as an asset.",
+  "chapter": 2
+ },
+ {
+  "id": "price-earnings-p-e-ratio",
+  "letter": "P",
+  "term": "Price-Earnings (P/E) Ratio",
+  "def": "Share price divided by earnings per share; the rupees investors pay for each rupee of earnings.",
+  "chapter": 3
+ },
+ {
+  "id": "prime-cost",
+  "letter": "P",
+  "term": "Prime Cost",
+  "def": "Direct material plus direct labour plus direct expenses.",
+  "chapter": 6
+ },
+ {
+  "id": "process-costing",
+  "letter": "P",
+  "term": "Process Costing",
+  "def": "A costing method for continuous, uniform production such as cement.",
+  "chapter": 6
+ },
+ {
+  "id": "production-budget",
+  "letter": "P",
+  "term": "Production Budget",
+  "def": "Units to be made: sales plus closing stock less opening stock.",
+  "chapter": 9
+ },
+ {
+  "id": "profit-maximisation",
+  "letter": "P",
+  "term": "Profit Maximisation",
+  "def": "The aim of increasing profit, usually over a short period.",
+  "chapter": 10
+ },
+ {
+  "id": "provision",
+  "letter": "P",
+  "term": "Provision",
+  "def": "An amount charged against profit for a known or likely loss or liability whose size is uncertain.",
+  "chapter": 2
+ },
+ {
+  "id": "public-deposits",
+  "letter": "P",
+  "term": "Public Deposits",
+  "def": "Money accepted from the public for a fixed term at interest, often unsecured.",
+  "chapter": 11
+ },
+ {
+  "id": "purchase-budget",
+  "letter": "P",
+  "term": "Purchase Budget",
+  "def": "The materials to be bought: material needed plus closing stock less opening stock.",
+  "chapter": 9
+ },
+ {
+  "id": "quick-ratio-acid-test-ratio",
+  "letter": "Q",
+  "term": "Quick Ratio (Acid-Test Ratio)",
+  "def": "Current assets less inventory, divided by current liabilities; benchmark about 1:1.",
+  "chapter": 3
+ },
+ {
+  "id": "ratio-analysis",
+  "letter": "R",
+  "term": "Ratio Analysis",
+  "def": "Studying relationships between items in the financial statements to judge performance and position.",
+  "chapter": 3
+ },
+ {
+  "id": "realisation-concept",
+  "letter": "R",
+  "term": "Realisation Concept",
+  "def": "Revenue is recognised when it is earned, usually on sale, not necessarily when cash arrives.",
+  "chapter": 1
+ },
+ {
+  "id": "reserve",
+  "letter": "R",
+  "term": "Reserve",
+  "def": "Profit kept back in the business; unlike a provision, it is not a charge against profit.",
+  "chapter": 2
+ },
+ {
+  "id": "residual-theory-of-dividends",
+  "letter": "R",
+  "term": "Residual Theory of Dividends",
+  "def": "Dividends are paid only from profit left after all acceptable projects are funded.",
+  "chapter": 10
+ },
+ {
+  "id": "retained-earnings",
+  "letter": "R",
+  "term": "Retained Earnings",
+  "def": "Profits kept in the business instead of being paid out as dividends.",
+  "chapter": 11
+ },
+ {
+  "id": "return-on-assets-roa",
+  "letter": "R",
+  "term": "Return on Assets (ROA)",
+  "def": "Net profit as a percentage of total assets.",
+  "chapter": 3
+ },
+ {
+  "id": "return-on-equity-roe",
+  "letter": "R",
+  "term": "Return on Equity (ROE)",
+  "def": "Net profit as a percentage of shareholders’ equity.",
+  "chapter": 3
+ },
+ {
+  "id": "risk-management",
+  "letter": "R",
+  "term": "Risk Management",
+  "def": "Identifying financial risks and reducing them through hedging, insurance and diversification.",
+  "chapter": 10
+ },
+ {
+  "id": "sales-budget",
+  "letter": "S",
+  "term": "Sales Budget",
+  "def": "An estimate of sales in quantity and value; usually the first budget drawn up.",
+  "chapter": 9
+ },
+ {
+  "id": "schedule-iii",
+  "letter": "S",
+  "term": "Schedule III",
+  "def": "The layout the Companies Act prescribes for a company’s balance sheet and statement of profit and loss.",
+  "chapter": 2
+ },
+ {
+  "id": "schedule-of-changes-in-working-capital",
+  "letter": "S",
+  "term": "Schedule of Changes in Working Capital",
+  "def": "A table of each current item over two years showing how working capital rose or fell.",
+  "chapter": 4
+ },
+ {
+  "id": "semi-variable-cost",
+  "letter": "S",
+  "term": "Semi-Variable Cost",
+  "def": "A cost with both a fixed and a variable part, such as an electricity bill.",
+  "chapter": 6
+ },
+ {
+  "id": "source-of-funds",
+  "letter": "S",
+  "term": "Source of Funds",
+  "def": "A long-term inflow that raises working capital, such as new shares, loans, asset sales or operating profit.",
+  "chapter": 4
+ },
+ {
+  "id": "special-order",
+  "letter": "S",
+  "term": "Special Order",
+  "def": "A one-off order priced below the usual price; accepted if it adds contribution and does not harm regular sales.",
+  "chapter": 7
+ },
+ {
+  "id": "standard-cost",
+  "letter": "S",
+  "term": "Standard Cost",
+  "def": "The predetermined cost of a unit under efficient working conditions.",
+  "chapter": 8
+ },
+ {
+  "id": "standard-costing",
+  "letter": "S",
+  "term": "Standard Costing",
+  "def": "Compares predetermined costs with actual costs to find variances and act on their causes.",
+  "chapter": 8
+ },
+ {
+  "id": "statement-of-changes-in-equity",
+  "letter": "S",
+  "term": "Statement of Changes in Equity",
+  "def": "A statement showing how owners’ funds moved over the period: profit, share issues, dividends and reserves.",
+  "chapter": 2
+ },
+ {
+  "id": "statement-of-profit-and-loss",
+  "letter": "S",
+  "term": "Statement of Profit and Loss",
+  "def": "A statement of income, expenses and the resulting profit or loss for a period.",
+  "chapter": 2
+ },
+ {
+  "id": "straight-line-method",
+  "letter": "S",
+  "term": "Straight-Line Method",
+  "def": "Depreciation of the same amount every year: depreciable amount divided by useful life.",
+  "chapter": 2
+ },
+ {
+  "id": "trade-credit",
+  "letter": "T",
+  "term": "Trade Credit",
+  "def": "Buying from suppliers now and paying later.",
+  "chapter": 11
+ },
+ {
+  "id": "trade-off-theory",
+  "letter": "T",
+  "term": "Trade-Off Theory",
+  "def": "Firms balance the tax benefit of debt against the costs of financial distress.",
+  "chapter": 13
+ },
+ {
+  "id": "trial-balance",
+  "letter": "T",
+  "term": "Trial Balance",
+  "def": "A list of ledger balances that checks total debits equal total credits before statements are drawn.",
+  "chapter": 2
+ },
+ {
+  "id": "uniform-costing",
+  "letter": "U",
+  "term": "Uniform Costing",
+  "def": "Using the same cost methods across several firms or units so costs can be compared.",
+  "chapter": 6
+ },
+ {
+  "id": "variable-cost",
+  "letter": "V",
+  "term": "Variable Cost",
+  "def": "A cost that changes in proportion to output, such as raw materials.",
+  "chapter": 6
+ },
+ {
+  "id": "variable-overhead-variance",
+  "letter": "V",
+  "term": "Variable Overhead Variance",
+  "def": "The difference between standard and actual variable overhead, split into expenditure and efficiency.",
+  "chapter": 8
+ },
+ {
+  "id": "variance",
+  "letter": "V",
+  "term": "Variance",
+  "def": "The difference between standard and actual cost, favourable if actual is lower and adverse if higher.",
+  "chapter": 8
+ },
+ {
+  "id": "wealth-maximisation",
+  "letter": "W",
+  "term": "Wealth Maximisation",
+  "def": "The aim of increasing the value of the firm over time, allowing for the timing and risk of cash flows.",
+  "chapter": 10
+ },
+ {
+  "id": "weighted-average-cost-of-capital-wacc",
+  "letter": "W",
+  "term": "Weighted Average Cost of Capital (WACC)",
+  "def": "The average cost of all sources of finance, weighted by their share of total capital.",
+  "chapter": 12
+ },
+ {
+  "id": "window-dressing",
+  "letter": "W",
+  "term": "Window Dressing",
+  "def": "Arranging year-end figures, such as paying creditors early, to make ratios look better.",
+  "chapter": 3
+ },
+ {
+  "id": "working-capital",
+  "letter": "W",
+  "term": "Working Capital",
+  "def": "Current assets less current liabilities; the money tied up in day-to-day running.",
+  "chapter": 4
+ },
+ {
+  "id": "written-down-value-method",
+  "letter": "W",
+  "term": "Written-Down Value Method",
+  "def": "Depreciation at a fixed percentage of the asset’s reducing book value each year.",
+  "chapter": 2
+ },
+ {
+  "id": "zero-based-budgeting-zbb",
+  "letter": "Z",
+  "term": "Zero-Based Budgeting (ZBB)",
+  "def": "Every item of spending must be justified afresh, with no assumption that last year’s costs continue.",
+  "chapter": 9
+ }
+]

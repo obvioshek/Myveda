@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LAST_HREF_KEY, LAST_KEY, useDevice } from "@/components/landing/device";
 import { useDone } from "./progress";
+import { pendingUnitsLabel } from "@/content/learn/pending";
 
 export type MenuChapter = { slug: string; href: string; n: number; title: string; group: string; ids: string[] };
 export type MenuUnit = { id: string; n: number; short: string; groups: { key: string; label: string }[]; chapters: MenuChapter[] };
@@ -49,10 +50,8 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
   };
   const finished = (u: MenuUnit) => u.chapters.filter(c => state(c) === "done").length;
 
-  // Units the syllabus has but the site does not yet (for example 3 to 5).
-  const have = new Set(units.map(u => u.n));
-  const max = Math.max(...have);
-  const missing = Array.from({ length: max }, (_, i) => i + 1).filter(n => !have.has(n));
+  // Units the syllabus has but the site does not yet (for example 3 and 5).
+  const pending = pendingUnitsLabel(units.map(u => u.n));
 
   const onKey = (e: React.KeyboardEvent, i: number) => {
     const step = e.key === "ArrowDown" ? 1 : e.key === "ArrowUp" ? -1 : 0;
@@ -97,7 +96,7 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
                 );
               })}
             </div>
-            {missing.length > 0 && <p className="cmx-soon">Unit{missing.length > 1 ? "s" : ""} {missing.length > 1 ? `${missing[0]} to ${missing[missing.length - 1]}` : missing[0]} {missing.length > 1 ? "are" : "is"} being written.</p>}
+            {pending && <p className="cmx-soon">{pending}.</p>}
             <div className="cmx-more">
               {more.map(m => <Link key={m.href} href={m.href} prefetch={false}>{m.label}</Link>)}
             </div>
