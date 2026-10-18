@@ -31,6 +31,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "uses-types-and-limits-of-ratios",
+    name: "Uses, types and limits of ratios",
+    intro: "Where the figures come from, who uses them, and where ratios mislead.",
+    before: {
+      q: "Firm A earns ₹50,000 on sales of ₹5,00,000. Firm B earns ₹1,00,000 on sales of ₹50,00,000. Which is the more profitable on its sales?",
+      choices: [
+        { label: "B, its profit is bigger", reveal: "B’s profit is twice as large, but it keeps only 2 paise per rupee of sales. A keeps 10 paise." },
+        { label: "A, it keeps 10% of sales", reveal: "Right. A keeps 10% of its sales and B only 2%. A figure means little until it is set against a related figure." },
+      ],
+    },
+    lead: "Ratios are classed as income statement, balance sheet or composite by where the figures come from, and as liquidity, profitability, activity or solvency by purpose. They ignore qualitative factors and are only as sound as the accounts.",
+    check: [
+      ask("The debtors turnover ratio uses credit sales and debtors. It is a…", "Composite ratio", ["Income statement ratio", "Balance sheet ratio", "Solvency ratio"], "Credit sales come from the statement of profit and loss and debtors from the balance sheet, so it mixes the two."),
+      ask("Firm A earns ₹50,000 on sales of ₹5,00,000. Its net profit ratio is…", "10%", ["1%", "50%", "₹50,000"], "₹50,000 ÷ ₹5,00,000 × 100 = 10%."),
+      ask("Which is a limitation of ratio analysis?", "It leaves out qualitative factors such as management quality", ["It cannot be computed", "It uses only non-money figures", "It always agrees with the cash flow"], "Ratios are built from money figures, so qualitative factors do not appear."),
+    ],
+    lens: [],
+    reflect: "If a firm’s ratios all improved this year, what would you ask to make sure the improvement is real?",
+    summary: {
+      points: [
+        "Traditional: income statement, balance sheet, composite. Functional: liquidity, profitability, activity, solvency.",
+        "Different users want different ratios: short-term creditors liquidity, long-term lenders solvency.",
+        "Advantages: simpler statements, trends, control, links between parts.",
+        "Limits: qualitative factors, single-year ratios, defective accounting data.",
+      ],
+      memory: "Where the figures come from, and what the ratio tests.",
+    },
+  },
+  {
     blockId: "liquidity-ratios",
     name: "Liquidity ratios",
     intro: "Current, quick and cash ratios, worked on Kaveri Auto Parts.",
@@ -46,6 +75,7 @@ const lessons: Lesson[] = [
       ask("Kaveri has current assets of ₹18,00,000, inventory of ₹8,00,000 and current liabilities of ₹8,00,000. Its quick ratio is…", "1.25 : 1", ["2.25 : 1", "0.5 : 1", "1 : 1"], "(₹18,00,000 − ₹8,00,000) ÷ ₹8,00,000 = 1.25. The 2.25 figure is the current ratio, which keeps the inventory in."),
       ask("Why does the quick ratio leave out inventory?", "Stock can take months to become cash and may sell below cost", ["Stock is not an asset", "Stock is always worthless", "Inventory is a long-term item"], "Stock is a current asset, but it is the slowest to turn into cash. The quick ratio counts only what can be paid out soon."),
       ask("A firm has current assets of ₹6,00,000, of which ₹3,60,000 is stock, and current liabilities of ₹3,00,000. Its quick ratio is…", "0.8 : 1", ["2 : 1", "1.2 : 1", "0.5 : 1"], "(₹6,00,000 − ₹3,60,000) ÷ ₹3,00,000 = 0.8. The current ratio, 2 : 1, looks fine, and the quick ratio shows it leans on selling stock."),
+      ask("Closing stock is ₹8,00,000 and working capital ₹10,00,000. The stock-working capital ratio is…", "0.8 (80%)", ["1.25", "0.2", "8"], "₹8,00,000 ÷ ₹10,00,000 = 0.8. Four-fifths of the working capital rests on stock."),
     ],
     lens: [],
     reflect: "If a supplier asked you to pay this week, what would you sell or collect first? That is the order in which assets count as liquid.",
@@ -89,6 +119,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "operating-profit-and-roce",
+    name: "Operating ratio, capital employed and EPS",
+    intro: "What running the business takes, and what the long-term money earns.",
+    before: {
+      q: "Kaveri’s gross profit is ₹15,00,000 but its operating profit is ₹7,00,000. What accounts for the gap?",
+      choices: [
+        { label: "Tax", reveal: "Tax is taken after operating profit. The gap is the running expenses of ₹8,00,000, such as administration and selling." },
+        { label: "Operating expenses", reveal: "Right. ₹15,00,000 − ₹8,00,000 = ₹7,00,000. The operating ratio brings these costs together with the cost of goods." },
+      ],
+    },
+    lead: "Operating ratio = (cost of goods + operating expenses) ÷ sales; operating profit ratio is its complement. ROCE = EBIT ÷ capital employed. EPS is profit after preference dividend ÷ equity shares.",
+    check: [
+      ask("Cost of goods sold ₹35,00,000, operating expenses ₹8,00,000 and sales ₹50,00,000. The operating ratio is…", "86%", ["70%", "14%", "16%"], "(₹35,00,000 + ₹8,00,000) ÷ ₹50,00,000 = 86%. The 14% is the operating profit ratio."),
+      ask("EBIT is ₹7,00,000, equity ₹24,00,000 and long-term debt ₹8,00,000. ROCE is…", "About 21.9%", ["29.2%", "17.5%", "8.4%"], "Capital employed is ₹32,00,000, and ₹7,00,000 ÷ ₹32,00,000 = 21.9%. Dividing by equity alone gives 29.2%."),
+      ask("Profit is ₹4,20,000 on 1,00,000 shares. After a bonus issue of one share for four, EPS becomes…", "₹3.36", ["₹4.20", "₹5.25", "₹4.00"], "₹4,20,000 ÷ 1,25,000 = ₹3.36. Profit did not change; it was spread over more shares."),
+    ],
+    lens: [],
+    reflect: "A firm’s ROCE is 9% and its loan costs 11%. Should it expand using the loan?",
+    summary: {
+      points: [
+        "Operating ratio + operating profit ratio = 100%.",
+        "ROCE = EBIT ÷ (Debt + Equity) × 100, also Fixed assets + Working capital.",
+        "EPS = (Profit after tax − Preference dividend) ÷ Equity shares.",
+        "A bonus issue lowers EPS without lowering profit.",
+      ],
+      memory: "Operating ratio plus operating profit ratio makes 100.",
+    },
+  },
+  {
     blockId: "activity-ratios",
     name: "Activity (turnover) ratios",
     intro: "How fast stock, debtors, creditors and assets turn over.",
@@ -104,6 +163,7 @@ const lessons: Lesson[] = [
       ask("A firm’s cost of goods sold is ₹9,00,000 and its average inventory is ₹1,50,000. Inventory turnover is…", "6 times", ["0.17 times", "9 times", "60 times"], "₹9,00,000 ÷ ₹1,50,000 = 6. Dividing the other way gives 0.17, and it would mean nothing as a turnover."),
       ask("Kaveri’s debtors turnover is 8 times. About how many days does it take to collect?", "45.6 days", ["8 days", "365 days", "91 days"], "365 ÷ 8 = 45.6 days. The 8 itself is a count of times a year, not days."),
       ask("Inventory turnover is calculated on cost of goods sold rather than sales because…", "Stock is carried at cost, so the numerator should be at cost too", ["Sales are not reliable", "Cost is always the larger figure", "Inventory includes the profit"], "Dividing sales (which include profit) by stock at cost overstates the speed. Using cost compares like with like."),
+      ask("Sales are ₹6,40,000, gross profit is 25% on cost, and average stock is ₹60,000. Stock turnover is about…", "8.5 times", ["10.7 times", "2.7 times", "6.4 times"], "Cost of goods sold is ₹6,40,000 × 100/125 = ₹5,12,000, and ₹5,12,000 ÷ ₹60,000 = 8.5 times. Using sales as the numerator gives 10.7."),
     ],
     lens: [],
     reflect: "A vegetable seller’s debtors are close to zero and her creditors wait a day. Why can she run on a tiny balance sheet while a machine builder cannot?",
@@ -133,6 +193,7 @@ const lessons: Lesson[] = [
       ask("Kaveri’s operating profit is ₹7,00,000 and interest is ₹1,00,000. Interest coverage is…", "7 times", ["6 times", "0.14 times", "7 per cent"], "₹7,00,000 ÷ ₹1,00,000 = 7. Subtracting the interest first would give 6, but the formula uses operating profit before interest."),
       ask("A firm has debt of ₹6,00,000 and shareholders’ equity of ₹4,00,000. Its debt-to-equity ratio is…", "1.5", ["0.6", "0.67", "10"], "₹6,00,000 ÷ ₹4,00,000 = 1.5. The 0.6 figure divides debt by debt plus equity, which is a different ratio."),
       ask("A firm borrows at 10% and earns 18% on the money. What is the effect on its owners?", "Their return rises, and so does their risk", ["Their return rises and risk is unchanged", "Their return falls", "Nothing changes"], "The 8% spread goes to the owners, so ROE rises. Interest is fixed, however, so a poor year hurts them more."),
+      ask("Shareholders’ funds ₹24,00,000 and total assets ₹40,00,000. The proprietary ratio is…", "0.6", ["1.67", "0.42", "0.4"], "₹24,00,000 ÷ ₹40,00,000 = 0.6, so owners paid for 60% of the assets. 1.67 is the inverse."),
     ],
     lens: [],
     reflect: "You are asked to lend your savings to a friend’s shop. Which of the three ratios would you ask to see first, and what would make you refuse?",

@@ -31,6 +31,35 @@ const lessons: Lesson[] = [
     },
   },
   {
+    blockId: "marginal-cost-features-and-limits",
+    name: "Marginal cost, its features and limits",
+    intro: "The extra cost of one more unit, and what the method can and cannot do.",
+    before: {
+      q: "100 articles cost ₹50,000 and 101 cost ₹50,450. What is the marginal cost?",
+      choices: [
+        { label: "₹500", reveal: "That would be the average cost of the 101 articles, about ₹500. The marginal cost is the change, ₹450." },
+        { label: "₹450", reveal: "Right. ₹50,450 − ₹50,000 = ₹450, the extra cost of the 101st article." },
+      ],
+    },
+    lead: "Marginal cost is the extra cost of one more unit, its variable cost. Under marginal costing only variable costs go into products, stock is valued at variable cost, and fixed costs are charged to the period.",
+    check: [
+      ask("In marginal costing, closing stock is valued at…", "Variable cost only", ["Full cost including fixed overhead", "Selling price", "Fixed cost only"], "No fixed overhead is carried forward in stock. That is why marginal and absorption profits differ."),
+      ask("A product sells 10,000 units with a contribution of ₹4 a unit. Its contribution is…", "₹40,000", ["₹4,000", "₹4,00,000", "₹10,000"], "10,000 × ₹4 = ₹40,000. Contribution is spread over fixed cost and profit."),
+      ask("Contributions of three products are ₹40,000, ₹50,000 and ₹30,000, and fixed costs are ₹80,000. Profit is…", "₹40,000", ["₹1,20,000", "₹80,000", "₹2,00,000"], "Total contribution is ₹1,20,000, and ₹1,20,000 − ₹80,000 = ₹40,000."),
+    ],
+    lens: [],
+    reflect: "A product earns only ₹0.50 a unit in contribution. Why might dropping it still reduce profit?",
+    summary: {
+      points: [
+        "Marginal cost = variable cost of one more unit; also called variable or contributory costing.",
+        "Features: only variable costs in product cost; fixed costs charged to the period; stock at variable cost.",
+        "Advantages: decision data, profit planning, no arbitrary fixed-cost sharing.",
+        "Limits: semi-variable costs are hard to split; ignores fixed costs in decisions; not for published accounts.",
+      ],
+      memory: "Extra unit, extra variable cost; fixed cost waits for the contribution.",
+    },
+  },
+  {
     blockId: "break-even-and-cvp-analysis",
     name: "Break-even and CVP analysis",
     intro: "The point of no profit and no loss, and the safety margin above it.",
@@ -57,6 +86,35 @@ const lessons: Lesson[] = [
         "Target profit: add the desired profit to fixed costs before dividing.",
       ],
       memory: "Break-even is where contribution equals fixed cost.",
+    },
+  },
+  {
+    blockId: "cvp-relationships-and-angle-of-incidence",
+    name: "Relationships in CVP and the angle of incidence",
+    intro: "The identities that answer most break-even questions.",
+    before: {
+      q: "Sales rise from ₹3,60,000 to ₹4,00,000 and profit from ₹24,000 to ₹40,000. What is the P/V ratio?",
+      choices: [
+        { label: "10%", reveal: "That would be profit over sales. The P/V ratio comes from the change: ₹16,000 ÷ ₹40,000." },
+        { label: "40%", reveal: "Right. Change in profit ÷ change in sales = ₹16,000 ÷ ₹40,000 = 40%." },
+      ],
+    },
+    lead: "S − V = F + P. At break-even C = F; in the margin of safety C = P. P/V ratio = change in profit ÷ change in sales, and margin of safety = profit ÷ P/V ratio.",
+    check: [
+      ask("Profit is ₹40,000 and the P/V ratio is 40%. The margin of safety is…", "₹1,00,000", ["₹16,000", "₹40,000", "₹1,60,000"], "₹40,000 ÷ 0.40 = ₹1,00,000. Contribution on the margin of safety is all profit."),
+      ask("At the break-even point, contribution equals…", "Fixed cost", ["Profit", "Sales", "Variable cost"], "At break-even there is no profit, so contribution only covers fixed cost."),
+      ask("A wide angle of incidence on a break-even chart means…", "Profit grows fast once break-even is passed", ["Profit grows slowly", "There is no break-even", "Fixed costs are zero"], "A wide angle means the sales line is much steeper than the cost line, so profit builds quickly."),
+    ],
+    lens: [],
+    reflect: "If a firm shifts its sales to a product with a higher P/V ratio, what happens to break-even sales?",
+    summary: {
+      points: [
+        "Marginal cost equation: S − V = F + P; C = F + P.",
+        "At break-even C = F; in the margin of safety C = P.",
+        "P/V ratio = Change in profit ÷ Change in sales; MoS = Profit ÷ P/V.",
+        "Angle of incidence: the angle at which sales cut total cost; wide means high profit-earning capacity.",
+      ],
+      memory: "Break-even: contribution equals fixed cost. Above it: contribution equals profit.",
     },
   },
   {

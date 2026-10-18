@@ -2,6 +2,7 @@
 // content/learn/lesson-kit.ts for what a lesson is and the rules for writing one.
 
 import accountingPrinciplesConceptsAndConventions from "./accounting-principles-concepts-and-conventions";
+import activityBasedAndLifeCycleCosting from "./activity-based-and-life-cycle-costing";
 import budgetingAndBudgetaryControl from "./budgeting-and-budgetary-control";
 import capitalStructureTheories from "./capital-structure-theories";
 import cashFlowStatement from "./cash-flow-statement";
@@ -23,6 +24,7 @@ const lessons: Record<string, Lesson[]> = {
   "fund-flow-statement": fundFlowStatement,
   "cash-flow-statement": cashFlowStatement,
   "cost-accounting-and-cost-sheet": costAccountingAndCostSheet,
+  "activity-based-and-life-cycle-costing": activityBasedAndLifeCycleCosting,
   "marginal-costing-and-cvp-analysis": marginalCostingAndCvpAnalysis,
   "standard-costing-and-variance-analysis": standardCostingAndVarianceAnalysis,
   "budgeting-and-budgetary-control": budgetingAndBudgetaryControl,
