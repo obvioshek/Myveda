@@ -12,7 +12,7 @@ import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
 import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
 import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
 import { siteUrl } from "@/lib/site";
@@ -57,6 +57,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const showLens = loose.length > 0;
   const firstId = lessons?.[0]?.blockId;
   const many = UNITS.length > 1;
+  const checks = (lessons ?? []).reduce((a, l) => a + l.check.length, 0);
   const uses = usesIdeasFrom(c.slug);
   const usedIn = ideasUsedIn(c.slug);
 
@@ -188,6 +189,17 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
               {c.lensNote && <p className="cue">{c.lensNote}</p>}
               <Pairings items={loose} />
               <p className="ci-fine">{HOW.translations}</p>
+            </section>
+          )}
+
+          {checks > 0 && (
+            <section className="ch-test" aria-labelledby="ch-test-h">
+              <div>
+                <span className="label red">Test yourself</span>
+                <h2 id="ch-test-h" className="h-xs">All {checks} questions from this chapter, in a new order.</h2>
+                <p className="ci-fine">The ones you miss join your review, and come back until they stick.</p>
+              </div>
+              <Link className="btn btn-primary btn-lg" href={`${PRACTICE_PATH}?chapter=${c.slug}`} prefetch={false}>Start the chapter test<Arrow /></Link>
             </section>
           )}
 

@@ -18,11 +18,20 @@ import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today
 // "I knew it", so scoring treats both alike.
 
 type Q = PracticeQuestion & { id: string; card?: true };
-type Kind = "review" | "mixed";
+type Kind = "review" | "mixed" | "chapter";
 type What = "questions" | "terms";
 /** `guess`: the reader said they weren't sure before answering. */
 type Answer = { picked: number; line: string | null; guess?: boolean };
-type Session = { kind: Kind; items: Q[]; i: number; answers: (Answer | null)[]; started: number; ended: number | null };
+/**
+ * `chapter`: the chapter a chapter test is on. `exam`: a mock test, answered
+ * without feedback until it is submitted, with an optional time limit.
+ */
+type Session = { kind: Kind; items: Q[]; i: number; answers: (Answer | null)[]; started: number; ended: number | null; chapter?: string; exam?: { limitMs: number | null } };
+
+// Seconds allowed per question in a timed mock test.
+const PACES = [{ s: 0, label: "No limit" }, { s: 60, label: "1 min a question" }, { s: 90, label: "1½ min a question" }] as const;
+
+const KIND_LABEL: Record<Kind, string> = { review: "Spaced review", mixed: "Mixed practice", chapter: "Chapter test" };
 
 const REVIEW_SET = 20;
 const COUNTS = [10, 20, 40] as const;
@@ -71,6 +80,8 @@ export default function Practice() {
   const [units, setUnits] = useState<string[] | null>(null);
   const [count, setCount] = useState<number>(20);
   const [onlyStarted, setOnlyStarted] = useState(false);
+  const [exam, setExam] = useState(false);
+  const [pace, setPace] = useState<number>(60);
   const [session, setSession] = useState<Session | null>(null);
   const list = useReview();
   const done = useDone();
@@ -93,6 +104,14 @@ export default function Practice() {
         const want = params.get("unit");
         if (want && b.units.some(u => u.id === want)) setUnits([want]);
         if (params.get("mode") === "terms") setWhat("terms");
+        // "Test yourself on this chapter" starts straight away, once; the
+        // address loses the chapter so a reload comes back to this page.
+        const slug = params.get("chapter");
+        const items = slug ? b.questions.filter(q => q.c === slug).map(q => ({ ...q, id: questionId(q.c, q.b, q.q) })) : [];
+        if (items.length) {
+          setSession({ kind: "chapter", chapter: slug!, items: shuffle(items), i: 0, answers: items.map(() => null), started: Date.now(), ended: null });
+          history.replaceState(null, "", window.location.pathname);
+        }
       })
       .catch(() => { if (live) setFailed(true); });
     return () => { live = false; };
@@ -118,12 +137,17 @@ export default function Practice() {
   const startedInChosen = new Set(source.filter(q => chosen.includes(q.u) && started.has(q.c)).map(q => q.c)).size;
   const noun = what === "terms" ? "terms" : "questions";
 
-  const begin = (kind: Kind, items: Q[]) => {
-    setSession({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null });
+  const begin = (kind: Kind, items: Q[], chapter?: string, examMode?: Session["exam"]) => {
+    setSession({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null, chapter, exam: examMode });
     window.setTimeout(() => top.current?.scrollIntoView({ block: "start" }), 0);
   };
   const startReview = () => begin("review", shuffle(due.slice(0, REVIEW_SET).map(id => byId.get(id)!)));
-  const startMixed = () => begin("mixed", mix(pool, count));
+  const isExam = exam && what === "questions";
+  const startMixed = () => {
+    const items = mix(pool, count);
+    begin("mixed", items, undefined, isExam ? { limitMs: pace ? pace * 1000 * items.length : null } : undefined);
+  };
+  const startChapter = (slug: string) => begin("chapter", shuffle((bank?.questions ?? []).filter(q => q.c === slug)), slug);
 
   const toggleUnit = (id: string) => {
     const next = chosen.includes(id) ? chosen.filter(x => x !== id) : [...chosen, id];
@@ -142,7 +166,7 @@ export default function Practice() {
       <div className="wrap pr-box" ref={top}>
         {session.ended === null
           ? <Run session={session} setSession={setSession} />
-          : <Results session={session} dueLeft={due.length} onReview={startReview} onAgain={startMixed} onBack={() => setSession(null)} />}
+          : <Results session={session} dueLeft={due.length} onReview={startReview} onAgain={session.kind === "chapter" && session.chapter ? () => startChapter(session.chapter!) : startMixed} onBack={() => setSession(null)} />}
       </div>
     );
   }
@@ -219,6 +243,20 @@ export default function Practice() {
             </div>
           </fieldset>
 
+          {what === "questions" && (
+            <div className="pr-exam">
+              <label className="pr-check">
+                <input type="checkbox" checked={exam} onChange={e => setExam(e.target.checked)} />
+                <span>Mock test: no answers until you submit</span>
+              </label>
+              {exam && (
+                <div className="pr-chips" role="group" aria-label="Time limit">
+                  {PACES.map(p => <button key={p.s} type="button" className="pr-chip" aria-pressed={pace === p.s} onClick={() => setPace(p.s)}>{p.label}</button>)}
+                </div>
+              )}
+            </div>
+          )}
+
           <label className="pr-check">
             <input type="checkbox" checked={onlyStarted} disabled={!startedInChosen && !onlyStarted} onChange={e => setOnlyStarted(e.target.checked)} />
             <span>Only chapters I’ve started {startedInChosen ? `(${startedInChosen})` : "(none yet: finish a concept first)"}</span>
@@ -226,7 +264,7 @@ export default function Practice() {
 
           <div className="btn-row">
             <button type="button" className="btn btn-primary btn-lg" disabled={!pool.length} onClick={startMixed}>
-              {pool.length ? `Start ${Math.min(count, pool.length)} ${noun}` : "Choose a unit"}
+              {!pool.length ? "Choose a unit" : isExam ? `Start a ${Math.min(count, pool.length)}-question mock test` : `Start ${Math.min(count, pool.length)} ${noun}`}
             </button>
           </div>
         </section>
@@ -237,6 +275,7 @@ export default function Practice() {
 }
 
 function Run({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
+  if (session.exam) return <MockRun session={session} setSession={setSession} />;
   const q = session.items[session.i];
   return q.card ? <CardRun key={session.i} session={session} setSession={setSession} /> : <QuestionRun key={session.i} session={session} setSession={setSession} />;
 }
@@ -385,7 +424,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
   return (
     <div className="pr-run">
       <div className="pr-bar">
-        <span className="label red">{session.kind === "review" ? "Spaced review" : "Mixed practice"}</span>
+        <span className="label red">{session.kind === "chapter" ? `${KIND_LABEL.chapter} · ${q.ct}` : KIND_LABEL[session.kind]}</span>
         <span className="pg">
           <span className="pg-bar" aria-hidden="true"><i style={{ width: `${pct}%` }} /></span>
           <span className="pg-t">Question {session.i + 1} of {n}</span>
@@ -428,6 +467,112 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
   );
 }
 
+const clock = (ms: number) => {
+  const s = Math.max(0, Math.ceil(ms / 1000));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+};
+
+// A mock test: answers can be changed until it is submitted, nothing is
+// marked until then, and a time limit, if set, submits it when it runs out.
+// Submitting records every answer for review; a question left blank counts
+// as missed.
+function MockRun({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
+  const q = session.items[session.i];
+  const answer = session.answers[session.i];
+  const n = session.items.length;
+  const limit = session.exam?.limitMs ?? null;
+  const [now, setNow] = useState(session.started);
+  const qRef = useRef<HTMLHeadingElement>(null);
+  const qId = useId();
+  const left = limit === null ? null : session.started + limit - now;
+  const answeredN = session.answers.filter(Boolean).length;
+
+  const submit = useCallback(() => {
+    const answers = session.answers.map((a, i) => {
+      const item = session.items[i];
+      const picked = a?.picked ?? -1;
+      recordAnswer(item.id, picked === item.a);
+      return { picked, line: null };
+    });
+    setSession({ ...session, answers, ended: Date.now() });
+  }, [session, setSession]);
+
+  useEffect(() => {
+    if (limit === null) return;
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, [limit]);
+  useEffect(() => { if (left !== null && left <= 0) submit(); }, [left, submit]);
+  useEffect(() => { qRef.current?.focus({ preventScroll: true }); }, [session.i]);
+
+  const pick = (i: number) => {
+    const answers = [...session.answers];
+    answers[session.i] = { picked: i, line: null };
+    setSession({ ...session, answers });
+  };
+  const go = (i: number) => setSession({ ...session, i: Math.max(0, Math.min(n - 1, i)) });
+  const finish = () => {
+    const blank = n - answeredN;
+    if (blank && !window.confirm(`${blank} ${blank === 1 ? "question is" : "questions are"} unanswered and will count as missed. Submit anyway?`)) return;
+    submit();
+  };
+
+  // 1 to 4 answer; arrow keys move between questions.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      const k = Number(e.key);
+      if (Number.isInteger(k) && k >= 1 && k <= q.o.length) {
+        e.preventDefault();
+        const answers = [...session.answers];
+        answers[session.i] = { picked: k - 1, line: null };
+        setSession({ ...session, answers });
+      } else if (e.key === "ArrowRight") { e.preventDefault(); setSession({ ...session, i: Math.min(n - 1, session.i + 1) }); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); setSession({ ...session, i: Math.max(0, session.i - 1) }); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [q.o.length, n, session, setSession]);
+
+  return (
+    <div className="pr-run">
+      <div className="pr-bar">
+        <span className="label red">Mock test</span>
+        <span className="pg"><span className="pg-t">{answeredN} of {n} answered</span></span>
+        {left !== null && <span className={left < 60_000 ? "pr-timer low" : "pr-timer"} role="timer" aria-label="Time left">{clock(left)}</span>}
+        <button type="button" className="btn btn-primary pr-end" onClick={finish}>Submit</button>
+      </div>
+
+      <nav className="pr-grid-nav" aria-label="Questions">
+        {session.items.map((_, i) => (
+          <button key={i} type="button" className={session.answers[i] ? "done" : ""} aria-current={i === session.i ? "step" : undefined} onClick={() => go(i)}>
+            {i + 1}<span className="sr-only">{session.answers[i] ? ", answered" : ", not answered"}</span>
+          </button>
+        ))}
+      </nav>
+
+      <p className="pr-from">Question {session.i + 1} of {n} · {q.ct}</p>
+      <h2 className="pr-q" id={qId} ref={qRef} tabIndex={-1}>{q.q}</h2>
+      <div className="ck-opts pr-opts" role="radiogroup" aria-labelledby={qId}>
+        {q.o.map((o, i) => (
+          <button key={o} type="button" role="radio" aria-checked={answer?.picked === i} className={answer?.picked === i ? "btn btn-secondary ck-opt chosen" : "btn btn-secondary ck-opt"} onClick={() => pick(i)}>
+            <span className="pr-key" aria-hidden="true">{i + 1}</span>{o}
+          </button>
+        ))}
+      </div>
+      <div className="btn-row">
+        <button type="button" className="btn btn-secondary" disabled={session.i === 0} onClick={() => go(session.i - 1)}>Previous</button>
+        {session.i < n - 1
+          ? <button type="button" className="btn btn-primary" onClick={() => go(session.i + 1)}>Next</button>
+          : <button type="button" className="btn btn-primary" onClick={finish}>Submit the test</button>}
+      </div>
+      <p className="ci-fine pr-keys">Keys: 1 to {q.o.length} to answer, ← and → to move. You can change any answer until you submit.</p>
+    </div>
+  );
+}
+
 function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Session; dueLeft: number; onReview: () => void; onAgain: () => void; onBack: () => void }) {
   const asked = session.items.map((q, i) => ({ q, a: session.answers[i] })).filter((x): x is { q: Q; a: Answer } => x.a !== null);
   const rightN = asked.filter(x => x.a.picked === x.q.a).length;
@@ -453,7 +598,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
 
   return (
     <div className="pr-res">
-      <span className="label red">{session.kind === "review" ? "Review done" : allCards ? "Cards done" : "Practice done"}</span>
+      <span className="label red">{session.kind === "review" ? "Review done" : session.exam ? "Mock test done" : session.kind === "chapter" ? "Chapter test done" : allCards ? "Cards done" : "Practice done"}</span>
       <h2 className="h-sm pr-score" ref={h} tabIndex={-1}>
         {!asked.length ? "Nothing answered." : allCards ? `Knew ${rightN} of ${asked.length}.` : `${rightN} of ${asked.length} right.`}
       </h2>
@@ -482,10 +627,31 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
         </div>
       )}
 
+      {session.exam && (
+        <div className="pr-review">
+          <h3 className="h-xs">Every question, with the answer</h3>
+          <ol>
+            {asked.map(({ q, a }, i) => {
+              const ok = a.picked === q.a;
+              return (
+                <li key={q.id} className={ok ? "ok" : "miss"}>
+                  <p className="pr-rq"><span className="pr-rn">{i + 1}</span>{q.q}</p>
+                  <p className="pr-ra">
+                    {a.picked < 0 ? <b>Not answered.</b> : ok ? <b>Right: “{q.o[q.a]}”.</b> : <><b>You chose “{q.o[a.picked]}”.</b> The answer is “{q.o[q.a]}”.</>}
+                    {" "}{q.w}
+                  </p>
+                  <Link className="link" href={lessonHref(q)}>{q.bn}, in {q.ct}</Link>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      )}
+
       <div className="btn-row">
         {session.kind === "review"
           ? dueLeft > 0 && <button type="button" className="btn btn-primary btn-lg" onClick={onReview}>Review the next {Math.min(dueLeft, REVIEW_SET)}</button>
-          : <button type="button" className="btn btn-primary btn-lg" onClick={onAgain}>Another set</button>}
+          : <button type="button" className="btn btn-primary btn-lg" onClick={onAgain}>{session.kind === "chapter" ? "Take it again" : "Another set"}</button>}
         <button type="button" className="btn btn-secondary btn-lg" onClick={onBack}>Back to practice</button>
       </div>
     </div>
