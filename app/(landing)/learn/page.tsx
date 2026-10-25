@@ -7,7 +7,7 @@ import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
 import ReviewBand from "@/components/learn/ReviewBand";
 import { SaveOffline } from "@/components/learn/Offline";
-import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
@@ -64,7 +64,7 @@ export default function LearnIndex() {
           {UNITS.map(u => <a key={u.id} href={`#${u.id}`}><b>Unit {u.n}</b>{u.short}</a>)}
           {pending && <span className="ci-soon">{pending}</span>}
         </nav>
-        <p className="ci-plan">Preparing for an exam? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> from your exam date, or <Link className="link" href={PRACTICE_PATH} prefetch={false}>practise</Link> across the units.</p>
+        <p className="ci-plan">Preparing for an exam? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> from your exam date, or <Link className="link" href={PRACTICE_PATH} prefetch={false}>practise</Link> across the units. <Link className="link" href={PROGRESS_PATH} prefetch={false}>See your progress</Link>.</p>
       </section>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
