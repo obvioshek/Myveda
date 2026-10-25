@@ -478,3 +478,7 @@ h4 { margin: 0; }
 /* The chart scales down with its box; on a phone its text is set larger so it stays readable. */
 @container (max-width: 420px) { .tl-chart text { font-size: 22px; } }
 @media print { .tl-reset { display: none; } }
+
+/* "Ask the community about this", under the reflection note */
+.ls-ask { max-width: 62ch; margin-top: 4px; color: var(--body); font-size: 14.5px; line-height: 22px; }
+.ls-ask-note { display: block; color: var(--soft); font-size: 13px; }

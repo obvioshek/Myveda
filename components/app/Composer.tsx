@@ -46,7 +46,13 @@ export default function Composer({
   const draftRef = useRef(draft);
   draftRef.current = draft;
 
-  useEffect(() => { textRef.current?.focus(); }, []);
+  // Focus the text with the caret at the end, after any words already filled in.
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+    el.focus();
+    el.setSelectionRange(el.value.length, el.value.length);
+  }, []);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
     document.addEventListener("keydown", onKey);

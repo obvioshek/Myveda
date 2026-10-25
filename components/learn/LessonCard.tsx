@@ -8,6 +8,7 @@ import { onAllLessons, setDone, useDone } from "./progress";
 import { decoded } from "@/lib/app/params";
 import { questionId } from "@/content/learn/question-id";
 import { recordAnswer, recordedLine } from "./review";
+import { saveAsk } from "./ask";
 
 function Part({ children }: { children: React.ReactNode }) {
   return <span className="part"><i className="sq" aria-hidden="true" />{children}</span>;
@@ -59,12 +60,14 @@ function Question({ check, n, rid, onAnswer }: { check: Check; n: number; rid: s
 // core idea, a quick check, the Ancient lens, a prompt to reflect on, and the
 // whole thing on one page. Answering every check correctly, or pressing "Mark as
 // done", marks the concept done. Notes and progress stay on this device.
-export default function LessonCard({ lesson, index, total, path, detail, lens, tool = null }: {
+export default function LessonCard({ lesson, index, total, path, chapter, detail, lens, tool = null }: {
   lesson: Lesson;
   index: number;
   total: number;
   /** The chapter's address, so Continue can lead back here. */
   path: string;
+  /** The chapter's title, for "Ask the community about this". */
+  chapter: string;
   detail: React.ReactNode;
   lens: React.ReactNode | null;
   /** A calculator for the concept, shown as "Try it" after the core idea. */
@@ -189,6 +192,11 @@ export default function LessonCard({ lesson, index, total, path, detail, lens, t
                   <textarea id={noteId} className="input" rows={2} value={note} onChange={e => writeDevice(noteKey, e.target.value)} placeholder="Write yours before you read on." />
                   <span className="note-line">{note ? "Saved on this device. Only you can see it." : "Kept on this device. Nobody sees it unless you share it."}</span>
                 </div>
+                <p className="ls-ask">
+                  Still unsure, or see it differently?{" "}
+                  <Link className="link" href="/home" prefetch={false} onClick={() => saveAsk(lesson.name, chapter)}>Ask the community about this</Link>
+                  <span className="ls-ask-note">You’ll sign in first if you haven’t. Your note above stays private.</span>
+                </p>
               </div>
             </div>
 

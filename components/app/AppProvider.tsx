@@ -2,6 +2,7 @@
 
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import Composer from "@/components/app/Composer";
+import { takeAsk } from "@/components/learn/ask";
 import { report } from "@/actions/app/marks";
 import { REPORT_REASONS } from "@/lib/app/labels";
 import type { ComposeAudience, DraftInput } from "@/lib/app/types";
@@ -19,6 +20,9 @@ interface AppApi {
 }
 
 const Ctx = createContext<AppApi | null>(null);
+
+// The topic a question from the chapters starts in; the member can change it.
+const ASK_TOPIC = "Work and leadership";
 
 export function useApp() {
   const v = useContext(Ctx);
@@ -64,6 +68,16 @@ export default function AppProvider({
     openCompose: (prefill) => setCompose(prefill ?? {}),
     openReport: (type, id) => { setReason(null); setReporting({ type, id }); },
   };
+
+  // A question started from a lesson ("Ask the community about this") opens
+  // here once the member is in, as a question about that concept.
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const ask = takeAsk();
+      if (ask) setCompose({ intent: "asking", text: `About “${ask.concept}” in ${ask.chapter}: `, topic: ASK_TOPIC });
+    }, 0);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
