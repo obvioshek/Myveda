@@ -59,7 +59,7 @@ function Question({ check, n, rid, onAnswer }: { check: Check; n: number; rid: s
 // core idea, a quick check, the Ancient lens, a prompt to reflect on, and the
 // whole thing on one page. Answering every check correctly, or pressing "Mark as
 // done", marks the concept done. Notes and progress stay on this device.
-export default function LessonCard({ lesson, index, total, path, detail, lens }: {
+export default function LessonCard({ lesson, index, total, path, detail, lens, tool = null }: {
   lesson: Lesson;
   index: number;
   total: number;
@@ -67,6 +67,8 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
   path: string;
   detail: React.ReactNode;
   lens: React.ReactNode | null;
+  /** A calculator for the concept, shown as "Try it" after the core idea. */
+  tool?: React.ReactNode | null;
 }) {
   const [open, setOpen] = useState(false);
   const [choice, setChoice] = useState<number | null>(null);
@@ -156,6 +158,13 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
                 {detail}
               </div>
             </div>
+
+            {tool && (
+              <div className="part-row">
+                <Part>Try it</Part>
+                <div className="ls-tool">{tool}</div>
+              </div>
+            )}
 
             <div className="part-row">
               <Part>Check yourself</Part>

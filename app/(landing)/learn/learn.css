@@ -421,3 +421,60 @@ h4 { margin: 0; }
 .gt-def { color: var(--body); font-size: 15px; line-height: 24px; }
 .gt-links { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
 @media print { .gt-card { display: none; } .prose a.gt { text-decoration: none; } }
+
+/* ---------- Calculators (tl-), a "Try it" step inside a concept ---------- */
+.ls-tool { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.tl { container-type: inline-size; display: flex; flex-direction: column; gap: 18px; min-width: 0; padding: 18px; border: 2px solid var(--color-text); background: var(--color-surface); }
+.tl-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.tl-intro { max-width: 60ch; color: var(--body); font-size: 15px; line-height: 23px; }
+.tl-reset { min-height: 32px; margin-right: -8px; font-size: 13px; }
+.tl-fields { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 16px; }
+.tl-pair { display: grid; grid-template-columns: minmax(0, 1fr) 104px; gap: 12px; align-items: end; }
+.tl-f { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.tl-f label { color: var(--color-text); font-size: 13px; font-weight: 700; line-height: 18px; }
+.tl-in { display: flex; align-items: center; min-height: 44px; border: 2px solid var(--color-text); background: var(--color-bg); }
+.tl-in:focus-within { border-color: var(--color-accent); }
+.tl-in span { flex: none; padding: 0 10px; color: var(--soft); font-size: 14px; font-weight: 700; }
+.tl-in span:first-child { padding-right: 0; }
+.tl-in input { flex: 1; min-width: 0; height: 40px; padding: 0 10px; border: 0; background: transparent; color: var(--color-text); font: 600 16px var(--font); font-variant-numeric: tabular-nums; outline: none; }
+.tl-hint { color: var(--soft); font-size: 12.5px; }
+.tl-res { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.tl-outs { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--color-text); }
+.tl-o { display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); }
+.tl-ol { color: var(--soft); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.tl-o b { font-size: 22px; line-height: 28px; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.tl-o.strong b { color: var(--color-accent-700); }
+.tl-on { color: var(--body); font-size: 13.5px; line-height: 20px; }
+.tl-say { max-width: 64ch; color: var(--body); font-size: 15px; line-height: 24px; }
+.tl-say b { color: var(--color-text); }
+.tl-warn { padding: 10px 12px; border-left: 4px solid var(--color-accent); background: var(--color-accent-100); color: var(--color-accent-800); font-size: 14.5px; line-height: 22px; }
+.tl-table-wrap { overflow-x: auto; }
+.tl-table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.tl-table th, .tl-table td { padding: 8px 10px; border-bottom: 2px solid var(--color-divider); text-align: right; }
+.tl-table th[scope="row"], .tl-table thead th:first-child { text-align: left; }
+.tl-table thead th { border-bottom-color: var(--color-text); color: var(--soft); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.tl-table tfoot th, .tl-table tfoot td { border-bottom: 0; border-top: 2px solid var(--color-text); font-weight: 800; }
+.tl-chart { display: flex; flex-direction: column; gap: 6px; margin: 0; }
+.tl-chart svg { width: 100%; height: auto; max-width: 640px; }
+.tl-chart figcaption { color: var(--soft); font-size: 12.5px; line-height: 18px; }
+.tl-chart .ax { stroke: var(--color-text); stroke-width: 2; }
+.tl-chart .sl { stroke: var(--color-text); stroke-width: 3; }
+.tl-chart .tc { stroke: var(--color-accent); stroke-width: 3; }
+.tl-chart .fc { stroke: var(--soft); stroke-width: 1.5; stroke-dasharray: 2 4; }
+.tl-chart .guide { stroke: var(--soft); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.tl-chart .now { stroke: var(--color-text); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.tl-chart .loss { fill: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.tl-chart .gain { fill: color-mix(in srgb, var(--color-text) 9%, transparent); }
+.tl-chart .bep { fill: var(--color-accent); }
+.tl-chart text { fill: var(--color-text); font: 700 12px var(--font); }
+.tl-chart .lb { paint-order: stroke; stroke: var(--color-surface); stroke-width: 5px; stroke-linejoin: round; }
+.tl-chart .soft, .tl-chart .tk { fill: var(--soft); font-weight: 600; }
+.tl-chart .now-t { fill: var(--color-text); }
+@container (min-width: 560px) {
+  .tl-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tl-fields > .tl-pair { grid-column: 1 / -1; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .tl-outs { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); column-gap: 20px; }
+}
+/* The chart scales down with its box; on a phone its text is set larger so it stays readable. */
+@container (max-width: 420px) { .tl-chart text { font-size: 22px; } }
+@media print { .tl-reset { display: none; } }

@@ -11,6 +11,7 @@ import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
 import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
+import { TOOLS } from "@/components/learn/tools";
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
 import { siteUrl } from "@/lib/site";
@@ -136,6 +137,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
             <div className="ch-part-head"><span className="label red">Part one</span><h2 id="concepts-h">The concepts</h2></div>
             {c.blocks.map(b => {
+              const Calc = TOOLS[`${c.slug}#${b.id}`];
               const li = lessons?.findIndex(l => l.blockId === b.id) ?? -1;
               if (lessons && li >= 0) {
                 const lesson = lessons[li];
@@ -148,6 +150,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     path={chapterPath(c.slug)}
                     detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}
                     lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
+                    tool={Calc ? <Calc /> : null}
                   />
                 );
               }
@@ -155,6 +158,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 <div key={b.id} id={b.id} className="ch-block">
                   {b.title && <h3>{b.title}</h3>}
                   <div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />
+                  {Calc && <div className="ls-tool"><span className="label red">Try it</span><Calc /></div>}
                 </div>
               );
             })}
