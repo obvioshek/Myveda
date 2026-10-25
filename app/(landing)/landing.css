@@ -642,7 +642,7 @@ html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#fff"] { fill
 .ts-w { min-width: 0; padding: 0 8px; font-size: 13px; }
 
 /* ---------- Report a problem (components/learn/ReportProblem.tsx) ---------- */
-.rp-btn { min-height: 32px; padding: 0; border: 0; background: none; color: var(--soft); font: 600 13px/1.3 var(--font); text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--color-divider); text-underline-offset: 3px; cursor: pointer; }
+.rp-btn { display: inline-flex; align-items: center; min-height: 32px; padding: 0; border: 0; background: none; color: var(--soft); font: 600 13px/1.3 var(--font); text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--color-divider); text-underline-offset: 3px; cursor: pointer; }
 .rp-btn:hover { color: var(--color-text); text-decoration-color: var(--color-accent); }
 .rp { width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); box-shadow: 10px 10px 0 color-mix(in srgb, var(--color-text) 12%, transparent); }
 .rp::backdrop { background: color-mix(in srgb, #201e1d 55%, transparent); }

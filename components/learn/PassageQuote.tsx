@@ -2,6 +2,7 @@ import Link from "next/link";
 import { refOf, textPath, textsCited } from "@/content/learn/text-refs";
 import ReportProblem from "./ReportProblem";
 import SharePassage from "./SharePassage";
+import DiscussPassage from "./DiscussPassage";
 import { chapterBySlug, passageHref } from "@/content/learn";
 
 const html = (__html: string) => ({ __html });
@@ -25,6 +26,7 @@ export default function PassageQuote({ quote, except, at }: { quote: string; exc
         )}
         <span className="lp-acts">
           {at && p && <SharePassage href={passageHref(at.slug, at.n)} image={`/learn/${at.slug}/share/${at.n}`} title={p.classic ? `${p.modern} ↔ ${p.classic}` : p.modern} />}
+          {at && p && <DiscussPassage about={`${p.classic ? `${p.modern} ↔ ${p.classic}` : p.modern}${refOf(quote) ? `, ${refOf(quote)}` : ""}`} chapter={chapterBySlug(at.slug)!.short ?? chapterBySlug(at.slug)!.title} />}
           <ReportProblem what={`The passage ${refOf(quote) || "on this page"}`} label="Report a problem" kind="A translation or reference is wrong" />
         </span>
       </p>
