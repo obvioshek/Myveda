@@ -563,28 +563,28 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .chap-meta { display: flex; align-items: center; gap: 10px; color: var(--soft); font-size: 12.5px; font-weight: 600; }
 @media (min-width: 900px) { .ut-tabs { grid-template-columns: repeat(var(--tabs, 4), minmax(0, 1fr)); } .ut-tab + .ut-tab { border-left: 2px solid var(--color-divider); } }
 
-/* ---------- Home: documented or a view? ---------- */
-.lg { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
-.lg-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 18px; border-top: 2px solid var(--color-text); }
-.lg-h { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; letter-spacing: -.01em; font-weight: 800; }
-.lg-score { color: var(--soft); font-size: 14px; font-weight: 700; }
-.lg-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
-.lg-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid var(--color-text); }
-.lg-card.done.documented { box-shadow: inset 0 6px 0 var(--color-text); }
-.lg-card.done.view { box-shadow: inset 0 6px 0 var(--color-accent); }
-.lg-pair { font-size: 15px; line-height: 22px; color: var(--body); }
-.lg-pair b { color: var(--color-text); }
-.lg-quote { font-size: 17px; line-height: 26px; font-weight: 600; }
-.lg-quote .og { display: block; margin-top: 8px; color: var(--color-accent-800); font-size: 17px; font-weight: 400; line-height: 1.6; }
-.lg-quote i { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: var(--body); }
-.lg-quote .ta { display: block; margin-top: 8px; color: var(--color-accent-800); font: 400 15px/1.7 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
-.lg-quote .ref { display: block; margin-top: 8px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-.lg-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
-.lg-btns .btn { flex: 1; justify-content: center; }
-.lg-answer { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
-.lg-verdict { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; }
-.lg-why { color: var(--body); font-size: 14.5px; line-height: 23px; }
-@media (min-width: 900px) { .lg-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* ---------- Home: what the classics add (theme tabs, then a modern idea beside a passage) ---------- */
+.ca { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+.ca-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 18px; border-top: 2px solid var(--color-text); }
+.ca-tab { min-height: 40px; padding: 8px 14px; border: 2px solid var(--color-divider); background: transparent; color: var(--body); font: 700 14px/1.2 var(--font); cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
+.ca-tab:hover { border-color: var(--color-text); color: var(--color-text); }
+.ca-tab[aria-selected="true"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
+.ca-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.ca-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid var(--color-text); animation: cmx-in .2s var(--ease); }
+.ca-pair { font-size: 15px; line-height: 22px; color: var(--body); }
+.ca-pair b { color: var(--color-text); }
+.ca-quote { font-size: 17px; line-height: 26px; font-weight: 600; }
+.ca-quote .og { display: block; margin-top: 8px; color: var(--color-accent-800); font-size: 17px; font-weight: 400; line-height: 1.6; }
+.ca-quote i { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: var(--body); }
+.ca-quote .ta { display: block; margin-top: 8px; color: var(--color-accent-800); font: 400 15px/1.7 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
+.ca-quote .ref { display: block; margin-top: 8px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.ca-notes { display: flex; flex-direction: column; gap: 10px; margin: 0; padding-top: 12px; border-top: 2px solid var(--color-divider); }
+.ca-notes dt { color: var(--color-accent-700); font-size: 11.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.ca-notes dd { margin: 2px 0 0; color: var(--color-text); font-size: 15px; line-height: 23px; }
+.ca-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-top: auto; }
+.ca-foot .more { font-size: 14px; }
+.ca-walk { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; color: var(--body); font-size: 15.5px; line-height: 24px; }
+@media (min-width: 900px) { .ca-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* Offline reading: a quiet note while offline, and "Save all chapters". */
 .off-note { position: fixed; left: 16px; bottom: 16px; z-index: 35; max-width: calc(100vw - 32px); margin: 0; padding: 10px 14px; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-lg); }

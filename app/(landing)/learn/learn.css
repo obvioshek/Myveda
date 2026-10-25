@@ -626,3 +626,19 @@ h4 { margin: 0; }
 .rc-check li { padding: 10px 0; border-bottom: 2px solid var(--color-divider); }
 .rc-check li .pr-check { color: var(--color-text); font-size: 15.5px; line-height: 24px; }
 .rc-mem { padding: 10px 14px; border-left: 4px solid var(--color-accent); background: var(--color-surface); color: var(--color-text); font-size: 15px; line-height: 23px; }
+
+/* ---------- Start here: the five-step walk (wk-) ---------- */
+.ci-walk { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: clamp(16px, 3vw, 32px); padding: 22px; border: 2px solid var(--color-text); border-left-width: 8px; border-left-color: var(--color-accent); }
+.ci-walk .h-sm { max-width: none; }
+.wk { display: flex; flex-direction: column; gap: 40px; margin: 0; padding-bottom: clamp(32px, 5vw, 56px); list-style: none; }
+.wk-step { display: flex; flex-direction: column; gap: 16px; padding-top: 20px; border-top: 2px solid var(--color-text); max-width: 880px; }
+.wk-head { display: flex; align-items: flex-start; gap: 16px; }
+.wk-head > div { display: flex; flex-direction: column; gap: 4px; }
+.wk-head .h-sm { max-width: none; }
+.wk-n { color: var(--color-accent); font: 44px/1 var(--font-deva); }
+.wk-notice { max-width: 68ch; padding: 12px 16px; border-left: 4px solid var(--color-text); background: var(--color-surface); color: var(--color-text); font-size: 16px; line-height: 26px; }
+.wk-pair { display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid var(--color-text); }
+.wk-how { max-width: 70ch; color: var(--body); font-size: 15.5px; line-height: 25px; }
+.wk-next { display: flex; flex-direction: column; gap: 10px; max-width: 880px; padding-bottom: clamp(48px, 7vw, 96px); }
+.wk-next ul { display: flex; flex-direction: column; gap: 8px; margin: 0; padding-left: 20px; list-style: square; color: var(--body); font-size: 15.5px; line-height: 24px; }
+.wk-key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 10px; }

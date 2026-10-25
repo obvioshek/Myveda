@@ -7,7 +7,7 @@ import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
 import ReviewBand from "@/components/learn/ReviewBand";
 import { SaveOffline } from "@/components/learn/Offline";
-import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, START_WALK_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
@@ -65,6 +65,13 @@ export default function LearnIndex() {
           {pending && <span className="ci-soon">{pending}</span>}
         </nav>
         <p className="ci-plan">Preparing for an exam? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> from your exam date, or <Link className="link" href={PRACTICE_PATH} prefetch={false}>practise</Link> across the units. <Link className="link" href={PROGRESS_PATH} prefetch={false}>See your progress</Link>.</p>
+      </section>
+
+      <section className="wrap ci-walk" aria-labelledby="ci-walk-h">
+        <span className="label red">New to reading the classics this way</span>
+        <h2 id="ci-walk-h" className="h-sm">Five ideas, read two ways.</h2>
+        <p className="sub">A short walk before the chapters: five modern ideas, each beside a passage that met the same problem, and what to notice when you read them together.</p>
+        <Link className="btn btn-secondary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
       </section>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
