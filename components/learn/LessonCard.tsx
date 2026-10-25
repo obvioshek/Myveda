@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import Link from "next/link";
+import { useEffect, useId, useRef, useState } from "react";
 import type { Check, Lesson } from "@/content/learn";
-import { openConcept, showToast, useDevice, writeDevice } from "@/components/landing/device";
+import { NOTE_PREFIX, openConcept, showToast, useDevice, writeDevice } from "@/components/landing/device";
 import { onAllLessons, setDone, useDone } from "./progress";
 import { decoded } from "@/lib/app/params";
+import { questionId } from "@/content/learn/question-id";
+import { recordAnswer, recordedLine } from "./review";
+import { saveAsk } from "./ask";
+import Listen from "./Listen";
 
 function Part({ children }: { children: React.ReactNode }) {
   return <span className="part"><i className="sq" aria-hidden="true" />{children}</span>;
@@ -14,10 +19,22 @@ const Tick = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
 );
 
-function Question({ check, n, onAnswer }: { check: Check; n: number; onAnswer: (right: boolean) => void }) {
+// The first answer to a question counts for the review list: a wrong one puts
+// it there for tomorrow. Trying again after seeing the answer changes nothing.
+function Question({ check, n, rid, onAnswer }: { check: Check; n: number; rid: string; onAnswer: (right: boolean) => void }) {
   const [picked, setPicked] = useState<number | null>(null);
+  const [line, setLine] = useState<string | null>(null);
+  const first = useRef(true);
   const id = useId();
   const right = picked === check.answer;
+  const choose = (i: number) => {
+    setPicked(i);
+    onAnswer(i === check.answer);
+    if (first.current) {
+      first.current = false;
+      setLine(recordedLine(recordAnswer(rid, i === check.answer)));
+    }
+  };
   return (
     <div className="ck">
       <p className="ck-q" id={id}>{n}. {check.q}</p>
@@ -25,13 +42,14 @@ function Question({ check, n, onAnswer }: { check: Check; n: number; onAnswer: (
         {check.options.map((o, i) => {
           const state = picked === i ? (right ? " right" : " wrong") : "";
           return (
-            <button key={o} type="button" className={`btn btn-secondary ck-opt${state}`} aria-pressed={picked === i} onClick={() => { setPicked(i); onAnswer(i === check.answer); }}>{o}</button>
+            <button key={o} type="button" className={`btn btn-secondary ck-opt${state}`} aria-pressed={picked === i} onClick={() => choose(i)}>{o}</button>
           );
         })}
       </div>
       <div className={picked === null ? "reveal" : "reveal open"} aria-live="polite" inert={picked === null}>
         <div className="reveal-in">
           <p className="ck-a"><b>{right ? "Correct. " : "Not quite. "}</b>{!right && <>The answer is “{check.options[check.answer]}”. </>}{check.why}</p>
+          {line && <p className="ck-r">{line} <Link className="link" href="/learn/practice#review" prefetch={false}>Your review</Link></p>}
         </div>
       </div>
     </div>
@@ -43,14 +61,18 @@ function Question({ check, n, onAnswer }: { check: Check; n: number; onAnswer: (
 // core idea, a quick check, the Ancient lens, a prompt to reflect on, and the
 // whole thing on one page. Answering every check correctly, or pressing "Mark as
 // done", marks the concept done. Notes and progress stay on this device.
-export default function LessonCard({ lesson, index, total, path, detail, lens }: {
+export default function LessonCard({ lesson, index, total, path, chapter, detail, lens, tool = null }: {
   lesson: Lesson;
   index: number;
   total: number;
   /** The chapter's address, so Continue can lead back here. */
   path: string;
+  /** The chapter's title, for "Ask the community about this". */
+  chapter: string;
   detail: React.ReactNode;
   lens: React.ReactNode | null;
+  /** A calculator for the concept, shown as "Try it" after the core idea. */
+  tool?: React.ReactNode | null;
 }) {
   const [open, setOpen] = useState(false);
   const [choice, setChoice] = useState<number | null>(null);
@@ -58,11 +80,12 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
   const slug = path.split("/").pop() ?? "";
   const id = `${slug}#${lesson.blockId}`;
   const done = useDone().has(id);
-  const noteKey = `vv-note:${path}#${lesson.blockId}`;
+  const noteKey = `${NOTE_PREFIX}${path}#${lesson.blockId}`;
   const note = useDevice(noteKey);
   const bodyId = useId();
   const beforeId = useId();
   const noteId = useId();
+  const core = useRef<HTMLDivElement>(null);
 
   // A link that points at this lesson (the side list, a search result, Continue)
   // opens it, then brings it into view once it has room.
@@ -135,16 +158,24 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
           <div className="ls-body">
             <div className="part-row">
               <Part>Core idea</Part>
-              <div className="ls-core">
+              <div className="ls-core" ref={core}>
+                {open && <Listen target={core} label={lesson.name} />}
                 <p className="core">{lesson.lead}</p>
                 {detail}
               </div>
             </div>
 
+            {tool && (
+              <div className="part-row">
+                <Part>Try it</Part>
+                <div className="ls-tool">{tool}</div>
+              </div>
+            )}
+
             <div className="part-row">
               <Part>Check yourself</Part>
               <div className="ls-checks">
-                {lesson.check.map((c, i) => <Question key={c.q} check={c} n={i + 1} onAnswer={ok => answered(i, ok)} />)}
+                {lesson.check.map((c, i) => <Question key={c.q} check={c} n={i + 1} rid={questionId(slug, lesson.blockId, c.q)} onAnswer={ok => answered(i, ok)} />)}
               </div>
             </div>
 
@@ -164,6 +195,11 @@ export default function LessonCard({ lesson, index, total, path, detail, lens }:
                   <textarea id={noteId} className="input" rows={2} value={note} onChange={e => writeDevice(noteKey, e.target.value)} placeholder="Write yours before you read on." />
                   <span className="note-line">{note ? "Saved on this device. Only you can see it." : "Kept on this device. Nobody sees it unless you share it."}</span>
                 </div>
+                <p className="ls-ask">
+                  Still unsure, or see it differently?{" "}
+                  <Link className="link" href="/home" prefetch={false} onClick={() => saveAsk(lesson.name, chapter)}>Ask the community about this</Link>
+                  <span className="ls-ask-note">You’ll sign in first if you haven’t. Your note above stays private.</span>
+                </p>
               </div>
             </div>
 

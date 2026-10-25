@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { CHAPTERS, CONTENT_UPDATED, GLOSSARY_PATH, REVISION_PATH, chapterPath } from "@/content/learn";
+import { CHAPTERS, CONTENT_UPDATED, FORMULAS_PATH, GLOSSARY_PATH, PLAN_PATH, PRACTICE_PATH, REVISION_PATH, chapterPath } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
 // Only pages worth showing in search results. The sign-in page and the product
@@ -14,6 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...CHAPTERS.map(c => ({ url: `${base}${chapterPath(c.slug)}`, lastModified: updated, changeFrequency: "monthly" as const, priority: 0.8 })),
     { url: `${base}${GLOSSARY_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}${REVISION_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}${PLAN_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}${FORMULAS_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}${PRACTICE_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

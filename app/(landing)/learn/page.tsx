@@ -5,10 +5,16 @@ import Arrow from "@/components/landing/Arrow";
 import ContinueBand from "@/components/landing/ContinueBand";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import ReviewBand from "@/components/learn/ReviewBand";
+import { SaveOffline } from "@/components/learn/Offline";
+import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
+import { buildFormulaSheet } from "@/content/learn/formulas";
+
+// Units with at least one formula get a link to their part of the formula sheet.
+const WITH_FORMULAS = new Set(buildFormulaSheet().filter(u => u.formulas > 0).map(u => u.id));
 
 const title = "Management chapters: economics, OB, HRM, accounting, finance and more · Veda Verse";
 const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour, HRM, managerial accounting, finance, strategy and marketing in plain language, with passages from India's classical texts and thinkers set beside the ideas they meet.`;
@@ -48,6 +54,7 @@ export default function LearnIndex() {
     <PageShell wide note="Spotted a mistake?">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <ContinueBand />
+      <ReviewBand />
 
       <section className="wrap ci-hero" aria-labelledby="learn-h">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />{UNITS.length === 1 ? `Unit 1 · ${UNITS[0].title}` : `${UNITS.length} units`}</span>
@@ -57,6 +64,7 @@ export default function LearnIndex() {
           {UNITS.map(u => <a key={u.id} href={`#${u.id}`}><b>Unit {u.n}</b>{u.short}</a>)}
           {pending && <span className="ci-soon">{pending}</span>}
         </nav>
+        <p className="ci-plan">Preparing for an exam? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> from your exam date, or <Link className="link" href={PRACTICE_PATH} prefetch={false}>practise</Link> across the units. <Link className="link" href={PROGRESS_PATH} prefetch={false}>See your progress</Link>.</p>
       </section>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
@@ -123,6 +131,8 @@ export default function LearnIndex() {
                 <Progress ids={ids} />
                 <div className="btn-row">
                   <Link className="btn btn-secondary" href={`${REVISION_PATH}#${u.id}`}>Revision sheets</Link>
+                  <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?unit=${u.id}`} prefetch={false}>Practise this unit</Link>
+                  {WITH_FORMULAS.has(u.id) && <Link className="btn btn-ghost" href={`${FORMULAS_PATH}#${u.id}`} prefetch={false}>Formulas</Link>}
                   <Link className="btn btn-ghost" href={GLOSSARY_PATH}>Glossary</Link>
                 </div>
               </div>
@@ -161,6 +171,8 @@ export default function LearnIndex() {
 
       <section className="wrap ci-foot" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
+        <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, "/practice-bank.json", "/search-index.json"]} />
+        <p className="ci-fine">Your progress is kept in this browser only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Move it to another device</Link>.</p>
         <p className="ci-fine">{pending ? `${pending}. ` : ""}{GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       </section>
     </PageShell>

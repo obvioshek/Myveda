@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useDone } from "./progress";
+import TextSize from "./TextSize";
 
 type Item = { id: string; name: string };
 type Term = { id: string; term: string; def: string };
@@ -109,6 +110,7 @@ export default function ReadingBar({ slug, items, terms, unitLabel, chapters, gl
           </div>
         )}
         <nav className="rb-col" aria-label={unitLabel}>
+          <TextSize />
           <span className="label red">{unitLabel}</span>
           <ol className="rb-list">
             {chapters.map(c => (

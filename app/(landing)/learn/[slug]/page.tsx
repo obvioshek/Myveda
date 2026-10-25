@@ -10,7 +10,11 @@ import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
-import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
+import { TOOLS } from "@/components/learn/tools";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import { linkTerms } from "@/content/learn/term-links";
+import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -53,6 +57,18 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const showLens = loose.length > 0;
   const firstId = lessons?.[0]?.blockId;
   const many = UNITS.length > 1;
+  const uses = usesIdeasFrom(c.slug);
+  const usedIn = ideasUsedIn(c.slug);
+
+  // Each concept's text with its glossary terms linked, and what the cards
+  // need to know about each term linked on this page.
+  const linked = new Map(c.blocks.map(b => [b.id, linkTerms(b.html, GLOSSARY, c.slug, b.title, id => `${GLOSSARY_PATH}#${id}`)]));
+  const tips: Record<string, TipTerm> = {};
+  for (const id of new Set([...linked.values()].flatMap(l => l.ids))) {
+    const t = GLOSSARY.find(x => x.id === id)!;
+    const elsewhere = t.chapterSlug !== c.slug && t.chapterSlug;
+    tips[id] = { term: t.term, def: t.def, href: `${GLOSSARY_PATH}#${id}`, chapter: elsewhere ? t.chapterTitle : null, chapterHref: elsewhere ? chapterPath(t.chapterSlug) : null };
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -92,6 +108,15 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <h1>{c.title}</h1>
           </div>
           <p className="ch-scope">{c.scope}</p>
+          {uses.length > 0 && (
+            <p className="ch-uses">
+              Uses ideas from{" "}
+              {uses.map((l, i) => (
+                <span key={l.slug}>{i > 0 && (i === uses.length - 1 ? " and " : ", ")}<Link className="link" href={chapterPath(l.slug)} prefetch={false}>{l.title}</Link></span>
+              ))}
+              . <a className="link" href="#connects">Which ideas</a>
+            </p>
+          )}
           <div className="ch-meta">
             <span>{c.blocks.length} {c.blocks.length === 1 ? "concept" : "concepts"}</span>
             <span>About {c.minutes} min</span>
@@ -124,6 +149,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           <section id="concepts" className="ch-part" aria-labelledby="concepts-h">
             <div className="ch-part-head"><span className="label red">Part one</span><h2 id="concepts-h">The concepts</h2></div>
             {c.blocks.map(b => {
+              const Calc = TOOLS[`${c.slug}#${b.id}`];
               const li = lessons?.findIndex(l => l.blockId === b.id) ?? -1;
               if (lessons && li >= 0) {
                 const lesson = lessons[li];
@@ -134,15 +160,18 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     index={li}
                     total={lessons.length}
                     path={chapterPath(c.slug)}
-                    detail={<div className="prose" dangerouslySetInnerHTML={html(b.html)} />}
+                    chapter={c.title}
+                    detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}
                     lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
+                    tool={Calc ? <Calc /> : null}
                   />
                 );
               }
               return (
                 <div key={b.id} id={b.id} className="ch-block">
                   {b.title && <h3>{b.title}</h3>}
-                  <div className="prose" dangerouslySetInnerHTML={html(b.html)} />
+                  <div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />
+                  {Calc && <div className="ls-tool"><span className="label red">Try it</span><Calc /></div>}
                 </div>
               );
             })}
@@ -159,6 +188,17 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
               {c.lensNote && <p className="cue">{c.lensNote}</p>}
               <Pairings items={loose} />
               <p className="ci-fine">{HOW.translations}</p>
+            </section>
+          )}
+
+          {(uses.length > 0 || usedIn.length > 0) && (
+            <section id="connects" className="ch-conn" aria-labelledby="connects-h">
+              <h2 id="connects-h" className="h-xs">How this chapter connects</h2>
+              <p className="ci-fine">Worked out from the glossary terms each chapter uses. A chapter is listed when two or more terms are shared.</p>
+              <div className="ch-conn-cols">
+                {uses.length > 0 && <Connections label="Uses ideas from" items={uses} many={many} />}
+                {usedIn.length > 0 && <Connections label="Its ideas are used in" items={usedIn} many={many} />}
+              </div>
             </section>
           )}
 
@@ -185,7 +225,24 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           </details>
         </div>
       </div>
+      <GlossaryTips terms={tips} />
       <Toast />
     </PageShell>
+  );
+}
+
+function Connections({ label, items, many }: { label: string; items: ChapterLink[]; many: boolean }) {
+  return (
+    <div className="ch-conn-col">
+      <span className="label red">{label}</span>
+      <ul>
+        {items.map(l => (
+          <li key={l.slug}>
+            <Link href={chapterPath(l.slug)} prefetch={false}>{many && <span className="ci-pu">Unit {l.unitN}</span>}<b>{l.title}</b></Link>
+            <span>{l.terms.join(" · ")}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

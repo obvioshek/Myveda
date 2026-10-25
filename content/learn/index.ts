@@ -30,6 +30,11 @@ export const CONTENT_UPDATED = "2026-10-18";
 export const LEARN_PATH = "/learn";
 export const GLOSSARY_PATH = "/learn/glossary";
 export const REVISION_PATH = "/learn/revision";
+export const PRACTICE_PATH = "/learn/practice";
+export const FORMULAS_PATH = "/learn/formulas";
+export const PLAN_PATH = "/learn/plan";
+export const TRANSFER_PATH = "/learn/transfer";
+export const PROGRESS_PATH = "/learn/progress";
 export const chapterPath = (slug: string) => `/learn/${slug}`;
 
 // Words in a chapter, for a reading-time estimate at about 200 words a minute.
@@ -121,7 +126,7 @@ export function chapterTitle(c: Chapter) {
 // A slip in the data (two chapters at one address, a glossary term pointing at a
 // missing chapter, a lesson that doesn't match its chapter) fails the build
 // instead of publishing a broken page.
-const RESERVED = new Set(["glossary", "revision"]);
+const RESERVED = new Set(["glossary", "revision", "practice", "formulas", "plan", "transfer", "progress"]);
 
 // The text is rendered as HTML, so it may only use markup for formatting:
 // nothing that runs code or loads something from elsewhere.

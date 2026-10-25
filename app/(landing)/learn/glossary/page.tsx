@@ -1,7 +1,8 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import GlossaryList, { type GlossaryItem } from "@/components/learn/GlossaryList";
-import { GLOSSARY, GLOSSARY_PATH, UNITS, chapterBySlug, chapterPath } from "@/content/learn";
+import { GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, UNITS, chapterBySlug, chapterPath } from "@/content/learn";
 import { siteUrl } from "@/lib/site";
 
 const title = "Glossary of management, economics, accounting and finance terms · Veda Verse";
@@ -49,6 +50,7 @@ export default function GlossaryPage() {
         <div className="split intro">
           <p className="lede">Short, plain definitions of the terms used across the chapters. Each one links to the chapter that explains the idea in full, with any classical passage that meets it.</p>
         </div>
+        <div className="btn-row"><Link className="btn btn-secondary" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise them as cards</Link></div>
       </header>
       <div className="wrap gl">
         <GlossaryList items={items} />

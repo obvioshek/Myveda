@@ -16,6 +16,7 @@ export const NAV = [
   { href: "#chapters", label: "Chapters" },
   { href: "/learn/glossary", label: "Glossary" },
   { href: "/learn/revision", label: "Revision" },
+  { href: "/learn/practice", label: "Practice" },
   { href: "#community", label: "Community" },
 ];
 
