@@ -50,7 +50,12 @@ export default function GlossaryPage() {
         <div className="split intro">
           <p className="lede">Short, plain definitions of the terms used across the chapters. Each one links to the chapter that explains the idea in full, with any classical passage that meets it.</p>
         </div>
-        <div className="btn-row"><Link className="btn btn-secondary" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise them as cards</Link></div>
+        <div className="btn-row">
+          <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise them as cards</Link>
+          <a className="btn btn-ghost" href="/glossary-anki.txt" download>Download for Anki</a>
+          <a className="btn btn-ghost" href="/glossary.csv" download>Download as a spreadsheet</a>
+        </div>
+        <p className="ci-fine">In Anki, choose File, then Import, and pick the file: each term becomes a card, tagged by unit and chapter.</p>
       </header>
       <div className="wrap gl">
         <GlossaryList items={items} />

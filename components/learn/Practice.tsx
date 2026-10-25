@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { cardId, recallId, type PracticeBank, type PracticeQuestion, type RecallBank } from "@/content/learn/practice";
 import { questionId } from "@/content/learn/question-id";
+import { readQuiz } from "@/content/learn/quiz-link";
+import { download } from "./ics";
 import { useDone } from "./progress";
 import MixupHint from "./MixupHint";
 import ReportProblem from "./ReportProblem";
@@ -27,7 +29,7 @@ import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today
 // shown after a wrong answer.
 
 type Q = PracticeQuestion & { id: string; card?: true; recall?: true; pts?: string[]; mx?: string[] };
-type Kind = "review" | "mixed" | "chapter";
+type Kind = "review" | "mixed" | "chapter" | "set";
 type What = "questions" | "terms" | "recall";
 
 // Share of a concept's summary points to recall for it to count as remembered.
@@ -40,12 +42,12 @@ type Answer = { picked: number; line: string | null; guess?: boolean; got?: [num
  * `chapter`: the chapter a chapter test is on. `exam`: a mock test, answered
  * without feedback until it is submitted, with an optional time limit.
  */
-type Session = { kind: Kind; items: Q[]; i: number; answers: (Answer | null)[]; started: number; ended: number | null; chapter?: string; exam?: { limitMs: number | null } };
+type Session = { kind: Kind; items: Q[]; i: number; answers: (Answer | null)[]; started: number; ended: number | null; chapter?: string; exam?: { limitMs: number | null }; title?: string; missing?: number };
 
 // Seconds allowed per question in a timed mock test.
 const PACES = [{ s: 0, label: "No limit" }, { s: 60, label: "1 min a question" }, { s: 90, label: "1½ min a question" }] as const;
 
-const KIND_LABEL: Record<Kind, string> = { review: "Spaced review", mixed: "Mixed practice", chapter: "Chapter test" };
+const KIND_LABEL: Record<Kind, string> = { review: "Spaced review", mixed: "Mixed practice", chapter: "Chapter test", set: "Quiz" };
 
 const REVIEW_SET = 20;
 const COUNTS = [10, 20, 40] as const;
@@ -111,9 +113,10 @@ export default function Practice() {
       .then(r => (r.ok ? r.json() as Promise<PracticeBank> : Promise.reject(new Error(String(r.status)))))
       .then(b => {
         if (!live) return;
+        const questions: Q[] = b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q), mx: b.mixups[`${q.c}#${q.b}`] }));
         setBank({
           units: b.units,
-          questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q), mx: b.mixups[`${q.c}#${q.b}`] })),
+          questions,
           cards: b.terms.map(t => ({ id: cardId(t.id), card: true, u: t.u, c: t.c, ct: t.ct, b: t.id, bn: t.t, q: t.t, o: [], a: 1, w: t.d })),
         });
         // A link from a unit ("Practise this unit") chooses that unit, and one
@@ -130,6 +133,14 @@ export default function Practice() {
         if (items.length) {
           setSession({ kind: "chapter", chapter: slug!, items: shuffle(items), i: 0, answers: items.map(() => null), started: Date.now(), ended: null });
           history.replaceState(null, "", window.location.pathname);
+        }
+        // A teacher's quiz link (/learn/quiz) starts its questions, in its order.
+        // The address keeps the quiz, so a reload or "Take it again" starts it over.
+        const quiz = readQuiz(params);
+        if (quiz && !items.length) {
+          const byQ = new Map(questions.map(q => [q.id, q]));
+          const set = quiz.ids.map(id => byQ.get(id)).filter((q): q is Q => !!q);
+          if (set.length) setSession(quizSession(set, quiz.title, quiz.mock ? { limitMs: quiz.pace ? quiz.pace * 1000 * set.length : null } : undefined, quiz.ids.length - set.length));
         }
       })
       .catch(() => { if (live) setFailed(true); });
@@ -186,7 +197,7 @@ export default function Practice() {
   const howMany = counts.includes(count) ? count : counts[1];
 
   const begin = (kind: Kind, items: Q[], chapter?: string, examMode?: Session["exam"]) => {
-    setSession({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null, chapter, exam: examMode });
+    setSession(s => ({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null, chapter, exam: examMode, title: kind === "set" ? s?.title : undefined }));
     window.setTimeout(() => top.current?.scrollIntoView({ block: "start" }), 0);
   };
   const startReview = () => begin("review", shuffle(due.slice(0, REVIEW_SET).map(id => byId.get(id)!)));
@@ -214,7 +225,7 @@ export default function Practice() {
       <div className="wrap pr-box" ref={top}>
         {session.ended === null
           ? <Run session={session} setSession={setSession} />
-          : <Results session={session} dueLeft={due.length} onReview={startReview} onAgain={session.kind === "chapter" && session.chapter ? () => startChapter(session.chapter!) : startMixed} onBack={() => setSession(null)} />}
+          : <Results session={session} dueLeft={due.length} onReview={startReview} onAgain={session.kind === "set" ? () => begin("set", session.items, undefined, session.exam && { limitMs: session.exam.limitMs }) : session.kind === "chapter" && session.chapter ? () => startChapter(session.chapter!) : startMixed} onBack={() => setSession(null)} />}
       </div>
     );
   }
@@ -249,6 +260,8 @@ export default function Practice() {
               {listed.length} {listed.length === 1 ? "is" : "are"} on your list{nextDue !== null ? `; the next comes back ${dayWord(nextDue)}` : ""}.
               {due.length > REVIEW_SET && ` Reviews come ${REVIEW_SET} at a time.`}
               {" "}
+              <button type="button" className="pr-link" onClick={() => download("veda-verse-review-anki.txt", reviewForAnki(listed.map(id => byId.get(id)!)), "text/plain;charset=utf-8")}>Download it for Anki</button>
+              {" · "}
               <button type="button" className="pr-link" onClick={() => { if (window.confirm("Clear your review list? This can’t be undone.")) clearReview(); }}>Clear the list</button>
             </p>
           )}
@@ -575,7 +588,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
   return (
     <div className="pr-run">
       <div className="pr-bar">
-        <span className="label red">{session.kind === "chapter" ? `${KIND_LABEL.chapter} · ${q.ct}` : KIND_LABEL[session.kind]}</span>
+        <span className="label red">{session.kind === "chapter" ? `${KIND_LABEL.chapter} · ${q.ct}` : session.kind === "set" && session.title ? `${KIND_LABEL.set} · ${session.title}` : KIND_LABEL[session.kind]}</span>
         <span className="pg">
           <span className="pg-bar" aria-hidden="true"><i style={{ width: `${pct}%` }} /></span>
           <span className="pg-t">Question {session.i + 1} of {n}</span>
@@ -692,7 +705,7 @@ function MockRun({ session, setSession }: { session: Session; setSession: (s: Se
   return (
     <div className="pr-run">
       <div className="pr-bar">
-        <span className="label red">Mock test</span>
+        <span className="label red">{session.kind === "set" ? `Quiz${session.title ? ` · ${session.title}` : ""}` : "Mock test"}</span>
         <span className="pg"><span className="pg-t">{answeredN} of {n} answered</span></span>
         {left !== null && <span className={left < 60_000 ? "pr-timer low" : "pr-timer"} role="timer" aria-label="Time left">{clock(left)}</span>}
         <button type="button" className="btn btn-primary pr-end" onClick={finish}>Submit</button>
@@ -726,6 +739,37 @@ function MockRun({ session, setSession }: { session: Session; setSession: (s: Se
   );
 }
 
+// The review list as Anki cards, tab-separated: a question with its options on
+// the front, the answer and why on the back; a term and its meaning; a concept
+// and its summary points.
+function reviewForAnki(items: Q[]): string {
+  const cell = (s: string) => s.replace(/[\t\r\n]+/g, " ").trim();
+  const rows = items.map(q => {
+    const tags = `veda-verse ${q.c}`;
+    if (q.card) return [cell(q.q), cell(q.w), `${tags} term`];
+    if (q.recall) return [cell(`Recall: ${q.q}`), cell([...(q.pts ?? []).map(p => `• ${p}`), `Remember: ${q.w}`].join(" ")), `${tags} recall`];
+    return [cell(`${q.q} ${q.o.map((o, i) => `(${"ABCDEFGH"[i]}) ${o}`).join(" ")}`), cell(`${"ABCDEFGH"[q.a]}. ${q.o[q.a]}. ${q.w}`), `${tags} question`];
+  });
+  return ["#separator:tab", "#html:false", "#columns:Front\tBack\tTags", "#tags column:3", ...rows.map(r => r.join("\t"))].join("\n") + "\n";
+}
+
+function quizSession(items: Q[], title: string, exam: Session["exam"], missing: number): Session {
+  return { kind: "set", items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null, exam, title, missing };
+}
+
+// A line a student can send their teacher: the quiz, the score and the date.
+function QuizResult({ title, right, of, answered }: { title: string; right: number; of: number; answered: number }) {
+  const [copied, setCopied] = useState(false);
+  const [when] = useState(() => new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }));
+  const line = `${title || "Veda Verse quiz"}: ${right} of ${of} right${answered < of ? ` (${of - answered} not answered)` : ""}, ${when}.`;
+  return (
+    <div className="qz-res">
+      <p><span className="label">To send your teacher</span>{line}</p>
+      <button type="button" className="btn btn-secondary" onClick={async () => { try { await navigator.clipboard.writeText(line); setCopied(true); } catch { setCopied(false); } }}>{copied ? "Copied" : "Copy"}</button>
+    </div>
+  );
+}
+
 function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Session; dueLeft: number; onReview: () => void; onAgain: () => void; onBack: () => void }) {
   const asked = session.items.map((q, i) => ({ q, a: session.answers[i] })).filter((x): x is { q: Q; a: Answer } => x.a !== null);
   const rightN = asked.filter(x => x.a.picked === x.q.a).length;
@@ -752,7 +796,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
 
   return (
     <div className="pr-res">
-      <span className="label red">{session.kind === "review" ? "Review done" : session.exam ? "Mock test done" : session.kind === "chapter" ? "Chapter test done" : allRecall ? "Recall done" : allCards ? "Cards done" : "Practice done"}</span>
+      <span className="label red">{session.kind === "set" ? `Quiz done${session.title ? ` · ${session.title}` : ""}` : session.kind === "review" ? "Review done" : session.exam ? "Mock test done" : session.kind === "chapter" ? "Chapter test done" : allRecall ? "Recall done" : allCards ? "Cards done" : "Practice done"}</span>
       <h2 className="h-sm pr-score" ref={h} tabIndex={-1}>
         {!asked.length ? "Nothing answered." : allRecall ? `Remembered ${rightN} of ${asked.length}.` : allCards ? `Knew ${rightN} of ${asked.length}.` : `${rightN} of ${asked.length} right.`}
       </h2>
@@ -764,6 +808,8 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
           {missed.length > 0 && allCards && " The terms below link to the glossary."}
         </p>
       )}
+      {session.kind === "set" && asked.length > 0 && <QuizResult title={session.title ?? ""} right={rightN} of={session.items.length} answered={asked.length} />}
+      {session.kind === "set" && !!session.missing && <p className="ci-fine">{session.missing === 1 ? "One question" : `${session.missing} questions`} in this quiz link {session.missing === 1 ? "has" : "have"} since been reworded or removed, so {session.missing === 1 ? "it was" : "they were"} left out.</p>}
 
       {reread.length > 0 && (
         <div className="pr-reread">
@@ -806,7 +852,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
       <div className="btn-row">
         {session.kind === "review"
           ? dueLeft > 0 && <button type="button" className="btn btn-primary btn-lg" onClick={onReview}>Review the next {Math.min(dueLeft, REVIEW_SET)}</button>
-          : <button type="button" className="btn btn-primary btn-lg" onClick={onAgain}>{session.kind === "chapter" ? "Take it again" : "Another set"}</button>}
+          : <button type="button" className="btn btn-primary btn-lg" onClick={onAgain}>{session.kind === "chapter" || session.kind === "set" ? "Take it again" : "Another set"}</button>}
         <button type="button" className="btn btn-secondary btn-lg" onClick={onBack}>Back to practice</button>
       </div>
     </div>

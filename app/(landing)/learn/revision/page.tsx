@@ -26,6 +26,7 @@ export default function RevisionPage() {
         <p className="lede">The one-page summary of each concept, chapter by chapter, with the line to remember. Read it the night before, or print it.</p>
         <div className="btn-row no-print">
           <PrintButton />
+          <Link className="btn btn-secondary" href={`${REVISION_PATH}/pack`} prefetch={false}>Make a pack: your units, your weak spots</Link>
           <Link className="btn btn-secondary" href={PRACTICE_PATH} prefetch={false}>Test yourself</Link>
           <Link className="btn btn-secondary" href={FORMULAS_PATH} prefetch={false}>Formula sheet</Link>
           {UNITS.length > 1 && UNITS.map(u => <a key={u.id} className="btn btn-ghost" href={`#${u.id}`}>Unit {u.n}</a>)}
