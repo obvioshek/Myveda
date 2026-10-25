@@ -79,6 +79,15 @@ export function suggestBasis(t: string): ShareBasis {
   return "view";
 }
 
+// The label a community note starts with, until the member picks one. A note
+// isn't a question, so one ending in "?" starts as My view.
+export const suggestNoteBasis = (t: string): ShareBasis => (suggestIntent(t) === "asking" ? "view" : suggestBasis(t));
+
+// A note has no source field, so a Documented note says in its text where it
+// can be checked: a link, a page, chapter or verse, a year, an ISBN or DOI.
+export const namesASource = (t: string) =>
+  /https?:\/\/|www\.|according to|\b(isbn|doi)\b|\b(p|pp|page|pages|ch|chapter|verse|section)\.?\s*\d|\b(1[5-9]|20)\d\d\b/i.test(t);
+
 // A Documented claim must point at the specific page or entry, not a home page.
 export function checkSourceUrl(raw: string): { ok: boolean; url: URL | null } {
   const v = raw.trim();

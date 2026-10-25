@@ -36,7 +36,7 @@ export default function ProfileView({ pr, tab, topics }: { pr: ProfileData; tab:
   return (
     <div className="col w720" style={{ gap: 24 }}>
       <header className="prof-head">
-        <span className="av" style={{ "--h": pr.person.hue, "--s": "88px" } as React.CSSProperties} aria-hidden="true">{pr.person.initials}</span>
+        <span className="av" style={{ "--s": "88px" } as React.CSSProperties} aria-hidden="true">{pr.person.initials}</span>
         <div style={{ flex: 1, minWidth: 220 }} className="stack">
           <h1>{pr.person.name}</h1>
           {pr.line && <p style={{ fontSize: 16, marginTop: 4 }}>{pr.line}</p>}
@@ -116,7 +116,7 @@ export default function ProfileView({ pr, tab, topics }: { pr: ProfileData; tab:
           <Link key={it.key} className="row" href={it.href}>
             <span className="post-meta" style={{ gap: 8 }}>
               <Chips bases={it.bases} />{it.meta}
-              {it.accepted && <span style={{ color: "var(--lb-documented-fg)", fontWeight: 700 }}>✓ Answered the question</span>}
+              {it.accepted && <span style={{ color: "var(--color-text)", fontWeight: 700 }}>✓ Answered the question</span>}
             </span>
             <span style={{ display: "block", marginTop: 4, fontSize: 16, lineHeight: 1.45 }}>{it.title}</span>
           </Link>
@@ -154,7 +154,7 @@ function EditProfile({ pr, topics, onClose, onSaved }: { pr: ProfileData; topics
         if (r.ok) onSaved();
       }}>
         <div className="dialog-head"><div className="dialog-title" id="editT">Edit profile</div>
-          <button className="btn btn-ghost btn-icon" type="button" aria-label="Close" onClick={onClose} style={{ color: "var(--ink-2)", width: 40, height: 40 }}>×</button></div>
+          <button className="btn btn-ghost btn-icon" type="button" aria-label="Close" onClick={onClose} style={{ color: "var(--soft)", width: 40, height: 40 }}>×</button></div>
         <label className="lab">Name<input className="input" value={name} onChange={e => setName(e.target.value)} maxLength={60} /></label>
         <label className="lab">One line about you<input className="input" value={line} onChange={e => setLine(e.target.value)} maxLength={160} /></label>
         <div className="lab">Ask me about (up to 3)

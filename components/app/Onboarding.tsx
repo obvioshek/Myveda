@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Icon from "@/components/app/Icon";
+import BrandMark from "@/components/landing/Brand";
 import { Avatar } from "@/components/app/bits";
 import { completeOnboarding, skipOnboarding } from "@/actions/app/profile";
 import { BRINGS } from "@/lib/app/labels";
@@ -50,8 +50,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
   return (
     <div className="onb">
       <div className="onb-top">
-        <span className="house-mark" style={{ width: 32, height: 32 }}><Icon name="logo" /></span>
-        <span style={{ fontFamily: "var(--font-heading)", fontSize: 19, flex: 1 }}>Veda Verse</span>
+        <span className="brand"><BrandMark />Veda Verse</span>
         <div className="dots" aria-hidden="true">
           {[1, 2, 3, 4].map(i => <span key={i} className={i === step ? "now" : i < step ? "done" : ""} />)}
         </div>
@@ -101,7 +100,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
             <h1>Follow a few people and one circle</h1>
             <div className="stack">
               {people.map(p => (
-                <div key={p.id} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", borderBottom: "1px solid var(--color-divider)" }}>
+                <div key={p.id} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>
                   <Avatar person={p} size={44} link={false} />
                   <div style={{ flex: 1, minWidth: 0 }}><div style={{ fontWeight: 700 }}>{p.name}</div><div className="muted" style={{ fontSize: 14 }}>{p.line}</div></div>
                   <button className="btn btn-secondary" type="button" aria-pressed={follows.includes(p.id)} onClick={() => setFollows(toggle(follows, p.id))}>
@@ -112,7 +111,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
             </div>
             <div className="stack">
               {suggestedCircles.map(c => (
-                <div key={c.id} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", borderBottom: "1px solid var(--color-divider)" }}>
+                <div key={c.id} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>
                   <div style={{ flex: 1, minWidth: 0 }}><div style={{ fontWeight: 700 }}>{c.name}</div><div className="muted" style={{ fontSize: 14 }}>{c.week}</div></div>
                   <button className="btn btn-secondary" type="button" aria-pressed={circle === c.id} onClick={() => setCircle(circle === c.id ? null : c.id)}>
                     {circle === c.id ? "Joined" : "Join"}
@@ -149,7 +148,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
             {step === 4 ? (busy ? "Saving…" : replay ? "Back to my Edition" : "See my first Edition") : "Continue"}
           </button>
           <form action={skipOnboarding} style={{ marginLeft: "auto" }}>
-            <button className="btn btn-ghost" type="submit" style={{ color: "var(--ink-2)" }}>Skip for now</button>
+            <button className="btn btn-ghost" type="submit" style={{ color: "var(--soft)" }}>Skip for now</button>
           </form>
         </div>
       </div>

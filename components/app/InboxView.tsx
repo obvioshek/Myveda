@@ -80,9 +80,9 @@ function Row({ it }: { it: InboxItem }) {
   const [busy, setBusy] = useState(false);
   const who = it.actor?.name ?? "";
   return (
-    <div style={{ display: "flex", gap: 12, padding: "14px 0", borderBottom: "1px solid var(--color-divider)" }}>
-      <span aria-label={it.unread ? "Unread" : undefined} style={{ width: 8, height: 8, borderRadius: "50%", marginTop: 14, flex: "none", background: it.unread ? "var(--color-accent)" : "transparent" }} />
-      {it.actor ? <Avatar person={it.actor} /> : <span className="av" style={{ "--h": 250 } as React.CSSProperties} aria-hidden="true">{it.initials}</span>}
+    <div style={{ display: "flex", gap: 12, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>
+      <span aria-label={it.unread ? "Unread" : undefined} style={{ width: 8, height: 8, marginTop: 14, flex: "none", background: it.unread ? "var(--color-accent)" : "transparent" }} />
+      {it.actor ? <Avatar person={it.actor} /> : <span className="av" aria-hidden="true">{it.initials}</span>}
       <div style={{ flex: 1, minWidth: 0 }} className="stack">
         <button type="button" onClick={async () => { if (it.unread) await markRead(it.id); router.push(it.href); }}
           style={{ border: "none", background: "none", padding: 0, textAlign: "left", cursor: "pointer", fontSize: 15, lineHeight: 1.4, color: "var(--color-text)" }}>

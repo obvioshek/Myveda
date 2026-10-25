@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Icon from "@/components/app/Icon";
 import { useApp } from "@/components/app/AppProvider";
 import { setMembership } from "@/actions/app/community";
 import type { CommunityCard } from "@/lib/app/community";
@@ -13,21 +14,21 @@ export default function CommunityCards({ items }: { items: CommunityCard[] }) {
 function Card({ c }: { c: CommunityCard }) {
   const { run, toast } = useApp();
   const [status, setStatus] = useState(c.status);
-  const label = status === "member" ? "✓ Joined" : status === "applied" ? "Applied" : c.format === "Cohort" ? "Apply" : "Join";
+  const label = status === "member" ? "Joined" : status === "applied" ? "Applied" : c.format === "Cohort" ? "Apply" : "Join";
   return (
     <div className="ccard">
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}><span className="chip rel">{c.format}</span><span className="muted" style={{ fontSize: 12 }}>{c.memory}</span></div>
+      <div className="top-line"><span className="chip rel">{c.format}</span><span className="muted" style={{ fontSize: 12, fontWeight: 600 }}>{c.memory}</span></div>
       <Link className="name" href={`/c/${c.slug}`}>{c.name}</Link>
-      <div style={{ fontSize: 14 }}>{c.week}</div>
-      <div className="muted" style={{ fontSize: 14, fontStyle: "italic" }}>{c.note}</div>
-      {c.hosts && <div className="muted" style={{ fontSize: 13 }}>Hosts: {c.hosts}</div>}
-      <div>
-        <button className="btn btn-secondary" type="button" aria-pressed={status !== "none"} style={{ marginTop: 6 }} onClick={async () => {
+      {c.week && <div className="wk"><span>{c.week}</span></div>}
+      {c.note && <p className="muted" style={{ fontSize: 14, lineHeight: 1.5 }}>{c.note}</p>}
+      {c.hosts && <div className="muted" style={{ fontSize: 13 }}>Hosted by {c.hosts}</div>}
+      <div className="foot">
+        <button className="btn btn-secondary" type="button" aria-pressed={status !== "none"} title={status !== "none" ? "Leave" : undefined} onClick={async () => {
           const r = await run(setMembership(c.id, status === "none"));
           if (!r.ok) return;
           setStatus(r.status);
           toast(r.status === "applied" ? `Applied. The hosts of ${c.name} will decide.` : r.status === "member" ? `You joined ${c.name}.` : `You left ${c.name}.`);
-        }}>{label}</button>
+        }}>{status === "member" && <Icon name="check" size={14} />}{label}</button>
       </div>
     </div>
   );

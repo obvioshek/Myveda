@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Icon from "@/components/app/Icon";
+import BrandMark from "@/components/landing/Brand";
 import { useServerState } from "@/components/app/useServerState";
 import { Avatar, Chips, profileHref } from "@/components/app/bits";
 import { useApp } from "@/components/app/AppProvider";
@@ -42,21 +43,21 @@ export default function FeedPost({ p }: { p: FeedEntry }) {
   return (
     <article className="post">
       {p.house ? (
-        <span className="house-mark" aria-hidden="true"><Icon name="logo" /></span>
+        <span className="house-mark" aria-hidden="true"><BrandMark /></span>
       ) : p.author && <Avatar person={p.author} />}
       <div className="post-main">
         <div className="post-meta">
           {p.house ? <Link className="author" href="/discover">From the house</Link>
             : p.author && <Link className="author" href={profileHref(p.author)}>{p.author.name}</Link>}
-          {p.circle && <span>in <Link href={`/c/${p.circle.slug}`} style={{ color: "inherit" }}>{p.circle.name}</Link></span>}
+          {p.circle && <span>in <Link href={`/c/${p.circle.slug}`}>{p.circle.name}</Link></span>}
           <span>· {p.time}</span>
           <span className="chips"><Chips bases={p.bases} /></span>
           <div className="post-more" ref={menuRef}>
-            <button className="btn btn-ghost btn-icon" type="button" aria-label="More options" aria-expanded={menu} aria-haspopup="menu" onClick={() => setMenu(m => !m)} style={{ width: 32, height: 32, color: "var(--ink-2)" }}>
+            <button className="btn btn-ghost btn-icon" type="button" aria-label="More options" aria-expanded={menu} aria-haspopup="menu" onClick={() => setMenu(m => !m)} style={{ width: 36, height: 36, color: "var(--soft)" }}>
               <Icon name="more" />
             </button>
             {menu && (
-              <div className="menu" role="menu" style={{ top: 36 }}>
+              <div className="menu" role="menu">
                 <button role="menuitem" type="button" onClick={async () => {
                   setMenu(false); setGone(true);
                   const r = await run(setHidden(p.type, p.id, true));
@@ -83,7 +84,7 @@ export default function FeedPost({ p }: { p: FeedEntry }) {
         {p.asking && (
           <div className="q-status">
             <span>{p.asking.answered ? "Has answers" : "Open question"}</span>
-            <Link className="btn btn-secondary" href={p.href} style={{ padding: "6px 12px" }}>{p.asking.answered ? "Read answers" : p.mine ? "See it" : "Answer"}</Link>
+            <Link className="btn btn-secondary" href={p.href} style={{ minHeight: 36, padding: "0 12px" }}>{p.asking.answered ? "Read answers" : p.mine ? "See it" : "Answer"}</Link>
           </div>
         )}
         {p.checked && <div className="checked"><Icon name="check" size={14} />Source checked by readers who usually disagree</div>}

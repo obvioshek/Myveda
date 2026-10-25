@@ -7,7 +7,7 @@ export interface PersonRef { id: string; name: string; initials: string; hue: nu
 
 export function Chip({ basis }: { basis: Basis }) {
   const l = LABELS[basis];
-  return <span className={`chip lb-${basis}`}>{l.glyph} {l.name}</span>;
+  return <span className={`chip lb-${basis}`}><span aria-hidden="true">{l.glyph}</span>{l.name}</span>;
 }
 
 export function Chips({ bases }: { bases: Basis[] }) {
@@ -23,7 +23,7 @@ export function profileHref(p: { id: string; handle: string | null }) {
 }
 
 export function Avatar({ person, size = 36, link = true }: { person: PersonRef; size?: number; link?: boolean }) {
-  const style = { "--h": person.hue, "--s": `${size}px` } as React.CSSProperties;
+  const style = { "--s": `${size}px` } as React.CSSProperties;
   if (!link) return <span className="av" style={style} aria-hidden="true">{person.initials}</span>;
   return (
     <Link className="av" style={style} href={profileHref(person)} aria-label={person.name}>

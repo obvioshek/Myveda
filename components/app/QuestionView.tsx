@@ -142,7 +142,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           {onAnswer && (
             <div className="muted" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
               Building on {firstName(onAnswer.author.name)}&apos;s answer
-              <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => { setOnAnswer(null); setRelation("Answers"); }} style={{ padding: "2px 8px", color: "var(--ink-2)" }}>×</button>
+              <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => { setOnAnswer(null); setRelation("Answers"); }} style={{ padding: "2px 8px", color: "var(--soft)" }}>×</button>
             </div>
           )}
           <textarea className="input" rows={4} aria-label="Your answer" placeholder="Say what you know, and how you know it." value={draft} onChange={e => setDraft(e.target.value)} style={{ minHeight: 96 }} />
@@ -150,7 +150,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           <div className="wrap-chips" role="group" aria-label="What your answer rests on">
             {SHARE_BASES.map(k => (
               <button key={k} type="button" className={`chip basis-btn lb-${k}`} aria-pressed={effBasis === k} onClick={() => setBasis(k)}>
-                {LABELS[k].glyph} {LABELS[k].name}
+                <span aria-hidden="true">{LABELS[k].glyph}</span>{LABELS[k].name}
               </button>
             ))}
           </div>

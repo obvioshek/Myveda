@@ -5,7 +5,7 @@ import { db } from "@/src/prisma/db";
 import { actingMember } from "@/lib/app/session";
 import { attempt, refuse } from "@/lib/app/result";
 import { notify, notifyDigest, notifyMentions, clip } from "@/lib/app/notify";
-import { suggestBasis, suggestIntent } from "@/lib/app/labels";
+import { isShareBasis, namesASource, suggestNoteBasis } from "@/lib/app/labels";
 
 // Join or leave. A Cohort takes applications instead: the hosts decide.
 export async function setMembership(communityId: string, join: boolean) {
@@ -60,7 +60,7 @@ export async function decideApplication(communityId: string, userId: string, acc
 }
 
 // A note in a community thread. Members only; it may build on another note.
-export async function postNote(input: { threadId: string; body: string; buildsOnId?: string | null }) {
+export async function postNote(input: { threadId: string; body: string; basis?: string; buildsOnId?: string | null }) {
   return attempt(async () => {
     const me = await actingMember();
     const thread = await db.orm.public.CommunityThread.where({ id: input.threadId }).include("community").first();
@@ -78,7 +78,9 @@ export async function postNote(input: { threadId: string; body: string; buildsOn
       if (!n || n.communityId !== c.id) refuse("That note is no longer here.");
       on = { id: n.id, authorId: n.authorId };
     }
-    const basis = suggestIntent(body) === "asking" ? "view" : suggestBasis(body);
+    // The member's label; a suggestion only if none came with the note.
+    const basis = isShareBasis(input.basis) ? input.basis : suggestNoteBasis(body);
+    if (basis === "documented" && !namesASource(body)) refuse("A Documented note says where it can be checked: a page, a link or a record. Add one, or choose another label.");
     const note = await db.orm.public.Note.create({
       authorId: me.id, body, basis, communityId: c.id, threadId: thread.id, buildsOnId: on?.id ?? null,
     });

@@ -96,7 +96,7 @@ export default function LibraryView({ lib, tab }: { lib: LibraryData; tab: (type
       {tab === "Drafts" && (
         <>
           {lib.drafts.map(d => (
-            <div key={d.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 0", borderBottom: "1px solid var(--color-divider)" }}>
+            <div key={d.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>
               <div style={{ flex: 1, minWidth: 0 }}>
                 {d.draft.intent === "asking" && <Chip basis="asking" />}
                 <div style={{ fontSize: 16, marginTop: 6 }} className="clamp2">{d.draft.text}</div>
@@ -144,7 +144,7 @@ function SavedRow({ item, note, collections, onRemove }: {
     return () => clearTimeout(t);
   }, [value, item.type, item.id, run]);
   return (
-    <div className="stack" style={{ gap: 8, padding: "16px 0", borderBottom: "1px solid var(--color-divider)" }}>
+    <div className="stack" style={{ gap: 8, padding: "16px 0", borderBottom: "2px solid var(--color-divider)" }}>
       <div className="post-meta" style={{ gap: 8 }}>
         <Chips bases={item.bases} />{item.meta}
         {collections.length > 0 && (
@@ -157,7 +157,7 @@ function SavedRow({ item, note, collections, onRemove }: {
             {collections.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
           </select>
         )}
-        <button className="btn btn-ghost" type="button" onClick={onRemove} style={{ marginLeft: collections.length ? 0 : "auto", color: "var(--ink-2)", padding: "4px 8px", fontSize: 13 }}>Remove</button>
+        <button className="btn btn-ghost" type="button" onClick={onRemove} style={{ marginLeft: collections.length ? 0 : "auto", color: "var(--soft)", padding: "4px 8px", fontSize: 13 }}>Remove</button>
       </div>
       <Link href={item.href} className="clamp2" style={{ fontSize: 17, fontWeight: 600, lineHeight: 1.35, color: "var(--color-text)", textDecoration: "none" }}>{item.title}</Link>
       <input className="input" aria-label="Your private note" placeholder="Add a private note…" value={value} onChange={e => setValue(e.target.value)} />

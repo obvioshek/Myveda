@@ -2,7 +2,6 @@
 // "fill" turns an outline icon solid: a pressed toggle fills its icon.
 
 const PATHS: Record<string, React.ReactNode> = {
-  logo: (<><path d="M4.4 11.9C4.4 19.3 19.6 19.3 19.6 11.9" strokeWidth="2.4" /><circle cx="12" cy="6.3" r="2.5" fill="currentColor" stroke="none" /></>),
   search: (<><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></>),
   plus: (<><path d="M5 12h14" strokeWidth="2.4" /><path d="M12 5v14" strokeWidth="2.4" /></>),
   bell: (<><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></>),

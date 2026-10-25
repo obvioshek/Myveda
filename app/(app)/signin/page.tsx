@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { db } from "@/src/prisma/db";
-import Icon from "@/components/app/Icon";
+import BrandMark from "@/components/landing/Brand";
 import SignInForm from "@/components/SignInForm";
 import DemoMembers from "@/components/app/DemoMembers";
 import { currentMember, demoLoginEnabled } from "@/lib/app/session";
@@ -22,10 +22,7 @@ export default async function SignInPage() {
   return (
     <div className="signin">
       <div className="card">
-        <Link className="brand" href="/" style={{ width: "auto" }}>
-          <span className="mark"><Icon name="logo" /></span>
-          <span className="word">Veda Verse</span>
-        </Link>
+        <Link className="brand" href="/"><BrandMark />Veda Verse</Link>
         <h1>Sign in</h1>
         {!hasDatabase() ? (
           <p className="muted">The app needs its database. Set <code>DATABASE_URL</code>, run <code>npm run db:migrate</code> and <code>npm run db:seed</code>, then come back.</p>
