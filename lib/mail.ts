@@ -11,7 +11,7 @@ export function mailConfigured() {
 
 let transport: Transporter | null = null;
 
-export async function sendMail(msg: { to: string; subject: string; text: string; html: string; replyTo?: string }) {
+export async function sendMail(msg: { to: string; subject: string; text: string; html: string; replyTo?: string; headers?: Record<string, string> }) {
   if (!mailConfigured()) throw new Error("Email is not configured.");
   const port = Number(process.env.SMTP_PORT ?? 465);
   transport ??= nodemailer.createTransport({

@@ -34,9 +34,9 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'15e3d459e087a6b9c3caddd76b77a688c98494a3784866713897e9f281d36ad1'>;
+  StorageHashBase<'67d6abd2d99d4056a6e8494124336166e2a5003eb30ba037aeda99ca03d6aa46'>;
 export type ExecutionHash =
-  ExecutionHashBase<'a0213c66c7908007acfbd4de2d33d6fb10f0038b885bd028503849ee873c4720'>;
+  ExecutionHashBase<'728f368426229e11939d5ad30f01009ca02f12dc864d0b150c8cb1a9730825d7'>;
 export type ProfileHash =
   ProfileHashBase<'3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2'>;
 
@@ -691,6 +691,15 @@ export type FieldOutputTypes = {
       readonly onboardedAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
       readonly lastSeenAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
     };
+    readonly WeeklySubscriber: {
+      readonly id: CodecTypes['pg/text@1']['output'];
+      readonly email: CodecTypes['pg/text@1']['output'];
+      readonly token: CodecTypes['pg/text@1']['output'];
+      readonly confirmedAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
+      readonly confirmSentAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
+      readonly lastWeekSent: CodecTypes['pg/int4@1']['output'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
+    };
   };
 };
 export type FieldInputTypes = {
@@ -1143,6 +1152,15 @@ export type FieldInputTypes = {
       readonly keepHistory: CodecTypes['pg/bool@1']['input'];
       readonly onboardedAt: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
       readonly lastSeenAt: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
+    };
+    readonly WeeklySubscriber: {
+      readonly id: CodecTypes['pg/text@1']['input'];
+      readonly email: CodecTypes['pg/text@1']['input'];
+      readonly token: CodecTypes['pg/text@1']['input'];
+      readonly confirmedAt: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
+      readonly confirmSentAt: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
+      readonly lastWeekSent: CodecTypes['pg/int4@1']['input'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
     };
   };
 };
@@ -1597,6 +1615,15 @@ export type StorageColumnTypes = {
       readonly quietHours: CodecTypes['pg/bool@1']['output'];
       readonly timezone: CodecTypes['pg/text@1']['output'] | null;
     };
+    readonly weeklySubscriber: {
+      readonly confirmedAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
+      readonly confirmSentAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly email: CodecTypes['pg/text@1']['output'];
+      readonly id: CodecTypes['pg/text@1']['output'];
+      readonly lastWeekSent: CodecTypes['pg/int4@1']['output'] | null;
+      readonly token: CodecTypes['pg/text@1']['output'];
+    };
   };
 };
 export type StorageColumnInputTypes = {
@@ -2049,6 +2076,15 @@ export type StorageColumnInputTypes = {
       readonly openTo: CodecTypes['pg/text@1']['input'];
       readonly quietHours: CodecTypes['pg/bool@1']['input'];
       readonly timezone: CodecTypes['pg/text@1']['input'] | null;
+    };
+    readonly weeklySubscriber: {
+      readonly confirmedAt: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
+      readonly confirmSentAt: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly email: CodecTypes['pg/text@1']['input'];
+      readonly id: CodecTypes['pg/text@1']['input'];
+      readonly lastWeekSent: CodecTypes['pg/int4@1']['input'] | null;
+      readonly token: CodecTypes['pg/text@1']['input'];
     };
   };
 };
@@ -2710,6 +2746,16 @@ export namespace Models {
     user: public_User;
     readonly [RelationKeys]?: 'actor' | 'user';
   };
+  export type public_WeeklySubscriber = {
+    id: CodecTypes['pg/text@1']['output'];
+    email: CodecTypes['pg/text@1']['output'];
+    token: CodecTypes['pg/text@1']['output'];
+    confirmedAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
+    confirmSentAt: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
+    lastWeekSent: CodecTypes['pg/int4@1']['output'] | null;
+    createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
+    readonly [RelationKeys]?: never;
+  };
   export type public_EarlyListEntry = {
     id: CodecTypes['pg/text@1']['output'];
     email: CodecTypes['pg/text@1']['output'];
@@ -2771,6 +2817,7 @@ export declare const models: {
     ReadEvent: Models.public_ReadEvent;
     Report: Models.public_Report;
     Notification: Models.public_Notification;
+    WeeklySubscriber: Models.public_WeeklySubscriber;
     EarlyListEntry: Models.public_EarlyListEntry;
   };
 };
@@ -6463,6 +6510,66 @@ type ContractBase = Omit<
               indexes: readonly [];
               foreignKeys: readonly [];
             };
+            readonly weeklySubscriber: {
+              columns: {
+                readonly id: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly email: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly token: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly confirmedAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly nullable: true;
+                };
+                readonly confirmSentAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly nullable: true;
+                };
+                readonly lastWeekSent: {
+                  readonly nativeType: 'int4';
+                  readonly codecId: 'pg/int4@1';
+                  readonly nullable: true;
+                };
+                readonly createdAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly nullable: false;
+                  readonly default: { readonly kind: 'function'; readonly expression: 'now()' };
+                };
+              };
+              primaryKey: { readonly columns: readonly ['id'] };
+              uniques: readonly [
+                { readonly columns: readonly ['email'] },
+                { readonly columns: readonly ['token'] },
+              ];
+              indexes: readonly [
+                {
+                  readonly name: 'weeklySubscriber_confirmedAt_idx_7667e8e9';
+                  readonly prefix: 'weeklySubscriber_confirmedAt_idx';
+                  readonly columns: readonly ['confirmedAt'];
+                  readonly unique: false;
+                },
+                {
+                  readonly name: 'weeklySubscriber_createdAt_idx_9575dbd7';
+                  readonly prefix: 'weeklySubscriber_createdAt_idx';
+                  readonly columns: readonly ['createdAt'];
+                  readonly unique: false;
+                },
+              ];
+              foreignKeys: readonly [];
+            };
           };
         };
       };
@@ -6581,6 +6688,10 @@ type ContractBase = Omit<
     readonly notification: {
       readonly namespace: 'public' & NamespaceId;
       readonly model: 'Notification';
+    };
+    readonly weeklySubscriber: {
+      readonly namespace: 'public' & NamespaceId;
+      readonly model: 'WeeklySubscriber';
     };
     readonly earlyListEntry: {
       readonly namespace: 'public' & NamespaceId;
@@ -10475,6 +10586,61 @@ type ContractBase = Omit<
               };
             };
           };
+          readonly WeeklySubscriber: {
+            readonly fields: {
+              readonly id: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly email: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly token: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly confirmedAt: {
+                readonly nullable: true;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                };
+              };
+              readonly confirmSentAt: {
+                readonly nullable: true;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                };
+              };
+              readonly lastWeekSent: {
+                readonly nullable: true;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+              };
+              readonly createdAt: {
+                readonly nullable: false;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
+                };
+              };
+            };
+            readonly relations: Record<string, never>;
+            readonly storage: {
+              readonly table: 'weeklySubscriber';
+              readonly namespaceId: 'public';
+              readonly fields: {
+                readonly id: { readonly column: 'id' };
+                readonly email: { readonly column: 'email' };
+                readonly token: { readonly column: 'token' };
+                readonly confirmedAt: { readonly column: 'confirmedAt' };
+                readonly confirmSentAt: { readonly column: 'confirmSentAt' };
+                readonly lastWeekSent: { readonly column: 'lastWeekSent' };
+                readonly createdAt: { readonly column: 'createdAt' };
+              };
+            };
+          };
         };
       };
     };
@@ -10778,6 +10944,14 @@ type ContractBase = Omit<
           readonly ref: {
             readonly namespace: 'public';
             readonly table: 'user';
+            readonly column: 'id';
+          };
+          readonly onCreate: { readonly kind: 'generator'; readonly id: 'uuidv4' };
+        },
+        {
+          readonly ref: {
+            readonly namespace: 'public';
+            readonly table: 'weeklySubscriber';
             readonly column: 'id';
           };
           readonly onCreate: { readonly kind: 'generator'; readonly id: 'uuidv4' };

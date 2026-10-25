@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/learn/apply`, lastModified: updated, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/learn/check`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/learn/map`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/learn/weekly`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}${PLAN_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}${FORMULAS_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}${PRACTICE_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },

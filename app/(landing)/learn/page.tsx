@@ -82,6 +82,7 @@ export default function LearnIndex() {
       </section>
 
       <nav className="wrap ci-more" aria-label="More ways to learn">
+        <Link href="/learn/weekly" prefetch={false}><b>One idea a week</b><span>A new pair each Monday, by email or feed</span></Link>
         <Link href="/learn/apply" prefetch={false}><b>Apply it</b><span>Workplace situations: which idea helps here?</span></Link>
         <Link href="/learn/map" prefetch={false}><b>The map</b><span>Which chapters build on which</span></Link>
         <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack</b><span>Your units, your weak spots, printed</span></Link>

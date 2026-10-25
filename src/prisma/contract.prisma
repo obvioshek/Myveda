@@ -814,6 +814,24 @@ model Notification {
   @@rls
 }
 
+// "One idea a week" by email (/learn/weekly). An address gets the weekly
+// email only once its owner confirms; unconfirmed ones are deleted after 30
+// days. lastWeekSent is the number of the last week sent, so a week goes out
+// once however often the sender runs.
+model WeeklySubscriber {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  token         String    @unique
+  confirmedAt   DateTime?
+  confirmSentAt DateTime?
+  lastWeekSent  Int?
+  createdAt     DateTime  @default(now())
+
+  @@index([confirmedAt])
+  @@index([createdAt])
+  @@rls
+}
+
 // The early list on the landing page. An address counts once its owner
 // confirms from their inbox; unconfirmed ones are deleted after 30 days.
 model EarlyListEntry {
