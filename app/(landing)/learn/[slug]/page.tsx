@@ -14,6 +14,7 @@ import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
+import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -56,6 +57,8 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const showLens = loose.length > 0;
   const firstId = lessons?.[0]?.blockId;
   const many = UNITS.length > 1;
+  const uses = usesIdeasFrom(c.slug);
+  const usedIn = ideasUsedIn(c.slug);
 
   // Each concept's text with its glossary terms linked, and what the cards
   // need to know about each term linked on this page.
@@ -105,6 +108,15 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <h1>{c.title}</h1>
           </div>
           <p className="ch-scope">{c.scope}</p>
+          {uses.length > 0 && (
+            <p className="ch-uses">
+              Uses ideas from{" "}
+              {uses.map((l, i) => (
+                <span key={l.slug}>{i > 0 && (i === uses.length - 1 ? " and " : ", ")}<Link className="link" href={chapterPath(l.slug)} prefetch={false}>{l.title}</Link></span>
+              ))}
+              . <a className="link" href="#connects">Which ideas</a>
+            </p>
+          )}
           <div className="ch-meta">
             <span>{c.blocks.length} {c.blocks.length === 1 ? "concept" : "concepts"}</span>
             <span>About {c.minutes} min</span>
@@ -179,6 +191,17 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             </section>
           )}
 
+          {(uses.length > 0 || usedIn.length > 0) && (
+            <section id="connects" className="ch-conn" aria-labelledby="connects-h">
+              <h2 id="connects-h" className="h-xs">How this chapter connects</h2>
+              <p className="ci-fine">Worked out from the glossary terms each chapter uses. A chapter is listed when two or more terms are shared.</p>
+              <div className="ch-conn-cols">
+                {uses.length > 0 && <Connections label="Uses ideas from" items={uses} many={many} />}
+                {usedIn.length > 0 && <Connections label="Its ideas are used in" items={usedIn} many={many} />}
+              </div>
+            </section>
+          )}
+
           <nav className="ch-next" aria-label="Chapters">
             {prev ? (
               <Link href={chapterPath(prev.slug)} className="cell" rel="prev">
@@ -205,5 +228,21 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
       <GlossaryTips terms={tips} />
       <Toast />
     </PageShell>
+  );
+}
+
+function Connections({ label, items, many }: { label: string; items: ChapterLink[]; many: boolean }) {
+  return (
+    <div className="ch-conn-col">
+      <span className="label red">{label}</span>
+      <ul>
+        {items.map(l => (
+          <li key={l.slug}>
+            <Link href={chapterPath(l.slug)} prefetch={false}>{many && <span className="ci-pu">Unit {l.unitN}</span>}<b>{l.title}</b></Link>
+            <span>{l.terms.join(" · ")}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

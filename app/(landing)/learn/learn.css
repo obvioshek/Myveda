@@ -532,3 +532,16 @@ h4 { margin: 0; }
 .tr-code { min-height: 96px; font: 500 13px/20px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; word-break: break-all; }
 .tr-lab { color: var(--color-text); font-size: 13px; font-weight: 700; }
 .tr-done { padding: 10px 12px; border-left: 4px solid var(--color-text); background: var(--color-surface); font-size: 15px; line-height: 23px; }
+
+/* ---------- How a chapter connects to others ---------- */
+.ch-conn h2 { max-width: none; }
+.ch-uses { max-width: 72ch; color: var(--body); font-size: 15px; line-height: 23px; }
+.ch-conn { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; padding-top: 20px; border-top: 2px solid var(--color-text); scroll-margin-top: 140px; }
+.ch-conn-cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px 40px; margin-top: 6px; }
+.ch-conn-col { display: flex; flex-direction: column; gap: 8px; }
+.ch-conn-col ul { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-divider); }
+.ch-conn-col li { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; border-bottom: 2px solid var(--color-divider); }
+.ch-conn-col li a { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; color: var(--color-text); font-size: 16px; }
+.ch-conn-col li a:hover b { color: var(--color-accent-700); }
+.ch-conn-col li > span { color: var(--soft); font-size: 13.5px; line-height: 20px; }
+@media (min-width: 860px) { .ch-conn-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
