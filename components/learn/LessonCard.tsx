@@ -11,6 +11,7 @@ import { recordAnswer, recordedLine } from "./review";
 import { saveAsk } from "./ask";
 import Listen from "./Listen";
 import MixupHint from "./MixupHint";
+import ReportProblem from "./ReportProblem";
 
 function Part({ children }: { children: React.ReactNode }) {
   return <span className="part"><i className="sq" aria-hidden="true" />{children}</span>;
@@ -52,6 +53,7 @@ function Question({ check, n, rid, mixups, onAnswer }: { check: Check; n: number
           <p className="ck-a"><b>{right ? "Correct. " : "Not quite. "}</b>{!right && <>The answer is “{check.options[check.answer]}”. </>}{check.why}</p>
           {picked !== null && !right && <MixupHint notes={mixups} />}
           {line && <p className="ck-r">{line} <Link className="link" href="/learn/practice#review" prefetch={false}>Your review</Link></p>}
+          {picked !== null && <p className="ck-rp"><ReportProblem what={`The question “${check.q}”`} label="Report a problem with this question" /></p>}
         </div>
       </div>
     </div>

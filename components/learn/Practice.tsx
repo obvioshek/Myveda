@@ -6,6 +6,7 @@ import { cardId, recallId, type PracticeBank, type PracticeQuestion, type Recall
 import { questionId } from "@/content/learn/question-id";
 import { useDone } from "./progress";
 import MixupHint from "./MixupHint";
+import ReportProblem from "./ReportProblem";
 import { useStats, weakChapters } from "./stats";
 import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today, useReview, type Recorded } from "./review";
 
@@ -610,6 +611,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
               <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next question"}</button>
               <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
             </div>
+            {answer && <p className="ck-rp"><ReportProblem what={`The question “${q.q}” (${q.ct})`} label="Report a problem with this question" /></p>}
           </div>
         </div>
       </div>

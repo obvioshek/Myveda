@@ -18,6 +18,7 @@ import { mixupHints } from "@/content/learn/mixups";
 import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
 import { TEXTS_PATH, textPath, textsInChapter } from "@/content/learn/texts";
 import CiteThis from "@/components/learn/CiteThis";
+import { CORRECTIONS_PATH, correctionsFor } from "@/content/learn/corrections";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -48,6 +49,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   if (!c) notFound();
   const unit = unitById(c.unit)!;
   const texts = textsInChapter(c.slug);
+  const fixes = correctionsFor(chapterPath(c.slug));
   const base = siteUrl();
   const url = `${base}${chapterPath(c.slug)}`;
   const ev = evidence(c);
@@ -242,6 +244,13 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
               {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}.{" "}
               <Link href={TEXTS_PATH} prefetch={false}>About all the texts</Link>.
             </p>
+          )}
+          {fixes.length > 0 && (
+            <div className="ch-texts ch-texts-l">
+              <b>Corrected since it was published:</b>
+              <ul className="ch-fixes">{fixes.map((f, i) => <li key={i}>{f.date}: {f.what}</li>)}</ul>
+              <Link href={CORRECTIONS_PATH} prefetch={false}>All corrections</Link>
+            </div>
           )}
           <CiteThis title={c.title} url={`${base}${chapterPath(c.slug)}`} updated={CONTENT_UPDATED} />
         </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { textPath, textsCited } from "@/content/learn/text-refs";
+import { refOf, textPath, textsCited } from "@/content/learn/text-refs";
+import ReportProblem from "./ReportProblem";
 
 const html = (__html: string) => ({ __html });
 
@@ -11,12 +12,15 @@ export default function PassageQuote({ quote, except }: { quote: string; except?
   return (
     <div className="lp-qw">
       <blockquote className="lp-q" dangerouslySetInnerHTML={html(quote)} />
-      {texts.length > 0 && (
-        <p className="lp-about">
-          {except ? "Also cites" : `About ${texts.length > 1 ? "these texts" : "this text"}`}:{" "}
-          {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}
-        </p>
-      )}
+      <p className="lp-about">
+        {texts.length > 0 && (
+          <span>
+            {except ? "Also cites" : `About ${texts.length > 1 ? "these texts" : "this text"}`}:{" "}
+            {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}
+          </span>
+        )}
+        <ReportProblem what={`The passage ${refOf(quote) || "on this page"}`} label="Report a problem" kind="A translation or reference is wrong" />
+      </p>
     </div>
   );
 }

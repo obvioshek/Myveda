@@ -723,3 +723,9 @@ h4 { margin: 0; }
 .ch-texts-l { color: var(--soft); font-size: 14px; line-height: 22px; }
 .ch-texts-l b { color: var(--color-text); }
 .ch-texts-l a { color: var(--color-accent-700); }
+.lp-about { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px; }
+.co-list { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text); max-width: 880px; }
+.co-list li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px 20px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); font-size: 15px; line-height: 24px; }
+@media (min-width: 760px) { .co-list li { grid-template-columns: 180px minmax(0, 1fr); } }
+.co-how ul { display: flex; flex-direction: column; gap: 8px; max-width: 880px; margin: 0; padding-left: 20px; list-style: square; color: var(--body); font-size: 15.5px; line-height: 25px; }
+.co-how li::marker { color: var(--color-accent); }

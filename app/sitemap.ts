@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { CHAPTERS, CONTENT_UPDATED, FORMULAS_PATH, START_WALK_PATH, GLOSSARY_PATH, PLAN_PATH, PRACTICE_PATH, REVISION_PATH, chapterPath } from "@/content/learn";
 import { TEXTS, TEXTS_PATH, TEXTS_UPDATED, textPath } from "@/content/learn/texts";
 import { READING_GUIDE_PATH } from "@/content/learn/reading-guide";
+import { CORRECTIONS_PATH } from "@/content/learn/corrections";
 import { siteUrl } from "@/lib/site";
 
 // Only pages worth showing in search results. The sign-in page and the product
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}${TEXTS_PATH}`, lastModified: new Date(TEXTS_UPDATED), changeFrequency: "monthly", priority: 0.8 },
     ...TEXTS.map(t => ({ url: `${base}${textPath(t.id)}`, lastModified: new Date(TEXTS_UPDATED), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: `${base}${READING_GUIDE_PATH}`, lastModified: new Date(TEXTS_UPDATED), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}${CORRECTIONS_PATH}`, lastModified: now, changeFrequency: "weekly", priority: 0.3 },
     { url: `${base}${PLAN_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}${FORMULAS_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}${PRACTICE_PATH}`, lastModified: updated, changeFrequency: "monthly", priority: 0.6 },
