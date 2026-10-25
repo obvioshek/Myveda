@@ -9,6 +9,7 @@ import { decoded } from "@/lib/app/params";
 import { questionId } from "@/content/learn/question-id";
 import { recordAnswer, recordedLine } from "./review";
 import { saveAsk } from "./ask";
+import Listen from "./Listen";
 
 function Part({ children }: { children: React.ReactNode }) {
   return <span className="part"><i className="sq" aria-hidden="true" />{children}</span>;
@@ -84,6 +85,7 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
   const bodyId = useId();
   const beforeId = useId();
   const noteId = useId();
+  const core = useRef<HTMLDivElement>(null);
 
   // A link that points at this lesson (the side list, a search result, Continue)
   // opens it, then brings it into view once it has room.
@@ -156,7 +158,8 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
           <div className="ls-body">
             <div className="part-row">
               <Part>Core idea</Part>
-              <div className="ls-core">
+              <div className="ls-core" ref={core}>
+                {open && <Listen target={core} label={lesson.name} />}
                 <p className="core">{lesson.lead}</p>
                 {detail}
               </div>

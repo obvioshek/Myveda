@@ -20,7 +20,8 @@ import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today
 type Q = PracticeQuestion & { id: string; card?: true };
 type Kind = "review" | "mixed";
 type What = "questions" | "terms";
-type Answer = { picked: number; line: string | null };
+/** `guess`: the reader said they weren't sure before answering. */
+type Answer = { picked: number; line: string | null; guess?: boolean };
 type Session = { kind: Kind; items: Q[]; i: number; answers: (Answer | null)[]; started: number; ended: number | null };
 
 const REVIEW_SET = 20;
@@ -237,7 +238,7 @@ export default function Practice() {
 
 function Run({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
   const q = session.items[session.i];
-  return q.card ? <CardRun key={session.i} session={session} setSession={setSession} /> : <QuestionRun session={session} setSession={setSession} />;
+  return q.card ? <CardRun key={session.i} session={session} setSession={setSession} /> : <QuestionRun key={session.i} session={session} setSession={setSession} />;
 }
 
 // One glossary term: recall it, turn it over, say whether you knew it.
@@ -339,6 +340,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
   const qRef = useRef<HTMLHeadingElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const qId = useId();
+  const [guessing, setGuessing] = useState(false);
 
   // A new question takes focus, so it is read out and the keys work at once.
   useEffect(() => { qRef.current?.focus({ preventScroll: true }); }, [session.i]);
@@ -347,11 +349,14 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
   const pick = useCallback((i: number) => {
     if (session.answers[session.i]) return;
     const right = i === q.a;
-    const r: Recorded | null = recordAnswer(q.id, right);
+    // A lucky guess isn't learned yet: it comes back tomorrow, like a miss,
+    // though it still counts as right.
+    const r: Recorded | null = recordAnswer(q.id, right && !guessing);
     const answers = [...session.answers];
-    answers[session.i] = { picked: i, line: recordedLine(r) };
+    const line = right && guessing ? "Right, but a guess: it comes back tomorrow so you can be sure of it." : recordedLine(r);
+    answers[session.i] = { picked: i, line, guess: guessing };
     setSession({ ...session, answers });
-  }, [q, session, setSession]);
+  }, [q, session, setSession, guessing]);
 
   const next = useCallback(() => {
     if (last) setSession({ ...session, ended: Date.now() });
@@ -366,6 +371,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
       if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
       const n = Number(e.key);
       if (!answer && Number.isInteger(n) && n >= 1 && n <= q.o.length) { e.preventDefault(); pick(n - 1); }
+      else if (!answer && (e.key === "g" || e.key === "G")) { e.preventDefault(); setGuessing(g => !g); }
       else if (answer && e.key === "Enter" && t?.tagName !== "BUTTON" && t?.tagName !== "A") { e.preventDefault(); next(); }
     };
     window.addEventListener("keydown", onKey);
@@ -389,6 +395,11 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
 
       <p className="pr-from">{q.ct} · {q.bn}</p>
       <h2 className="pr-q" id={qId} ref={qRef} tabIndex={-1}>{q.q}</h2>
+      {!answer && (
+        <button type="button" className="pr-guess" aria-pressed={guessing} onClick={() => setGuessing(g => !g)}>
+          <span className="pr-box-tick" aria-hidden="true">{guessing ? "✓" : ""}</span>I’m not sure: mark my answer as a guess
+        </button>
+      )}
       <div className="ck-opts pr-opts" role="group" aria-labelledby={qId}>
         {q.o.map((o, i) => {
           const state = answer ? (i === q.a ? " right" : answer.picked === i ? " wrong" : "") : "";
@@ -412,7 +423,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
           </div>
         </div>
       </div>
-      <p className="ci-fine pr-keys">Keys: 1 to {q.o.length} to answer, Enter for the next question.</p>
+      <p className="ci-fine pr-keys">Keys: 1 to {q.o.length} to answer, G to mark a guess first, Enter for the next question.</p>
     </div>
   );
 }
@@ -422,6 +433,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
   const rightN = asked.filter(x => x.a.picked === x.q.a).length;
   const allCards = asked.length > 0 && asked.every(x => x.q.card);
   const missed = asked.filter(x => x.a.picked !== x.q.a);
+  const lucky = asked.filter(x => x.a.guess && x.a.picked === x.q.a).length;
   const h = useRef<HTMLHeadingElement>(null);
   useEffect(() => { h.current?.focus({ preventScroll: true }); }, []);
 
@@ -449,6 +461,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
         <p className="pr-text">
           Took {took(ms)}, about {took(ms / asked.length)} each.
           {missed.length > 0 && ` The ${missed.length === 1 ? "one" : missed.length} you missed ${missed.length === 1 ? "is" : "are"} on your review list for tomorrow.`}
+          {lucky > 0 && ` ${lucky === 1 ? "One right answer was a guess; it comes" : `${lucky} right answers were guesses; they come`} back tomorrow too.`}
           {missed.length > 0 && allCards && " The terms below link to the glossary."}
         </p>
       )}
