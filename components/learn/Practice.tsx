@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { cardId, type PracticeBank, type PracticeQuestion } from "@/content/learn/practice";
+import { cardId, recallId, type PracticeBank, type PracticeQuestion, type RecallBank } from "@/content/learn/practice";
 import { questionId } from "@/content/learn/question-id";
 import { useDone } from "./progress";
+import MixupHint from "./MixupHint";
 import { useStats, weakChapters } from "./stats";
 import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today, useReview, type Recorded } from "./review";
 
@@ -16,13 +17,24 @@ import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today
 //
 // A term card is carried as a question with no options: `q` is the term, `w`
 // its meaning, `b` and `bn` the term's id and name, and `a` is 1, the answer
-// "I knew it", so scoring treats both alike.
+// "I knew it", so scoring treats both alike. A recall is carried the same way:
+// `q` is the concept, `pts` its summary points, `w` the line to remember, and
+// it counts as remembered (1) when most points were recalled. Recall concepts
+// come from /practice-recall.json, fetched only when they are needed.
+//
+// A question carries its concept's "Don't confuse it with" hints in `mx`,
+// shown after a wrong answer.
 
-type Q = PracticeQuestion & { id: string; card?: true };
+type Q = PracticeQuestion & { id: string; card?: true; recall?: true; pts?: string[]; mx?: string[] };
 type Kind = "review" | "mixed" | "chapter";
-type What = "questions" | "terms";
-/** `guess`: the reader said they weren't sure before answering. */
-type Answer = { picked: number; line: string | null; guess?: boolean };
+type What = "questions" | "terms" | "recall";
+
+// Share of a concept's summary points to recall for it to count as remembered.
+const RECALL_ENOUGH = 0.8;
+const RECALL_COUNTS = [3, 5, 10] as const;
+const isRecallId = (id: string) => id.endsWith("#r");
+/** `guess`: the reader said they weren't sure before answering. `got`: points recalled, out of all. */
+type Answer = { picked: number; line: string | null; guess?: boolean; got?: [number, number] };
 /**
  * `chapter`: the chapter a chapter test is on. `exam`: a mock test, answered
  * without feedback until it is submitted, with an optional time limit.
@@ -76,6 +88,7 @@ function took(ms: number) {
 
 export default function Practice() {
   const [bank, setBank] = useState<{ units: PracticeBank["units"]; questions: Q[]; cards: Q[] } | null>(null);
+  const [recalls, setRecalls] = useState<Q[] | null>(null);
   const [what, setWhat] = useState<What>("questions");
   const [failed, setFailed] = useState(false);
   const [units, setUnits] = useState<string[] | null>(null);
@@ -99,7 +112,7 @@ export default function Practice() {
         if (!live) return;
         setBank({
           units: b.units,
-          questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q) })),
+          questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q), mx: b.mixups[`${q.c}#${q.b}`] })),
           cards: b.terms.map(t => ({ id: cardId(t.id), card: true, u: t.u, c: t.c, ct: t.ct, b: t.id, bn: t.t, q: t.t, o: [], a: 1, w: t.d })),
         });
         // A link from a unit ("Practise this unit") chooses that unit, and one
@@ -108,10 +121,11 @@ export default function Practice() {
         const want = params.get("unit");
         if (want && b.units.some(u => u.id === want)) setUnits([want]);
         if (params.get("mode") === "terms") setWhat("terms");
+        if (params.get("mode") === "recall") setWhat("recall");
         // "Test yourself on this chapter" starts straight away, once; the
         // address loses the chapter so a reload comes back to this page.
         const slug = params.get("chapter");
-        const items = slug ? b.questions.filter(q => q.c === slug).map(q => ({ ...q, id: questionId(q.c, q.b, q.q) })) : [];
+        const items = slug ? b.questions.filter(q => q.c === slug).map(q => ({ ...q, id: questionId(q.c, q.b, q.q), mx: b.mixups[`${q.c}#${q.b}`] })) : [];
         if (items.length) {
           setSession({ kind: "chapter", chapter: slug!, items: shuffle(items), i: 0, answers: items.map(() => null), started: Date.now(), ended: null });
           history.replaceState(null, "", window.location.pathname);
@@ -121,13 +135,39 @@ export default function Practice() {
     return () => { live = false; };
   }, []);
 
-  const byId = useMemo(() => new Map([...(bank?.questions ?? []), ...(bank?.cards ?? [])].map(q => [q.id, q])), [bank]);
+  // Recall concepts load when the reader chooses recall, when a link asks for
+  // one, or when one is on their review list.
+  const wantRecall = what === "recall" || Object.keys(list).some(isRecallId) || (typeof window !== "undefined" && new URLSearchParams(window.location.search).has("recall"));
+  useEffect(() => {
+    if (!wantRecall || recalls) return;
+    let live = true;
+    fetch("/practice-recall.json")
+      .then(r => (r.ok ? r.json() as Promise<RecallBank> : Promise.reject(new Error(String(r.status)))))
+      .then(rb => {
+        if (!live) return;
+        const items: Q[] = rb.concepts.map(x => ({ id: recallId(x.c, x.b), recall: true, u: x.u, c: x.c, ct: x.ct, b: x.b, bn: x.bn, q: x.bn, o: [], a: 1, w: x.m, pts: x.p }));
+        setRecalls(items);
+        // "Recall it from memory" on a lesson starts that one concept, once.
+        const params = new URLSearchParams(window.location.search);
+        const want = params.get("recall");
+        const it = want ? items.find(x => `${x.c}/${x.b}` === want) : undefined;
+        if (it) {
+          setSession({ kind: "mixed", items: [it], i: 0, answers: [null], started: Date.now(), ended: null });
+          history.replaceState(null, "", window.location.pathname);
+        }
+      })
+      .catch(() => { if (live) setRecalls([]); });
+    return () => { live = false; };
+  }, [wantRecall, recalls]);
+
+  const byId = useMemo(() => new Map([...(bank?.questions ?? []), ...(bank?.cards ?? []), ...(recalls ?? [])].map(q => [q.id, q])), [bank, recalls]);
 
   // Questions reworded or removed since they were listed can't be asked again.
+  // Recalls are only judged once their list has loaded.
   useEffect(() => {
     if (!bank) return;
-    forget(Object.keys(list).filter(id => !byId.has(id)));
-  }, [bank, byId, list]);
+    forget(Object.keys(list).filter(id => !byId.has(id) && (recalls !== null || !isRecallId(id))));
+  }, [bank, byId, list, recalls]);
 
   const day = today();
   const due = dueIds(list).filter(id => byId.has(id));
@@ -136,11 +176,13 @@ export default function Practice() {
 
   const chosen = units ?? bank?.units.map(u => u.id) ?? [];
   const started = useMemo(() => new Set([...done].map(id => id.split("#")[0])), [done]);
-  const source = (what === "terms" ? bank?.cards : bank?.questions) ?? [];
+  const source = (what === "terms" ? bank?.cards : what === "recall" ? recalls : bank?.questions) ?? [];
   const pool = source.filter(q => chosen.includes(q.u) && (!onlyStarted || started.has(q.c)) && (!onlyWeak || what !== "questions" || weak.has(q.c)));
   const weakInChosen = new Set(source.filter(q => chosen.includes(q.u) && weak.has(q.c)).map(q => q.c)).size;
   const startedInChosen = new Set(source.filter(q => chosen.includes(q.u) && started.has(q.c)).map(q => q.c)).size;
-  const noun = what === "terms" ? "terms" : "questions";
+  const noun = what === "terms" ? "terms" : what === "recall" ? "concepts" : "questions";
+  const counts: readonly number[] = what === "recall" ? RECALL_COUNTS : COUNTS;
+  const howMany = counts.includes(count) ? count : counts[1];
 
   const begin = (kind: Kind, items: Q[], chapter?: string, examMode?: Session["exam"]) => {
     setSession({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null, chapter, exam: examMode });
@@ -149,7 +191,7 @@ export default function Practice() {
   const startReview = () => begin("review", shuffle(due.slice(0, REVIEW_SET).map(id => byId.get(id)!)));
   const isExam = exam && what === "questions";
   const startMixed = () => {
-    const items = mix(pool, count);
+    const items = mix(pool, howMany);
     begin("mixed", items, undefined, isExam ? { limitMs: pace ? pace * 1000 * items.length : null } : undefined);
   };
   const startChapter = (slug: string) => begin("chapter", shuffle((bank?.questions ?? []).filter(q => q.c === slug)), slug);
@@ -213,11 +255,13 @@ export default function Practice() {
 
         <section className="cell pr-mode" aria-labelledby="pr-mixed-h">
           <span className="label red">Mixed practice</span>
-          <h2 id="pr-mixed-h" className="h-sm">{what === "terms" ? "Terms from across the chapters." : "Questions from across the chapters."}</h2>
+          <h2 id="pr-mixed-h" className="h-sm">{what === "terms" ? "Terms from across the chapters." : what === "recall" ? "Recall a concept from a blank page." : "Questions from across the chapters."}</h2>
           <p className="pr-text">
             {what === "terms"
               ? "Each card shows a glossary term. Say what it means to yourself, then turn it over and be honest: a term you didn’t know joins your review."
-              : "Drawn evenly from every chapter you choose, in no order, the way an exam asks them. Jumping between topics feels harder, and it is why the ideas stay."}
+              : what === "recall"
+                ? "You see only a concept’s name. Write down all you remember, then tick off the points of its one-page summary you covered. Recalling from nothing is harder than picking an answer, and it is what makes an idea stay."
+                : "Drawn evenly from every chapter you choose, in no order, the way an exam asks them. Jumping between topics feels harder, and it is why the ideas stay."}
           </p>
 
           <fieldset className="pr-set">
@@ -225,6 +269,7 @@ export default function Practice() {
             <div className="pr-chips">
               <button type="button" className="pr-chip" aria-pressed={what === "questions"} onClick={() => setWhat("questions")}><b>{bank.questions.length.toLocaleString("en-IN")}</b> questions</button>
               <button type="button" className="pr-chip" aria-pressed={what === "terms"} onClick={() => setWhat("terms")}><b>{bank.cards.length.toLocaleString("en-IN")}</b> glossary terms</button>
+              <button type="button" className="pr-chip" aria-pressed={what === "recall"} onClick={() => setWhat("recall")}><b>Recall</b> from a blank page</button>
             </div>
           </fieldset>
 
@@ -242,8 +287,8 @@ export default function Practice() {
           <fieldset className="pr-set">
             <legend className="label">How many</legend>
             <div className="pr-chips">
-              {COUNTS.map(n => (
-                <button key={n} type="button" className="pr-chip" aria-pressed={count === n} onClick={() => setCount(n)}><b>{n}</b> {noun}</button>
+              {counts.map(n => (
+                <button key={n} type="button" className="pr-chip" aria-pressed={howMany === n} onClick={() => setCount(n)}><b>{n}</b> {noun}</button>
               ))}
             </div>
           </fieldset>
@@ -276,7 +321,7 @@ export default function Practice() {
 
           <div className="btn-row">
             <button type="button" className="btn btn-primary btn-lg" disabled={!pool.length} onClick={startMixed}>
-              {!pool.length ? "Choose a unit" : isExam ? `Start a ${Math.min(count, pool.length)}-question mock test` : `Start ${Math.min(count, pool.length)} ${noun}`}
+              {what === "recall" && recalls === null ? "Loading…" : !pool.length ? "Choose a unit" : isExam ? `Start a ${Math.min(howMany, pool.length)}-question mock test` : `Start ${Math.min(howMany, pool.length)} ${noun}`}
             </button>
           </div>
         </section>
@@ -289,6 +334,7 @@ export default function Practice() {
 function Run({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
   if (session.exam) return <MockRun session={session} setSession={setSession} />;
   const q = session.items[session.i];
+  if (q.recall) return <RecallRun key={session.i} session={session} setSession={setSession} />;
   return q.card ? <CardRun key={session.i} session={session} setSession={setSession} /> : <QuestionRun key={session.i} session={session} setSession={setSession} />;
 }
 
@@ -384,6 +430,98 @@ function CardRun({ session, setSession }: { session: Session; setSession: (s: Se
   );
 }
 
+// Blank-page recall: the concept's name only; the reader writes what they
+// remember, then ticks the summary points they covered. Enough points
+// (RECALL_ENOUGH) counts as remembered; fewer puts the concept on the review
+// list for tomorrow. What they write isn't kept.
+function RecallRun({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
+  const q = session.items[session.i];
+  const pts = q.pts ?? [];
+  const answer = session.answers[session.i];
+  const last = session.i === session.items.length - 1;
+  const [text, setText] = useState("");
+  const [shown, setShown] = useState(false);
+  const [ticked, setTicked] = useState<Set<number>>(() => new Set());
+  const headRef = useRef<HTMLHeadingElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const boxId = useId();
+
+  useEffect(() => { headRef.current?.focus({ preventScroll: true }); }, []);
+  useEffect(() => { if (answer) nextRef.current?.focus({ preventScroll: true }); }, [answer]);
+
+  const finish = () => {
+    if (answer) return;
+    const got = ticked.size;
+    const enough = pts.length > 0 && got / pts.length >= RECALL_ENOUGH;
+    const r = recordAnswer(q.id, enough);
+    const line = enough
+      ? `Remembered: ${got} of ${pts.length} points.${r ? ` ${recordedLine(r)}` : ""}`
+      : `${got} of ${pts.length} points. It comes back tomorrow, so you can try again from a blank page.`;
+    const answers = [...session.answers];
+    answers[session.i] = { picked: enough ? 1 : 0, line, got: [got, pts.length] };
+    setSession({ ...session, answers });
+  };
+  const next = () => (last ? setSession({ ...session, ended: Date.now() }) : setSession({ ...session, i: session.i + 1 }));
+  const n = session.items.length;
+  const pct = Math.round(((session.i + (answer ? 1 : 0)) / n) * 100);
+
+  return (
+    <div className="pr-run">
+      <div className="pr-bar">
+        <span className="label red">{session.kind === "review" ? "Spaced review" : "Recall"}</span>
+        <span className="pg">
+          <span className="pg-bar" aria-hidden="true"><i style={{ width: `${pct}%` }} /></span>
+          <span className="pg-t">Concept {session.i + 1} of {n}</span>
+        </span>
+        <button type="button" className="btn btn-ghost pr-end" onClick={() => setSession({ ...session, ended: Date.now() })}>End here</button>
+      </div>
+
+      <p className="pr-from">{q.ct}</p>
+      <h2 className="pr-term" ref={headRef} tabIndex={-1}>{q.bn}</h2>
+      <div className="tl-f">
+        <label htmlFor={boxId}>Write everything you remember: what it is, why it matters, an example, what it is confused with.</label>
+        <textarea id={boxId} className="input rc-text" rows={6} value={text} readOnly={shown} onChange={e => setText(e.target.value)} placeholder="From memory, without looking back." />
+        <span className="tl-hint">Only for you: it isn’t saved anywhere.</span>
+      </div>
+
+      {!shown ? (
+        <div className="btn-row">
+          <button type="button" className="btn btn-primary" onClick={() => setShown(true)}>{text.trim() ? "Compare with the summary" : "I can’t recall it: show me"}</button>
+        </div>
+      ) : (
+        <div className="rc-check" aria-live="polite">
+          <p className="pr-text">Tick each point you covered, even in other words. Be honest: the ones you missed are the ones worth seeing again.</p>
+          <ul>
+            {pts.map((p, i) => (
+              <li key={p}>
+                <label className="pr-check">
+                  <input type="checkbox" checked={ticked.has(i)} disabled={!!answer} onChange={e => { const t = new Set(ticked); if (e.target.checked) t.add(i); else t.delete(i); setTicked(t); }} />
+                  <span>{p}</span>
+                </label>
+              </li>
+            ))}
+          </ul>
+          <p className="rc-mem"><b>Remember:</b> {q.w}</p>
+          {!answer ? (
+            <div className="btn-row">
+              <button type="button" className="btn btn-primary" onClick={finish}>Done: I covered {ticked.size} of {pts.length}</button>
+              <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
+            </div>
+          ) : (
+            <>
+              <p className="pr-line">{answer.line}</p>
+              <div className="btn-row">
+                <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next concept"}</button>
+                <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function QuestionRun({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
   const q = session.items[session.i];
   const answer = session.answers[session.i];
@@ -466,6 +604,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
         <div className="reveal-in">
           <div className="pr-ans">
             <p className="ck-a"><b>{right ? "Correct. " : "Not quite. "}</b>{answer && !right && <>The answer is “{q.o[q.a]}”. </>}{answer && q.w}</p>
+            {answer && !right && <MixupHint notes={q.mx ?? []} />}
             {answer?.line && <p className="pr-line">{answer.line}</p>}
             <div className="btn-row">
               <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next question"}</button>
@@ -589,6 +728,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
   const asked = session.items.map((q, i) => ({ q, a: session.answers[i] })).filter((x): x is { q: Q; a: Answer } => x.a !== null);
   const rightN = asked.filter(x => x.a.picked === x.q.a).length;
   const allCards = asked.length > 0 && asked.every(x => x.q.card);
+  const allRecall = asked.length > 0 && asked.every(x => x.q.recall);
   const missed = asked.filter(x => x.a.picked !== x.q.a);
   const lucky = asked.filter(x => x.a.guess && x.a.picked === x.q.a).length;
   const h = useRef<HTMLHeadingElement>(null);
@@ -610,9 +750,9 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
 
   return (
     <div className="pr-res">
-      <span className="label red">{session.kind === "review" ? "Review done" : session.exam ? "Mock test done" : session.kind === "chapter" ? "Chapter test done" : allCards ? "Cards done" : "Practice done"}</span>
+      <span className="label red">{session.kind === "review" ? "Review done" : session.exam ? "Mock test done" : session.kind === "chapter" ? "Chapter test done" : allRecall ? "Recall done" : allCards ? "Cards done" : "Practice done"}</span>
       <h2 className="h-sm pr-score" ref={h} tabIndex={-1}>
-        {!asked.length ? "Nothing answered." : allCards ? `Knew ${rightN} of ${asked.length}.` : `${rightN} of ${asked.length} right.`}
+        {!asked.length ? "Nothing answered." : allRecall ? `Remembered ${rightN} of ${asked.length}.` : allCards ? `Knew ${rightN} of ${asked.length}.` : `${rightN} of ${asked.length} right.`}
       </h2>
       {asked.length > 0 && (
         <p className="pr-text">
@@ -629,7 +769,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
           <ul>
             {reread.map(c => (
               <li key={c.slug}>
-                <span className="pr-rc"><b>{c.title}</b><span>{c.right} of {c.asked} {allCards ? "known" : "right"}</span></span>
+                <span className="pr-rc"><b>{c.title}</b><span>{c.right} of {c.asked} {allRecall ? "remembered" : allCards ? "known" : "right"}</span></span>
                 <span className="pr-rl">
                   {[...c.concepts.values()].map(q => <Link key={q.b} className="link" href={lessonHref(q)}>{q.bn}</Link>)}
                 </span>
@@ -652,6 +792,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
                     {a.picked < 0 ? <b>Not answered.</b> : ok ? <b>Right: “{q.o[q.a]}”.</b> : <><b>You chose “{q.o[a.picked]}”.</b> The answer is “{q.o[q.a]}”.</>}
                     {" "}{q.w}
                   </p>
+                  {!ok && <MixupHint notes={q.mx ?? []} />}
                   <Link className="link" href={lessonHref(q)}>{q.bn}, in {q.ct}</Link>
                 </li>
               );

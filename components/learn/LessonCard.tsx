@@ -10,6 +10,7 @@ import { questionId } from "@/content/learn/question-id";
 import { recordAnswer, recordedLine } from "./review";
 import { saveAsk } from "./ask";
 import Listen from "./Listen";
+import MixupHint from "./MixupHint";
 
 function Part({ children }: { children: React.ReactNode }) {
   return <span className="part"><i className="sq" aria-hidden="true" />{children}</span>;
@@ -21,7 +22,7 @@ const Tick = () => (
 
 // The first answer to a question counts for the review list: a wrong one puts
 // it there for tomorrow. Trying again after seeing the answer changes nothing.
-function Question({ check, n, rid, onAnswer }: { check: Check; n: number; rid: string; onAnswer: (right: boolean) => void }) {
+function Question({ check, n, rid, mixups, onAnswer }: { check: Check; n: number; rid: string; mixups: string[]; onAnswer: (right: boolean) => void }) {
   const [picked, setPicked] = useState<number | null>(null);
   const [line, setLine] = useState<string | null>(null);
   const first = useRef(true);
@@ -49,6 +50,7 @@ function Question({ check, n, rid, onAnswer }: { check: Check; n: number; rid: s
       <div className={picked === null ? "reveal" : "reveal open"} aria-live="polite" inert={picked === null}>
         <div className="reveal-in">
           <p className="ck-a"><b>{right ? "Correct. " : "Not quite. "}</b>{!right && <>The answer is “{check.options[check.answer]}”. </>}{check.why}</p>
+          {picked !== null && !right && <MixupHint notes={mixups} />}
           {line && <p className="ck-r">{line} <Link className="link" href="/learn/practice#review" prefetch={false}>Your review</Link></p>}
         </div>
       </div>
@@ -61,7 +63,7 @@ function Question({ check, n, rid, onAnswer }: { check: Check; n: number; rid: s
 // core idea, a quick check, the Ancient lens, a prompt to reflect on, and the
 // whole thing on one page. Answering every check correctly, or pressing "Mark as
 // done", marks the concept done. Notes and progress stay on this device.
-export default function LessonCard({ lesson, index, total, path, chapter, detail, lens, tool = null }: {
+export default function LessonCard({ lesson, index, total, path, chapter, detail, lens, tool = null, mixups = [] }: {
   lesson: Lesson;
   index: number;
   total: number;
@@ -73,6 +75,8 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
   lens: React.ReactNode | null;
   /** A calculator for the concept, shown as "Try it" after the core idea. */
   tool?: React.ReactNode | null;
+  /** The concept's "Don't confuse it with" hints, shown after a wrong answer (only <b> and <i>). */
+  mixups?: string[];
 }) {
   const [open, setOpen] = useState(false);
   const [choice, setChoice] = useState<number | null>(null);
@@ -175,7 +179,7 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
             <div className="part-row">
               <Part>Check yourself</Part>
               <div className="ls-checks">
-                {lesson.check.map((c, i) => <Question key={c.q} check={c} n={i + 1} rid={questionId(slug, lesson.blockId, c.q)} onAnswer={ok => answered(i, ok)} />)}
+                {lesson.check.map((c, i) => <Question key={c.q} check={c} n={i + 1} rid={questionId(slug, lesson.blockId, c.q)} mixups={mixups} onAnswer={ok => answered(i, ok)} />)}
               </div>
             </div>
 
@@ -221,6 +225,7 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
                     {done ? <><Tick />Done. Mark as not done</> : "Mark as done"}
                   </button>
                   <button type="button" className="btn btn-secondary" onClick={copy}>Copy this summary</button>
+                  <Link className="btn btn-ghost" href={`/learn/practice?recall=${slug}/${lesson.blockId}`} prefetch={false}>Recall it from a blank page</Link>
                 </div>
               </div>
             </div>

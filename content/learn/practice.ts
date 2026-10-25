@@ -4,6 +4,7 @@
 // the chapter pages carry none of it.
 
 import { CHAPTERS, GLOSSARY, UNITS, chapterBySlug, lessonsFor } from "./index";
+import { mixupHints } from "./mixups";
 import { questionId } from "./question-id";
 
 // The id the review list keeps a question under isn't sent: the page works it
@@ -37,11 +38,26 @@ export type PracticeTerm = {
   d: string;
 };
 
+/** A concept, for blank-page recall: its one-page summary points and the line to remember. */
+export type PracticeConcept = { u: string; c: string; ct: string; b: string; bn: string; p: string[]; m: string };
+
 export type PracticeUnit = { id: string; n: number; short: string };
-export type PracticeBank = { units: PracticeUnit[]; questions: PracticeQuestion[]; terms: PracticeTerm[] };
+export type PracticeBank = {
+  units: PracticeUnit[];
+  questions: PracticeQuestion[];
+  terms: PracticeTerm[];
+  /** Each concept's "Don't confuse it with" hints, by "<chapter slug>#<block id>". */
+  mixups: Record<string, string[]>;
+};
+
+/** Served separately (/practice-recall.json) and fetched only when recall is used. */
+export type RecallBank = { concepts: PracticeConcept[] };
 
 /** The id a term card is kept under in the review list. "glossary" is never a chapter slug. */
 export const cardId = (termId: string) => `glossary#${termId}#t`;
+
+/** The id a concept's recall is kept under in the review list. */
+export const recallId = (slug: string, blockId: string) => `${slug}#${blockId}#r`;
 
 export function buildPracticeBank(): PracticeBank {
   const questions: PracticeQuestion[] = [];
@@ -56,8 +72,23 @@ export function buildPracticeBank(): PracticeBank {
     const c = chapterBySlug(t.chapterSlug)!;
     return { id: t.id, u: t.unit, c: c.slug, ct: c.short ?? c.title, t: t.term, d: t.def };
   });
+  const mixups: Record<string, string[]> = {};
+  for (const c of CHAPTERS) for (const b of c.blocks) {
+    const hints = mixupHints(b.html);
+    if (hints.length) mixups[`${c.slug}#${b.id}`] = hints;
+  }
   const units = UNITS.filter(u => questions.some(q => q.u === u.id) || terms.some(t => t.u === u.id)).map(u => ({ id: u.id, n: u.n, short: u.short }));
-  return { units, questions, terms };
+  return { units, questions, terms, mixups };
+}
+
+export function buildRecallBank(): RecallBank {
+  const concepts: PracticeConcept[] = [];
+  for (const c of CHAPTERS) {
+    for (const l of lessonsFor(c.slug) ?? []) {
+      if (l.summary.points.length) concepts.push({ u: c.unit, c: c.slug, ct: c.short ?? c.title, b: l.blockId, bn: l.name, p: l.summary.points, m: l.summary.memory });
+    }
+  }
+  return { concepts };
 }
 
 // Two questions with the same id would share one place in the review list.

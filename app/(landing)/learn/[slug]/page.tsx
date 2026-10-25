@@ -14,6 +14,7 @@ import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
+import { mixupHints } from "@/content/learn/mixups";
 import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
 import { siteUrl } from "@/lib/site";
 
@@ -165,6 +166,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}
                     lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
                     tool={Calc ? <Calc /> : null}
+                    mixups={mixupHints(b.html)}
                   />
                 );
               }
