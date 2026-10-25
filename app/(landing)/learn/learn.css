@@ -3,7 +3,7 @@
    and cells come from landing.css; this file adds only what these pages need.
    Prefixes: ci- the index, ch- a chapter, ls- a guided lesson, ck- a check
    question, lp- a passage beside its idea, ev- the evidence marks, pg- progress,
-   rail- the side list, gl- the glossary, rv- the revision sheets, pr- practice. */
+   rail- the side list, gl- the glossary, rv- the revision sheets, pr- practice, fx- the formula sheet, tl- calculators. */
 
 h4 { margin: 0; }
 .h-xs { margin-left: 0; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; }
@@ -482,3 +482,19 @@ h4 { margin: 0; }
 /* "Ask the community about this", under the reflection note */
 .ls-ask { max-width: 62ch; margin-top: 4px; color: var(--body); font-size: 14.5px; line-height: 22px; }
 .ls-ask-note { display: block; color: var(--soft); font-size: 13px; }
+
+/* ---------- Formula sheet (fx-), laid out like the revision sheets ---------- */
+.fx-ch { gap: 16px; }
+.fx-concept { display: flex; flex-direction: column; gap: 8px; break-inside: avoid; }
+.fx-concept h4 { font-size: 15.5px; line-height: 1.3; }
+.fx-concept h4 a { color: var(--color-text); }
+.fx-concept h4 a:hover { color: var(--color-accent-700); }
+.fx-list { display: flex; flex-direction: column; margin: 0; border-top: 2px solid var(--color-text); }
+.fx-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px 24px; padding: 10px 0; border-bottom: 2px solid var(--color-divider); break-inside: avoid; }
+.fx-row dt { color: var(--color-text); font-size: 14px; font-weight: 700; line-height: 21px; }
+.fx-row dd { margin: 0; color: var(--color-text); font-size: 15.5px; font-weight: 600; line-height: 24px; font-variant-numeric: tabular-nums; }
+.fx-row.worked dd { color: var(--body); font-size: 14.5px; font-weight: 400; }
+.fx-tag { color: var(--soft); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.fx-foot { padding-bottom: clamp(40px, 5vw, 72px); }
+@media (min-width: 720px) { .fx-row { grid-template-columns: 220px minmax(0, 1fr); } }
+@media print { .fx-row dd { font-size: 12.5px; line-height: 18px; } .fx-row { padding: 5px 0; } }

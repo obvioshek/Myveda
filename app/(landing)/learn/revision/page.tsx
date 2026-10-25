@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import PrintButton from "@/components/learn/PrintButton";
-import { PRACTICE_PATH, REVISION_PATH, UNITS, chapterPath, deva, lessonsFor } from "@/content/learn";
+import { FORMULAS_PATH, PRACTICE_PATH, REVISION_PATH, UNITS, chapterPath, deva, lessonsFor } from "@/content/learn";
 
 const title = "Revision sheets: every concept on one page · Veda Verse";
 const description = "The one-page summary of every concept in each unit, chapter by chapter, with a line to remember. Ready to print or save as a PDF before an exam.";
@@ -27,6 +27,7 @@ export default function RevisionPage() {
         <div className="btn-row no-print">
           <PrintButton />
           <Link className="btn btn-secondary" href={PRACTICE_PATH} prefetch={false}>Test yourself</Link>
+          <Link className="btn btn-secondary" href={FORMULAS_PATH} prefetch={false}>Formula sheet</Link>
           {UNITS.length > 1 && UNITS.map(u => <a key={u.id} className="btn btn-ghost" href={`#${u.id}`}>Unit {u.n}</a>)}
         </div>
       </header>

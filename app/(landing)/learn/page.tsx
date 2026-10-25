@@ -6,10 +6,14 @@ import ContinueBand from "@/components/landing/ContinueBand";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
 import ReviewBand from "@/components/learn/ReviewBand";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, PRACTICE_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PRACTICE_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
+import { buildFormulaSheet } from "@/content/learn/formulas";
+
+// Units with at least one formula get a link to their part of the formula sheet.
+const WITH_FORMULAS = new Set(buildFormulaSheet().filter(u => u.formulas > 0).map(u => u.id));
 
 const title = "Management chapters: economics, OB, HRM, accounting, finance and more · Veda Verse";
 const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour, HRM, managerial accounting, finance, strategy and marketing in plain language, with passages from India's classical texts and thinkers set beside the ideas they meet.`;
@@ -126,6 +130,7 @@ export default function LearnIndex() {
                 <div className="btn-row">
                   <Link className="btn btn-secondary" href={`${REVISION_PATH}#${u.id}`}>Revision sheets</Link>
                   <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?unit=${u.id}`} prefetch={false}>Practise this unit</Link>
+                  {WITH_FORMULAS.has(u.id) && <Link className="btn btn-ghost" href={`${FORMULAS_PATH}#${u.id}`} prefetch={false}>Formulas</Link>}
                   <Link className="btn btn-ghost" href={GLOSSARY_PATH}>Glossary</Link>
                 </div>
               </div>
