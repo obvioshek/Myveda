@@ -9,6 +9,9 @@ import { useSyncExternalStore } from "react";
 
 export const LAST_KEY = "vv-last";
 export const LAST_HREF_KEY = "vv-last-href";
+// The study plan's settings, and a lesson's reflection note ("vv-note:<chapter path>#<block id>").
+export const PLAN_KEY = "vv-plan";
+export const NOTE_PREFIX = "vv-note:";
 
 const CHANGE = "vv-device-change";
 const TOAST = "vv-toast";

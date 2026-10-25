@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import type { Check, Lesson } from "@/content/learn";
-import { openConcept, showToast, useDevice, writeDevice } from "@/components/landing/device";
+import { NOTE_PREFIX, openConcept, showToast, useDevice, writeDevice } from "@/components/landing/device";
 import { onAllLessons, setDone, useDone } from "./progress";
 import { decoded } from "@/lib/app/params";
 import { questionId } from "@/content/learn/question-id";
@@ -79,7 +79,7 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
   const slug = path.split("/").pop() ?? "";
   const id = `${slug}#${lesson.blockId}`;
   const done = useDone().has(id);
-  const noteKey = `vv-note:${path}#${lesson.blockId}`;
+  const noteKey = `${NOTE_PREFIX}${path}#${lesson.blockId}`;
   const note = useDevice(noteKey);
   const bodyId = useId();
   const beforeId = useId();

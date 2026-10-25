@@ -6,7 +6,7 @@ import ContinueBand from "@/components/landing/ContinueBand";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
 import ReviewBand from "@/components/learn/ReviewBand";
-import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
@@ -170,6 +170,7 @@ export default function LearnIndex() {
 
       <section className="wrap ci-foot" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
+        <p className="ci-fine">Your progress is kept in this browser only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Move it to another device</Link>.</p>
         <p className="ci-fine">{pending ? `${pending}. ` : ""}{GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       </section>
     </PageShell>

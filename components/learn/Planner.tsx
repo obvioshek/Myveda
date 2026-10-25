@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useId, useMemo, useSyncExternalStore } from "react";
-import { useDevice, writeDevice } from "@/components/landing/device";
+import { PLAN_KEY as KEY, useDevice, writeDevice } from "@/components/landing/device";
 import Progress from "./Progress";
 import { useDone } from "./progress";
 import { dueIds, useReview } from "./review";
@@ -17,7 +17,6 @@ import { dueIds, useReview } from "./review";
 export type PlanChapter = { slug: string; title: string; minutes: number; ids: string[] };
 export type PlanUnit = { id: string; n: number; short: string; chapters: PlanChapter[] };
 
-const KEY = "vv-plan";
 type Settings = { exam: string; units: string[] | null; days: number };
 const DAY = 86_400_000;
 
@@ -172,7 +171,7 @@ export default function Planner({ units }: { units: PlanUnit[] }) {
               <li><Link href="/learn/practice" prefetch={false}><b>Mixed practice</b></Link><span>Questions mixed across chapters{due ? `; ${due} due for review now` : ""}</span></li>
             </ul>
           </section>
-          <p className="ci-fine">Reading times are estimates at about 200 words a minute. Finished chapters leave the plan, and what’s left is shared out again.</p>
+          <p className="ci-fine">Reading times are estimates at about 200 words a minute. Finished chapters leave the plan, and what’s left is shared out again. The plan is kept on this device; <Link className="link" href="/learn/transfer" prefetch={false}>move it to another</Link>.</p>
         </div>
       )}
     </div>
