@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useDone } from "./progress";
 import TextSize from "./TextSize";
+import Theme from "./Theme";
 
 type Item = { id: string; name: string };
 type Term = { id: string; term: string; def: string };
@@ -111,6 +112,7 @@ export default function ReadingBar({ slug, items, terms, unitLabel, chapters, gl
         )}
         <nav className="rb-col" aria-label={unitLabel}>
           <TextSize />
+          <Theme />
           <span className="label red">{unitLabel}</span>
           <ol className="rb-list">
             {chapters.map(c => (

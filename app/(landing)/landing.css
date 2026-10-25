@@ -49,6 +49,10 @@
   --body: color-mix(in srgb, var(--color-text) 82%, transparent);
 
   --color-neutral-100: #f8f4f4;
+  /* Text on a red ground, and the reds a red button turns on hover and press. */
+  --on-accent: #f3f2f2;
+  --accent-hover: #ae1800;
+  --accent-press: #7c1405;
   --color-accent-100: #fff2ef; --color-accent-200: #ffe0d9; --color-accent-600: #dd2b0f; --color-accent-700: #ae1800; --color-accent-800: #7c1405;
 
   --font: "Archivo", "Archivo Fallback", system-ui, sans-serif;
@@ -121,10 +125,10 @@ h2 { max-width: 20ch; margin-left: -.04em; font-size: clamp(32px, 4vw, 52px); li
 .btn-lg { min-height: 48px; padding: 0 20px; font-size: 15px; }
 .btn-xl { min-height: 56px; padding: 0 24px; font-size: 15px; }
 .btn.wide { min-width: 240px; }
-.btn-primary, .btn-primary:hover { color: var(--color-bg); }
+.btn-primary, .btn-primary:hover { color: var(--on-accent); }
 .btn-primary { background: var(--color-accent-fill); border-color: var(--color-accent-fill); }
-.btn-primary:hover { background: var(--color-accent-700); border-color: var(--color-accent-700); }
-.btn-primary:active { background: var(--color-accent-800); border-color: var(--color-accent-800); }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-primary:active { background: var(--accent-press); border-color: var(--accent-press); }
 .btn-secondary { border-color: var(--color-text); color: var(--color-text); }
 .btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); color: var(--color-text); }
 .btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
@@ -133,9 +137,9 @@ h2 { max-width: 20ch; margin-left: -.04em; font-size: clamp(32px, 4vw, 52px); li
 .btn-light, .btn-light:hover { color: var(--color-text); }
 .btn-light { background: var(--color-bg); border-color: var(--color-bg); }
 .btn-light:hover { background: var(--color-surface); border-color: var(--color-surface); }
-.btn-outline-light, .btn-outline-light:hover { color: var(--color-bg); }
-.btn-outline-light { border-color: var(--color-bg); }
-.btn-outline-light:hover { background: var(--color-accent-700); }
+.btn-outline-light, .btn-outline-light:hover { color: var(--on-accent); }
+.btn-outline-light { border-color: var(--on-accent); }
+.btn-outline-light:hover { background: var(--accent-hover); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .input { width: 100%; min-height: 48px; padding: 0 16px; border: 2px solid var(--color-text); border-radius: 0; background: var(--color-bg); color: var(--color-text); font-size: 16px; caret-color: var(--color-accent); }
 .input:focus-visible { outline-offset: 0; border-color: var(--color-accent); }
@@ -206,7 +210,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .promise li::before { content: ""; width: 6px; height: 6px; background: var(--color-accent); }
 
 .x { display: grid; place-items: center; width: 40px; height: 40px; margin-left: auto; border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; }
-.x:hover { background: var(--color-accent-700); }
+.x:hover { background: var(--accent-hover); }
 @media (min-width: 760px) {
   .split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -256,7 +260,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .pair-2 .cell { gap: 10px; border: 0; }
 .pair-2 .cell + .cell { border-top: 2px solid var(--color-text); }
 .pair-2 .cell p { font-size: 16px; line-height: 26px; }
-.pair-2 .cell.red { background: var(--color-accent-fill); color: var(--color-bg); }
+.pair-2 .cell.red { background: var(--color-accent-fill); color: var(--on-accent); }
 .reflect { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .reflect-q { max-width: 28ch; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.25; letter-spacing: -.01em; font-weight: 800; }
 .note { display: flex; flex-direction: column; align-self: stretch; gap: 8px; max-width: 620px; }
@@ -306,7 +310,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .thread { grid-area: thread; }
 .talk-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 4px; }
 .talk-fine { color: var(--soft); font-size: 14px; }
-.tmark { display: inline-grid; place-items: center; flex: none; width: 20px; height: 20px; background: var(--color-accent-fill); color: var(--color-bg); font: normal 800 11px/1 var(--font); }
+.tmark { display: inline-grid; place-items: center; flex: none; width: 20px; height: 20px; background: var(--color-accent-fill); color: var(--on-accent); font: normal 800 11px/1 var(--font); }
 .notes { display: flex; flex-direction: column; border-top: 2px solid var(--color-text); }
 .notes li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); }
 .notes .tmark { margin-top: 2px; }
@@ -372,13 +376,13 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 }
 
 /* ---------- Closing band ---------- */
-.closing { background: var(--color-accent-fill); color: var(--color-bg); }
+.closing { background: var(--color-accent-fill); color: var(--on-accent); }
 .closing-in { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px 72px; align-items: end; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); }
 .motto { display: flex; flex-direction: column; gap: 20px; }
 .motto-sa { font: clamp(26px, 3vw, 38px)/1.4 var(--font-deva); }
 .motto-en { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; font-weight: 800; }
 .closing-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
-.closing h2 { margin-left: -.04em; color: var(--color-bg); font-size: clamp(40px, 5vw, 64px); }
+.closing h2 { margin-left: -.04em; color: var(--on-accent); font-size: clamp(40px, 5vw, 64px); }
 @media (min-width: 760px) { .closing-in { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* ---------- Footer ---------- */
@@ -514,7 +518,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .try-sides { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--color-text); }
 .try-side { position: relative; display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 36px); }
 .try-side + .try-side { border-top: 2px solid var(--color-text); }
-.try-side.red { background: var(--color-accent-fill); color: var(--color-bg); }
+.try-side.red { background: var(--color-accent-fill); color: var(--on-accent); }
 .try-side.red .label { color: inherit; opacity: .9; }
 .try-name { font-size: 22px; line-height: 1.2; font-weight: 800; }
 .try-say { max-width: 46ch; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.4; font-weight: 600; }
@@ -600,3 +604,39 @@ html[data-text="larger"] main .rb { zoom: .8; }
 .ts-b:hover { border-color: var(--color-divider); }
 .ts-b[aria-pressed="true"] { border-color: var(--color-text); }
 .ts-0 { font-size: 13px; } .ts-1 { font-size: 16px; } .ts-2 { font-size: 19px; }
+
+/* ---------- Dark theme, chosen by the reader (components/learn/Theme.tsx) ----------
+   The same flat, ruled design on a near-black ground. Reds that carry text
+   keep white text; reds used as text get lighter so they stay readable. The
+   chapters' diagrams draw with fixed colours, so those are mapped here by
+   value: ink to light, greys lighter, white panels to the ground. Screen only:
+   printed pages stay black on white. */
+@media screen {
+html[data-theme="dark"] {
+  --color-bg: #161514;
+  --color-surface: #22201f;
+  --color-text: #eeebe9;
+  --color-accent: #ff4b2e;
+  --color-accent-fill: #c9260e;
+  --color-divider: color-mix(in srgb, #eeebe9 30%, transparent);
+  --color-neutral-100: #1d1b1a;
+  --color-accent-100: #36170f; --color-accent-200: #4d1d13; --color-accent-600: #ff5a3c; --color-accent-700: #ff7d63; --color-accent-800: #ffb4a3;
+  --on-accent: #ffffff;
+  --accent-hover: #a51f0b;
+  --accent-press: #7c1405;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / .5);
+  --shadow-lg: 0 12px 32px rgb(0 0 0 / .55);
+  color-scheme: dark;
+}
+html[data-theme="dark"] svg [fill="#201e1d"] { fill: var(--color-text); }
+html[data-theme="dark"] svg [stroke="#201e1d"] { stroke: var(--color-text); }
+html[data-theme="dark"] svg [fill="#605d5d"] { fill: #aaa6a4; }
+html[data-theme="dark"] svg [stroke="#605d5d"] { stroke: #aaa6a4; }
+html[data-theme="dark"] svg [fill="#ae1800"] { fill: var(--color-accent-700); }
+html[data-theme="dark"] svg [stroke="#ae1800"] { stroke: var(--color-accent-700); }
+html[data-theme="dark"] svg [fill="#eae9e9"] { fill: var(--color-surface); }
+html[data-theme="dark"] svg [stroke="#eae9e9"] { stroke: var(--color-surface); }
+html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#ffffff"],
+html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#fff"] { fill: var(--color-bg); }
+}
+.ts-w { min-width: 0; padding: 0 8px; font-size: 13px; }
