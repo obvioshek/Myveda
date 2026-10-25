@@ -3,6 +3,7 @@ import { preload } from "react-dom";
 import { siteUrl } from "@/lib/site";
 import "./landing.css";
 import { OfflineSupport } from "@/components/learn/Offline";
+import { TEXT_SIZE_SCRIPT } from "@/components/learn/TextSize";
 
 // Titles stay under about 60 characters and the description under about 160,
 // which is what search results show before cutting them off.
@@ -50,7 +51,11 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
   // Every page sets its text in Archivo, so fetch it alongside the page.
   preload("/fonts/archivo-latin.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" suppressHydrationWarning>
+      <head>
+        {/* The reader's text size, applied before the page paints. */}
+        <script dangerouslySetInnerHTML={{ __html: TEXT_SIZE_SCRIPT }} />
+      </head>
       <body>{children}<OfflineSupport /></body>
     </html>
   );

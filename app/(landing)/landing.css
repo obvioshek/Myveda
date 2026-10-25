@@ -586,3 +586,17 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .off-note { position: fixed; left: 16px; bottom: 16px; z-index: 35; max-width: calc(100vw - 32px); margin: 0; padding: 10px 14px; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-lg); }
 .off-save { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
 @media print { .off-note { display: none; } }
+
+/* Text size, chosen by the reader (components/learn/TextSize.tsx). It scales
+   the main content as a whole, so tables and figures keep their proportions. */
+html[data-text="large"] main { zoom: 1.12; }
+html[data-text="larger"] main { zoom: 1.25; }
+/* The chapter's sticky reading strip keeps its size, so it stays in place under the header. */
+html[data-text="large"] main .rb { zoom: calc(1 / 1.12); }
+html[data-text="larger"] main .rb { zoom: .8; }
+.ts { display: inline-flex; align-items: center; gap: 2px; }
+.ts-l { margin-right: 6px; color: var(--soft); font-size: 13px; }
+.ts-b { display: grid; place-items: center; min-width: 32px; height: 32px; padding: 0 6px; border: 2px solid transparent; background: transparent; color: var(--color-text); font-family: var(--font); font-weight: 800; line-height: 1; cursor: pointer; }
+.ts-b:hover { border-color: var(--color-divider); }
+.ts-b[aria-pressed="true"] { border-color: var(--color-text); }
+.ts-0 { font-size: 13px; } .ts-1 { font-size: 16px; } .ts-2 { font-size: 19px; }

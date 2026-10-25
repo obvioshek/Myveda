@@ -3,6 +3,7 @@ import { CONTACT_EMAIL } from "@/content/landing";
 import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import SiteSearch from "@/components/learn/SiteSearch";
 import BrandMark from "./Brand";
+import TextSize from "@/components/learn/TextSize";
 
 // Header and footer for the landing site's standalone pages.
 export default function PageShell({ children, wide = false, note = "Questions about your data:" }: { children: React.ReactNode; wide?: boolean; note?: string }) {
@@ -36,6 +37,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <Link href="/learn/formulas" prefetch={false}>Formulas</Link>
             <Link href="/learn/plan" prefetch={false}>Study plan</Link>
             <Link href="/privacy" prefetch={false}>Privacy</Link>
+            <TextSize />
           </div>
         </div>
       </footer>
