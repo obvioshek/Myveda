@@ -498,3 +498,26 @@ h4 { margin: 0; }
 .fx-foot { padding-bottom: clamp(40px, 5vw, 72px); }
 @media (min-width: 720px) { .fx-row { grid-template-columns: 220px minmax(0, 1fr); } }
 @media print { .fx-row dd { font-size: 12.5px; line-height: 18px; } .fx-row { padding: 5px 0; } }
+
+/* ---------- Study plan (pl-) ---------- */
+.ci-plan { color: var(--body); font-size: 15px; line-height: 23px; }
+.pl { display: flex; flex-direction: column; gap: 28px; padding-bottom: clamp(48px, 7vw, 96px); }
+.pl-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 20px; max-width: 880px; padding: 20px; border: 2px solid var(--color-text); background: var(--color-surface); }
+.pl-form input[type="date"], .pl-form select { flex: 1; min-width: 0; height: 40px; padding: 0 10px; border: 0; background: transparent; color: var(--color-text); font: 600 16px var(--font); outline: none; }
+.pl-units { grid-column: 1 / -1; }
+.pl-empty { max-width: 60ch; }
+.pl-plan { display: flex; flex-direction: column; gap: 18px; max-width: 880px; }
+.pl-sum { color: var(--body); font-size: 17px; line-height: 27px; }
+.pl-sum b { color: var(--color-text); }
+.pl-week { display: flex; flex-direction: column; border-top: 2px solid var(--color-text); }
+.pl-week.now { border-top-width: 4px; border-top-color: var(--color-accent); }
+.pl-wh { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 12px 0 8px; }
+.pl-dates { color: var(--color-text); font-size: 15px; font-weight: 700; }
+.pl-min { margin-left: auto; color: var(--soft); font-size: 13px; font-weight: 600; }
+.pl-week ul { margin: 0; padding: 0; list-style: none; }
+.pl-week li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding: 10px 0; border-top: 2px solid var(--color-divider); }
+.pl-week li a { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; color: var(--color-text); font-size: 16px; }
+.pl-week li a:hover b { color: var(--color-accent-700); }
+.pl-c-side { display: inline-flex; align-items: center; gap: 10px; color: var(--soft); font-size: 13px; font-weight: 600; }
+.pl-rev li span { color: var(--body); font-size: 14px; }
+@media (min-width: 720px) { .pl-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
