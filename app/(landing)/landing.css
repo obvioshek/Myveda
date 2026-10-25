@@ -418,6 +418,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .top-nav a { color: var(--color-text); font-size: 14px; font-weight: 600; }
 .top-nav a:hover { color: var(--color-accent-700); }
 @media (max-width: 559px) { .top-nav .hide-sm { display: none; } }
+@media (max-width: 719px) { .top-nav .hide-nav { display: none; } }
 
 /* ---------- Header: chapters menu and site search ---------- */
 /* Wide screens get a button that opens the two-pane panel; narrow screens a plain

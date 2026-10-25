@@ -5,7 +5,8 @@ import Arrow from "@/components/landing/Arrow";
 import ContinueBand from "@/components/landing/ContinueBand";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import ReviewBand from "@/components/learn/ReviewBand";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, PRACTICE_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
@@ -48,6 +49,7 @@ export default function LearnIndex() {
     <PageShell wide note="Spotted a mistake?">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <ContinueBand />
+      <ReviewBand />
 
       <section className="wrap ci-hero" aria-labelledby="learn-h">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />{UNITS.length === 1 ? `Unit 1 · ${UNITS[0].title}` : `${UNITS.length} units`}</span>
@@ -123,6 +125,7 @@ export default function LearnIndex() {
                 <Progress ids={ids} />
                 <div className="btn-row">
                   <Link className="btn btn-secondary" href={`${REVISION_PATH}#${u.id}`}>Revision sheets</Link>
+                  <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?unit=${u.id}`} prefetch={false}>Practise this unit</Link>
                   <Link className="btn btn-ghost" href={GLOSSARY_PATH}>Glossary</Link>
                 </div>
               </div>

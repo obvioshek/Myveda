@@ -16,6 +16,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <div className="has-menu"><ChaptersMenu variant="panel" /></div>
             <Link href="/learn/glossary" prefetch={false}>Glossary</Link>
             <Link href="/learn/revision" prefetch={false} className="hide-sm">Revision</Link>
+            <Link href="/learn/practice" prefetch={false} className="hide-nav">Practice</Link>
             <Link href="/#community" prefetch={false} className="hide-sm">Community</Link>
           </nav>
           <SiteSearch />
@@ -31,6 +32,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <Link href="/learn" prefetch={false}>Chapters</Link>
             <Link href="/learn/glossary" prefetch={false}>Glossary</Link>
             <Link href="/learn/revision" prefetch={false}>Revision</Link>
+            <Link href="/learn/practice" prefetch={false}>Practice</Link>
             <Link href="/privacy" prefetch={false}>Privacy</Link>
           </div>
         </div>

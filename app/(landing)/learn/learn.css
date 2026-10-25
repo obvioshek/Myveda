@@ -3,7 +3,7 @@
    and cells come from landing.css; this file adds only what these pages need.
    Prefixes: ci- the index, ch- a chapter, ls- a guided lesson, ck- a check
    question, lp- a passage beside its idea, ev- the evidence marks, pg- progress,
-   rail- the side list, gl- the glossary, rv- the revision sheets. */
+   rail- the side list, gl- the glossary, rv- the revision sheets, pr- practice. */
 
 h4 { margin: 0; }
 .h-xs { margin-left: 0; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; }
@@ -358,3 +358,54 @@ h4 { margin: 0; }
   .part { position: static !important; }
   a { color: inherit; }
 }
+
+/* ---------- Practice: spaced review and mixed questions ---------- */
+.ck-r { max-width: 62ch; margin-top: 6px; color: var(--soft); font-size: 13.5px; font-weight: 600; line-height: 21px; }
+.pr-hero { padding-bottom: clamp(16px, 2vw, 28px); }
+.pr-box { container-type: inline-size; padding-bottom: clamp(48px, 7vw, 96px); scroll-margin-top: 80px; }
+.pr-mode { gap: 18px; }
+.pr-mode .h-sm { max-width: 22ch; }
+.pr-text { max-width: 60ch; color: var(--body); font-size: 16px; line-height: 26px; }
+.pr-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 4px 0 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text); }
+.pr-steps li { display: flex; flex-direction: column; gap: 2px; padding: 10px 8px 0 0; color: var(--soft); font-size: 12.5px; line-height: 17px; }
+.pr-steps li + li { padding-left: 10px; border-left: 2px solid var(--color-divider); }
+.pr-steps b { color: var(--color-text); font-size: 15px; line-height: 21px; }
+.pr-steps li:first-child b { color: var(--color-accent-700); }
+@media (max-width: 479px) { .pr-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 12px; } .pr-steps li:nth-child(4) { padding-left: 0; border-left: 0; } }
+.pr-set { display: flex; flex-direction: column; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.pr-set legend { margin-bottom: 8px; padding: 0; }
+.pr-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pr-chip { display: inline-flex; align-items: baseline; gap: 8px; min-height: 40px; padding: 8px 12px; border: 2px solid var(--color-divider); background: transparent; color: var(--body); font: 600 14px/1.25 var(--font); text-align: left; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
+.pr-chip b { flex: none; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.pr-chip:hover { border-color: var(--color-text); color: var(--color-text); }
+.pr-chip[aria-pressed="true"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); }
+.pr-check { display: flex; align-items: flex-start; gap: 10px; color: var(--body); font-size: 14.5px; line-height: 22px; cursor: pointer; }
+.pr-check input { flex: none; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--color-accent); }
+.pr-check:has(input:disabled) { color: var(--soft); cursor: not-allowed; }
+.pr-link { padding: 0; border: 0; background: none; color: var(--color-accent-700); font: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.pr-foot { margin-top: 20px; }
+.pr-run, .pr-res { display: flex; flex-direction: column; gap: 16px; max-width: 880px; padding-top: 20px; border-top: 2px solid var(--color-text); }
+.pr-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+.pr-end { margin-left: auto; }
+.pr-from { color: var(--soft); font-size: 13.5px; font-weight: 700; letter-spacing: .02em; }
+.pr-q { max-width: 48ch; margin: -6px 0 4px; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.3; letter-spacing: -.01em; }
+.pr-q:focus { outline: none; }
+.pr-q:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.pr-opts .ck-opt { min-height: 48px; gap: 12px; font-size: 15px; }
+.pr-opts .ck-opt:disabled { opacity: .5; cursor: default; }
+.pr-key { flex: none; width: 22px; color: var(--soft); font-size: 12px; font-weight: 800; }
+.ck-opt.right .pr-key, .ck-opt.wrong .pr-key { color: inherit; }
+.pr-ans { display: flex; flex-direction: column; gap: 12px; padding-top: 4px; }
+.pr-line { color: var(--color-accent-700); font-size: 14px; font-weight: 700; }
+.pr-keys { display: none; }
+@media (hover: hover) and (pointer: fine) { .pr-keys { display: block; } }
+.pr-score { font-size: clamp(34px, 4.4vw, 56px); }
+.pr-score:focus { outline: none; }
+.pr-reread { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.pr-reread ul { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text); }
+.pr-reread li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px 24px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); }
+.pr-rc { display: flex; flex-direction: column; gap: 2px; }
+.pr-rc b { font-size: 16.5px; line-height: 23px; }
+.pr-rc span { color: var(--soft); font-size: 13px; font-weight: 600; }
+.pr-rl { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; font-weight: 700; }
+@media (min-width: 720px) { .pr-reread li { grid-template-columns: 260px minmax(0, 1fr); } }

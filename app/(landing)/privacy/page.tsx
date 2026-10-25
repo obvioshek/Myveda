@@ -10,12 +10,12 @@ export default function PrivacyPage() {
   return (
     <PageShell>
       <h1>Privacy notice</h1>
-      <p>Last updated 5 October 2026. This explains what Veda Verse collects, why, and what you can ask us to do with it.</p>
+      <p>Last updated 25 October 2026. This explains what Veda Verse collects, why, and what you can ask us to do with it.</p>
 
       <h2>Reading the site</h2>
       <ul>
-        <li><b>No sign-in is needed</b> to read the home page, the chapters, the glossary and the revision sheets.</li>
-        <li><b>On your device only:</b> the concept you opened last (for “Continue”), which concepts you have finished, and anything you type in the “Reflect &amp; discuss” boxes are kept in your browser’s local storage. They are never sent to us, and clearing your browser’s site data removes them.</li>
+        <li><b>No sign-in is needed</b> to read the home page, the chapters, the glossary and the revision sheets, or to practise.</li>
+        <li><b>On your device only:</b> the concept you opened last (for “Continue”), which concepts you have finished, the check questions you got wrong and when each is next due for review, and anything you type in the “Reflect &amp; discuss” boxes are kept in your browser’s local storage. They are never sent to us, and clearing your browser’s site data removes them.</li>
         <li>We don’t use advertising or tracking cookies.</li>
       </ul>
 
