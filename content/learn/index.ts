@@ -127,7 +127,7 @@ export function chapterTitle(c: Chapter) {
 // A slip in the data (two chapters at one address, a glossary term pointing at a
 // missing chapter, a lesson that doesn't match its chapter) fails the build
 // instead of publishing a broken page.
-const RESERVED = new Set(["glossary", "revision", "practice", "formulas", "plan", "transfer", "progress", "start", "texts", "reading-guide", "corrections", "quiz"]);
+const RESERVED = new Set(["glossary", "revision", "practice", "formulas", "plan", "transfer", "progress", "start", "texts", "reading-guide", "corrections", "quiz", "apply", "check", "map"]);
 
 // The text is rendered as HTML, so it may only use markup for formatting:
 // nothing that runs code or loads something from elsewhere.

@@ -75,10 +75,18 @@ export default function LearnIndex() {
         <p className="sub">A short walk before the chapters: five modern ideas, each beside a passage that met the same problem, and what to notice when you read them together.</p>
         <div className="btn-row">
           <Link className="btn btn-secondary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
+          <Link className="btn btn-secondary" href="/learn/check" prefetch={false}>Where should I start?</Link>
           <Link className="btn btn-secondary" href={TEXTS_PATH} prefetch={false}>Meet the texts<Arrow /></Link>
           <Link className="btn btn-secondary" href={READING_GUIDE_PATH} prefetch={false}>How to read the names</Link>
         </div>
       </section>
+
+      <nav className="wrap ci-more" aria-label="More ways to learn">
+        <Link href="/learn/apply" prefetch={false}><b>Apply it</b><span>Workplace situations: which idea helps here?</span></Link>
+        <Link href="/learn/map" prefetch={false}><b>The map</b><span>Which chapters build on which</span></Link>
+        <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack</b><span>Your units, your weak spots, printed</span></Link>
+        <Link href="/learn/quiz" prefetch={false}><b>Make a quiz</b><span>For a class or a study group</span></Link>
+      </nav>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
         <div className="ci-way">
@@ -189,7 +197,7 @@ export default function LearnIndex() {
 
       <section className="wrap ci-foot" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
-        <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, TEXTS_PATH, ...TEXTS.map(t => textPath(t.id)), READING_GUIDE_PATH, `${REVISION_PATH}/pack`, "/learn/quiz", "/practice-bank.json", "/search-index.json"]} />
+        <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, TEXTS_PATH, ...TEXTS.map(t => textPath(t.id)), READING_GUIDE_PATH, `${REVISION_PATH}/pack`, "/learn/quiz", "/learn/apply", "/learn/check", "/learn/map", "/practice-bank.json", "/search-index.json"]} />
         <p className="ci-fine">Your progress is kept in this browser only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Move it to another device</Link>.</p>
         <p className="ci-fine">{pending ? `${pending}. ` : ""}{GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       </section>
