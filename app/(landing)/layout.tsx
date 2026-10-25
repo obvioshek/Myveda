@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { preload } from "react-dom";
 import { siteUrl } from "@/lib/site";
 import "./landing.css";
@@ -52,11 +53,14 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
   preload("/fonts/archivo-latin.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
     <html lang="en-IN" suppressHydrationWarning>
-      <head>
-        {/* The reader's text size, applied before the page paints. */}
-        <script dangerouslySetInnerHTML={{ __html: TEXT_SIZE_SCRIPT }} />
-      </head>
-      <body>{children}<OfflineSupport /></body>
+      <body>
+        {/* The reader's text size, applied before the page paints. Next.js puts
+            this in <head> itself; a hand-written <head> script there made
+            hydration fail on many page loads. */}
+        <Script id="vv-text-size" strategy="beforeInteractive">{TEXT_SIZE_SCRIPT}</Script>
+        {children}
+        <OfflineSupport />
+      </body>
     </html>
   );
 }
