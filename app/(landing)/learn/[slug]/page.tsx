@@ -59,7 +59,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   // any passage no lesson uses is listed after the concepts.
   const lessons = lessonsFor(c.slug);
   const used = new Set((lessons ?? []).flatMap(l => l.lens.map(n => n.pairing)));
-  const loose = c.pairings.filter((_, i) => !used.has(i));
+  const loose = c.pairings.map((p, n) => ({ p, n })).filter(x => !used.has(x.n));
   const showLens = loose.length > 0;
   const firstId = lessons?.[0]?.blockId;
   const many = UNITS.length > 1;
@@ -169,7 +169,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     path={chapterPath(c.slug)}
                     chapter={c.title}
                     detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}
-                    lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
+                    lens={lesson.lens.length ? <LessonLens slug={c.slug} pairings={c.pairings} notes={lesson.lens} /> : null}
                     tool={Calc ? <Calc /> : null}
                     mixups={mixupHints(b.html)}
                   />
@@ -194,7 +194,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 <p><Tag kind="view" /> {HOW.view}</p>
               </div>
               {c.lensNote && <p className="cue">{c.lensNote}</p>}
-              <Pairings items={loose} />
+              <Pairings slug={c.slug} items={loose} />
               <p className="ci-fine">{HOW.translations}</p>
             </section>
           )}

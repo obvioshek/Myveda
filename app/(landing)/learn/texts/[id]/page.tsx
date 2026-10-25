@@ -105,7 +105,7 @@ export default async function TextPage({ params }: { params: Promise<{ id: strin
                 </h3>
                 <Link className="more" href={p.href} prefetch={false}>Read it in its lesson<Arrow /></Link>
               </div>
-              <PassageQuote quote={p.quote} except={t.id} />
+              <PassageQuote quote={p.quote} except={t.id} at={{ slug: p.slug, n: p.pairing }} />
             </li>
           ))}
         </ol>

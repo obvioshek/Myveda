@@ -35,7 +35,7 @@ export default function ApplyPage() {
               passage={v.passage && (
                 <div className="ap-p">
                   <p className="ap-pn"><Tag kind={v.passage.kind} /> {v.passage.note}</p>
-                  <PassageQuote quote={v.passage.quote} />
+                  <PassageQuote quote={v.passage.quote} at={{ slug: v.passage.slug, n: v.passage.pairing }} />
                 </div>
               )}
             />
