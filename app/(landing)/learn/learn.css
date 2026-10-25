@@ -606,3 +606,9 @@ h4 { margin: 0; }
 .pr-ra { max-width: 70ch; color: var(--body); font-size: 15px; line-height: 24px; }
 .pr-ra b { color: var(--color-text); }
 .pr-review li .link { align-self: flex-start; font-size: 14px; }
+.ov-weak ul { margin: 10px 0 0; padding: 0; list-style: none; border-top: 2px solid var(--color-text); }
+.ov-weak li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); }
+.ov-weak li > a:first-child { color: var(--color-text); font-size: 16px; }
+.ov-weak li > a:first-child:hover { color: var(--color-accent-700); }
+.ov-score { color: var(--color-accent-700); font-size: 14px; font-weight: 700; }
+.ov-weak li .link { margin-left: auto; font-size: 14px; }

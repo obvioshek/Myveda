@@ -5,6 +5,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react"
 import { cardId, type PracticeBank, type PracticeQuestion } from "@/content/learn/practice";
 import { questionId } from "@/content/learn/question-id";
 import { useDone } from "./progress";
+import { useStats, weakChapters } from "./stats";
 import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today, useReview, type Recorded } from "./review";
 
 // The practice page: the reader's spaced review (questions they got wrong and
@@ -80,6 +81,9 @@ export default function Practice() {
   const [units, setUnits] = useState<string[] | null>(null);
   const [count, setCount] = useState<number>(20);
   const [onlyStarted, setOnlyStarted] = useState(false);
+  const [onlyWeak, setOnlyWeak] = useState(false);
+  const stats = useStats();
+  const weak = useMemo(() => new Set(weakChapters(stats).map(c => c.slug)), [stats]);
   const [exam, setExam] = useState(false);
   const [pace, setPace] = useState<number>(60);
   const [session, setSession] = useState<Session | null>(null);
@@ -133,7 +137,8 @@ export default function Practice() {
   const chosen = units ?? bank?.units.map(u => u.id) ?? [];
   const started = useMemo(() => new Set([...done].map(id => id.split("#")[0])), [done]);
   const source = (what === "terms" ? bank?.cards : bank?.questions) ?? [];
-  const pool = source.filter(q => chosen.includes(q.u) && (!onlyStarted || started.has(q.c)));
+  const pool = source.filter(q => chosen.includes(q.u) && (!onlyStarted || started.has(q.c)) && (!onlyWeak || what !== "questions" || weak.has(q.c)));
+  const weakInChosen = new Set(source.filter(q => chosen.includes(q.u) && weak.has(q.c)).map(q => q.c)).size;
   const startedInChosen = new Set(source.filter(q => chosen.includes(q.u) && started.has(q.c)).map(q => q.c)).size;
   const noun = what === "terms" ? "terms" : "questions";
 
@@ -255,6 +260,13 @@ export default function Practice() {
                 </div>
               )}
             </div>
+          )}
+
+          {what === "questions" && (
+            <label className="pr-check">
+              <input type="checkbox" checked={onlyWeak} disabled={!weakInChosen && !onlyWeak} onChange={e => setOnlyWeak(e.target.checked)} />
+              <span>Only my weak chapters {weakInChosen ? `(${weakInChosen})` : "(none yet: they show once you’ve answered a few questions)"}</span>
+            </label>
           )}
 
           <label className="pr-check">

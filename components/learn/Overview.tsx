@@ -5,6 +5,7 @@ import { useMemo, useSyncExternalStore } from "react";
 import { NOTE_PREFIX, PLAN_KEY, useDevice } from "@/components/landing/device";
 import { useDone } from "./progress";
 import { dueIds, useReview } from "./review";
+import { useStats, weakChapters } from "./stats";
 
 // "Your progress": everything the site keeps for the reader on this device, in
 // one place. How far they are in each unit and what to read next, the review
@@ -46,7 +47,9 @@ export default function Overview({ units }: { units: OverviewUnit[] }) {
   const listed = Object.keys(review).length;
   const planRaw = useDevice(PLAN_KEY);
   const notesRaw = useSyncExternalStore(subscribe, noteSnapshot, () => "[]");
+  const weak = weakChapters(useStats());
 
+  const titles = useMemo(() => new Map(units.flatMap(u => u.chapters.map(c => [c.slug, c.title] as const))), [units]);
   const names = useMemo(() => {
     const m = new Map<string, { concept: string; chapter: string }>();
     for (const u of units) for (const c of u.chapters) for (const x of c.concepts) m.set(`/learn/${c.slug}#${x.id}`, { concept: x.name, chapter: c.title });
@@ -123,6 +126,26 @@ export default function Overview({ units }: { units: OverviewUnit[] }) {
             );
           })}
         </ul>
+      </section>
+
+      <section className="ov-weak" aria-labelledby="ov-weak-h">
+        <h2 id="ov-weak-h" className="h-xs">Where you’re weakest</h2>
+        {weak.length === 0
+          ? <p className="pr-text">Chapters where most of your recent answers were wrong show here, once you’ve answered a few questions from them, in lessons or in practice.</p>
+          : (
+            <ul>
+              {weak.slice(0, 6).map(w => {
+                const title = titles.get(w.slug) ?? w.slug;
+                return (
+                  <li key={w.slug}>
+                    <Link href={`/learn/${w.slug}`} prefetch={false}><b>{title}</b></Link>
+                    <span className="ov-score">{w.right} of your last {w.total} answers right</span>
+                    <Link className="link" href={`/learn/practice?chapter=${w.slug}`} prefetch={false}>Test this chapter</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
       </section>
 
       <section className="ov-notes" aria-labelledby="ov-notes-h">

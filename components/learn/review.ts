@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { useDevice, writeDevice } from "@/components/landing/device";
+import { recordOutcome } from "./stats";
 
 // The reader's review list, kept on this device only. A check question answered
 // wrongly, in a lesson or in practice, joins it and comes back the next day.
@@ -62,6 +63,7 @@ export type Recorded = { kind: "added" | "moved" | "learned"; days: number };
  * nothing. Returns what happened, for the line shown under the answer.
  */
 export function recordAnswer(id: string, right: boolean): Recorded | null {
+  recordOutcome(id, right);
   const list = read();
   const day = today();
   const it = list[id];

@@ -3,11 +3,12 @@
 import { LAST_HREF_KEY, LAST_KEY, NOTE_PREFIX, PLAN_KEY, writeDevice } from "@/components/landing/device";
 import { DONE_KEY } from "./progress";
 import { REVIEW_KEY, type ReviewList } from "./review";
+import { STATS_KEY, cleanStats, type Stats } from "./stats";
 
 // Moving progress to another device without a server. Everything the site
-// keeps on a device (finished concepts, the review list, the study plan's
-// settings, the Continue link and, if the reader wants, their reflection
-// notes) is packed into a code: JSON, compressed where the browser can,
+// keeps on a device (finished concepts, the review list, recent answers by
+// chapter, the study plan's settings, the Continue link and, if the reader
+// wants, their reflection notes) is packed into a code: JSON, compressed where the browser can,
 // then base64url. The reader carries it over themselves, as text, a link whose
 // code sits after "#" (which browsers never send to a server) or a file.
 //
@@ -22,6 +23,8 @@ export type Bundle = {
   plan: { exam: string; units: string[] | null; days: number } | null;
   last: { name: string; href: string } | null;
   notes: Record<string, string>;
+  /** Recent answers by chapter (stats.ts). Codes made before it existed have none. */
+  stats: Stats;
 };
 
 const ID = /^[a-z0-9-]{1,120}#[a-z0-9-]{1,160}$/;
@@ -67,7 +70,7 @@ function clean(raw: unknown): Bundle | null {
       if (NOTE_PATH.test(k) && typeof t === "string" && t.trim()) notes[k] = t.slice(0, MAX_NOTE);
     }
   }
-  return { v: 1, done, review, plan, last, notes };
+  return { v: 1, done, review, plan, last, notes, stats: cleanStats(o.stats) };
 }
 
 // ---------- Gathering and adding ----------
@@ -84,24 +87,24 @@ export function gather(includeNotes: boolean): Bundle {
     } catch { /* no storage: no notes */ }
   }
   const name = read(LAST_KEY), href = read(LAST_HREF_KEY);
-  return clean({ v: 1, done: json(DONE_KEY), review: json(REVIEW_KEY), plan: json(PLAN_KEY), last: name && href ? { name, href } : null, notes }) ?? { v: 1, done: [], review: {}, plan: null, last: null, notes: {} };
+  return clean({ v: 1, done: json(DONE_KEY), review: json(REVIEW_KEY), plan: json(PLAN_KEY), last: name && href ? { name, href } : null, notes, stats: json(STATS_KEY) }) ?? { v: 1, done: [], review: {}, plan: null, last: null, notes: {}, stats: {} };
 }
 
-export type Summary = { done: number; review: number; plan: string | null; notes: number; last: string | null };
+export type Summary = { done: number; review: number; plan: string | null; notes: number; last: string | null; stats: number };
 
 export function summarise(b: Bundle): Summary {
   const plan = b.plan ? (() => { const [y, m, d] = b.plan.exam.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }); })() : null;
-  return { done: b.done.length, review: Object.keys(b.review).length, plan, notes: Object.keys(b.notes).length, last: b.last?.name ?? null };
+  return { done: b.done.length, review: Object.keys(b.review).length, plan, notes: Object.keys(b.notes).length, last: b.last?.name ?? null, stats: Object.keys(b.stats).length };
 }
 
-export const isEmpty = (s: Summary) => !s.done && !s.review && !s.plan && !s.notes && !s.last;
+export const isEmpty = (s: Summary) => !s.done && !s.review && !s.plan && !s.notes && !s.last && !s.stats;
 
 /**
  * Adds a bundle to this device. Finished concepts are joined. A question on
  * both review lists keeps the entry that is less far along, so nothing is
  * marked learned too soon. A note already here is kept; one only in the code is
- * added. The plan and the Continue link come from the code only if this device
- * has none. Returns what was added.
+ * added. The plan, the Continue link and a chapter's record of answers come
+ * from the code only if this device has none. Returns what was added.
  */
 export function addToDevice(b: Bundle): { done: number; review: number; notes: number; plan: boolean; last: boolean } {
   const here = gather(true);
@@ -125,6 +128,10 @@ export function addToDevice(b: Bundle): { done: number; review: number; notes: n
     writeDevice(NOTE_PREFIX + k, t);
     notes++;
   }
+
+  // A chapter's record of answers is kept from this device if it has one.
+  const stats = { ...b.stats, ...here.stats };
+  writeDevice(STATS_KEY, JSON.stringify(stats));
 
   const plan = !here.plan && !!b.plan;
   if (plan) writeDevice(PLAN_KEY, JSON.stringify(b.plan));
