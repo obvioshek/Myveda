@@ -10,7 +10,9 @@ import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
-import { CHAPTERS, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import { linkTerms } from "@/content/learn/term-links";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -53,6 +55,16 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const showLens = loose.length > 0;
   const firstId = lessons?.[0]?.blockId;
   const many = UNITS.length > 1;
+
+  // Each concept's text with its glossary terms linked, and what the cards
+  // need to know about each term linked on this page.
+  const linked = new Map(c.blocks.map(b => [b.id, linkTerms(b.html, GLOSSARY, c.slug, b.title, id => `${GLOSSARY_PATH}#${id}`)]));
+  const tips: Record<string, TipTerm> = {};
+  for (const id of new Set([...linked.values()].flatMap(l => l.ids))) {
+    const t = GLOSSARY.find(x => x.id === id)!;
+    const elsewhere = t.chapterSlug !== c.slug && t.chapterSlug;
+    tips[id] = { term: t.term, def: t.def, href: `${GLOSSARY_PATH}#${id}`, chapter: elsewhere ? t.chapterTitle : null, chapterHref: elsewhere ? chapterPath(t.chapterSlug) : null };
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -134,7 +146,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     index={li}
                     total={lessons.length}
                     path={chapterPath(c.slug)}
-                    detail={<div className="prose" dangerouslySetInnerHTML={html(b.html)} />}
+                    detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}
                     lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
                   />
                 );
@@ -142,7 +154,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
               return (
                 <div key={b.id} id={b.id} className="ch-block">
                   {b.title && <h3>{b.title}</h3>}
-                  <div className="prose" dangerouslySetInnerHTML={html(b.html)} />
+                  <div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />
                 </div>
               );
             })}
@@ -185,6 +197,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           </details>
         </div>
       </div>
+      <GlossaryTips terms={tips} />
       <Toast />
     </PageShell>
   );
