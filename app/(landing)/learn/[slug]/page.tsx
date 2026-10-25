@@ -12,10 +12,12 @@ import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
 import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import { CHAPTERS, CONTENT_UPDATED, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
 import { mixupHints } from "@/content/learn/mixups";
 import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
+import { TEXTS_PATH, textPath, textsInChapter } from "@/content/learn/texts";
+import CiteThis from "@/components/learn/CiteThis";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -45,6 +47,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const c = chapterBySlug((await params).slug);
   if (!c) notFound();
   const unit = unitById(c.unit)!;
+  const texts = textsInChapter(c.slug);
   const base = siteUrl();
   const url = `${base}${chapterPath(c.slug)}`;
   const ev = evidence(c);
@@ -233,10 +236,14 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             )}
           </nav>
 
-          <details className="ch-texts">
-            <summary>Texts used in this unit</summary>
-            <p>{unit.textsUsed}</p>
-          </details>
+          {texts.length > 0 && (
+            <p className="ch-texts ch-texts-l">
+              <b>{texts.length === 1 ? "The text" : "Texts"} quoted in this chapter:</b>{" "}
+              {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}.{" "}
+              <Link href={TEXTS_PATH} prefetch={false}>About all the texts</Link>.
+            </p>
+          )}
+          <CiteThis title={c.title} url={`${base}${chapterPath(c.slug)}`} updated={CONTENT_UPDATED} />
         </div>
       </div>
       <GlossaryTips terms={tips} />

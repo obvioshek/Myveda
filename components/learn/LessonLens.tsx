@@ -1,6 +1,7 @@
 import type { Pairing } from "@/content/learn";
 import type { LensNote } from "@/content/learn";
 import { Tag } from "./Evidence";
+import PassageQuote from "./PassageQuote";
 
 const html = (__html: string) => ({ __html });
 
@@ -29,7 +30,7 @@ export default function LessonLens({ pairings, notes }: { pairings: Pairing[]; n
               {p.text.map((t, j) => <p key={j} dangerouslySetInnerHTML={html(t)} />)}
               {p.kind === "view" && <p className="lp-note">A reading offered for reflection, not a claim about what the authors meant.</p>}
             </div>
-            {p.quote && <blockquote className="lp-q" dangerouslySetInnerHTML={html(p.quote)} />}
+            {p.quote && <PassageQuote quote={p.quote} />}
             <div className="pair-2 lp-cmp">
               <div className="cell"><span className="story-h">What it adds</span><p>{n.adds}</p></div>
               <div className="cell red"><span className="story-h">Where they differ</span><p>{n.differs}</p></div>

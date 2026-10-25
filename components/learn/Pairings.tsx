@@ -1,5 +1,6 @@
 import type { Pairing } from "@/content/learn";
 import { Tag } from "./Evidence";
+import PassageQuote from "./PassageQuote";
 
 const html = (__html: string) => ({ __html });
 
@@ -26,7 +27,7 @@ export default function Pairings({ items }: { items: Pairing[] }) {
             {p.text.map((t, j) => <p key={j} dangerouslySetInnerHTML={html(t)} />)}
             {p.kind === "view" && <p className="lp-note">A reading offered for reflection, not a claim about what the authors meant.</p>}
           </div>
-          {p.quote && <blockquote className="lp-q" dangerouslySetInnerHTML={html(p.quote)} />}
+          {p.quote && <PassageQuote quote={p.quote} />}
         </li>
       ))}
     </ol>

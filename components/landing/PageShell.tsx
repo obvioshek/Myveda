@@ -33,6 +33,8 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <Link href="/" prefetch={false}>Home</Link>
             <Link href="/learn" prefetch={false}>Chapters</Link>
             <Link href="/learn/glossary" prefetch={false}>Glossary</Link>
+            <Link href="/learn/texts" prefetch={false}>The texts</Link>
+            <Link href="/learn/reading-guide" prefetch={false}>Reading guide</Link>
             <Link href="/learn/revision" prefetch={false}>Revision</Link>
             <Link href="/learn/practice" prefetch={false}>Practice</Link>
             <Link href="/learn/formulas" prefetch={false}>Formulas</Link>

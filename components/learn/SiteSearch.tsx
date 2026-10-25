@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { SearchEntry, SearchKind } from "@/content/learn/search";
 
-const LABEL: Record<SearchKind, string> = { concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens" };
-const RANK: Record<SearchKind, number> = { chapter: 8, concept: 6, term: 5, passage: 3 };
+const LABEL: Record<SearchKind, string> = { concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens", text: "Classical text" };
+const RANK: Record<SearchKind, number> = { chapter: 8, text: 7, concept: 6, term: 5, passage: 3 };
 const START = ["Fayol's 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "SWOT Analysis", "Product Life Cycle"];
 
 // Plain letters only, so "kautilya" finds Kauṭilya and "gita" finds Gītā.

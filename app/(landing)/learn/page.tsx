@@ -7,6 +7,8 @@ import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
 import ReviewBand from "@/components/learn/ReviewBand";
 import { SaveOffline } from "@/components/learn/Offline";
+import { TEXTS, TEXTS_PATH, textPath, textsInChapter } from "@/content/learn/texts";
+import { READING_GUIDE_PATH } from "@/content/learn/reading-guide";
 import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, START_WALK_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
@@ -71,7 +73,11 @@ export default function LearnIndex() {
         <span className="label red">New to reading the classics this way</span>
         <h2 id="ci-walk-h" className="h-sm">Five ideas, read two ways.</h2>
         <p className="sub">A short walk before the chapters: five modern ideas, each beside a passage that met the same problem, and what to notice when you read them together.</p>
-        <Link className="btn btn-secondary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
+        <div className="btn-row">
+          <Link className="btn btn-secondary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
+          <Link className="btn btn-secondary" href={TEXTS_PATH} prefetch={false}>Meet the texts<Arrow /></Link>
+          <Link className="btn btn-secondary" href={READING_GUIDE_PATH} prefetch={false}>How to read the names</Link>
+        </div>
       </section>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
@@ -168,17 +174,22 @@ export default function LearnIndex() {
               </div>
             ))}
 
-            <details className="ch-texts ci-texts">
-              <summary>Texts used in Unit {u.n}</summary>
-              <p>{u.textsUsed}</p>
-            </details>
+            {(() => {
+              const texts = [...new Map(u.chapters.flatMap(c => textsInChapter(c.slug)).map(t => [t.id, t])).values()];
+              return texts.length > 0 && (
+                <p className="ch-texts ch-texts-l ci-texts">
+                  <b>Texts quoted in Unit {u.n}:</b>{" "}
+                  {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}.
+                </p>
+              );
+            })()}
           </section>
         );
       })}
 
       <section className="wrap ci-foot" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
-        <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, "/practice-bank.json", "/search-index.json"]} />
+        <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, TEXTS_PATH, ...TEXTS.map(t => textPath(t.id)), READING_GUIDE_PATH, "/practice-bank.json", "/search-index.json"]} />
         <p className="ci-fine">Your progress is kept in this browser only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Move it to another device</Link>.</p>
         <p className="ci-fine">{pending ? `${pending}. ` : ""}{GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       </section>
