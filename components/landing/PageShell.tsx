@@ -4,6 +4,7 @@ import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import SiteSearch from "@/components/learn/SiteSearch";
 import BrandMark from "./Brand";
 import TextSize from "@/components/learn/TextSize";
+import Theme from "@/components/learn/Theme";
 
 // Header and footer for the landing site's standalone pages.
 export default function PageShell({ children, wide = false, note = "Questions about your data:" }: { children: React.ReactNode; wide?: boolean; note?: string }) {
@@ -39,6 +40,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <Link href="/learn/progress" prefetch={false}>Your progress</Link>
             <Link href="/privacy" prefetch={false}>Privacy</Link>
             <TextSize />
+            <Theme />
           </div>
         </div>
       </footer>

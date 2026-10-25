@@ -20,6 +20,7 @@ function SummaryList({ s }: { s: Summary }) {
       <li><b>{plural(s.notes, "note", "notes")}</b> from “Reflect &amp; discuss”</li>
       <li>{s.plan ? <>A study plan for an exam on <b>{s.plan}</b></> : "No study plan"}</li>
       {s.last && <li>Continue from <b>{s.last}</b></li>}
+      {s.stats > 0 && <li>Recent answers for <b>{plural(s.stats, "chapter", "chapters")}</b>, for your weak spots</li>}
     </ul>
   );
 }

@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { preload } from "react-dom";
 import { siteUrl } from "@/lib/site";
 import "./landing.css";
 import { OfflineSupport } from "@/components/learn/Offline";
 import { TEXT_SIZE_SCRIPT } from "@/components/learn/TextSize";
+import { THEME_SCRIPT } from "@/components/learn/Theme";
 
 // Titles stay under about 60 characters and the description under about 160,
 // which is what search results show before cutting them off.
@@ -52,11 +54,15 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
   preload("/fonts/archivo-latin.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
   return (
     <html lang="en-IN" suppressHydrationWarning>
-      <head>
-        {/* The reader's text size, applied before the page paints. */}
-        <script dangerouslySetInnerHTML={{ __html: TEXT_SIZE_SCRIPT }} />
-      </head>
-      <body>{children}<OfflineSupport /></body>
+      <body>
+        {/* The reader's text size and theme, applied before the page paints. Next.js puts
+            this in <head> itself; a hand-written <head> script there made
+            hydration fail on many page loads. */}
+        <Script id="vv-text-size" strategy="beforeInteractive">{TEXT_SIZE_SCRIPT}</Script>
+        <Script id="vv-theme" strategy="beforeInteractive">{THEME_SCRIPT}</Script>
+        {children}
+        <OfflineSupport />
+      </body>
     </html>
   );
 }
