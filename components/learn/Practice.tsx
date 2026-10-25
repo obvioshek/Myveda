@@ -2,18 +2,24 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import type { PracticeBank, PracticeQuestion } from "@/content/learn/practice";
+import { cardId, type PracticeBank, type PracticeQuestion } from "@/content/learn/practice";
 import { questionId } from "@/content/learn/question-id";
 import { useDone } from "./progress";
 import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today, useReview, type Recorded } from "./review";
 
-// The practice page: the reader's spaced review (questions they got wrong,
-// back when they are due) and mixed practice (a set drawn evenly from the
-// chapters of the units they choose). Questions come from /practice-bank.json,
-// fetched when the page opens; answers and the review list stay on this device.
+// The practice page: the reader's spaced review (questions they got wrong and
+// terms they didn't know, back when they are due) and mixed practice (a set of
+// questions, or of glossary terms as cards, drawn evenly from the chapters of
+// the units they choose). Both come from /practice-bank.json, fetched when the
+// page opens; answers and the review list stay on this device.
+//
+// A term card is carried as a question with no options: `q` is the term, `w`
+// its meaning, `b` and `bn` the term's id and name, and `a` is 1, the answer
+// "I knew it", so scoring treats both alike.
 
-type Q = PracticeQuestion & { id: string };
+type Q = PracticeQuestion & { id: string; card?: true };
 type Kind = "review" | "mixed";
+type What = "questions" | "terms";
 type Answer = { picked: number; line: string | null };
 type Session = { kind: Kind; items: Q[]; i: number; answers: (Answer | null)[]; started: number; ended: number | null };
 
@@ -49,7 +55,7 @@ function mix(pool: Q[], n: number): Q[] {
   return shuffle(out);
 }
 
-const lessonHref = (q: Q) => `/learn/${q.c}#${q.b}`;
+const lessonHref = (q: Q) => (q.card ? `/learn/glossary#${q.b}` : `/learn/${q.c}#${q.b}`);
 
 function took(ms: number) {
   const s = Math.max(1, Math.round(ms / 1000));
@@ -58,7 +64,8 @@ function took(ms: number) {
 }
 
 export default function Practice() {
-  const [bank, setBank] = useState<{ units: PracticeBank["units"]; questions: Q[] } | null>(null);
+  const [bank, setBank] = useState<{ units: PracticeBank["units"]; questions: Q[]; cards: Q[] } | null>(null);
+  const [what, setWhat] = useState<What>("questions");
   const [failed, setFailed] = useState(false);
   const [units, setUnits] = useState<string[] | null>(null);
   const [count, setCount] = useState<number>(20);
@@ -74,16 +81,23 @@ export default function Practice() {
       .then(r => (r.ok ? r.json() as Promise<PracticeBank> : Promise.reject(new Error(String(r.status)))))
       .then(b => {
         if (!live) return;
-        setBank({ units: b.units, questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q) })) });
-        // A link from a unit ("Practise this unit") chooses that unit.
-        const want = new URLSearchParams(window.location.search).get("unit");
+        setBank({
+          units: b.units,
+          questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q) })),
+          cards: b.terms.map(t => ({ id: cardId(t.id), card: true, u: t.u, c: t.c, ct: t.ct, b: t.id, bn: t.t, q: t.t, o: [], a: 1, w: t.d })),
+        });
+        // A link from a unit ("Practise this unit") chooses that unit, and one
+        // from the glossary starts on terms.
+        const params = new URLSearchParams(window.location.search);
+        const want = params.get("unit");
         if (want && b.units.some(u => u.id === want)) setUnits([want]);
+        if (params.get("mode") === "terms") setWhat("terms");
       })
       .catch(() => { if (live) setFailed(true); });
     return () => { live = false; };
   }, []);
 
-  const byId = useMemo(() => new Map((bank?.questions ?? []).map(q => [q.id, q])), [bank]);
+  const byId = useMemo(() => new Map([...(bank?.questions ?? []), ...(bank?.cards ?? [])].map(q => [q.id, q])), [bank]);
 
   // Questions reworded or removed since they were listed can't be asked again.
   useEffect(() => {
@@ -98,8 +112,10 @@ export default function Practice() {
 
   const chosen = units ?? bank?.units.map(u => u.id) ?? [];
   const started = useMemo(() => new Set([...done].map(id => id.split("#")[0])), [done]);
-  const pool = (bank?.questions ?? []).filter(q => chosen.includes(q.u) && (!onlyStarted || started.has(q.c)));
-  const startedInChosen = new Set((bank?.questions ?? []).filter(q => chosen.includes(q.u) && started.has(q.c)).map(q => q.c)).size;
+  const source = (what === "terms" ? bank?.cards : bank?.questions) ?? [];
+  const pool = source.filter(q => chosen.includes(q.u) && (!onlyStarted || started.has(q.c)));
+  const startedInChosen = new Set(source.filter(q => chosen.includes(q.u) && started.has(q.c)).map(q => q.c)).size;
+  const noun = what === "terms" ? "terms" : "questions";
 
   const begin = (kind: Kind, items: Q[]) => {
     setSession({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null });
@@ -136,10 +152,10 @@ export default function Practice() {
         <section className="cell pr-mode" id="review" aria-labelledby="pr-review-h">
           <span className="label red">Spaced review</span>
           <h2 id="pr-review-h" className="h-sm">
-            {due.length ? `${due.length} ${due.length === 1 ? "question" : "questions"} due today.` : listed.length ? "All caught up." : "Nothing to review yet."}
+            {due.length ? `${due.length} to review today.` : listed.length ? "All caught up." : "Nothing to review yet."}
           </h2>
           <p className="pr-text">
-            A question you get wrong, in a lesson or here, comes back the next day. Each time you get it right it waits longer: 3 days, then 7, then 21. Right at 21 days, it leaves the list. Get it wrong again and it starts over.
+            A question you get wrong, in a lesson or here, or a term you didn’t know, comes back the next day. Each time you get it right it waits longer: 3 days, then 7, then 21. Right at 21 days, it leaves the list. Get it wrong again and it starts over.
           </p>
           <ol className="pr-steps" aria-label="When a missed question comes back">
             <li><b>Missed</b>today</li>
@@ -157,7 +173,7 @@ export default function Practice() {
           )}
           {listed.length > 0 && (
             <p className="ci-fine">
-              {listed.length} {listed.length === 1 ? "question is" : "questions are"} on your list{nextDue !== null ? `; the next comes back ${dayWord(nextDue)}` : ""}.
+              {listed.length} {listed.length === 1 ? "is" : "are"} on your list{nextDue !== null ? `; the next comes back ${dayWord(nextDue)}` : ""}.
               {due.length > REVIEW_SET && ` Reviews come ${REVIEW_SET} at a time.`}
               {" "}
               <button type="button" className="pr-link" onClick={() => { if (window.confirm("Clear your review list? This can’t be undone.")) clearReview(); }}>Clear the list</button>
@@ -167,8 +183,20 @@ export default function Practice() {
 
         <section className="cell pr-mode" aria-labelledby="pr-mixed-h">
           <span className="label red">Mixed practice</span>
-          <h2 id="pr-mixed-h" className="h-sm">Questions from across the chapters.</h2>
-          <p className="pr-text">Drawn evenly from every chapter you choose, in no order, the way an exam asks them. Jumping between topics feels harder, and it is why the ideas stay.</p>
+          <h2 id="pr-mixed-h" className="h-sm">{what === "terms" ? "Terms from across the chapters." : "Questions from across the chapters."}</h2>
+          <p className="pr-text">
+            {what === "terms"
+              ? "Each card shows a glossary term. Say what it means to yourself, then turn it over and be honest: a term you didn’t know joins your review."
+              : "Drawn evenly from every chapter you choose, in no order, the way an exam asks them. Jumping between topics feels harder, and it is why the ideas stay."}
+          </p>
+
+          <fieldset className="pr-set">
+            <legend className="label">What to practise</legend>
+            <div className="pr-chips">
+              <button type="button" className="pr-chip" aria-pressed={what === "questions"} onClick={() => setWhat("questions")}><b>{bank.questions.length.toLocaleString("en-IN")}</b> questions</button>
+              <button type="button" className="pr-chip" aria-pressed={what === "terms"} onClick={() => setWhat("terms")}><b>{bank.cards.length.toLocaleString("en-IN")}</b> glossary terms</button>
+            </div>
+          </fieldset>
 
           <fieldset className="pr-set">
             <legend className="label">Units</legend>
@@ -185,7 +213,7 @@ export default function Practice() {
             <legend className="label">How many</legend>
             <div className="pr-chips">
               {COUNTS.map(n => (
-                <button key={n} type="button" className="pr-chip" aria-pressed={count === n} onClick={() => setCount(n)}><b>{n}</b> questions</button>
+                <button key={n} type="button" className="pr-chip" aria-pressed={count === n} onClick={() => setCount(n)}><b>{n}</b> {noun}</button>
               ))}
             </div>
           </fieldset>
@@ -197,7 +225,7 @@ export default function Practice() {
 
           <div className="btn-row">
             <button type="button" className="btn btn-primary btn-lg" disabled={!pool.length} onClick={startMixed}>
-              {pool.length ? `Start ${Math.min(count, pool.length)} questions` : "Choose a unit"}
+              {pool.length ? `Start ${Math.min(count, pool.length)} ${noun}` : "Choose a unit"}
             </button>
           </div>
         </section>
@@ -208,6 +236,103 @@ export default function Practice() {
 }
 
 function Run({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
+  const q = session.items[session.i];
+  return q.card ? <CardRun key={session.i} session={session} setSession={setSession} /> : <QuestionRun session={session} setSession={setSession} />;
+}
+
+// One glossary term: recall it, turn it over, say whether you knew it.
+function CardRun({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
+  const q = session.items[session.i];
+  const answer = session.answers[session.i];
+  const last = session.i === session.items.length - 1;
+  const [shown, setShown] = useState(false);
+  const termRef = useRef<HTMLHeadingElement>(null);
+  const showRef = useRef<HTMLButtonElement>(null);
+  const knewRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => { termRef.current?.focus({ preventScroll: true }); }, []);
+  useEffect(() => { if (shown && !answer) knewRef.current?.focus({ preventScroll: true }); }, [shown, answer]);
+  useEffect(() => { if (answer) nextRef.current?.focus({ preventScroll: true }); }, [answer]);
+
+  const grade = useCallback((knew: boolean) => {
+    if (session.answers[session.i]) return;
+    const answers = [...session.answers];
+    answers[session.i] = { picked: knew ? 1 : 0, line: recordedLine(recordAnswer(q.id, knew)) };
+    setSession({ ...session, answers });
+  }, [q.id, session, setSession]);
+
+  const next = useCallback(() => {
+    if (last) setSession({ ...session, ended: Date.now() });
+    else setSession({ ...session, i: session.i + 1 });
+  }, [last, session, setSession]);
+
+  // Space or Enter turns the card; then 1 "not yet", 2 "I knew it"; Enter moves on.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      const onButton = t?.tagName === "BUTTON" || t?.tagName === "A";
+      if (!shown && (e.key === " " || e.key === "Enter") && !onButton) { e.preventDefault(); setShown(true); }
+      else if (shown && !answer && (e.key === "1" || e.key === "2")) { e.preventDefault(); grade(e.key === "2"); }
+      else if (answer && e.key === "Enter" && !onButton) { e.preventDefault(); next(); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [shown, answer, grade, next]);
+
+  const n = session.items.length;
+  const pct = Math.round(((session.i + (answer ? 1 : 0)) / n) * 100);
+
+  return (
+    <div className="pr-run">
+      <div className="pr-bar">
+        <span className="label red">{session.kind === "review" ? "Spaced review" : "Term cards"}</span>
+        <span className="pg">
+          <span className="pg-bar" aria-hidden="true"><i style={{ width: `${pct}%` }} /></span>
+          <span className="pg-t">Card {session.i + 1} of {n}</span>
+        </span>
+        <button type="button" className="btn btn-ghost pr-end" onClick={() => setSession({ ...session, ended: Date.now() })}>End here</button>
+      </div>
+
+      <div className={shown ? "pr-card turned" : "pr-card"}>
+        <p className="pr-from">Glossary · {q.ct}</p>
+        <h2 className="pr-term" ref={termRef} tabIndex={-1}>{q.q}</h2>
+        {!shown && (
+          <>
+            <p className="pr-text">What does it mean? Say it to yourself, then turn the card.</p>
+            <div className="btn-row"><button type="button" className="btn btn-primary" ref={showRef} onClick={() => setShown(true)}>Show the meaning</button></div>
+          </>
+        )}
+        <div className={shown ? "reveal open" : "reveal"} aria-live="polite" inert={!shown}>
+          <div className="reveal-in">
+            <div className="pr-ans">
+              <p className="pr-def">{q.w}</p>
+              {!answer ? (
+                <div className="btn-row" role="group" aria-label="Did you know it?">
+                  <button type="button" className="btn btn-secondary" onClick={() => grade(false)}><span className="pr-key" aria-hidden="true">1</span>Not yet</button>
+                  <button type="button" className="btn btn-primary" ref={knewRef} onClick={() => grade(true)}><span className="pr-key" aria-hidden="true">2</span>I knew it</button>
+                </div>
+              ) : (
+                <>
+                  {answer.line && <p className="pr-line">{answer.line}</p>}
+                  <div className="btn-row">
+                    <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next card"}</button>
+                    <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Open in the glossary</a>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className="ci-fine pr-keys">Keys: Space to turn the card, then 1 for not yet or 2 if you knew it, and Enter for the next.</p>
+    </div>
+  );
+}
+
+function QuestionRun({ session, setSession }: { session: Session; setSession: (s: Session) => void }) {
   const q = session.items[session.i];
   const answer = session.answers[session.i];
   const last = session.i === session.items.length - 1;
@@ -295,6 +420,7 @@ function Run({ session, setSession }: { session: Session; setSession: (s: Sessio
 function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Session; dueLeft: number; onReview: () => void; onAgain: () => void; onBack: () => void }) {
   const asked = session.items.map((q, i) => ({ q, a: session.answers[i] })).filter((x): x is { q: Q; a: Answer } => x.a !== null);
   const rightN = asked.filter(x => x.a.picked === x.q.a).length;
+  const allCards = asked.length > 0 && asked.every(x => x.q.card);
   const missed = asked.filter(x => x.a.picked !== x.q.a);
   const h = useRef<HTMLHeadingElement>(null);
   useEffect(() => { h.current?.focus({ preventScroll: true }); }, []);
@@ -315,14 +441,15 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
 
   return (
     <div className="pr-res">
-      <span className="label red">{session.kind === "review" ? "Review done" : "Practice done"}</span>
+      <span className="label red">{session.kind === "review" ? "Review done" : allCards ? "Cards done" : "Practice done"}</span>
       <h2 className="h-sm pr-score" ref={h} tabIndex={-1}>
-        {asked.length ? `${rightN} of ${asked.length} right.` : "No questions answered."}
+        {!asked.length ? "Nothing answered." : allCards ? `Knew ${rightN} of ${asked.length}.` : `${rightN} of ${asked.length} right.`}
       </h2>
       {asked.length > 0 && (
         <p className="pr-text">
-          Took {took(ms)}, about {took(ms / asked.length)} a question.
+          Took {took(ms)}, about {took(ms / asked.length)} each.
           {missed.length > 0 && ` The ${missed.length === 1 ? "one" : missed.length} you missed ${missed.length === 1 ? "is" : "are"} on your review list for tomorrow.`}
+          {missed.length > 0 && allCards && " The terms below link to the glossary."}
         </p>
       )}
 
@@ -332,7 +459,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
           <ul>
             {reread.map(c => (
               <li key={c.slug}>
-                <span className="pr-rc"><b>{c.title}</b><span>{c.right} of {c.asked} right</span></span>
+                <span className="pr-rc"><b>{c.title}</b><span>{c.right} of {c.asked} {allCards ? "known" : "right"}</span></span>
                 <span className="pr-rl">
                   {[...c.concepts.values()].map(q => <Link key={q.b} className="link" href={lessonHref(q)}>{q.bn}</Link>)}
                 </span>

@@ -3,7 +3,7 @@
 // static file (/practice-bank.json) and fetched when the practice page opens, so
 // the chapter pages carry none of it.
 
-import { CHAPTERS, UNITS, lessonsFor } from "./index";
+import { CHAPTERS, GLOSSARY, UNITS, chapterBySlug, lessonsFor } from "./index";
 import { questionId } from "./question-id";
 
 // The id the review list keeps a question under isn't sent: the page works it
@@ -25,8 +25,23 @@ export type PracticeQuestion = {
   w: string;
 };
 
+/** A glossary term, practised as a card: the term, then its meaning. */
+export type PracticeTerm = {
+  /** The term's glossary id. */
+  id: string;
+  u: string;
+  /** Its chapter's slug and short title. */
+  c: string;
+  ct: string;
+  t: string;
+  d: string;
+};
+
 export type PracticeUnit = { id: string; n: number; short: string };
-export type PracticeBank = { units: PracticeUnit[]; questions: PracticeQuestion[] };
+export type PracticeBank = { units: PracticeUnit[]; questions: PracticeQuestion[]; terms: PracticeTerm[] };
+
+/** The id a term card is kept under in the review list. "glossary" is never a chapter slug. */
+export const cardId = (termId: string) => `glossary#${termId}#t`;
 
 export function buildPracticeBank(): PracticeBank {
   const questions: PracticeQuestion[] = [];
@@ -37,8 +52,12 @@ export function buildPracticeBank(): PracticeBank {
       }
     }
   }
-  const units = UNITS.filter(u => questions.some(q => q.u === u.id)).map(u => ({ id: u.id, n: u.n, short: u.short }));
-  return { units, questions };
+  const terms: PracticeTerm[] = GLOSSARY.map(t => {
+    const c = chapterBySlug(t.chapterSlug)!;
+    return { id: t.id, u: t.unit, c: c.slug, ct: c.short ?? c.title, t: t.term, d: t.def };
+  });
+  const units = UNITS.filter(u => questions.some(q => q.u === u.id) || terms.some(t => t.u === u.id)).map(u => ({ id: u.id, n: u.n, short: u.short }));
+  return { units, questions, terms };
 }
 
 // Two questions with the same id would share one place in the review list.
