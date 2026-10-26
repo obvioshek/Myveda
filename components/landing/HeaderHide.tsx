@@ -58,8 +58,10 @@ export default function HeaderHide() {
     };
     const onDown = (e: MouseEvent) => {
       const m = menu();
-      // A link tapped outside the Menu is handled on click, below.
-      if (m && !m.contains(e.target as Node) && !(e.target as HTMLElement).closest("a[href]")) shut(m);
+      const t = e.target as HTMLElement;
+      // The dimmed page under the Menu counts as outside it. A link tapped
+      // outside the Menu (in the header) is handled on click, below.
+      if (m && (!m.contains(t) || t.classList.contains("pmenu-scrim")) && !t.closest("a[href]")) shut(m);
     };
     const onToggle = (e: Event) => {
       const m = e.target as HTMLElement;

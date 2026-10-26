@@ -41,14 +41,19 @@ export default function PageShell({ children, wide = false, note = "Questions ab
               </nav>
             ))}
           </div>
+          {/* Three groups, each held together: write to us, about the site,
+              and how it shows on this device. */}
           <div className="foot-base">
-            <span>{note} <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></span>
-            <ReportProblem what="This page" label="Report a problem" />
-            {/* Home is the brand above; it isn't offered twice. */}
-            {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
-            <span>© {YEAR} Veda Verse</span>
-            <Shortcuts />
-            <span className="foot-prefs" id="display"><TextSize /><Theme /></span>
+            <div className="foot-g">
+              <span>{note} <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></span>
+              <ReportProblem what="This page" label="Report a problem" />
+            </div>
+            <div className="foot-g">
+              {/* Home is the brand above; it isn't offered twice. */}
+              {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+              <span>© {YEAR} Veda Verse</span>
+            </div>
+            <div className="foot-g foot-prefs" id="display"><Shortcuts /><TextSize /><Theme /></div>
           </div>
         </div>
       </footer>

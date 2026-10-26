@@ -161,8 +161,8 @@ export default function ReaderView({ r }: { r: ReaderData }) {
 
       {r.documented && (
         <div className="split">
-          <div className="doc"><div className="k">✓ Documented</div><p>{r.documented}</p></div>
-          {r.told && <div className="told"><div className="k">❞ Told</div><p>{r.told}</p></div>}
+          <div className="doc"><Chip basis="documented" /><p>{r.documented}</p></div>
+          {r.told && <div className="told"><Chip basis="told" /><p>{r.told}</p></div>}
         </div>
       )}
       {r.carry && <div className="carry"><div className="k">Worth carrying</div><div className="t">{r.carry}</div></div>}

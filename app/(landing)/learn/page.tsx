@@ -101,9 +101,11 @@ export default function LearnIndex() {
 
       <section className="wrap ci-ways" aria-label="Two ways in">
         <div className="ci-way">
-          <span className="label red">New to management</span>
-          <h2 className="h-sm">Start with these six.</h2>
-          <p className="sub">Each builds on the one before, from what managers do to how a firm chooses its market.</p>
+          <div className="ci-way-h">
+            <span className="label red">New to management</span>
+            <h2 className="h-sm">Start with these six.</h2>
+            <p className="sub">Each builds on the one before, from what managers do to how a firm chooses its market.</p>
+          </div>
           <ol className="ci-path">
             {START_PATH.map((p, i) => {
               const c = chapterBySlug(p.slug)!;
@@ -121,9 +123,11 @@ export default function LearnIndex() {
           </ol>
         </div>
         <div className="ci-way">
-          <span className="label red">Here with a problem</span>
-          <h2 className="h-sm">Start from what you are facing.</h2>
-          <p className="sub">The chapters that bear on it, across units.</p>
+          <div className="ci-way-h">
+            <span className="label red">Here with a problem</span>
+            <h2 className="h-sm">Start from what you are facing.</h2>
+            <p className="sub">The chapters that bear on it, across units.</p>
+          </div>
           <Problems items={PROBLEMS.slice(0, FIRST_PROBLEMS)} />
           {PROBLEMS.length > FIRST_PROBLEMS && (
             <details className="ci-probs-more">

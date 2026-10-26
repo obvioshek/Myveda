@@ -60,6 +60,7 @@ export default function SiteHeader() {
                 <TextSize /><Theme />
               </div>
             </div>
+            <div className="pmenu-scrim" aria-hidden="true" />
           </details>
         </div>
       </header>

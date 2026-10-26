@@ -141,6 +141,12 @@ export default function ProfileView({ pr, tab, topics }: { pr: ProfileData; tab:
 function EditProfile({ pr, topics, onClose, onSaved }: { pr: ProfileData; topics: string[]; onClose: () => void; onSaved: () => void }) {
   const { run } = useApp();
   useLayer(true, onClose);
+  // Escape closes it, as it closes every other dialog.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
   const [name, setName] = useState(pr.person.name);
   const [line, setLine] = useState(pr.line ?? "");
   const [ask, setAsk] = useState<string[]>(pr.ask);
@@ -156,7 +162,7 @@ function EditProfile({ pr, topics, onClose, onSaved }: { pr: ProfileData; topics
         if (r.ok) onSaved();
       }}>
         <div className="dialog-head"><div className="dialog-title" id="editT">Edit profile</div>
-          <button className="btn btn-ghost btn-icon" type="button" aria-label="Close" onClick={onClose} style={{ color: "var(--soft)", width: 40, height: 40 }}>×</button></div>
+          <button className="dialog-x" type="button" aria-label="Close" title="Close (Esc)" onClick={onClose}>×</button></div>
         <label className="lab">Name<input className="input" autoComplete="name" value={name} onChange={e => setName(e.target.value)} maxLength={60} /></label>
         <label className="lab">One line about you<input className="input" value={line} onChange={e => setLine(e.target.value)} maxLength={160} /></label>
         <div className="lab">Ask me about (up to 3)

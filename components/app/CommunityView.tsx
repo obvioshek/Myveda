@@ -114,8 +114,8 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
             <Link key={p.id} className="row" href={href(`?thread=${p.id}`)}><b>{p.title}</b><span className="muted"> · {p.subtitle ?? "pinned"}</span></Link>
           ))}
           {thread && (
-            <>
-              <div className="kicker" style={{ marginTop: 6 }}>{thread.title} thread{readOnly ? " · archived, read-only" : ""}</div>
+            <div className="cthread">
+              <div className="kicker">{thread.title} thread{readOnly ? " · archived, read-only" : ""}</div>
               {thread.spoiler && thread.notes.length === 0 ? (
                 <div className="panel" style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
                   <span style={{ flex: 1 }}>Notes here stay hidden until you say you&apos;ve read this far.</span>
@@ -156,7 +156,7 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
               )}
               {!member && !readOnly && c.contributors && <p className="muted" style={{ fontSize: 14 }}>{c.contributors}</p>}
               <LabelKey />
-            </>
+            </div>
           )}
         </>
       )}

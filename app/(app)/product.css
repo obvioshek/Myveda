@@ -3,7 +3,7 @@
    Archivo, a near-mono red on a light ground, square corners and strong 2px
    rules. Nothing is rounded; a red bar marks what is current or chosen. The
    five labels look as they do in the home page's example thread. The tokens
-   and the dark theme match landing.css, so the reader's Light, Dark or Device
+   and the dark theme match landing.css, so the reader's Light, Dark or System
    choice (components/learn/Theme.tsx) and text size carry across. Only the
    community's root layout loads this file. */
 
@@ -39,9 +39,10 @@
   --color-accent-100: #fff2ef; --color-accent-600: #dd2b0f; --color-accent-700: #ae1800; --color-accent-800: #7c1405;
 
   --font: "Archivo", "Archivo Fallback", system-ui, sans-serif;
-  /* A flat sheet's shadow: a hard offset, no blur. */
+  /* A flat sheet's shadow: a hard offset, no blur. The scrim dims the page
+     behind a dialog (as landing.css). */
   --sheet: 8px 8px 0 color-mix(in srgb, var(--color-text) 12%, transparent);
-  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+  --scrim: rgb(32 30 29 / .5);
   --ease: cubic-bezier(.2, .7, .2, 1);
   color-scheme: light;
 }
@@ -59,7 +60,7 @@ html[data-theme="dark"] {
   --on-accent: #ffffff;
   --accent-hover: #a51f0b;
   --accent-press: #7c1405;
-  --shadow-lg: 0 12px 32px rgb(0 0 0 / .55);
+  --scrim: rgb(0 0 0 / .62);
   color-scheme: dark;
   -webkit-tap-highlight-color: rgb(238 235 233 / .14);
 }
@@ -74,8 +75,8 @@ body {
 }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; margin: 0; }
 p { margin: 0; }
-a { color: var(--color-accent-700); text-underline-offset: 3px; }
-a:hover { color: var(--color-accent-600); }
+a { color: var(--color-accent-700); text-decoration-thickness: 2px; text-underline-offset: .25em; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); }
+a:hover { color: var(--color-accent-600); text-decoration-color: currentColor; }
 button, input, textarea, select { font-family: var(--font); border-radius: 0; }
 textarea { font: inherit; }
 :focus { outline: none; }
@@ -158,7 +159,7 @@ select.input { padding-inline: 10px; }
 .ts-b { display: grid; place-items: center; min-width: 32px; height: 32px; padding: 0 6px; border: 2px solid var(--color-divider); background: transparent; color: var(--color-text); font-family: var(--font); font-weight: 800; line-height: 1; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
 .ts-b + .ts-b { margin-left: -2px; }
 @media (hover: hover) { .ts-b:not([aria-pressed="true"]):hover { position: relative; border-color: var(--color-text); } }
-.ts-b[aria-pressed="true"] { position: relative; border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); }
+.ts-b[aria-pressed="true"] { position: relative; border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
 .ts-0 { font-size: var(--fs-sm); } .ts-1 { font-size: var(--fs-body); } .ts-2 { font-size: var(--fs-h5); }
 .ts-w { min-width: 0; padding: 0 8px; font-size: var(--fs-sm); }
 
@@ -185,7 +186,7 @@ select.input { padding-inline: 10px; }
 }
 @media (hover: hover) { .chip.basis-btn:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); } }
 .chip.basis-btn[aria-pressed="true"] { background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
-.basis-help { min-height: 22px; color: var(--body); font-size: var(--fs-ui); line-height: 22px; }
+.basis-help { min-height: 22px; margin-top: -4px; color: var(--body); font-size: var(--fs-ui); line-height: 22px; }
 .basis-help b { color: var(--color-text); }
 
 .av {
@@ -228,9 +229,9 @@ a.av:hover, button.av:hover { color: var(--color-text); background: color-mix(in
 .row {
   display: block; width: 100%; text-align: left; border: none; border-bottom: 2px solid var(--color-divider);
   background: none; padding: 12px 0; cursor: pointer; font: 400 15px/1.4 var(--font); color: var(--color-text);
-  text-decoration: none; transition: box-shadow .2s, background-color .2s;
+  text-decoration: none;
 }
-a.row:hover { color: var(--color-text); background: var(--color-surface); box-shadow: inset 4px 0 0 var(--color-accent); }
+a.row:hover { color: var(--color-text); }
 .row.static { cursor: default; }
 .row .sub, .sub { display: block; font-size: var(--fs-sm); color: var(--soft); }
 .kicker { font-size: var(--fs-xs); font-weight: 600; line-height: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
@@ -244,7 +245,7 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .menu {
   position: absolute; right: 0; top: 50px; z-index: 20; min-width: 220px; padding: 6px 0;
   background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: var(--sheet);
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: column; animation: drop-in .16s var(--ease);
 }
 .menu > button, .menu > a, .menu form > button {
   width: 100%; text-align: left; padding: 10px 16px; border: none; background: none; border-radius: 0;
@@ -338,7 +339,7 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .feed-head .sub { font-size: var(--fs-ui); margin-top: 6px; }
 .post { display: flex; gap: 14px; padding: 22px 0; border-bottom: 2px solid var(--color-divider); position: relative; }
 .post-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
-.post-meta { display: flex; align-items: center; gap: 6px 8px; flex-wrap: wrap; font-size: var(--fs-sm); color: var(--soft); }
+.post-meta { display: flex; align-items: baseline; gap: 6px 8px; flex-wrap: wrap; font-size: var(--fs-sm); color: var(--soft); }
 .post-meta .author { border: none; background: none; padding: 0; font-size: var(--fs-body-sm); font-weight: 800; color: var(--color-text); cursor: pointer; text-decoration: none; }
 .post-meta .author:hover { color: var(--color-accent-700); }
 .post-meta a:not(.author) { color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--color-divider); text-underline-offset: 3px; }
@@ -360,9 +361,8 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .act[aria-pressed="true"] svg { fill: currentColor; }
 /* Each notification is one row to open, ending in an arrow: the whole row is
    its button, and Reply sits above it. */
-.ib-row { position: relative; display: flex; gap: 12px; padding: 14px 4px 14px 0; border-bottom: 2px solid var(--color-divider); transition: background-color .2s, box-shadow .2s; }
+.ib-row { position: relative; display: flex; gap: 12px; padding: 14px 4px 14px 0; border-bottom: 2px solid var(--color-divider); }
 .ib-row > .arw { align-self: center; color: var(--soft); }
-.ib-row:has(.ib-go:hover) { background: var(--color-surface); box-shadow: inset 4px 0 0 var(--color-accent); }
 .ib-row:has(.ib-go:hover) > .arw { color: var(--color-text); transform: translateX(3px); }
 .ib-row:has(.ib-go:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
 .ib-go { padding: 0; border: none; background: none; color: var(--color-text); font: inherit; font-size: var(--fs-body-sm); line-height: 1.4; text-align: left; text-decoration: none; cursor: pointer; }
@@ -377,7 +377,7 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .module-row { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 2px solid var(--color-divider); }
 .module-row .t { font-size: var(--fs-body-sm); font-weight: 700; line-height: 1.35; }
 .qrow { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 2px solid var(--color-divider); }
-.feed-end { margin-top: 8px; padding: 32px 0 8px; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid var(--color-text); }
+.feed-end { margin-top: -2px; padding: 32px 0 8px; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid var(--color-text); }
 .feed-end h3 { font-size: 26px; letter-spacing: -.02em; }
 .feed-end p { font-size: var(--fs-body-sm); color: var(--body); max-width: 52ch; }
 .btns { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -402,11 +402,9 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
 .split .doc { padding: 18px 20px; border: 2px solid var(--color-text); }
 .split .told { padding: 18px 20px; border: 2px dashed var(--color-text); }
-.split .k { font-size: var(--fs-xs); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.split .doc .k { display: inline-block; padding: 2px 8px; background: var(--color-text); color: var(--color-bg); }
 .split p { margin: 10px 0 0; font-size: var(--fs-body-sm); line-height: 1.55; }
 .carry { padding: 24px; background: var(--color-accent-fill); color: var(--on-accent); }
-.carry .k { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.carry .k { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .carry .t { font-size: var(--fs-h4); font-weight: 800; letter-spacing: -.01em; line-height: 1.3; margin-top: 6px; }
 .sec-top { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 2px solid var(--color-divider); }
 .src-row { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 2px solid var(--color-divider); font-size: var(--fs-body-sm); }
@@ -516,8 +514,17 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .quote { margin: 0; padding: 20px 22px; background: var(--color-surface); border-left: 4px solid var(--color-accent); font-size: var(--fs-lead); line-height: 1.55; }
 
 /* ── dialogs and toast ──────────────────────────────────────────────────── */
-.backdrop { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: 24px; background: color-mix(in srgb, #201e1d 55%, transparent); }
-.dialog { width: min(440px, 100%); display: flex; flex-direction: column; gap: 14px; padding: 20px; background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: var(--sheet); max-height: 90vh; overflow-y: auto; }
+.backdrop { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: 24px; background: var(--scrim); animation: scrim-in .2s ease; }
+.dialog { width: min(440px, 100%); display: flex; flex-direction: column; gap: 14px; padding: 20px; background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: var(--sheet); max-height: 90vh; overflow-y: auto; animation: rise-in .22s var(--ease); }
+/* Closing a dialog looks as it does on the learning pages: a ruled square. */
+.dialog-x { display: grid; place-items: center; flex: none; width: 40px; height: 40px; padding: 0; border: 2px solid var(--color-text); background: transparent; color: var(--color-text); font: 400 var(--fs-h4)/1 var(--font); cursor: pointer; transition: background-color .2s; }
+.dialog-x:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+/* Layers come in the same few ways as on the learning pages: a menu drops from
+   its button, a dialog or a sheet rises, and the scrim fades in. */
+@keyframes drop-in { from { opacity: 0; transform: translateY(-6px); } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(10px); } }
+@keyframes scrim-in { from { opacity: 0; } }
+@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 12px); } }
 .dialog.compose { width: min(620px, 100%); }
 .dialog.report { width: min(460px, 100%); }
 .dialog-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 2px solid var(--color-divider); }
@@ -535,7 +542,7 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 }
 .toast {
   position: fixed; left: 50%; transform: translateX(-50%); bottom: 24px; z-index: 50; display: flex; align-items: center; gap: 14px;
-  padding: 12px 18px; background: var(--color-text); color: var(--color-bg); border-left: 4px solid var(--color-accent); box-shadow: var(--shadow-lg);
+  padding: 12px 18px; background: var(--color-text); color: var(--color-bg); border-left: 4px solid var(--color-accent); animation: toast-in .32s var(--ease);
   font-size: var(--fs-ui); font-weight: 600; max-width: calc(100% - 32px);
 }
 .toast button { border: none; background: none; color: inherit; font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; cursor: pointer; padding: 0; }
@@ -547,8 +554,7 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .signin .brand { width: auto; }
 .signin h1 { font-size: 32px; letter-spacing: -.025em; }
 .people { display: flex; flex-direction: column; border-top: 2px solid var(--color-text); }
-.people button { display: flex; align-items: center; gap: 12px; padding: 10px 0; border: none; border-bottom: 2px solid var(--color-divider); background: none; cursor: pointer; text-align: left; color: var(--color-text); font: inherit; font-size: var(--fs-body-sm); transition: background-color .2s, box-shadow .2s; }
-.people button:hover:not(:disabled) { background: var(--color-surface); box-shadow: inset 4px 0 0 var(--color-accent); }
+.people button { display: flex; align-items: center; gap: 12px; padding: 10px 0; border: none; border-bottom: 2px solid var(--color-divider); background: none; cursor: pointer; text-align: left; color: var(--color-text); font: inherit; font-size: var(--fs-body-sm); }
 
 /* home: the feed and, on wide screens, the aside */
 .home-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: start; }
@@ -581,7 +587,7 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 @keyframes sk-pulse { 50% { opacity: .45; } }
 @media (prefers-reduced-motion: reduce) { .sk { animation: none; } }
 /* Fingers need room: on touch screens every button is at least 44px tall. */
-@media (pointer: coarse) { .btn { min-height: 44px; } .btn-icon { width: 44px; height: 44px; } }
+@media (pointer: coarse) { .btn { min-height: 44px; } .btn-icon, .dialog-x { width: 44px; height: 44px; } }
 
 /* ---------- Reach (Fitts's law; see landing.css) ----------
    Big enough for the hand that uses it (44px on touch screens), hit areas
@@ -624,3 +630,22 @@ a.av::after, button.av::after { content: ""; position: absolute; inset: calc(min
   .post-more-btn.btn-icon { width: 44px; height: 44px; }
   .link-sm, .post-meta .author, .post-meta a:not(.author), .toast button { padding-block: 14px; margin-block: -14px; }
 }
+
+/* ---------- Seen as groups (Gestalt; see landing.css and README.md) ---------- */
+/* Proximity: a post's head (who, and why it is here) is held together, and
+   so are its title and its text. */
+.post-reason { margin-top: -4px; }
+.post-title + .post-body { margin-top: -4px; }
+/* A thread is one group: its name, its notes, then the box to add one. Its
+   notes sit as close as the rows of any list, not as far apart as sections. */
+.cthread { display: flex; flex-direction: column; }
+.cthread > :not(.kicker, .note) { margin-top: 18px; }
+/* A hovered row's tint and red bar reach out into the margin, so the bar
+   never sits on the row's words or face, which keep their place on the
+   column's edge. */
+a.row, .ib-row, .people button { position: relative; isolation: isolate; }
+:is(a.row, .ib-row, .people button)::before { content: ""; position: absolute; inset: 0 0 0 -12px; z-index: -1; transition: background-color .2s, box-shadow .2s; }
+:is(a.row:hover, .ib-row:has(.ib-go:hover), .people button:hover:not(:disabled))::before { background: var(--color-surface); box-shadow: inset 4px 0 0 var(--color-accent); }
+/* Every underlined link and link-like button draws its line the same way, a
+   quarter of its own text size below the words (as landing.css). */
+.link, .link-sm, .btn-ghost:not(:has(svg)), .post-meta a:not(.author), .ib-go:hover, .toast button { text-underline-offset: .25em; }

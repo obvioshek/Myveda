@@ -134,6 +134,8 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
           </div>
         </div>
       </div>
+      {/* The page under the open panel is dimmed; pressing it closes the panel. */}
+      {open && <div className="cmx-scrim" aria-hidden="true" />}
     </div>
   );
 }

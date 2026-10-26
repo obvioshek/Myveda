@@ -115,7 +115,7 @@ export default function Composer({
       <div className="dialog compose" role="dialog" aria-modal="true" aria-labelledby="composeT" onClick={e => e.stopPropagation()}>
         <div className="dialog-head">
           <div className="dialog-title" id="composeT">Ask or post</div>
-          <button className="btn btn-ghost btn-icon" type="button" aria-label="Close" onClick={close} style={{ color: "var(--soft)", width: 40, height: 40 }}>×</button>
+          <button className="dialog-x" type="button" aria-label="Close" title="Close (Esc)" onClick={close}>×</button>
         </div>
         <textarea
           ref={textRef}
