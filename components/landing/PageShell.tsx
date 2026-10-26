@@ -6,6 +6,9 @@ import SiteSearch from "@/components/learn/SiteSearch";
 import DueBadge from "@/components/learn/DueBadge";
 import BrandMark from "./Brand";
 import HeaderHide from "./HeaderHide";
+import BackToTop from "./BackToTop";
+import HashLanding from "./HashLanding";
+import MenuContinue from "@/components/learn/MenuContinue";
 import TextSize from "@/components/learn/TextSize";
 import Theme from "@/components/learn/Theme";
 import ReportProblem from "@/components/learn/ReportProblem";
@@ -35,6 +38,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
           <details className="pmenu">
             <summary><MenuIcon /><span className="pmenu-l">Menu</span><DueBadge /></summary>
             <div className="pmenu-panel">
+              <MenuContinue />
               {SITE_MAP.map(g => (
                 <nav key={g.id} className="pmenu-col" aria-labelledby={`pm-${g.id}`}>
                   <span id={`pm-${g.id}`} className="label red">{g.label}</span>
@@ -54,7 +58,9 @@ export default function PageShell({ children, wide = false, note = "Questions ab
         </div>
       </header>
       <HeaderHide />
-      <main id="main" className={wide ? "page-wide" : "page"}>{children}</main>
+      <main id="main" tabIndex={-1} className={wide ? "page-wide" : "page"}>{children}</main>
+      <BackToTop />
+      <HashLanding />
       <footer className="foot">
         <div className="wrap">
           <div className="foot-nav">

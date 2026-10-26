@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import NotFoundBody from "@/components/landing/NotFoundBody";
-import "./learn/learn.css";
 
 export const metadata: Metadata = { title: "Page not found · Veda Verse", robots: { index: false } };
 

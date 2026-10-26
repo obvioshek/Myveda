@@ -27,7 +27,7 @@ export default function PracticePage() {
       <header className="wrap ci-hero pr-hero">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Practice</span>
         <h1><span>Answer, then remember.</span><span className="red">The ones you miss come back.</span></h1>
-        <p className="lede">Every check question from the chapters, {questions.toLocaleString("en-IN")} in all, each with the reason behind its answer, and the {GLOSSARY.length} glossary terms as cards. Mix them across chapters, recall a concept from a blank page, or review the ones you missed, on the day they are due.</p>
+        <p className="lede">{questions.toLocaleString("en-IN")} questions from the chapters, each with the reason behind its answer, and {GLOSSARY.length} glossary cards. The ones you miss come back on the day they are due.</p>
         <p className="ci-fine">Teaching a class? <Link className="link" href={QUIZ_PATH} prefetch={false}>Make a quiz from these questions</Link> and share one link.</p>
       </header>
       <Practice />

@@ -10,6 +10,7 @@ import Toast from "@/components/landing/Toast";
 import { Meter, Tag } from "@/components/learn/Evidence";
 import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
+import ChapterStart from "@/components/learn/ChapterStart";
 import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
 import { CHAPTERS, CONTENT_UPDATED, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
@@ -138,7 +139,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             )}
           </div>
           <div className="ch-actions">
-            <a className="btn btn-primary" href={firstId ? `#${firstId}` : "#lens"}>{firstId ? "Start with the first concept" : "Jump to the Ancient lens"}<Arrow /></a>
+            <ChapterStart slug={c.slug} items={(lessons ?? []).map(l => ({ id: l.blockId, name: l.name }))} fallback={{ href: firstId ? `#${firstId}` : "#lens", label: firstId ? "Start with the first concept" : "Jump to the Ancient lens" }} />
             {lessons && <LessonsToggle />}
           </div>
         </header>

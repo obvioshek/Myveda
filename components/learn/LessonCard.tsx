@@ -87,7 +87,14 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
   const [right, setRight] = useState<Set<number>>(() => new Set());
   const slug = path.split("/").pop() ?? "";
   const id = `${slug}#${lesson.blockId}`;
-  const done = useDone().has(id);
+  const doneSet = useDone();
+  const done = doneSet.has(id);
+  // Marking this concept done: say so, and say when it completes the chapter.
+  const markDone = () => {
+    setDone(id, true);
+    const before = [...doneSet].filter(x => x.startsWith(`${slug}#`) && x !== id).length;
+    showToast(before + 1 === total ? `That's every concept in ${chapter}. Well done.` : `${lesson.name}: marked as done`);
+  };
   const noteKey = `${NOTE_PREFIX}${path}#${lesson.blockId}`;
   const note = useDevice(noteKey);
   const bodyId = useId();
@@ -121,10 +128,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
     const next = new Set(right);
     if (ok) next.add(i); else next.delete(i);
     setRight(next);
-    if (ok && next.size === lesson.check.length && !done) {
-      setDone(id, true);
-      showToast(`${lesson.name}: marked as done`);
-    }
+    if (ok && next.size === lesson.check.length && !done) markDone();
   };
 
   // Close this concept and open the next where it starts. The next card opens
@@ -143,7 +147,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
 
   return (
     <article className={done ? "ls done" : "ls"} id={lesson.blockId} aria-label={lesson.name}>
-      <div className="ls-head">
+      <div className="ls-head" onClick={e => { if (!(e.target as HTMLElement).closest("button, a")) toggle(); }}>
         <span className="ls-n" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
         <div className="ls-hd">
           <span className="sr-only">Concept {index + 1} of {total}. </span>
@@ -234,7 +238,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
                   </div>
                 </div>
                 <div className="btn-row">
-                  <button type="button" className={done ? "btn btn-secondary" : "btn btn-primary"} aria-pressed={done} onClick={() => { setDone(id, !done); if (!done) showToast(`${lesson.name}: marked as done`); }}>
+                  <button type="button" className={done ? "btn btn-secondary" : "btn btn-primary"} aria-pressed={done} onClick={() => { if (done) setDone(id, false); else markDone(); }}>
                     {done ? <><Tick />Done. Mark as not done</> : "Mark as done"}
                   </button>
                   {next ? (
