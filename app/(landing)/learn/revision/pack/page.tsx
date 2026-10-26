@@ -69,6 +69,7 @@ export default function PackPage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero rv-hero no-print">
+        <nav className="ch-crumbs" aria-label="Breadcrumb"><Link href={REVISION_PATH} prefetch={false}>Revision sheets</Link><span aria-hidden="true">/</span><span>Revision pack</span></nav>
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Revision</span>
         <h1><span>Your revision pack.</span><span className="red">Only what you need, on paper.</span></h1>
         <p className="lede">Choose the units, then all chapters, only the ones you have started, or your weak spots from practice. Keep the parts you want, and print the pack or save it as a PDF.</p>

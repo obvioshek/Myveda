@@ -158,7 +158,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           </div>
           {effBasis === "documented" && (
             <div className="two">
-              <input className="input" aria-label="Source link, ISBN or DOI (optional)" placeholder="Source: link, ISBN or DOI" value={url} onChange={e => setUrl(e.target.value)} />
+              <input className="input" type="text" inputMode="url" autoCapitalize="off" spellCheck={false} aria-label="Source link, ISBN or DOI (optional)" placeholder="Source: link, ISBN or DOI" value={url} onChange={e => setUrl(e.target.value)} />
               <select className="input" aria-label="Source type" value={stype} onChange={e => setStype(e.target.value)}>
                 {SOURCE_TYPES.map(s => <option key={s}>{s}</option>)}
               </select>

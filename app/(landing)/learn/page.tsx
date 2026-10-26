@@ -87,7 +87,6 @@ export default function LearnIndex() {
           {UNITS.map(u => <a key={u.id} href={`#${u.id}`}><b>Unit {u.n}</b>{u.short}</a>)}
           {pending && <span className="ci-soon">{pending}</span>}
         </nav>
-        <p className="ci-plan">Preparing for an exam? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> from your exam date, or <Link className="link" href={PRACTICE_PATH} prefetch={false}>practise</Link> across the units. <Link className="link" href={PROGRESS_PATH} prefetch={false}>See your progress</Link>.</p>
       </section>
 
       <section className="wrap ci-walk" aria-labelledby="ci-walk-h">
@@ -98,7 +97,6 @@ export default function LearnIndex() {
           <Link className="btn btn-primary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
           <Link className="btn btn-secondary" href="/learn/check" prefetch={false}>Or find your level in 2 minutes</Link>
         </div>
-        <p className="ci-fine">New to the old texts? <Link className="link" href={TEXTS_PATH} prefetch={false}>Meet them</Link>, and see <Link className="link" href={READING_GUIDE_PATH} prefetch={false}>how to read their names</Link>.</p>
       </section>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
@@ -182,14 +180,30 @@ export default function LearnIndex() {
         );
       })}
 
+      {/* The tools beyond the chapters, in two groups by what the reader is
+          after, most asked-for first. They wait here rather than at the top,
+          so the page opens on one decision: where to start. */}
       <nav className="wrap ci-more" aria-labelledby="ci-more-h">
         <h2 id="ci-more-h" className="h-xs">More ways to study</h2>
-        <div className="ci-more-grid">
-          <Link href="/learn/weekly" prefetch={false}><b>One idea a week<Arrow /></b><span>A new pair each Monday, by email or feed</span></Link>
-          <Link href="/learn/apply" prefetch={false}><b>Apply it<Arrow /></b><span>Workplace situations: which idea helps here?</span></Link>
-          <Link href="/learn/map" prefetch={false}><b>The map<Arrow /></b><span>Which chapters build on which</span></Link>
-          <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack<Arrow /></b><span>Your units, your weak spots, printed</span></Link>
-          <Link href="/learn/quiz" prefetch={false}><b>Make a quiz<Arrow /></b><span>For a class or a study group</span></Link>
+        <div className="ci-more-groups">
+          <div className="ci-more-g">
+            <span className="label red">For an exam</span>
+            <div className="ci-more-grid">
+              <Link href={PLAN_PATH} prefetch={false}><b>Study plan<Arrow /></b><span>Week by week to your exam date</span></Link>
+              <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack<Arrow /></b><span>Your units, your weak spots, printed</span></Link>
+              <Link href={PROGRESS_PATH} prefetch={false}><b>Your progress<Arrow /></b><span>What is done, what is due</span></Link>
+            </div>
+          </div>
+          <div className="ci-more-g">
+            <span className="label red">Going further</span>
+            <div className="ci-more-grid">
+              <Link href="/learn/apply" prefetch={false}><b>Apply it<Arrow /></b><span>Workplace situations: which idea helps here?</span></Link>
+              <Link href={TEXTS_PATH} prefetch={false}><b>The classical texts<Arrow /></b><span>What each is, and how to say the names</span></Link>
+              <Link href="/learn/map" prefetch={false}><b>The map<Arrow /></b><span>Which chapters build on which</span></Link>
+              <Link href="/learn/weekly" prefetch={false}><b>One idea a week<Arrow /></b><span>A new pair each Monday, by email or feed</span></Link>
+              <Link href="/learn/quiz" prefetch={false}><b>Make a quiz<Arrow /></b><span>For a class or a study group</span></Link>
+            </div>
+          </div>
         </div>
       </nav>
 

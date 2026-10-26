@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app/AppProvider";
+import { useLayer } from "@/components/landing/layer";
 import { deleteMine, publish, saveDraft, similarQuestions } from "@/actions/app/compose";
 import {
   BASIS_HELP, LABELS, SHARE_BASES, SOURCE_TYPES, checkSourceUrl, suggestBasis, suggestIntent, type Basis, type ShareBasis,
@@ -88,6 +89,9 @@ export default function Composer({
     }
     onClose();
   }
+  // Back closes it on touch screens, keeping the draft as closing does
+  // (components/landing/layer.ts); a post that goes out replaces that entry.
+  const leave = useLayer(true, close);
 
   async function submit() {
     if (postOff) return;
@@ -95,8 +99,11 @@ export default function Composer({
     const r = await run(publish({ ...draft, intent: effIntent, basis: effIntent === "asking" ? "asking" : effBasis }));
     setBusy(false);
     if (!r.ok) return;
+    const layered = leave();
     onClose();
-    router.push(r.kind === "question" ? `/q/${r.id}` : "/home");
+    const to = r.kind === "question" ? `/q/${r.id}` : "/home";
+    if (layered) router.replace(to);
+    else router.push(to);
     toast(r.message, async () => {
       const d = await run(deleteMine(r.kind, r.id));
       if (d.ok) { toast("Removed."); router.push("/home"); }
@@ -167,7 +174,7 @@ export default function Composer({
         {isDoc && (
           <div className="srcbox">
             <div style={{ fontWeight: 700, fontSize: 14 }}>Source (needed for Documented)</div>
-            <input className="input" type="text" inputMode="url" aria-label="Source link, ISBN or DOI" placeholder="Link, ISBN or DOI" value={url} onChange={e => setUrl(e.target.value)} />
+            <input className="input" type="text" inputMode="url" autoCapitalize="off" spellCheck={false} aria-label="Source link, ISBN or DOI" placeholder="Link, ISBN or DOI" value={url} onChange={e => setUrl(e.target.value)} />
             <div className="two">
               <select className="input" aria-label="Source type" value={stype} onChange={e => setStype(e.target.value)}>
                 {SOURCE_TYPES.map(s => <option key={s} value={s}>{s}</option>)}

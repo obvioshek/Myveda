@@ -32,8 +32,8 @@ export default function SiteHeader() {
           <nav className="top-nav" aria-label="Site">
             <div className="has-menu"><ChaptersMenu /></div>
             <CurrentLink href="/learn/glossary" section prefetch={false} className="hide-xs">Glossary</CurrentLink>
-            <CurrentLink href="/learn/revision" section prefetch={false} className="hide-sm">Revision</CurrentLink>
             <CurrentLink href="/learn/practice" section prefetch={false} className="hide-nav">Practice<DueBadge /></CurrentLink>
+            <CurrentLink href="/learn/revision" section prefetch={false} className="hide-sm">Revision</CurrentLink>
             <Link href="/#community" prefetch={false} className="hide-sm">Community</Link>
           </nav>
           <SiteSearch />

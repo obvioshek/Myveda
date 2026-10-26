@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLayer } from "@/components/landing/layer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app/AppProvider";
@@ -139,6 +140,7 @@ export default function ProfileView({ pr, tab, topics }: { pr: ProfileData; tab:
 
 function EditProfile({ pr, topics, onClose, onSaved }: { pr: ProfileData; topics: string[]; onClose: () => void; onSaved: () => void }) {
   const { run } = useApp();
+  useLayer(true, onClose);
   const [name, setName] = useState(pr.person.name);
   const [line, setLine] = useState(pr.line ?? "");
   const [ask, setAsk] = useState<string[]>(pr.ask);
@@ -155,7 +157,7 @@ function EditProfile({ pr, topics, onClose, onSaved }: { pr: ProfileData; topics
       }}>
         <div className="dialog-head"><div className="dialog-title" id="editT">Edit profile</div>
           <button className="btn btn-ghost btn-icon" type="button" aria-label="Close" onClick={onClose} style={{ color: "var(--soft)", width: 40, height: 40 }}>×</button></div>
-        <label className="lab">Name<input className="input" value={name} onChange={e => setName(e.target.value)} maxLength={60} /></label>
+        <label className="lab">Name<input className="input" autoComplete="name" value={name} onChange={e => setName(e.target.value)} maxLength={60} /></label>
         <label className="lab">One line about you<input className="input" value={line} onChange={e => setLine(e.target.value)} maxLength={160} /></label>
         <div className="lab">Ask me about (up to 3)
           <div className="wrap-chips">{topics.map(t => <button key={t} type="button" className="pill" aria-pressed={ask.includes(t)} onClick={() => setAsk(tog(ask, t, 3))}>{t}</button>)}</div>

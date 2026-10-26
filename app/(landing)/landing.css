@@ -596,7 +596,9 @@ html .pmenu-panel, html .menu-panel, html .rb-panel { background:
 .srch-x:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
 .srch-h { margin-top: 4px; }
 .srch-list { display: flex; flex-direction: column; border-top: 2px solid var(--color-divider); }
-.srch-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 10px; border-bottom: 2px solid var(--color-divider); cursor: pointer; }
+.srch-list li { border-bottom: 2px solid var(--color-divider); }
+.srch-list li > a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 10px; color: var(--color-text); }
+.srch-list li > a:hover { color: var(--color-text); }
 .srch-list li.on { background: var(--color-accent-100); box-shadow: inset 4px 0 0 var(--color-accent); }
 .srch-t { font-size: var(--fs-body); font-weight: 800; line-height: 22px; }
 .srch-k { align-self: start; padding: 2px 8px; border: 2px solid var(--color-text); font-size: var(--fs-2xs); font-weight: 800; letter-spacing: .06em; line-height: 16px; text-transform: uppercase; white-space: nowrap; }

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { pushLayer, type Layer } from "./layer";
 
 // On phones the header slides away while the reader scrolls down and comes
 // back as soon as they scroll up, so the text gets the screen. It stays put
@@ -8,6 +10,7 @@ import { useEffect } from "react";
 // has keyboard focus (a tap leaves focus there too, but shouldn't pin it).
 // The CSS (landing.css, "The Menu") does the moving.
 export default function HeaderHide() {
+  const router = useRouter();
   useEffect(() => {
     const root = document.documentElement;
     const phone = window.matchMedia("(max-width: 759px)");
@@ -34,29 +37,63 @@ export default function HeaderHide() {
     // The Menu closes on Escape (focus goes back to its button) and on a click
     // anywhere outside it, as the other panels do.
     const menu = () => document.querySelector<HTMLDetailsElement>("details.pmenu[open]");
+    // On touch screens Back closes the Menu (components/landing/layer.ts), and
+    // a page chosen while it is open replaces its history entry, so Back from
+    // that page returns to this one, not to this one with the Menu shut.
+    let layer: Layer | null = null;
+    // Closing takes the Menu's entry off at once, not when the browser's
+    // toggle event comes, so a layer opened by the same tap (search) is added
+    // after it.
+    const shut = (m: HTMLDetailsElement) => {
+      m.open = false;
+      const l = layer;
+      layer = null;
+      l?.close();
+    };
     const onKey = (e: KeyboardEvent) => {
       const m = menu();
       if (e.key !== "Escape" || !m) return;
-      m.open = false;
+      shut(m);
       m.querySelector("summary")?.focus();
     };
     const onDown = (e: MouseEvent) => {
       const m = menu();
-      if (m && !m.contains(e.target as Node)) m.open = false;
+      // A link tapped outside the Menu is handled on click, below.
+      if (m && !m.contains(e.target as Node) && !(e.target as HTMLElement).closest("a[href]")) shut(m);
+    };
+    const onToggle = (e: Event) => {
+      const m = e.target as HTMLElement;
+      if (!(m instanceof HTMLDetailsElement) || !m.matches("details.pmenu")) return;
+      if (m.open && !layer) layer = pushLayer(() => { layer = null; m.open = false; });
+      else if (!m.open && layer) { const l = layer; layer = null; l.close(); }
+    };
+    const onClick = (e: MouseEvent) => {
+      const m = menu();
+      const a = (e.target as HTMLElement).closest<HTMLAnchorElement>("a[href]");
+      if (!m || !a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank" || a.origin !== location.origin) return;
+      const l = layer;
+      layer = null;
+      m.open = false;
+      if (l?.leave()) { e.preventDefault(); router.replace(a.pathname + a.search + a.hash); }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
     phone.addEventListener("change", onScroll);
     document.addEventListener("keydown", onKey);
     document.addEventListener("mousedown", onDown);
+    document.addEventListener("toggle", onToggle, true);
+    document.addEventListener("click", onClick, true);
     return () => {
       window.removeEventListener("scroll", onScroll);
       phone.removeEventListener("change", onScroll);
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("toggle", onToggle, true);
+      document.removeEventListener("click", onClick, true);
+      layer?.close();
       if (frame) cancelAnimationFrame(frame);
       set(false);
     };
-  }, []);
+  }, [router]);
   return null;
 }

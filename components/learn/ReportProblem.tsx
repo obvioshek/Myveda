@@ -5,6 +5,8 @@ import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { reportProblem, type ReportResult } from "@/actions/report";
 import { REPORT_KINDS } from "@/lib/report-kinds";
+import { useRouter } from "next/navigation";
+import { useLayer } from "@/components/landing/layer";
 
 // "Report a problem": a small button that opens a form in a dialog. `what`
 // says what the report is about (a question, a passage's reference); the page
@@ -22,6 +24,10 @@ export default function ReportProblem({ what, label = "Report a problem", kind }
 
   const show = () => { setResult(null); setOpen(true); };
   const close = () => dialog.current?.close();
+  // Back closes it on touch screens; the corrections link then replaces its
+  // history entry (components/landing/layer.ts).
+  const leave = useLayer(open, close);
+  const router = useRouter();
   // Shown as a modal once attached; closing it (Esc, × or Cancel) removes it.
   useEffect(() => {
     if (open && dialog.current && !dialog.current.open) dialog.current.showModal();
@@ -53,7 +59,7 @@ export default function ReportProblem({ what, label = "Report a problem", kind }
           </div>
           {result?.ok ? (
             <div className="rp-done" role="status">
-              <p><b>Thank you.</b> The report has reached the editors. Fixes are listed, with the date, on <Link className="link" href="/learn/corrections" prefetch={false}>the corrections page</Link>.</p>
+              <p><b>Thank you.</b> The report has reached the editors. Fixes are listed, with the date, on <Link className="link" href="/learn/corrections" prefetch={false} onClick={e => { if (leave()) { e.preventDefault(); router.replace("/learn/corrections"); } }}>the corrections page</Link>.</p>
               <button type="button" className="btn btn-secondary" onClick={close}>Close</button>
             </div>
           ) : (
@@ -68,7 +74,7 @@ export default function ReportProblem({ what, label = "Report a problem", kind }
               <label className="rp-lab" htmlFor={`${id}-d`}>What should it say, or what did you notice?</label>
               <textarea id={`${id}-d`} name="details" className="input" required minLength={10} maxLength={2000} rows={4} placeholder="For example: the answer should be B, because… or: Kangle numbers this verse 2.1.4" />
               <label className="rp-lab" htmlFor={`${id}-e`}>Your email, if you&apos;d like a reply <span className="ci-fine">(optional; used only to reply)</span></label>
-              <input id={`${id}-e`} name="email" type="email" className="input" autoComplete="email" maxLength={254} />
+              <input id={`${id}-e`} name="email" type="email" className="input" autoComplete="email" inputMode="email" enterKeyHint="send" maxLength={254} />
               <input className="rp-hp" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               {result && !result.ok && (
                 <p className="rp-err" role="alert">

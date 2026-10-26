@@ -11,6 +11,8 @@ import TextSize from "@/components/learn/TextSize";
 import Theme from "@/components/learn/Theme";
 import ReportProblem from "@/components/learn/ReportProblem";
 
+const YEAR = new Date().getFullYear();
+
 // The frame for the landing site's pages: the site header, the page, and the
 // footer, whose links are the Menu's three groups.
 export default function PageShell({ children, wide = false, note = "Questions about your data:" }: { children: React.ReactNode; wide?: boolean; note?: string }) {
@@ -42,7 +44,9 @@ export default function PageShell({ children, wide = false, note = "Questions ab
           <div className="foot-base">
             <span>{note} <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></span>
             <ReportProblem what="This page" label="Report a problem" />
-            {ABOUT_LINKS.map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+            {/* Home is the brand above; it isn't offered twice. */}
+            {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+            <span>© {YEAR} Veda Verse</span>
             <Shortcuts />
             <span className="foot-prefs" id="display"><TextSize /><Theme /></span>
           </div>

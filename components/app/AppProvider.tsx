@@ -6,6 +6,7 @@ import { takeAsk } from "@/components/learn/ask";
 import { report } from "@/actions/app/marks";
 import { REPORT_REASONS } from "@/lib/app/labels";
 import type { ComposeAudience, DraftInput } from "@/lib/app/types";
+import { useLayer } from "@/components/landing/layer";
 
 type Undo = (() => void | Promise<unknown>) | undefined;
 interface PromptSpec { title: string; body?: string; placeholder?: string; submit: string; multiline?: boolean; initial?: string }
@@ -78,6 +79,10 @@ export default function AppProvider({
     }, 0);
     return () => clearTimeout(t);
   }, []);
+
+  // Back closes these on touch screens, as Escape does (components/landing/layer.ts).
+  useLayer(!!reporting, () => setReporting(null));
+  useLayer(!!promptState, () => { promptState?.resolve(null); setPrompt(null); });
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

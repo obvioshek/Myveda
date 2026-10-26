@@ -16,10 +16,12 @@ export default function ClassicsAdd({ themes }: { themes: { label: string; pairs
   const tabId = (i: number) => `${base}-tab-${i}`;
   const panelId = `${base}-panel`;
 
+  // The arrow keys move between tabs, and Home and End go to the first and last.
   const onKey = (e: React.KeyboardEvent) => {
-    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const end = e.key === "Home" ? 0 : e.key === "End" ? themes.length - 1 : -1;
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft" && end < 0) return;
     e.preventDefault();
-    const next = (at + (e.key === "ArrowRight" ? 1 : themes.length - 1)) % themes.length;
+    const next = end >= 0 ? end : (at + (e.key === "ArrowRight" ? 1 : themes.length - 1)) % themes.length;
     setAt(next);
     document.getElementById(tabId(next))?.focus();
   };

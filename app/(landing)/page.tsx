@@ -27,6 +27,7 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
 
 const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 const count = (n: number) => WORDS[n] ?? String(n);
+const YEAR = new Date().getFullYear();
 
 export default function LandingPage() {
   const base = siteUrl();
@@ -183,6 +184,7 @@ export default function LandingPage() {
             <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
             <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+            <span>© {YEAR} Veda Verse</span>
             <Shortcuts />
             <span className="foot-prefs" id="display"><TextSize /><Theme /></span>
           </div>

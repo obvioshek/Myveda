@@ -9,7 +9,7 @@ import { createPortal } from "react-dom";
 // #keys. The keys themselves live where they work: / in SiteSearch, J and K
 // in ReadingBar, the practice keys in Practice.
 const GROUPS: { title: string; keys: [string[], string][] }[] = [
-  { title: "Anywhere", keys: [[["/"], "Search the site"], [["?"], "This list"], [["Esc"], "Close a menu, panel, card or search"]] },
+  { title: "Anywhere", keys: [[["/"], "Search the site"], [["Ctrl", "K"], "Search, from anywhere (⌘ K on a Mac)"], [["?"], "This list"], [["Esc"], "Close a menu, panel, card or search"]] },
   { title: "Reading a chapter", keys: [[["J"], "Next concept"], [["K"], "Previous concept"]] },
   { title: "Practice questions", keys: [[["1", "4"], "Choose an answer"], [["G"], "Mark it a guess before answering"], [["Enter"], "Next question"]] },
   { title: "Term cards", keys: [[["Space"], "Turn the card"], [["1"], "Not yet"], [["2"], "Knew it"], [["Enter"], "Next card"]] },
@@ -49,6 +49,9 @@ export default function Shortcuts() {
 
   const closed = () => {
     setAsked(false);
+    // Opened from search on a touch screen, it sits on search's history
+    // entry (components/landing/layer.ts): closing steps back off it.
+    if (location.hash === HASH && history.state?.vvFromLayer) { history.back(); return; }
     if (location.hash === HASH) {
       history.replaceState(history.state, "", location.pathname + location.search);
       window.dispatchEvent(new Event(CLEARED));

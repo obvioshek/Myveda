@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { SearchEntry, SearchKind } from "@/content/learn/search";
+import { useLayer } from "@/components/landing/layer";
 
 const LABEL: Record<SearchKind, string> = { page: "Page", setting: "Setting", concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens", text: "Classical text" };
 const RANK: Record<SearchKind, number> = { page: 9, setting: 9, chapter: 8, text: 7, concept: 6, term: 5, passage: 3 };
@@ -62,6 +63,9 @@ export default function SiteSearch() {
       .catch(() => setRows([]));
   }, [rows]);
 
+  // Back closes the search on touch screens (components/landing/layer.ts).
+  const leave = useLayer(open, () => { setOpen(false); setQ(""); setActive(0); });
+
   const hide = useCallback(() => {
     setOpen(false);
     setQ("");
@@ -69,12 +73,15 @@ export default function SiteSearch() {
     button.current?.focus();
   }, []);
 
-  // "/" opens the search from anywhere that isn't a text field.
+  // "/" opens the search from anywhere that isn't a text field, and Ctrl+K
+  // or ⌘K from anywhere at all, as on most sites with a search box.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const el = e.target as HTMLElement | null;
-      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
-      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
+      const slash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey;
+      const k = (e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey;
+      if (!slash && !k) return;
+      if (slash && el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
       e.preventDefault();
       show();
     };
@@ -97,11 +104,18 @@ export default function SiteSearch() {
   const starts = useMemo(() => (rows ? START.map(t => rows.find(r => r.t.toLowerCase() === t.toLowerCase())).filter((r): r is Row => !!r) : []), [rows]);
   const list = q.trim() ? results : starts;
 
+  // A result replaces the search's history entry where it added one, so Back
+  // from the result returns to the page the search was opened on.
   const go = (e: SearchEntry) => {
+    const layered = leave();
     setOpen(false);
     setQ("");
     setActive(0);
-    if (e.h.startsWith("#")) window.location.assign(e.h);
+    if (e.h.startsWith("#")) {
+      if (!layered) { window.location.assign(e.h); return; }
+      window.location.replace(e.h);
+      history.replaceState({ ...history.state, vvFromLayer: 1 }, "");
+    } else if (layered) router.replace(e.h);
     else router.push(e.h);
   };
 
@@ -116,7 +130,7 @@ export default function SiteSearch() {
 
   return (
     <>
-      <button ref={button} type="button" className="srch-btn" aria-label="Search" title="Search (press /)" aria-haspopup="dialog" aria-expanded={open} aria-keyshortcuts="/" onClick={show}>
+      <button ref={button} type="button" className="srch-btn" aria-label="Search" title="Search (/ or Ctrl+K)" aria-haspopup="dialog" aria-expanded={open} aria-keyshortcuts="/ Control+K Meta+K" onClick={show}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
         <span className="srch-lbl">Search</span>
         <kbd className="srch-kbd" aria-hidden="true">/</kbd>
@@ -138,6 +152,9 @@ export default function SiteSearch() {
                 aria-label="Search concepts, terms, texts and pages"
                 placeholder="A concept, term, text or page"
                 autoComplete="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                enterKeyHint="search"
                 value={q}
                 onChange={e => { setQ(e.target.value); setActive(0); }}
               />
@@ -150,17 +167,22 @@ export default function SiteSearch() {
             {!q.trim() && list.length > 0 && <span className="label srch-h">Start with</span>}
             <ul className="srch-list" id={listId} role="listbox" aria-label="Results">
               {list.map((r, i) => (
-                <li key={`${r.k}-${r.h}-${r.t}`} id={`${listId}-${i}`} role="option" aria-selected={i === active} className={i === active ? "on" : undefined} onMouseMove={() => setActive(i)} onClick={() => go(r)}>
-                  <span className="srch-t">{r.t}</span>
-                  <span className="srch-k">{LABEL[r.k]}</span>
-                  <span className="srch-s">{r.s}</span>
+                <li key={`${r.k}-${r.h}-${r.t}`} id={`${listId}-${i}`} role="option" aria-selected={i === active} className={i === active ? "on" : undefined} onMouseMove={() => setActive(i)}>
+                  {/* A real link, so Ctrl- or ⌘-click, a middle click or a long
+                      press opens it in a new tab as anywhere else; a plain
+                      click goes through go(). The arrow keys move the choice. */}
+                  <a href={r.h} tabIndex={-1} onClick={e => { if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; e.preventDefault(); go(r); }}>
+                    <span className="srch-t">{r.t}</span>
+                    <span className="srch-k">{LABEL[r.k]}</span>
+                    <span className="srch-s">{r.s}</span>
+                  </a>
                 </li>
               ))}
             </ul>
             {q.trim() && rows && list.length === 0 && (
               <p className="srch-none">Nothing on “{q.trim()}” yet. Try a shorter word, or <Link className="link" href="/learn" onClick={() => setOpen(false)}>browse the chapters</Link> or <Link className="link" href="/learn/glossary" onClick={() => setOpen(false)}>the glossary</Link>. Still missing? <Link className="link" href="/#community" onClick={() => setOpen(false)}>Ask the community</Link>.</p>
             )}
-            <p className="srch-foot">Press <kbd>/</kbd> to search from any page. <kbd>↑</kbd> <kbd>↓</kbd> to move, <kbd>Enter</kbd> to open, <kbd>Esc</kbd> to close. <kbd>?</kbd> on any page lists every key.</p>
+            <p className="srch-foot">Press <kbd>/</kbd> to search from any page. <kbd>↑</kbd> <kbd>↓</kbd> to move, <kbd>Enter</kbd> to open, <kbd>Esc</kbd> to close. <kbd>Ctrl</kbd> <kbd>K</kbd> works too, and <kbd>?</kbd> on any page lists every key.</p>
           </div>
         </div>
       )}

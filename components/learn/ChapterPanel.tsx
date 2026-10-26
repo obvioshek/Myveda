@@ -56,9 +56,10 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
 
   const onKey = (e: React.KeyboardEvent, i: number) => {
     const step = e.key === "ArrowDown" ? 1 : e.key === "ArrowUp" ? -1 : 0;
-    if (!step) return;
+    const end = e.key === "Home" ? 0 : e.key === "End" ? units.length - 1 : -1;
+    if (!step && end < 0) return;
     e.preventDefault();
-    const j = (i + step + units.length) % units.length;
+    const j = end >= 0 ? end : (i + step + units.length) % units.length;
     setChosen(units[j].id);
     tabs.current[j]?.focus();
   };

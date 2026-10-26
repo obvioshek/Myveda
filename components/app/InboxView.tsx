@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useServerState } from "@/components/app/useServerState";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app/AppProvider";
 import { Avatar } from "@/components/app/bits";
 import Arrow from "@/components/landing/Arrow";
@@ -75,7 +74,6 @@ export default function InboxView({ inbox, filter, filters }: { inbox: InboxData
 
 function Row({ it }: { it: InboxItem }) {
   const { run, toast } = useApp();
-  const router = useRouter();
   const [replying, setReplying] = useState(false);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
@@ -86,9 +84,11 @@ function Row({ it }: { it: InboxItem }) {
       {it.unread && <span className="sr-only">Unread.</span>}
       {it.actor ? <Avatar person={it.actor} /> : <span className="av" aria-hidden="true">{it.initials}</span>}
       <div style={{ flex: 1, minWidth: 0 }} className="stack">
-        <button type="button" className="ib-go" onClick={async () => { if (it.unread) await markRead(it.id); router.push(it.href); }}>
+        {/* A link, so it opens in a new tab or previews on a long press like
+            any notification; opening it marks it read. */}
+        <Link className="ib-go" href={it.href} onClick={() => { if (it.unread) void markRead(it.id); }}>
           {who && <b>{who} </b>}{it.text}
-        </button>
+        </Link>
         {it.preview && <div className="muted" style={{ fontSize: 14, paddingLeft: 10, borderLeft: "2px solid var(--color-divider)", marginTop: 6 }}>{it.preview}</div>}
         <div className="muted" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, marginTop: 6 }}>
           {it.when}
@@ -103,7 +103,7 @@ function Row({ it }: { it: InboxItem }) {
             setBusy(false);
             if (r.ok) { setReplying(false); setText(""); toast("Reply sent."); }
           }}>
-            <input className="input" style={{ flex: 1 }} autoFocus aria-label={`Reply to ${who || "this"}`} placeholder={`Reply to ${who ? who.split(" ")[0] : "this"}…`} value={text} onChange={e => setText(e.target.value)} />
+            <input className="input" style={{ flex: 1 }} autoFocus enterKeyHint="send" aria-label={`Reply to ${who || "this"}`} placeholder={`Reply to ${who ? who.split(" ")[0] : "this"}…`} value={text} onChange={e => setText(e.target.value)} />
             <button className="btn btn-primary" type="submit" disabled={!text.trim() || busy}>Send</button>
           </form>
         )}
