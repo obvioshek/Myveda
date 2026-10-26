@@ -44,8 +44,10 @@ What's left is choosing a host, adding the DNS records and filling in the settin
    | `NEXT_PUBLIC_SUPABASE_URL` | the project URL |
    | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | the anon or publishable key |
    | `NEXT_PUBLIC_SITE_URL` | `https://myvedaverse.in` |
+   | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` | the SMTP settings of a real mailbox (step 4; a forwarding-only address can't send) |
+   | `CRON_SECRET` | any long random string, for example from `openssl rand -hex 32` |
 
-   Don't set `DEMO_LOGIN`. On a live site it would let anyone act as any member.
+   The email settings send the weekly email, its confirmations and problem reports; without them the site still works but sends nothing. `CRON_SECRET` lets the daily cron in `vercel.json` call `/api/weekly`, which sends the weekly email. Vercel passes it along on its own. Don't set `DEMO_LOGIN`. On a live site it would let anyone act as any member.
 3. Deploy. Every push to `master` then deploys automatically, and each production deploy brings the database up to date first (see step 1.3). If the database can't be reached, the deploy fails and the previous version stays live.
 4. Pages run in **Mumbai (bom1)**, next to the database, because `vercel.json` sets the region. A page makes many small queries, so running it on another continent makes every page slow. If the database is elsewhere, change the region there to match.
 
