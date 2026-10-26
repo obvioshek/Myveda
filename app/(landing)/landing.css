@@ -489,7 +489,7 @@ main:focus { outline: none; }
 .top-nav a:hover { color: var(--color-accent-700); }
 /* Where the reader is: a red bar under the header link of the page or the
    part of the site they are on. */
-.top-nav a[aria-current], .cmx-btn.here, .top-nav .cmx-link[aria-current] { box-shadow: inset 0 -3px 0 var(--color-accent); }
+.top-nav > a[aria-current], .cmx-btn.here, .cmx-wrap > .cmx-link[aria-current] { box-shadow: inset 0 -3px 0 var(--color-accent); }
 @media (max-width: 419px) { .top-nav .hide-xs { display: none; } }
 @media (max-width: 999px) { .top-nav .hide-sm { display: none; } }
 @media (max-width: 719px) { .top-nav .hide-nav { display: none; } }
@@ -801,3 +801,75 @@ html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#fff"] { fill
 .sc kbd { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px; border: 2px solid var(--color-text); color: var(--color-text); font: 800 12px/1 var(--font); }
 .sh { width: min(720px, calc(100vw - 32px)); }
 .sh-img { display: block; width: 100%; height: auto; border: 2px solid var(--color-text); background: var(--color-surface); }
+
+/* ---------- Reach (Fitts's law) ----------
+   The time to hit a target grows with its distance and shrinks with its
+   size. So every control is big enough for the hand that uses it: 44px both
+   ways on touch screens, at least 24px with a mouse. Something that
+   shouldn't grow on screen gets a larger hit area that doesn't show: padding
+   cancelled by an equal negative margin, or an empty ::after laid over the
+   space around it. A target at the screen's edge reaches the edge, where a
+   pointer stops by itself and a thumb can't overshoot. On phones the
+   controls used most sit at the foot of the screen (the practice dock, the
+   chapter's reading strip). These rules come last so they win over each
+   part's own size. */
+
+/* The header: each target is as tall as the bar, so the top edge of the
+   screen is part of it, and the brand and the Menu run out to the side
+   edges. */
+.brand, .top-nav > a, .cmx-wrap > .cmx-link, .cmx-wrap > .cmx-btn, .srch-btn, .pmenu > summary { position: relative; }
+.brand::after, .top-nav > a::after, .cmx-wrap > .cmx-link::after, .cmx-wrap > .cmx-btn::after, .srch-btn::after, .pmenu > summary::after { content: ""; position: absolute; top: -16px; bottom: -16px; left: -8px; right: -8px; }
+/* An ::after is placed from inside its element's border, so a 2px border is
+   added to the reach of bordered ones. */
+.brand::after { top: -24px; bottom: -24px; left: calc(-1 * var(--pad)); }
+.srch-btn::after, .pmenu > summary::after { top: -18px; bottom: -18px; left: -10px; right: -10px; }
+.pmenu > summary::after { right: calc(-2px - var(--pad)); }
+@media (max-width: 479px) {
+  .top-nav > a::after, .cmx-wrap > .cmx-link::after, .cmx-wrap > .cmx-btn::after { left: -4px; right: -4px; }
+  .srch-btn::after { left: -6px; right: -6px; }
+  .brand::after { right: -4px; }
+  .pmenu > summary::after { left: -6px; }
+}
+@media (max-width: 379px) { .brand::after { left: -12px; } .pmenu > summary::after { right: -14px; } }
+/* "Back to top" reaches the corner of the screen. */
+.to-top::after { content: ""; position: absolute; top: -8px; left: -8px; right: calc(-2px - max(16px, env(safe-area-inset-right))); bottom: calc(-2px - max(20px, env(safe-area-inset-bottom) + 12px)); }
+
+/* Links in running text: a taller hit area above and below the words. On an
+   inline link the padding moves nothing; on a link laid out as a block the
+   negative margin cancels it. */
+.link, .gt, .lp-about a, .tx-k a, .ch-texts-l a, .rg-where a, .hi-list a, .ch-crumbs a, .gl-ch, .tally a { padding-block: 6px; margin-block: -6px; }
+
+/* Small text controls with a set height grow taller with the same negative
+   margin; links under a card's text grow below it. */
+.rp-btn, .try-again, .th-acts button { min-height: 40px; margin-block: -4px; }
+.foot-base a { min-height: 32px; margin-block: -4px; }
+.more { padding-bottom: 8px; margin-bottom: -8px; }
+.rv-ch-h a, .rv-card h4 a, .fx-concept h4 a, .tx-what > a, .pk-h a { padding-block: 6px; margin-block: -6px; }
+.ch-legend summary, .pr-check { padding-block: 4px; margin-block: -4px; }
+
+/* The footer's columns: every link at least as wide as it is tall (हिंदी is
+   one short word). */
+.foot-col a { min-width: 44px; }
+
+@media (pointer: coarse) {
+  .btn { min-width: 44px; }
+  .srch-btn, .pmenu > summary, .ca-tab, .th-bases button, .ut-all, .foot-col a, .foot-brand, .hi-nav a, .x { min-height: 44px; }
+  /* Joined buttons overlap by their 2px border, so each is drawn 48 wide. */
+  .ts-b { min-width: 48px; min-height: 44px; }
+  .ca-more > summary { min-height: 44px; }
+  .link, .gt, .lp-about a, .tx-k a, .ch-texts-l a, .rg-where a, .hi-list a, .gl-ch, .tally a { padding-block: 14px; margin-block: -14px; }
+  .ch-crumbs a { padding-block: 13px; margin-block: -13px; }
+  .rp-btn, .try-again, .th-acts button { min-width: 44px; min-height: 48px; margin-block: -8px; justify-content: center; }
+  .foot-base a { min-width: 44px; min-height: 44px; margin-block: -10px; justify-content: center; }
+  .hi-nav a { min-width: 44px; justify-content: center; }
+  .more { padding-top: 10px; padding-bottom: 10px; margin-bottom: -10px; }
+  .rp-kind { min-height: 44px; }
+  .rv-ch-h a, .rv-card h4 a, .fx-concept h4 a, .tx-what > a, .pk-h a { padding-block: 12px; margin-block: -12px; }
+  .ch-legend summary, .pr-check, .qz-mode label { padding-block: 11px; margin-block: -11px; }
+}
+/* Phones: a dialog rises from the foot of the screen as a sheet, so its
+   buttons sit where the thumb is, as the community's dialogs do. */
+@media (max-width: 559px) {
+  .rp { width: 100%; max-width: 100%; max-height: 88dvh; margin: auto 0 0; border-width: 2px 0 0; box-shadow: 0 -12px 32px rgb(0 0 0 / .25); }
+  .rp-in { padding-bottom: calc(20px + env(safe-area-inset-bottom)); }
+}

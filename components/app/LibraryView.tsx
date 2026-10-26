@@ -149,7 +149,7 @@ function SavedRow({ item, note, collections, onRemove }: {
       <div className="post-meta" style={{ gap: 8 }}>
         <Chips bases={item.bases} />{item.meta}
         {collections.length > 0 && (
-          <select className="input" aria-label="Add to a collection" value="" style={{ width: "auto", marginLeft: "auto", minHeight: 30, fontSize: 13 }} onChange={async e => {
+          <select className="input input-sm" aria-label="Add to a collection" value="" style={{ width: "auto", marginLeft: "auto" }} onChange={async e => {
             const id = e.target.value; if (!id) return;
             const r = await run(addToCollection(id, item.type, item.id));
             if (r.ok) toast(`Added to ${r.name}.`);
