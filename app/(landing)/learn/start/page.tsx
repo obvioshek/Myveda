@@ -5,6 +5,7 @@ import Arrow from "@/components/landing/Arrow";
 import { Tag } from "@/components/learn/Evidence";
 import { HOW, LEARN_PATH, START_WALK_PATH, deva } from "@/content/learn";
 import { WALK, pairView } from "@/content/learn/readings";
+import { HI_START_PATH } from "@/content/hi";
 
 const title = "Start here: five ideas, read two ways · Veda Verse";
 const description = "New to reading India's classical texts alongside management? Five short steps, each a modern idea beside a passage, showing how to read an old text as a thinker on a present problem.";
@@ -12,7 +13,7 @@ const description = "New to reading India's classical texts alongside management
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: START_WALK_PATH },
+  alternates: { canonical: START_WALK_PATH, languages: { "en-IN": START_WALK_PATH, "hi-IN": HI_START_PATH } },
   openGraph: { title, description, url: START_WALK_PATH, siteName: "Veda Verse", locale: "en_IN", type: "article" },
   twitter: { card: "summary_large_image", title, description },
 };
@@ -30,6 +31,7 @@ export default function StartWalkPage() {
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Start here</span>
         <h1><span>Five ideas,</span><span className="red">read two ways.</span></h1>
         <p className="lede">If you have never read a classical text beside a management idea, begin with these. Each step sets a modern idea next to a passage that met the same problem long ago, and shows one thing about reading the two together. About fifteen minutes.</p>
+        <p className="ci-fine"><Link className="link hi-ui" href={HI_START_PATH} prefetch={false} lang="hi" hrefLang="hi">यह सैर हिंदी में पढ़ें</Link></p>
       </header>
 
       <ol className="wrap wk">

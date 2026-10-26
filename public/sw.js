@@ -18,7 +18,7 @@ const FILES = `vv-files-${VERSION}`;
 const DATA = `vv-data-${VERSION}`;
 const MAX_FILES = 1500;
 
-const isPage = p => p === "/" || p === "/learn" || p.startsWith("/learn/") || p === "/privacy";
+const isPage = p => p === "/" || p === "/learn" || p.startsWith("/learn/") || p === "/hi" || p.startsWith("/hi/") || p === "/privacy";
 const isFile = p => p.startsWith("/_next/static/") || p.startsWith("/fonts/") || p === "/favicon.ico" || /^\/(icon|apple-icon)[^/]*$/.test(p);
 const isData = p => p === "/practice-bank.json" || p === "/search-index.json";
 

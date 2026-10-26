@@ -44,6 +44,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <Link href="/learn/plan" prefetch={false}>Study plan</Link>
             <Link href="/learn/progress" prefetch={false}>Your progress</Link>
             <Link href="/learn/corrections" prefetch={false}>Corrections</Link>
+            <Link className="hi-ui" href="/hi" prefetch={false} lang="hi" hrefLang="hi">हिंदी</Link>
             <Link href="/privacy" prefetch={false}>Privacy</Link>
             <TextSize />
             <Theme />

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import GlossaryList, { type GlossaryItem } from "@/components/learn/GlossaryList";
 import { GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, UNITS, chapterBySlug, chapterPath } from "@/content/learn";
+import { HI_GLOSSARY_PATH } from "@/content/hi";
 import { siteUrl } from "@/lib/site";
 
 const title = "Glossary of management, economics, accounting and finance terms · Veda Verse";
@@ -11,7 +12,7 @@ const description = `${GLOSSARY.length} management, economics, OB, HR, accountin
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: GLOSSARY_PATH },
+  alternates: { canonical: GLOSSARY_PATH, languages: { "en-IN": GLOSSARY_PATH, "hi-IN": HI_GLOSSARY_PATH } },
   openGraph: { title, description, url: GLOSSARY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
@@ -55,7 +56,7 @@ export default function GlossaryPage() {
           <a className="btn btn-ghost" href="/glossary-anki.txt" download>Download for Anki</a>
           <a className="btn btn-ghost" href="/glossary.csv" download>Download as a spreadsheet</a>
         </div>
-        <p className="ci-fine">In Anki, choose File, then Import, and pick the file: each term becomes a card, tagged by unit and chapter.</p>
+        <p className="ci-fine">In Anki, choose File, then Import, and pick the file: each term becomes a card, tagged by unit and chapter. Unit 1&apos;s terms are also <Link className="link" href={HI_GLOSSARY_PATH} prefetch={false}>in Hindi</Link> (<span className="hi-ui" lang="hi">हिंदी में</span>).</p>
       </header>
       <div className="wrap gl">
         <GlossaryList items={items} />
