@@ -115,6 +115,7 @@ export default function LearnIndex() {
                     <span className="ci-pn">{i + 1}</span>
                     <span className="ci-pt"><b>{c.short ?? c.title}</b><span>{p.why}</span></span>
                     <span className="ci-pm">{c.minutes} min<Progress ids={conceptIds(c)} compact /></span>
+                    <Arrow />
                   </Link>
                 </li>
               );
@@ -184,11 +185,11 @@ export default function LearnIndex() {
       <nav className="wrap ci-more" aria-labelledby="ci-more-h">
         <h2 id="ci-more-h" className="h-xs">More ways to study</h2>
         <div className="ci-more-grid">
-          <Link href="/learn/weekly" prefetch={false}><b>One idea a week</b><span>A new pair each Monday, by email or feed</span></Link>
-          <Link href="/learn/apply" prefetch={false}><b>Apply it</b><span>Workplace situations: which idea helps here?</span></Link>
-          <Link href="/learn/map" prefetch={false}><b>The map</b><span>Which chapters build on which</span></Link>
-          <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack</b><span>Your units, your weak spots, printed</span></Link>
-          <Link href="/learn/quiz" prefetch={false}><b>Make a quiz</b><span>For a class or a study group</span></Link>
+          <Link href="/learn/weekly" prefetch={false}><b>One idea a week<Arrow /></b><span>A new pair each Monday, by email or feed</span></Link>
+          <Link href="/learn/apply" prefetch={false}><b>Apply it<Arrow /></b><span>Workplace situations: which idea helps here?</span></Link>
+          <Link href="/learn/map" prefetch={false}><b>The map<Arrow /></b><span>Which chapters build on which</span></Link>
+          <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack<Arrow /></b><span>Your units, your weak spots, printed</span></Link>
+          <Link href="/learn/quiz" prefetch={false}><b>Make a quiz<Arrow /></b><span>For a class or a study group</span></Link>
         </div>
       </nav>
 

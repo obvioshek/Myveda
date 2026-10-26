@@ -226,7 +226,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           <nav className="ch-next" aria-label="Chapters">
             {prev ? (
               <Link href={chapterPath(prev.slug)} className="cell" rel="prev">
-                <span className="label">Previous · Chapter {prev.n}</span><b>{prev.title}</b>
+                <span className="label"><Arrow size={14} dir="back" />Previous · Chapter {prev.n}</span><b>{prev.title}</b>
               </Link>
             ) : <span className="cell ch-none" aria-hidden="true" />}
             {next ? (

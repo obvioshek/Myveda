@@ -87,6 +87,21 @@ a:hover { color: var(--color-accent-600); }
 button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
 :focus { outline: none; }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+/* What can be pressed looks it, in every state (see "Looking pressable" in
+   README.md). A tap is answered on the spot: the browser's own flash is the
+   ink of the system, and anything without a pressed style of its own dims
+   while held. Rules here have no weight, so a part's own styles win. */
+html { -webkit-tap-highlight-color: rgb(32 30 29 / .1); }
+:where(a:not(.btn), button:not(.btn), summary, [role="button"]):active { opacity: .72; }
+summary, label:has(> input[type="checkbox"], > input[type="radio"]), input[type="checkbox"], input[type="radio"], select { cursor: pointer; }
+/* On a red ground the ring turns light, so it still shows. */
+:is(.closing, .try-side.red, .cell.red, .mxp-c) :focus-visible { outline-color: var(--on-accent); }
+/* The arrow on a link or button leans the way it goes when pointed at. */
+.arw { flex: none; transition: transform .24s var(--ease); }
+:is(a, button:not(:disabled)):hover .arw { transform: translateX(3px); }
+:is(a, button:not(:disabled)):hover .arw.down { transform: translateY(3px); }
+:is(a, button:not(:disabled)):hover .arw.back { transform: translateX(-3px); }
+:is(a, button:not(:disabled)):hover .arw.out { transform: translate(2px, -2px); }
 ::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 [lang="sa"], [lang="sa-Latn"] { font-family: var(--font-deva); }
 /* Original-language passages are shown in their own scripts. Devanagari (Sanskrit,
@@ -130,32 +145,41 @@ h2 { max-width: 20ch; margin-left: -.04em; font-size: clamp(32px, 4vw, 52px); li
 .sub { max-width: 58ch; color: var(--body); font-size: var(--fs-body-lg); line-height: 28px; }
 
 /* ---------- Controls ---------- */
-.btn { display: inline-flex; align-items: center; justify-content: flex-start; gap: 16px; min-height: 40px; padding: 0 16px; border: 2px solid transparent; border-radius: 0; background: transparent; color: var(--color-text); font: 800 14px/1.2 var(--font); white-space: nowrap; cursor: pointer; transition: background-color .2s, color .2s; }
+.btn { display: inline-flex; align-items: center; justify-content: flex-start; gap: 16px; min-height: 40px; padding: 0 16px; border: 2px solid transparent; border-radius: 0; background: transparent; color: var(--color-text); font: 800 14px/1.2 var(--font); white-space: nowrap; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
+/* A button that can't be used yet stays still: no hover, no press. */
 .btn:disabled { opacity: .45; cursor: not-allowed; }
 .btn svg:last-child { margin-left: auto; flex: none; transition: transform .24s var(--ease); }
-.btn:hover .arw { transform: translateX(3px); }
-.btn:hover .arw.down { transform: translateY(3px); }
-.btn:active { transform: translateY(1px); }
+.btn:active:not(:disabled) { transform: translateY(1px); }
 .btn-lg { min-height: 48px; padding: 0 20px; font-size: var(--fs-body-sm); }
 .btn-xl { min-height: 56px; padding: 0 24px; font-size: var(--fs-body-sm); }
 .btn.wide { min-width: 240px; }
 .btn-primary, .btn-primary:hover { color: var(--on-accent); }
 .btn-primary { background: var(--color-accent-fill); border-color: var(--color-accent-fill); }
-.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-.btn-primary:active { background: var(--accent-press); border-color: var(--accent-press); }
+.btn-primary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-primary:active:not(:disabled) { background: var(--accent-press); border-color: var(--accent-press); }
 .btn-secondary { border-color: var(--color-text); color: var(--color-text); }
-.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); color: var(--color-text); }
-.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
-.btn-ghost { color: var(--color-accent-700); padding-inline: 8px; }
-.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-secondary:hover:not(:disabled) { background: color-mix(in srgb, var(--color-text) 7%, transparent); color: var(--color-text); }
+.btn-secondary:active:not(:disabled) { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+/* A ghost button has no box, so its label is underlined like a link's,
+   lightly, until it is pointed at. */
+.btn-ghost { color: var(--color-accent-700); padding-inline: 8px; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); }
+.btn-ghost:hover:not(:disabled) { background: color-mix(in srgb, var(--color-accent) 10%, transparent); text-decoration-color: currentColor; }
+.btn-ghost:active:not(:disabled) { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
 .btn-light, .btn-light:hover { color: var(--color-text); }
 .btn-light { background: var(--color-bg); border-color: var(--color-bg); }
 .btn-light:hover { background: var(--color-surface); border-color: var(--color-surface); }
+.btn-light:active { background: color-mix(in srgb, var(--color-text) 16%, var(--color-bg)); }
 .btn-outline-light, .btn-outline-light:hover { color: var(--on-accent); }
 .btn-outline-light { border-color: var(--on-accent); }
 .btn-outline-light:hover { background: var(--accent-hover); }
+.btn-outline-light:active { background: var(--accent-press); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
-.input { width: 100%; min-height: 48px; padding: 0 16px; border: 2px solid var(--color-text); border-radius: 0; background: var(--color-bg); color: var(--color-text); font-size: var(--fs-body); caret-color: var(--color-accent); }
+/* A field looks like somewhere to write: a ruled box that lightens under the
+   pointer and turns red with a ring while typing in it. Its hint is fainter
+   than typed text, so an empty field never looks filled in. */
+.input { width: 100%; min-height: 48px; padding: 0 16px; border: 2px solid var(--color-text); border-radius: 0; background: var(--color-bg); color: var(--color-text); font-size: var(--fs-body); caret-color: var(--color-accent); transition: background-color .2s, border-color .2s; }
+.input:hover:not(:focus) { background: var(--color-neutral-100); }
+.input::placeholder { color: color-mix(in srgb, var(--color-text) 58%, transparent); opacity: 1; }
 .input:focus-visible { outline-offset: 0; border-color: var(--color-accent); }
 textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize: vertical; }
 .tag { display: inline-flex; align-items: center; align-self: flex-start; padding: 3px 10px; background: transparent; font-size: var(--fs-xs); font-weight: 600; line-height: 1.4; letter-spacing: .02em; white-space: nowrap; }
@@ -335,7 +359,7 @@ html[data-text="larger"] .hero h1 { font-size: clamp(36px, 10cqi, 116px); }
 .th-compose { display: flex; flex-direction: column; gap: 10px; padding: 4px clamp(20px, 3vw, 32px) clamp(20px, 3vw, 28px); background: color-mix(in srgb, var(--color-surface) 55%, var(--color-bg)); }
 .th-bases { display: flex; flex-wrap: wrap; gap: 8px; }
 .th-bases button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); font-size: var(--fs-xs); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background-color .2s, color .2s; }
-.th-bases button:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+@media (hover: hover) { .th-bases button:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); } }
 .th-bases button[aria-pressed="true"] { background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
 .th-help { min-height: 24px; color: var(--body); font-size: var(--fs-body-sm); line-height: 22px; }
 .th-cap { color: var(--soft); font-size: var(--fs-ui); line-height: 20px; }
@@ -386,6 +410,7 @@ html[data-text="larger"] .hero h1 { font-size: clamp(36px, 10cqi, 116px); }
 .foot-col ul { display: flex; flex-direction: column; }
 .foot-col a { display: inline-flex; align-items: center; min-height: 40px; color: var(--color-text); font-size: var(--fs-body-sm); }
 .foot-col a:hover { color: var(--color-accent-700); }
+.foot-col a[aria-current] { color: var(--color-accent-700); font-weight: 700; }
 /* The footer of every page: what the site is, then the same three groups as
    the Menu. */
 .foot-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; padding-top: 44px; padding-bottom: 32px; }
@@ -397,6 +422,7 @@ a.foot-brand { color: var(--color-text); }
 .wordmark { display: block; padding: 8px 0 28px; margin-left: -.06em; font-size: clamp(44px, 12vw, 190px); font-weight: 800; line-height: .86; letter-spacing: -.045em; white-space: nowrap; }
 .foot-base { display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 20px 0 32px; border-top: 2px solid var(--color-divider); color: var(--soft); font-size: var(--fs-sm); line-height: 20px; }
 .foot-base a { display: inline-flex; align-items: center; min-height: 24px; color: var(--color-text); }
+.foot-base a:hover { color: var(--color-accent-700); }
 .foot-base .link { display: inline; }
 .foot-prefs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-left: auto; }
 .foot-base .end { margin-left: auto; }
@@ -449,13 +475,21 @@ main:focus { outline: none; }
 .page p, .page li { color: var(--body); font-size: var(--fs-body-lg); line-height: 28px; }
 .page p + p, .page p + ul { margin-top: 12px; }
 .page ul { display: flex; flex-direction: column; gap: 8px; padding-left: 22px; list-style: square; }
-.link { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+/* Links in running text are underlined, so they never rely on colour alone:
+   lightly at rest, fully when pointed at. */
+.link { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); transition: text-decoration-color .2s, color .2s; }
+.link:hover { text-decoration-color: currentColor; }
+.ext .arw { display: inline; margin-left: 3px; vertical-align: -2px; }
+.btn .arw.out { margin-left: -8px; }
 .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 /* Header links are 44px tall, the comfortable size for a finger, whatever
    their text. */
 .top-nav { display: flex; align-items: center; gap: 4px 18px; }
 .top-nav a, .top-nav .cmx-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-text); font-size: var(--fs-ui); font-weight: 600; }
 .top-nav a:hover { color: var(--color-accent-700); }
+/* Where the reader is: a red bar under the header link of the page or the
+   part of the site they are on. */
+.top-nav a[aria-current], .cmx-btn.here, .top-nav .cmx-link[aria-current] { box-shadow: inset 0 -3px 0 var(--color-accent); }
 @media (max-width: 419px) { .top-nav .hide-xs { display: none; } }
 @media (max-width: 999px) { .top-nav .hide-sm { display: none; } }
 @media (max-width: 719px) { .top-nav .hide-nav { display: none; } }
@@ -470,18 +504,29 @@ main:focus { outline: none; }
 .pmenu > summary::-webkit-details-marker { display: none; }
 .pmenu > summary:hover, .pmenu[open] > summary { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
 .pmenu > summary .due-n { margin-left: 0; }
+.pmenu-close, .pmenu[open] .pmenu-open { display: none; }
+.pmenu[open] .pmenu-close { display: inline; }
 /* The word stays for screen readers when only the icon shows. */
 @media (max-width: 1099px) { .pmenu-l { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
 .pmenu-panel { position: absolute; left: 0; right: 0; top: 100%; z-index: 30; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px 48px; max-height: calc(100dvh - 72px); overflow-y: auto; padding: 20px var(--pad) 28px; background: var(--color-bg); border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); box-shadow: var(--shadow-lg); }
 .pmenu:not([open]) .pmenu-panel { display: none; }
+/* A panel taller than the screen shows a shadow at the edge that has more
+   below (or above), so it reads as something to scroll. */
+html .pmenu-panel, html .menu-panel, html .rb-panel { background:
+    linear-gradient(var(--color-bg) 30%, transparent) top / 100% 32px no-repeat local,
+    linear-gradient(transparent, var(--color-bg) 70%) bottom / 100% 32px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, color-mix(in srgb, var(--color-text) 22%, transparent), transparent) top / 100% 12px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, color-mix(in srgb, var(--color-text) 22%, transparent), transparent) bottom / 100% 12px no-repeat scroll,
+    var(--color-bg); }
 .pmenu-col { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .pmenu-cont { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 2px solid var(--color-text); border-left: 6px solid var(--color-accent); color: var(--color-text); }
 .pmenu-cont:hover { background: var(--color-accent-100); color: var(--color-text); }
-.pmenu-cont b { font-size: var(--fs-body); line-height: 22px; }
+.pmenu-cont b { display: flex; align-items: center; gap: 10px; font-size: var(--fs-body); line-height: 22px; }
 @media (min-width: 760px) { .pmenu-cont { grid-column: 1 / -1; align-self: start; justify-self: start; min-width: 320px; } }
 .pmenu-col ul { display: flex; flex-direction: column; }
 .pmenu-col a { display: flex; align-items: center; min-height: 44px; border-bottom: 2px solid color-mix(in srgb, var(--color-text) 10%, transparent); color: var(--color-text); font-size: var(--fs-body); font-weight: 700; }
 .pmenu-col a:hover { color: var(--color-accent-700); }
+.pmenu-col a[aria-current] { padding-left: 12px; box-shadow: inset 4px 0 0 var(--color-accent); color: var(--color-accent-700); }
 @media (min-width: 760px) { .pmenu-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-inline: max(var(--pad), calc((100% - 1320px) / 2 + var(--pad))); } }
 
 /* On phones the header slides away while reading down the page and returns
@@ -520,7 +565,7 @@ main:focus { outline: none; }
 .cmx-more a { padding: 5px 0; color: var(--color-text); font-size: var(--fs-body-sm); font-weight: 800; }
 .cmx-more a:hover { color: var(--color-accent-700); }
 .cmx-main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-.cmx-cont { display: flex; align-items: baseline; gap: 12px; align-self: flex-start; padding: 10px 14px; border: 2px solid var(--color-text); color: var(--color-text); font-size: var(--fs-body-sm); }
+.cmx-cont { display: flex; align-items: center; gap: 12px; align-self: flex-start; padding: 10px 14px; border: 2px solid var(--color-text); color: var(--color-text); font-size: var(--fs-body-sm); }
 .cmx-cont:hover { background: var(--color-accent-100); color: var(--color-text); }
 .cmx-groups { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); gap: 20px 36px; }
 .cmx-group { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
@@ -567,9 +612,11 @@ main:focus { outline: none; }
 .try-choices { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
 .try-c { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 12px 18px; border: 2px solid var(--color-text); background: transparent; color: var(--color-text); font: inherit; font-size: var(--fs-body-lg); font-weight: 700; line-height: 1.3; text-align: left; cursor: pointer; transition: background .2s, color .2s, box-shadow .2s; }
 .try-c b { display: grid; place-items: center; flex: none; width: 34px; height: 34px; border: 2px solid currentColor; font-size: var(--fs-body-sm); }
-.try-c:hover { box-shadow: inset 0 -6px 0 var(--color-accent); }
 .try-c.on { background: var(--color-text); color: var(--color-bg); }
 .try.done .try-c:not(.on) { opacity: .62; }
+/* The other answer stays a choice: under the pointer it comes back to full
+   strength with the red bar. */
+@media (hover: hover) { .try-c:not(.on):hover { box-shadow: inset 0 -6px 0 var(--color-accent); opacity: 1; } }
 .try-hint { color: var(--soft); font-size: var(--fs-ui); }
 .try-sides { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--color-text); }
 .try-side { position: relative; display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 36px); }
@@ -604,7 +651,7 @@ main:focus { outline: none; }
 .ut { display: flex; flex-direction: column; gap: 20px; }
 .ut-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--color-text); }
 .ut-tab { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; padding: 14px 16px 16px; overflow-wrap: break-word; border: 0; border-bottom: 2px solid var(--color-divider); background: transparent; color: var(--color-text); font: inherit; text-align: left; cursor: pointer; transition: background .2s, box-shadow .2s; }
-.ut-tab:hover { background: var(--color-surface); }
+@media (hover: hover) { .ut-tab:not([aria-selected="true"]):hover { background: var(--color-surface); box-shadow: inset 0 6px 0 var(--color-divider); } }
 .ut-tab[aria-selected="true"] { background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 6px 0 var(--color-accent); }
 .ut-n { color: var(--color-accent-700); font-size: var(--fs-xs); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .ut-tab[aria-selected="true"] .ut-n { color: inherit; }
@@ -621,7 +668,7 @@ main:focus { outline: none; }
 .ca { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
 .ca-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 18px; border-top: 2px solid var(--color-text); }
 .ca-tab { min-height: 40px; padding: 8px 14px; border: 2px solid var(--color-divider); background: transparent; color: var(--body); font: 700 14px/1.2 var(--font); cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
-.ca-tab:hover { border-color: var(--color-text); color: var(--color-text); }
+@media (hover: hover) { .ca-tab:hover { border-color: var(--color-text); color: var(--color-text); } }
 .ca-tab[aria-selected="true"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
 .ca-grid { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 16px; }
 .ca-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid var(--color-text); animation: cmx-in .2s var(--ease); }
@@ -639,7 +686,8 @@ main:focus { outline: none; }
 .ca-more > summary { display: flex; align-items: center; gap: 8px; min-height: 40px; color: var(--color-accent-700); font-size: var(--fs-xs); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; list-style: none; cursor: pointer; }
 .ca-more > summary::-webkit-details-marker { display: none; }
 .ca-more > summary::after { content: "+"; color: var(--color-accent); font-size: var(--fs-lead); letter-spacing: 0; }
-.ca-more[open] > summary::after { content: "–"; }
+.ca-more[open] > summary::after { content: "\2212"; }
+.ca-more > summary:hover { color: var(--color-text); }
 .ca-more p { padding-bottom: 6px; color: var(--color-text); font-size: var(--fs-body-sm); line-height: 23px; }
 /* Phones: the themes are one row of chips that scrolls sideways, the way
    filters do in most apps, instead of four stacked rows. */
@@ -666,11 +714,14 @@ html[data-text="larger"] main { zoom: 1.25; }
 /* The chapter's sticky reading strip keeps its size, so it stays in place under the header. */
 html[data-text="large"] main .rb { zoom: calc(1 / 1.12); }
 html[data-text="larger"] main .rb { zoom: .8; }
-.ts { display: inline-flex; align-items: center; gap: 2px; }
-.ts-l { margin-right: 6px; color: var(--soft); font-size: var(--fs-sm); }
-.ts-b { display: grid; place-items: center; min-width: 32px; height: 32px; padding: 0 6px; border: 2px solid transparent; background: transparent; color: var(--color-text); font-family: var(--font); font-weight: 800; line-height: 1; cursor: pointer; }
-.ts-b:hover { border-color: var(--color-divider); }
-.ts-b[aria-pressed="true"] { border-color: var(--color-text); }
+/* A row of joined buttons, the chosen one in ink, like every other choice on
+   the site; the others are ruled boxes, so they read as buttons too. */
+.ts { display: inline-flex; align-items: center; }
+.ts-l { margin-right: 8px; color: var(--soft); font-size: var(--fs-sm); }
+.ts-b { display: grid; place-items: center; min-width: 32px; height: 32px; padding: 0 6px; border: 2px solid var(--color-divider); background: transparent; color: var(--color-text); font-family: var(--font); font-weight: 800; line-height: 1; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
+.ts-b + .ts-b { margin-left: -2px; }
+@media (hover: hover) { .ts-b:not([aria-pressed="true"]):hover { position: relative; border-color: var(--color-text); } }
+.ts-b[aria-pressed="true"] { position: relative; border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); }
 .ts-0 { font-size: var(--fs-sm); } .ts-1 { font-size: var(--fs-body); } .ts-2 { font-size: var(--fs-h5); }
 
 /* ---------- Dark theme, chosen by the reader (components/learn/Theme.tsx) ----------
@@ -695,6 +746,7 @@ html[data-theme="dark"] {
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .5);
   --shadow-lg: 0 12px 32px rgb(0 0 0 / .55);
   color-scheme: dark;
+  -webkit-tap-highlight-color: rgb(238 235 233 / .14);
 }
 html[data-theme="dark"] svg [fill="#201e1d"] { fill: var(--color-text); }
 html[data-theme="dark"] svg [stroke="#201e1d"] { stroke: var(--color-text); }

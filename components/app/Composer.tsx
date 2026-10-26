@@ -121,9 +121,9 @@ export default function Composer({
           style={{ minHeight: 110, fontSize: 16 }}
         />
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-          <div className="seg" role="tablist" aria-label="Asking or sharing">
-            <button type="button" role="tab" aria-selected={effIntent === "asking"} onClick={() => setIntent("asking")}>Asking</button>
-            <button type="button" role="tab" aria-selected={effIntent === "sharing"} onClick={() => setIntent("sharing")}>Sharing</button>
+          <div className="seg" role="group" aria-label="Asking or sharing">
+            <button type="button" aria-pressed={effIntent === "asking"} onClick={() => setIntent("asking")}>Asking</button>
+            <button type="button" aria-pressed={effIntent === "sharing"} onClick={() => setIntent("sharing")}>Sharing</button>
           </div>
           <span className="muted" style={{ fontSize: 13 }}>{!intent && text.trim() ? "Suggested from your text" : ""}</span>
         </div>

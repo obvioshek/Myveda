@@ -5,6 +5,7 @@ import BrandMark from "./Brand";
 import BackToTop from "./BackToTop";
 import SiteHeader from "./SiteHeader";
 import HashLanding from "./HashLanding";
+import CurrentLink from "./CurrentLink";
 import TextSize from "@/components/learn/TextSize";
 import Theme from "@/components/learn/Theme";
 import ReportProblem from "@/components/learn/ReportProblem";
@@ -31,7 +32,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
                 <span id={`ft-${g.id}`} className="label">{g.label}</span>
                 <ul>
                   {g.links.map(l => (
-                    <li key={l.href}><Link href={l.href} prefetch={false} lang={l.lang} hrefLang={l.lang} className={l.lang ? "hi-ui" : undefined}>{l.label}</Link></li>
+                    <li key={l.href}><CurrentLink href={l.href} prefetch={false} lang={l.lang} hrefLang={l.lang} className={l.lang ? "hi-ui" : undefined}>{l.label}</CurrentLink></li>
                   ))}
                 </ul>
               </nav>

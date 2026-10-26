@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { NewTab } from "@/components/landing/Arrow";
 import { useServerState } from "@/components/app/useServerState";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -152,7 +153,7 @@ export default function ReaderView({ r }: { r: ReaderData }) {
         <div className="srccard" style={{ background: "var(--color-surface)" }}>
           <Chip basis="documented" />
           <div style={{ minWidth: 0 }}>
-            <a href={/^https?:/.test(r.noteSource.url) ? r.noteSource.url : undefined} target="_blank" rel="noopener noreferrer nofollow" style={{ fontWeight: 600, fontSize: 14, wordBreak: "break-all" }}>{r.noteSource.url}</a>
+            <a href={/^https?:/.test(r.noteSource.url) ? r.noteSource.url : undefined} target="_blank" rel="noopener noreferrer nofollow" className="ext" style={{ fontWeight: 600, fontSize: 14, wordBreak: "break-all" }}>{r.noteSource.url}<NewTab /></a>
             <div className="muted" style={{ fontSize: 12 }}>{[r.noteSource.type, r.noteSource.locator].filter(Boolean).join(" · ")}</div>
           </div>
         </div>
@@ -173,7 +174,7 @@ export default function ReaderView({ r }: { r: ReaderData }) {
             <div key={s.id} className="src-row">
               <span className="n">{s.n}</span>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontWeight: 600 }}>{s.url ? <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a> : s.title}</div>
+                <div style={{ fontWeight: 600 }}>{s.url ? <a className="ext" href={s.url} target="_blank" rel="noopener noreferrer">{s.title}<NewTab /></a> : s.title}</div>
                 <div className="muted" style={{ fontSize: 13 }}>{[s.type, s.locator].filter(Boolean).join(" · ")}</div>
                 {checking === s.id && (
                   <div className="btns" style={{ gap: 6, marginTop: 8 }}>

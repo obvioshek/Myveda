@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { LAST_HREF_KEY, LAST_KEY, useDevice } from "@/components/landing/device";
 import { useDone } from "./progress";
 import { pendingUnitsLabel } from "@/content/learn/pending";
+import Arrow from "@/components/landing/Arrow";
 
 export type MenuChapter = { slug: string; href: string; n: number; title: string; group: string; ids: string[] };
 export type MenuUnit = { id: string; n: number; short: string; groups: { key: string; label: string }[]; chapters: MenuChapter[] };
@@ -64,8 +65,8 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
 
   return (
     <div className="cmx-wrap">
-      <a className="cmx-link" href={href}>Chapters</a>
-      <button ref={btn} type="button" className={open ? "cmx-btn on" : "cmx-btn"} aria-expanded={open} aria-controls="cmx-panel" onClick={() => setOpen(o => !o)}>
+      <a className="cmx-link" href={href} aria-current={path === href ? "page" : hereUnit ? "true" : undefined}>Chapters</a>
+      <button ref={btn} type="button" className={`cmx-btn${open ? " on" : ""}${path === href || hereUnit ? " here" : ""}`} aria-expanded={open} aria-controls="cmx-panel" onClick={() => setOpen(o => !o)}>
         Chapters
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={open ? "chev up" : "chev"}><path d="m6 9 6 6 6-6" /></svg>
       </button>
@@ -105,7 +106,7 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
           <div className="cmx-main">
             {last && lastHref && (
               <Link className="cmx-cont" href={lastHref} prefetch={false}>
-                <span className="label red">Continue</span><b>{last}</b>
+                <span className="label red">Continue</span><b>{last}</b><Arrow />
               </Link>
             )}
             <div role="tabpanel" id={`cmx-p-${active.id}`} aria-labelledby={`cmx-tab-${active.id}`} className="cmx-groups" style={{ "--cols": Math.min(active.groups.length, 3) } as React.CSSProperties}>

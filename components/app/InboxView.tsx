@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/components/app/AppProvider";
 import { Avatar } from "@/components/app/bits";
+import Arrow from "@/components/landing/Arrow";
 import { markAllRead, markRead, replyFromInbox, setDelivery } from "@/actions/app/inbox";
 import type { InboxData, InboxItem } from "@/lib/app/inbox";
 
@@ -30,9 +31,9 @@ export default function InboxView({ inbox, filter, filters }: { inbox: InboxData
           <div><b>Right away</b><div className="muted" style={{ fontSize: 14 }}>Answers to your questions, people building on your notes, mentions, private thank-yous.</div></div>
           <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: 200 }}><b>In a digest</b><div className="muted" style={{ fontSize: 14 }}>Your circles and the people you follow.</div></div>
-            <div className="seg" role="tablist" aria-label="Digest">
+            <div className="seg" role="group" aria-label="Digest">
               {["Daily", "Weekly"].map(d => (
-                <button key={d} type="button" role="tab" aria-selected={digest === d} onClick={async () => {
+                <button key={d} type="button" aria-pressed={digest === d} onClick={async () => {
                   const prev = digest; setDigest(d);
                   if (!(await run(setDelivery({ digest: d }))).ok) setDigest(prev);
                 }}>{d}</button>
@@ -80,13 +81,12 @@ function Row({ it }: { it: InboxItem }) {
   const [busy, setBusy] = useState(false);
   const who = it.actor?.name ?? "";
   return (
-    <div style={{ display: "flex", gap: 12, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>
+    <div className="ib-row">
       <span aria-hidden="true" style={{ width: 8, height: 8, marginTop: 14, flex: "none", background: it.unread ? "var(--color-accent)" : "transparent" }} />
       {it.unread && <span className="sr-only">Unread.</span>}
       {it.actor ? <Avatar person={it.actor} /> : <span className="av" aria-hidden="true">{it.initials}</span>}
       <div style={{ flex: 1, minWidth: 0 }} className="stack">
-        <button type="button" onClick={async () => { if (it.unread) await markRead(it.id); router.push(it.href); }}
-          style={{ border: "none", background: "none", padding: 0, textAlign: "left", cursor: "pointer", fontSize: 15, lineHeight: 1.4, color: "var(--color-text)" }}>
+        <button type="button" className="ib-go" onClick={async () => { if (it.unread) await markRead(it.id); router.push(it.href); }}>
           {who && <b>{who} </b>}{it.text}
         </button>
         {it.preview && <div className="muted" style={{ fontSize: 14, paddingLeft: 10, borderLeft: "2px solid var(--color-divider)", marginTop: 6 }}>{it.preview}</div>}
@@ -108,6 +108,7 @@ function Row({ it }: { it: InboxItem }) {
           </form>
         )}
       </div>
+      <Arrow />
     </div>
   );
 }

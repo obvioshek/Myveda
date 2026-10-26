@@ -46,15 +46,15 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             <h1>{following ? "Following" : "Today's Edition"}</h1>
             <div className="sub">{following ? "Newest first, since your last visit" : `${editionDate(undefined, tz)} · picked for you, with a reason on each`}</div>
           </div>
-          <div className="seg" role="tablist" aria-label="Feed">
-            <Link role="tab" aria-selected={!following} href="/home">For you</Link>
-            <Link role="tab" aria-selected={following} href="/home?tab=following">Following</Link>
-          </div>
+          <nav className="seg" aria-label="Feed">
+            <Link aria-current={!following ? "page" : undefined} href="/home">For you</Link>
+            <Link aria-current={following ? "page" : undefined} href="/home?tab=following">Following</Link>
+          </nav>
         </div>
-        <div className="seg mob-only" role="tablist" aria-label="Feed" style={{ margin: "8px 0 4px" }}>
-          <Link role="tab" aria-selected={!following} href="/home">For you</Link>
-          <Link role="tab" aria-selected={following} href="/home?tab=following">Following</Link>
-        </div>
+        <nav className="seg mob-only" aria-label="Feed" style={{ margin: "8px 0 4px" }}>
+          <Link aria-current={!following ? "page" : undefined} href="/home">For you</Link>
+          <Link aria-current={following ? "page" : undefined} href="/home?tab=following">Following</Link>
+        </nav>
 
         <h2 className="sr-only">{following ? "New since your last visit" : "Today's picks"}</h2>
         {[...top, ...rest].map((p, i) => (

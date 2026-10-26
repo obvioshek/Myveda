@@ -108,9 +108,9 @@ export default function ProfileView({ pr, tab, topics }: { pr: ProfileData; tab:
         </section>
       )}
 
-      <div className="seg" role="tablist" aria-label="What they have written">
-        {TABS.map(t => <Link key={t} role="tab" aria-selected={tab === t} href={t === "Posts" ? base : `${base}?tab=${t.toLowerCase()}`}>{t}</Link>)}
-      </div>
+      <nav className="seg" aria-label="What they have written">
+        {TABS.map(t => <Link key={t} aria-current={tab === t ? "page" : undefined} href={t === "Posts" ? base : `${base}?tab=${t.toLowerCase()}`}>{t}</Link>)}
+      </nav>
       <div className="stack">
         {list.map(it => (
           <Link key={it.key} className="row" href={it.href}>

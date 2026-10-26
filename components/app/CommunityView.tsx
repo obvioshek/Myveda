@@ -73,11 +73,11 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
           )}
           {c.isHost && <span className="chip rel" style={{ alignSelf: "center" }}>You host this</span>}
         </div>
-        <div className="seg" role="tablist" aria-label="Community sections">
+        <nav className="seg" aria-label="Community sections">
           {TABS.map(t => (
-            <Link key={t} role="tab" aria-selected={tab === t} href={href(t === "Now" ? "" : `?tab=${t.toLowerCase()}`)}>{t}</Link>
+            <Link key={t} aria-current={tab === t ? "page" : undefined} href={href(t === "Now" ? "" : `?tab=${t.toLowerCase()}`)}>{t}</Link>
           ))}
-        </div>
+        </nav>
       </header>
 
       {!c.canRead && tab !== "About" && (

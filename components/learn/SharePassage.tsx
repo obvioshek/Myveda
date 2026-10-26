@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { NewTab } from "@/components/landing/Arrow";
 
 // "Share" on a passage: its image (the modern idea, the classical one, the
 // translation and reference), with the browser's own share sheet where there
@@ -38,8 +39,8 @@ export default function SharePassage({ href, image, title }: { href: string; ima
             <img className="sh-img" src={image} alt={`${title}: the passage as an image`} width={1200} height={630} />
             <div className="btn-row">
               {typeof navigator !== "undefined" && "share" in navigator && <button type="button" className="btn btn-primary" onClick={native}>Share…</button>}
-              <a className="btn btn-secondary" href={`https://wa.me/?text=${encodeURIComponent(`${text}: ${url()}`)}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a className="btn btn-secondary" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url())}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a className="btn btn-secondary" href={`https://wa.me/?text=${encodeURIComponent(`${text}: ${url()}`)}`} target="_blank" rel="noopener noreferrer">WhatsApp<NewTab /></a>
+              <a className="btn btn-secondary" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url())}`} target="_blank" rel="noopener noreferrer">LinkedIn<NewTab /></a>
               <button type="button" className="btn btn-secondary" onClick={copy}>Copy link</button>
               <a className="btn btn-ghost" href={image} download="veda-verse-passage.png">Download image</a>
             </div>

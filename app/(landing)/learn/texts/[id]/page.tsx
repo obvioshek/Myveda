@@ -79,7 +79,7 @@ export default async function TextPage({ params }: { params: Promise<{ id: strin
             <section className="tx-read" aria-labelledby="tx-read-h">
               <h2 id="tx-read-h" className="h-xs">Read it in full</h2>
               {t.read.length > 0 && (
-                <ul>{t.read.map(r => <li key={r.url}><a className="link" href={r.url} target="_blank" rel="noopener noreferrer">{r.label}</a> <span className="ci-fine">(free, opens another site)</span></li>)}</ul>
+                <ul>{t.read.map(r => <li key={r.url}><a className="link ext" href={r.url} target="_blank" rel="noopener noreferrer">{r.label}<Arrow size={14} dir="out" /></a> <span className="ci-fine">(free, opens another site)</span></li>)}</ul>
               )}
               {t.further.length > 0 && (
                 <>
@@ -115,8 +115,8 @@ export default async function TextPage({ params }: { params: Promise<{ id: strin
       <div className="wrap tx-sec">
         <CiteThis title={`${t.name}: what it is, and the passages we quote`} url={`${base}${textPath(t.id)}`} updated={TEXTS_UPDATED} />
         <nav className="grid g2 tx-nav" aria-label="Other texts">
-          {prev ? <Link className="cell" href={textPath(prev.id)} prefetch={false}><span className="label">Older · {prev.when}</span><b>{prev.name}</b></Link> : <Link className="cell" href={TEXTS_PATH} prefetch={false}><span className="label">All the texts</span><b>Back to the timeline</b></Link>}
-          {next ? <Link className="cell" href={textPath(next.id)} prefetch={false}><span className="label">Later · {next.when}</span><b>{next.name}</b></Link> : <Link className="cell" href={TEXTS_PATH} prefetch={false}><span className="label">All the texts</span><b>Back to the timeline</b></Link>}
+          {prev ? <Link className="cell" href={textPath(prev.id)} prefetch={false}><span className="label"><Arrow size={14} dir="back" />Older · {prev.when}</span><b>{prev.name}</b></Link> : <Link className="cell" href={TEXTS_PATH} prefetch={false}><span className="label"><Arrow size={14} dir="back" />All the texts</span><b>Back to the timeline</b></Link>}
+          {next ? <Link className="cell" href={textPath(next.id)} prefetch={false}><span className="label">Later · {next.when}<Arrow size={14} /></span><b>{next.name}</b></Link> : <Link className="cell" href={TEXTS_PATH} prefetch={false}><span className="label"><Arrow size={14} dir="back" />All the texts</span><b>Back to the timeline</b></Link>}
         </nav>
       </div>
     </PageShell>
