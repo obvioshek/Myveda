@@ -50,17 +50,14 @@ export default function GlossaryPage() {
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Reference</span>
         <h1><span>Glossary.</span><span className="red">{GLOSSARY.length} terms, A to Z.</span></h1>
         <div className="split intro">
-          <p className="lede">Short, plain definitions of the terms used across the chapters. Each one links to the chapter that explains the idea in full, with any classical passage that meets it.</p>
+          <p className="lede">Short, plain definitions, each linked to the chapter that explains it.</p>
         </div>
-        <div className="btn-row">
-          <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise them as cards</Link>
-          <a className="btn btn-ghost" href="/glossary-anki.txt" download>Download for Anki</a>
-          <a className="btn btn-ghost" href="/glossary.csv" download>Download as a spreadsheet</a>
-        </div>
-        <p className="ci-fine">In Anki, choose File, then Import, and pick the file: each term becomes a card, tagged by unit and chapter. Unit 1&apos;s terms are also <Link className="link" href={HI_GLOSSARY_PATH} prefetch={false}>in Hindi</Link> (<span className="hi-ui" lang="hi">हिंदी में</span>).</p>
       </header>
       <div className="wrap gl">
         <GlossaryList items={items} />
+      </div>
+      <div className="wrap gl-more">
+        <p className="ci-fine"><Link className="link" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise the terms as cards</Link> · Download them <a className="link" href="/glossary-anki.txt" download>for Anki</a> (File, then Import) or <a className="link" href="/glossary.csv" download>as a spreadsheet</a> · Unit 1&apos;s terms <Link className="link" href={HI_GLOSSARY_PATH} prefetch={false}>in Hindi</Link> (<span className="hi-ui" lang="hi">हिंदी में</span>)</p>
       </div>
     </PageShell>
   );

@@ -1,0 +1,57 @@
+import Link from "next/link";
+import { SITE_MAP } from "@/content/nav";
+import ChaptersMenu from "@/components/learn/ChaptersMenu";
+import SiteSearch from "@/components/learn/SiteSearch";
+import DueBadge from "@/components/learn/DueBadge";
+import MenuContinue from "@/components/learn/MenuContinue";
+import BrandMark from "./Brand";
+import HeaderHide from "./HeaderHide";
+
+const MenuIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></svg>
+);
+
+// The one header, on the home page and every other page of the learning site,
+// so it is learned once. It keeps the five places readers go most; on narrower
+// screens the rest move into the Menu, which lists every page in the same
+// three groups as the footer, starting with the concept to continue.
+export default function SiteHeader() {
+  return (
+    <>
+      <header className="top scrolled">
+        <div className="top-in">
+          <Link className="brand" href="/"><BrandMark />Veda Verse</Link>
+          <nav className="top-nav" aria-label="Site">
+            <div className="has-menu"><ChaptersMenu /></div>
+            <Link href="/learn/glossary" prefetch={false} className="hide-xs">Glossary</Link>
+            <Link href="/learn/revision" prefetch={false} className="hide-sm">Revision</Link>
+            <Link href="/learn/practice" prefetch={false} className="hide-nav">Practice<DueBadge /></Link>
+            <Link href="/#community" prefetch={false} className="hide-sm">Community</Link>
+          </nav>
+          <SiteSearch />
+          <details className="pmenu">
+            <summary><MenuIcon /><span className="pmenu-l">Menu</span><DueBadge /></summary>
+            <div className="pmenu-panel">
+              <MenuContinue />
+              {SITE_MAP.map(g => (
+                <nav key={g.id} className="pmenu-col" aria-labelledby={`pm-${g.id}`}>
+                  <span id={`pm-${g.id}`} className="label red">{g.label}</span>
+                  <ul>
+                    {g.links.map(l => (
+                      <li key={l.href}>
+                        <Link href={l.href} prefetch={false} lang={l.lang} hrefLang={l.lang} className={l.lang ? "hi-ui" : undefined}>
+                          {l.label}{l.href === "/learn/practice" && <DueBadge />}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              ))}
+            </div>
+          </details>
+        </div>
+      </header>
+      <HeaderHide />
+    </>
+  );
+}

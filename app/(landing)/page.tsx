@@ -1,18 +1,17 @@
 import Link from "next/link";
-import Header from "@/components/landing/Header";
+import SiteHeader from "@/components/landing/SiteHeader";
 import BrandMark from "@/components/landing/Brand";
 import ContinueBand from "@/components/landing/ContinueBand";
 import HeroTry from "@/components/landing/HeroTry";
-import QuestionCards from "@/components/landing/QuestionCards";
 import UnitTabs from "@/components/landing/UnitTabs";
 import ClassicsAdd from "@/components/landing/ClassicsAdd";
 import Toast from "@/components/landing/Toast";
-import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import ThreadPreview from "@/components/landing/ThreadPreview";
-import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
+import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL } from "@/content/landing";
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, START_WALK_PATH, UNITS, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
+import { TEXTS, TEXTS_PATH } from "@/content/learn/texts";
 import { THEMES, pairView } from "@/content/learn/readings";
 import { ABOUT_LINKS, SITE_MAP } from "@/content/nav";
 
@@ -31,7 +30,7 @@ export default function LandingPage() {
   const concepts = CHAPTERS.reduce((a, c) => a + c.blocks.length, 0);
   const passages = CHAPTERS.reduce((a, c) => a + c.pairings.length, 0);
   const first = CHAPTERS[0];
-  const cards = QUESTIONS.map(({ chapter, pairing, ...q }) => ({ ...q, href: passageHref(chapter, pairing) }));
+  const languages = new Set(TEXTS.flatMap(t => (t.original ? [t.original.lang] : []))).size;
   const tabs = UNITS.map(u => ({
     id: u.id, n: u.n, title: u.title, blurb: u.blurb,
     chapters: u.chapters.map(c => ({ slug: c.slug, href: chapterPath(c.slug), n: deva(c.n), title: c.title, minutes: c.minutes, ids: conceptIds(c) })),
@@ -64,56 +63,40 @@ export default function LandingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <a className="skip" href="#top">Skip to content</a>
-      <Header chaptersPanel={<ChaptersMenu variant="panel" href="#chapters" />} chaptersList={<ChaptersMenu variant="list" />} />
+      <a className="skip" href="#main">Skip to content</a>
+      <SiteHeader />
 
-      <main id="top">
+      <main id="main" tabIndex={-1}>
         <ContinueBand />
 
         <section className="wrap hero" aria-labelledby="hero-h">
-          <span className="eyebrow"><i className="sq" aria-hidden="true" />A place to read and question management ideas</span>
           <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Each management idea in plain words, set beside what India&apos;s thinkers, from the Arthaśāstra and the Tirukkuṟaḷ to Kabīr and Basavaṇṇa, said about the same problem, in their own words and scripts. Then a community where every answer says how the writer knows.</p>
+            <p className="lede">Each management idea in plain words, beside what India&apos;s classical thinkers said about the same problem, with the source. And a community where every answer says how the writer knows.</p>
             <div className="hero-actions">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
                 <a href="#community" className="btn btn-secondary btn-lg">See the community<Arrow dir="down" /></a>
               </div>
               <ul className="promise" aria-label="What to expect">
-                <li>Free to read</li>
-                <li>No account to read</li>
-                <li>No likes, no follower counts</li>
+                <li>Free, with no account to read</li>
+                <li>No likes or follower counts</li>
               </ul>
             </div>
           </div>
           <HeroTry href={passageHref("principles-of-management", 5)} />
         </section>
 
-        <section className="wrap sec ruled" id="questions" aria-labelledby="q-h">
-          <div className="split end">
-            <div className="sec-copy">
-              <Eyebrow num="१">Questions</Eyebrow>
-              <h2 id="q-h">Some questions are older than management.</h2>
-            </div>
-            <p className="sub">Think about each one first. Then open what a classical text said, with its reference.</p>
-          </div>
-          <QuestionCards cards={cards} />
-        </section>
-
         <section className="wrap sec ruled" id="chapters" aria-labelledby="chapters-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="२">Read</Eyebrow>
+              <Eyebrow num="१">Read</Eyebrow>
               <h2 id="chapters-h">{CHAPTERS.length} chapters, one idea at a time.</h2>
-              <p className="sub">A question to answer first, the idea plainly, a quick check, then the ancient lens. Most concepts take a few minutes.</p>
+              <p className="sub">Each concept takes a few minutes: a question first, the idea in plain words, a quick check, then the ancient lens.</p>
             </div>
             <div className="chap-cta">
-              <div className="btn-row">
-                <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
-                <Link href={GLOSSARY_PATH} className="btn btn-secondary btn-lg">Glossary</Link>
-              </div>
-              <p className="tally">{concepts} concepts · {passages} cited passages · {GLOSSARY.length} glossary terms</p>
+              <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
+              <p className="tally">{concepts} concepts · {passages} cited passages · <Link className="link" href={GLOSSARY_PATH}>{GLOSSARY.length} glossary terms</Link></p>
             </div>
           </div>
           <UnitTabs units={tabs} />
@@ -122,27 +105,22 @@ export default function LandingPage() {
         <section className="wrap sec ruled" id="texts" aria-labelledby="texts-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="३">Read two ways</Eyebrow>
+              <Eyebrow num="२">Read two ways</Eyebrow>
               <h2 id="texts-h">Old texts, read as thinkers, not scripture.</h2>
             </div>
-            <p className="sub">A modern idea beside a passage that met the same problem long before, with what the passage adds and where the two part ways. Pick a theme.</p>
+            <p className="sub">A modern idea beside a passage that met the same problem long before, and what the passage adds. Pick a theme.</p>
           </div>
           <ClassicsAdd themes={themes} />
-          <p className="ca-walk">New to reading the classics like this? <Link className="link" href={START_WALK_PATH}>Take the five-step walk</Link><span>About 15 minutes, from the plain overlap to reading with care.</span></p>
-          <div className="names-row">
-            <span className="label">Quoted so far</span>
-            <ul className="names" aria-label="The texts the chapters quote">
-              {TEXTS.map(t => <li key={t.name}>{t.name}<span>{t.lang}</span></li>)}
-            </ul>
-          </div>
+          <p className="ca-walk">New to reading the classics like this? <Link className="link" href={START_WALK_PATH}>Take the five-step walk</Link><span>About 15 minutes.</span></p>
+          <p className="ca-walk">Quoted so far: {TEXTS.length} texts in {languages} languages. <Link className="link" href={TEXTS_PATH}>Meet the texts</Link></p>
         </section>
 
         <section className="talk" id="community" aria-labelledby="community-h">
           <div className="wrap talk-in">
             <div className="talk-head">
-              <Eyebrow num="४">Community</Eyebrow>
+              <Eyebrow num="३">Community</Eyebrow>
               <h2 id="community-h">Ask, answer, and say how you know.</h2>
-              <p className="sub">The rule the chapters keep, applied to conversation. And no feed to keep up with: notifications wait out the night, from 10 pm to 8 am, and the daily Edition ends.</p>
+              <p className="sub">Every answer says what it rests on. No endless feed: notifications wait out the night, and the daily Edition ends.</p>
             </div>
             <ThreadPreview />
             <div className="talk-notes">
@@ -183,7 +161,7 @@ export default function LandingPage() {
         <div className="wrap foot-nav">
           <div className="foot-about">
             <span className="foot-brand"><BrandMark />Veda Verse</span>
-            <p>Management one clear idea at a time, read beside India&apos;s classical thought, and a community where every answer says how the writer knows. Made by an independent team in India.</p>
+            <p>Management ideas in plain words, read beside India&apos;s classical thought. Made by an independent team in India.</p>
           </div>
           {SITE_MAP.map(g => (
             <nav key={g.id} className="foot-col" aria-labelledby={`ft-${g.id}`}>

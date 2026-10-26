@@ -3,13 +3,12 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
 import ContinueBand from "@/components/landing/ContinueBand";
-import { Meter, Tag } from "@/components/learn/Evidence";
 import Progress from "@/components/learn/Progress";
 import ReviewBand from "@/components/learn/ReviewBand";
 import { SaveOffline } from "@/components/learn/Offline";
-import { TEXTS, TEXTS_PATH, textPath, textsInChapter } from "@/content/learn/texts";
+import { TEXTS, TEXTS_PATH, textPath } from "@/content/learn/texts";
 import { READING_GUIDE_PATH } from "@/content/learn/reading-guide";
-import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, START_WALK_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, evidence, pendingUnits } from "@/content/learn";
+import { CHAPTERS, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, HOW, PLAN_PATH, PRACTICE_PATH, PROGRESS_PATH, START_WALK_PATH, TRANSFER_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, pendingUnits } from "@/content/learn";
 import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
@@ -136,14 +135,6 @@ export default function LearnIndex() {
         </div>
       </section>
 
-      <section className="wrap ci-how" aria-label="How to read a chapter">
-        <div className="grid g3">
-          <div className="cell"><span className="label red">Every concept</span><p>Opens in place: a question before you read, the core idea, a quick check, the Ancient lens where a passage fits, a prompt to reflect on and a one-page summary.</p></div>
-          <div className="cell"><Tag kind="documented" /><p>{HOW.documented}</p></div>
-          <div className="cell"><Tag kind="view" /><p>{HOW.view}</p></div>
-        </div>
-      </section>
-
       {UNITS.map(u => {
         const ids = u.chapters.flatMap(conceptIds);
         const minutes = u.chapters.reduce((a, c) => a + c.minutes, 0);
@@ -171,34 +162,21 @@ export default function LearnIndex() {
               <div key={g.key} className="ci-group">
                 <div className="ci-group-h"><h3>{g.label}</h3><p>{g.blurb}</p></div>
                 <div className="grid g3">
-                  {u.chapters.filter(c => c.group === g.key).map(c => {
-                    const ev = evidence(c);
-                    return (
-                      <Link key={c.slug} href={chapterPath(c.slug)} className="cell ci">
-                        <span className="ci-top"><span className="ci-n" lang="sa" aria-hidden="true">{deva(c.n)}</span><Progress ids={conceptIds(c)} compact /></span>
-                        <h4 className="ci-t">{c.title}</h4>
-                        <p className="ci-s">{c.scope}</p>
-                        <span className="ci-f">
-                          <Meter documented={ev.documented} view={ev.view} />
-                          <span>{c.blocks.length} concepts · {c.minutes} min</span>
-                          <Arrow />
-                        </span>
-                      </Link>
-                    );
-                  })}
+                  {u.chapters.filter(c => c.group === g.key).map(c => (
+                    <Link key={c.slug} href={chapterPath(c.slug)} className="cell ci">
+                      <span className="ci-top"><span className="ci-n" lang="sa" aria-hidden="true">{deva(c.n)}</span><Progress ids={conceptIds(c)} compact /></span>
+                      <h4 className="ci-t">{c.title}</h4>
+                      <p className="ci-s">{c.scope}</p>
+                      <span className="ci-f">
+                        <span>{c.blocks.length} concepts · {c.minutes} min</span>
+                        <Arrow />
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             ))}
 
-            {(() => {
-              const texts = [...new Map(u.chapters.flatMap(c => textsInChapter(c.slug)).map(t => [t.id, t])).values()];
-              return texts.length > 0 && (
-                <p className="ch-texts ch-texts-l ci-texts">
-                  <b>Texts quoted in Unit {u.n}:</b>{" "}
-                  {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}.
-                </p>
-              );
-            })()}
           </section>
         );
       })}

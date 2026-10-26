@@ -61,9 +61,9 @@ function Question({ check, n, rid, mixups, onAnswer }: { check: Check; n: number
 }
 
 // One lesson: a concept taught in five steps, opened in place. The closed card
-// shows the concept and a small question to answer first; opening it reveals the
-// core idea, a quick check, the Ancient lens, a prompt to reflect on, and the
-// whole thing on one page. Answering every check correctly, or pressing "Mark as
+// shows only the concept, so a chapter reads as a short list; opening it starts
+// with a small question to answer first, then the core idea, a quick check, the
+// Ancient lens, a prompt to reflect on, and the whole thing on one page. Answering every check correctly, or pressing "Mark as
 // done", marks the concept done. Notes and progress stay on this device.
 export default function LessonCard({ lesson, index, total, next = null, path, chapter, detail, lens, tool = null, mixups = [] }: {
   lesson: Lesson;
@@ -156,27 +156,26 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
         </div>
         {done && <span className="ls-done"><Tick />Done</span>}
         <button type="button" className="btn btn-secondary ls-open" aria-expanded={open} aria-controls={bodyId} onClick={toggle}>
-          {open ? "Close" : "Open"}<span className="sr-only"> {lesson.name}</span>
+          <span className="ls-open-l">{open ? "Close" : "Open"}</span><span className="sr-only"> {lesson.name}</span>
           <svg className={open ? "chev up" : "chev"} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
         </button>
-      </div>
-
-      <div className="ls-before">
-        <span className="label red">Before you read</span>
-        <p className="ls-bq" id={beforeId}>{lesson.before.q}</p>
-        <div className="choices" role="group" aria-labelledby={beforeId}>
-          {lesson.before.choices.map((c, i) => (
-            <button key={c.label} type="button" className={choice === i ? "btn btn-primary" : "btn btn-secondary"} aria-pressed={choice === i} onClick={() => setChoice(i)}>{c.label}</button>
-          ))}
-        </div>
-        <div className={choice !== null ? "reveal open" : "reveal"} aria-live="polite" inert={choice === null}>
-          <div className="reveal-in"><p className="ls-ba">{choice !== null && lesson.before.choices[choice].reveal}</p></div>
-        </div>
       </div>
 
       <div className={open ? "reveal slow open" : "reveal slow"} id={bodyId} inert={!open}>
         <div className="reveal-in">
           <div className="ls-body">
+            <div className="ls-before">
+              <span className="label red">Before you read</span>
+              <p className="ls-bq" id={beforeId}>{lesson.before.q}</p>
+              <div className="choices" role="group" aria-labelledby={beforeId}>
+                {lesson.before.choices.map((c, i) => (
+                  <button key={c.label} type="button" className={choice === i ? "btn btn-primary" : "btn btn-secondary"} aria-pressed={choice === i} onClick={() => setChoice(i)}>{c.label}</button>
+                ))}
+              </div>
+              <div className={choice !== null ? "reveal open" : "reveal"} aria-live="polite" inert={choice === null}>
+                <div className="reveal-in"><p className="ls-ba">{choice !== null && lesson.before.choices[choice].reveal}</p></div>
+              </div>
+            </div>
             <div className="part-row">
               <Part>Core idea</Part>
               <div className="ls-core" ref={core}>

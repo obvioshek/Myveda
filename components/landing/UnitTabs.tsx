@@ -13,8 +13,10 @@ export type TabUnit = {
 
 // One unit at a time instead of a wall of every chapter. The tab opens on the
 // unit the reader was last in, if this device remembers one; each chapter shows
-// how far the reader has got. Every panel is in the page, so the links are there
-// without JavaScript too.
+// how far the reader has got. A unit shows its first few chapters and a link
+// to the rest on the chapter index, so the home page stays a short overview.
+// Every panel is in the page, so the links are there without JavaScript too.
+const SHOWN = 6;
 export default function UnitTabs({ units }: { units: TabUnit[] }) {
   const last = useDevice(LAST_HREF_KEY);
   const [chosen, setChosen] = useState<string | null>(null);
@@ -58,7 +60,7 @@ export default function UnitTabs({ units }: { units: TabUnit[] }) {
         <div key={u.id} role="tabpanel" id={`ut-panel-${u.id}`} aria-labelledby={`ut-tab-${u.id}`} hidden={active !== u.id} className="ut-panel">
           <p className="ut-blurb">{u.blurb}</p>
           <ol className="grid g3 chap">
-            {u.chapters.map(c => (
+            {u.chapters.slice(0, SHOWN).map(c => (
               <li key={c.slug} className="cell chap-c">
                 <Link href={c.href} prefetch={false}>
                   <span className="chap-n" lang="sa" aria-hidden="true">{c.n}</span>
@@ -68,6 +70,9 @@ export default function UnitTabs({ units }: { units: TabUnit[] }) {
               </li>
             ))}
           </ol>
+          {u.chapters.length > SHOWN && (
+            <Link className="ut-all" href={`/learn#${u.id}`} prefetch={false}>All {u.chapters.length} chapters of Unit {u.n}<Arrow /></Link>
+          )}
         </div>
       ))}
     </div>

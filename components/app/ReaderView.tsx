@@ -100,6 +100,7 @@ export default function ReaderView({ r }: { r: ReaderData }) {
                   if (t && (await run(editMine("note", r.id, t))).ok) toast("Saved. It now says it was edited.");
                 }}>Edit</button>
                 <button className="btn btn-secondary" type="button" onClick={async () => {
+                  if (!window.confirm("Delete this post? It can’t be brought back.")) return;
                   const res = await run(deleteMine("note", r.id));
                   if (res.ok) { toast("Removed."); router.push("/home"); }
                 }}>Delete</button>

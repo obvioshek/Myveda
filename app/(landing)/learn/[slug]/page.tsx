@@ -130,10 +130,10 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <span>About {c.minutes} min</span>
             {ev.total > 0 && (
               <details className="ch-legend">
-                <summary><Meter documented={ev.documented} view={ev.view} />{ev.total} {ev.total === 1 ? "passage" : "passages"}: {ev.documented} documented{ev.view ? `, ${ev.view} interpretive` : ""}<span className="ch-legend-q">What these mean</span></summary>
+                <summary><Meter documented={ev.documented} view={ev.view} />{ev.total} {ev.total === 1 ? "passage" : "passages"} from the classics<span className="ch-legend-q">How they are marked</span></summary>
                 <div className="ch-legend-body">
-                  <p><Tag kind="documented" /> {HOW.documented}</p>
-                  <p><Tag kind="view" /> {HOW.view}</p>
+                  <p><Tag kind="documented" /> {ev.documented} of them. {HOW.documented}</p>
+                  {ev.view > 0 && <p><Tag kind="view" /> {ev.view} of them. {HOW.view}</p>}
                 </div>
               </details>
             )}

@@ -93,7 +93,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           <button className="btn btn-secondary" type="button" onClick={async () => {
             try { await navigator.clipboard.writeText(window.location.href); } catch { /* blocked */ }
             toast("Link copied. Paste it into a circle to share it there.");
-          }}>Share with a circle</button>
+          }}>Copy link</button>
           {q.mine && (
             <button className="btn btn-secondary" type="button" onClick={async () => {
               const t = await prompt({ title: q.context ? "Edit the context" : "Add context", body: "What would help someone answer well?", submit: "Save", multiline: true, initial: q.context ?? "" });
@@ -102,6 +102,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           )}
           {q.mine && q.answers.length === 0 && (
             <button className="btn btn-secondary" type="button" onClick={async () => {
+              if (!window.confirm("Delete this question? It can’t be brought back.")) return;
               if ((await run(deleteMine("question", q.id))).ok) { toast("Question removed."); router.push("/home"); }
             }}>Delete</button>
           )}
