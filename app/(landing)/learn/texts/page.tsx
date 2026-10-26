@@ -44,8 +44,7 @@ export default function TextsPage() {
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Reference</span>
         <h1><span>The texts.</span><span className="red">Where every passage comes from.</span></h1>
         <p className="lede">
-          The chapters quote {total} passages from {TEXTS.length} classical texts and poets, in Sanskrit, Pali, Tamil, Kannada, Telugu, Malayalam, Marathi, Hindi and Bengali.
-          Each page here says what the text is, when and by whom it was composed as far as anyone knows, what is disputed about it, and where to read it, then lists every passage the chapters use from it.
+          The chapters quote {total} passages from {TEXTS.length} classical texts and poets. Each page says what the text is, when it was composed and where to read it, with every passage the chapters use from it.
         </p>
         <div className="btn-row">
           <Link className="btn btn-secondary" href={READING_GUIDE_PATH} prefetch={false}>How to read the names and terms<Arrow /></Link>

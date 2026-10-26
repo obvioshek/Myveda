@@ -7,8 +7,8 @@ import { Tag } from "@/components/learn/Evidence";
 import type { PairView } from "@/content/learn/readings";
 
 // "What the classics add": a few modern ideas, each beside a passage from a
-// classical text, with what the passage adds and where the two part ways. The
-// visitor picks a theme. All of it is the chapters' own text
+// classical text, with what the passage adds; where the two part ways opens on
+// request, to keep each card short. The visitor picks a theme. All of it is the chapters' own text
 // (content/learn/readings.ts); the passages are trusted HTML from there.
 export default function ClassicsAdd({ themes }: { themes: { label: string; pairs: PairView[] }[] }) {
   const [at, setAt] = useState(0);
@@ -40,8 +40,11 @@ export default function ClassicsAdd({ themes }: { themes: { label: string; pairs
             <div className="ca-quote" dangerouslySetInnerHTML={{ __html: p.quote }} />
             <dl className="ca-notes">
               <div><dt>What it adds</dt><dd>{p.adds}</dd></div>
-              <div><dt>Where they differ</dt><dd>{p.differs}</dd></div>
             </dl>
+            <details className="ca-more">
+              <summary>Where they differ</summary>
+              <p>{p.differs}</p>
+            </details>
             <div className="ca-foot">
               <Tag kind={p.kind} />
               <Link className="more" href={p.href} prefetch={false}>{p.concept}, in {p.chapter}<Arrow /></Link>

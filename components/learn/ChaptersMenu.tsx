@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterPath, conceptIds } from "@/content/learn";
 import ChapterPanel, { type MenuUnit } from "./ChapterPanel";
 
@@ -17,29 +16,8 @@ const MENU: MenuUnit[] = UNITS.map(u => ({
   chapters: u.chapters.map(c => ({ slug: c.slug, href: chapterPath(c.slug), n: c.n, title: c.short ?? c.title, group: c.group, ids: conceptIds(c) })),
 }));
 
-// Every chapter, for the header. "panel" is the wide-screen menu (it brings its
-// own "Chapters" control, a link on narrow screens); "list" sits inside the phone
-// menu, a unit at a time.
-export default function ChaptersMenu({ variant, href = LEARN_PATH }: { variant: "panel" | "list"; href?: string }) {
-  if (variant === "panel") return <ChapterPanel units={MENU} href={href} more={MORE} />;
-  return (
-    <div className="cm-list">
-      {MENU.map(u => (
-        <details key={u.id} className="cm-unit">
-          <summary>Unit {u.n} · {u.short}</summary>
-          {u.groups.map(g => (
-            <div key={g.key} className="cm-col">
-              <span className="label red">{g.label}</span>
-              <ol>
-                {u.chapters.filter(c => c.group === g.key).map(c => (
-                  <li key={c.slug}><Link href={c.href} prefetch={false}><span className="cm-n">{c.n}</span><span>{c.title}</span></Link></li>
-                ))}
-              </ol>
-            </div>
-          ))}
-        </details>
-      ))}
-      <div className="cm-col cm-more">{MORE.map(m => <Link key={m.href} href={m.href} prefetch={false}>{m.label}</Link>)}</div>
-    </div>
-  );
+// Every chapter, for the header: the wide-screen menu, which brings its own
+// "Chapters" control (a link to the chapter index on narrow screens).
+export default function ChaptersMenu({ href = LEARN_PATH }: { href?: string }) {
+  return <ChapterPanel units={MENU} href={href} more={MORE} />;
 }

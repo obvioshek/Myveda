@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import PrintButton from "@/components/learn/PrintButton";
-import { FORMULAS_PATH, PRACTICE_PATH, REVISION_PATH, UNITS, chapterPath, deva, lessonsFor } from "@/content/learn";
+import { REVISION_PATH, UNITS, chapterPath, deva, lessonsFor } from "@/content/learn";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Revision sheets: every concept on one page · Veda Verse";
@@ -28,8 +28,6 @@ export default function RevisionPage() {
         <div className="btn-row no-print">
           <PrintButton />
           <Link className="btn btn-secondary" href={`${REVISION_PATH}/pack`} prefetch={false}>Make a pack: your units, your weak spots</Link>
-          <Link className="btn btn-secondary" href={PRACTICE_PATH} prefetch={false}>Test yourself</Link>
-          <Link className="btn btn-secondary" href={FORMULAS_PATH} prefetch={false}>Formula sheet</Link>
           {UNITS.length > 1 && UNITS.map(u => <a key={u.id} className="btn btn-ghost" href={`#${u.id}`}>Unit {u.n}</a>)}
         </div>
       </header>
