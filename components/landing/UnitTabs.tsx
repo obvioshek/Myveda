@@ -24,11 +24,14 @@ export default function UnitTabs({ units }: { units: TabUnit[] }) {
   const active = chosen ?? lastUnit ?? units[0].id;
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
 
+  // The arrow keys move between tabs, and Home and End go to the first and
+  // last, as tabs do everywhere.
   const onKey = (e: React.KeyboardEvent, i: number) => {
     const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-    if (!step) return;
+    const end = e.key === "Home" ? 0 : e.key === "End" ? units.length - 1 : -1;
+    if (!step && end < 0) return;
     e.preventDefault();
-    const j = (i + step + units.length) % units.length;
+    const j = end >= 0 ? end : (i + step + units.length) % units.length;
     setChosen(units[j].id);
     tabs.current[j]?.focus();
   };

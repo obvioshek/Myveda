@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useDevice, writeDevice } from "@/components/landing/device";
+import { NewTab } from "@/components/landing/Arrow";
 import { questionId } from "@/content/learn/question-id";
 import { MAX_QUIZ, PACES, quizHref, type Quiz } from "@/content/learn/quiz-link";
 import type { PracticeBank, PracticeQuestion } from "@/content/learn/practice";
@@ -160,7 +161,7 @@ export default function QuizBuilder() {
               <div className="tl-in qz-link"><input type="text" readOnly value={link} aria-label="Link to the quiz" onFocus={e => e.currentTarget.select()} /></div>
               <div className="btn-row">
                 <button type="button" className="btn btn-primary" onClick={async () => { try { await navigator.clipboard.writeText(link); setCopied(true); } catch { setCopied(false); } }}>{copied ? "Link copied" : "Copy the link"}</button>
-                <a className="btn btn-secondary" href={href} target="_blank" rel="noopener">Try it</a>
+                <a className="btn btn-secondary" href={href} target="_blank" rel="noopener">Try it<NewTab /></a>
                 <button type="button" className="btn btn-secondary" onClick={() => window.print()}>Print with answer key</button>
               </div>
               <p className="ci-fine">Students open the link on their own phone or computer; no sign-in. Their answers stay on their device, and at the end they can copy a line with their score to send you.</p>

@@ -13,7 +13,7 @@ import ReadingBar from "@/components/learn/ReadingBar";
 import ChapterStart from "@/components/learn/ChapterStart";
 import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
-import { CHAPTERS, CONTENT_UPDATED, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import { CHAPTERS, CONTENT_UPDATED, FORMULAS_PATH, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
 import { mixupHints } from "@/content/learn/mixups";
 import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
@@ -21,6 +21,11 @@ import { TEXTS_PATH, textPath, textsInChapter } from "@/content/learn/texts";
 import CiteThis from "@/components/learn/CiteThis";
 import { CORRECTIONS_PATH, correctionsFor } from "@/content/learn/corrections";
 import { siteUrl } from "@/lib/site";
+import { buildFormulaSheet } from "@/content/learn/formulas";
+import { APPLY_PATH, scenariosFor } from "@/content/learn/scenarios";
+
+// How many formulas each chapter has on the formula sheet.
+const FORMULAS = new Map(buildFormulaSheet().flatMap(u => u.chapters).map(c => [c.slug, c.concepts.reduce((a, x) => a + x.items.filter(i => !i.worked).length, 0)]));
 
 export const dynamicParams = false;
 
@@ -67,6 +72,8 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const checks = (lessons ?? []).reduce((a, l) => a + l.check.length, 0);
   const uses = usesIdeasFrom(c.slug);
   const usedIn = ideasUsedIn(c.slug);
+  const formulas = FORMULAS.get(c.slug) ?? 0;
+  const situations = scenariosFor(c.slug);
 
   // Each concept's text with its glossary terms linked, and what the cards
   // need to know about each term linked on this page.
@@ -212,6 +219,18 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             </section>
           )}
 
+          {/* The rest of the site that serves this chapter, found where it is
+              needed rather than only in the Menu. */}
+          <nav className="ci-more ch-also" aria-labelledby="ch-also-h">
+            <h2 id="ch-also-h" className="h-xs">More for this chapter</h2>
+            <div className="ci-more-grid">
+              {lessons && <Link href={`${REVISION_PATH}#rv-${c.slug}`} prefetch={false}><b>Revision sheet<Arrow /></b><span>Every concept on one page, to read or print</span></Link>}
+              {formulas > 0 && <Link href={`${FORMULAS_PATH}#fx-${c.slug}`} prefetch={false}><b>Its formulas<Arrow /></b><span>{formulas === 1 ? "The formula" : `All ${formulas} formulas`} on the formula sheet, with worked examples</span></Link>}
+              {situations.length > 0 && <Link href={`${APPLY_PATH}#${situations[0].id}`} prefetch={false}><b>Apply it at work<Arrow /></b><span>{situations.length === 1 ? "A workplace situation" : `${situations.length} workplace situations`} where its ideas help</span></Link>}
+              {(uses.length > 0 || usedIn.length > 0) && <Link href={`/learn/map#${c.slug}`} prefetch={false}><b>On the map<Arrow /></b><span>The chapters it builds on and leads to</span></Link>}
+            </div>
+          </nav>
+
           {(uses.length > 0 || usedIn.length > 0) && (
             <section id="connects" className="ch-conn" aria-labelledby="connects-h">
               <h2 id="connects-h" className="h-xs">How this chapter connects</h2>
@@ -226,7 +245,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
           <nav className="ch-next" aria-label="Chapters">
             {prev ? (
               <Link href={chapterPath(prev.slug)} className="cell" rel="prev">
-                <span className="label">Previous · Chapter {prev.n}</span><b>{prev.title}</b>
+                <span className="label"><Arrow size={14} dir="back" />Previous · Chapter {prev.n}</span><b>{prev.title}</b>
               </Link>
             ) : <span className="cell ch-none" aria-hidden="true" />}
             {next ? (

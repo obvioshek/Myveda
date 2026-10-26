@@ -7,6 +7,9 @@ import UnitTabs from "@/components/landing/UnitTabs";
 import ClassicsAdd from "@/components/landing/ClassicsAdd";
 import Toast from "@/components/landing/Toast";
 import Arrow from "@/components/landing/Arrow";
+import Shortcuts from "@/components/landing/Shortcuts";
+import TextSize from "@/components/learn/TextSize";
+import Theme from "@/components/learn/Theme";
 import { siteUrl } from "@/lib/site";
 import ThreadPreview from "@/components/landing/ThreadPreview";
 import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL } from "@/content/landing";
@@ -24,6 +27,7 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
 
 const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 const count = (n: number) => WORDS[n] ?? String(n);
+const YEAR = new Date().getFullYear();
 
 export default function LandingPage() {
   const base = siteUrl();
@@ -176,10 +180,18 @@ export default function LandingPage() {
         </div>
         <div className="wrap wordmark-wrap"><span className="wordmark" aria-hidden="true">Veda Verse<span className="red">.</span></span></div>
         <div className="wrap">
+          {/* Three groups, as on every page: the site and how to write to us,
+              about the site, and how it shows on this device. */}
           <div className="foot-base">
-            <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
-            <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-            {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+            <div className="foot-g">
+              <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
+              <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            </div>
+            <div className="foot-g">
+              {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+              <span>© {YEAR} Veda Verse</span>
+            </div>
+            <div className="foot-g foot-prefs" id="display"><Shortcuts /><TextSize /><Theme /></div>
           </div>
         </div>
       </footer>

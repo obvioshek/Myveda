@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
+import Arrow from "@/components/landing/Arrow";
 import MapExplorer, { type MapNode } from "@/components/learn/MapExplorer";
 import { CHAPTERS, UNITS, chapterPath } from "@/content/learn";
 import { allConnections } from "@/content/learn/connections";
@@ -51,7 +52,7 @@ export default function MapPage() {
         <p className="ci-fine">Good chapters to read early: many later ideas lean on them.</p>
         <ol className="grid g2 mx-hubs">
           {hubs.map(({ c, n }) => (
-            <li key={c.slug} className="cell"><Link href={chapterPath(c.slug)} prefetch={false}><span className="label">Unit {c.unitN}</span><b>{c.short ?? c.title}</b><span className="ci-fine">{n} chapters build on it</span></Link></li>
+            <li key={c.slug} className="cell"><Link href={chapterPath(c.slug)} prefetch={false}><span className="label">Unit {c.unitN}</span><b>{c.short ?? c.title}<Arrow /></b><span className="ci-fine">{n} chapters build on it</span></Link></li>
           ))}
         </ol>
       </section>

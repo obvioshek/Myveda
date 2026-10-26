@@ -17,6 +17,7 @@ const PATHS: Record<string, React.ReactNode> = {
   bookmark: (<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />),
   lock: (<><rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>),
   user: (<><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></>),
+  x: (<><path d="M18 6 6 18" /><path d="m6 6 12 12" /></>),
 };
 
 export default function Icon({ name, size = 18, fill = false }: { name: keyof typeof PATHS | string; size?: number; fill?: boolean }) {

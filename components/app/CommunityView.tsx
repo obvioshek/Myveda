@@ -73,11 +73,11 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
           )}
           {c.isHost && <span className="chip rel" style={{ alignSelf: "center" }}>You host this</span>}
         </div>
-        <div className="seg" role="tablist" aria-label="Community sections">
+        <nav className="seg" aria-label="Community sections">
           {TABS.map(t => (
-            <Link key={t} role="tab" aria-selected={tab === t} href={href(t === "Now" ? "" : `?tab=${t.toLowerCase()}`)}>{t}</Link>
+            <Link key={t} aria-current={tab === t ? "page" : undefined} href={href(t === "Now" ? "" : `?tab=${t.toLowerCase()}`)}>{t}</Link>
           ))}
-        </div>
+        </nav>
       </header>
 
       {!c.canRead && tab !== "About" && (
@@ -114,8 +114,8 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
             <Link key={p.id} className="row" href={href(`?thread=${p.id}`)}><b>{p.title}</b><span className="muted"> · {p.subtitle ?? "pinned"}</span></Link>
           ))}
           {thread && (
-            <>
-              <div className="kicker" style={{ marginTop: 6 }}>{thread.title} thread{readOnly ? " · archived, read-only" : ""}</div>
+            <div className="cthread">
+              <div className="kicker">{thread.title} thread{readOnly ? " · archived, read-only" : ""}</div>
               {thread.spoiler && thread.notes.length === 0 ? (
                 <div className="panel" style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
                   <span style={{ flex: 1 }}>Notes here stay hidden until you say you&apos;ve read this far.</span>
@@ -156,7 +156,7 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
               )}
               {!member && !readOnly && c.contributors && <p className="muted" style={{ fontSize: 14 }}>{c.contributors}</p>}
               <LabelKey />
-            </>
+            </div>
           )}
         </>
       )}

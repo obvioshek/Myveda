@@ -9,6 +9,7 @@ import { download } from "./ics";
 import { useDone } from "./progress";
 import MixupHint from "./MixupHint";
 import ReportProblem from "./ReportProblem";
+import { NewTab } from "@/components/landing/Arrow";
 import { useStats, weakChapters } from "./stats";
 import { clearReview, dayWord, dueIds, forget, recordAnswer, recordedLine, today, useReview, type Recorded } from "./review";
 
@@ -493,7 +494,7 @@ function CardRun({ session, setSession }: { session: Session; setSession: (s: Se
                   {answer.line && <p className="pr-line">{answer.line}</p>}
                   <div className="btn-row">
                     <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next card"}</button>
-                    <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Open in the glossary</a>
+                    <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Open in the glossary<NewTab /></a>
                   </div>
                 </>
               )}
@@ -581,14 +582,14 @@ function RecallRun({ session, setSession }: { session: Session; setSession: (s: 
           {!answer ? (
             <div className="btn-row">
               <button type="button" className="btn btn-primary" onClick={finish}>Done: I covered {ticked.size} of {pts.length}</button>
-              <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
+              <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept<NewTab /></a>
             </div>
           ) : (
             <>
               <p className="pr-line">{answer.line}</p>
               <div className="btn-row">
                 <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next concept"}</button>
-                <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
+                <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept<NewTab /></a>
               </div>
             </>
           )}
@@ -691,7 +692,7 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
             {answer?.line && <p className="pr-line">{answer.line}</p>}
             <div className="btn-row">
               <button type="button" className="btn btn-primary pr-next-inline" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next question"}</button>
-              <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
+              <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept<NewTab /></a>
             </div>
             {answer && <p className="ck-rp"><ReportProblem what={`The question “${q.q}” (${q.ct})`} label="Report a problem with this question" /></p>}
           </div>
@@ -930,6 +931,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
           : <button type="button" className="btn btn-primary btn-lg" onClick={onAgain}>{session.kind === "chapter" || session.kind === "set" ? "Take it again" : "Another set"}</button>}
         <button type="button" className="btn btn-secondary btn-lg" onClick={onBack}>Back to practice</button>
       </div>
+      <p className="ci-fine">Everything you have answered adds up on <Link className="link" href="/learn/progress" prefetch={false}>your progress</Link>, with your weak spots. Exam coming? <Link className="link" href="/learn/plan" prefetch={false}>Make a study plan</Link> to the date.</p>
     </div>
   );
 }

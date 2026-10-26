@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { tipLearned } from "./ReadingTip";
 
 export type TipTerm = { term: string; def: string; href: string; chapter: string | null; chapterHref: string | null };
 
@@ -31,6 +32,7 @@ export default function GlossaryTips({ terms }: { terms: Record<string, TipTerm>
         if (!terms[id]) return;
         e.preventDefault();
         setOpen(o => (o?.el === a ? null : { id, el: a }));
+        tipLearned();
         return;
       }
       if (card.current && !card.current.contains(e.target as Node)) setOpen(null);
@@ -78,7 +80,7 @@ export default function GlossaryTips({ terms }: { terms: Record<string, TipTerm>
     >
       <div className="gt-head">
         <span className="label red">Glossary</span>
-        <button type="button" className="gt-x" ref={closeRef} onClick={() => close(true)} aria-label="Close">
+        <button type="button" className="gt-x" ref={closeRef} onClick={() => close(true)} aria-label="Close" title="Close (Esc)">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
       </div>

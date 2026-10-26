@@ -63,6 +63,8 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         <Script id="vv-theme" strategy="beforeInteractive">{THEME_SCRIPT}</Script>
         {/* Opened at a #part: long pages draw every section, so the jump is exact (learn.css). */}
         <Script id="vv-landing" strategy="beforeInteractive">{"if(location.hash.length>1)document.documentElement.dataset.landing='1'"}</Script>
+        {/* Feed readers and browsers find the weekly feed from any page. */}
+        <link rel="alternate" type="application/rss+xml" title="Veda Verse: one idea a week" href="/feed.xml" />
         <NavProgress />
         {children}
         <OfflineSupport />

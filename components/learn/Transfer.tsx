@@ -135,7 +135,7 @@ export default function Transfer() {
           <p className="pr-text">Paste a code from your other device, or open its file. You’ll see what’s in it before anything changes, and nothing already here is lost.</p>
           <label className="tl-f" htmlFor={ids.input}>
             <span className="tr-lab">Code or link</span>
-            <textarea id={ids.input} className="input tr-code" rows={4} value={input} spellCheck={false} placeholder="VV1z.…" onChange={e => { setInput(e.target.value); setPreview(null); setError(null); }} />
+            <textarea id={ids.input} className="input tr-code" rows={4} value={input} spellCheck={false} autoCapitalize="off" autoCorrect="off" autoComplete="off" placeholder="VV1z.…" onChange={e => { setInput(e.target.value); setPreview(null); setError(null); }} />
           </label>
           <div className="btn-row">
             <button type="button" className="btn btn-primary" disabled={!input.trim()} onClick={() => check(input)}>See what’s in it</button>

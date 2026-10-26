@@ -7,14 +7,14 @@ import { useState } from "react";
 // sees why, with the lesson for each option and, where one fits, a passage.
 export type ScenarioOption = { name: string; chapter: string; unitN: number; href: string };
 
-export default function ScenarioCard({ n, title, situation, ask, options, answer, why, passage }: {
-  n: number; title: string; situation: string; ask: string; options: ScenarioOption[]; answer: number; why: string; passage?: React.ReactNode;
+export default function ScenarioCard({ n, sid, title, situation, ask, options, answer, why, passage }: {
+  n: number; sid: string; title: string; situation: string; ask: string; options: ScenarioOption[]; answer: number; why: string; passage?: React.ReactNode;
 }) {
   const [picked, setPicked] = useState<number | null>(null);
   const right = picked === answer;
   const id = `ap-${n}`;
   return (
-    <article className="ap" aria-labelledby={id}>
+    <article className="ap" id={sid} aria-labelledby={id}>
       <span className="label red">Situation {n}</span>
       <h2 id={id} className="h-xs">{title}</h2>
       <p className="ap-sit">{situation}</p>

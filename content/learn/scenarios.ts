@@ -9,6 +9,9 @@ import { chapterBySlug, chapterPath, passageHref } from "./index";
 
 export const APPLY_PATH = "/learn/apply";
 
+/** The situations whose best idea is taught in this chapter. */
+export const scenariosFor = (slug: string) => SCENARIOS.filter(s => s.options[s.answer].slug === slug);
+
 type Option = { slug: string; block: string };
 export type Scenario = {
   id: string;

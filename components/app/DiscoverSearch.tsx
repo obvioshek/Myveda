@@ -36,6 +36,8 @@ export default function DiscoverSearch({ q, doc, empty }: { q: string; doc: bool
         type="search"
         aria-label="Search"
         placeholder="Search questions, posts, people, topics, circles"
+        autoComplete="off"
+        enterKeyHint="search"
         value={value}
         onChange={e => setValue(e.target.value)}
         autoFocus

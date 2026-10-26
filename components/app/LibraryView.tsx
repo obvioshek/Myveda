@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Icon from "@/components/app/Icon";
 import { useApp } from "@/components/app/AppProvider";
 import { useServerState } from "@/components/app/useServerState";
 import { Chip, Chips } from "@/components/app/bits";
@@ -25,9 +26,9 @@ export default function LibraryView({ lib, tab }: { lib: LibraryData; tab: (type
   return (
     <div className="col w720" style={{ gap: 20 }}>
       <h1 className="page-title desk-only">Library</h1>
-      <div className="seg" role="tablist" aria-label="Library">
-        {TABS.map(t => <Link key={t} role="tab" aria-selected={tab === t} href={t === "Saved" ? "/library" : `/library?tab=${t.toLowerCase()}`}>{t}</Link>)}
-      </div>
+      <nav className="seg" aria-label="Library">
+        {TABS.map(t => <Link key={t} aria-current={tab === t ? "page" : undefined} href={t === "Saved" ? "/library" : `/library?tab=${t.toLowerCase()}`}>{t}</Link>)}
+      </nav>
 
       {tab === "Saved" && (
         <>
@@ -71,7 +72,7 @@ export default function LibraryView({ lib, tab }: { lib: LibraryData; tab: (type
               {c.items.map(it => (
                 <div key={`${it.type}:${it.id}`} style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 6 }}>
                   <Link href={it.href} className="clamp2" style={{ flex: 1, fontSize: 14 }}>{it.title}</Link>
-                  <button className="btn btn-ghost act" type="button" aria-label={`Remove from ${c.name}`} style={{ padding: "2px 8px" }} onClick={() => run(removeFromCollection(c.id, it.type, it.id))}>×</button>
+                  <button className="btn btn-ghost act" type="button" aria-label={`Remove from ${c.name}`} style={{ padding: "2px 8px" }} onClick={() => run(removeFromCollection(c.id, it.type, it.id))}><Icon name="x" size={16} /></button>
                 </div>
               ))}
             </div>
@@ -148,7 +149,7 @@ function SavedRow({ item, note, collections, onRemove }: {
       <div className="post-meta" style={{ gap: 8 }}>
         <Chips bases={item.bases} />{item.meta}
         {collections.length > 0 && (
-          <select className="input" aria-label="Add to a collection" value="" style={{ width: "auto", marginLeft: "auto", minHeight: 30, fontSize: 13 }} onChange={async e => {
+          <select className="input input-sm" aria-label="Add to a collection" value="" style={{ width: "auto", marginLeft: "auto" }} onChange={async e => {
             const id = e.target.value; if (!id) return;
             const r = await run(addToCollection(id, item.type, item.id));
             if (r.ok) toast(`Added to ${r.name}.`);

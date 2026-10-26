@@ -53,7 +53,7 @@ export default function FeedPost({ p }: { p: FeedEntry }) {
           <span>· {p.time}</span>
           <span className="chips"><Chips bases={p.bases} /></span>
           <div className="post-more" ref={menuRef}>
-            <button className="btn btn-ghost btn-icon" type="button" aria-label="More options" aria-expanded={menu} aria-haspopup="menu" onClick={() => setMenu(m => !m)} style={{ width: 36, height: 36, color: "var(--soft)" }}>
+            <button className="btn btn-ghost btn-icon post-more-btn" type="button" aria-label="More options" title="More options" aria-expanded={menu} aria-haspopup="menu" onClick={() => setMenu(m => !m)}>
               <Icon name="more" />
             </button>
             {menu && (
@@ -84,7 +84,7 @@ export default function FeedPost({ p }: { p: FeedEntry }) {
         {p.asking && (
           <div className="q-status">
             <span>{p.asking.answered ? "Has answers" : "Open question"}</span>
-            <Link className="btn btn-secondary" href={p.href} style={{ minHeight: 36, padding: "0 12px" }}>{p.asking.answered ? "Read answers" : p.mine ? "See it" : "Answer"}</Link>
+            <Link className="btn btn-secondary btn-sm" href={p.href}>{p.asking.answered ? "Read answers" : p.mine ? "See it" : "Answer"}</Link>
           </div>
         )}
         {p.checked && <div className="checked"><Icon name="check" size={14} />Source checked by readers who usually disagree</div>}

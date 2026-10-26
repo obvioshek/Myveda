@@ -1,16 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+import Arrow from "@/components/landing/Arrow";
 
 // One chapter at the centre: the chapters whose ideas it builds on, and the
-// ones that build on it. Choosing any of them moves it to the centre.
+// ones that build on it. Choosing any of them moves it to the centre. A
+// chapter's own page links to /learn/map#<its slug>, which opens on it.
 export type MapNode = { slug: string; title: string; unitN: number; uses: { slug: string; n: number }[]; usedBy: { slug: string; n: number }[] };
 
+function onHash(change: () => void) {
+  window.addEventListener("hashchange", change);
+  return () => window.removeEventListener("hashchange", change);
+}
+
 export default function MapExplorer({ nodes, start }: { nodes: MapNode[]; start: string }) {
-  const [at, setAt] = useState(start);
+  const [chosen, setAt] = useState<string | null>(null);
+  const hash = useSyncExternalStore(onHash, () => location.hash.slice(1), () => "");
   const by = new Map(nodes.map(n => [n.slug, n]));
-  const c = by.get(at) ?? nodes[0];
+  const c = by.get(chosen ?? (by.has(hash) ? hash : start)) ?? nodes[0];
   const units = [...new Set(nodes.map(n => n.unitN))];
   const side = (list: { slug: string; n: number }[], label: string, empty: string) => (
     <div className="mx-side">
@@ -21,7 +29,7 @@ export default function MapExplorer({ nodes, start }: { nodes: MapNode[]; start:
             const o = by.get(l.slug)!;
             return (
               <li key={l.slug}>
-                <button type="button" onClick={() => setAt(l.slug)}><b>{o.title}</b><span>Unit {o.unitN} · {l.n} shared terms</span></button>
+                <button type="button" onClick={() => setAt(l.slug)}><b>{o.title}</b><span>Unit {o.unitN} · {l.n} shared terms</span><span className="sr-only">Put it at the centre.</span><Arrow /></button>
               </li>
             );
           })}
@@ -33,7 +41,8 @@ export default function MapExplorer({ nodes, start }: { nodes: MapNode[]; start:
     <div className="mxp">
       <div className="tl-f mxp-pick">
         <label htmlFor="mxp-ch">Put a chapter at the centre</label>
-        <div className="tl-in"><select id="mxp-ch" value={c.slug} onChange={e => setAt(e.target.value)}>
+        <span className="tl-hint" id="mxp-hint">Or choose one of its neighbours below.</span>
+        <div className="tl-in"><select id="mxp-ch" aria-describedby="mxp-hint" value={c.slug} onChange={e => setAt(e.target.value)}>
           {units.map(u => (
             <optgroup key={u} label={`Unit ${u}`}>
               {nodes.filter(n => n.unitN === u).map(n => <option key={n.slug} value={n.slug}>{n.title}</option>)}
@@ -46,7 +55,7 @@ export default function MapExplorer({ nodes, start }: { nodes: MapNode[]; start:
         <div className="mxp-c">
           <span className="label red">Unit {c.unitN}</span>
           <b>{c.title}</b>
-          <Link className="more" href={`/learn/${c.slug}`} prefetch={false}>Open the chapter</Link>
+          <Link className="more" href={`/learn/${c.slug}`} prefetch={false}>Open the chapter<Arrow /></Link>
         </div>
         {side(c.usedBy, "Leads to", "No later chapter uses its terms much.")}
       </div>

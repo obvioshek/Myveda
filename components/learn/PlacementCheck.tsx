@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Arrow from "@/components/landing/Arrow";
 import { useRef, useState } from "react";
 import type { CheckQuestion } from "@/content/learn/placement";
 
@@ -87,7 +88,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
                 </li>
               ))}
             </ul>
-            <Link className="more" href={`/learn/practice?unit=${u.id}`} prefetch={false}>Practise this unit</Link>
+            <Link className="more" href={`/learn/practice?unit=${u.id}`} prefetch={false}>Practise this unit<Arrow /></Link>
           </li>
         ))}
       </ol>

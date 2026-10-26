@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { LAST_HREF_KEY, LAST_KEY, useDevice } from "@/components/landing/device";
+import Arrow from "@/components/landing/Arrow";
 
 // At the top of the Menu: the concept the reader opened last, one tap away
 // from any page. Nothing shows until they have opened one.
@@ -12,7 +13,7 @@ export default function MenuContinue() {
   return (
     <Link className="pmenu-cont" href={href} prefetch={false}>
       <span className="label red">Continue</span>
-      <b>{name}</b>
+      <b>{name}<Arrow /></b>
     </Link>
   );
 }

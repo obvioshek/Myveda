@@ -4,15 +4,16 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { SearchEntry, SearchKind } from "@/content/learn/search";
+import { useLayer } from "@/components/landing/layer";
 
-const LABEL: Record<SearchKind, string> = { concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens", text: "Classical text" };
-const RANK: Record<SearchKind, number> = { chapter: 8, text: 7, concept: 6, term: 5, passage: 3 };
+const LABEL: Record<SearchKind, string> = { page: "Page", setting: "Setting", concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens", text: "Classical text" };
+const RANK: Record<SearchKind, number> = { page: 9, setting: 9, chapter: 8, text: 7, concept: 6, term: 5, passage: 3 };
 const START = ["Fayol's 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "SWOT Analysis", "Product Life Cycle"];
 
 // Plain letters only, so "kautilya" finds Kauṭilya and "gita" finds Gītā.
 const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
-type Row = SearchEntry & { ft: string; fs: string; fx: string };
+type Row = SearchEntry & { ft: string; fs: string; fx: string; fa: string };
 
 function rank(rows: Row[], query: string): Row[] {
   const tokens = fold(query).split(/[^a-z0-9]+/).filter(Boolean);
@@ -24,8 +25,10 @@ function rank(rows: Row[], query: string): Row[] {
       let m = 0;
       if (r.ft === tok) m = 120;
       else if (r.ft.startsWith(tok)) m = 100;
+      else if (r.fa.includes(` ${tok} `)) m = 95;
       else if (r.ft.includes(` ${tok}`)) m = 80;
       else if (r.ft.includes(tok)) m = 60;
+      else if (r.fa.includes(` ${tok}`)) m = 50;
       else if (r.fs.includes(tok)) m = 25;
       else if (r.fx.includes(tok)) m = 15;
       if (!m) { total = 0; break; }
@@ -37,8 +40,10 @@ function rank(rows: Row[], query: string): Row[] {
 }
 
 // Search over every concept, glossary term, chapter and classical passage on the
-// site. It sits in the header on every page: the button opens a box, results
-// come as you type, and a result takes you to the right part of the right page.
+// site, and its pages and settings. It sits in the header on every page: the
+// button opens a box, results come as you type, and a result takes you to the
+// right part of the right page. A result that is a part of every page (the
+// display settings, the keyboard shortcuts) opens on the page the reader is on.
 export default function SiteSearch() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -54,9 +59,12 @@ export default function SiteSearch() {
     if (rows) return;
     fetch("/search-index.json")
       .then(r => r.json())
-      .then((all: SearchEntry[]) => setRows(all.map(e => ({ ...e, ft: fold(e.t), fs: fold(e.s), fx: fold(e.x) }))))
+      .then((all: SearchEntry[]) => setRows(all.map(e => ({ ...e, ft: fold(e.t), fs: fold(e.s), fx: fold(e.x), fa: ` ${fold(e.a ?? "")} ` }))))
       .catch(() => setRows([]));
   }, [rows]);
+
+  // Back closes the search on touch screens (components/landing/layer.ts).
+  const leave = useLayer(open, () => { setOpen(false); setQ(""); setActive(0); });
 
   const hide = useCallback(() => {
     setOpen(false);
@@ -65,12 +73,15 @@ export default function SiteSearch() {
     button.current?.focus();
   }, []);
 
-  // "/" opens the search from anywhere that isn't a text field.
+  // "/" opens the search from anywhere that isn't a text field, and Ctrl+K
+  // or ⌘K from anywhere at all, as on most sites with a search box.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const el = e.target as HTMLElement | null;
-      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
-      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
+      const slash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey;
+      const k = (e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey;
+      if (!slash && !k) return;
+      if (slash && el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
       e.preventDefault();
       show();
     };
@@ -86,15 +97,26 @@ export default function SiteSearch() {
     return () => { document.documentElement.style.overflow = prev; };
   }, [open]);
 
+  // An example search: fill it in and keep typing where it left off.
+  const tryQ = (t: string) => { setQ(t); setActive(0); input.current?.focus(); };
+
   const results = useMemo(() => (rows ? rank(rows, q) : []), [rows, q]);
   const starts = useMemo(() => (rows ? START.map(t => rows.find(r => r.t.toLowerCase() === t.toLowerCase())).filter((r): r is Row => !!r) : []), [rows]);
   const list = q.trim() ? results : starts;
 
+  // A result replaces the search's history entry where it added one, so Back
+  // from the result returns to the page the search was opened on.
   const go = (e: SearchEntry) => {
+    const layered = leave();
     setOpen(false);
     setQ("");
     setActive(0);
-    router.push(e.h);
+    if (e.h.startsWith("#")) {
+      if (!layered) { window.location.assign(e.h); return; }
+      window.location.replace(e.h);
+      history.replaceState({ ...history.state, vvFromLayer: 1 }, "");
+    } else if (layered) router.replace(e.h);
+    else router.push(e.h);
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -108,7 +130,7 @@ export default function SiteSearch() {
 
   return (
     <>
-      <button ref={button} type="button" className="srch-btn" aria-label="Search" aria-haspopup="dialog" aria-expanded={open} aria-keyshortcuts="/" onClick={show}>
+      <button ref={button} type="button" className="srch-btn" aria-label="Search" title="Search (/ or Ctrl+K)" aria-haspopup="dialog" aria-expanded={open} aria-keyshortcuts="/ Control+K Meta+K" onClick={show}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
         <span className="srch-lbl">Search</span>
         <kbd className="srch-kbd" aria-hidden="true">/</kbd>
@@ -127,31 +149,40 @@ export default function SiteSearch() {
                 aria-expanded={list.length > 0}
                 aria-controls={listId}
                 aria-activedescendant={list[active] ? `${listId}-${active}` : undefined}
-                aria-label="Search any concept"
-                placeholder="Search a concept, term or chapter"
+                aria-label="Search concepts, terms, texts and pages"
+                placeholder="A concept, term, text or page"
                 autoComplete="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                enterKeyHint="search"
                 value={q}
                 onChange={e => { setQ(e.target.value); setActive(0); }}
               />
-              <button type="button" className="srch-x" aria-label="Close search" onClick={hide}>
+              <button type="button" className="srch-x" aria-label="Close search" title="Close (Esc)" onClick={hide}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
               </button>
             </div>
             <span className="sr-only" role="status" aria-live="polite">{status}</span>
+            {!q.trim() && rows && <p className="srch-tip">Finds the chapters, every concept and term, the classical texts, and the site&apos;s own pages: try <button type="button" className="srch-try" onClick={() => tryQ("formula sheet")}>formula sheet</button>, <button type="button" className="srch-try" onClick={() => tryQ("mock test")}>mock test</button> or <button type="button" className="srch-try" onClick={() => tryQ("dark mode")}>dark mode</button>.</p>}
             {!q.trim() && list.length > 0 && <span className="label srch-h">Start with</span>}
             <ul className="srch-list" id={listId} role="listbox" aria-label="Results">
               {list.map((r, i) => (
-                <li key={`${r.k}-${r.h}-${r.t}`} id={`${listId}-${i}`} role="option" aria-selected={i === active} className={i === active ? "on" : undefined} onMouseMove={() => setActive(i)} onClick={() => go(r)}>
-                  <span className="srch-t">{r.t}</span>
-                  <span className="srch-k">{LABEL[r.k]}</span>
-                  <span className="srch-s">{r.s}</span>
+                <li key={`${r.k}-${r.h}-${r.t}`} id={`${listId}-${i}`} role="option" aria-selected={i === active} className={i === active ? "on" : undefined} onMouseMove={() => setActive(i)}>
+                  {/* A real link, so Ctrl- or ⌘-click, a middle click or a long
+                      press opens it in a new tab as anywhere else; a plain
+                      click goes through go(). The arrow keys move the choice. */}
+                  <a href={r.h} tabIndex={-1} onClick={e => { if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; e.preventDefault(); go(r); }}>
+                    <span className="srch-t">{r.t}</span>
+                    <span className="srch-k">{LABEL[r.k]}</span>
+                    <span className="srch-s">{r.s}</span>
+                  </a>
                 </li>
               ))}
             </ul>
             {q.trim() && rows && list.length === 0 && (
-              <p className="srch-none">Nothing on “{q.trim()}” yet. <Link href="/learn" onClick={() => setOpen(false)}>Browse all chapters</Link>, or try a shorter word.</p>
+              <p className="srch-none">Nothing on “{q.trim()}” yet. Try a shorter word, or <Link className="link" href="/learn" onClick={() => setOpen(false)}>browse the chapters</Link> or <Link className="link" href="/learn/glossary" onClick={() => setOpen(false)}>the glossary</Link>. Still missing? <Link className="link" href="/#community" onClick={() => setOpen(false)}>Ask the community</Link>.</p>
             )}
-            <p className="srch-foot">Press <kbd>/</kbd> to search from any page. <kbd>↑</kbd> <kbd>↓</kbd> to move, <kbd>Enter</kbd> to open, <kbd>Esc</kbd> to close.</p>
+            <p className="srch-foot">Press <kbd>/</kbd> to search from any page. <kbd>↑</kbd> <kbd>↓</kbd> to move, <kbd>Enter</kbd> to open, <kbd>Esc</kbd> to close. <kbd>Ctrl</kbd> <kbd>K</kbd> works too, and <kbd>?</kbd> on any page lists every key.</p>
           </div>
         </div>
       )}

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import { QUIZ_PATH } from "@/content/learn/quiz-link";
 import Practice from "@/components/learn/Practice";
-import { GLOSSARY, PRACTICE_PATH, UNITS, lessonsFor } from "@/content/learn";
+import { FORMULAS_PATH, GLOSSARY, PLAN_PATH, PRACTICE_PATH, UNITS, lessonsFor } from "@/content/learn";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const questions = UNITS.flatMap(u => u.chapters).reduce((a, c) => a + (lessonsFor(c.slug) ?? []).reduce((b, l) => b + l.check.length, 0), 0);
@@ -28,7 +28,7 @@ export default function PracticePage() {
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Practice</span>
         <h1><span>Answer, then remember.</span><span className="red">The ones you miss come back.</span></h1>
         <p className="lede">{questions.toLocaleString("en-IN")} questions from the chapters, each with the reason behind its answer, and {GLOSSARY.length} glossary cards. The ones you miss come back on the day they are due.</p>
-        <p className="ci-fine">Teaching a class? <Link className="link" href={QUIZ_PATH} prefetch={false}>Make a quiz from these questions</Link> and share one link.</p>
+        <p className="ci-fine">Exam coming? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> to the date, and keep the <Link className="link" href={FORMULAS_PATH} prefetch={false}>formula sheet</Link> open. Teaching a class? <Link className="link" href={QUIZ_PATH} prefetch={false}>Make a quiz from these questions</Link> and share one link.</p>
       </header>
       <Practice />
     </PageShell>

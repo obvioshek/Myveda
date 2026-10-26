@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { NewTab } from "@/components/landing/Arrow";
 import { useServerState } from "@/components/app/useServerState";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -157,7 +158,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           </div>
           {effBasis === "documented" && (
             <div className="two">
-              <input className="input" aria-label="Source link, ISBN or DOI (optional)" placeholder="Source: link, ISBN or DOI" value={url} onChange={e => setUrl(e.target.value)} />
+              <input className="input" type="text" inputMode="url" autoCapitalize="off" spellCheck={false} aria-label="Source link, ISBN or DOI (optional)" placeholder="Source: link, ISBN or DOI" value={url} onChange={e => setUrl(e.target.value)} />
               <select className="input" aria-label="Source type" value={stype} onChange={e => setStype(e.target.value)}>
                 {SOURCE_TYPES.map(s => <option key={s}>{s}</option>)}
               </select>
@@ -193,7 +194,7 @@ function AnswerCard({ a, canAccept, askerFirst, onAccept, onBuild }: {
       <p className="text">{a.body}</p>
       {a.source && (
         <div className="muted" style={{ fontSize: 13 }}>
-          Source: {/^https?:/.test(a.source.url) ? <a href={a.source.url} target="_blank" rel="noopener noreferrer nofollow">{a.source.url}</a> : a.source.url}
+          Source: {/^https?:/.test(a.source.url) ? <a className="ext" href={a.source.url} target="_blank" rel="noopener noreferrer nofollow">{a.source.url}<NewTab /></a> : a.source.url}
           {a.source.type ? ` · ${a.source.type}` : ""}{a.source.locator ? ` · ${a.source.locator}` : ""}
         </div>
       )}
