@@ -34,7 +34,7 @@ export default function SharePassage({ href, image, title }: { href: string; ima
       {open && createPortal(
         <dialog ref={dialog} className="rp sh" aria-label="Share this passage" onClose={() => setOpen(false)} onClick={e => { if (e.target === dialog.current) close(); }}>
           <div className="rp-in">
-            <div className="rp-head"><h2 className="h-xs">Share this passage</h2><button type="button" className="rp-x" aria-label="Close" onClick={close}>×</button></div>
+            <div className="rp-head"><h2 className="h-xs">Share this passage</h2><button type="button" className="rp-x" aria-label="Close" title="Close (Esc)" onClick={close}>×</button></div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="sh-img" src={image} alt={`${title}: the passage as an image`} width={1200} height={630} />
             <div className="btn-row">

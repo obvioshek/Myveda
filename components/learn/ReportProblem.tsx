@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { reportProblem, type ReportResult } from "@/actions/report";
@@ -48,11 +49,11 @@ export default function ReportProblem({ what, label = "Report a problem", kind }
         <div className="rp-in">
           <div className="rp-head">
             <h2 id={`${id}-h`} className="h-xs">Report a problem</h2>
-            <button type="button" className="rp-x" aria-label="Close" onClick={close}>×</button>
+            <button type="button" className="rp-x" aria-label="Close" title="Close (Esc)" onClick={close}>×</button>
           </div>
           {result?.ok ? (
             <div className="rp-done" role="status">
-              <p><b>Thank you.</b> The report has reached the editors. Fixes are listed on the corrections page, with the date.</p>
+              <p><b>Thank you.</b> The report has reached the editors. Fixes are listed, with the date, on <Link className="link" href="/learn/corrections" prefetch={false}>the corrections page</Link>.</p>
               <button type="button" className="btn btn-secondary" onClick={close}>Close</button>
             </div>
           ) : (

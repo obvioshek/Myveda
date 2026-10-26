@@ -7,6 +7,8 @@ import MenuContinue from "@/components/learn/MenuContinue";
 import BrandMark from "./Brand";
 import HeaderHide from "./HeaderHide";
 import CurrentLink from "./CurrentLink";
+import TextSize from "@/components/learn/TextSize";
+import Theme from "@/components/learn/Theme";
 
 // Three lines while the Menu is closed, a cross while it is open: the button
 // shows what pressing it will do.
@@ -19,7 +21,8 @@ const MenuIcon = () => (
 // The one header, on the home page and every other page of the learning site,
 // so it is learned once. It keeps the five places readers go most; on narrower
 // screens the rest move into the Menu, which lists every page in the same
-// three groups as the footer, starting with the concept to continue.
+// three groups as the footer, starting with the concept to continue and
+// ending with text size and theme, where settings are looked for.
 export default function SiteHeader() {
   return (
     <>
@@ -35,7 +38,7 @@ export default function SiteHeader() {
           </nav>
           <SiteSearch />
           <details className="pmenu">
-            <summary><MenuIcon /><span className="pmenu-l">Menu</span><DueBadge /></summary>
+            <summary title="Menu: every page, and text size and theme"><MenuIcon /><span className="pmenu-l">Menu</span><DueBadge /></summary>
             <div className="pmenu-panel">
               <MenuContinue />
               {SITE_MAP.map(g => (
@@ -52,6 +55,10 @@ export default function SiteHeader() {
                   </ul>
                 </nav>
               ))}
+              <div className="pmenu-prefs" role="group" aria-label="Display">
+                <span className="label red">Display</span>
+                <TextSize /><Theme />
+              </div>
             </div>
           </details>
         </div>

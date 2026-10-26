@@ -32,7 +32,7 @@ export default function ApplyPage() {
           const v = scenarioView(s);
           return (
             <ScenarioCard
-              key={s.id} n={i + 1} title={s.title} situation={s.situation} ask={s.ask} options={v.options} answer={s.answer} why={s.why}
+              key={s.id} n={i + 1} sid={s.id} title={s.title} situation={s.situation} ask={s.ask} options={v.options} answer={s.answer} why={s.why}
               passage={v.passage && (
                 <div className="ap-p">
                   <p className="ap-pn"><Tag kind={v.passage.kind} /> {v.passage.note}</p>

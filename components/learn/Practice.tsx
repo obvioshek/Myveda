@@ -931,6 +931,7 @@ function Results({ session, dueLeft, onReview, onAgain, onBack }: { session: Ses
           : <button type="button" className="btn btn-primary btn-lg" onClick={onAgain}>{session.kind === "chapter" || session.kind === "set" ? "Take it again" : "Another set"}</button>}
         <button type="button" className="btn btn-secondary btn-lg" onClick={onBack}>Back to practice</button>
       </div>
+      <p className="ci-fine">Everything you have answered adds up on <Link className="link" href="/learn/progress" prefetch={false}>your progress</Link>, with your weak spots. Exam coming? <Link className="link" href="/learn/plan" prefetch={false}>Make a study plan</Link> to the date.</p>
     </div>
   );
 }

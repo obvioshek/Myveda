@@ -11,6 +11,7 @@ import { recordAnswer, recordedLine } from "./review";
 import { saveAsk } from "./ask";
 import Listen from "./Listen";
 import MixupHint from "./MixupHint";
+import ReadingTip from "./ReadingTip";
 import ReportProblem from "./ReportProblem";
 
 function Part({ children }: { children: React.ReactNode }) {
@@ -164,6 +165,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
       <div className={open ? "reveal slow open" : "reveal slow"} id={bodyId} inert={!open}>
         <div className="reveal-in">
           <div className="ls-body">
+            {open && <ReadingTip />}
             <div className="ls-before">
               <span className="label red">Before you read</span>
               <p className="ls-bq" id={beforeId}>{lesson.before.q}</p>

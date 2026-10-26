@@ -7,6 +7,9 @@ import UnitTabs from "@/components/landing/UnitTabs";
 import ClassicsAdd from "@/components/landing/ClassicsAdd";
 import Toast from "@/components/landing/Toast";
 import Arrow from "@/components/landing/Arrow";
+import Shortcuts from "@/components/landing/Shortcuts";
+import TextSize from "@/components/learn/TextSize";
+import Theme from "@/components/learn/Theme";
 import { siteUrl } from "@/lib/site";
 import ThreadPreview from "@/components/landing/ThreadPreview";
 import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL } from "@/content/landing";
@@ -180,6 +183,8 @@ export default function LandingPage() {
             <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
             <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
+            <Shortcuts />
+            <span className="foot-prefs" id="display"><TextSize /><Theme /></span>
           </div>
         </div>
       </footer>

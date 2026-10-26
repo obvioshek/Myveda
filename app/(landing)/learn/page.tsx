@@ -193,7 +193,7 @@ export default function LearnIndex() {
         </div>
       </nav>
 
-      <section className="wrap ci-foot" aria-label="Notes">
+      <section className="wrap ci-foot" id="offline" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
         <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, TEXTS_PATH, ...TEXTS.map(t => textPath(t.id)), READING_GUIDE_PATH, `${REVISION_PATH}/pack`, "/learn/quiz", "/learn/apply", "/learn/check", "/learn/map", "/practice-bank.json", "/search-index.json"]} />
         <p className="ci-fine">Your progress is kept in this browser only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Move it to another device</Link>.</p>

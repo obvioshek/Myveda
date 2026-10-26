@@ -526,6 +526,9 @@ html .pmenu-panel, html .menu-panel, html .rb-panel { background:
 .pmenu-col ul { display: flex; flex-direction: column; }
 .pmenu-col a { display: flex; align-items: center; min-height: 44px; border-bottom: 2px solid color-mix(in srgb, var(--color-text) 10%, transparent); color: var(--color-text); font-size: var(--fs-body); font-weight: 700; }
 .pmenu-col a:hover { color: var(--color-accent-700); }
+.pmenu-prefs { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; padding-top: 14px; border-top: 2px solid var(--color-divider); }
+.pmenu-prefs .label { flex-basis: 100%; }
+@media (min-width: 760px) { .pmenu-prefs { grid-column: 1 / -1; } }
 .pmenu-col a[aria-current] { padding-left: 12px; box-shadow: inset 4px 0 0 var(--color-accent); color: var(--color-accent-700); }
 @media (min-width: 760px) { .pmenu-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-inline: max(var(--pad), calc((100% - 1320px) / 2 + var(--pad))); } }
 
@@ -599,6 +602,10 @@ html .pmenu-panel, html .menu-panel, html .rb-panel { background:
 .srch-k { align-self: start; padding: 2px 8px; border: 2px solid var(--color-text); font-size: var(--fs-2xs); font-weight: 800; letter-spacing: .06em; line-height: 16px; text-transform: uppercase; white-space: nowrap; }
 .srch-s { grid-column: 1 / -1; color: var(--soft); font-size: var(--fs-ui); line-height: 20px; }
 .srch-none { color: var(--body); font-size: var(--fs-body-sm); line-height: 24px; }
+/* What the search covers, with three searches to try, until something is typed. */
+.srch-tip { color: var(--soft); font-size: var(--fs-sm); line-height: 20px; }
+.srch-try { padding: 0; border: 0; background: none; color: var(--color-accent-700); font: inherit; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, currentColor 40%, transparent); cursor: pointer; }
+.srch-try:hover { text-decoration-color: currentColor; }
 .srch-foot { color: var(--soft); font-size: var(--fs-sm); line-height: 20px; }
 .srch-foot kbd { padding: 0 5px; border: 2px solid var(--color-divider); font: 700 12px var(--font); }
 @media (max-width: 639px) { .srch-foot { display: none; } }
@@ -781,5 +788,16 @@ html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#fff"] { fill
 .rp-err { padding: 10px 14px; border-left: 4px solid var(--color-accent); background: var(--color-accent-100); color: var(--color-text); font-size: var(--fs-body-sm); line-height: 22px; }
 .rp-done { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; font-size: var(--fs-body); line-height: 24px; }
 .ck-rp { margin-top: 6px; }
+/* Keyboard shortcuts (components/landing/Shortcuts.tsx): offered where there
+   is a keyboard; "?" opens the list anywhere. */
+@media (hover: none) { .sc-btn { display: none; } }
+.sc { width: min(680px, calc(100vw - 32px)); }
+.sc-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px 32px; }
+.sc-group { display: flex; flex-direction: column; gap: 6px; }
+.sc-group dl { margin: 0; border-top: 2px solid var(--color-text); }
+.sc-group dl > div { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 7px 0; border-bottom: 2px solid var(--color-divider); }
+.sc-group dt { color: var(--soft); font-size: var(--fs-sm); }
+.sc-group dd { margin: 0; font-size: var(--fs-body-sm); line-height: 21px; }
+.sc kbd { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px; border: 2px solid var(--color-text); color: var(--color-text); font: 800 12px/1 var(--font); }
 .sh { width: min(720px, calc(100vw - 32px)); }
 .sh-img { display: block; width: 100%; height: auto; border: 2px solid var(--color-text); background: var(--color-surface); }

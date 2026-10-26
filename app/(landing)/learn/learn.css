@@ -308,6 +308,12 @@ h4 { margin: 0; }
 .ls-sub { color: var(--soft); font-size: var(--fs-ui); line-height: 21px; }
 .ls-done { display: none; align-items: center; gap: 6px; color: var(--color-accent-700); font-size: var(--fs-xs); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .ls-open { min-width: 104px; }
+/* Told once, in the first concept opened (components/learn/ReadingTip.tsx). */
+.ls-tip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; margin-top: 16px; padding: 8px 8px 8px 14px; border-left: 4px solid var(--color-text); background: var(--color-surface); color: var(--color-text); font-size: var(--fs-ui); line-height: 21px; }
+.ls-tip span { flex: 1 1 280px; }
+.ls-tip kbd { padding: 0 5px; border: 2px solid var(--color-divider); font: 700 12px var(--font); }
+@media (hover: none) { .kb-only { display: none; } }
+@media print { .ls-tip { display: none; } }
 .ls-before { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 18px 0 20px; }
 .ls-before .label { flex-basis: 100%; }
 .ls-bq { flex: 1 1 320px; max-width: 60ch; font-size: var(--fs-body); font-weight: 800; line-height: 23px; }
@@ -994,6 +1000,10 @@ html[data-landing] .rv-ch, html[data-landing] .gl-sec, html[data-landing] .ls { 
 .wk-past a { color: var(--color-text); }
 @media (min-width: 760px) { .wk-past li { grid-template-columns: 220px minmax(0, 1fr); } }
 @media (min-width: 1100px) { .ci-more-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+/* "More for this chapter": up to four cards, filling the row. */
+.ch-also { padding-top: 0; }
+@media (min-width: 640px) { .ch-also .ci-more-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
+.ap { scroll-margin-top: 90px; }
 
 /* ---------- The Hindi edition (/hi) ----------
    Hindi takes its font from landing.css (.hi[lang="hi"]); Sanskrit originals

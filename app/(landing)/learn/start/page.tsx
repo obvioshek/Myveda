@@ -68,6 +68,8 @@ export default function StartWalkPage() {
         <ul>
           <li><Link className="link" href={LEARN_PATH} prefetch={false}>The chapters</Link>: every concept, with a passage beside it wherever one meets the idea.</li>
           <li><Link className="link" href="/#texts" prefetch={false}>What the classics add</Link>: more pairs, by theme.</li>
+          <li><Link className="link" href="/learn/practice" prefetch={false}>Practice</Link>: questions from every chapter; the ones you miss come back until they stick.</li>
+          <li><Link className="link" href="/learn/weekly" prefetch={false}>One idea a week</Link>: a new pair like this one each Monday, by email or feed.</li>
           <li><Link className="link" href="/#community" prefetch={false}>The community</Link>: ask about a reading, or offer your own, and say what it rests on.</li>
         </ul>
         <p className="ci-fine wk-key"><Tag kind="documented" /> {HOW.documented} <Tag kind="view" /> {HOW.view}</p>

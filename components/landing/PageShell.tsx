@@ -6,6 +6,7 @@ import BackToTop from "./BackToTop";
 import SiteHeader from "./SiteHeader";
 import HashLanding from "./HashLanding";
 import CurrentLink from "./CurrentLink";
+import Shortcuts from "./Shortcuts";
 import TextSize from "@/components/learn/TextSize";
 import Theme from "@/components/learn/Theme";
 import ReportProblem from "@/components/learn/ReportProblem";
@@ -42,7 +43,8 @@ export default function PageShell({ children, wide = false, note = "Questions ab
             <span>{note} <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></span>
             <ReportProblem what="This page" label="Report a problem" />
             {ABOUT_LINKS.map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
-            <span className="foot-prefs"><TextSize /><Theme /></span>
+            <Shortcuts />
+            <span className="foot-prefs" id="display"><TextSize /><Theme /></span>
           </div>
         </div>
       </footer>

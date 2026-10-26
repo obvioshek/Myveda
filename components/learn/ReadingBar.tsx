@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDone } from "./progress";
 import TextSize from "./TextSize";
 import Theme from "./Theme";
+import { tipLearned } from "./ReadingTip";
 
 type Item = { id: string; name: string };
 type Term = { id: string; term: string; def: string };
@@ -60,6 +61,7 @@ export default function ReadingBar({ slug, items, terms, unitLabel, chapters, gl
       const target = items[i] && document.getElementById(items[i].id);
       if (!target) return;
       e.preventDefault();
+      tipLearned();
       target.scrollIntoView({ block: "start" });
       target.querySelector<HTMLElement>(".ls-open")?.focus({ preventScroll: true });
     };
@@ -114,7 +116,7 @@ export default function ReadingBar({ slug, items, terms, unitLabel, chapters, gl
               );
             })}
           </ol>
-          <p className="rb-keys">Keys: <kbd>J</kbd> next concept, <kbd>K</kbd> previous, <kbd>/</kbd> search.</p>
+          <p className="rb-keys">Keys: <kbd>J</kbd> next concept, <kbd>K</kbd> previous, <kbd>/</kbd> search, <kbd>?</kbd> all keys.</p>
         </nav>
         {terms.length > 0 && (
           <div className="rb-col">
