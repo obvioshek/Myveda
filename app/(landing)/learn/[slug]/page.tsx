@@ -12,9 +12,13 @@ import LessonsToggle from "@/components/learn/LessonsToggle";
 import ReadingBar from "@/components/learn/ReadingBar";
 import GlossaryTips, { type TipTerm } from "@/components/learn/GlossaryTips";
 import { TOOLS } from "@/components/learn/tools";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
+import { CHAPTERS, CONTENT_UPDATED, GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, HOW, LEARN_PATH, UNITS, chapterBySlug, chapterDescription, chapterPath, chapterTitle, deva, evidence, lessonsFor, neighbours, termsForChapter, unitById } from "@/content/learn";
 import { linkTerms } from "@/content/learn/term-links";
+import { mixupHints } from "@/content/learn/mixups";
 import { ideasUsedIn, usesIdeasFrom, type Link as ChapterLink } from "@/content/learn/connections";
+import { TEXTS_PATH, textPath, textsInChapter } from "@/content/learn/texts";
+import CiteThis from "@/components/learn/CiteThis";
+import { CORRECTIONS_PATH, correctionsFor } from "@/content/learn/corrections";
 import { siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -44,6 +48,8 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   const c = chapterBySlug((await params).slug);
   if (!c) notFound();
   const unit = unitById(c.unit)!;
+  const texts = textsInChapter(c.slug);
+  const fixes = correctionsFor(chapterPath(c.slug));
   const base = siteUrl();
   const url = `${base}${chapterPath(c.slug)}`;
   const ev = evidence(c);
@@ -53,7 +59,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
   // any passage no lesson uses is listed after the concepts.
   const lessons = lessonsFor(c.slug);
   const used = new Set((lessons ?? []).flatMap(l => l.lens.map(n => n.pairing)));
-  const loose = c.pairings.filter((_, i) => !used.has(i));
+  const loose = c.pairings.map((p, n) => ({ p, n })).filter(x => !used.has(x.n));
   const showLens = loose.length > 0;
   const firstId = lessons?.[0]?.blockId;
   const many = UNITS.length > 1;
@@ -163,8 +169,9 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     path={chapterPath(c.slug)}
                     chapter={c.title}
                     detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}
-                    lens={lesson.lens.length ? <LessonLens pairings={c.pairings} notes={lesson.lens} /> : null}
+                    lens={lesson.lens.length ? <LessonLens slug={c.slug} pairings={c.pairings} notes={lesson.lens} /> : null}
                     tool={Calc ? <Calc /> : null}
+                    mixups={mixupHints(b.html)}
                   />
                 );
               }
@@ -187,7 +194,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                 <p><Tag kind="view" /> {HOW.view}</p>
               </div>
               {c.lensNote && <p className="cue">{c.lensNote}</p>}
-              <Pairings items={loose} />
+              <Pairings slug={c.slug} items={loose} />
               <p className="ci-fine">{HOW.translations}</p>
             </section>
           )}
@@ -231,10 +238,21 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             )}
           </nav>
 
-          <details className="ch-texts">
-            <summary>Texts used in this unit</summary>
-            <p>{unit.textsUsed}</p>
-          </details>
+          {texts.length > 0 && (
+            <p className="ch-texts ch-texts-l">
+              <b>{texts.length === 1 ? "The text" : "Texts"} quoted in this chapter:</b>{" "}
+              {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}.{" "}
+              <Link href={TEXTS_PATH} prefetch={false}>About all the texts</Link>.
+            </p>
+          )}
+          {fixes.length > 0 && (
+            <div className="ch-texts ch-texts-l">
+              <b>Corrected since it was published:</b>
+              <ul className="ch-fixes">{fixes.map((f, i) => <li key={i}>{f.date}: {f.what}</li>)}</ul>
+              <Link href={CORRECTIONS_PATH} prefetch={false}>All corrections</Link>
+            </div>
+          )}
+          <CiteThis title={c.title} url={`${base}${chapterPath(c.slug)}`} updated={CONTENT_UPDATED} />
         </div>
       </div>
       <GlossaryTips terms={tips} />

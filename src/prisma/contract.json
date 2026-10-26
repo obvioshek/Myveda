@@ -199,6 +199,10 @@
     "user": {
       "model": "User",
       "namespace": "public"
+    },
+    "weeklySubscriber": {
+      "model": "WeeklySubscriber",
+      "namespace": "public"
     }
   },
   "domain": {
@@ -6328,6 +6332,87 @@
               "namespaceId": "public",
               "table": "user"
             }
+          },
+          "WeeklySubscriber": {
+            "fields": {
+              "confirmSentAt": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
+              "confirmedAt": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
+              "createdAt": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "kind": "scalar"
+                }
+              },
+              "email": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              },
+              "lastWeekSent": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "token": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/text@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {},
+            "storage": {
+              "fields": {
+                "confirmSentAt": {
+                  "column": "confirmSentAt"
+                },
+                "confirmedAt": {
+                  "column": "confirmedAt"
+                },
+                "createdAt": {
+                  "column": "createdAt"
+                },
+                "email": {
+                  "column": "email"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "lastWeekSent": {
+                  "column": "lastWeekSent"
+                },
+                "token": {
+                  "column": "token"
+                }
+              },
+              "namespaceId": "public",
+              "table": "weeklySubscriber"
+            }
           }
         }
       }
@@ -6582,6 +6667,11 @@
               "kind": "rls",
               "namespaceId": "public",
               "tableName": "user"
+            },
+            "weeklySubscriber": {
+              "kind": "rls",
+              "namespaceId": "public",
+              "tableName": "weeklySubscriber"
             }
           },
           "table": {
@@ -11183,6 +11273,85 @@
                   ]
                 }
               ]
+            },
+            "weeklySubscriber": {
+              "columns": {
+                "confirmSentAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "nativeType": "timestamptz",
+                  "nullable": true
+                },
+                "confirmedAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "nativeType": "timestamptz",
+                  "nullable": true
+                },
+                "createdAt": {
+                  "codecId": "pg/timestamptz-temporal@1",
+                  "default": {
+                    "expression": "now()",
+                    "kind": "function"
+                  },
+                  "nativeType": "timestamptz",
+                  "nullable": false
+                },
+                "email": {
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
+                  "nullable": false
+                },
+                "id": {
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
+                  "nullable": false
+                },
+                "lastWeekSent": {
+                  "codecId": "pg/int4@1",
+                  "nativeType": "int4",
+                  "nullable": true
+                },
+                "token": {
+                  "codecId": "pg/text@1",
+                  "nativeType": "text",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [
+                {
+                  "columns": [
+                    "confirmedAt"
+                  ],
+                  "name": "weeklySubscriber_confirmedAt_idx_7667e8e9",
+                  "prefix": "weeklySubscriber_confirmedAt_idx",
+                  "unique": false
+                },
+                {
+                  "columns": [
+                    "createdAt"
+                  ],
+                  "name": "weeklySubscriber_createdAt_idx_9575dbd7",
+                  "prefix": "weeklySubscriber_createdAt_idx",
+                  "unique": false
+                }
+              ],
+              "primaryKey": {
+                "columns": [
+                  "id"
+                ]
+              },
+              "uniques": [
+                {
+                  "columns": [
+                    "email"
+                  ]
+                },
+                {
+                  "columns": [
+                    "token"
+                  ]
+                }
+              ]
             }
           }
         },
@@ -11190,10 +11359,10 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "15e3d459e087a6b9c3caddd76b77a688c98494a3784866713897e9f281d36ad1"
+    "storageHash": "67d6abd2d99d4056a6e8494124336166e2a5003eb30ba037aeda99ca03d6aa46"
   },
   "execution": {
-    "executionHash": "a0213c66c7908007acfbd4de2d33d6fb10f0038b885bd028503849ee873c4720",
+    "executionHash": "728f368426229e11939d5ad30f01009ca02f12dc864d0b150c8cb1a9730825d7",
     "mutations": {
       "defaults": [
         {
@@ -11579,6 +11748,17 @@
             "column": "id",
             "namespace": "public",
             "table": "user"
+          }
+        },
+        {
+          "onCreate": {
+            "id": "uuidv4",
+            "kind": "generator"
+          },
+          "ref": {
+            "column": "id",
+            "namespace": "public",
+            "table": "weeklySubscriber"
           }
         }
       ]

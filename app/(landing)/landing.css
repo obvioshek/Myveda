@@ -35,6 +35,11 @@
 @font-face { font-family: "Tiro Devanagari Sanskrit"; font-style: italic; font-weight: 400; font-display: swap;
   src: url("/fonts/tiro-latin-italic.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* Hindi is set in Noto Sans Devanagari beside Archivo: a sans-serif with the
+   same range of weights, downloaded (121 KB) only by pages showing Hindi. */
+@font-face { font-family: "Noto Sans Devanagari VV"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("/fonts/noto-sans-devanagari.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09; }
 
 /* ---------- Tokens ---------- */
 :root {
@@ -85,6 +90,11 @@ button, input, textarea { font: inherit; color: inherit; border-radius: 0; }
    fonts every current phone and computer already has, so no page downloads
    more for them. */
 [lang="pi"], [lang="hi"], [lang="mr"] { font-family: var(--font-deva); }
+/* The Hindi edition's own text (not a quoted original) is sans-serif. Links
+   to it from English pages (.hi-ui) use the device's Devanagari, so those
+   pages download no font for a single word. */
+.hi[lang="hi"] { font-family: "Archivo", "Archivo Fallback", "Noto Sans Devanagari VV", "Noto Sans Devanagari", "Nirmala UI", "Kohinoor Devanagari", sans-serif; }
+.hi-ui[lang="hi"] { font-family: "Archivo", "Archivo Fallback", "Noto Sans Devanagari", "Nirmala UI", "Kohinoor Devanagari", sans-serif; }
 [lang="bn"], [lang="as"] { font-family: "Noto Sans Bengali", "Vrinda", "Bangla MN", "Nirmala UI", sans-serif; }
 [lang="gu"] { font-family: "Noto Sans Gujarati", "Shruti", "Gujarati MT", "Nirmala UI", sans-serif; }
 [lang="or"] { font-family: "Noto Sans Oriya", "Kalinga", "Oriya MN", "Nirmala UI", sans-serif; }
@@ -563,28 +573,28 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .chap-meta { display: flex; align-items: center; gap: 10px; color: var(--soft); font-size: 12.5px; font-weight: 600; }
 @media (min-width: 900px) { .ut-tabs { grid-template-columns: repeat(var(--tabs, 4), minmax(0, 1fr)); } .ut-tab + .ut-tab { border-left: 2px solid var(--color-divider); } }
 
-/* ---------- Home: documented or a view? ---------- */
-.lg { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
-.lg-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 18px; border-top: 2px solid var(--color-text); }
-.lg-h { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; letter-spacing: -.01em; font-weight: 800; }
-.lg-score { color: var(--soft); font-size: 14px; font-weight: 700; }
-.lg-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
-.lg-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid var(--color-text); }
-.lg-card.done.documented { box-shadow: inset 0 6px 0 var(--color-text); }
-.lg-card.done.view { box-shadow: inset 0 6px 0 var(--color-accent); }
-.lg-pair { font-size: 15px; line-height: 22px; color: var(--body); }
-.lg-pair b { color: var(--color-text); }
-.lg-quote { font-size: 17px; line-height: 26px; font-weight: 600; }
-.lg-quote .og { display: block; margin-top: 8px; color: var(--color-accent-800); font-size: 17px; font-weight: 400; line-height: 1.6; }
-.lg-quote i { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: var(--body); }
-.lg-quote .ta { display: block; margin-top: 8px; color: var(--color-accent-800); font: 400 15px/1.7 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
-.lg-quote .ref { display: block; margin-top: 8px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-.lg-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
-.lg-btns .btn { flex: 1; justify-content: center; }
-.lg-answer { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
-.lg-verdict { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 800; }
-.lg-why { color: var(--body); font-size: 14.5px; line-height: 23px; }
-@media (min-width: 900px) { .lg-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* ---------- Home: what the classics add (theme tabs, then a modern idea beside a passage) ---------- */
+.ca { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+.ca-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 18px; border-top: 2px solid var(--color-text); }
+.ca-tab { min-height: 40px; padding: 8px 14px; border: 2px solid var(--color-divider); background: transparent; color: var(--body); font: 700 14px/1.2 var(--font); cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
+.ca-tab:hover { border-color: var(--color-text); color: var(--color-text); }
+.ca-tab[aria-selected="true"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
+.ca-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.ca-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid var(--color-text); animation: cmx-in .2s var(--ease); }
+.ca-pair { font-size: 15px; line-height: 22px; color: var(--body); }
+.ca-pair b { color: var(--color-text); }
+.ca-quote { font-size: 17px; line-height: 26px; font-weight: 600; }
+.ca-quote .og { display: block; margin-top: 8px; color: var(--color-accent-800); font-size: 17px; font-weight: 400; line-height: 1.6; }
+.ca-quote i { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: var(--body); }
+.ca-quote .ta { display: block; margin-top: 8px; color: var(--color-accent-800); font: 400 15px/1.7 "Noto Sans Tamil", "Latha", "Nirmala UI", sans-serif; }
+.ca-quote .ref { display: block; margin-top: 8px; color: var(--color-accent-700); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.ca-notes { display: flex; flex-direction: column; gap: 10px; margin: 0; padding-top: 12px; border-top: 2px solid var(--color-divider); }
+.ca-notes dt { color: var(--color-accent-700); font-size: 11.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.ca-notes dd { margin: 2px 0 0; color: var(--color-text); font-size: 15px; line-height: 23px; }
+.ca-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-top: auto; }
+.ca-foot .more { font-size: 14px; }
+.ca-walk { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; color: var(--body); font-size: 15.5px; line-height: 24px; }
+@media (min-width: 900px) { .ca-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* Offline reading: a quiet note while offline, and "Save all chapters". */
 .off-note { position: fixed; left: 16px; bottom: 16px; z-index: 35; max-width: calc(100vw - 32px); margin: 0; padding: 10px 14px; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-lg); }
@@ -640,3 +650,26 @@ html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#ffffff"],
 html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#fff"] { fill: var(--color-bg); }
 }
 .ts-w { min-width: 0; padding: 0 8px; font-size: 13px; }
+
+/* ---------- Report a problem (components/learn/ReportProblem.tsx) ---------- */
+.rp-btn { display: inline-flex; align-items: center; min-height: 32px; padding: 0; border: 0; background: none; color: var(--soft); font: 600 13px/1.3 var(--font); text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--color-divider); text-underline-offset: 3px; cursor: pointer; }
+.rp-btn:hover { color: var(--color-text); text-decoration-color: var(--color-accent); }
+.rp { width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 2px solid var(--color-text); background: var(--color-bg); color: var(--color-text); box-shadow: 10px 10px 0 color-mix(in srgb, var(--color-text) 12%, transparent); }
+.rp::backdrop { background: color-mix(in srgb, #201e1d 55%, transparent); }
+.rp-in { display: flex; flex-direction: column; gap: 14px; padding: 20px; }
+.rp-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 2px solid var(--color-divider); }
+.rp-x { display: grid; place-items: center; width: 40px; height: 40px; border: 2px solid var(--color-text); background: transparent; color: var(--color-text); font-size: 22px; line-height: 1; cursor: pointer; }
+.rp-x:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.rp-form { display: flex; flex-direction: column; gap: 12px; }
+.rp-what { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; border-left: 4px solid var(--color-accent); background: var(--color-surface); font-size: 14.5px; line-height: 22px; }
+.rp-kinds { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; border: 0; }
+.rp-kinds legend { margin-bottom: 6px; }
+.rp-kind { display: flex; align-items: center; gap: 10px; min-height: 32px; font-size: 15px; cursor: pointer; }
+.rp-kind input { width: 18px; height: 18px; margin: 0; accent-color: var(--color-accent-fill); }
+.rp-lab { font-size: 14px; font-weight: 700; }
+.rp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.rp-err { padding: 10px 14px; border-left: 4px solid var(--color-accent); background: var(--color-accent-100); color: var(--color-text); font-size: 14.5px; line-height: 22px; }
+.rp-done { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; font-size: 15.5px; line-height: 24px; }
+.ck-rp { margin-top: 6px; }
+.sh { width: min(720px, calc(100vw - 32px)); }
+.sh-img { display: block; width: 100%; height: auto; border: 2px solid var(--color-text); background: var(--color-surface); }

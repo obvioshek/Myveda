@@ -5,6 +5,7 @@ import SiteSearch from "@/components/learn/SiteSearch";
 import BrandMark from "./Brand";
 import TextSize from "@/components/learn/TextSize";
 import Theme from "@/components/learn/Theme";
+import ReportProblem from "@/components/learn/ReportProblem";
 
 // Header and footer for the landing site's standalone pages.
 export default function PageShell({ children, wide = false, note = "Questions about your data:" }: { children: React.ReactNode; wide?: boolean; note?: string }) {
@@ -30,14 +31,20 @@ export default function PageShell({ children, wide = false, note = "Questions ab
           <div className="foot-base">
             <span>{note}</span>
             <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            <ReportProblem what="This page" label="Report a problem" />
             <Link href="/" prefetch={false}>Home</Link>
             <Link href="/learn" prefetch={false}>Chapters</Link>
             <Link href="/learn/glossary" prefetch={false}>Glossary</Link>
+            <Link href="/learn/texts" prefetch={false}>The texts</Link>
+            <Link href="/learn/reading-guide" prefetch={false}>Reading guide</Link>
+            <Link href="/learn/weekly" prefetch={false}>One idea a week</Link>
             <Link href="/learn/revision" prefetch={false}>Revision</Link>
             <Link href="/learn/practice" prefetch={false}>Practice</Link>
             <Link href="/learn/formulas" prefetch={false}>Formulas</Link>
             <Link href="/learn/plan" prefetch={false}>Study plan</Link>
             <Link href="/learn/progress" prefetch={false}>Your progress</Link>
+            <Link href="/learn/corrections" prefetch={false}>Corrections</Link>
+            <Link className="hi-ui" href="/hi" prefetch={false} lang="hi" hrefLang="hi">हिंदी</Link>
             <Link href="/privacy" prefetch={false}>Privacy</Link>
             <TextSize />
             <Theme />

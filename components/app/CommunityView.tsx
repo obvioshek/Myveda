@@ -8,6 +8,7 @@ import Icon from "@/components/app/Icon";
 import { useServerState } from "@/components/app/useServerState";
 import { decideApplication, postNote, setMembership, setSpoilerUnlocked } from "@/actions/app/community";
 import type { CommunityData } from "@/lib/app/community";
+import { BASIS_HELP, COMMUNITY_FORMATS, LABELS, SHARE_BASES, namesASource, suggestNoteBasis, type ShareBasis } from "@/lib/app/labels";
 import type { NoteItem } from "@/lib/app/types";
 
 const TABS = ["Now", "Threads", "Archive", "About"] as const;
@@ -19,6 +20,10 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
   const [buildsOn, setBuildsOn] = useState<NoteItem | null>(null);
   const [hl, setHl] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // The member's label for the note; until they pick one, a suggestion from the text.
+  const [basis, setBasis] = useState<ShareBasis | null>(null);
+  const effBasis = basis ?? suggestNoteBasis(draft);
+  const needsSource = effBasis === "documented" && draft.trim().length > 0 && !namesASource(draft);
 
   const joinLabel = status === "member" ? "Joined" : status === "applied" ? "Applied" : c.format === "Cohort" ? "Apply" : "Join";
   const member = status === "member";
@@ -38,11 +43,11 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
   };
 
   const send = async () => {
-    if (!thread || !draft.trim() || busy) return;
+    if (!thread || !draft.trim() || busy || needsSource) return;
     setBusy(true);
-    const r = await run(postNote({ threadId: thread.id, body: draft, buildsOnId: buildsOn?.id ?? null }));
+    const r = await run(postNote({ threadId: thread.id, body: draft, basis: effBasis, buildsOnId: buildsOn?.id ?? null }));
     setBusy(false);
-    if (r.ok) { setDraft(""); setBuildsOn(null); }
+    if (r.ok) { setDraft(""); setBuildsOn(null); setBasis(null); }
   };
 
   return (
@@ -51,7 +56,8 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
         <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
           <div style={{ flex: 1, minWidth: 220 }}>
             <h1>{c.name}</h1>
-            <div className="muted" style={{ fontSize: 14, marginTop: 6 }}>{[c.format, c.memoryLabel, c.pace].filter(Boolean).join(" · ")}</div>
+            <div className="muted" style={{ fontSize: 14, marginTop: 8 }}>{[c.format, c.memoryLabel, c.pace].filter(Boolean).join(" · ")}</div>
+            {COMMUNITY_FORMATS[c.format] && <p className="com-kind" style={{ marginTop: 6 }}><b>A {c.format.toLowerCase()}:</b> {COMMUNITY_FORMATS[c.format]}.</p>}
             {hostsLine.length > 0 && (
               <div style={{ fontSize: 14, marginTop: 4 }}>
                 Hosted by {hostsLine.map((h, i) => (
@@ -122,21 +128,34 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
               ))}
               {!thread.spoiler && thread.notes.length === 0 && <p className="muted">{c.memory === "fades" ? "Nothing on the board this week. Notes fade after a week." : "No notes yet. Start the thread."}</p>}
               {member && !readOnly && (
-                <div className="box" style={{ padding: 12, gap: 8 }}>
+                <div className="box" style={{ gap: 10 }}>
                   {buildsOn && (
                     <div className="muted" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
                       Building on {buildsOn.author.name.split(" ")[0]}&apos;s note
-                      <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => setBuildsOn(null)} style={{ padding: "2px 8px", color: "var(--ink-2)" }}>×</button>
+                      <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => setBuildsOn(null)} style={{ minHeight: 28, padding: "0 8px", color: "var(--soft)" }}>×</button>
                     </div>
                   )}
-                  <div style={{ display: "flex", gap: 8 }}>
-                    <input className="input" style={{ flex: 1 }} aria-label={`Add a note to ${thread.title}`} placeholder={`Add a note to ${thread.title.toLowerCase()}…`} value={draft}
-                      onChange={e => setDraft(e.target.value)} onKeyDown={e => { if (e.key === "Enter") send(); }} />
-                    <button className="btn btn-primary" type="button" disabled={!draft.trim() || busy} onClick={send}>Add note</button>
+                  <textarea className="input" rows={3} aria-label={`Add a note to ${thread.title}`} placeholder={`Add a note to ${thread.title.toLowerCase()}…`} value={draft}
+                    onChange={e => setDraft(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } }} style={{ minHeight: 84 }} />
+                  <div className="wrap-chips" role="group" aria-label="What your note rests on">
+                    {SHARE_BASES.map(k => (
+                      <button key={k} type="button" className={`chip basis-btn lb-${k}`} aria-pressed={effBasis === k} onClick={() => setBasis(k)}>
+                        <span aria-hidden="true">{LABELS[k].glyph}</span>{LABELS[k].name}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="basis-help" aria-live="polite">
+                    {needsSource
+                      ? <>Say where this can be checked: the page, the link or the record. Or choose another label.</>
+                      : <><b>{LABELS[effBasis].name}{basis ? "" : ", suggested from your text"}.</b> {BASIS_HELP[effBasis]}</>}
+                  </p>
+                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <button className="btn btn-primary" type="button" disabled={!draft.trim() || busy || needsSource} onClick={send}>{busy ? "Adding…" : "Add note"}</button>
                   </div>
                 </div>
               )}
               {!member && !readOnly && c.contributors && <p className="muted" style={{ fontSize: 14 }}>{c.contributors}</p>}
+              <LabelKey />
             </>
           )}
         </>
@@ -197,6 +216,18 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
         </>
       )}
     </div>
+  );
+}
+
+// What the four labels on notes mean, for anyone reading along.
+function LabelKey() {
+  return (
+    <details className="key">
+      <summary>What the labels mean</summary>
+      <ul>
+        {SHARE_BASES.map(k => <li key={k}><span><Chip basis={k} /></span><span>{BASIS_HELP[k]}</span></li>)}
+      </ul>
+    </details>
   );
 }
 

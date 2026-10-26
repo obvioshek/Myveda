@@ -61,3 +61,10 @@ export function ideasUsedIn(slug: string): Link[] {
   }
   return links(pairs);
 }
+
+/** Every link between chapters, with how many of the other chapter's terms it uses, for the map. */
+export function allConnections(): { from: string; to: string; n: number }[] {
+  const out: { from: string; to: string; n: number }[] = [];
+  for (const [from, uses] of build()) for (const [to, ids] of uses) if (ids.size >= MIN_TERMS) out.push({ from, to, n: ids.size });
+  return out;
+}

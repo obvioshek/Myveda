@@ -5,14 +5,15 @@ import ContinueBand from "@/components/landing/ContinueBand";
 import HeroTry from "@/components/landing/HeroTry";
 import QuestionCards from "@/components/landing/QuestionCards";
 import UnitTabs from "@/components/landing/UnitTabs";
-import LabelGame from "@/components/landing/LabelGame";
+import ClassicsAdd from "@/components/landing/ClassicsAdd";
 import Toast from "@/components/landing/Toast";
 import ChaptersMenu from "@/components/learn/ChaptersMenu";
 import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import ThreadPreview from "@/components/landing/ThreadPreview";
 import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, UNITS, chapterBySlug, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, START_WALK_PATH, UNITS, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
+import { THEMES, pairView } from "@/content/learn/readings";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -20,14 +21,6 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
     <span className="eyebrow"><span className="numeral" lang="sa" aria-hidden="true">{num}</span>{children}</span>
   );
 }
-
-// Real passages for the "Documented, or a view?" game: chapter slug and passage
-// index. Pick a mix of both kinds, from different texts.
-const GAME = [
-  { slug: "strategy-implementation-and-evaluation", pairing: 0 },
-  { slug: "strategic-decisions-and-levels-of-strategy", pairing: 0 },
-  { slug: "growth-strategies", pairing: 0 },
-];
 
 const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 const count = (n: number) => WORDS[n] ?? String(n);
@@ -42,10 +35,7 @@ export default function LandingPage() {
     id: u.id, n: u.n, title: u.title, blurb: u.blurb,
     chapters: u.chapters.map(c => ({ slug: c.slug, href: chapterPath(c.slug), n: deva(c.n), title: c.title, minutes: c.minutes, ids: conceptIds(c) })),
   }));
-  const game = GAME.flatMap(({ slug, pairing }) => {
-    const p = chapterBySlug(slug)?.pairings[pairing];
-    return p ? [{ id: `${slug}-${pairing}`, modern: p.modern, classic: p.classic ?? "", kind: p.kind, quote: p.quote ?? "", why: p.text[0], href: passageHref(slug, pairing) }] : [];
-  });
+  const themes = THEMES.map(t => ({ label: t.label, pairs: t.pairs.map(pairView) }));
   // What search engines read about the site itself: who publishes it, what it is
   // called (including the domain and the older "My Veda Verse" name people may
   // search for), and what this page is.
@@ -131,12 +121,13 @@ export default function LandingPage() {
         <section className="wrap sec ruled" id="texts" aria-labelledby="texts-h">
           <div className="split end">
             <div className="sec-copy">
-              <Eyebrow num="३">Trust</Eyebrow>
+              <Eyebrow num="३">Read two ways</Eyebrow>
               <h2 id="texts-h">Old texts, read as thinkers, not scripture.</h2>
             </div>
-            <p className="sub">Every passage is marked. <b>Documented</b>: the text says it, and the link is a fair reading. <b>My view</b>: an interpretive parallel, offered to think with. Try telling them apart.</p>
+            <p className="sub">A modern idea beside a passage that met the same problem long before, with what the passage adds and where the two part ways. Pick a theme.</p>
           </div>
-          <LabelGame items={game} />
+          <ClassicsAdd themes={themes} />
+          <p className="ca-walk">New to reading the classics like this? <Link className="link" href={START_WALK_PATH}>Take the five-step walk</Link><span>About 15 minutes, from the plain overlap to reading with care.</span></p>
           <div className="names-row">
             <span className="label">Quoted so far</span>
             <ul className="names" aria-label="The texts the chapters quote">

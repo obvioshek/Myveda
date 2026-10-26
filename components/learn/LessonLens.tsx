@@ -1,13 +1,14 @@
 import type { Pairing } from "@/content/learn";
 import type { LensNote } from "@/content/learn";
 import { Tag } from "./Evidence";
+import PassageQuote from "./PassageQuote";
 
 const html = (__html: string) => ({ __html });
 
 // A lesson's Ancient lens, laid out like the home page's sample: each passage
 // with its verse, then a side-by-side of the modern idea and the classical one,
 // then what the passage adds and where the two differ.
-export default function LessonLens({ pairings, notes }: { pairings: Pairing[]; notes: LensNote[] }) {
+export default function LessonLens({ slug, pairings, notes }: { slug: string; pairings: Pairing[]; notes: LensNote[] }) {
   const items = notes.map(n => ({ p: pairings[n.pairing], n })).filter(x => x.p);
   return (
     <div className="ls-lens-in">
@@ -29,7 +30,7 @@ export default function LessonLens({ pairings, notes }: { pairings: Pairing[]; n
               {p.text.map((t, j) => <p key={j} dangerouslySetInnerHTML={html(t)} />)}
               {p.kind === "view" && <p className="lp-note">A reading offered for reflection, not a claim about what the authors meant.</p>}
             </div>
-            {p.quote && <blockquote className="lp-q" dangerouslySetInnerHTML={html(p.quote)} />}
+            {p.quote && <PassageQuote quote={p.quote} at={{ slug, n: n.pairing }} />}
             <div className="pair-2 lp-cmp">
               <div className="cell"><span className="story-h">What it adds</span><p>{n.adds}</p></div>
               <div className="cell red"><span className="story-h">Where they differ</span><p>{n.differs}</p></div>

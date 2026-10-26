@@ -1,0 +1,242 @@
+[
+  {
+    "id": "table.weeklySubscriber",
+    "label": "Create table \"weeklySubscriber\"",
+    "summary": "Creates table \"weeklySubscriber\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "table",
+        "name": "weeklySubscriber"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure table \"weeklySubscriber\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"weeklySubscriber\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create table \"weeklySubscriber\"",
+        "sql": "CREATE TABLE \"public\".\"weeklySubscriber\" (\n  \"confirmSentAt\" timestamptz,\n  \"confirmedAt\" timestamptz,\n  \"createdAt\" timestamptz DEFAULT (now()) NOT NULL,\n  \"email\" text NOT NULL,\n  \"id\" text NOT NULL,\n  \"lastWeekSent\" int4,\n  \"token\" text NOT NULL,\n  PRIMARY KEY (\"id\")\n)",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify table \"weeklySubscriber\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"weeklySubscriber\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.weeklySubscriber.weeklySubscriber_email_key",
+    "label": "Add unique constraint on \"weeklySubscriber\" (email)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "weeklySubscriber_email_key",
+        "table": "weeklySubscriber"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"weeklySubscriber_email_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "weeklySubscriber_email_key",
+          "public",
+          "\"public\".\"weeklySubscriber\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"weeklySubscriber_email_key\"",
+        "sql": "ALTER TABLE \"public\".\"weeklySubscriber\" ADD CONSTRAINT \"weeklySubscriber_email_key\" UNIQUE (\"email\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"weeklySubscriber_email_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "weeklySubscriber_email_key",
+          "public",
+          "\"public\".\"weeklySubscriber\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unique.weeklySubscriber.weeklySubscriber_token_key",
+    "label": "Add unique constraint on \"weeklySubscriber\" (token)",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "unique",
+        "name": "weeklySubscriber_token_key",
+        "table": "weeklySubscriber"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure constraint \"weeklySubscriber_token_key\" does not exist",
+        "sql": "SELECT NOT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "weeklySubscriber_token_key",
+          "public",
+          "\"public\".\"weeklySubscriber\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "add unique constraint \"weeklySubscriber_token_key\"",
+        "sql": "ALTER TABLE \"public\".\"weeklySubscriber\" ADD CONSTRAINT \"weeklySubscriber_token_key\" UNIQUE (\"token\")"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify constraint \"weeklySubscriber_token_key\" exists",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_constraint\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"connamespace\" WHERE (\"c\".\"conname\" = $1 AND \"n\".\"nspname\" = $2 AND \"c\".\"conrelid\" = to_regclass($3))) AS \"result\"",
+        "params": [
+          "weeklySubscriber_token_key",
+          "public",
+          "\"public\".\"weeklySubscriber\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.weeklySubscriber.weeklySubscriber_confirmedAt_idx_7667e8e9",
+    "label": "Create index \"weeklySubscriber_confirmedAt_idx_7667e8e9\" on \"weeklySubscriber\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "weeklySubscriber_confirmedAt_idx_7667e8e9",
+        "table": "weeklySubscriber"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"weeklySubscriber_confirmedAt_idx_7667e8e9\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"weeklySubscriber_confirmedAt_idx_7667e8e9\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"weeklySubscriber_confirmedAt_idx_7667e8e9\"",
+        "sql": "CREATE INDEX \"weeklySubscriber_confirmedAt_idx_7667e8e9\" ON \"public\".\"weeklySubscriber\" (\"confirmedAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"weeklySubscriber_confirmedAt_idx_7667e8e9\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"weeklySubscriber_confirmedAt_idx_7667e8e9\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "index.weeklySubscriber.weeklySubscriber_createdAt_idx_9575dbd7",
+    "label": "Create index \"weeklySubscriber_createdAt_idx_9575dbd7\" on \"weeklySubscriber\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "index",
+        "name": "weeklySubscriber_createdAt_idx_9575dbd7",
+        "table": "weeklySubscriber"
+      }
+    },
+    "precheck": [
+      {
+        "description": "ensure index \"weeklySubscriber_createdAt_idx_9575dbd7\" does not exist",
+        "sql": "SELECT (to_regclass($1)) IS NULL AS \"result\"",
+        "params": [
+          "\"public\".\"weeklySubscriber_createdAt_idx_9575dbd7\""
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "create index \"weeklySubscriber_createdAt_idx_9575dbd7\"",
+        "sql": "CREATE INDEX \"weeklySubscriber_createdAt_idx_9575dbd7\" ON \"public\".\"weeklySubscriber\" (\"createdAt\")",
+        "params": []
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify index \"weeklySubscriber_createdAt_idx_9575dbd7\" exists",
+        "sql": "SELECT (to_regclass($1)) IS NOT NULL AS \"result\"",
+        "params": [
+          "\"public\".\"weeklySubscriber_createdAt_idx_9575dbd7\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rowLevelSecurity.public.weeklySubscriber",
+    "label": "Enable row-level security on \"weeklySubscriber\"",
+    "operationClass": "additive",
+    "target": {
+      "id": "postgres",
+      "details": {
+        "schema": "public",
+        "objectType": "rowLevelSecurity",
+        "name": "weeklySubscriber"
+      }
+    },
+    "precheck": [
+      {
+        "description": "check RLS is not already enabled on \"weeklySubscriber\"",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_class\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"relnamespace\" WHERE (\"n\".\"nspname\" = $1 AND \"c\".\"relname\" = $2 AND NOT (\"c\".\"relrowsecurity\"))) AS \"result\"",
+        "params": [
+          "public",
+          "weeklySubscriber"
+        ]
+      }
+    ],
+    "execute": [
+      {
+        "description": "enable row-level security on \"weeklySubscriber\"",
+        "sql": "ALTER TABLE \"public\".\"weeklySubscriber\" ENABLE ROW LEVEL SECURITY"
+      }
+    ],
+    "postcheck": [
+      {
+        "description": "verify row-level security is enabled on \"weeklySubscriber\"",
+        "sql": "SELECT EXISTS (SELECT 1 AS \"one\" FROM \"pg_class\" AS \"c\" INNER JOIN \"pg_namespace\" AS \"n\" ON \"n\".\"oid\" = \"c\".\"relnamespace\" WHERE (\"n\".\"nspname\" = $1 AND \"c\".\"relname\" = $2 AND \"c\".\"relrowsecurity\")) AS \"result\"",
+        "params": [
+          "public",
+          "weeklySubscriber"
+        ]
+      }
+    ]
+  }
+]

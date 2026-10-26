@@ -3,8 +3,10 @@
 // (/search-index.json) and fetched the first time someone opens the search box.
 
 import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, UNITS, chapterPath, lessonsFor } from "./index";
+import { TEXTS, textPath } from "./texts";
+import { READING_GUIDE_PATH, SPELLINGS, WORDS } from "./reading-guide";
 
-export type SearchKind = "concept" | "term" | "chapter" | "passage";
+export type SearchKind = "concept" | "term" | "chapter" | "passage" | "text";
 export type SearchEntry = {
   k: SearchKind;
   /** Title shown in the results. */
@@ -47,6 +49,11 @@ export function buildSearchIndex(): SearchEntry[] {
   }
 
   for (const t of GLOSSARY) out.push({ k: "term", t: t.term, s: cut(t.def, 110), h: `${GLOSSARY_PATH}#${t.id}`, x: t.def.length > 110 ? t.def : "" });
+
+  // The texts, findable by their familiar spellings too (Thirukkural, Arthashastra).
+  const spelled = (name: string) => SPELLINGS.filter(([a]) => a.includes(name.split(" ")[0])).map(([, b]) => b).join(" ");
+  for (const t of TEXTS) out.push({ k: "text", t: t.name, s: `${t.kind} · ${t.language}`, h: textPath(t.id), x: `${t.by} ${t.original?.text ?? ""} ${spelled(t.name)}` });
+  for (const w of WORDS) out.push({ k: "term", t: w.term, s: cut(w.means, 110), h: `${READING_GUIDE_PATH}#${w.id}`, x: w.notQuite });
 
   return out;
 }

@@ -6,6 +6,7 @@ import { PLAN_KEY as KEY, useDevice, writeDevice } from "@/components/landing/de
 import Progress from "./Progress";
 import { useDone } from "./progress";
 import { dueIds, useReview } from "./review";
+import { buildIcs, download, type IcsEvent } from "./ics";
 
 // A study plan worked back from an exam date. The reader's unfinished chapters,
 // in syllabus order, are shared out over the weeks before the exam so each week
@@ -96,6 +97,25 @@ export default function Planner({ units }: { units: PlanUnit[] }) {
   const today = todayIso ? fromIso(todayIso) : null;
   const minDate = today ? toIso(addDays(today, 1)) : undefined;
 
+  // The plan as calendar events: each week's reading, the start of revision, the exam.
+  const saveCalendar = () => {
+    if (!plan || plan.daysLeft < 1) return;
+    const origin = window.location.origin;
+    const events: IcsEvent[] = plan.weeks.flatMap((w, i) => w.chapters.length ? [{
+      uid: `vv-plan-${s.exam}-w${i + 1}@myvedaverse.in`,
+      date: w.start,
+      title: `Veda Verse: week ${i + 1}, ${w.chapters.length} ${w.chapters.length === 1 ? "chapter" : "chapters"} (${w.minutes} min)`,
+      details: `This week's reading, ${short(w.start)} to ${short(w.end)}:\n${w.chapters.map(c => `• ${c.title} (${c.minutes} min): ${origin}/learn/${c.slug}`).join("\n")}\n\nYour plan: ${origin}/learn/plan`,
+      url: `${origin}/learn/plan`,
+    }] : []);
+    events.push({
+      uid: `vv-plan-${s.exam}-rev@myvedaverse.in`, date: plan.revisionFrom, title: "Veda Verse: revision starts",
+      details: `Revision sheets: ${origin}/learn/revision\nFormula sheet: ${origin}/learn/formulas\nMixed practice: ${origin}/learn/practice`, url: `${origin}/learn/revision`,
+    });
+    events.push({ uid: `vv-plan-${s.exam}-exam@myvedaverse.in`, date: fromIso(s.exam), title: "Exam day", details: `Good luck. Your plan: ${origin}/learn/plan` });
+    download(`veda-verse-plan-${s.exam}.ics`, buildIcs(events, new Date()), "text/calendar;charset=utf-8");
+  };
+
   return (
     <div className="wrap pl">
       <div className="pl-form">
@@ -171,6 +191,10 @@ export default function Planner({ units }: { units: PlanUnit[] }) {
               <li><Link href="/learn/practice" prefetch={false}><b>Mixed practice</b></Link><span>Questions mixed across chapters{due ? `; ${due} due for review now` : ""}</span></li>
             </ul>
           </section>
+          <div className="btn-row pl-cal">
+            <button type="button" className="btn btn-secondary" onClick={saveCalendar}>Add the plan to your calendar</button>
+            <span className="ci-fine">A file for Google, Apple or Outlook Calendar: each week&apos;s chapters, the start of revision and the exam day. If the plan changes, add the new file; most calendar apps update the same events rather than adding new ones.</span>
+          </div>
           <p className="ci-fine">Reading times are estimates at about 200 words a minute. Finished chapters leave the plan, and what’s left is shared out again. The plan is kept on this device; <Link className="link" href="/learn/transfer" prefetch={false}>move it to another</Link>.</p>
         </div>
       )}

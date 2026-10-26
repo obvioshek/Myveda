@@ -224,7 +224,7 @@ export default function ReaderView({ r }: { r: ReaderData }) {
             {anchor && (
               <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }} className="muted">
                 About <q style={{ fontStyle: "italic", color: "var(--color-text)", flex: 1 }}>{anchor}</q>
-                <button className="btn btn-ghost" type="button" aria-label="Remove passage" onClick={() => setAnchor(null)} style={{ padding: "2px 8px", color: "var(--ink-2)" }}>×</button>
+                <button className="btn btn-ghost" type="button" aria-label="Remove passage" onClick={() => setAnchor(null)} style={{ padding: "2px 8px", color: "var(--soft)" }}>×</button>
               </div>
             )}
             <div className="wrap-chips" role="group" aria-label="How your reply relates">
