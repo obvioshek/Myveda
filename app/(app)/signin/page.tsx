@@ -20,7 +20,7 @@ export default async function SignInPage() {
     : [];
 
   return (
-    <div className="signin">
+    <main className="signin">
       <div className="card">
         <Link className="brand" href="/"><BrandMark />Veda Verse</Link>
         <h1>Sign in</h1>
@@ -29,7 +29,7 @@ export default async function SignInPage() {
         ) : (
           <>
             {hasSupabase() ? <SignInForm /> : !demo && (
-              <p className="muted">Sign-in opens with the first invitations. <Link href="/#join">Join the early list</Link> and we will email you.</p>
+              <p className="muted">Sign-in opens with the first invitations. Until then, everything on the learning site is open: <Link href="/learn">read the chapters</Link>, or get <Link href="/learn/weekly">one idea a week</Link> by email.</p>
             )}
             {demo && people.length > 0 && (
               <div className="stack" style={{ gap: 8 }}>
@@ -41,6 +41,6 @@ export default async function SignInPage() {
           </>
         )}
       </div>
-    </div>
+    </main>
   );
 }

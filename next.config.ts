@@ -1,7 +1,36 @@
 import type { NextConfig } from "next";
 
+// What pages may load. The browser only ever talks to this site: fonts,
+// scripts and data are all served from it, and Supabase is used from the
+// server alone. Next.js writes small inline scripts and styles into each page,
+// hence 'unsafe-inline' (nonces would make every page dynamic). On preview
+// deployments, Vercel's toolbar is allowed too.
+function contentSecurityPolicy() {
+  const preview = process.env.VERCEL_ENV === "preview";
+  const live = preview ? " https://vercel.live" : "";
+  return [
+    "default-src 'self'",
+    `script-src 'self' 'unsafe-inline'${live}`,
+    `style-src 'self' 'unsafe-inline'${live}`,
+    `img-src 'self' data: blob:${preview ? " https://vercel.live https://vercel.com" : ""}`,
+    `font-src 'self'${preview ? " https://vercel.live https://assets.vercel.com" : ""}`,
+    `connect-src 'self'${preview ? " https://vercel.live wss://ws-us3.pusher.com" : ""}`,
+    `frame-src ${preview ? "https://vercel.live" : "'none'"}`,
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+  ].join("; ");
+}
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+
+  // The site has two root layouts (the learning site and the community), so a
+  // missing address gets its own page: app/global-not-found.tsx.
+  experimental: {
+    globalNotFound: true,
+  },
 
   // myvedaverse.in is the one address: www.myvedaverse.in moves to it,
   // keeping the path and query.
@@ -21,11 +50,14 @@ const nextConfig: NextConfig = {
       { key: "X-Content-Type-Options", value: "nosniff" },
       { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
       { key: "X-Frame-Options", value: "DENY" },
-      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+      { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
     ];
     // browsers ignore HSTS over plain http, so this only matters once HTTPS is live
     if (process.env.NODE_ENV === "production") {
       security.push({ key: "Strict-Transport-Security", value: "max-age=63072000" });
+      // Development needs eval for fast refresh, so the policy applies to builds only.
+      security.push({ key: "Content-Security-Policy", value: contentSecurityPolicy() });
     }
     return [
       { source: "/:path*", headers: security },

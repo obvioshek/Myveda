@@ -10,6 +10,7 @@ import { LEARN_PATH } from "@/content/learn";
 import { TEXTS, TEXTS_PATH, TEXTS_UPDATED, passagesFrom, textById, textPath } from "@/content/learn/texts";
 import { READING_GUIDE_PATH } from "@/content/learn/reading-guide";
 import { siteUrl } from "@/lib/site";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title, description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, siteName: "Veda Verse", locale: "en_IN", type: "article" },
+    openGraph: { images: DEFAULT_OG_IMAGES, title, description, url, siteName: "Veda Verse", locale: "en_IN", type: "article" },
     twitter: { card: "summary_large_image", title, description },
   };
 }

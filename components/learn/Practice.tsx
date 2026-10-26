@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { cardId, recallId, type PracticeBank, type PracticeQuestion, type RecallBank } from "@/content/learn/practice";
-import { questionId } from "@/content/learn/question-id";
+import type { PracticeBank, PracticeQuestion, RecallBank } from "@/content/learn/practice";
+import { cardId, questionId, recallId } from "@/content/learn/question-id";
 import { readQuiz } from "@/content/learn/quiz-link";
 import { download } from "./ics";
 import { useDone } from "./progress";
@@ -83,6 +83,33 @@ function mix(pool: Q[], n: number): Q[] {
 
 const lessonHref = (q: Q) => (q.card ? `/learn/glossary#${q.b}` : `/learn/${q.c}#${q.b}`);
 
+// The session in progress is kept for this tab (sessionStorage), so a reader
+// who follows a link away or reloads can pick it up again. A finished session
+// is dropped; one older than half a day isn't offered.
+const SESSION_KEY = "vv-session";
+const SESSION_TTL = 12 * 3600_000;
+
+function savedSession(): Session | null {
+  try {
+    const s = JSON.parse(sessionStorage.getItem(SESSION_KEY) ?? "null") as Session | null;
+    if (!s || s.ended !== null || !Array.isArray(s.items) || !s.items.length || Date.now() - s.started > SESSION_TTL) return null;
+    return s;
+  } catch { return null; }
+}
+
+function keepSession(s: Session | null) {
+  try {
+    if (s && s.ended === null) sessionStorage.setItem(SESSION_KEY, JSON.stringify(s));
+    else if (s) sessionStorage.removeItem(SESSION_KEY);
+  } catch { /* the session just isn't kept */ }
+}
+
+function dropSession() {
+  try { sessionStorage.removeItem(SESSION_KEY); } catch { /* nothing to drop */ }
+}
+
+const sessionName = (s: Session) => s.exam ? "mock test" : s.kind === "review" ? "review" : s.kind === "chapter" ? "chapter test" : s.kind === "set" ? "quiz" : "practice session";
+
 function took(ms: number) {
   const s = Math.max(1, Math.round(ms / 1000));
   const m = Math.floor(s / 60);
@@ -103,6 +130,7 @@ export default function Practice() {
   const [exam, setExam] = useState(false);
   const [pace, setPace] = useState<number>(60);
   const [session, setSession] = useState<Session | null>(null);
+  const [resumable, setResumable] = useState<Session | null>(null);
   const list = useReview();
   const done = useDone();
   const top = useRef<HTMLDivElement>(null);
@@ -122,6 +150,7 @@ export default function Practice() {
         // A link from a unit ("Practise this unit") chooses that unit, and one
         // from the glossary starts on terms.
         const params = new URLSearchParams(window.location.search);
+        setResumable(savedSession());
         const want = params.get("unit");
         if (want && b.units.some(u => u.id === want)) setUnits([want]);
         if (params.get("mode") === "terms") setWhat("terms");
@@ -172,6 +201,17 @@ export default function Practice() {
     return () => { live = false; };
   }, [wantRecall, recalls]);
 
+  useEffect(() => { keepSession(session); }, [session]);
+
+  // Leaving in the middle of a mock test asks first: its clock keeps running.
+  const testing = !!session?.exam && session.ended === null && session.answers.some(Boolean);
+  useEffect(() => {
+    if (!testing) return;
+    const warn = (e: BeforeUnloadEvent) => { e.preventDefault(); };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [testing]);
+
   const byId = useMemo(() => new Map([...(bank?.questions ?? []), ...(bank?.cards ?? []), ...(recalls ?? [])].map(q => [q.id, q])), [bank, recalls]);
 
   // Questions reworded or removed since they were listed can't be asked again.
@@ -197,6 +237,7 @@ export default function Practice() {
   const howMany = counts.includes(count) ? count : counts[1];
 
   const begin = (kind: Kind, items: Q[], chapter?: string, examMode?: Session["exam"]) => {
+    setResumable(null);
     setSession(s => ({ kind, items, i: 0, answers: items.map(() => null), started: Date.now(), ended: null, chapter, exam: examMode, title: kind === "set" ? s?.title : undefined }));
     window.setTimeout(() => top.current?.scrollIntoView({ block: "start" }), 0);
   };
@@ -217,7 +258,14 @@ export default function Practice() {
     return <div className="wrap pr-box" ref={top}><p className="sub">The questions didn’t load. Check your connection and reload the page.</p></div>;
   }
   if (!bank) {
-    return <div className="wrap pr-box" ref={top} aria-busy="true"><p className="sub">Loading the questions…</p></div>;
+    return (
+      <div className="wrap pr-box" ref={top} aria-busy="true">
+        <p className="sr-only" role="status">Loading the questions…</p>
+        <div className="grid g2 pr-modes" aria-hidden="true">
+          {[0, 1].map(i => <div key={i} className="cell pr-mode sk-card"><span className="sk sk-label" /><span className="sk sk-h" /><span className="sk sk-line" /><span className="sk sk-line" /><span className="sk sk-line short" /><span className="sk sk-btn" /></div>)}
+        </div>
+      </div>
+    );
   }
 
   if (session) {
@@ -232,22 +280,33 @@ export default function Practice() {
 
   return (
     <div className="wrap pr-box" ref={top}>
+      {resumable && (
+        <div className="pr-resume" role="status">
+          <p><b>Your {sessionName(resumable)} is waiting.</b> You were on question {resumable.i + 1} of {resumable.items.length}{resumable.exam?.limitMs ? "; its clock kept running" : ""}.</p>
+          <div className="btn-row">
+            <button type="button" className="btn btn-primary" onClick={() => { setSession(resumable); setResumable(null); window.setTimeout(() => top.current?.scrollIntoView({ block: "start" }), 0); }}>Pick up where you left off</button>
+            <button type="button" className="btn btn-ghost" onClick={() => { dropSession(); setResumable(null); }}>Start fresh</button>
+          </div>
+        </div>
+      )}
       <div className="grid g2 pr-modes">
         <section className="cell pr-mode" id="review" aria-labelledby="pr-review-h">
           <span className="label red">Spaced review</span>
           <h2 id="pr-review-h" className="h-sm">
             {due.length ? `${due.length} to review today.` : listed.length ? "All caught up." : "Nothing to review yet."}
           </h2>
-          <p className="pr-text">
-            A question you get wrong, in a lesson or here, or a term you didn’t know, comes back the next day. Each time you get it right it waits longer: 3 days, then 7, then 21. Right at 21 days, it leaves the list. Get it wrong again and it starts over.
-          </p>
-          <ol className="pr-steps" aria-label="When a missed question comes back">
-            <li><b>Missed</b>today</li>
-            <li><b>1 day</b>later</li>
-            <li><b>3 days</b>after that</li>
-            <li><b>7 days</b>after that</li>
-            <li><b>21 days</b>then it’s learned</li>
-          </ol>
+          <p className="pr-text">{listed.length ? "The questions and terms you missed come back here on the day they are due." : "Questions you get wrong, here or in a lesson, come back here the next day, and then less often until they stick."}</p>
+          <details className="pr-how" open={!listed.length}>
+            <summary>How the spacing works</summary>
+            <p className="pr-text">Each time you get one right it waits longer: 3 days, then 7, then 21. Right at 21 days, it leaves the list. Get it wrong again and it starts over.</p>
+            <ol className="pr-steps" aria-label="When a missed question comes back">
+              <li><b>Missed</b>today</li>
+              <li><b>1 day</b>later</li>
+              <li><b>3 days</b>after that</li>
+              <li><b>7 days</b>after that</li>
+              <li><b>21 days</b>then it’s learned</li>
+            </ol>
+          </details>
           {due.length > 0 && (
             <div className="btn-row">
               <button type="button" className="btn btn-primary btn-lg" onClick={startReview}>
@@ -307,31 +366,34 @@ export default function Practice() {
             </div>
           </fieldset>
 
-          {what === "questions" && (
-            <div className="pr-exam">
+          <details className="pr-more" open={(isExam || onlyWeak || onlyStarted) || undefined}>
+            <summary>More options{isExam || onlyWeak || onlyStarted ? <span className="pr-more-on">: {[isExam && "mock test", onlyWeak && what === "questions" && "weak chapters", onlyStarted && "started chapters"].filter(Boolean).join(", ")}</span> : null}</summary>
+            {what === "questions" && (
+              <div className="pr-exam">
+                <label className="pr-check">
+                  <input type="checkbox" checked={exam} onChange={e => setExam(e.target.checked)} />
+                  <span>Mock test: no answers until you submit</span>
+                </label>
+                {exam && (
+                  <div className="pr-chips" role="group" aria-label="Time limit">
+                    {PACES.map(p => <button key={p.s} type="button" className="pr-chip" aria-pressed={pace === p.s} onClick={() => setPace(p.s)}>{p.label}</button>)}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {what === "questions" && (
               <label className="pr-check">
-                <input type="checkbox" checked={exam} onChange={e => setExam(e.target.checked)} />
-                <span>Mock test: no answers until you submit</span>
+                <input type="checkbox" checked={onlyWeak} disabled={!weakInChosen && !onlyWeak} onChange={e => setOnlyWeak(e.target.checked)} />
+                <span>Only my weak chapters {weakInChosen ? `(${weakInChosen})` : "(none yet: they show once you’ve answered a few questions)"}</span>
               </label>
-              {exam && (
-                <div className="pr-chips" role="group" aria-label="Time limit">
-                  {PACES.map(p => <button key={p.s} type="button" className="pr-chip" aria-pressed={pace === p.s} onClick={() => setPace(p.s)}>{p.label}</button>)}
-                </div>
-              )}
-            </div>
-          )}
+            )}
 
-          {what === "questions" && (
             <label className="pr-check">
-              <input type="checkbox" checked={onlyWeak} disabled={!weakInChosen && !onlyWeak} onChange={e => setOnlyWeak(e.target.checked)} />
-              <span>Only my weak chapters {weakInChosen ? `(${weakInChosen})` : "(none yet: they show once you’ve answered a few questions)"}</span>
+              <input type="checkbox" checked={onlyStarted} disabled={!startedInChosen && !onlyStarted} onChange={e => setOnlyStarted(e.target.checked)} />
+              <span>Only chapters I’ve started {startedInChosen ? `(${startedInChosen})` : "(none yet: finish a concept first)"}</span>
             </label>
-          )}
-
-          <label className="pr-check">
-            <input type="checkbox" checked={onlyStarted} disabled={!startedInChosen && !onlyStarted} onChange={e => setOnlyStarted(e.target.checked)} />
-            <span>Only chapters I’ve started {startedInChosen ? `(${startedInChosen})` : "(none yet: finish a concept first)"}</span>
-          </label>
+          </details>
 
           <div className="btn-row">
             <button type="button" className="btn btn-primary btn-lg" disabled={!pool.length} onClick={startMixed}>
@@ -542,12 +604,19 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
   const last = session.i === session.items.length - 1;
   const qRef = useRef<HTMLHeadingElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const dockRef = useRef<HTMLButtonElement>(null);
   const qId = useId();
   const [guessing, setGuessing] = useState(false);
 
   // A new question takes focus, so it is read out and the keys work at once.
+  // After an answer, focus goes to whichever "Next" is showing (on phones, the
+  // one docked at the foot of the screen).
   useEffect(() => { qRef.current?.focus({ preventScroll: true }); }, [session.i]);
-  useEffect(() => { if (answer) nextRef.current?.focus({ preventScroll: true }); }, [answer]);
+  useEffect(() => {
+    if (!answer) return;
+    const shown = [dockRef.current, nextRef.current].find(b => b && b.offsetParent !== null);
+    shown?.focus({ preventScroll: true });
+  }, [answer]);
 
   const pick = useCallback((i: number) => {
     if (session.answers[session.i]) return;
@@ -621,13 +690,19 @@ function QuestionRun({ session, setSession }: { session: Session; setSession: (s
             {answer && !right && <MixupHint notes={q.mx ?? []} />}
             {answer?.line && <p className="pr-line">{answer.line}</p>}
             <div className="btn-row">
-              <button type="button" className="btn btn-primary" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next question"}</button>
+              <button type="button" className="btn btn-primary pr-next-inline" ref={nextRef} onClick={next}>{last ? "See how you did" : "Next question"}</button>
               <a className="btn btn-ghost" href={lessonHref(q)} target="_blank" rel="noopener">Read this concept</a>
             </div>
             {answer && <p className="ck-rp"><ReportProblem what={`The question “${q.q}” (${q.ct})`} label="Report a problem with this question" /></p>}
           </div>
         </div>
       </div>
+      {answer && (
+        <div className="pr-dock">
+          <span className={right ? "pr-dock-r ok" : "pr-dock-r"}>{right ? "Correct" : "Not quite"}</span>
+          <button type="button" className="btn btn-primary" ref={dockRef} onClick={next}>{last ? "See how you did" : "Next question"}</button>
+        </div>
+      )}
       <p className="ci-fine pr-keys">Keys: 1 to {q.o.length} to answer, G to mark a guess first, Enter for the next question.</p>
     </div>
   );
@@ -728,7 +803,7 @@ function MockRun({ session, setSession }: { session: Session; setSession: (s: Se
           </button>
         ))}
       </div>
-      <div className="btn-row">
+      <div className="btn-row pr-mock-nav">
         <button type="button" className="btn btn-secondary" disabled={session.i === 0} onClick={() => go(session.i - 1)}>Previous</button>
         {session.i < n - 1
           ? <button type="button" className="btn btn-primary" onClick={() => go(session.i + 1)}>Next</button>

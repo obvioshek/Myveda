@@ -6,6 +6,7 @@ import HiNav, { HiTag } from "@/components/hi/HiNav";
 import ReportProblem from "@/components/learn/ReportProblem";
 import { HI_GLOSSARY_PATH, HI_PATH, HI_START_PATH } from "@/content/hi";
 import { TEXTS_PATH, textPath } from "@/content/learn/text-refs";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "वेद वर्स: पहले विचार समझें, फिर देखें शास्त्रों ने उसे कैसे देखा";
 const description = "प्रबंध की अवधारणाएँ सरल भाषा में, एक-एक विचार करके, और उनके साथ भारत के शास्त्रीय ग्रंथों के अंश, संदर्भ सहित। हिंदी संस्करण का पहला भाग।";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: HI_PATH },
-  openGraph: { title, description, url: HI_PATH, siteName: "Veda Verse", locale: "hi_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: HI_PATH, siteName: "Veda Verse", locale: "hi_IN", type: "website" },
 };
 
 // The Hindi edition's front page: what the site is, how passages are marked,

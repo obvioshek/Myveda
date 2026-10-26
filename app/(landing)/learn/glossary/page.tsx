@@ -5,15 +5,16 @@ import GlossaryList, { type GlossaryItem } from "@/components/learn/GlossaryList
 import { GLOSSARY, GLOSSARY_PATH, PRACTICE_PATH, UNITS, chapterBySlug, chapterPath } from "@/content/learn";
 import { HI_GLOSSARY_PATH } from "@/content/hi";
 import { siteUrl } from "@/lib/site";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
-const title = "Glossary of management, economics, accounting and finance terms · Veda Verse";
-const description = `${GLOSSARY.length} management, economics, OB, HR, accounting and finance terms in plain language, from agency theory and elasticity to WACC and variance analysis, each linked to its chapter.`;
+const title = "Management glossary: economics, HR and finance terms · Veda Verse";
+const description = `${GLOSSARY.length} management, economics, HR, accounting and finance terms in plain language, from agency theory to WACC, each linked to the chapter that explains it.`;
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: GLOSSARY_PATH, languages: { "en-IN": GLOSSARY_PATH, "hi-IN": HI_GLOSSARY_PATH } },
-  openGraph: { title, description, url: GLOSSARY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: GLOSSARY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

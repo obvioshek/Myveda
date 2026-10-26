@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import Planner, { type PlanUnit } from "@/components/learn/Planner";
 import { PLAN_PATH, UNITS, conceptIds } from "@/content/learn";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Study plan: from today to your exam date · Veda Verse";
-const description = "Choose your exam date and the units you need. The chapters you haven't finished are shared out week by week, with the last days kept for revision. It adjusts as you read.";
+const description = "Pick your exam date and units. Your unfinished chapters are shared out week by week, the last days kept for revision, and the plan adjusts as you read.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: PLAN_PATH },
-  openGraph: { title, description, url: PLAN_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: PLAN_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

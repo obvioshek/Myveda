@@ -50,9 +50,17 @@ export function onToast(handler: (message: string) => void) {
 }
 
 // Opening a concept saves it, with the lesson's address, as the place to
-// continue from.
+// continue from. The note saying so shows once a visit: after that it would
+// only cover the text the reader just opened.
+const TOLD_KEY = "vv-continue-told";
+
 export function openConcept(name: string, announce: boolean, href: string) {
   writeDevice(LAST_HREF_KEY, href);
   writeDevice(LAST_KEY, name);
-  if (announce) showToast(`${name} saved to Continue`);
+  if (!announce) return;
+  try {
+    if (sessionStorage.getItem(TOLD_KEY)) return;
+    sessionStorage.setItem(TOLD_KEY, "1");
+  } catch { /* without storage, say it each time */ }
+  showToast(`${name} saved to Continue`);
 }

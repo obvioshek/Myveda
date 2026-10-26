@@ -6,6 +6,7 @@ import "./landing.css";
 import { OfflineSupport } from "@/components/learn/Offline";
 import { TEXT_SIZE_SCRIPT } from "@/components/learn/TextSize";
 import { THEME_SCRIPT } from "@/components/learn/Theme";
+import NavProgress from "@/components/landing/NavProgress";
 
 // Titles stay under about 60 characters and the description under about 160,
 // which is what search results show before cutting them off.
@@ -60,6 +61,9 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
             hydration fail on many page loads. */}
         <Script id="vv-text-size" strategy="beforeInteractive">{TEXT_SIZE_SCRIPT}</Script>
         <Script id="vv-theme" strategy="beforeInteractive">{THEME_SCRIPT}</Script>
+        {/* Opened at a #part: long pages draw every section, so the jump is exact (learn.css). */}
+        <Script id="vv-landing" strategy="beforeInteractive">{"if(location.hash.length>1)document.documentElement.dataset.landing='1'"}</Script>
+        <NavProgress />
         {children}
         <OfflineSupport />
       </body>

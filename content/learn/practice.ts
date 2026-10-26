@@ -53,11 +53,9 @@ export type PracticeBank = {
 /** Served separately (/practice-recall.json) and fetched only when recall is used. */
 export type RecallBank = { concepts: PracticeConcept[] };
 
-/** The id a term card is kept under in the review list. "glossary" is never a chapter slug. */
-export const cardId = (termId: string) => `glossary#${termId}#t`;
-
-/** The id a concept's recall is kept under in the review list. */
-export const recallId = (slug: string, blockId: string) => `${slug}#${blockId}#r`;
+// cardId and recallId live in question-id.ts: importing a value from this file
+// into a client component would put every chapter in its bundle.
+export { cardId, recallId } from "./question-id";
 
 export function buildPracticeBank(): PracticeBank {
   const questions: PracticeQuestion[] = [];

@@ -3,6 +3,7 @@ import PageShell from "@/components/landing/PageShell";
 import PlacementCheck from "@/components/learn/PlacementCheck";
 import { UNITS } from "@/content/learn";
 import { CHECK_PATH, placementQuestions } from "@/content/learn/placement";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const questions = placementQuestions();
 const title = "Where should I start? A short check · Veda Verse";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: CHECK_PATH },
-  openGraph: { title, description, url: CHECK_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: CHECK_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

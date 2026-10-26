@@ -4,6 +4,7 @@ import PageShell from "@/components/landing/PageShell";
 import Arrow from "@/components/landing/Arrow";
 import { DRAVIDIAN, MARKS, READING_GUIDE_PATH, SPELLINGS, WORDS, chaptersUsing, type Mark } from "@/content/learn/reading-guide";
 import { TEXTS_PATH } from "@/content/learn/text-refs";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "How to read Sanskrit and Tamil names and terms · Veda Verse";
 const description = "What ā, ṛ, ś, ṣ and the other marks mean and how they sound, the familiar spellings of the names, and words like dharma and artha that don't translate well.";
@@ -12,13 +13,13 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: READING_GUIDE_PATH },
-  openGraph: { title, description, url: READING_GUIDE_PATH, siteName: "Veda Verse", locale: "en_IN", type: "article" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: READING_GUIDE_PATH, siteName: "Veda Verse", locale: "en_IN", type: "article" },
   twitter: { card: "summary_large_image", title, description },
 };
 
 function Marks({ rows, label }: { rows: Mark[]; label: string }) {
   return (
-    <div className="prose"><div className="tb">
+    <div className="prose"><div className="tb" tabIndex={0} role="region" aria-label={label}>
       <table aria-label={label}>
         <thead><tr><th scope="col">Mark</th><th scope="col">Sounds</th><th scope="col">For example</th></tr></thead>
         <tbody>{rows.map(m => <tr key={m.mark}><td className="rg-mark">{m.mark}</td><td>{m.sounds}</td><td>{m.example}</td></tr>)}</tbody>

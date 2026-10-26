@@ -12,8 +12,9 @@ import Arrow from "@/components/landing/Arrow";
 import { siteUrl } from "@/lib/site";
 import ThreadPreview from "@/components/landing/ThreadPreview";
 import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL, QUESTIONS, TEXTS } from "@/content/landing";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, REVISION_PATH, START_WALK_PATH, UNITS, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, START_WALK_PATH, UNITS, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
 import { THEMES, pairView } from "@/content/learn/readings";
+import { ABOUT_LINKS, SITE_MAP } from "@/content/nav";
 
 // A section's eyebrow: a big Devanagari numeral, then the label.
 function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) {
@@ -179,33 +180,28 @@ export default function LandingPage() {
       </main>
 
       <footer className="foot" id="about">
-        <div className="wrap foot-grid">
+        <div className="wrap foot-nav">
           <div className="foot-about">
             <span className="foot-brand"><BrandMark />Veda Verse</span>
             <p>Management one clear idea at a time, read beside India&apos;s classical thought, and a community where every answer says how the writer knows. Made by an independent team in India.</p>
           </div>
-          <nav className="foot-col" aria-label="Read">
-            <span className="label">Read</span>
-            <Link href={LEARN_PATH}>All chapters</Link>
-            <Link href={GLOSSARY_PATH}>Glossary</Link>
-            <Link href={REVISION_PATH}>Revision sheets</Link>
-          </nav>
-          <nav className="foot-col" aria-label="Community">
-            <span className="label">Community</span>
-            <a href="#community">How it works</a>
-            <a href={COMMUNITY_HREF}>Join or sign in</a>
-          </nav>
-          <nav className="foot-col" aria-label="Contact">
-            <span className="label">Contact</span>
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-            <Link href="/privacy">Privacy</Link>
-          </nav>
+          {SITE_MAP.map(g => (
+            <nav key={g.id} className="foot-col" aria-labelledby={`ft-${g.id}`}>
+              <span id={`ft-${g.id}`} className="label">{g.label}</span>
+              <ul>
+                {g.links.map(l => (
+                  <li key={l.href}><Link href={l.href} prefetch={false} lang={l.lang} hrefLang={l.lang} className={l.lang ? "hi-ui" : undefined}>{l.label}</Link></li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
         <div className="wrap wordmark-wrap"><span className="wordmark" aria-hidden="true">Veda Verse<span className="red">.</span></span></div>
         <div className="wrap">
           <div className="foot-base">
             <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
-            <span className="end">Set in Archivo and Tiro Devanagari Sanskrit.</span>
+            <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}
           </div>
         </div>
       </footer>

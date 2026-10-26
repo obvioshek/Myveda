@@ -12,3 +12,9 @@ export function questionId(slug: string, blockId: string, q: string): string {
   }
   return `${slug}#${blockId}#${(h >>> 0).toString(36)}`;
 }
+
+/** The id a term card is kept under in the review list. "glossary" is never a chapter slug. */
+export const cardId = (termId: string) => `glossary#${termId}#t`;
+
+/** The id a concept's recall is kept under in the review list. */
+export const recallId = (slug: string, blockId: string) => `${slug}#${blockId}#r`;

@@ -51,7 +51,7 @@ export default function InboxView({ inbox, filter, filters }: { inbox: InboxData
 
       <div className="wrap-chips" role="group" aria-label="Filter">
         {filters.map(f => (
-          <Link key={f} className="pill" aria-pressed={filter === f} href={f === "All" ? "/inbox" : `/inbox?type=${f.toLowerCase().replace(/ /g, "-")}`}>{f}</Link>
+          <Link key={f} className="pill" aria-current={filter === f ? "page" : undefined} href={f === "All" ? "/inbox" : `/inbox?type=${f.toLowerCase().replace(/ /g, "-")}`}>{f}</Link>
         ))}
       </div>
 
@@ -81,7 +81,8 @@ function Row({ it }: { it: InboxItem }) {
   const who = it.actor?.name ?? "";
   return (
     <div style={{ display: "flex", gap: 12, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>
-      <span aria-label={it.unread ? "Unread" : undefined} style={{ width: 8, height: 8, marginTop: 14, flex: "none", background: it.unread ? "var(--color-accent)" : "transparent" }} />
+      <span aria-hidden="true" style={{ width: 8, height: 8, marginTop: 14, flex: "none", background: it.unread ? "var(--color-accent)" : "transparent" }} />
+      {it.unread && <span className="sr-only">Unread.</span>}
       {it.actor ? <Avatar person={it.actor} /> : <span className="av" aria-hidden="true">{it.initials}</span>}
       <div style={{ flex: 1, minWidth: 0 }} className="stack">
         <button type="button" onClick={async () => { if (it.unread) await markRead(it.id); router.push(it.href); }}

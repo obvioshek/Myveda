@@ -1,3 +1,4 @@
+import { createHash, timingSafeEqual } from "node:crypto";
 import { db } from "@/src/prisma/db";
 import { hasDatabase } from "@/lib/backend";
 import { mailConfigured, sendMail } from "@/lib/mail";
@@ -13,10 +14,14 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 const BATCH = 150;
 
+// Compares the caller's secret in constant time, so timing can't reveal it.
+const digest = (s: string) => createHash("sha256").update(s).digest();
+const matches = (given: string | null, secret: string) => !!given && timingSafeEqual(digest(given), digest(`Bearer ${secret}`));
+
 export async function GET(req: Request) {
   const secret = process.env.CRON_SECRET;
   if (!secret || !mailConfigured() || !hasDatabase()) return Response.json({ ok: false, reason: "not configured" }, { status: 503 });
-  if (req.headers.get("authorization") !== `Bearer ${secret}`) return Response.json({ ok: false }, { status: 401 });
+  if (!matches(req.headers.get("authorization"), secret)) return Response.json({ ok: false }, { status: 401 });
 
   const week = thisWeek();
   const list = db.orm.public.WeeklySubscriber;

@@ -5,6 +5,7 @@ import Arrow from "@/components/landing/Arrow";
 import HiNav, { HiTag } from "@/components/hi/HiNav";
 import { HI_GLOSSARY_PATH, HI_START_PATH, hiWalk } from "@/content/hi";
 import { deva } from "@/content/learn";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "यहाँ से शुरू करें: पाँच विचार, दो तरह से पढ़े गए · वेद वर्स";
 const description = "शास्त्रीय ग्रंथों को प्रबंध के विचारों के साथ पढ़ना नया है? पाँच छोटे चरण, हर एक में एक आधुनिक विचार और एक अंश, और यह कि पुराने पाठ को आज की समस्या पर विचारक की तरह कैसे पढ़ें।";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: HI_START_PATH, languages: { "en-IN": "/learn/start", "hi-IN": HI_START_PATH } },
-  openGraph: { title, description, url: HI_START_PATH, siteName: "Veda Verse", locale: "hi_IN", type: "article" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: HI_START_PATH, siteName: "Veda Verse", locale: "hi_IN", type: "article" },
 };
 
 const html = (__html: string) => ({ __html });

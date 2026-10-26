@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import { CORRECTIONS, CORRECTIONS_PATH, LOG_STARTED } from "@/content/learn/corrections";
 import { TEXTS_PATH } from "@/content/learn/text-refs";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Corrections · Veda Verse";
 const description = "Every fix made to the chapters, questions and passages after a reader reported a problem, with its date, and how reports are handled.";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: CORRECTIONS_PATH },
-  openGraph: { title, description, url: CORRECTIONS_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: CORRECTIONS_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
 };
 
 const day = (iso: string) => {

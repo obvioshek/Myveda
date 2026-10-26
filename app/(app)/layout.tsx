@@ -5,6 +5,7 @@ import "./product.css";
 import { siteUrl } from "@/lib/site";
 import { TEXT_SIZE_SCRIPT } from "@/components/learn/TextSize";
 import { THEME_SCRIPT } from "@/components/learn/Theme";
+import NavProgress from "@/components/landing/NavProgress";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
@@ -29,6 +30,7 @@ export default function ProductRootLayout({ children }: { children: React.ReactN
       <body>
         <Script id="vv-text-size" strategy="beforeInteractive">{TEXT_SIZE_SCRIPT}</Script>
         <Script id="vv-theme" strategy="beforeInteractive">{THEME_SCRIPT}</Script>
+        <NavProgress />
         {children}
       </body>
     </html>

@@ -4,16 +4,17 @@ import PageShell from "@/components/landing/PageShell";
 import MapExplorer, { type MapNode } from "@/components/learn/MapExplorer";
 import { CHAPTERS, UNITS, chapterPath } from "@/content/learn";
 import { allConnections } from "@/content/learn/connections";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const MAP_PATH = "/learn/map";
 const title = "How the chapters connect: a map · Veda Verse";
-const description = "Which chapters build on which, worked out from the terms they share: how the units lean on each other, the chapters most others build on, and any chapter's neighbours.";
+const description = "Which chapters build on which, from the terms they share: how the units lean on each other, the chapters most build on, and each chapter's neighbours.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: MAP_PATH },
-  openGraph: { title, description, url: MAP_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: MAP_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
 };
 
 // A chapter "builds on" another when its text uses at least two of the other
@@ -58,7 +59,7 @@ export default function MapPage() {
       <section className="wrap tx-sec" aria-labelledby="mx-units-h">
         <h2 id="mx-units-h" className="h-xs">How the units lean on each other</h2>
         <p className="ci-fine">Each number counts links from a chapter in the row&apos;s unit to a chapter in the column&apos;s unit. The diagonal is links within a unit.</p>
-        <div className="prose"><div className="tb">
+        <div className="prose"><div className="tb" tabIndex={0} role="region" aria-label="Links between units">
           <table className="mx-m">
             <thead><tr><th scope="col">Chapters in…</th>{UNITS.map(u => <th key={u.id} scope="col">build on Unit {u.n}</th>)}</tr></thead>
             <tbody>

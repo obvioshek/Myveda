@@ -14,20 +14,42 @@ import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
 import { buildFormulaSheet } from "@/content/learn/formulas";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 // Units with at least one formula get a link to their part of the formula sheet.
 const WITH_FORMULAS = new Set(buildFormulaSheet().filter(u => u.formulas > 0).map(u => u.id));
 
-const title = "Management chapters: economics, OB, HRM, accounting, finance and more · Veda Verse";
-const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour, HRM, managerial accounting, finance, strategy and marketing in plain language, with passages from India's classical texts and thinkers set beside the ideas they meet.`;
+const title = "Management chapters, from economics to marketing · Veda Verse";
+const description = `${CHAPTERS.length} chapters on management, economics, OB, HRM, accounting, finance, strategy and marketing in plain language, each idea beside India's classical texts.`;
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/learn" },
-  openGraph: { title, description, url: "/learn", siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: "/learn", siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
+
+// The problem index shows its first few; the rest open on request.
+const FIRST_PROBLEMS = 5;
+
+function Problems({ items }: { items: typeof PROBLEMS }) {
+  return (
+    <dl className="ci-probs">
+      {items.map(p => (
+        <div key={p.problem}>
+          <dt>{p.problem}</dt>
+          <dd>
+            {p.slugs.map(slug => {
+              const c = chapterBySlug(slug)!;
+              return <Link key={slug} href={chapterPath(slug)}><span className="ci-pl">{c.short ?? c.title}</span><span className="ci-pu">Unit {c.unitN}</span></Link>;
+            })}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 
 const hours = (min: number) => (min < 90 ? `about ${min} minutes` : `about ${Math.round(min / 60)} hours`);
 
@@ -61,7 +83,7 @@ export default function LearnIndex() {
       <section className="wrap ci-hero" aria-labelledby="learn-h">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />{UNITS.length === 1 ? `Unit 1 · ${UNITS[0].title}` : `${UNITS.length} units`}</span>
         <h1 id="learn-h"><span>{CHAPTERS.length} chapters.</span><span className="red">Every idea, then its ancient lens.</span></h1>
-        <p className="lede">Each chapter explains the modern concepts in plain language, with the terms, formulas and examples a course expects, then, where a classical text meets the idea, sets the passage beside it, every one with its reference. Start anywhere, or use one of the two ways in below.</p>
+        <p className="lede">Plain-language chapters with the terms, formulas and examples a course expects. Where a classical text met the same problem, its passage sits beside the idea, with its reference.</p>
         <nav className="ci-jump" aria-label="Units">
           {UNITS.map(u => <a key={u.id} href={`#${u.id}`}><b>Unit {u.n}</b>{u.short}</a>)}
           {pending && <span className="ci-soon">{pending}</span>}
@@ -70,24 +92,15 @@ export default function LearnIndex() {
       </section>
 
       <section className="wrap ci-walk" aria-labelledby="ci-walk-h">
-        <span className="label red">New to reading the classics this way</span>
+        <span className="label red">Not sure where to begin?</span>
         <h2 id="ci-walk-h" className="h-sm">Five ideas, read two ways.</h2>
-        <p className="sub">A short walk before the chapters: five modern ideas, each beside a passage that met the same problem, and what to notice when you read them together.</p>
+        <p className="sub">A fifteen-minute walk: five modern ideas, each beside a passage that met the same problem, and what to notice when you read them together.</p>
         <div className="btn-row">
-          <Link className="btn btn-secondary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
-          <Link className="btn btn-secondary" href="/learn/check" prefetch={false}>Where should I start?</Link>
-          <Link className="btn btn-secondary" href={TEXTS_PATH} prefetch={false}>Meet the texts<Arrow /></Link>
-          <Link className="btn btn-secondary" href={READING_GUIDE_PATH} prefetch={false}>How to read the names</Link>
+          <Link className="btn btn-primary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
+          <Link className="btn btn-secondary" href="/learn/check" prefetch={false}>Or find your level in 2 minutes</Link>
         </div>
+        <p className="ci-fine">New to the old texts? <Link className="link" href={TEXTS_PATH} prefetch={false}>Meet them</Link>, and see <Link className="link" href={READING_GUIDE_PATH} prefetch={false}>how to read their names</Link>.</p>
       </section>
-
-      <nav className="wrap ci-more" aria-label="More ways to learn">
-        <Link href="/learn/weekly" prefetch={false}><b>One idea a week</b><span>A new pair each Monday, by email or feed</span></Link>
-        <Link href="/learn/apply" prefetch={false}><b>Apply it</b><span>Workplace situations: which idea helps here?</span></Link>
-        <Link href="/learn/map" prefetch={false}><b>The map</b><span>Which chapters build on which</span></Link>
-        <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack</b><span>Your units, your weak spots, printed</span></Link>
-        <Link href="/learn/quiz" prefetch={false}><b>Make a quiz</b><span>For a class or a study group</span></Link>
-      </nav>
 
       <section className="wrap ci-ways" aria-label="Two ways in">
         <div className="ci-way">
@@ -113,19 +126,13 @@ export default function LearnIndex() {
           <span className="label red">Here with a problem</span>
           <h2 className="h-sm">Start from what you are facing.</h2>
           <p className="sub">The chapters that bear on it, across units.</p>
-          <dl className="ci-probs">
-            {PROBLEMS.map(p => (
-              <div key={p.problem}>
-                <dt>{p.problem}</dt>
-                <dd>
-                  {p.slugs.map(slug => {
-                    const c = chapterBySlug(slug)!;
-                    return <Link key={slug} href={chapterPath(slug)}><span className="ci-pl">{c.short ?? c.title}</span><span className="ci-pu">Unit {c.unitN}</span></Link>;
-                  })}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <Problems items={PROBLEMS.slice(0, FIRST_PROBLEMS)} />
+          {PROBLEMS.length > FIRST_PROBLEMS && (
+            <details className="ci-probs-more">
+              <summary>{PROBLEMS.length - FIRST_PROBLEMS} more problems</summary>
+              <Problems items={PROBLEMS.slice(FIRST_PROBLEMS)} />
+            </details>
+          )}
         </div>
       </section>
 
@@ -195,6 +202,17 @@ export default function LearnIndex() {
           </section>
         );
       })}
+
+      <nav className="wrap ci-more" aria-labelledby="ci-more-h">
+        <h2 id="ci-more-h" className="h-xs">More ways to study</h2>
+        <div className="ci-more-grid">
+          <Link href="/learn/weekly" prefetch={false}><b>One idea a week</b><span>A new pair each Monday, by email or feed</span></Link>
+          <Link href="/learn/apply" prefetch={false}><b>Apply it</b><span>Workplace situations: which idea helps here?</span></Link>
+          <Link href="/learn/map" prefetch={false}><b>The map</b><span>Which chapters build on which</span></Link>
+          <Link href={`${REVISION_PATH}/pack`} prefetch={false}><b>Revision pack</b><span>Your units, your weak spots, printed</span></Link>
+          <Link href="/learn/quiz" prefetch={false}><b>Make a quiz</b><span>For a class or a study group</span></Link>
+        </div>
+      </nav>
 
       <section className="wrap ci-foot" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>

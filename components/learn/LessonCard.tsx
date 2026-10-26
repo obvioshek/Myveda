@@ -65,10 +65,12 @@ function Question({ check, n, rid, mixups, onAnswer }: { check: Check; n: number
 // core idea, a quick check, the Ancient lens, a prompt to reflect on, and the
 // whole thing on one page. Answering every check correctly, or pressing "Mark as
 // done", marks the concept done. Notes and progress stay on this device.
-export default function LessonCard({ lesson, index, total, path, chapter, detail, lens, tool = null, mixups = [] }: {
+export default function LessonCard({ lesson, index, total, next = null, path, chapter, detail, lens, tool = null, mixups = [] }: {
   lesson: Lesson;
   index: number;
   total: number;
+  /** The concept after this one, so the summary can lead straight on to it. */
+  next?: { id: string; name: string } | null;
   /** The chapter's address, so Continue can lead back here. */
   path: string;
   /** The chapter's title, for "Ask the community about this". */
@@ -85,7 +87,14 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
   const [right, setRight] = useState<Set<number>>(() => new Set());
   const slug = path.split("/").pop() ?? "";
   const id = `${slug}#${lesson.blockId}`;
-  const done = useDone().has(id);
+  const doneSet = useDone();
+  const done = doneSet.has(id);
+  // Marking this concept done: say so, and say when it completes the chapter.
+  const markDone = () => {
+    setDone(id, true);
+    const before = [...doneSet].filter(x => x.startsWith(`${slug}#`) && x !== id).length;
+    showToast(before + 1 === total ? `That's every concept in ${chapter}. Well done.` : `${lesson.name}: marked as done`);
+  };
   const noteKey = `${NOTE_PREFIX}${path}#${lesson.blockId}`;
   const note = useDevice(noteKey);
   const bodyId = useId();
@@ -119,10 +128,16 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
     const next = new Set(right);
     if (ok) next.add(i); else next.delete(i);
     setRight(next);
-    if (ok && next.size === lesson.check.length && !done) {
-      setDone(id, true);
-      showToast(`${lesson.name}: marked as done`);
-    }
+    if (ok && next.size === lesson.check.length && !done) markDone();
+  };
+
+  // Close this concept and open the next where it starts. The next card opens
+  // itself when the address names it (see the effect above).
+  const goNext = () => {
+    if (!next) return;
+    setOpen(false);
+    if (window.location.hash === `#${next.id}`) window.dispatchEvent(new HashChangeEvent("hashchange"));
+    else window.location.hash = next.id;
   };
 
   const copy = async () => {
@@ -132,7 +147,7 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
 
   return (
     <article className={done ? "ls done" : "ls"} id={lesson.blockId} aria-label={lesson.name}>
-      <div className="ls-head">
+      <div className="ls-head" onClick={e => { if (!(e.target as HTMLElement).closest("button, a")) toggle(); }}>
         <span className="ls-n" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
         <div className="ls-hd">
           <span className="sr-only">Concept {index + 1} of {total}. </span>
@@ -223,10 +238,23 @@ export default function LessonCard({ lesson, index, total, path, chapter, detail
                   </div>
                 </div>
                 <div className="btn-row">
-                  <button type="button" className={done ? "btn btn-secondary" : "btn btn-primary"} aria-pressed={done} onClick={() => { setDone(id, !done); if (!done) showToast(`${lesson.name}: marked as done`); }}>
+                  <button type="button" className={done ? "btn btn-secondary" : "btn btn-primary"} aria-pressed={done} onClick={() => { if (done) setDone(id, false); else markDone(); }}>
                     {done ? <><Tick />Done. Mark as not done</> : "Mark as done"}
                   </button>
-                  <button type="button" className="btn btn-secondary" onClick={copy}>Copy this summary</button>
+                  {next ? (
+                    <button type="button" className={done ? "btn btn-primary ls-next" : "btn btn-secondary ls-next"} onClick={goNext}>
+                      <span><span className="ls-next-k">Next</span> {next.name}</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+                    </button>
+                  ) : (
+                    <Link className={done ? "btn btn-primary ls-next" : "btn btn-secondary ls-next"} href={`/learn/practice?chapter=${slug}`} prefetch={false}>
+                      <span><span className="ls-next-k">Last concept</span> Test yourself on the chapter</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+                    </Link>
+                  )}
+                </div>
+                <div className="ls-more">
+                  <button type="button" className="btn btn-ghost" onClick={copy}>Copy this summary</button>
                   <Link className="btn btn-ghost" href={`/learn/practice?recall=${slug}/${lesson.blockId}`} prefetch={false}>Recall it from a blank page</Link>
                 </div>
               </div>
