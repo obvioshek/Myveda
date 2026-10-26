@@ -14,18 +14,19 @@ import { CONTACT_EMAIL } from "@/content/landing";
 import { PROBLEMS, START_PATH } from "@/content/learn/paths";
 import { siteUrl } from "@/lib/site";
 import { buildFormulaSheet } from "@/content/learn/formulas";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 // Units with at least one formula get a link to their part of the formula sheet.
 const WITH_FORMULAS = new Set(buildFormulaSheet().filter(u => u.formulas > 0).map(u => u.id));
 
-const title = "Management chapters: economics, OB, HRM, accounting, finance and more · Veda Verse";
-const description = `${CHAPTERS.length} chapters of management, managerial economics, organisational behaviour, HRM, managerial accounting, finance, strategy and marketing in plain language, with passages from India's classical texts and thinkers set beside the ideas they meet.`;
+const title = "Management chapters, from economics to marketing · Veda Verse";
+const description = `${CHAPTERS.length} chapters on management, economics, OB, HRM, accounting, finance, strategy and marketing in plain language, each idea beside India's classical texts.`;
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/learn" },
-  openGraph: { title, description, url: "/learn", siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: "/learn", siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

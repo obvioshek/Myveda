@@ -4,6 +4,7 @@ import ScenarioCard from "@/components/learn/ScenarioCard";
 import PassageQuote from "@/components/learn/PassageQuote";
 import { Tag } from "@/components/learn/Evidence";
 import { APPLY_PATH, SCENARIOS, scenarioView } from "@/content/learn/scenarios";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Apply it: management ideas in real situations · Veda Verse";
 const description = `${SCENARIOS.length} short workplace situations from across India. Choose the idea that helps most, then see why, with the lesson and a classical passage that met the same problem.`;
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: APPLY_PATH },
-  openGraph: { title, description, url: APPLY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: APPLY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

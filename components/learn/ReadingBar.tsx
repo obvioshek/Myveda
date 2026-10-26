@@ -47,6 +47,26 @@ export default function ReadingBar({ slug, items, terms, unitLabel, chapters, gl
     return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", pick); window.removeEventListener("resize", pick); };
   }, [items]);
 
+  // J and K move to the next and previous concept, as in many reading apps:
+  // the concept's Open button takes focus, so Enter opens it.
+  const atRef = useRef(0);
+  useEffect(() => { atRef.current = at; }, [at]);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (e.metaKey || e.ctrlKey || e.altKey || (e.key !== "j" && e.key !== "k")) return;
+      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT" || el.isContentEditable)) return;
+      const i = Math.min(items.length - 1, Math.max(0, atRef.current + (e.key === "j" ? 1 : -1)));
+      const target = items[i] && document.getElementById(items[i].id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ block: "start" });
+      target.querySelector<HTMLElement>(".ls-open")?.focus({ preventScroll: true });
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [items]);
+
   useEffect(() => {
     if (!open) return;
     const key = (e: KeyboardEvent) => { if (e.key === "Escape") { setOpen(false); button.current?.focus(); } };
@@ -94,6 +114,7 @@ export default function ReadingBar({ slug, items, terms, unitLabel, chapters, gl
               );
             })}
           </ol>
+          <p className="rb-keys">Keys: <kbd>J</kbd> next concept, <kbd>K</kbd> previous, <kbd>/</kbd> search.</p>
         </nav>
         {terms.length > 0 && (
           <div className="rb-col">

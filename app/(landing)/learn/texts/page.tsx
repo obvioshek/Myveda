@@ -6,6 +6,7 @@ import { LEARN_PATH, START_WALK_PATH } from "@/content/learn";
 import { TEXTS, TEXTS_PATH, passagesFrom, textPath, timeline } from "@/content/learn/texts";
 import { READING_GUIDE_PATH } from "@/content/learn/reading-guide";
 import { siteUrl } from "@/lib/site";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const counts = new Map(TEXTS.map(t => [t.id, passagesFrom(t.id).length]));
 const total = new Set(TEXTS.flatMap(t => passagesFrom(t.id).map(p => `${p.slug}#${p.pairing}`))).size;
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: TEXTS_PATH },
-  openGraph: { title, description, url: TEXTS_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: TEXTS_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

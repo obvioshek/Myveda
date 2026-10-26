@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageShell from "@/components/landing/PageShell";
 import PrintButton from "@/components/learn/PrintButton";
 import { FORMULAS_PATH, PRACTICE_PATH, REVISION_PATH, UNITS, chapterPath, deva, lessonsFor } from "@/content/learn";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Revision sheets: every concept on one page · Veda Verse";
 const description = "The one-page summary of every concept in each unit, chapter by chapter, with a line to remember. Ready to print or save as a PDF before an exam.";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: REVISION_PATH },
-  openGraph: { title, description, url: REVISION_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: REVISION_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

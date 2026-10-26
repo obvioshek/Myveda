@@ -40,6 +40,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   return (
     <div className="home-grid">
       <div className="col">
+        <h1 className="sr-only mob-only">{following ? "Following" : "Today's Edition"}</h1>
         <div className="feed-head desk-only">
           <div>
             <h1>{following ? "Following" : "Today's Edition"}</h1>
@@ -55,6 +56,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <Link role="tab" aria-selected={following} href="/home?tab=following">Following</Link>
         </div>
 
+        <h2 className="sr-only">{following ? "New since your last visit" : "Today's picks"}</h2>
         {[...top, ...rest].map((p, i) => (
           <div key={p.key}>
             {!following && i === top.length + 3 && moduleQs.length > 0 && <OpenQuestionsModule qs={moduleQs.slice(0, 2)} />}

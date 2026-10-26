@@ -166,6 +166,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
                     lesson={lesson}
                     index={li}
                     total={lessons.length}
+                    next={lessons[li + 1] ? { id: lessons[li + 1].blockId, name: lessons[li + 1].name } : null}
                     path={chapterPath(c.slug)}
                     chapter={c.title}
                     detail={<div className="prose" dangerouslySetInnerHTML={html(linked.get(b.id)!.html)} />}

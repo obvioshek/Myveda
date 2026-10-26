@@ -6,18 +6,19 @@ import PassageQuote from "@/components/learn/PassageQuote";
 import WeeklySignup from "@/components/learn/WeeklySignup";
 import { Tag } from "@/components/learn/Evidence";
 import { WEEKLY_PATH, thisWeek, weekDates, weekItem } from "@/content/learn/weekly";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 // The week's pair changes on Mondays; the page is rebuilt every hour.
 export const revalidate = 3600;
 
-const title = "One idea a week: a management idea and a classical passage · Veda Verse";
-const description = "Each Monday, one management idea beside a passage from India's classical texts that met the same problem, with what it adds and where the two differ. On the site, by email or by feed.";
+const title = "One idea a week: management beside the classics · Veda Verse";
+const description = "Each Monday, a management idea beside a classical Indian passage that met the same problem: what it adds and where they differ. On the site, by email or feed.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: WEEKLY_PATH, types: { "application/rss+xml": "/feed.xml" } },
-  openGraph: { title, description, url: WEEKLY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: WEEKLY_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
 };
 
 const html = (__html: string) => ({ __html });

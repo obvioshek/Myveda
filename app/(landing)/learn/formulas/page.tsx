@@ -4,19 +4,20 @@ import PageShell from "@/components/landing/PageShell";
 import PrintButton from "@/components/learn/PrintButton";
 import { FORMULAS_PATH, PRACTICE_PATH, REVISION_PATH, chapterPath, deva } from "@/content/learn";
 import { buildFormulaSheet } from "@/content/learn/formulas";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const SHEET = buildFormulaSheet();
 const formulas = SHEET.reduce((a, u) => a + u.formulas, 0);
 const worked = SHEET.reduce((a, u) => a + u.worked, 0);
 
-const title = "Formula sheet: economics, HR, accounting and finance formulas · Veda Verse";
-const description = `${formulas} formulas from the chapters, from elasticity and national income to ratios, CVP, variances, cost of capital and EOQ, with ${worked} worked examples. Grouped by chapter, ready to print.`;
+const title = "Formula sheet: economics, accounting and finance · Veda Verse";
+const description = `${formulas} formulas from the chapters, from elasticity to ratios, CVP, variances, cost of capital and EOQ, with ${worked} worked examples, ready to print.`;
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: FORMULAS_PATH },
-  openGraph: { title, description, url: FORMULAS_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: FORMULAS_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

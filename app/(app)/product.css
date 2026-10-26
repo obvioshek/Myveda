@@ -179,7 +179,7 @@ a.av:hover, button.av:hover { color: var(--color-text); background: color-mix(in
   transition: background-color .2s, border-color .2s, color .2s;
 }
 .pill:hover, a.pill:hover { border-color: var(--color-text); color: var(--color-text); }
-.pill[aria-pressed="true"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
+.pill[aria-pressed="true"], .pill[aria-current="page"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-bg); box-shadow: inset 0 -4px 0 var(--color-accent); }
 .pill.soft { font-weight: 600; }
 
 /* Tabs: the chosen one is ink with a red bar. */
@@ -297,7 +297,11 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
   .rail { display: none; }
   .mnav { display: flex; }
   .desk-only { display: none !important; }
+  /* A page's heading stays for screen readers when the phone's top bar shows
+     the title instead. */
+  h1.desk-only { display: block !important; position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
+@media (min-width: 900px) { .mob-only { display: none !important; } }
 @media (min-width: 900px) { .mob-only { display: none !important; } }
 
 /* ── feed ───────────────────────────────────────────────────────────────── */
@@ -344,7 +348,8 @@ a.row:hover { color: var(--color-text); background: var(--color-surface); box-sh
 .para.big { font-size: 20px; }
 .para.pickable { cursor: pointer; }
 .para[data-picked="true"] { background: var(--color-accent-100); box-shadow: inset 4px 0 0 var(--color-accent); padding: 4px 12px; margin: 0 -12px; }
-.srcbtn { border: none; background: var(--color-accent-100); color: var(--color-accent-800); font-size: 11px; font-weight: 800; padding: 0 5px; cursor: pointer; vertical-align: super; }
+.srcbtn { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; border: none; background: var(--color-accent-100); color: var(--color-accent-800); font-size: 12px; font-weight: 800; padding: 0 10px; cursor: pointer; }
+.para-src { margin-top: -4px; }
 .srcpop { padding: 12px 14px; border: 2px solid var(--color-text); background: var(--color-bg); font-size: 14px; }
 .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
 .split .doc { padding: 18px 20px; border: 2px solid var(--color-text); }

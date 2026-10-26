@@ -402,22 +402,44 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .foot-brand { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; }
 .foot-brand .sq { width: 14px; height: 14px; }
 .foot-about p { max-width: 36ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); font-size: 15px; line-height: 24px; }
-.foot-col { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.foot-col { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; }
 .foot-col .label { margin-bottom: 6px; }
-.foot-col a { padding: 6px 0; color: var(--color-text); font-size: 15px; }
+.foot-col ul { display: flex; flex-direction: column; }
+.foot-col a { display: inline-flex; align-items: center; min-height: 40px; color: var(--color-text); font-size: 15px; }
 .foot-col a:hover { color: var(--color-accent-700); }
+/* The footer of every page: what the site is, then the same three groups as
+   the Menu. */
+.foot-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; padding-top: 44px; padding-bottom: 32px; }
+.foot-nav .foot-about { grid-column: 1 / -1; }
+a.foot-brand { color: var(--color-text); }
+@media (min-width: 560px) { .foot-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; } }
+@media (min-width: 1000px) { .foot-nav { grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); } .foot-nav .foot-about { grid-column: auto; } }
 .wordmark-wrap { overflow: hidden; }
 .wordmark { display: block; padding: 8px 0 28px; margin-left: -.06em; font-size: clamp(44px, 12vw, 190px); font-weight: 800; line-height: .86; letter-spacing: -.045em; white-space: nowrap; }
 .foot-base { display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 20px 0 32px; border-top: 2px solid var(--color-divider); color: var(--soft); font-size: 13px; line-height: 20px; }
-.foot-base a { color: var(--color-text); }
+.foot-base a { display: inline-flex; align-items: center; min-height: 24px; color: var(--color-text); }
+.foot-base .link { display: inline; }
+.foot-prefs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-left: auto; }
 .foot-base .end { margin-left: auto; }
 @media (min-width: 760px) { .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 900px) { .foot-grid { grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); } }
 
 /* ---------- Toast ---------- */
-.toast { position: fixed; left: 50%; bottom: 28px; z-index: 40; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px); padding: 12px 20px; background: var(--color-text); color: var(--color-bg); font-size: 14px; font-weight: 600; opacity: 0; pointer-events: none; transform: translate(-50%, 16px); transition: all .42s var(--ease); }
+.toast { position: fixed; left: 50%; bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px)); z-index: 40; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px); padding: 12px 20px; background: var(--color-text); color: var(--color-bg); font-size: 14px; font-weight: 600; opacity: 0; pointer-events: none; transform: translate(-50%, 16px); transition: all .42s var(--ease); }
 .toast.on { opacity: 1; transform: translate(-50%, 0); }
 .toast-tick { display: grid; place-items: center; width: 18px; height: 18px; background: var(--color-accent); }
+
+/* ---------- Not found, and pages that failed to load ---------- */
+.nf { display: flex; flex-direction: column; gap: 24px; padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(48px, 7vw, 96px); }
+.nf h1 { margin-left: -.04em; font-size: clamp(40px, 6vw, 76px); line-height: 1; letter-spacing: -.03em; text-wrap: balance; }
+.nf h1 span { display: block; }
+.nf h1 .red { color: var(--color-accent); }
+.nf-search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.nf-ways { max-width: 900px; }
+.nf-way { height: 100%; color: var(--color-text); }
+.nf-way:hover { background: var(--color-surface); color: var(--color-text); }
+.nf-way b { display: flex; align-items: center; gap: 10px; font-size: 19px; }
+.nf-way span { color: var(--soft); font-size: 15px; line-height: 23px; }
 
 /* ---------- Standalone pages (privacy, early list) ---------- */
 .page { max-width: 760px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--pad) clamp(56px, 8vw, 96px); }
@@ -428,11 +450,41 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .page ul { display: flex; flex-direction: column; gap: 8px; padding-left: 22px; list-style: square; }
 .link { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.top-nav { display: flex; align-items: center; gap: 20px; }
-.top-nav a { color: var(--color-text); font-size: 14px; font-weight: 600; }
+/* Header links are 44px tall, the comfortable size for a finger, whatever
+   their text. */
+.top-nav { display: flex; align-items: center; gap: 4px 18px; }
+.top-nav a, .top-nav .cmx-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-text); font-size: 14px; font-weight: 600; }
 .top-nav a:hover { color: var(--color-accent-700); }
+@media (max-width: 419px) { .top-nav .hide-xs { display: none; } }
 @media (max-width: 559px) { .top-nav .hide-sm { display: none; } }
 @media (max-width: 719px) { .top-nav .hide-nav { display: none; } }
+@media (min-width: 900px) { .top-nav .cmx-link { display: none; } }
+
+/* How many questions are due for review, beside Practice. */
+.due-n { display: inline-grid; place-items: center; min-width: 20px; height: 20px; margin-left: 6px; padding: 0 5px; background: var(--color-accent-fill); color: var(--on-accent); font-size: 11px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+
+/* The Menu: every page, in the footer's three groups. */
+.pmenu { position: static; }
+.pmenu > summary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; min-height: 44px; padding: 0 12px; border: 2px solid var(--color-text); color: var(--color-text); font-size: 14px; font-weight: 800; list-style: none; cursor: pointer; transition: background-color .2s; }
+.pmenu > summary::-webkit-details-marker { display: none; }
+.pmenu > summary:hover, .pmenu[open] > summary { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.pmenu > summary .due-n { margin-left: 0; }
+/* The word stays for screen readers when only the icon shows. */
+@media (max-width: 639px) { .pmenu-l { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
+.pmenu-panel { position: absolute; left: 0; right: 0; top: 100%; z-index: 30; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px 48px; max-height: calc(100dvh - 72px); overflow-y: auto; padding: 20px var(--pad) 28px; background: var(--color-bg); border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); box-shadow: var(--shadow-lg); }
+.pmenu:not([open]) .pmenu-panel { display: none; }
+.pmenu-col { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.pmenu-col ul { display: flex; flex-direction: column; }
+.pmenu-col a { display: flex; align-items: center; min-height: 44px; border-bottom: 2px solid color-mix(in srgb, var(--color-text) 10%, transparent); color: var(--color-text); font-size: 16px; font-weight: 700; }
+.pmenu-col a:hover { color: var(--color-accent-700); }
+@media (min-width: 760px) { .pmenu-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-inline: max(var(--pad), calc((100% - 1320px) / 2 + var(--pad))); } }
+
+/* On phones the header slides away while reading down the page and returns
+   on the way up (components/landing/HeaderHide.tsx). */
+@media (max-width: 759px) {
+  .top { transition: transform .24s var(--ease), border-color .3s; }
+  html[data-hdr="hidden"] .top { transform: translateY(calc(-100% - 2px)); }
+}
 
 /* ---------- Header: chapters menu and site search ---------- */
 /* Wide screens get a button that opens the two-pane panel; narrow screens a plain
@@ -441,6 +493,7 @@ textarea.input { min-height: 96px; padding: 14px 16px; line-height: 25px; resize
 .cmx-btn { display: none; align-items: center; gap: 6px; padding: 8px 0; border: 0; background: none; color: var(--color-text); font: 600 14px/1.2 var(--font); cursor: pointer; }
 .cmx-btn:hover, .cmx-btn.on { color: var(--color-accent-700); }
 .cmx-link { color: var(--color-text); font-size: 14px; font-weight: 600; }
+.cmx-btn { min-height: 44px; }
 @media (min-width: 900px) { .cmx-btn { display: inline-flex; } .cmx-link { display: none; } }
 .menu-panel { position: absolute; left: 0; right: 0; top: 100%; z-index: 30; max-height: calc(100vh - 72px); overflow-y: auto; background: var(--color-bg); border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); box-shadow: var(--shadow-lg); animation: cmx-in .18s var(--ease); }
 .menu-panel[hidden] { display: none; }

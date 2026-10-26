@@ -4,17 +4,18 @@ import PageShell from "@/components/landing/PageShell";
 import { QUIZ_PATH } from "@/content/learn/quiz-link";
 import Practice from "@/components/learn/Practice";
 import { GLOSSARY, PRACTICE_PATH, UNITS, lessonsFor } from "@/content/learn";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const questions = UNITS.flatMap(u => u.chapters).reduce((a, c) => a + (lessonsFor(c.slug) ?? []).reduce((b, l) => b + l.check.length, 0), 0);
 
 const title = "Practice: spaced review and mixed questions · Veda Verse";
-const description = `${questions.toLocaleString("en-IN")} management, economics, OB, HRM, accounting, strategy and marketing questions, each with the reason behind the answer, and ${GLOSSARY.length} glossary terms as cards. Mix them across chapters, recall concepts from a blank page, and get the ones you miss back until they stick.`;
+const description = `${questions.toLocaleString("en-IN")} questions from every chapter, each with the reason behind its answer, and ${GLOSSARY.length} glossary cards. Mixed practice, mock tests and review of what you miss.`;
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: PRACTICE_PATH },
-  openGraph: { title, description, url: PRACTICE_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: PRACTICE_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

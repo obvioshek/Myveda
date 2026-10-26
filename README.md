@@ -5,7 +5,7 @@ Two things live in this repository:
 - **The landing page** at `/`, for [myvedaverse.in](https://myvedaverse.in): *Management is new. Its questions are not.* It presents both halves of Veda Verse in the first screen: management ideas read alongside India's classical texts, and a community where every answer says how the writer knows. It is set in the flat, ruled "Modernist" design (Archivo, a red accent, square corners). Visitors can answer a sample question, open what a classical text said, guess whether real passages are documented or a view, and try an example community thread. Signing in is optional.
 - **Veda Verse, the product**, at `/home` and the pages around it. Members ask questions and share what they know, and every post says what it rests on: *Asking*, *Documented*, *Lived*, *Told* or *My view*. There are no public counts, and the daily Edition ends.
 
-Built with Next.js 16 (App Router), React 19, Prisma 8 (`@prisma/orm-postgres`) on PostgreSQL, and Supabase Auth.
+Built with Next.js 16.4 (App Router), React 19, Prisma 8 (`@prisma/orm-postgres`) on PostgreSQL, and Supabase Auth.
 
 ## Getting started
 
@@ -100,6 +100,19 @@ These live in the server actions in `actions/app/`, not just in the UI:
 - `actions/app/` holds the server actions. Each returns `{ ok, error }`, so refusals reach the member instead of being swallowed in production.
 - `components/app/` holds the product's client components.
 - The data model is in `src/prisma/contract.prisma`, with migrations in `migrations/`. The product's tables sit alongside the tables of an earlier landing-page demo (`post`, `feedItem`, `reel` and so on), which nothing uses any more.
+
+### Conventions for the learning site's design
+
+These keep the site comfortable to use, accessible (WCAG 2.2 AA), fast and safe. Check a change against them before adding to it.
+
+- **Navigation.** Every page is listed once, in `content/nav.ts` (`SITE_MAP`): three groups, Learn, Practise and Your study. The header's Menu and every footer (`PageShell` and the home page) are built from it, so a new page goes there and nowhere else. The header itself keeps the five places readers go most: Chapters, Glossary, Revision, Practice and Community. Practice and the Menu show how many questions are due for review (`components/learn/DueBadge.tsx`). On phones the header slides away while reading down a page and returns on the way up (`components/landing/HeaderHide.tsx`), and the chapter's reading strip moves up with it. The Menu closes on Escape or a click outside it.
+- **Reading.** Concept text is 17px on 28px lines, at most 68 characters wide (`.prose` in `learn.css`); the lead line is 18px. Tables scroll sideways inside their frame with a shadow at the edge that has more, and each scrolling table is focusable, with `role="region"` and a label, so keyboards can scroll it. Each concept's summary ends with a button to the next concept (or, after the last, the chapter test). On a chapter page, J and K move between concepts and / opens search. "Saved to Continue" shows once a visit, not on every concept.
+- **Tap targets.** Header links, the Menu and its links are at least 44px tall; nothing that can be tapped is under 24px. Links inside sentences are underlined, not told apart by colour alone.
+- **Accessibility.** Every page has one `h1` (in the community, phone layouts keep it for screen readers when the top bar shows the title), and heading levels don't skip. Never put a button or link inside something with `role="button"`. Use `aria-label` only on elements that have a role, and `aria-current`, not `aria-pressed`, for links. The site was checked with axe-core (WCAG 2.2 AA rules) in both themes at phone and desktop widths, and with Lighthouse; keep both clean.
+- **Missing pages and errors.** `app/global-not-found.tsx` answers any address that matches no page (the site has two root layouts, hence `experimental.globalNotFound` in `next.config.ts`), and `not-found.tsx` in each route group answers a missing chapter, text or question. `error.tsx` in each group, and `app/global-error.tsx` as a last resort, say that progress on the device is safe and offer to try again.
+- **Search results and sharing.** Titles stay under about 65 characters and descriptions under 160. A page that sets `openGraph` replaces the layout's, image included, so it lists `DEFAULT_OG_IMAGES` from `lib/meta.ts`: the site's card at `/share.png`. Chapters and passages have their own images.
+- **Bundles.** Client components may import only types from `content/learn/index.ts`, or from any module that imports it (`practice.ts`, `readings.ts` and so on): importing a value would put every chapter in the browser's download. That once made the practice page 4 MB of JavaScript. Small helpers that client code needs, like `questionId`, `cardId` and `recallId`, live in `content/learn/question-id.ts`. A client page that fills in after loading holds its space meanwhile (`aria-busy` on the practice panel), so the page doesn't jump.
+- **Security headers.** `next.config.ts` sends a Content-Security-Policy on production builds: scripts, styles, fonts, images and requests from the site itself only (Supabase is used from the server alone), no framing, no plugins, and forms posting only to the site. Next.js's inline scripts need `'unsafe-inline'`; nonces would make every page dynamic. Preview deployments also allow Vercel's toolbar. Adding a third-party script, font or API called from the browser means adding its origin there. The weekly-email cron route compares its secret in constant time.
 
 ## Database
 

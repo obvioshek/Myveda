@@ -4,6 +4,7 @@ import PageShell from "@/components/landing/PageShell";
 import HiNav from "@/components/hi/HiNav";
 import { HI_GLOSSARY_PATH, hiGlossary, hiWords } from "@/content/hi";
 import { GLOSSARY_PATH } from "@/content/learn";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const terms = hiGlossary();
 const title = "शब्दावली: प्रबंध और प्रबंधकीय अर्थशास्त्र के शब्द हिंदी में · वेद वर्स";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: HI_GLOSSARY_PATH, languages: { "en-IN": GLOSSARY_PATH, "hi-IN": HI_GLOSSARY_PATH } },
-  openGraph: { title, description, url: HI_GLOSSARY_PATH, siteName: "Veda Verse", locale: "hi_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: HI_GLOSSARY_PATH, siteName: "Veda Verse", locale: "hi_IN", type: "website" },
 };
 
 // Unit 1's glossary in Hindi, after the words that don't translate.

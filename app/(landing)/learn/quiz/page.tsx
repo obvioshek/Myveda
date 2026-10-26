@@ -4,6 +4,7 @@ import PageShell from "@/components/landing/PageShell";
 import QuizBuilder from "@/components/learn/QuizBuilder";
 import { PRACTICE_PATH } from "@/content/learn";
 import { MAX_QUIZ, QUIZ_PATH } from "@/content/learn/quiz-link";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Make a quiz for your class · Veda Verse";
 const description = `Pick up to ${MAX_QUIZ} questions from any chapter, share one link with your students, or print it with an answer key. No sign-in, nothing stored.`;
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: QUIZ_PATH },
-  openGraph: { title, description, url: QUIZ_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: QUIZ_PATH, siteName: "Veda Verse", locale: "en_IN", type: "website" },
   twitter: { card: "summary_large_image", title, description },
 };
 

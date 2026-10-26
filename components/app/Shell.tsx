@@ -75,7 +75,7 @@ function Frame({ me, circles, hasUnread, children }: ShellProps) {
         </div>
       </header>
 
-      <div className="mtop">
+      <header className="mtop">
         {showBack && (
           <button className="btn btn-ghost btn-icon" type="button" aria-label="Back" onClick={() => router.back()}>
             <Icon name="back" size={20} />
@@ -86,7 +86,7 @@ function Frame({ me, circles, hasUnread, children }: ShellProps) {
           <Icon name="bell" size={20} />{hasUnread && <span className="dot" />}
         </Link>
         <Account me={me} meHref={meHref} path={path} />
-      </div>
+      </header>
 
       <div className="body">
         <nav className="rail" aria-label="Main">

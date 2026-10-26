@@ -131,10 +131,12 @@ export default function ReaderView({ r }: { r: ReaderData }) {
             style={{ whiteSpace: "pre-wrap" }}
           >
             {pa.text}
-            {pa.src && (
-              <>{" "}<button className="srcbtn" type="button" aria-label={`Source ${pa.src.n}`} aria-expanded={srcOpen === i} onClick={e => { e.stopPropagation(); setSrcOpen(srcOpen === i ? null : i); }}>{pa.src.n}</button></>
-            )}
           </p>
+          {pa.src && (
+            <div className="para-src">
+              <button className="srcbtn" type="button" aria-expanded={srcOpen === i} onClick={() => setSrcOpen(srcOpen === i ? null : i)}>Source {pa.src.n}</button>
+            </div>
+          )}
           {pa.src && srcOpen === i && <div className="srcpop"><b>{pa.src.title}</b><div className="muted">{pa.src.meta}</div></div>}
           {picked === i && (
             <div className="btns">

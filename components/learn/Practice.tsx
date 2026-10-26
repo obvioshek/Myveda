@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { cardId, recallId, type PracticeBank, type PracticeQuestion, type RecallBank } from "@/content/learn/practice";
-import { questionId } from "@/content/learn/question-id";
+import type { PracticeBank, PracticeQuestion, RecallBank } from "@/content/learn/practice";
+import { cardId, questionId, recallId } from "@/content/learn/question-id";
 import { readQuiz } from "@/content/learn/quiz-link";
 import { download } from "./ics";
 import { useDone } from "./progress";

@@ -6,15 +6,16 @@ import { Tag } from "@/components/learn/Evidence";
 import { HOW, LEARN_PATH, START_WALK_PATH, deva } from "@/content/learn";
 import { WALK, pairView } from "@/content/learn/readings";
 import { HI_START_PATH } from "@/content/hi";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Start here: five ideas, read two ways · Veda Verse";
-const description = "New to reading India's classical texts alongside management? Five short steps, each a modern idea beside a passage, showing how to read an old text as a thinker on a present problem.";
+const description = "Five short steps for newcomers: each sets a modern management idea beside a classical Indian passage, and shows how to read the two together.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: START_WALK_PATH, languages: { "en-IN": START_WALK_PATH, "hi-IN": HI_START_PATH } },
-  openGraph: { title, description, url: START_WALK_PATH, siteName: "Veda Verse", locale: "en_IN", type: "article" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: START_WALK_PATH, siteName: "Veda Verse", locale: "en_IN", type: "article" },
   twitter: { card: "summary_large_image", title, description },
 };
 

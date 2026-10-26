@@ -5,6 +5,7 @@ import Pack, { type PackChapter } from "@/components/learn/Pack";
 import { CHAPTERS, REVISION_PATH, UNITS, chapterPath, lessonsFor, termsForChapter } from "@/content/learn";
 import { buildFormulaSheet } from "@/content/learn/formulas";
 import { mixupHints } from "@/content/learn/mixups";
+import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Make a revision pack to print · Veda Verse";
 const description = "Choose units, your started chapters or your weak spots, and what to include: summaries, the mix-ups to avoid, formulas and key terms. Print it or save it as a PDF.";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: `${REVISION_PATH}/pack` },
-  openGraph: { title, description, url: `${REVISION_PATH}/pack`, siteName: "Veda Verse", locale: "en_IN", type: "website" },
+  openGraph: { images: DEFAULT_OG_IMAGES, title, description, url: `${REVISION_PATH}/pack`, siteName: "Veda Verse", locale: "en_IN", type: "website" },
 };
 
 const html = (__html: string) => ({ __html });
