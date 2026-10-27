@@ -43,6 +43,11 @@ export const weekAt = (ms: number) => Math.max(0, Math.floor((ms - startMs()) / 
 /** The week number now. */
 export const thisWeek = () => weekAt(Date.now());
 
+/** The feed's address, and the weeks it carries: the latest 30, newest first.
+ *  The feed (app/feed.xml) and its page for browsers both list these. */
+export const FEED_PATH = "/feed.xml";
+export const feedWeeks = (now = thisWeek()) => Array.from({ length: Math.min(now + 1, 30) }, (_, i) => now - i);
+
 /** A week's pair, with everything pages and the email show. */
 export function weekItem(week: number) {
   const ref = SERIES[week % SERIES.length];

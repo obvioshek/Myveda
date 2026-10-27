@@ -1,8 +1,9 @@
 import { siteUrl } from "@/lib/site";
-import { WEEKLY_PATH, thisWeek, weekDates, weekItem } from "@/content/learn/weekly";
+import { FEED_PATH, WEEKLY_PATH, feedWeeks, weekDates, weekItem } from "@/content/learn/weekly";
 
 // "One idea a week" as a feed: the weeks so far, newest first. Rebuilt every
-// hour, so a new week appears on Monday without a deploy.
+// hour, so a new week appears on Monday without a deploy. A browser opening
+// this address is sent to a page about the feed instead (see next.config.ts).
 export const revalidate = 3600;
 
 const esc = (s: string) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[c]!);
@@ -10,9 +11,7 @@ const cdata = (s: string) => `<![CDATA[${s.replace(/]]>/g, "]]]]><![CDATA[>")}]]
 
 export function GET() {
   const base = siteUrl();
-  const now = thisWeek();
-  const weeks = Array.from({ length: Math.min(now + 1, 30) }, (_, i) => now - i);
-  const items = weeks.map(w => {
+  const items = feedWeeks().map(w => {
     const it = weekItem(w);
     const link = `${base}${it.href}`;
     return `<item>
@@ -28,7 +27,7 @@ export function GET() {
 <channel>
 <title>Veda Verse: one idea a week</title>
 <link>${esc(`${base}${WEEKLY_PATH}`)}</link>
-<atom:link href="${esc(`${base}/feed.xml`)}" rel="self" type="application/rss+xml"/>
+<atom:link href="${esc(`${base}${FEED_PATH}`)}" rel="self" type="application/rss+xml"/>
 <description>Each Monday, a management idea beside a passage from India's classical texts that met the same problem, with what it adds and where the two differ.</description>
 <language>en-IN</language>
 ${items.join("\n")}
