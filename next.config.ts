@@ -42,6 +42,17 @@ const nextConfig: NextConfig = {
         destination: "https://myvedaverse.in/:path*",
         permanent: true,
       },
+      // The feed's address opened in a browser leads to a page about the feed,
+      // since Chrome shows RSS as raw XML (and XSLT, the old way to dress a feed
+      // up, is leaving browsers). Only a page visit carries Sec-Fetch-Dest:
+      // document; feed readers and scripts don't, and get the XML. A redirect,
+      // not a rewrite, so a browser never keeps the page under the feed's address.
+      {
+        source: "/feed.xml",
+        has: [{ type: "header", key: "sec-fetch-dest", value: "document" }],
+        destination: "/learn/weekly/feed",
+        permanent: false,
+      },
     ];
   },
 
@@ -64,6 +75,9 @@ const nextConfig: NextConfig = {
       // Font files never change in place (a new version gets a new name), so
       // browsers can keep them for a year.
       { source: "/fonts/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
+      // The feed's address answers a page visit and a feed reader differently
+      // (see redirects), so caches keep the two apart.
+      { source: "/feed.xml", headers: [{ key: "Vary", value: "Sec-Fetch-Dest" }] },
       // The offline-reading worker must always be fetched fresh, so a new
       // version reaches readers on their next visit.
       {

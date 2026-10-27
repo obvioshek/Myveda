@@ -905,6 +905,7 @@ html[data-landing] .rv-ch, html[data-landing] .gl-sec, html[data-landing] .ls { 
 .qz-mode label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
 .qz-mode input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--color-accent-fill); }
 .qz-link input { font-size: var(--fs-sm); }
+.fd-addr { max-width: 560px; }
 .qz-res { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 12px 16px; border-left: 4px solid var(--color-accent); background: var(--color-surface); }
 .qz-res p { display: flex; flex-direction: column; gap: 2px; flex: 1 1 260px; font-size: var(--fs-body-sm); line-height: 23px; }
 .qz-print { display: none; }
