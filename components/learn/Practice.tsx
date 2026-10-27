@@ -148,7 +148,7 @@ export default function Practice() {
           questions,
           cards: b.terms.map(t => ({ id: cardId(t.id), card: true, u: t.u, c: t.c, ct: t.ct, b: t.id, bn: t.t, q: t.t, o: [], a: 1, w: t.d })),
         });
-        // A link from a unit ("Practise this unit") chooses that unit, and one
+        // A link from a unit ("Practice questions") chooses that unit, and one
         // from the glossary starts on terms.
         const params = new URLSearchParams(window.location.search);
         setResumable(savedSession());
@@ -189,7 +189,7 @@ export default function Practice() {
         if (!live) return;
         const items: Q[] = rb.concepts.map(x => ({ id: recallId(x.c, x.b), recall: true, u: x.u, c: x.c, ct: x.ct, b: x.b, bn: x.bn, q: x.bn, o: [], a: 1, w: x.m, pts: x.p }));
         setRecalls(items);
-        // "Recall it from memory" on a lesson starts that one concept, once.
+        // "Recall it from a blank page" on a concept starts that one concept, once.
         const params = new URLSearchParams(window.location.search);
         const want = params.get("recall");
         const it = want ? items.find(x => `${x.c}/${x.b}` === want) : undefined;
@@ -285,8 +285,8 @@ export default function Practice() {
         <div className="pr-resume" role="status">
           <p><b>Your {sessionName(resumable)} is waiting.</b> You were on question {resumable.i + 1} of {resumable.items.length}{resumable.exam?.limitMs ? "; its clock kept running" : ""}.</p>
           <div className="btn-row">
-            <button type="button" className="btn btn-primary" onClick={() => { setSession(resumable); setResumable(null); window.setTimeout(() => top.current?.scrollIntoView({ block: "start" }), 0); }}>Pick up where you left off</button>
-            <button type="button" className="btn btn-ghost" onClick={() => { dropSession(); setResumable(null); }}>Start fresh</button>
+            <button type="button" className="btn btn-primary" onClick={() => { setSession(resumable); setResumable(null); window.setTimeout(() => top.current?.scrollIntoView({ block: "start" }), 0); }}>Continue</button>
+            <button type="button" className="btn btn-ghost" onClick={() => { dropSession(); setResumable(null); }}>Start again</button>
           </div>
         </div>
       )}
@@ -296,7 +296,7 @@ export default function Practice() {
           <h2 id="pr-review-h" className="h-sm">
             {due.length ? `${due.length} to review today.` : listed.length ? "All caught up." : "Nothing to review yet."}
           </h2>
-          <p className="pr-text">{listed.length ? "The questions and terms you missed come back here on the day they are due." : "Questions you get wrong, here or in a lesson, come back here the next day, and then less often until they stick."}</p>
+          <p className="pr-text">{listed.length ? "The questions and terms you missed come back here on the day they are due." : "Questions you get wrong, here or in a chapter, come back here the next day, and then less often until they stick."}</p>
           <details className="pr-how" open={!listed.length}>
             <summary>How the spacing works</summary>
             <p className="pr-text">Each time you get one right it waits longer: 3 days, then 7, then 21. Right at 21 days, it leaves the list. Get it wrong again and it starts over.</p>
@@ -403,7 +403,7 @@ export default function Practice() {
           </div>
         </section>
       </div>
-      <p className="ci-fine pr-foot">Your answers and review list are kept on this device only. Nobody else sees them, and clearing your browser’s site data removes them. <Link className="link" href="/learn/transfer" prefetch={false}>Move them to another device</Link>.</p>
+      <p className="ci-fine pr-foot">Your answers and review list are kept on this device only. Nobody else sees them, and clearing your browser’s site data removes them. <Link className="link" href="/learn/transfer" prefetch={false}>Back them up, or move them to another</Link>.</p>
     </div>
   );
 }

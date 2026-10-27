@@ -6,7 +6,7 @@ import Arrow from "./Arrow";
 import { Tag } from "@/components/learn/Evidence";
 import type { PairView } from "@/content/learn/readings";
 
-// "What the classics add": a few modern ideas, each beside a passage from a
+// "Read two ways": a few modern ideas, each beside a passage from a
 // classical text, with what the passage adds; where the two part ways opens on
 // request, to keep each card short. The visitor picks a theme. All of it is the chapters' own text
 // (content/learn/readings.ts); the passages are trusted HTML from there.

@@ -6,7 +6,7 @@ import { OG, OG_SIZE, ogFonts } from "@/lib/og";
 // ground, set in Archivo like the site. Served at the home page's
 // opengraph-image and at /share.png, the address other pages point to.
 
-export const HOME_CARD_ALT = "Veda Verse: Learn the idea. Then see how the classics saw it.";
+export const HOME_CARD_ALT = "Veda Verse: learn the idea, then see how the classical texts saw it.";
 const size = OG_SIZE;
 
 const BG = OG.BG, INK = OG.INK, RED = OG.RED, RED_D = OG.RED_D;
@@ -24,8 +24,8 @@ export async function homeCard() {
           <div style={{ display: "flex", flexDirection: "column", fontSize: 76, fontWeight: 800, lineHeight: 1.02, letterSpacing: -2, color: INK }}>
             <span>Learn the idea.</span>
             <span style={{ color: RED }}>Then see how</span>
-            <span style={{ color: RED }}>the classics</span>
-            <span style={{ color: RED }}>saw it.</span>
+            <span style={{ color: RED }}>the classical</span>
+            <span style={{ color: RED }}>texts saw it.</span>
           </div>
           <div style={{ display: "flex", fontSize: 26, color: RED_D }}>myvedaverse.in</div>
         </div>

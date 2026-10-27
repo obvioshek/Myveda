@@ -11,7 +11,7 @@ const unit: UnitSource = {
   n: 4,
   title: "Managerial Accounting",
   short: "Managerial Accounting",
-  blurb: "From the rules of accounting and the financial statements to ratios, fund and cash flows, costing, budgets, and the finance manager's choices about money and capital.",
+  blurb: "From accounting rules and financial statements to ratios, cash flows, costing, budgets and financing decisions.",
   groups: [
     { key: "accounting", label: "Accounting foundations", blurb: "The rules every set of accounts follows, and how the final accounts are prepared." },
     { key: "statements", label: "Reading the statements", blurb: "Ratios, and the fund flow and cash flow statements that explain where money came from and went." },

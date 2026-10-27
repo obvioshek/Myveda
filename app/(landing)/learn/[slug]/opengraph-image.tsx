@@ -35,7 +35,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 22, borderTop: `4px solid ${OG.INK}`, fontSize: 26, fontWeight: 800 }}>
           {passages > 0
             ? <span style={{ display: "flex", color: OG.RED_D }}>{clip(`${passages} ${passages === 1 ? "passage" : "passages"} from the ${texts.slice(0, 3).join(", ")}${texts.length > 3 ? " and more" : ""}`, 80)}</span>
-            : <span style={{ display: "flex" }}>Explained in plain language, with checks and examples</span>}
+            : <span style={{ display: "flex" }}>Explained in plain words, with checks and examples</span>}
           <span style={{ display: "flex", marginLeft: "auto", color: OG.SOFT, fontWeight: 400 }}>myvedaverse.in</span>
         </div>
       </div>

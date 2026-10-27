@@ -122,7 +122,7 @@ export default function ChapterPanel({ units, href, more }: { units: MenuUnit[];
                           <Link href={c.href} prefetch={false} aria-current={c.href === path ? "page" : undefined}>
                             <span className="cmx-n">{c.n}</span>
                             <span className="cmx-t">{c.title}</span>
-                            {s && <span className={`cmx-s ${s}`} role="img" aria-label={s === "done" ? "finished" : "started"} />}
+                            {s && <span className={`cmx-s ${s}`} role="img" aria-label={s === "done" ? "done" : "started"} />}
                           </Link>
                         </li>
                       );

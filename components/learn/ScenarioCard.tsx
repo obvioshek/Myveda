@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-// One "Apply it" situation: the reader picks the idea that helps most, then
+// One workplace situation: the reader picks the idea that helps most, then
 // sees why, with the lesson for each option and, where one fits, a passage.
 export type ScenarioOption = { name: string; chapter: string; unitN: number; href: string };
 
@@ -32,7 +32,7 @@ export default function ScenarioCard({ n, sid, title, situation, ask, options, a
       <div className={picked === null ? "reveal" : "reveal open"} aria-live="polite" inert={picked === null}>
         <div className="reveal-in">
           <div className="ap-why">
-            <p className="ck-a"><b>{right ? "Yes. " : "Not the best fit. "}</b>{why}</p>
+            <p className="ck-a"><b>{right ? "The best fit. " : "Not the best fit. "}</b>{why}</p>
             <p className="ap-read">Read: {options.map((o, i) => <span key={o.href}>{i > 0 && " · "}<Link className="link" href={o.href} prefetch={false}>{o.name}</Link></span>)}</p>
             {passage}
           </div>

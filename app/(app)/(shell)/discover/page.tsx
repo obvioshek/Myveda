@@ -63,7 +63,7 @@ export default async function DiscoverPage({ searchParams }: { searchParams: Pro
         </div>
       </section>
       <section className="stack" style={{ gap: 10 }}>
-        <h2 className="h2s">Circles and communities</h2>
+        <h2 className="h2s">Communities</h2>
         <CommunityCards items={communities} />
       </section>
       <section className="stack">

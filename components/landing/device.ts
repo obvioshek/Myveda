@@ -62,5 +62,5 @@ export function openConcept(name: string, announce: boolean, href: string) {
     if (sessionStorage.getItem(TOLD_KEY)) return;
     sessionStorage.setItem(TOLD_KEY, "1");
   } catch { /* without storage, say it each time */ }
-  showToast(`${name} saved to Continue`);
+  showToast(`${name} saved to Continue.`);
 }

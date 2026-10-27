@@ -29,7 +29,7 @@ export default function InboxView({ inbox, filter, filters }: { inbox: InboxData
         <div className="panel stack" style={{ gap: 12, fontSize: 15 }}>
           <div><b>Right away</b><div className="muted" style={{ fontSize: 14 }}>Answers to your questions, people building on your notes, mentions, private thank-yous.</div></div>
           <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-            <div style={{ flex: 1, minWidth: 200 }}><b>In a digest</b><div className="muted" style={{ fontSize: 14 }}>Your circles and the people you follow.</div></div>
+            <div style={{ flex: 1, minWidth: 200 }}><b>In a digest</b><div className="muted" style={{ fontSize: 14 }}>Your communities and the people you follow.</div></div>
             <div className="seg" role="group" aria-label="Digest">
               {["Daily", "Weekly"].map(d => (
                 <button key={d} type="button" aria-pressed={digest === d} onClick={async () => {

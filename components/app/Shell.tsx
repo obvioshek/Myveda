@@ -65,7 +65,7 @@ function Frame({ me, circles, hasUnread, children }: ShellProps) {
       <a className="skip" href="#main">Skip to the content</a>
       <header className="top">
         <Link className="brand" href="/home"><BrandMark />Veda Verse</Link>
-        <Link className="top-search" href="/discover"><Icon name="search" size={16} />Search questions, posts, people, circles</Link>
+        <Link className="top-search" href="/discover"><Icon name="search" size={16} /><span className="top-search-t">Search questions, posts, people, topics, communities</span></Link>
         <div className="top-actions">
           <button className="btn btn-primary" type="button" onClick={() => openCompose()}><Icon name="plus" size={16} />Ask or post</button>
           <Link className="btn btn-secondary btn-icon bell" href="/inbox" aria-label={hasUnread ? "Inbox, new items" : "Inbox"}>
@@ -94,7 +94,7 @@ function Frame({ me, circles, hasUnread, children }: ShellProps) {
           <Link href="/discover" aria-current={cur(isDiscover)}><Icon name="compass" size={19} />Discover</Link>
           <Link href="/c" aria-current={cur(isCommunity)}><Icon name="people" size={19} />Communities</Link>
           <Link href="/library" aria-current={cur(isLibrary)}><Icon name="library" size={19} />Library</Link>
-          {circles.length > 0 && <div className="kicker">Your circles</div>}
+          {circles.length > 0 && <div className="kicker">Your communities</div>}
           {circles.map(c => (
             <Link key={c.slug} className="small" href={`/c/${c.slug}`} aria-current={cur(path === `/c/${c.slug}`)}>{c.name}</Link>
           ))}

@@ -46,9 +46,9 @@ export default function Pack({ units, chapters }: { units: { id: string; n: numb
         <fieldset className="pr-set">
           <legend className="label">Chapters</legend>
           <div className="pr-chips">
-            <button type="button" className="pr-chip" aria-pressed={which === "all"} onClick={() => setWhich("all")}>All of them</button>
-            <button type="button" className="pr-chip" aria-pressed={which === "started"} onClick={() => setWhich("started")}>Ones I’ve started ({started.size})</button>
-            <button type="button" className="pr-chip" aria-pressed={which === "weak"} onClick={() => setWhich("weak")}>My weak spots ({weak.size})</button>
+            <button type="button" className="pr-chip" aria-pressed={which === "all"} onClick={() => setWhich("all")}>All</button>
+            <button type="button" className="pr-chip" aria-pressed={which === "started"} onClick={() => setWhich("started")}>Started ({started.size})</button>
+            <button type="button" className="pr-chip" aria-pressed={which === "weak"} onClick={() => setWhich("weak")}>Weak spots ({weak.size})</button>
           </div>
         </fieldset>
         <fieldset className="pr-set">

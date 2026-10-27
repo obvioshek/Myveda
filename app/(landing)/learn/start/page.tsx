@@ -9,7 +9,7 @@ import { HI_START_PATH } from "@/content/hi";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Start here: five ideas, read two ways · Veda Verse";
-const description = "Five short steps for newcomers: each sets a modern management idea beside a classical Indian passage, and shows how to read the two together.";
+const description = "A 15-minute walk in five steps: each sets a modern management idea beside a classical Indian passage, and shows how to read the two together.";
 
 export const metadata: Metadata = {
   title,
@@ -31,7 +31,7 @@ export default function StartWalkPage() {
       <header className="wrap ci-hero pr-hero">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Start here</span>
         <h1><span>Five ideas,</span><span className="red">read two ways.</span></h1>
-        <p className="lede">If you have never read a classical text beside a management idea, begin with these. Each step sets a modern idea next to a passage that met the same problem long ago, and shows one thing about reading the two together. About fifteen minutes.</p>
+        <p className="lede">New to reading a classical text beside a management idea? Take this walk first. Each of its five steps sets a modern idea beside a passage that met the same problem long ago, and shows one thing about reading the two together. About 15 minutes.</p>
         <p className="ci-fine"><Link className="link hi-ui" href={HI_START_PATH} prefetch={false} lang="hi" hrefLang="hi">यह सैर हिंदी में पढ़ें</Link></p>
       </header>
 
@@ -56,7 +56,7 @@ export default function StartWalkPage() {
               </dl>
               <div className="ca-foot">
                 <Tag kind={s.pair.kind} />
-                <Link className="more" href={s.pair.href} prefetch={false}>Read the lesson: {s.pair.concept}, in {s.pair.chapter}<Arrow /></Link>
+                <Link className="more" href={s.pair.href} prefetch={false}>{s.pair.concept}, in {s.pair.chapter}<Arrow /></Link>
               </div>
             </div>
           </li>
@@ -66,11 +66,11 @@ export default function StartWalkPage() {
       <section className="wrap wk-next" aria-labelledby="wk-next-h">
         <h2 id="wk-next-h" className="h-xs">Where to go next</h2>
         <ul>
-          <li><Link className="link" href={LEARN_PATH} prefetch={false}>The chapters</Link>: every concept, with a passage beside it wherever one meets the idea.</li>
-          <li><Link className="link" href="/#texts" prefetch={false}>What the classics add</Link>: more pairs, by theme.</li>
-          <li><Link className="link" href="/learn/practice" prefetch={false}>Practice</Link>: questions from every chapter; the ones you miss come back until they stick.</li>
+          <li><Link className="link" href={LEARN_PATH} prefetch={false}>All chapters</Link>: every concept, with a passage beside it wherever one meets the idea.</li>
+          <li><Link className="link" href="/#texts" prefetch={false}>Read two ways</Link>: more pairs, by theme, on the home page.</li>
+          <li><Link className="link" href="/learn/practice" prefetch={false}>Practice and review</Link>: questions from every chapter; the ones you miss come back until they stick.</li>
           <li><Link className="link" href="/learn/weekly" prefetch={false}>One idea a week</Link>: a new pair like this one each Monday, by email or feed.</li>
-          <li><Link className="link" href="/#community" prefetch={false}>The community</Link>: ask about a reading, or offer your own, and say what it rests on.</li>
+          <li><Link className="link" href="/#community" prefetch={false}>Community</Link>: ask about a reading, or offer your own, and say what it rests on.</li>
         </ul>
         <p className="ci-fine wk-key"><Tag kind="documented" /> {HOW.documented} <Tag kind="view" /> {HOW.view}</p>
       </section>

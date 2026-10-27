@@ -85,7 +85,7 @@ export default function LibraryView({ lib, tab }: { lib: LibraryData; tab: (type
             }}>New collection</button>
             {lib.circles.length > 0 && (
               <button className="btn btn-secondary" type="button" onClick={async () => {
-                const name = await prompt({ title: `New collection for ${lib.circles[0].name}`, body: "Members of the circle will be able to see it.", placeholder: "Name it", submit: "Create" });
+                const name = await prompt({ title: `New collection for ${lib.circles[0].name}`, body: `Members of ${lib.circles[0].name} will be able to see it.`, placeholder: "Name it", submit: "Create" });
                 if (!name) return;
                 if ((await run(createCollection(name, lib.circles[0].id))).ok) toast(`Collection shared with ${lib.circles[0].name}.`);
               }}>New collection for {lib.circles[0].name}</button>
@@ -154,7 +154,7 @@ function SavedRow({ item, note, collections, onRemove }: {
             const r = await run(addToCollection(id, item.type, item.id));
             if (r.ok) toast(`Added to ${r.name}.`);
           }}>
-            <option value="">Add to collection…</option>
+            <option value="">Add to a collection…</option>
             {collections.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
           </select>
         )}

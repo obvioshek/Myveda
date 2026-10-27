@@ -2,8 +2,8 @@
 // way of reading for the first time: by theme on the home page ("What the
 // classics add") and as a five-step walk on /learn/start. Everything shown comes
 // from the chapters: the passage with its reference, the chapter's paragraph on
-// how it meets the modern idea, and the lesson's notes on what the passage adds and where the two
-// part ways. Only the walk's short "what to notice" lines are written here.
+// how it meets the modern idea, and the concept's notes on what the passage adds and where the two
+// differ. Only the walk's short "what to notice" lines are written here.
 //
 // Choose documented passages a newcomer can follow without the chapter, from
 // different texts. The build checks that each one exists and has its notes.
@@ -29,6 +29,8 @@ export type PairView = {
   href: string;
 };
 
+// Theme names are all "-ing" phrases (what a manager is doing), so the tabs
+// read as one set.
 export const THEMES: { label: string; pairs: PairRef[] }[] = [
   {
     label: "Leading people",
@@ -55,7 +57,7 @@ export const THEMES: { label: string; pairs: PairRef[] }[] = [
     ],
   },
   {
-    label: "Trust in business",
+    label: "Earning trust",
     pairs: [
       { slug: "marketing-concepts", pairing: 0 },
       { slug: "corporate-governance", pairing: 3 },
@@ -63,7 +65,7 @@ export const THEMES: { label: string; pairs: PairRef[] }[] = [
     ],
   },
   {
-    label: "Pressure and judgement",
+    label: "Keeping a clear head",
     pairs: [
       { slug: "emotions-and-stress", pairing: 4 },
       { slug: "personality-perception-and-attitude", pairing: 5 },
@@ -72,7 +74,7 @@ export const THEMES: { label: string; pairs: PairRef[] }[] = [
   },
 ];
 
-// The walk: each step shows one thing about reading an old text as a thinker
+// The walk: each step shows one thing about reading a classical text as an argument
 // on a present problem. `notice` is the only line written here.
 export const WALK: (PairRef & { step: string; notice: string })[] = [
   {
@@ -88,7 +90,7 @@ export const WALK: (PairRef & { step: string; notice: string })[] = [
   {
     slug: "group-behaviour-and-leadership", pairing: 3,
     step: "Where the passage adds something",
-    notice: "The modern idea names a failure. The couplet names the person who prevents it. Read for what the old text adds, not only for agreement.",
+    notice: "The modern idea names a failure. The couplet names the person who prevents it. Read for what the passage adds, not only for agreement.",
   },
   {
     slug: "decision-making", pairing: 2,
@@ -98,7 +100,7 @@ export const WALK: (PairRef & { step: string; notice: string })[] = [
   {
     slug: "principles-of-management", pairing: 0,
     step: "Reading with care",
-    notice: "Some passages carry readings that are contested. The note on where the two differ says so, and you should read it before the parallel. Read the classics as thinkers you can question, not as scripture.",
+    notice: "Some passages carry readings that are contested. The note on where the two differ says so, and you should read it before the parallel. Read the classical texts as arguments you can question, not as scripture.",
   },
 ];
 

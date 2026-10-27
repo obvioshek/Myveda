@@ -74,15 +74,15 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <h3>{following ? "You're up to date." : "That's today's Edition."}</h3>
           <p>{following
             ? `That's everything since your last visit, ${visitPhrase(lastSeen, tz)}.`
-            : "Tomorrow brings a new one. If you want more now, go deeper into a topic or answer a question."}</p>
+            : "Tomorrow brings a new one. For more now, go deeper into a topic, or help with an open question."}</p>
           <div className="btns">
             {v.topicNames[0] && <Link className="btn btn-secondary" href={`/t/${encodeURIComponent(v.topicNames[0])}`}>Go deeper in {v.topicNames[0]}</Link>}
-            <Link className="btn btn-secondary" href="/discover">Questions you could answer</Link>
+            <Link className="btn btn-secondary" href="/discover">Help with an open question</Link>
           </div>
         </div>
       </div>
 
-      <aside className="aside" aria-label="Your questions and circles">
+      <aside className="aside" aria-label="Your questions and communities">
         {myQuestions.length > 0 && (
           <section>
             <div className="kicker">Your questions</div>
@@ -98,7 +98,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         )}
         {weekCircles.length > 0 && (
           <section>
-            <div className="kicker">This week in your circles</div>
+            <div className="kicker">This week in your communities</div>
             {weekCircles.map(c => (
               <Link key={c.id} className="row" href={`/c/${c.slug}`}>
                 <b>{c.name}</b><span className="sub" style={{ fontSize: 14 }}>{c.weekPrompt}</span>

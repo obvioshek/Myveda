@@ -4,7 +4,7 @@ import Overview, { type OverviewUnit } from "@/components/learn/Overview";
 import { PROGRESS_PATH, UNITS, lessonsFor } from "@/content/learn";
 
 const title = "Your progress · Veda Verse";
-const description = "How far you are in each unit, what to read next, your review, your study plan and your notes from every lesson, kept on your device.";
+const description = "How far you are in each unit, what to read next, your review, your study plan and your notes, kept on this device.";
 
 export const metadata: Metadata = {
   title,
@@ -28,7 +28,7 @@ export default function ProgressPage() {
       <header className="wrap ci-hero pr-hero">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Your progress</span>
         <h1><span>Where you are.</span><span className="red">What comes next.</span></h1>
-        <p className="lede">Your chapters, review, study plan and notes, together. It is read from this browser, and nobody else can see it.</p>
+        <p className="lede">Your chapters, review, study plan and notes, together. It is kept on this device, and nobody else can see it.</p>
       </header>
       <Overview units={units} />
     </PageShell>

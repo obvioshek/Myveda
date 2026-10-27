@@ -8,12 +8,13 @@ import ClassicsAdd from "@/components/landing/ClassicsAdd";
 import Toast from "@/components/landing/Toast";
 import Arrow from "@/components/landing/Arrow";
 import Shortcuts from "@/components/landing/Shortcuts";
+import ReportProblem from "@/components/learn/ReportProblem";
 import TextSize from "@/components/learn/TextSize";
 import Theme from "@/components/learn/Theme";
 import { siteUrl } from "@/lib/site";
 import ThreadPreview from "@/components/landing/ThreadPreview";
-import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL } from "@/content/landing";
-import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, START_WALK_PATH, UNITS, chapterPath, conceptIds, deva, passageHref } from "@/content/learn";
+import { COMMUNITY_HREF, COMMUNITY_NOTES, CONTACT_EMAIL, SITE_ABOUT } from "@/content/landing";
+import { CHAPTERS, GLOSSARY, GLOSSARY_PATH, LEARN_PATH, START_WALK_PATH, UNITS, chapterPath, conceptIds, deva, passageHref, pendingUnits } from "@/content/learn";
 import { TEXTS, TEXTS_PATH } from "@/content/learn/texts";
 import { THEMES, pairView } from "@/content/learn/readings";
 import { ABOUT_LINKS, SITE_MAP } from "@/content/nav";
@@ -25,14 +26,14 @@ function Eyebrow({ num, children }: { num: string; children: React.ReactNode }) 
   );
 }
 
-const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-const count = (n: number) => WORDS[n] ?? String(n);
 const YEAR = new Date().getFullYear();
 
 export default function LandingPage() {
   const base = siteUrl();
   const concepts = CHAPTERS.reduce((a, c) => a + c.blocks.length, 0);
-  const passages = CHAPTERS.reduce((a, c) => a + c.pairings.length, 0);
+  // A passage is a pairing that quotes a text, counted as the texts page counts them.
+  const passages = CHAPTERS.reduce((a, c) => a + c.pairings.filter(p => p.quote).length, 0);
+  const pending = pendingUnits();
   const first = CHAPTERS[0];
   const languages = new Set(TEXTS.flatMap(t => (t.original ? [t.original.lang] : []))).size;
   const tabs = UNITS.map(u => ({
@@ -49,7 +50,7 @@ export default function LandingPage() {
       {
         "@type": "Organization", "@id": `${base}/#org`, name: "Veda Verse", alternateName: ["My Veda Verse", "myvedaverse.in"],
         url: `${base}/`, email: CONTACT_EMAIL, logo: { "@type": "ImageObject", url: `${base}/logo.png`, width: 512, height: 512 },
-        description: "An independent team in India explaining management concepts alongside India's classical thought.",
+        description: "An independent team in India explaining management concepts beside India's classical texts.",
         areaServed: "IN", knowsLanguage: ["en"],
       },
       {
@@ -57,9 +58,9 @@ export default function LandingPage() {
         url: `${base}/`, publisher: { "@id": `${base}/#org` }, inLanguage: "en-IN",
       },
       {
-        "@type": "WebPage", "@id": `${base}/#page`, url: `${base}/`, name: "Veda Verse: Learn Management with India's Classical Thought",
+        "@type": "WebPage", "@id": `${base}/#page`, url: `${base}/`, name: "Veda Verse: learn management beside India's classical texts",
         isPartOf: { "@id": `${base}/#site` }, about: { "@id": `${base}/#org` }, inLanguage: "en-IN",
-        description: "Management concepts explained one clear idea at a time, each read alongside India's classical texts and thinkers, from the Arthashastra and the Thirukkural to Kabir and Basavanna, shown in their own languages.",
+        description: "Management concepts in plain words, one idea at a time, each read beside a cited passage from India's classical texts, from the Arthashastra and the Thirukkural to Kabir and Basavanna, in their own languages.",
       },
     ],
   };
@@ -76,15 +77,15 @@ export default function LandingPage() {
         <section className="wrap hero" aria-labelledby="hero-h">
           <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Each management idea in plain words, beside what India&apos;s classical thinkers said about the same problem, with the source. And a community where every answer says how the writer knows.</p>
+            <p className="lede">Read each management concept in plain words, beside a cited passage from India&apos;s classical texts that met the same problem. Then ask about it, in a community where every answer says how the writer knows.</p>
             <div className="hero-actions">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
                 <a href="#community" className="btn btn-secondary btn-lg">See the community<Arrow dir="down" /></a>
               </div>
               <ul className="promise" aria-label="What to expect">
-                <li>Free, with no account to read</li>
-                <li>No likes or follower counts</li>
+                <li>No fee, no account to read</li>
+                <li>No likes, no follower counts</li>
               </ul>
             </div>
           </div>
@@ -96,11 +97,13 @@ export default function LandingPage() {
             <div className="sec-copy">
               <Eyebrow num="१">Read</Eyebrow>
               <h2 id="chapters-h">{CHAPTERS.length} chapters, one idea at a time.</h2>
-              <p className="sub">Each concept takes a few minutes: a question first, the idea in plain words, a quick check, then the ancient lens.</p>
+              <p className="sub">Each concept takes a few minutes: a question before you read, the core idea in plain words, a check, then the ancient lens.</p>
             </div>
             <div className="chap-cta">
               <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Open all chapters<Arrow /></Link>
               <p className="tally">{concepts} concepts · {passages} cited passages · <Link className="link" href={GLOSSARY_PATH}>{GLOSSARY.length} glossary terms</Link></p>
+              {/* The tabs below skip the unwritten units; say so beside them. */}
+              {pending && <p className="tally">{pending}.</p>}
             </div>
           </div>
           <UnitTabs units={tabs} />
@@ -110,13 +113,13 @@ export default function LandingPage() {
           <div className="split end">
             <div className="sec-copy">
               <Eyebrow num="२">Read two ways</Eyebrow>
-              <h2 id="texts-h">Old texts, read as thinkers, not scripture.</h2>
+              <h2 id="texts-h">Classical texts, read as arguments, not scripture.</h2>
             </div>
-            <p className="sub">A modern idea beside a passage that met the same problem long before, and what the passage adds. Pick a theme.</p>
+            <p className="sub">Each modern idea sits beside a passage that met the same problem long before: what the passage adds, and where the two differ. Choose a theme.</p>
           </div>
           <ClassicsAdd themes={themes} />
-          <p className="ca-walk">New to reading the classics like this? <Link className="link" href={START_WALK_PATH}>Take the five-step walk</Link><span>About 15 minutes.</span></p>
-          <p className="ca-walk">Quoted so far: {TEXTS.length} texts in {languages} languages. <Link className="link" href={TEXTS_PATH}>Meet the texts</Link></p>
+          <p className="ca-walk">New to reading classical texts this way? <Link className="link" href={START_WALK_PATH}>Take the five-step walk</Link><span>About 15 minutes.</span></p>
+          <p className="ca-walk">Quoted so far: {TEXTS.length} texts and poets, in {languages} languages. <Link className="link" href={TEXTS_PATH}>Meet the texts</Link></p>
         </section>
 
         <section className="talk" id="community" aria-labelledby="community-h">
@@ -124,7 +127,7 @@ export default function LandingPage() {
             <div className="talk-head">
               <Eyebrow num="३">Community</Eyebrow>
               <h2 id="community-h">Ask, answer, and say how you know.</h2>
-              <p className="sub">Every answer says what it rests on. No endless feed: notifications wait out the night, and the daily Edition ends.</p>
+              <p className="sub">No endless scrolling: notifications wait out the night, and each day&apos;s Edition ends.</p>
             </div>
             <ThreadPreview />
             <div className="talk-notes">
@@ -153,7 +156,7 @@ export default function LandingPage() {
             <div className="closing-cta">
               <h2 id="closing-h">Read one idea. Then ask about it.</h2>
               <div className="btn-row">
-                <Link href={chapterPath(first.slug)} className="btn btn-light btn-lg">Begin with Chapter 1<Arrow /></Link>
+                <Link href={chapterPath(first.slug)} className="btn btn-light btn-lg">Start with Chapter 1<Arrow /></Link>
                 <a href={COMMUNITY_HREF} className="btn btn-outline-light btn-lg">Join the community</a>
               </div>
             </div>
@@ -165,7 +168,7 @@ export default function LandingPage() {
         <div className="wrap foot-nav">
           <div className="foot-about">
             <span className="foot-brand"><BrandMark />Veda Verse</span>
-            <p>Management ideas in plain words, read beside India&apos;s classical thought. Made by an independent team in India.</p>
+            <p>{SITE_ABOUT}</p>
           </div>
           {SITE_MAP.map(g => (
             <nav key={g.id} className="foot-col" aria-labelledby={`ft-${g.id}`}>
@@ -180,12 +183,12 @@ export default function LandingPage() {
         </div>
         <div className="wrap wordmark-wrap"><span className="wordmark" aria-hidden="true">Veda Verse<span className="red">.</span></span></div>
         <div className="wrap">
-          {/* Three groups, as on every page: the site and how to write to us,
+          {/* Three groups, the same words as on every page: write to us,
               about the site, and how it shows on this device. */}
           <div className="foot-base">
             <div className="foot-g">
-              <span>{CHAPTERS.length} chapters across {count(UNITS.length)} {UNITS.length === 1 ? "unit" : "units"} so far, with more added as they are written.</span>
-              <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              <span>Spotted a mistake? <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></span>
+              <ReportProblem what="This page" label="Report a problem" />
             </div>
             <div className="foot-g">
               {ABOUT_LINKS.filter(l => l.href !== "/").map(l => <Link key={l.href} href={l.href} prefetch={false}>{l.label}</Link>)}

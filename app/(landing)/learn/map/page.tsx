@@ -8,7 +8,7 @@ import { allConnections } from "@/content/learn/connections";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const MAP_PATH = "/learn/map";
-const title = "How the chapters connect: a map · Veda Verse";
+const title = "Map of the chapters: how they connect · Veda Verse";
 const description = "Which chapters build on which, from the terms they share: how the units lean on each other, the chapters most build on, and each chapter's neighbours.";
 
 export const metadata: Metadata = {
@@ -37,8 +37,8 @@ export default function MapPage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Reference</span>
-        <h1><span>The map.</span><span className="red">How the chapters connect.</span></h1>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Map of the chapters</span>
+        <h1><span>How the chapters connect.</span><span className="red">What builds on what.</span></h1>
         <p className="lede">A chapter builds on another when it uses that chapter&apos;s ideas: here, when its text uses at least two of the other chapter&apos;s glossary terms. {links.length} such links join the {CHAPTERS.length} chapters. Use the map to see what to read first, and where an idea leads.</p>
       </header>
 

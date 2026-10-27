@@ -64,7 +64,7 @@ export default function Transfer() {
   };
 
   const copy = async (text: string, what: string) => {
-    try { await navigator.clipboard.writeText(text); showToast(`${what} copied`); }
+    try { await navigator.clipboard.writeText(text); showToast(`${what} copied.`); }
     catch { showToast("Couldn’t copy. Select the text and copy it instead."); }
   };
 
@@ -130,7 +130,7 @@ export default function Transfer() {
         </section>
 
         <section className="cell tr-side" id="receive" aria-labelledby="tr-get-h">
-          <span className="label red">On this device</span>
+          <span className="label red">To this device</span>
           <h2 id="tr-get-h" className="h-sm">Add a code.</h2>
           <p className="pr-text">Paste a code from your other device, or open its file. You’ll see what’s in it before anything changes, and nothing already here is lost.</p>
           <label className="tl-f" htmlFor={ids.input}>
@@ -151,7 +151,7 @@ export default function Transfer() {
                   <p className="pr-text">This code has:</p>
                   <SummaryList s={preview.summary} />
                   <div className="btn-row"><button type="button" className="btn btn-primary btn-lg" onClick={add}>Add to this device</button></div>
-                  <p className="ci-fine">Finished concepts are added to yours. A question on both review lists keeps the less advanced entry. Notes, the plan and where to continue are added only where this device has none.</p>
+                  <p className="ci-fine">Concepts done there are added to yours. A question on both review lists keeps the less advanced entry. Notes, the plan and where to continue are added only where this device has none.</p>
                 </div>
               ))}
             {added && <p className="tr-done"><b>{added}</b> <Link className="link" href="/learn" prefetch={false}>Back to the chapters</Link></p>}

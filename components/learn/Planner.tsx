@@ -195,7 +195,7 @@ export default function Planner({ units }: { units: PlanUnit[] }) {
             <button type="button" className="btn btn-secondary" onClick={saveCalendar}>Add the plan to your calendar</button>
             <span className="ci-fine">A file for Google, Apple or Outlook Calendar: each week&apos;s chapters, the start of revision and the exam day. If the plan changes, add the new file; most calendar apps update the same events rather than adding new ones.</span>
           </div>
-          <p className="ci-fine">Reading times are estimates at about 200 words a minute. Finished chapters leave the plan, and what’s left is shared out again. The plan is kept on this device; <Link className="link" href="/learn/transfer" prefetch={false}>move it to another</Link>.</p>
+          <p className="ci-fine">Reading times are estimates at about 200 words a minute. Chapters you have done leave the plan, and what’s left is shared out again. The plan is kept on this device; <Link className="link" href="/learn/transfer" prefetch={false}>move it to another</Link>.</p>
         </div>
       )}
     </div>

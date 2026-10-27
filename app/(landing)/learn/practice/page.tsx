@@ -25,7 +25,7 @@ export default function PracticePage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero pr-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Practice</span>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Practice and review</span>
         <h1><span>Answer, then remember.</span><span className="red">The ones you miss come back.</span></h1>
         <p className="lede">{questions.toLocaleString("en-IN")} questions from the chapters, each with the reason behind its answer, and {GLOSSARY.length} glossary cards. The ones you miss come back on the day they are due.</p>
         <p className="ci-fine">Exam coming? <Link className="link" href={PLAN_PATH} prefetch={false}>Make a study plan</Link> to the date, and keep the <Link className="link" href={FORMULAS_PATH} prefetch={false}>formula sheet</Link> open. Teaching a class? <Link className="link" href={QUIZ_PATH} prefetch={false}>Make a quiz from these questions</Link> and share one link.</p>

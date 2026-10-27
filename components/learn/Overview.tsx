@@ -91,12 +91,12 @@ export default function Overview({ units }: { units: OverviewUnit[] }) {
         <div className="cell">
           <span className="label red">Concepts</span>
           <b className="ov-big">{doneAll.toLocaleString("en-IN")}<span> of {total.toLocaleString("en-IN")}</span></b>
-          <span className="ov-sub">{plural(chaptersDone, "chapter", "chapters")} of {chaptersAll} finished</span>
+          <span className="ov-sub">{chaptersDone} of {plural(chaptersAll, "chapter", "chapters")} done</span>
         </div>
         <div className="cell">
           <span className="label red">Review</span>
           <b className="ov-big">{due}<span> due today</span></b>
-          <span className="ov-sub">{listed ? <>{plural(listed, "item", "items")} on your list. <Link className="link" href="/learn/practice#review" prefetch={false}>Review</Link></> : <>Nothing on your list yet. <Link className="link" href="/learn/practice" prefetch={false}>Practise</Link></>}</span>
+          <span className="ov-sub">{listed ? <>{plural(listed, "item", "items")} on your list. <Link className="link" href="/learn/practice#review" prefetch={false}>Review them</Link></> : <>Nothing on your list yet. Questions you miss in <Link className="link" href="/learn/practice" prefetch={false}>practice</Link> come here.</>}</span>
         </div>
         <div className="cell">
           <span className="label red">Study plan</span>
@@ -131,7 +131,7 @@ export default function Overview({ units }: { units: OverviewUnit[] }) {
       <section className="ov-weak" aria-labelledby="ov-weak-h">
         <h2 id="ov-weak-h" className="h-xs">Where you’re weakest</h2>
         {weak.length === 0
-          ? <p className="pr-text">Chapters where most of your recent answers were wrong show here, once you’ve answered a few questions from them, in lessons or in practice.</p>
+          ? <p className="pr-text">Once you’ve answered a few questions from a chapter, in the chapter or in practice, it shows here if most of your recent answers were wrong.</p>
           : (
             <ul>
               {weak.slice(0, 6).map(w => {
@@ -151,7 +151,7 @@ export default function Overview({ units }: { units: OverviewUnit[] }) {
       <section className="ov-notes" aria-labelledby="ov-notes-h">
         <h2 id="ov-notes-h" className="h-xs">Your notes {notes.length > 0 && <span className="ov-count">{notes.length}</span>}</h2>
         {notes.length === 0
-          ? <p className="pr-text">What you write under “Reflect &amp; discuss” in a lesson collects here, so you can read your own thinking back before an exam.</p>
+          ? <p className="pr-text">What you write under “Reflect &amp; discuss” collects here, so you can read your own thinking back before an exam.</p>
           : (
             <ul>
               {notes.map(n => (
@@ -164,7 +164,7 @@ export default function Overview({ units }: { units: OverviewUnit[] }) {
           )}
       </section>
 
-      <p className="ci-fine">All of this is kept in this browser only. <Link className="link" href="/learn/transfer" prefetch={false}>Move it to another device</Link>.</p>
+      <p className="ci-fine">All of this is kept on this device only. <Link className="link" href="/learn/transfer" prefetch={false}>Back it up, or move it to another</Link>.</p>
     </div>
   );
 }

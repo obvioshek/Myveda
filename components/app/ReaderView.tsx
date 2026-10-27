@@ -118,7 +118,7 @@ export default function ReaderView({ r }: { r: ReaderData }) {
       </header>
 
       {r.image && <div className="hero-img">{r.image}</div>}
-      {house && <div className="muted" style={{ fontSize: 13 }}>Tap a paragraph to ask about it or add context.</div>}
+      {house && <div className="muted" style={{ fontSize: 13 }}>Select a paragraph to ask about it or add context.</div>}
 
       {r.paras.map((pa, i) => (
         <div key={i} className="stack" style={{ gap: 8 }}>

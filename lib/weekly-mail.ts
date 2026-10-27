@@ -33,9 +33,9 @@ export function weeklyEmail(week: number, token: string) {
     `What it adds: ${it.adds}`,
     `Where they differ: ${it.differs}`,
     "",
-    `Read the lesson (${it.concept}, in ${it.chapter}): ${lesson}`,
+    `Read “${it.concept}”, in ${it.chapter}: ${lesson}`,
     "",
-    `This week on the site: ${page}`,
+    `See it on the site: ${page}`,
     `Stop these emails: ${off}`,
   ].join("\n");
   const html = `<div style="font-family:Arial,sans-serif;max-width:560px;color:#201e1d;line-height:1.55">
@@ -45,7 +45,7 @@ export function weeklyEmail(week: number, token: string) {
 <p>${it.how}</p>
 <p><b>What it adds.</b> ${esc(it.adds)}</p>
 <p><b>Where they differ.</b> ${esc(it.differs)}</p>
-<p><a href="${esc(lesson)}" style="color:#ae1800;font-weight:700">Read the lesson: ${esc(it.concept)}, in ${esc(it.chapter)}</a></p>
+<p><a href="${esc(lesson)}" style="color:#ae1800;font-weight:700">Read “${esc(it.concept)}”, in ${esc(it.chapter)}</a></p>
 <hr style="border:0;border-top:2px solid #ccc;margin:24px 0">
 <p style="font-size:13px;color:#5b5857">You asked for one idea a week from Veda Verse. <a href="${esc(page)}" style="color:#5b5857">See it on the site</a> · <a href="${esc(off)}" style="color:#5b5857">Stop these emails</a></p>
 </div>`;

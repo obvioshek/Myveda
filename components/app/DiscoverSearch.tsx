@@ -35,7 +35,7 @@ export default function DiscoverSearch({ q, doc, empty }: { q: string; doc: bool
         className="input"
         type="search"
         aria-label="Search"
-        placeholder="Search questions, posts, people, topics, circles"
+        placeholder="Search questions, posts, people, topics, communities"
         autoComplete="off"
         enterKeyHint="search"
         value={value}

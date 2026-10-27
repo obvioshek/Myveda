@@ -3,11 +3,12 @@ import Arrow from "./Arrow";
 import SiteSearch from "@/components/learn/SiteSearch";
 import ReportProblem from "@/components/learn/ReportProblem";
 
+// In the Menu's order, under the Menu's names.
 const WAYS = [
-  { href: "/learn", label: "All chapters", note: "Every unit and chapter, with where you left off." },
   { href: "/learn/start", label: "Start here", note: "Five ideas, each read beside a classical passage." },
-  { href: "/learn/glossary", label: "Glossary", note: "Every term, in plain language." },
-  { href: "/learn/practice", label: "Practice", note: "Questions from all the chapters, and your review." },
+  { href: "/learn", label: "All chapters", note: "Every unit and chapter, with where you left off." },
+  { href: "/learn/glossary", label: "Glossary", note: "Every term, in plain words." },
+  { href: "/learn/practice", label: "Practice and review", note: "Questions from all the chapters, and your review." },
 ];
 
 // What a missing page says: that it isn't here, how to find what the reader

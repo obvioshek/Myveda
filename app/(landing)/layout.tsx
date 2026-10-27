@@ -10,8 +10,8 @@ import NavProgress from "@/components/landing/NavProgress";
 
 // Titles stay under about 60 characters and the description under about 160,
 // which is what search results show before cutting them off.
-const title = "Veda Verse: Learn Management with India's Classical Thought";
-const description = "Management concepts explained one idea at a time, each read alongside India's classical texts and thinkers, in their own languages. Open to everyone, no sign-in.";
+const title = "Veda Verse: learn management beside India's classical texts";
+const description = "Management concepts in plain words, one idea at a time, each read beside a cited passage from India's classical texts. Free to read, with no account.";
 
 export const viewport: Viewport = {
   themeColor: "#F3F2F2",

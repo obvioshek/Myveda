@@ -56,7 +56,7 @@ export async function completeOnboarding(input: {
 }) {
   return attempt(async () => {
     const me = await actingMember();
-    if (input.topics.length < 3) refuse("Pick three or more topics.");
+    if (input.topics.length < 3) refuse("Choose three or more topics.");
     if (!BRINGS.some(([b]) => b === input.brings)) refuse("Choose what brings you here.");
     await replaceTopics(me.id, input.topics, input.askAbout);
     for (const followeeId of input.follows) {

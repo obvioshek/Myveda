@@ -6,8 +6,8 @@ export const metadata = { title: "Early list · Veda Verse", robots: { index: fa
 
 const DONE: Record<string, { title: string; body: string }> = {
   confirmed: { title: "You're on the early list.", body: "Thanks for confirming. You'll get one email when your invitation is ready, and nothing before then." },
-  removed: { title: "Your address is removed.", body: "It's deleted from the early list. If you change your mind, you can join again from the home page." },
-  invalid: { title: "That link has expired.", body: "It may have been used already, or the address was removed after 30 days unconfirmed. You can join again from the home page." },
+  removed: { title: "Your address is removed.", body: "It's deleted from the early list, and nothing else about you is kept." },
+  invalid: { title: "That link has expired.", body: "It may have been used already, or the address was removed after 30 days unconfirmed." },
 };
 
 // The links in the confirmation email land here. Confirming or removing takes

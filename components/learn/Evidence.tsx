@@ -11,7 +11,7 @@ export function Tag({ kind }: { kind: Kind }) {
 // interpretive, so a chapter's footing reads at a glance.
 export function Meter({ documented, view }: { documented: number; view: number }) {
   return (
-    <span className="ev-meter" role="img" aria-label={`${documented} documented, ${view} interpretive`}>
+    <span className="ev-meter" role="img" aria-label={`${documented} marked Documented, ${view} marked My view`}>
       {Array.from({ length: documented }, (_, i) => <i key={`d${i}`} className="d" />)}
       {Array.from({ length: view }, (_, i) => <i key={`v${i}`} className="v" />)}
     </span>

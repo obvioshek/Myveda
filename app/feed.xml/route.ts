@@ -20,7 +20,7 @@ export function GET() {
 <link>${esc(link)}</link>
 <guid isPermaLink="false">veda-verse-weekly-${w}</guid>
 <pubDate>${new Date(weekDates(w).from.getTime() - 5.5 * 3600_000).toUTCString()}</pubDate>
-<description>${cdata(`<blockquote>${it.quote}</blockquote><p>${it.how}</p><p><b>What it adds.</b> ${esc(it.adds)}</p><p><b>Where they differ.</b> ${esc(it.differs)}</p><p><a href="${esc(link)}">Read the lesson: ${esc(it.concept)}, in ${esc(it.chapter)}</a></p>`)}</description>
+<description>${cdata(`<blockquote>${it.quote}</blockquote><p>${it.how}</p><p><b>What it adds.</b> ${esc(it.adds)}</p><p><b>Where they differ.</b> ${esc(it.differs)}</p><p><a href="${esc(link)}">Read “${esc(it.concept)}”, in ${esc(it.chapter)}</a></p>`)}</description>
 </item>`;
   });
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

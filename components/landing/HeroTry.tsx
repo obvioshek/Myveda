@@ -6,10 +6,11 @@ import Arrow from "./Arrow";
 
 // The hero's example, as something to do rather than read: the visitor answers
 // one question first, then sees the modern theory and the classical verse side
-// by side, marked with the one they sided with, and where the two part ways.
+// by side, marked with the one they sided with, and where the two differ.
+// Both answers start the same way, so they read as two answers to one question.
 const CHOICES = [
   "They expect a result worth having",
-  "Acting well matters, whatever the result",
+  "They believe acting well matters, whatever the result",
 ];
 
 export default function HeroTry({ href }: { href: string }) {
@@ -27,7 +28,7 @@ export default function HeroTry({ href }: { href: string }) {
             </button>
           ))}
         </div>
-        <p className="try-hint" aria-live="polite">{done ? "Here is who agrees with you, and who doesn't." : "Pick the answer closer to what you believe."}</p>
+        <p className="try-hint" aria-live="polite">{done ? "Here is who agrees with you, and who doesn't." : "Choose the answer closer to what you believe."}</p>
       </div>
 
       <div className={done ? "reveal slow open" : "reveal slow"} id="try-answer" inert={!done}>
@@ -39,13 +40,13 @@ export default function HeroTry({ href }: { href: string }) {
               <p className="try-say">People put in effort when they believe it will lead to a result, and that the result is worth having.</p>
             </div>
             <div className={pick === 1 ? "try-side red mine" : "try-side red"}>
-              <div className="try-top"><span className="label">B · Bhagavad Gītā 2.47</span>{pick === 1 && <span className="try-you">You</span>}</div>
+              <div className="try-top"><span className="label">B · Classical · Bhagavad Gītā 2.47</span>{pick === 1 && <span className="try-you">You</span>}</div>
               <p className="try-sa" lang="sa">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।</p>
               <p className="try-say">“Your right is to the action alone, never to its fruits.”</p>
             </div>
           </div>
           <div className="try-foot">
-            <p><b>Where they part.</b> Vroom makes the expected result the reason to act. The Gītā asks you to act well without making the result the reason.</p>
+            <p><b>Where they differ.</b> Vroom makes the expected result the reason to act. The Gītā asks you to act well without making the result the reason.</p>
             <div className="try-links">
               <Link className="more" href={href} prefetch={false}>Read both in Chapter 1<Arrow /></Link>
               <button type="button" className="try-again" onClick={() => setPick(null)}>Answer again</button>

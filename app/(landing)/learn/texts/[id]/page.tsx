@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const title = `${t.name}: what it is, and the passages we quote · Veda Verse`.length <= 65
     ? `${t.name}: what it is, and the passages we quote · Veda Verse`
     : `${t.name} · Veda Verse`;
-  const full = `${t.kind}. ${t.form}. ${n} ${n === 1 ? "passage" : "passages"} from it in the chapters, each linked to its lesson.`;
-  const description = full.length <= 160 ? full : `${t.kind}. ${n} ${n === 1 ? "passage" : "passages"} from it in the chapters, each linked to its lesson.`;
+  const full = `${t.kind}. ${t.form}. ${n} ${n === 1 ? "passage" : "passages"} from it in the chapters, each linked to its concept.`;
+  const description = full.length <= 160 ? full : `${t.kind}. ${n} ${n === 1 ? "passage" : "passages"} from it in the chapters, each linked to its concept.`;
   const url = textPath(t.id);
   return {
     title, description,
@@ -59,7 +59,7 @@ export default async function TextPage({ params }: { params: Promise<{ id: strin
     <PageShell wide note="Spotted a mistake?">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <header className="wrap ci-hero tx-hero">
-        <nav className="ch-crumbs" aria-label="Breadcrumb"><Link href={LEARN_PATH} prefetch={false}>Chapters</Link><span aria-hidden="true">/</span><Link href={TEXTS_PATH} prefetch={false}>The texts</Link></nav>
+        <nav className="ch-crumbs" aria-label="Breadcrumb"><Link href={LEARN_PATH} prefetch={false}>Chapters</Link><span aria-hidden="true">/</span><Link href={TEXTS_PATH} prefetch={false}>The classical texts</Link></nav>
         <span className="eyebrow"><i className="sq" aria-hidden="true" />{t.language} · {t.when}</span>
         <h1><span>{t.name}</span>{t.original && <span className="red tx-h-og" lang={t.original.lang}>{t.original.text}</span>}</h1>
         <p className="lede">{t.kind}. {passages.length} {passages.length === 1 ? "passage" : "passages"} in the chapters come from it.</p>
@@ -104,7 +104,7 @@ export default async function TextPage({ params }: { params: Promise<{ id: strin
                   <span>{p.modern}</span>
                   {p.classic && (<><span className="lp-x" aria-hidden="true">↔</span><span className="sr-only"> and </span><span className="lp-c">{p.classic}</span></>)}
                 </h3>
-                <Link className="more" href={p.href} prefetch={false}>Read it in its lesson<Arrow /></Link>
+                <Link className="more" href={p.href} prefetch={false}>Read it in its chapter<Arrow /></Link>
               </div>
               <PassageQuote quote={p.quote} except={t.id} at={{ slug: p.slug, n: p.pairing }} />
             </li>

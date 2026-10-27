@@ -14,7 +14,7 @@ export async function signInWithEmail(_prev: SignInState, formData: FormData): P
     return { success: '', error: 'Email is required' }
   }
   if (!hasSupabase()) {
-    return { success: '', error: 'Sign-in is not open yet. Join the early list and we will email you.' }
+    return { success: '', error: 'Sign-in is not open yet. Reading the chapters needs no account.' }
   }
 
   const supabase = await createClient()

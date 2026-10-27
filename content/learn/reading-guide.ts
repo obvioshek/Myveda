@@ -107,7 +107,7 @@ export const WORDS: Word[] = [
     find: /daṇḍa|danda\b/i },
   { id: "aram", term: "aṟam", original: "அறம்", lang: "ta",
     means: "Virtue and right conduct in Tamil thought; the first book of the Tirukkuṟaḷ.",
-    notQuite: "Simply “dharma”. Aṟam grows from Tamil ethics and is often closer to goodness and fairness than to duty.",
+    notQuite: "“Dharma” by another name. Aṟam grows from Tamil ethics and is often closer to goodness and fairness than to duty.",
     find: /aṟam/i },
   { id: "kayaka", term: "kāyaka", original: "ಕಾಯಕ", lang: "kn",
     means: "Honest work, held by Basavaṇṇa and the Vīraśaivas to be itself a form of worship.",

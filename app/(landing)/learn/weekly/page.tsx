@@ -11,7 +11,7 @@ import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 // The week's pair changes on Mondays; the page is rebuilt every hour.
 export const revalidate = 3600;
 
-const title = "One idea a week: management beside the classics · Veda Verse";
+const title = "One idea a week, beside a classical passage · Veda Verse";
 const description = "Each Monday, a management idea beside a classical Indian passage that met the same problem: what it adds and where they differ. On the site, by email or feed.";
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function WeeklyPage() {
           </dl>
           <div className="ca-foot">
             <Tag kind={it.kind} />
-            <Link className="more" href={it.href} prefetch={false}>Read the lesson: {it.concept}, in {it.chapter}<Arrow /></Link>
+            <Link className="more" href={it.href} prefetch={false}>{it.concept}, in {it.chapter}<Arrow /></Link>
           </div>
         </div>
         <aside className="wk-get" aria-labelledby="wk-get-h">

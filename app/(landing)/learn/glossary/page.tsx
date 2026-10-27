@@ -8,7 +8,7 @@ import { siteUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Management glossary: economics, HR and finance terms · Veda Verse";
-const description = `${GLOSSARY.length} management, economics, HR, accounting and finance terms in plain language, from agency theory to WACC, each linked to the chapter that explains it.`;
+const description = `${GLOSSARY.length} management, economics, HR, accounting and finance terms in plain words, from agency theory to WACC, each linked to the chapter that explains it.`;
 
 export const metadata: Metadata = {
   title,
@@ -47,10 +47,10 @@ export default function GlossaryPage() {
     <PageShell wide note="Spotted a mistake?">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <header className="wrap ci-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Reference</span>
-        <h1><span>Glossary.</span><span className="red">{GLOSSARY.length} terms, A to Z.</span></h1>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Glossary</span>
+        <h1><span>{GLOSSARY.length} terms, A to Z.</span><span className="red">Each in plain words.</span></h1>
         <div className="split intro">
-          <p className="lede">Short, plain definitions, each linked to the chapter that explains it.</p>
+          <p className="lede">Short definitions, each linked to the chapter that explains it.</p>
         </div>
       </header>
       <div className="wrap gl">
