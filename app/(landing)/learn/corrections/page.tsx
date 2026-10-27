@@ -25,10 +25,10 @@ export default function CorrectionsPage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Reference</span>
-        <h1><span>Corrections.</span><span className="red">What changed, and when.</span></h1>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Corrections</span>
+        <h1><span>What changed,</span><span className="red">and when.</span></h1>
         <p className="lede">
-          A site that sets old texts beside modern ideas will sometimes get a translation, a reference or an answer wrong. When a reader reports a problem and it turns out to be right, the fix is made and listed here with its date, so anyone who quoted the page can check what changed.
+          A site that sets classical texts beside modern ideas will sometimes get a translation, a reference or an answer wrong. When a reader&apos;s report turns out to be right, the fix is made and listed here with its date, so anyone who quoted the page can check what changed.
         </p>
       </header>
       <section className="wrap tx-sec" aria-labelledby="co-h">

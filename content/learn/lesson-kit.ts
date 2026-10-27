@@ -1,6 +1,8 @@
 // Guided lessons: a chapter's concepts taught the way the home page's sample
-// concept is, in five steps (before you read, core idea, check yourself, Ancient
-// lens, reflect, one-page summary) with each step opening in place. A lesson
+// concept is, in six steps (before you read, core idea, check yourself, ancient
+// lens, reflect and discuss, one-page summary) with each step opening in place;
+// "Try it" joins them where a concept has a calculator. On screen a lesson is
+// always called a concept, and the steps keep these names everywhere. A lesson
 // explains one block of a chapter in chapters.json, and takes the passages it
 // needs from that chapter's own list, so nothing is said twice.
 //

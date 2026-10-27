@@ -137,7 +137,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <span>About {c.minutes} min</span>
             {ev.total > 0 && (
               <details className="ch-legend">
-                <summary><Meter documented={ev.documented} view={ev.view} />{ev.total} {ev.total === 1 ? "passage" : "passages"} from the classics<span className="ch-legend-q">How they are marked</span></summary>
+                <summary><Meter documented={ev.documented} view={ev.view} />{ev.total} cited {ev.total === 1 ? "passage" : "passages"}<span className="ch-legend-q">How they are marked</span></summary>
                 <div className="ch-legend-body">
                   <p><Tag kind="documented" /> {ev.documented} of them. {HOW.documented}</p>
                   {ev.view > 0 && <p><Tag kind="view" /> {ev.view} of them. {HOW.view}</p>}
@@ -146,7 +146,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             )}
           </div>
           <div className="ch-actions">
-            <ChapterStart slug={c.slug} items={(lessons ?? []).map(l => ({ id: l.blockId, name: l.name }))} fallback={{ href: firstId ? `#${firstId}` : "#lens", label: firstId ? "Start with the first concept" : "Jump to the Ancient lens" }} />
+            <ChapterStart slug={c.slug} items={(lessons ?? []).map(l => ({ id: l.blockId, name: l.name }))} fallback={{ href: firstId ? `#${firstId}` : "#lens", label: firstId ? "Start with the first concept" : "Go to the ancient lens" }} />
             {lessons && <LessonsToggle />}
           </div>
         </header>
@@ -225,9 +225,9 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <h2 id="ch-also-h" className="h-xs">More for this chapter</h2>
             <div className="ci-more-grid">
               {lessons && <Link href={`${REVISION_PATH}#rv-${c.slug}`} prefetch={false}><b>Revision sheet<Arrow /></b><span>Every concept on one page, to read or print</span></Link>}
-              {formulas > 0 && <Link href={`${FORMULAS_PATH}#fx-${c.slug}`} prefetch={false}><b>Its formulas<Arrow /></b><span>{formulas === 1 ? "The formula" : `All ${formulas} formulas`} on the formula sheet, with worked examples</span></Link>}
-              {situations.length > 0 && <Link href={`${APPLY_PATH}#${situations[0].id}`} prefetch={false}><b>Apply it at work<Arrow /></b><span>{situations.length === 1 ? "A workplace situation" : `${situations.length} workplace situations`} where its ideas help</span></Link>}
-              {(uses.length > 0 || usedIn.length > 0) && <Link href={`/learn/map#${c.slug}`} prefetch={false}><b>On the map<Arrow /></b><span>The chapters it builds on and leads to</span></Link>}
+              {formulas > 0 && <Link href={`${FORMULAS_PATH}#fx-${c.slug}`} prefetch={false}><b>Formulas<Arrow /></b><span>{formulas === 1 ? "The formula" : `All ${formulas} formulas`} on the formula sheet, with worked examples</span></Link>}
+              {situations.length > 0 && <Link href={`${APPLY_PATH}#${situations[0].id}`} prefetch={false}><b>Workplace situations<Arrow /></b><span>{situations.length === 1 ? "A situation" : `${situations.length} situations`} where its ideas help</span></Link>}
+              {(uses.length > 0 || usedIn.length > 0) && <Link href={`/learn/map#${c.slug}`} prefetch={false}><b>Map of the chapters<Arrow /></b><span>The chapters it builds on and leads to</span></Link>}
             </div>
           </nav>
 
@@ -263,7 +263,7 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
             <p className="ch-texts ch-texts-l">
               <b>{texts.length === 1 ? "The text" : "Texts"} quoted in this chapter:</b>{" "}
               {texts.map((t, i) => <span key={t.id}>{i > 0 && ", "}<Link href={textPath(t.id)} prefetch={false}>{t.name}</Link></span>)}.{" "}
-              <Link href={TEXTS_PATH} prefetch={false}>About all the texts</Link>.
+              <Link href={TEXTS_PATH} prefetch={false}>All the classical texts</Link>.
             </p>
           )}
           {fixes.length > 0 && (

@@ -118,8 +118,8 @@ export default function QuizBuilder() {
         </section>
 
         <aside className="qz-side" aria-labelledby="qz-set-h">
-          <h2 id="qz-set-h" className="h-xs"><span className="qz-n">2</span>Your quiz <span className="qz-count">{chosen.length} of {MAX_QUIZ}</span></h2>
-          {chosen.length === 0 ? <p className="ci-fine">Tick questions on the left. You can mix chapters and units.</p> : (
+          <h2 id="qz-set-h" className="h-xs"><span className="qz-n">2</span>Set up your quiz <span className="qz-count">{chosen.length} of {MAX_QUIZ}</span></h2>
+          {chosen.length === 0 ? <p className="ci-fine">Tick questions in step 1. You can mix chapters and units.</p> : (
             <ol className="qz-chosen">
               {chosen.map((q, i) => (
                 <li key={q.id}>
@@ -161,7 +161,7 @@ export default function QuizBuilder() {
               <div className="tl-in qz-link"><input type="text" readOnly value={link} aria-label="Link to the quiz" onFocus={e => e.currentTarget.select()} /></div>
               <div className="btn-row">
                 <button type="button" className="btn btn-primary" onClick={async () => { try { await navigator.clipboard.writeText(link); setCopied(true); } catch { setCopied(false); } }}>{copied ? "Link copied" : "Copy the link"}</button>
-                <a className="btn btn-secondary" href={href} target="_blank" rel="noopener">Try it<NewTab /></a>
+                <a className="btn btn-secondary" href={href} target="_blank" rel="noopener">Preview<NewTab /></a>
                 <button type="button" className="btn btn-secondary" onClick={() => window.print()}>Print with answer key</button>
               </div>
               <p className="ci-fine">Students open the link on their own phone or computer; no sign-in. Their answers stay on their device, and at the end they can copy a line with their score to send you.</p>

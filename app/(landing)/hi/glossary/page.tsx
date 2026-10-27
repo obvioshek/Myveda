@@ -32,8 +32,8 @@ export default function HindiGlossary() {
       <div lang="hi" className="hi">
         <HiNav here={HI_GLOSSARY_PATH} en={GLOSSARY_PATH} />
         <header className="wrap ci-hero">
-          <span className="eyebrow"><i className="sq" aria-hidden="true" />संदर्भ</span>
-          <h1><span>शब्दावली।</span><span className="red">इकाई 1, हिंदी में।</span></h1>
+          <span className="eyebrow"><i className="sq" aria-hidden="true" />शब्दावली</span>
+          <h1><span>इकाई 1 के शब्द,</span><span className="red">हिंदी में।</span></h1>
           <p className="lede">इकाई 1, प्रबंध और प्रबंधकीय अर्थशास्त्र, के {terms.length} शब्द सरल हिंदी परिभाषाओं के साथ। हर शब्द के साथ अंग्रेज़ी शब्द भी है, क्योंकि परीक्षाएँ दोनों का उपयोग करती हैं, और वह अध्याय भी जहाँ विचार पूरा समझाया गया है (अंग्रेज़ी में)। बाक़ी इकाइयाँ आगे आएँगी।</p>
           <nav className="btn-row" aria-label="इस पन्ने पर">
             <a className="btn btn-secondary" href="#words">शब्द जिनका अनुवाद नहीं होता</a>

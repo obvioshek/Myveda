@@ -3,5 +3,5 @@
 // openGraph replaces the layout's whole openGraph object, image included, so
 // each lists it.
 export const DEFAULT_OG_IMAGES = [
-  { url: "/share.png", width: 1200, height: 630, alt: "Veda Verse: learn the idea, then see how the classics saw it." },
+  { url: "/share.png", width: 1200, height: 630, alt: "Veda Verse: learn the idea, then see how the classical texts saw it." },
 ];

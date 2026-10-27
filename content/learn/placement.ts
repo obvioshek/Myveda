@@ -1,4 +1,4 @@
-// "Where should I start?": a short check across the units, for /learn/check.
+// The level check ("Where should I start?"): a short check across the units, for /learn/check.
 // Four questions a unit, from chapters spread through it (its first, its last
 // and two between), each the first check question of the chapter's first
 // lesson. Chosen when the site is built, so everyone gets the same check.

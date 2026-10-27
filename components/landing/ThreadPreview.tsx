@@ -84,7 +84,7 @@ export default function ThreadPreview() {
           <p className="th-help" aria-live="polite">{BASIS_HELP[basis]}</p>
         </div>
       </div>
-      <figcaption className="th-cap">An example thread, written to show how answers work. Try Helpful, or pick what your answer would rest on.</figcaption>
+      <figcaption className="th-cap">An example thread, written to show how answers work. Try Helpful, or choose what your answer would rest on.</figcaption>
     </figure>
   );
 }

@@ -19,7 +19,7 @@ import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 const WITH_FORMULAS = new Set(buildFormulaSheet().filter(u => u.formulas > 0).map(u => u.id));
 
 const title = "Management chapters, from economics to marketing · Veda Verse";
-const description = `${CHAPTERS.length} chapters on management, economics, OB, HRM, accounting, finance, strategy and marketing in plain language, each idea beside India's classical texts.`;
+const description = `${CHAPTERS.length} chapters on management, economics, OB, HRM, accounting, finance, strategy and marketing in plain words, each concept beside India's classical texts.`;
 
 export const metadata: Metadata = {
   title,
@@ -80,9 +80,9 @@ export default function LearnIndex() {
       <ReviewBand />
 
       <section className="wrap ci-hero" aria-labelledby="learn-h">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />{UNITS.length === 1 ? `Unit 1 · ${UNITS[0].title}` : `${UNITS.length} units`}</span>
-        <h1 id="learn-h"><span>{CHAPTERS.length} chapters.</span><span className="red">Every idea, then its ancient lens.</span></h1>
-        <p className="lede">Plain-language chapters with the terms, formulas and examples a course expects. Where a classical text met the same problem, its passage sits beside the idea, with its reference.</p>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />All chapters</span>
+        <h1 id="learn-h"><span>{CHAPTERS.length} chapters.</span><span className="red">Every concept, then its ancient lens.</span></h1>
+        <p className="lede">Chapters in plain words, with the terms, formulas and examples a course expects. Where a classical text met the same problem, its passage sits beside the concept, with its reference.</p>
         <nav className="ci-jump" aria-label="Units">
           {UNITS.map(u => <a key={u.id} href={`#${u.id}`}><b>Unit {u.n}</b>{u.short}</a>)}
           {pending && <span className="ci-soon">{pending}</span>}
@@ -90,12 +90,12 @@ export default function LearnIndex() {
       </section>
 
       <section className="wrap ci-walk" aria-labelledby="ci-walk-h">
-        <span className="label red">Not sure where to begin?</span>
+        <span className="label red">Not sure where to start?</span>
         <h2 id="ci-walk-h" className="h-sm">Five ideas, read two ways.</h2>
-        <p className="sub">A fifteen-minute walk: five modern ideas, each beside a passage that met the same problem, and what to notice when you read them together.</p>
+        <p className="sub">A 15-minute walk: five modern ideas, each beside a passage that met the same problem, and what to notice in each pair.</p>
         <div className="btn-row">
           <Link className="btn btn-primary" href={START_WALK_PATH} prefetch={false}>Take the walk<Arrow /></Link>
-          <Link className="btn btn-secondary" href="/learn/check" prefetch={false}>Or find your level in 2 minutes</Link>
+          <Link className="btn btn-secondary" href="/learn/check" prefetch={false}>Take the level check</Link>
         </div>
       </section>
 
@@ -154,8 +154,8 @@ export default function LearnIndex() {
                 <Progress ids={ids} />
                 <div className="btn-row">
                   <Link className="btn btn-secondary" href={`${REVISION_PATH}#${u.id}`}>Revision sheets</Link>
-                  <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?unit=${u.id}`} prefetch={false}>Practise this unit</Link>
-                  {WITH_FORMULAS.has(u.id) && <Link className="btn btn-ghost" href={`${FORMULAS_PATH}#${u.id}`} prefetch={false}>Formulas</Link>}
+                  <Link className="btn btn-secondary" href={`${PRACTICE_PATH}?unit=${u.id}`} prefetch={false}>Practice questions</Link>
+                  {WITH_FORMULAS.has(u.id) && <Link className="btn btn-ghost" href={`${FORMULAS_PATH}#${u.id}`} prefetch={false}>Formula sheet</Link>}
                   <Link className="btn btn-ghost" href={GLOSSARY_PATH}>Glossary</Link>
                 </div>
               </div>
@@ -201,11 +201,11 @@ export default function LearnIndex() {
           <div className="ci-more-g">
             <span className="label red">Going further</span>
             <div className="ci-more-grid">
-              <Link href="/learn/apply" prefetch={false}><b>Apply it<Arrow /></b><span>Workplace situations: which idea helps here?</span></Link>
+              <Link href="/learn/apply" prefetch={false}><b>Workplace situations<Arrow /></b><span>Which idea helps here?</span></Link>
               <Link href={TEXTS_PATH} prefetch={false}><b>The classical texts<Arrow /></b><span>What each is, and how to say the names</span></Link>
-              <Link href="/learn/map" prefetch={false}><b>The map<Arrow /></b><span>Which chapters build on which</span></Link>
+              <Link href="/learn/map" prefetch={false}><b>Map of the chapters<Arrow /></b><span>Which chapters build on which</span></Link>
               <Link href="/learn/weekly" prefetch={false}><b>One idea a week<Arrow /></b><span>A new pair each Monday, by email or feed</span></Link>
-              <Link href="/learn/quiz" prefetch={false}><b>Make a quiz<Arrow /></b><span>For a class or a study group</span></Link>
+              <Link href="/learn/quiz" prefetch={false}><b>Quiz maker<Arrow /></b><span>For a class or a study group</span></Link>
             </div>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function LearnIndex() {
       <section className="wrap ci-foot" id="offline" aria-label="Notes">
         <p className="ci-fine">{HOW.translations}</p>
         <SaveOffline chapters={CHAPTERS.map(c => chapterPath(c.slug))} extra={["/learn", GLOSSARY_PATH, REVISION_PATH, FORMULAS_PATH, PRACTICE_PATH, PLAN_PATH, TRANSFER_PATH, TEXTS_PATH, ...TEXTS.map(t => textPath(t.id)), READING_GUIDE_PATH, `${REVISION_PATH}/pack`, "/learn/quiz", "/learn/apply", "/learn/check", "/learn/map", "/practice-bank.json", "/search-index.json"]} />
-        <p className="ci-fine">Your progress is kept in this browser only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Move it to another device</Link>.</p>
+        <p className="ci-fine">Your progress is kept on this device only. <Link className="link" href={TRANSFER_PATH} prefetch={false}>Back it up, or move it to another</Link>.</p>
         <p className="ci-fine">{pending ? `${pending}. ` : ""}{GLOSSARY.length} terms so far are in the <Link className="link" href={GLOSSARY_PATH}>glossary</Link>. Found something wrong or missing? Write to <a className="link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       </section>
     </PageShell>

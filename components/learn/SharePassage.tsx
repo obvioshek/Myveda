@@ -18,7 +18,7 @@ export default function SharePassage({ href, image, title }: { href: string; ima
 
   const url = () => new URL(href, window.location.origin).toString();
   const text = `${title}, on Veda Verse`;
-  const copy = async () => { try { await navigator.clipboard.writeText(url()); setNote("Link copied."); } catch { setNote("Couldn't copy; the link is in the address bar once you open it."); } };
+  const copy = async () => { try { await navigator.clipboard.writeText(url()); setNote("Link copied."); } catch { setNote("Couldn’t copy. The link is in the address bar once you open it."); } };
   const native = async () => {
     try {
       const blob = await (await fetch(image)).blob();
@@ -54,7 +54,7 @@ export default function SharePassage({ href, image, title }: { href: string; ima
               {sheet && <button type="button" className="btn btn-secondary" onClick={copy}>Copy link</button>}
               <a className="btn btn-ghost" href={image} download="veda-verse-passage.png">Download image</a>
             </div>
-            <p className="ci-fine" aria-live="polite">{note || "The link opens the lesson at this passage."}</p>
+            <p className="ci-fine" aria-live="polite">{note || "The link opens the chapter at this passage."}</p>
           </div>
         </dialog>, document.body)}
     </>

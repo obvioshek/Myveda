@@ -34,7 +34,7 @@ export default function ReadingGuidePage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Reference</span>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Reading guide</span>
         <h1><span>How to read</span><span className="red">the names and terms.</span></h1>
         <p className="lede">
           The chapters write Sanskrit, Pali and Tamil words in the Roman alphabet with a few extra marks, so that every sound is spelled one way. The marks look strange at first and take a few minutes to learn. After that, Kauṭilya and Ṛgveda say exactly how they sound.

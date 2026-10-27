@@ -6,7 +6,7 @@ import { TRANSFER_PATH } from "@/content/learn";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Move your progress to another device · Veda Verse";
-const description = "Your progress, review list, study plan and notes stay in your browser. Carry them to another device with a code, a link or a file, without an account and without sending them to us.";
+const description = "Your progress, review list, study plan and notes stay in this browser. Carry them to another device with a code, a link or a file, without an account and without sending them to us.";
 
 export const metadata: Metadata = {
   title,
@@ -22,9 +22,9 @@ export default function TransferPage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero pr-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Your progress</span>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Backup and transfer</span>
         <h1><span>Your progress lives here.</span><span className="red">Take it with you.</span></h1>
-        <p className="lede">What you finish, the questions waiting for review, your study plan and your notes are kept in this browser, not on our servers. To carry them to your phone or another computer, make a code here and add it there.</p>
+        <p className="lede">The concepts you have done, the questions waiting for review, your study plan and your notes are kept in this browser, not on our servers. To carry them to your phone or another computer, make a code here and add it there.</p>
       </header>
       <Transfer />
       <Toast />

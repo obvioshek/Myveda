@@ -56,11 +56,13 @@ export const BRINGS: [string, string][] = [
   ["Helping", "Questions on what you know are sent to you."],
 ];
 
+// Each kind is described the same way: "a ..." and what it does, so the four
+// read as one set wherever they are listed.
 export const COMMUNITY_FORMATS: Record<string, string> = {
-  Circle: "one book or theme at a time, a thread per part",
+  Circle: "a group that reads one book or theme at a time, a thread per part",
   Board: "a shared noticeboard for a place or a moment",
   Cohort: "a small group that applies and moves together",
-  Practice: "practice in the open, corrections come as replies",
+  Practice: "a group that practises in the open, with corrections as replies",
 };
 
 export function memoryLabel(memory: string, fadeDays?: number | null) {

@@ -94,7 +94,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
   const markDone = () => {
     setDone(id, true);
     const before = [...doneSet].filter(x => x.startsWith(`${slug}#`) && x !== id).length;
-    showToast(before + 1 === total ? `That's every concept in ${chapter}. Well done.` : `${lesson.name}: marked as done`);
+    showToast(before + 1 === total ? `That's every concept in ${chapter}. Well done.` : `${lesson.name}: marked as done.`);
   };
   const noteKey = `${NOTE_PREFIX}${path}#${lesson.blockId}`;
   const note = useDevice(noteKey);
@@ -143,7 +143,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
 
   const copy = async () => {
     const text = [`${lesson.name}`, "", ...lesson.summary.points.map(p => `• ${p}`), "", `Remember: ${lesson.summary.memory}`, "", "From Veda Verse, myvedaverse.in"].join("\n");
-    try { await navigator.clipboard.writeText(text); showToast("Summary copied"); } catch { showToast("Could not copy. Select the text instead."); }
+    try { await navigator.clipboard.writeText(text); showToast("Summary copied."); } catch { showToast("Couldn’t copy. Select the text and copy it instead."); }
   };
 
   return (

@@ -61,7 +61,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
         {step === 1 && (
           <>
             <h1>What are you curious about?</h1>
-            <p className="lede">Pick three or more. They shape your daily Edition.</p>
+            <p className="lede">Choose three or more. They shape your daily Edition.</p>
             <div className="wrap-chips" style={{ gap: 8 }} role="group" aria-label="Topics">
               {topics.map(t => (
                 <button key={t} type="button" className="pill" aria-pressed={chosen.includes(t)} onClick={() => setChosen(toggle(chosen, t))}>
@@ -97,7 +97,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
 
         {step === 3 && (
           <>
-            <h1>Follow a few people and one circle</h1>
+            <h1>Follow a few people and one community</h1>
             <div className="stack">
               {people.map(p => (
                 <div key={p.id} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", borderBottom: "2px solid var(--color-divider)" }}>

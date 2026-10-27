@@ -273,6 +273,9 @@ a.row:hover { color: var(--color-text); }
   cursor: text; text-align: left; text-decoration: none; transition: border-color .2s;
 }
 .top-search:hover { color: var(--soft); border-color: var(--color-text); }
+/* The prompt names everything search finds; on a narrow bar it trails off
+   rather than wrapping. */
+.top-search-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .top-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 .bell { position: relative; }
 .bell .dot { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background: var(--color-accent); box-shadow: 0 0 0 2px var(--color-bg); }

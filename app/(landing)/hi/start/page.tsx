@@ -28,7 +28,7 @@ export default function HindiWalk() {
       <div lang="hi" className="hi">
         <HiNav here={HI_START_PATH} en="/learn/start" />
         <header className="wrap ci-hero pr-hero">
-          <span className="eyebrow"><i className="sq" aria-hidden="true" />यहाँ से शुरू करें</span>
+          <span className="eyebrow"><i className="sq" aria-hidden="true" />पाँच चरणों की सैर</span>
           <h1><span>पाँच विचार,</span><span className="red">दो तरह से पढ़े गए।</span></h1>
           <p className="lede">यदि आपने कभी किसी शास्त्रीय ग्रंथ को प्रबंध के किसी विचार के साथ नहीं पढ़ा है, तो यहाँ से शुरू करें। हर चरण एक आधुनिक विचार को उस अंश के पास रखता है जिसने बहुत पहले वही समस्या देखी, और दोनों को साथ पढ़ने की एक बात दिखाता है। लगभग पंद्रह मिनट।</p>
         </header>

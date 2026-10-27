@@ -5,7 +5,7 @@ import { PLAN_PATH, UNITS, conceptIds } from "@/content/learn";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "Study plan: from today to your exam date · Veda Verse";
-const description = "Pick your exam date and units. Your unfinished chapters are shared out week by week, the last days kept for revision, and the plan adjusts as you read.";
+const description = "Choose your exam date and units. The chapters not yet done are shared out week by week, with the last days kept for revision, and the plan adjusts as you read.";
 
 export const metadata: Metadata = {
   title,
@@ -27,7 +27,7 @@ export default function PlanPage() {
       <header className="wrap ci-hero pr-hero">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Study plan</span>
         <h1><span>Your exam date.</span><span className="red">Your weeks until then.</span></h1>
-        <p className="lede">Pick the date and the units you need. The chapters you haven’t finished are shared out week by week, with the last days kept for revision. Finish a chapter and the plan moves on.</p>
+        <p className="lede">Choose the date and the units you need. The chapters not yet done are shared out week by week, with the last days kept for revision. Finish a chapter and the plan moves on.</p>
       </header>
       <Planner units={units} />
     </PageShell>

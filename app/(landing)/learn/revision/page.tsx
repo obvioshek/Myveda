@@ -22,9 +22,9 @@ export default function RevisionPage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero rv-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Revision</span>
-        <h1><span>Revision sheets.</span><span className="red">Every concept on one page.</span></h1>
-        <p className="lede">The one-page summary of each concept, chapter by chapter, with the line to remember. Read it the night before, or print it.</p>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Revision sheets</span>
+        <h1><span>Every concept on one page.</span><span className="red">Ready the night before.</span></h1>
+        <p className="lede">The one-page summary of each concept, chapter by chapter, with the line to remember. Read it on screen, or print it.</p>
         <div className="btn-row no-print">
           <PrintButton />
           <Link className="btn btn-secondary" href={`${REVISION_PATH}/pack`} prefetch={false}>Make a pack: your units, your weak spots</Link>

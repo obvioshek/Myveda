@@ -6,8 +6,8 @@ import { Tag } from "@/components/learn/Evidence";
 import { APPLY_PATH, SCENARIOS, scenarioView } from "@/content/learn/scenarios";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
-const title = "Apply it: management ideas in real situations · Veda Verse";
-const description = `${SCENARIOS.length} short workplace situations from across India. Choose the idea that helps most, then see why, with the lesson and a classical passage that met the same problem.`;
+const title = "Workplace situations: which management idea helps? · Veda Verse";
+const description = `${SCENARIOS.length} short workplace situations from across India. Choose the idea that helps most, then see why, with the concept and a classical passage that met the same problem.`;
 
 export const metadata: Metadata = {
   title,
@@ -23,9 +23,9 @@ export default function ApplyPage() {
   return (
     <PageShell wide note="Spotted a mistake?">
       <header className="wrap ci-hero">
-        <span className="eyebrow"><i className="sq" aria-hidden="true" />Practice</span>
+        <span className="eyebrow"><i className="sq" aria-hidden="true" />Workplace situations</span>
         <h1><span>Apply it.</span><span className="red">Which idea helps here?</span></h1>
-        <p className="lede">Exams and work both ask the same thing: not what an idea is, but where it applies. Each situation below has one idea that helps most. Choose it, then see why, with the lesson for every option and, where one fits, a passage that met the same problem long ago.</p>
+        <p className="lede">Exams and work both ask the same thing: not what an idea is, but where it applies. Each situation below has one idea that helps most. Choose it, then see why, with the concept behind every option and, where one fits, a passage that met the same problem long ago.</p>
       </header>
       <div className="wrap ap-list">
         {SCENARIOS.map((s, i) => {

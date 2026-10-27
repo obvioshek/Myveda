@@ -5,7 +5,7 @@ import Arrow from "@/components/landing/Arrow";
 import { useRef, useState } from "react";
 import type { CheckQuestion } from "@/content/learn/placement";
 
-// "Where should I start?": a few questions from each unit, answered without
+// The level check ("Where should I start?"): a few questions from each unit, answered without
 // feedback (it is a check, not a test), then what to read first in each unit.
 // "I don't know" is an honest answer and counts as a gap; nothing is saved.
 type Unit = { id: string; n: number; short: string; first: { slug: string; title: string } };
@@ -35,7 +35,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
           </div>
         </fieldset>
         <p className="pr-text">{n} questions, about {Math.max(1, Math.round(n * 0.5))} minutes. No answers are shown until the end. If you don&apos;t know, say so: a guess that happens to be right hides a gap.</p>
-        <div className="btn-row"><button type="button" className="btn btn-primary btn-lg" disabled={!n} onClick={start}>Start the check</button></div>
+        <div className="btn-row"><button type="button" className="btn btn-primary btn-lg" disabled={!n} onClick={start}>Start the level check</button></div>
       </div>
     );
   }
@@ -67,7 +67,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
   return (
     <div className="wrap pr-box pc" ref={top}>
       <span className="label red">Your starting points</span>
-      <h2 className="h-sm">Where to begin, unit by unit.</h2>
+      <h2 className="h-sm">Where to start, unit by unit.</h2>
       <ol className="pc-res">
         {byUnit.map(({ u, qs, right, verdict }) => (
           <li key={u.id} className={`pc-u ${verdict}`}>
@@ -88,13 +88,13 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
                 </li>
               ))}
             </ul>
-            <Link className="more" href={`/learn/practice?unit=${u.id}`} prefetch={false}>Practise this unit<Arrow /></Link>
+            <Link className="more" href={`/learn/practice?unit=${u.id}`} prefetch={false}>Practice questions<Arrow /></Link>
           </li>
         ))}
       </ol>
       <div className="btn-row">
         <Link className="btn btn-primary" href="/learn/plan" prefetch={false}>Make a study plan</Link>
-        <button type="button" className="btn btn-secondary" onClick={() => { setRun(null); setAnswers([]); }}>Take the check again</button>
+        <button type="button" className="btn btn-secondary" onClick={() => { setRun(null); setAnswers([]); }}>Take the level check again</button>
       </div>
       <p className="ci-fine">Nothing from this check is saved. A few questions can only point the way; the chapter tests on the practice page give a fuller picture.</p>
     </div>

@@ -56,7 +56,7 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
         <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
           <div style={{ flex: 1, minWidth: 220 }}>
             <h1>{c.name}</h1>
-            <div className="muted" style={{ fontSize: 14, marginTop: 8 }}>{[c.format, c.memoryLabel, c.pace].filter(Boolean).join(" · ")}</div>
+            <div className="muted" style={{ fontSize: 14, marginTop: 8 }}>{[c.format, c.memoryLabel, c.pace].filter(Boolean).join(" · ").split(" · ").map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(" · ")}</div>
             {COMMUNITY_FORMATS[c.format] && <p className="com-kind" style={{ marginTop: 6 }}><b>A {c.format.toLowerCase()}:</b> {COMMUNITY_FORMATS[c.format]}.</p>}
             {hostsLine.length > 0 && (
               <div style={{ fontSize: 14, marginTop: 4 }}>
@@ -135,7 +135,7 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
                       <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => setBuildsOn(null)} style={{ minHeight: 28, padding: "0 8px", color: "var(--soft)" }}>×</button>
                     </div>
                   )}
-                  <textarea className="input" rows={3} aria-label={`Add a note to ${thread.title}`} placeholder={`Add a note to ${thread.title.toLowerCase()}…`} value={draft}
+                  <textarea className="input" rows={3} aria-label={`Add a note to ${thread.title.toLowerCase()}`} placeholder={`Add a note to ${thread.title.toLowerCase()}…`} value={draft}
                     onChange={e => setDraft(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); } }} style={{ minHeight: 84 }} />
                   <div className="wrap-chips" role="group" aria-label="What your note rests on">
                     {SHARE_BASES.map(k => (

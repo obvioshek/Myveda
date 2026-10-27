@@ -14,9 +14,9 @@ export default function ContinueBand() {
     <div className="band-continue">
       <div className="wrap band-in">
         <i className="sq" aria-hidden="true" />
-        <span className="label">Continue where you left off</span>
+        <span className="label">Where you left off</span>
         <b>{last}</b>
-        <Link className="resume" href={href || "/learn"}>Resume<Arrow /></Link>
+        <Link className="resume" href={href || "/learn"}>Continue<Arrow /></Link>
       </div>
     </div>
   );

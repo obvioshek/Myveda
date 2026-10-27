@@ -8,7 +8,7 @@ export const metadata = { title: "Weekly email · Veda Verse", robots: { index: 
 const DONE: Record<string, { title: string; body: string }> = {
   confirmed: { title: "You're signed up.", body: "One idea a week arrives each Monday morning. Every email has a link to stop them." },
   removed: { title: "No more weekly emails.", body: "Your address is deleted from the list. You can still read each week's idea on the site, or follow the feed." },
-  invalid: { title: "That link has expired.", body: "It may have been used already, or the address was removed after 30 days unconfirmed. You can sign up again." },
+  invalid: { title: "That link has expired.", body: "It may have been used already, or the address was removed after 30 days unconfirmed. You can sign up again under this week's idea." },
 };
 
 // The links in the weekly emails land here. Confirming or stopping takes a

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL } from "@/content/landing";
+import { CONTACT_EMAIL, SITE_ABOUT } from "@/content/landing";
 import { ABOUT_LINKS, SITE_MAP } from "@/content/nav";
 import BrandMark from "./Brand";
 import BackToTop from "./BackToTop";
@@ -28,7 +28,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
           <div className="foot-nav">
             <div className="foot-about">
               <Link className="foot-brand" href="/"><BrandMark />Veda Verse</Link>
-              <p>Management concepts in plain language, each read beside India&apos;s classical texts. Open to everyone; what you do here stays on your device.</p>
+              <p>{SITE_ABOUT}</p>
             </div>
             {SITE_MAP.map(g => (
               <nav key={g.id} className="foot-col" aria-labelledby={`ft-${g.id}`}>

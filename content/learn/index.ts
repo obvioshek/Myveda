@@ -116,10 +116,10 @@ export function chapterDescription(c: Chapter) {
 
 // The page title: a descriptive form when it fits in about 65 characters,
 // otherwise the chapter name alone. A chapter with no classical passage doesn't
-// claim to be explained with the classics.
+// claim to be explained with classical texts.
 export function chapterTitle(c: Chapter) {
   if (c.pairings.length === 0) return `${c.title} · Veda Verse`;
-  const long = `${c.title}, explained with the classics · Veda Verse`;
+  const long = `${c.title}, explained with classical texts · Veda Verse`;
   return long.length <= 65 ? long : `${c.title} · Veda Verse`;
 }
 

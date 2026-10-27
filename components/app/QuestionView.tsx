@@ -86,14 +86,14 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           <Avatar person={q.asker} size={28} />Asked by {q.mine ? "you" : q.asker.name} · {q.time}
         </div>
         <div className="btns">
-          <button className="btn btn-secondary" type="button" aria-pressed={following} onClick={() => toggleQF("following")}>{following ? "Following this question" : "Follow question"}</button>
+          <button className="btn btn-secondary" type="button" aria-pressed={following} onClick={() => toggleQF("following")}>{following ? "Following this question" : "Follow this question"}</button>
           {!q.mine && <button className="btn btn-secondary" type="button" aria-pressed={same} onClick={() => toggleQF("same")}>{same ? "You have this question too" : "I have this question too"}</button>}
           <button className="btn btn-secondary" type="button" aria-pressed={saved} onClick={async () => {
             setSaved(!saved); const r = await run(toggleSave("question", q.id)); if (!r.ok) setSaved(saved);
           }}>{saved ? "Saved" : "Save"}</button>
           <button className="btn btn-secondary" type="button" onClick={async () => {
             try { await navigator.clipboard.writeText(window.location.href); } catch { /* blocked */ }
-            toast("Link copied. Paste it into a circle to share it there.");
+            toast("Link copied. Paste it into a community to share it there.");
           }}>Copy link</button>
           {q.mine && (
             <button className="btn btn-secondary" type="button" onClick={async () => {
