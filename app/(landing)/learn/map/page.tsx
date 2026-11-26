@@ -9,7 +9,7 @@ import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const MAP_PATH = "/learn/map";
 const title = "Map of the chapters: how they connect · Veda Verse";
-const description = "Which chapters build on which, from the terms they share: how the units lean on each other, the chapters most build on, and each chapter's neighbours.";
+const description = "Which chapters build on which, from the terms they share: how the units lean on each other, the chapters most build on, and each chapter’s neighbours.";
 
 export const metadata: Metadata = {
   title,
@@ -39,11 +39,11 @@ export default function MapPage() {
       <header className="wrap ci-hero">
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Map of the chapters</span>
         <h1><span>How the chapters connect.</span><span className="red">What builds on what.</span></h1>
-        <p className="lede">A chapter builds on another when it uses that chapter&apos;s ideas: here, when its text uses at least two of the other chapter&apos;s glossary terms. {links.length} such links join the {CHAPTERS.length} chapters. Use the map to see what to read first, and where an idea leads.</p>
+        <p className="lede">A chapter builds on another when it uses that chapter’s ideas: here, when its text uses at least two of the other chapter’s glossary terms. {links.length} such links join the {CHAPTERS.length} chapters. Use the map to see what to read first, and where an idea leads.</p>
       </header>
 
       <section className="wrap tx-sec" aria-labelledby="mx-explore-h">
-        <h2 id="mx-explore-h" className="h-xs">Any chapter&apos;s neighbours</h2>
+        <h2 id="mx-explore-h" className="h-xs">Any chapter’s neighbours</h2>
         <MapExplorer nodes={nodes} start={hubs[0]?.c.slug ?? CHAPTERS[0].slug} />
       </section>
 
@@ -59,7 +59,7 @@ export default function MapPage() {
 
       <section className="wrap tx-sec" aria-labelledby="mx-units-h">
         <h2 id="mx-units-h" className="h-xs">How the units lean on each other</h2>
-        <p className="ci-fine">Each number counts links from a chapter in the row&apos;s unit to a chapter in the column&apos;s unit. The diagonal is links within a unit.</p>
+        <p className="ci-fine">Each number counts links from a chapter in the row’s unit to a chapter in the column’s unit. The diagonal is links within a unit.</p>
         <div className="prose"><div className="tb" tabIndex={0} role="region" aria-label="Links between units">
           <table className="mx-m">
             <thead><tr><th scope="col">Chapters in…</th>{UNITS.map(u => <th key={u.id} scope="col">build on Unit {u.n}</th>)}</tr></thead>

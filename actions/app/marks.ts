@@ -44,7 +44,7 @@ export async function toggleHelpful(type: string, id: string) {
     checkTarget(type);
     const found = await describe(type, id);
     if (!found) refuse("That is no longer here.");
-    if (found.ownerId === me.id) refuse("You can't mark your own post helpful.");
+    if (found.ownerId === me.id) refuse("You can’t mark your own post helpful.");
     const existing = await db.orm.public.Helpful.where({ userId: me.id, targetType: type, targetId: id }).first();
     if (existing) {
       await db.orm.public.Helpful.where({ userId: me.id, targetType: type, targetId: id }).delete();
@@ -97,7 +97,7 @@ export async function setHidden(type: string, id: string, hidden: boolean) {
 export async function setFollow(userId: string, on: boolean) {
   return attempt(async () => {
     const me = await actingMember();
-    if (userId === me.id) refuse("That's you.");
+    if (userId === me.id) refuse("That’s you.");
     const where = { followerId: me.id, followeeId: userId };
     const existing = await db.orm.public.Follow.where(where).first();
     if (on && !existing) await db.orm.public.Follow.create(where);
@@ -125,7 +125,7 @@ export async function setTopicFollow(topicName: string, on: boolean) {
 export async function setMute(userId: string, on: boolean) {
   return attempt(async () => {
     const me = await actingMember();
-    if (userId === me.id) refuse("That's you.");
+    if (userId === me.id) refuse("That’s you.");
     const where = { userId: me.id, mutedId: userId };
     const existing = await db.orm.public.Mute.where(where).first();
     if (on && !existing) await db.orm.public.Mute.create(where);
@@ -138,7 +138,7 @@ export async function setMute(userId: string, on: boolean) {
 export async function setBlock(userId: string, on: boolean) {
   return attempt(async () => {
     const me = await actingMember();
-    if (userId === me.id) refuse("That's you.");
+    if (userId === me.id) refuse("That’s you.");
     const where = { userId: me.id, blockedId: userId };
     const existing = await db.orm.public.Block.where(where).first();
     if (on && !existing) {
@@ -170,7 +170,7 @@ export async function report(targetType: string, targetId: string, reason: strin
       for (const h of hosts) {
         await notify({
           userId: h.userId, type: "Communities", text: `A member reported something in ${community?.name ?? "your community"}`,
-          preview: `Reason: ${reason}. Review it from the community's About tab.`, href: `/c/${community?.slug ?? ""}?tab=about`,
+          preview: `Reason: ${reason}. Review it from the community’s About tab.`, href: `/c/${community?.slug ?? ""}?tab=about`,
         });
       }
     }

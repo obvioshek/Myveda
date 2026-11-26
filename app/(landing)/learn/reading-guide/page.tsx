@@ -7,7 +7,7 @@ import { TEXTS_PATH } from "@/content/learn/text-refs";
 import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 
 const title = "How to read Sanskrit and Tamil names and terms · Veda Verse";
-const description = "What ā, ṛ, ś, ṣ and the other marks mean and how they sound, the familiar spellings of the names, and words like dharma and artha that don't translate well.";
+const description = "What ā, ṛ, ś, ṣ and the other marks mean and how they sound, the familiar spellings of the names, and words like dharma and artha that don’t translate well.";
 
 export const metadata: Metadata = {
   title,
@@ -42,7 +42,7 @@ export default function ReadingGuidePage() {
         <nav className="btn-row" aria-label="On this page">
           <a className="btn btn-secondary" href="#marks">The marks</a>
           <a className="btn btn-secondary" href="#spellings">Familiar spellings</a>
-          <a className="btn btn-secondary" href="#words">Words that don&apos;t translate</a>
+          <a className="btn btn-secondary" href="#words">Words that don’t translate</a>
         </nav>
       </header>
 
@@ -60,11 +60,11 @@ export default function ReadingGuidePage() {
         <dl className="rg-sp">
           {SPELLINGS.map(([a, b]) => <div key={a}><dt>{a}</dt><dd>{b}</dd></div>)}
         </dl>
-        <p className="ci-fine">How references such as “3.35” or “10.191.2” work depends on the text; each <Link className="link" href={TEXTS_PATH} prefetch={false}>text&apos;s page</Link> explains its own.</p>
+        <p className="ci-fine">How references such as “3.35” or “10.191.2” work depends on the text; each <Link className="link" href={TEXTS_PATH} prefetch={false}>text’s page</Link> explains its own.</p>
       </section>
 
       <section className="wrap tx-sec" id="words" aria-labelledby="rg-w-h">
-        <h2 id="rg-w-h" className="h-sm">Words that don&apos;t translate</h2>
+        <h2 id="rg-w-h" className="h-sm">Words that don’t translate</h2>
         <p className="ci-fine">Some words carry more than any one English word can. The chapters keep them in the original with a gloss; this is what they mean, and the translation that most often misleads.</p>
         <ol className="rg-words">
           {WORDS.map(w => {

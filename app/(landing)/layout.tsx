@@ -7,11 +7,12 @@ import { OfflineSupport } from "@/components/learn/Offline";
 import { TEXT_SIZE_SCRIPT } from "@/components/learn/TextSize";
 import { THEME_SCRIPT } from "@/components/learn/Theme";
 import NavProgress from "@/components/landing/NavProgress";
+import Haptics from "@/components/landing/Haptics";
 
 // Titles stay under about 60 characters and the description under about 160,
 // which is what search results show before cutting them off.
-const title = "Veda Verse: learn management beside India's classical texts";
-const description = "Management concepts in plain words, one idea at a time, each read beside a cited passage from India's classical texts. Free to read, with no account.";
+const title = "Veda Verse: learn management beside India’s classical texts";
+const description = "Management concepts in plain words, one idea at a time, each read beside a cited passage from India’s classical texts. Free to read, with no account.";
 
 export const viewport: Viewport = {
   themeColor: "#F3F2F2",
@@ -66,6 +67,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         {/* Feed readers and browsers find the weekly feed from any page. */}
         <link rel="alternate" type="application/rss+xml" title="Veda Verse: one idea a week" href="/feed.xml" />
         <NavProgress />
+        <Haptics />
         {children}
         <OfflineSupport />
       </body>

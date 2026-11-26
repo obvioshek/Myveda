@@ -34,15 +34,15 @@ export default function PrivacyPage() {
 
       <h2>One idea a week, by email</h2>
       <ul>
-        <li><b>What we collect:</b> the email address you enter, and which week&apos;s email it last received.</li>
-        <li><b>Why:</b> to send one email each Monday with that week&apos;s idea and passage. It starts only after you confirm from your inbox.</li>
+        <li><b>What we collect:</b> the email address you enter, and which week’s email it last received.</li>
+        <li><b>Why:</b> to send one email each Monday with that week’s idea and passage. It starts only after you confirm from your inbox.</li>
         <li><b>How long:</b> until you stop it, with the link in every email. If you never confirm, the address is deleted after 30 days.</li>
       </ul>
 
       <h2>Reporting a problem</h2>
       <ul>
-        <li><b>What is sent:</b> what you write, the page it&apos;s about, and an email address only if you choose to give one for a reply.</li>
-        <li><b>Where it goes:</b> by email to {CONTACT_EMAIL}, and nowhere else. The site doesn&apos;t store reports. Your network address is held briefly in memory to limit how many reports can be sent at once, and is never saved.</li>
+        <li><b>What is sent:</b> what you write, the page it’s about, and an email address only if you choose to give one for a reply.</li>
+        <li><b>Where it goes:</b> by email to {CONTACT_EMAIL}, and nowhere else. The site doesn’t store reports. Your network address is held briefly in memory to limit how many reports can be sent at once, and is never saved.</li>
       </ul>
 
       <h2>Members</h2>

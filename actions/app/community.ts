@@ -16,7 +16,7 @@ export async function setMembership(communityId: string, join: boolean) {
     const where = { userId: me.id, communityId };
     const existing = await db.orm.public.Membership.where(where).first();
     if (!join) {
-      if (existing?.isSteward) refuse("Hosts can't leave their own community. Hand it on first.");
+      if (existing?.isSteward) refuse("Hosts can’t leave their own community. Hand it on first.");
       if (existing) await db.orm.public.Membership.where(where).delete();
       refresh();
       return { status: "none" as const };

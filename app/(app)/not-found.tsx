@@ -11,7 +11,7 @@ export default function AppNotFound() {
     <main className="signin">
       <div className="card">
         <Link className="brand" href="/"><BrandMark />Veda Verse</Link>
-        <h1>This isn&apos;t here</h1>
+        <h1>This isn’t here</h1>
         <p className="muted">The question, note, member or community may have been removed, or the link may be mistyped.</p>
         <div className="row" style={{ gap: 8, flexWrap: "wrap" }}>
           <Link className="btn btn-primary" href="/home">Back to your Edition</Link>

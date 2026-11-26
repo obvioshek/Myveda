@@ -97,7 +97,7 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
               </div>
               {c.spoiler && (
                 <button className="btn btn-primary" type="button" onClick={() => run(setSpoilerUnlocked(c.spoiler!.id, !c.spoiler!.unlocked))}>
-                  {c.spoiler.unlocked ? `Hide ${c.spoiler.title.toLowerCase()} notes` : `I've read ${c.spoiler.title.toLowerCase()}`}
+                  {c.spoiler.unlocked ? `Hide ${c.spoiler.title.toLowerCase()} notes` : `I’ve read ${c.spoiler.title.toLowerCase()}`}
                 </button>
               )}
             </div>
@@ -118,8 +118,8 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
               <div className="kicker">{thread.title} thread{readOnly ? " · archived, read-only" : ""}</div>
               {thread.spoiler && thread.notes.length === 0 ? (
                 <div className="panel" style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-                  <span style={{ flex: 1 }}>Notes here stay hidden until you say you&apos;ve read this far.</span>
-                  <button className="btn btn-primary" type="button" onClick={() => run(setSpoilerUnlocked(thread.id, true))}>I&apos;ve read it</button>
+                  <span style={{ flex: 1 }}>Notes here stay hidden until you say you’ve read this far.</span>
+                  <button className="btn btn-primary" type="button" onClick={() => run(setSpoilerUnlocked(thread.id, true))}>I’ve read it</button>
                 </div>
               ) : thread.notes.map(n => (
                 <NoteRow key={n.id} n={n} hl={hl === n.id} onShowOn={n.onId ? () => { setHl(n.onId); document.getElementById(`note-${n.onId}`)?.scrollIntoView({ block: "center", behavior: "smooth" }); } : undefined}
@@ -131,7 +131,7 @@ export default function CommunityView({ c, tab }: { c: CommunityData; tab: (type
                 <div className="box" style={{ gap: 10 }}>
                   {buildsOn && (
                     <div className="muted" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
-                      Building on {buildsOn.author.name.split(" ")[0]}&apos;s note
+                      Building on {buildsOn.author.name.split(" ")[0]}’s note
                       <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => setBuildsOn(null)} style={{ minHeight: 28, padding: "0 8px", color: "var(--soft)" }}>×</button>
                     </div>
                   )}
@@ -237,7 +237,7 @@ function NoteRow({ n, hl, onShowOn, onBuild, onReport }: { n: NoteItem; hl?: boo
       <Avatar person={n.author} />
       <div className="reply-main">
         <div className="who"><b style={{ fontSize: 14 }}>{n.author.name}</b><Chip basis={n.basis} /><span className="muted" style={{ fontSize: 12 }}>{n.time}</span></div>
-        {n.onName && (onShowOn ? <button type="button" className="link-sm" onClick={onShowOn}>↳ Builds on {n.onName}&apos;s note</button> : <span className="muted" style={{ fontSize: 13 }}>↳ Builds on {n.onName}&apos;s note</span>)}
+        {n.onName && (onShowOn ? <button type="button" className="link-sm" onClick={onShowOn}>↳ Builds on {n.onName}’s note</button> : <span className="muted" style={{ fontSize: 13 }}>↳ Builds on {n.onName}’s note</span>)}
         <p style={{ whiteSpace: "pre-wrap" }}>{n.body}</p>
         {(onBuild || (onReport && !n.mine)) && (
           <div style={{ display: "flex", gap: 4, marginLeft: -8 }}>

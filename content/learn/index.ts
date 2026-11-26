@@ -11,6 +11,7 @@
 
 import { lessonProblems, type Lesson } from "./lesson-kit";
 import { pendingUnitsLabel } from "./pending";
+import { typesetDeep } from "./typeset";
 import type { Chapter, Term, Unit } from "./types";
 import { UNIT_SOURCES } from "./units";
 
@@ -21,7 +22,7 @@ export type { Check, Lesson, LensNote } from "./lesson-kit";
 export const HOW = {
   documented: "The passage exists in a named text, and the modern concept is a fair reading of what it says.",
   view: "An interpretive parallel. The text does not discuss the modern concept; the link is a reading offered for reflection, not a claim about what the authors meant.",
-  translations: "Translations are paraphrases. Arthaśāstra references follow Kangle's critical edition; Bhagavad Gītā references are chapter.verse; Tirukkuṟaḷ references are couplet numbers. Check each reference against your own edition before quoting it in submitted work.",
+  translations: "Translations are paraphrases. Arthaśāstra references follow Kangle’s critical edition; Bhagavad Gītā references are chapter.verse; Tirukkuṟaḷ references are couplet numbers. Check each reference against your own edition before quoting it in submitted work.",
 };
 
 // Edit when chapter text changes; the sitemap reports it as the last-modified date.
@@ -52,7 +53,20 @@ const chapters: Chapter[] = [];
 const terms: Term[] = [];
 const units: Unit[] = [];
 
-for (const u of UNIT_SOURCES) {
+// Everything readers see is typeset on the way in (typographic quotes; see
+// typeset.ts), so chapters written at different times read as one hand. Ids,
+// slugs and the like are left alone, and a question keeps its first wording
+// as `k`, which its place in the review list is worked out from.
+const KEEP = new Set(["id", "slug", "group", "kind", "blockId", "key", "letter", "k"]);
+function typesetLessons(lessons: Lesson[]): Lesson[] {
+  return lessons.map(l => {
+    const t = typesetDeep(l, KEEP);
+    return { ...t, check: t.check.map((c, i) => (c.q === l.check[i].q ? c : { ...c, k: l.check[i].q })) };
+  });
+}
+
+for (const src of UNIT_SOURCES) {
+  const u = { ...typesetDeep({ ...src, lessons: {} }, KEEP), lessons: Object.fromEntries(Object.entries(src.lessons).map(([slug, ls]) => [slug, typesetLessons(ls)])) };
   const list: Chapter[] = u.chapters.map(c => {
     const lessons = u.lessons[c.slug];
     if (lessons) LESSONS.set(c.slug, lessons);
@@ -110,7 +124,7 @@ export const deva = (n: number) => String(n).replace(/\d/g, d => "०१२३�
 export function chapterDescription(c: Chapter) {
   if (c.pairings.length === 0) return c.scope;
   const n = c.pairings.length;
-  const full = `${c.scope} With ${n} cited ${n === 1 ? "passage" : "passages"} from India's classical texts.`;
+  const full = `${c.scope} With ${n} cited ${n === 1 ? "passage" : "passages"} from India’s classical texts.`;
   return full.length <= 160 ? full : c.scope;
 }
 

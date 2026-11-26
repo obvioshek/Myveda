@@ -206,8 +206,8 @@ export default function ReaderView({ r }: { r: ReaderData }) {
       <div className="btns desk-only">
         {house && (
           <button className="btn btn-secondary" type="button" onClick={async () => {
-            const t = await prompt({ title: "Suggest a correction", body: "It goes to the piece's editor. You'll hear back in your Inbox.", placeholder: "What should change, and how do you know?", submit: "Send to the editor", multiline: true });
-            if (t && (await run(suggestCorrection(r.id, t))).ok) toast("Sent to the editor. You'll hear back in your Inbox.");
+            const t = await prompt({ title: "Suggest a correction", body: "It goes to the piece’s editor. You’ll hear back in your Inbox.", placeholder: "What should change, and how do you know?", submit: "Send to the editor", multiline: true });
+            if (t && (await run(suggestCorrection(r.id, t))).ok) toast("Sent to the editor. You’ll hear back in your Inbox.");
           }}>Suggest a correction</button>
         )}
         {!r.mine && r.kind === "note" && (

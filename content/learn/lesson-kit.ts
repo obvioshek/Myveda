@@ -49,7 +49,13 @@
 // edition or a reliable digital text, and "documented" only when the text takes
 // up the same question the concept does; otherwise "view".
 
-export type Check = { q: string; options: string[]; answer: number; why: string };
+/**
+ * `k` is the question as first typed, kept only when typesetting changed it
+ * (content/learn/typeset.ts): the review list files a question under a hash
+ * of its wording (question-id.ts), so the id is taken from `k ?? q` and a
+ * reader's history survives the tidier quotes.
+ */
+export type Check = { q: string; k?: string; options: string[]; answer: number; why: string };
 export type LensNote = { pairing: number; adds: string; differs: string };
 
 export type Lesson = {

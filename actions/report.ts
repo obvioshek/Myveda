@@ -40,22 +40,22 @@ export async function reportProblem(input: ReportInput): Promise<ReportResult> {
   if (!kind) return { ok: false, error: "Choose what kind of problem it is." };
   if (details.length < 10) return { ok: false, error: "Say a little more about the problem, so it can be found and fixed." };
   if (details.length > 2000) return { ok: false, error: "Keep the report under 2,000 characters." };
-  if (!/^\/[\w\-./#%]{0,300}$/.test(where)) return { ok: false, error: "This page's address couldn't be read. Reload the page and try again." };
-  if (email && (email.length > 254 || !EMAIL.test(email))) return { ok: false, error: "That email address doesn't look right. Leave it empty if you'd rather not get a reply." };
+  if (!/^\/[\w\-./#%]{0,300}$/.test(where)) return { ok: false, error: "This page’s address couldn’t be read. Reload the page and try again." };
+  if (email && (email.length > 254 || !EMAIL.test(email))) return { ok: false, error: "That email address doesn’t look right. Leave it empty if you’d rather not get a reply." };
 
   const url = `${siteUrl()}${where}`;
   const subject = `Problem report: ${kind}`;
   const text = `${kind}\n\nPage: ${url}\nAbout: ${what || "the page"}\n\n${details}\n\n${email ? `Reply to: ${email}` : "No reply address given."}`;
   const fallback = mailtoFor(subject, text);
 
-  if (!mailConfigured()) return { ok: false, error: "Reports can't be sent from the site yet. Send it from your own email instead; it's filled in for you.", mailto: fallback };
+  if (!mailConfigured()) return { ok: false, error: "Reports can’t be sent from the site yet. Send it from your own email instead; it’s filled in for you.", mailto: fallback };
 
   const now = Date.now();
   const ip = ((await headers()).get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
   const mine = (sent.get(ip) ?? []).filter(t => now - t < 10 * 60_000);
   lastHour = lastHour.filter(t => now - t < 3600_000);
   if (mine.length >= PER_ADDRESS || lastHour.length >= PER_HOUR) {
-    return { ok: false, error: "A lot of reports have come in just now. Send this one from your own email instead; it's filled in for you.", mailto: fallback };
+    return { ok: false, error: "A lot of reports have come in just now. Send this one from your own email instead; it’s filled in for you.", mailto: fallback };
   }
 
   try {
@@ -67,7 +67,7 @@ export async function reportProblem(input: ReportInput): Promise<ReportResult> {
       replyTo: email || undefined,
     });
   } catch {
-    return { ok: false, error: "The report didn't send. Send it from your own email instead; it's filled in for you.", mailto: fallback };
+    return { ok: false, error: "The report didn’t send. Send it from your own email instead; it’s filled in for you.", mailto: fallback };
   }
   mine.push(now);
   sent.set(ip, mine);

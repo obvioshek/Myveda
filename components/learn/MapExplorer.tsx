@@ -51,7 +51,7 @@ export default function MapExplorer({ nodes, start }: { nodes: MapNode[]; start:
         </select></div>
       </div>
       <div className="mxp-grid" aria-live="polite">
-        {side(c.uses, "Builds on", "It doesn't lean on another chapter's terms: a good place to start.")}
+        {side(c.uses, "Builds on", "It doesn’t lean on another chapter’s terms: a good place to start.")}
         <div className="mxp-c">
           <span className="label red">Unit {c.unitN}</span>
           <b>{c.title}</b>

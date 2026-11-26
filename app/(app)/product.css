@@ -652,3 +652,29 @@ a.row, .ib-row, .people button { position: relative; isolation: isolate; }
 /* Every underlined link and link-like button draws its line the same way, a
    quarter of its own text size below the words (as landing.css). */
 .link, .link-sm, .btn-ghost:not(:has(svg)), .post-meta a:not(.author), .ib-go:hover, .toast button { text-underline-offset: .25em; }
+
+/* ── Finish (as in landing.css; see "Finish" in README.md) ──────────────── */
+/* The community answers gestures at the learning pages' pace: one set of
+   timings, a focus ring that settles onto what it marks, counts that keep
+   their columns, and taps answered without waiting for a double tap. */
+:root {
+  --t-press: .12s; --t-hover: .2s; --t-move: .36s;
+  accent-color: var(--color-accent-fill);
+  scrollbar-color: color-mix(in srgb, var(--color-text) 45%, transparent) transparent;
+}
+h1, h2, h3 { text-rendering: optimizeLegibility; font-kerning: normal; }
+time, .count, table { font-variant-numeric: tabular-nums; }
+a, button, summary, label, input, select, textarea { touch-action: manipulation; }
+:where(a, button, summary, [role="tab"], [role="button"]) {
+  transition: background-color var(--t-hover) var(--ease), color var(--t-hover) var(--ease), border-color var(--t-hover) var(--ease),
+    box-shadow var(--t-move) var(--ease), text-decoration-color var(--t-hover) var(--ease), opacity var(--t-press) ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ring-in { from { outline-offset: 7px; outline-color: transparent; } }
+  :focus-visible { animation: ring-in var(--t-hover) var(--ease); }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn-primary { transition: background-size var(--t-move) var(--ease), background-color var(--t-hover), color var(--t-hover), border-color var(--t-hover), transform var(--t-press); background-image: linear-gradient(var(--accent-hover), var(--accent-hover)); background-repeat: no-repeat; background-size: 0% 100%; }
+  .btn-primary:hover:not(:disabled) { background-color: var(--color-accent-fill); background-image: linear-gradient(var(--accent-hover), var(--accent-hover)); background-repeat: no-repeat; background-size: 100% 100%; }
+  .btn-primary:active:not(:disabled) { background-image: none; background-color: var(--accent-press); }
+}

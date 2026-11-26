@@ -19,6 +19,8 @@ export type PracticeQuestion = {
   b: string;
   bn: string;
   q: string;
+  /** The question as first typed, when typesetting changed it; the id is worked out from this (lesson-kit.ts). */
+  k?: string;
   o: string[];
   /** Index of the right option. */
   a: number;
@@ -62,7 +64,7 @@ export function buildPracticeBank(): PracticeBank {
   for (const c of CHAPTERS) {
     for (const l of lessonsFor(c.slug) ?? []) {
       for (const k of l.check) {
-        questions.push({ u: c.unit, c: c.slug, ct: c.short ?? c.title, b: l.blockId, bn: l.name, q: k.q, o: k.options, a: k.answer, w: k.why });
+        questions.push({ u: c.unit, c: c.slug, ct: c.short ?? c.title, b: l.blockId, bn: l.name, q: k.q, ...(k.k ? { k: k.k } : {}), o: k.options, a: k.answer, w: k.why });
       }
     }
   }
@@ -92,7 +94,7 @@ export function buildRecallBank(): RecallBank {
 // Two questions with the same id would share one place in the review list.
 const ids = new Set<string>();
 for (const q of buildPracticeBank().questions) {
-  const id = questionId(q.c, q.b, q.q);
+  const id = questionId(q.c, q.b, q.k ?? q.q);
   if (ids.has(id)) throw new Error(`Learning content has problems:\n- question "${q.q}" appears twice in ${q.c}#${q.b}`);
   ids.add(id);
 }

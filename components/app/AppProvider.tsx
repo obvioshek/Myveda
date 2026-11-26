@@ -97,7 +97,7 @@ export default function AppProvider({
   const sendReport = async () => {
     if (!reporting || !reason) return;
     const r = await run(report(reporting.type, reporting.id, reason));
-    if (r.ok) { setReporting(null); toast("Report sent. You'll get an update in your Inbox."); }
+    if (r.ok) { setReporting(null); toast("Report sent. You’ll get an update in your Inbox."); }
   };
 
   return (
@@ -117,7 +117,7 @@ export default function AppProvider({
         <div className="backdrop" onClick={() => setReporting(null)}>
           <div className="dialog report" role="dialog" aria-modal="true" aria-labelledby="reportT" onClick={e => e.stopPropagation()}>
             <div className="dialog-title" id="reportT">Report this</div>
-            <div className="dialog-body">Hosts see it first. Trust &amp; Safety reviews anything hosts can&apos;t resolve, and you can appeal any decision.</div>
+            <div className="dialog-body">Hosts see it first. Trust &amp; Safety reviews anything hosts can’t resolve, and you can appeal any decision.</div>
             <div className="stack" style={{ gap: 10 }} role="radiogroup" aria-label="Reason">
               {REPORT_REASONS.map(r => (
                 <label className="radio" key={r}>

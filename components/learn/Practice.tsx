@@ -142,7 +142,7 @@ export default function Practice() {
       .then(r => (r.ok ? r.json() as Promise<PracticeBank> : Promise.reject(new Error(String(r.status)))))
       .then(b => {
         if (!live) return;
-        const questions: Q[] = b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q), mx: b.mixups[`${q.c}#${q.b}`] }));
+        const questions: Q[] = b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.k ?? q.q), mx: b.mixups[`${q.c}#${q.b}`] }));
         setBank({
           units: b.units,
           questions,
@@ -159,7 +159,7 @@ export default function Practice() {
         // "Test yourself on this chapter" starts straight away, once; the
         // address loses the chapter so a reload comes back to this page.
         const slug = params.get("chapter");
-        const items = slug ? b.questions.filter(q => q.c === slug).map(q => ({ ...q, id: questionId(q.c, q.b, q.q), mx: b.mixups[`${q.c}#${q.b}`] })) : [];
+        const items = slug ? b.questions.filter(q => q.c === slug).map(q => ({ ...q, id: questionId(q.c, q.b, q.k ?? q.q), mx: b.mixups[`${q.c}#${q.b}`] })) : [];
         if (items.length) {
           setSession({ kind: "chapter", chapter: slug!, items: shuffle(items), i: 0, answers: items.map(() => null), started: Date.now(), ended: null });
           history.replaceState(null, "", window.location.pathname);

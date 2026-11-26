@@ -26,7 +26,7 @@ export const SITE_MAP: NavGroup[] = [
       { href: "/learn", label: "All chapters", about: "Every chapter, by unit, with a path for beginners and an index by problem", also: "chapters syllabus contents units index course list" },
       { href: "/learn/glossary", label: "Glossary", about: "Short definitions of every term, with Anki and spreadsheet downloads", also: "glossary dictionary definitions terms meaning words anki csv" },
       { href: "/learn/texts", label: "The classical texts", about: "The 21 texts and poets the chapters quote, on a timeline", also: "texts classics books sources scriptures timeline sanskrit tamil" },
-      { href: "/learn/reading-guide", label: "Reading guide", about: "How to say the names, and the words that don't translate", also: "pronounce pronunciation diacritics spelling transliteration names" },
+      { href: "/learn/reading-guide", label: "Reading guide", about: "How to say the names, and the words that don’t translate", also: "pronounce pronunciation diacritics spelling transliteration names" },
       { href: "/learn/weekly", label: "One idea a week", about: "A new pair each Monday, on the site, by email or by feed", also: "weekly email newsletter subscribe rss feed monday" },
       { href: "/hi", label: "हिंदी", lang: "hi", about: "The Hindi edition", also: "hindi hindi edition language bhasha" },
     ],

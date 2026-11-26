@@ -27,8 +27,8 @@ async function sendConfirmation(email: string, token: string) {
   await sendMail({
     to: email,
     subject: "Confirm: one idea a week from Veda Verse",
-    text: `Someone, hopefully you, asked for Veda Verse's weekly email at this address: one management idea and one classical passage, each Monday.\n\nConfirm: ${confirm}\n\nIf it wasn't you, ignore this email and the address is deleted within 30 days.`,
-    html: `<p>Someone, hopefully you, asked for Veda Verse's weekly email at this address: one management idea and one classical passage, each Monday.</p><p><a href="${esc(confirm)}">Confirm</a></p><p>If it wasn't you, ignore this email and the address is deleted within 30 days.</p>`,
+    text: `Someone, hopefully you, asked for Veda Verse’s weekly email at this address: one management idea and one classical passage, each Monday.\n\nConfirm: ${confirm}\n\nIf it wasn’t you, ignore this email and the address is deleted within 30 days.`,
+    html: `<p>Someone, hopefully you, asked for Veda Verse’s weekly email at this address: one management idea and one classical passage, each Monday.</p><p><a href="${esc(confirm)}">Confirm</a></p><p>If it wasn’t you, ignore this email and the address is deleted within 30 days.</p>`,
   });
 }
 
@@ -38,7 +38,7 @@ export async function subscribeWeekly(_prev: WeeklyState | null, form: FormData)
 
   const email = String(form.get("email") ?? "").trim().toLowerCase();
   if (!email || email.length > 254 || !EMAIL.test(email)) return { ok: false, message: "Enter an email address, like name@example.com." };
-  if (!hasDatabase()) return { ok: false, message: "The weekly email isn't open yet. Follow the feed instead, or check back soon." };
+  if (!hasDatabase()) return { ok: false, message: "The weekly email isn’t open yet. Follow the feed instead, or check back soon." };
 
   try {
     const list = db.orm.public.WeeklySubscriber;
@@ -50,7 +50,7 @@ export async function subscribeWeekly(_prev: WeeklyState | null, form: FormData)
     // the same answer whether or not the address was already here
     const done: WeeklyState = mailConfigured()
       ? { ok: true, message: "Thanks. Check your inbox: the emails start once you confirm." }
-      : { ok: true, message: "Saved. We'll email you a confirmation link before sending anything." };
+      : { ok: true, message: "Saved. We’ll email you a confirmation link before sending anything." };
     if (entry.confirmedAt || !mailConfigured()) return done;
     if (entry.confirmSentAt && Date.now() - toMs(entry.confirmSentAt) < RESEND_AFTER) return done;
 
@@ -62,7 +62,7 @@ export async function subscribeWeekly(_prev: WeeklyState | null, form: FormData)
     return done;
   } catch (err) {
     console.error("[weekly] could not save:", err);
-    return { ok: false, message: "That didn't go through. Try again in a moment." };
+    return { ok: false, message: "That didn’t go through. Try again in a moment." };
   }
 }
 

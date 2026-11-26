@@ -19,7 +19,7 @@ export default function NotFoundBody() {
   return (
     <div className="wrap nf">
       <span className="eyebrow"><i className="sq" aria-hidden="true" />Page not found</span>
-      <h1><span>This page isn&apos;t here.</span><span className="red">The ideas still are.</span></h1>
+      <h1><span>This page isn’t here.</span><span className="red">The ideas still are.</span></h1>
       <p className="lede">The address may be mistyped, or the page may have moved. Search for the concept you wanted, or pick up from one of these.</p>
       <div className="nf-search"><SiteSearch /><span className="nf-fine">Search any concept, term, chapter or text.</span></div>
       <ul className="grid g2 nf-ways">

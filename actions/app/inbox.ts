@@ -50,7 +50,7 @@ export async function replyFromInbox(notificationId: string, body: string) {
   const me = await actingMember().catch(() => null);
   if (!me) return { ok: false as const, error: "Sign in to do that." };
   const n = await db.orm.public.Notification.where({ id: notificationId, userId: me.id }).first();
-  if (!n || !n.replyType || !n.replyId) return { ok: false as const, error: "This one can't be replied to from here." };
+  if (!n || !n.replyType || !n.replyId) return { ok: false as const, error: "This one can’t be replied to from here." };
   let result: { ok: boolean; error?: string };
   if (n.replyType === "answer") {
     const a = await db.orm.public.Answer.where({ id: n.replyId }).first();

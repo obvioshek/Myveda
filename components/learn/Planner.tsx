@@ -105,7 +105,7 @@ export default function Planner({ units }: { units: PlanUnit[] }) {
       uid: `vv-plan-${s.exam}-w${i + 1}@myvedaverse.in`,
       date: w.start,
       title: `Veda Verse: week ${i + 1}, ${w.chapters.length} ${w.chapters.length === 1 ? "chapter" : "chapters"} (${w.minutes} min)`,
-      details: `This week's reading, ${short(w.start)} to ${short(w.end)}:\n${w.chapters.map(c => `• ${c.title} (${c.minutes} min): ${origin}/learn/${c.slug}`).join("\n")}\n\nYour plan: ${origin}/learn/plan`,
+      details: `This week’s reading, ${short(w.start)} to ${short(w.end)}:\n${w.chapters.map(c => `• ${c.title} (${c.minutes} min): ${origin}/learn/${c.slug}`).join("\n")}\n\nYour plan: ${origin}/learn/plan`,
       url: `${origin}/learn/plan`,
     }] : []);
     events.push({
@@ -193,7 +193,7 @@ export default function Planner({ units }: { units: PlanUnit[] }) {
           </section>
           <div className="btn-row pl-cal">
             <button type="button" className="btn btn-secondary" onClick={saveCalendar}>Add the plan to your calendar</button>
-            <span className="ci-fine">A file for Google, Apple or Outlook Calendar: each week&apos;s chapters, the start of revision and the exam day. If the plan changes, add the new file; most calendar apps update the same events rather than adding new ones.</span>
+            <span className="ci-fine">A file for Google, Apple or Outlook Calendar: each week’s chapters, the start of revision and the exam day. If the plan changes, add the new file; most calendar apps update the same events rather than adding new ones.</span>
           </div>
           <p className="ci-fine">Reading times are estimates at about 200 words a minute. Chapters you have done leave the plan, and what’s left is shared out again. The plan is kept on this device; <Link className="link" href="/learn/transfer" prefetch={false}>move it to another</Link>.</p>
         </div>

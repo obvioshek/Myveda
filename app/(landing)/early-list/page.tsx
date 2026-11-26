@@ -5,8 +5,8 @@ import { confirmEarlyList, removeEarlyList } from "@/actions/earlyList";
 export const metadata = { title: "Early list · Veda Verse", robots: { index: false } };
 
 const DONE: Record<string, { title: string; body: string }> = {
-  confirmed: { title: "You're on the early list.", body: "Thanks for confirming. You'll get one email when your invitation is ready, and nothing before then." },
-  removed: { title: "Your address is removed.", body: "It's deleted from the early list, and nothing else about you is kept." },
+  confirmed: { title: "You’re on the early list.", body: "Thanks for confirming. You’ll get one email when your invitation is ready, and nothing before then." },
+  removed: { title: "Your address is removed.", body: "It’s deleted from the early list, and nothing else about you is kept." },
   invalid: { title: "That link has expired.", body: "It may have been used already, or the address was removed after 30 days unconfirmed." },
 };
 
@@ -32,7 +32,7 @@ export default async function EarlyListPage({ searchParams }: { searchParams: Pr
     <PageShell>
       <h1>{confirm ? "Confirm your place on the early list." : "Remove your address?"}</h1>
       <p>{confirm
-        ? "One press and you're on the list. We'll send one email when your invitation is ready."
+        ? "One press and you’re on the list. We’ll send one email when your invitation is ready."
         : "This deletes your email address from the early list. Nothing else is kept."}</p>
       <form action={confirm ? confirmEarlyList : removeEarlyList} className="row">
         <input type="hidden" name="token" value={token} />

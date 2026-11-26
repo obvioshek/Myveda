@@ -42,7 +42,7 @@ export default function ReportProblem({ what, label = "Report a problem", kind }
       website: String(form.get("website") ?? ""),
       where: location.pathname + location.hash,
       what,
-    }).catch((): ReportResult => ({ ok: false, error: "The report didn't send. Check your connection and try again." }));
+    }).catch((): ReportResult => ({ ok: false, error: "The report didn’t send. Check your connection and try again." }));
     setBusy(false);
     setResult(r);
   };
@@ -66,14 +66,14 @@ export default function ReportProblem({ what, label = "Report a problem", kind }
             <form className="rp-form" onSubmit={e => { e.preventDefault(); send(new FormData(e.currentTarget)); }}>
               <p className="rp-what"><span className="label">About</span>{what}</p>
               <fieldset className="rp-kinds">
-                <legend className="label">What&apos;s wrong</legend>
+                <legend className="label">What’s wrong</legend>
                 {REPORT_KINDS.map((k, i) => (
                   <label key={k} className="rp-kind"><input type="radio" name="kind" value={k} required defaultChecked={kind ? k === kind : i === 0} />{k}</label>
                 ))}
               </fieldset>
               <label className="rp-lab" htmlFor={`${id}-d`}>What should it say, or what did you notice?</label>
               <textarea id={`${id}-d`} name="details" className="input" required minLength={10} maxLength={2000} rows={4} placeholder="For example: the answer should be B, because… or: Kangle numbers this verse 2.1.4" />
-              <label className="rp-lab" htmlFor={`${id}-e`}>Your email, if you&apos;d like a reply <span className="ci-fine">(optional; used only to reply)</span></label>
+              <label className="rp-lab" htmlFor={`${id}-e`}>Your email, if you’d like a reply <span className="ci-fine">(optional; used only to reply)</span></label>
               <input id={`${id}-e`} name="email" type="email" className="input" autoComplete="email" inputMode="email" enterKeyHint="send" maxLength={254} />
               <input className="rp-hp" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               {result && !result.ok && (

@@ -34,7 +34,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
             ))}
           </div>
         </fieldset>
-        <p className="pr-text">{n} questions, about {Math.max(1, Math.round(n * 0.5))} minutes. No answers are shown until the end. If you don&apos;t know, say so: a guess that happens to be right hides a gap.</p>
+        <p className="pr-text">{n} questions, about {Math.max(1, Math.round(n * 0.5))} minutes. No answers are shown until the end. If you don’t know, say so: a guess that happens to be right hides a gap.</p>
         <div className="btn-row"><button type="button" className="btn btn-primary btn-lg" disabled={!n} onClick={start}>Start the level check</button></div>
       </div>
     );
@@ -51,7 +51,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
         <div className="ck-opts pr-opts" role="group" aria-label="Choose an answer">
           {q.o.map((o, k) => <button key={o} type="button" className="btn btn-secondary ck-opt" onClick={() => answer(k)}>{o}</button>)}
         </div>
-        <div className="btn-row"><button type="button" className="btn btn-ghost" onClick={() => answer(DONT_KNOW)}>I don&apos;t know</button></div>
+        <div className="btn-row"><button type="button" className="btn btn-ghost" onClick={() => answer(DONT_KNOW)}>I don’t know</button></div>
       </div>
     );
   }
@@ -73,7 +73,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
           <li key={u.id} className={`pc-u ${verdict}`}>
             <div className="pc-uh"><b>Unit {u.n} · {u.short}</b><span>{right} of {qs.length}</span></div>
             <p className="pr-text">
-              {verdict === "solid" ? "You know the basics here. Skim the chapters, and use a chapter test to find anything you've forgotten."
+              {verdict === "solid" ? "You know the basics here. Skim the chapters, and use a chapter test to find anything you’ve forgotten."
                 : verdict === "gaps" ? "Some of this is familiar. Start with the concepts below, then move through the rest of the unit."
                 : <>This is new ground, which is fine. Start at the beginning: <Link className="link" href={`/learn/${u.first.slug}`} prefetch={false}>{u.first.title}</Link>.</>}
             </p>
@@ -82,7 +82,7 @@ export default function PlacementCheck({ questions, units }: { questions: CheckQ
                 <li key={q.c + q.b} className={a === q.a ? "ok" : "miss"}>
                   <span className="pc-mark" aria-hidden="true">{a === q.a ? "✓" : "○"}</span>
                   <span>
-                    {q.q} <b>{a === q.a ? "Right." : a === DONT_KNOW ? `You didn't know: “${q.o[q.a]}”.` : `The answer is “${q.o[q.a]}”.`}</b>
+                    {q.q} <b>{a === q.a ? "Right." : a === DONT_KNOW ? `You didn’t know: “${q.o[q.a]}”.` : `The answer is “${q.o[q.a]}”.`}</b>
                     {a !== q.a && <> <Link className="link" href={`/learn/${q.c}#${q.b}`} prefetch={false}>Read {q.bn}, in {q.ct}</Link></>}
                   </span>
                 </li>
