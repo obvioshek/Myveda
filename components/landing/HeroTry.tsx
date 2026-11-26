@@ -28,7 +28,7 @@ export default function HeroTry({ href }: { href: string }) {
             </button>
           ))}
         </div>
-        <p className="try-hint" aria-live="polite">{done ? "Here is who agrees with you, and who doesn't." : "Choose the answer closer to what you believe."}</p>
+        <p className="try-hint" aria-live="polite">{done ? "Here is who agrees with you, and who doesn’t." : "Choose the answer closer to what you believe."}</p>
       </div>
 
       <div className={done ? "reveal slow open" : "reveal slow"} id="try-answer" inert={!done}>

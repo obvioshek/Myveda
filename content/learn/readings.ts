@@ -85,7 +85,7 @@ export const WALK: (PairRef & { step: string; notice: string })[] = [
   {
     slug: "organisation-structure", pairing: 0,
     step: "Practical advice for people running things",
-    notice: "The Arthaśāstra was written for those who govern, and much of it is working advice. Kauṭilya's line about the one-wheeled cart is the case a manager makes for delegation today. Look for this practical side.",
+    notice: "The Arthaśāstra was written for those who govern, and much of it is working advice. Kauṭilya’s line about the one-wheeled cart is the case a manager makes for delegation today. Look for this practical side.",
   },
   {
     slug: "group-behaviour-and-leadership", pairing: 3,
@@ -95,7 +95,7 @@ export const WALK: (PairRef & { step: string; notice: string })[] = [
   {
     slug: "decision-making", pairing: 2,
     step: "A wider view of the same thing",
-    notice: "An implementation plan names who does what, with which resources. The Gītā's five factors behind any action include those, and end with circumstance beyond anyone's control. Notice what the older list keeps in view that a plan can leave out.",
+    notice: "An implementation plan names who does what, with which resources. The Gītā’s five factors behind any action include those, and end with circumstance beyond anyone’s control. Notice what the older list keeps in view that a plan can leave out.",
   },
   {
     slug: "principles-of-management", pairing: 0,

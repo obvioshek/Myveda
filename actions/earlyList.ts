@@ -25,8 +25,8 @@ async function sendConfirmation(email: string, token: string) {
   await sendMail({
     to: email,
     subject: "Confirm your place on the My Veda Verse early list",
-    text: `Someone, hopefully you, asked to join the My Veda Verse early list with this address.\n\nConfirm: ${confirm}\n\nIf it wasn't you, ignore this email and the address is deleted within 30 days. Or remove it now: ${remove}\n\nYou'll get one more email, when your invitation is ready. Nothing else.`,
-    html: `<p>Someone, hopefully you, asked to join the My Veda Verse early list with this address.</p><p><a href="${esc(confirm)}">Confirm my place</a></p><p>If it wasn't you, ignore this email and the address is deleted within 30 days. Or <a href="${esc(remove)}">remove it now</a>.</p><p>You'll get one more email, when your invitation is ready. Nothing else.</p>`,
+    text: `Someone, hopefully you, asked to join the My Veda Verse early list with this address.\n\nConfirm: ${confirm}\n\nIf it wasn’t you, ignore this email and the address is deleted within 30 days. Or remove it now: ${remove}\n\nYou’ll get one more email, when your invitation is ready. Nothing else.`,
+    html: `<p>Someone, hopefully you, asked to join the My Veda Verse early list with this address.</p><p><a href="${esc(confirm)}">Confirm my place</a></p><p>If it wasn’t you, ignore this email and the address is deleted within 30 days. Or <a href="${esc(remove)}">remove it now</a>.</p><p>You’ll get one more email, when your invitation is ready. Nothing else.</p>`,
   });
 }
 
@@ -39,7 +39,7 @@ export async function joinEarlyList(_prev: JoinState | null, form: FormData): Pr
     return { ok: false, message: "Enter an email address, like name@example.com." };
   }
   if (!hasDatabase()) {
-    return { ok: false, message: "The list isn't open yet, so nothing was stored. To be added by hand,", fallback: email };
+    return { ok: false, message: "The list isn’t open yet, so nothing was stored. To be added by hand,", fallback: email };
   }
 
   try {
@@ -53,7 +53,7 @@ export async function joinEarlyList(_prev: JoinState | null, form: FormData): Pr
     // the same answer whether or not the address was already here
     const done: JoinState = mailConfigured()
       ? { ok: true, message: "Thanks. Check your inbox for a confirmation link; we keep the address only after you confirm." }
-      : { ok: true, message: "Saved. We'll email you a confirmation link before adding you to the list." };
+      : { ok: true, message: "Saved. We’ll email you a confirmation link before adding you to the list." };
     if (entry.confirmedAt || !mailConfigured()) return done;
     if (entry.confirmSentAt && Date.now() - toMs(entry.confirmSentAt) < RESEND_AFTER) return done;
 
@@ -65,7 +65,7 @@ export async function joinEarlyList(_prev: JoinState | null, form: FormData): Pr
     return done;
   } catch (err) {
     console.error("[early-list] could not save:", err);
-    return { ok: false, message: "That didn't go through. Try again, or email us:", fallback: email };
+    return { ok: false, message: "That didn’t go through. Try again, or email us:", fallback: email };
   }
 }
 

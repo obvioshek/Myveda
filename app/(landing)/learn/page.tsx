@@ -19,7 +19,7 @@ import { DEFAULT_OG_IMAGES } from "@/lib/meta";
 const WITH_FORMULAS = new Set(buildFormulaSheet().filter(u => u.formulas > 0).map(u => u.id));
 
 const title = "Management chapters, from economics to marketing · Veda Verse";
-const description = `${CHAPTERS.length} chapters on management, economics, OB, HRM, accounting, finance, strategy and marketing in plain words, each concept beside India's classical texts.`;
+const description = `${CHAPTERS.length} chapters on management, economics, OB, HRM, accounting, finance, strategy and marketing in plain words, each concept beside India’s classical texts.`;
 
 export const metadata: Metadata = {
   title,

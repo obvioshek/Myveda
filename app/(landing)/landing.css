@@ -938,3 +938,115 @@ html[data-theme="dark"] svg :is(rect, circle, path, polygon)[fill="#fff"] { fill
 /* Similarity: every underlined link and link-like button draws its line the
    same way, a quarter of its own text size below the words. */
 .link, .btn-ghost, .th-acts button, .srch-try, .try-again, .rp-btn { text-underline-offset: .25em; }
+
+/* ---------- Finish (see "Finish" in README.md) ----------
+   The last layer: how things move between the states the rules above define.
+   One set of timings, so every gesture is answered at the same pace: a press
+   at once, a hover in a fifth of a second, an arrival in about a third.
+   Nothing here changes what a state looks like, only how it gets there, and
+   nothing moves for readers who ask for less motion (the rule near the top). */
+:root {
+  --t-press: .12s; --t-hover: .2s; --t-move: .36s; --t-enter: .7s;
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  accent-color: var(--color-accent-fill);
+  scrollbar-color: color-mix(in srgb, var(--color-text) 45%, transparent) transparent;
+}
+/* Figures keep their columns when they change: counts, timers and tallies
+   don't jitter as digits swap. */
+.tally, .ci-stats, .ch-meta, .rb-n, .pr-count, .pr-time, .due, time, table { font-variant-numeric: tabular-nums; }
+h1, h2, h3 { text-rendering: optimizeLegibility; font-kerning: normal; }
+/* A tap is answered without the browser waiting to see if it is a double tap. */
+a, button, summary, label, input, select, textarea { touch-action: manipulation; }
+/* A list that scrolls inside a layer keeps the page behind it still. */
+.pmenu-panel, .menu-panel, .srch-panel, .rb-panel, .rp, .gt-card { overscroll-behavior: contain; }
+
+/* Every state change eases; where a part sets its own timing above, that
+   wins (these have no weight). A card's red bar draws in rather than
+   appearing, and an underline fills in under the pointer. */
+:where(a, button, summary, [role="tab"], [role="button"]) {
+  transition: background-color var(--t-hover) var(--ease), color var(--t-hover) var(--ease), border-color var(--t-hover) var(--ease),
+    box-shadow var(--t-move) var(--ease), text-decoration-color var(--t-hover) var(--ease), opacity var(--t-press) ease;
+}
+
+/* The focus ring settles onto what it marks, so the eye can follow it from
+   one stop to the next. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ring-in { from { outline-offset: 7px; outline-color: transparent; } }
+  :focus-visible { animation: ring-in var(--t-hover) var(--ease); }
+}
+
+/* Buttons fill from the left, the way the arrow on them points. The colours
+   are the ones set under "Controls"; this only gives the change a direction. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn-primary, .btn-secondary, .btn-light, .btn-outline-light {
+    background-image: linear-gradient(var(--wipe), var(--wipe)); background-repeat: no-repeat; background-size: 0% 100%;
+    transition: background-size var(--t-move) var(--ease), background-color var(--t-hover), color var(--t-hover), border-color var(--t-hover), transform var(--t-press);
+  }
+  .btn-primary { --wipe: var(--accent-hover); }
+  .btn-secondary { --wipe: color-mix(in srgb, var(--color-text) 7%, transparent); }
+  .btn-light { --wipe: var(--color-surface); }
+  .btn-outline-light { --wipe: var(--accent-hover); }
+  /* The hover rules under "Controls" set the whole background, so the fill
+     is restated here: the resting colour stays underneath while it crosses. */
+  .btn-primary:hover:not(:disabled), .btn-secondary:hover:not(:disabled, [aria-pressed="true"]), .btn-light:hover, .btn-outline-light:hover { background-image: linear-gradient(var(--wipe), var(--wipe)); background-repeat: no-repeat; background-size: 100% 100%; }
+  .btn-primary:hover:not(:disabled) { background-color: var(--color-accent-fill); }
+  .btn-secondary:hover:not(:disabled, [aria-pressed="true"]), .btn-outline-light:hover { background-color: transparent; }
+  .btn-light:hover { background-color: var(--color-bg); }
+  /* A press is answered at once, with the pressed colours from "Controls". */
+  .btn-primary:active:not(:disabled) { background-image: none; background-color: var(--accent-press); }
+  .btn-secondary:active:not(:disabled) { background-image: none; background-color: color-mix(in srgb, var(--color-text) 14%, transparent); }
+  .btn-light:active { background-image: none; background-color: color-mix(in srgb, var(--color-text) 16%, var(--color-bg)); }
+  .btn-outline-light:active { background-image: none; background-color: var(--accent-press); }
+}
+
+/* A part that opens grows to its height and closes the same way, where the
+   browser can measure it; elsewhere it opens at once, as before. The header's
+   Menu is a panel hung from the bar, not a part of the page, so it is left out. */
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    :root { interpolate-size: allow-keywords; }
+    details:not(.pmenu)::details-content { block-size: 0; overflow-y: clip; transition: block-size var(--t-move) var(--ease), content-visibility var(--t-move) allow-discrete; }
+    details:not(.pmenu)[open]::details-content { block-size: auto; }
+  }
+}
+
+/* The home page's opening: the two lines of the headline rise in turn, then
+   the introduction and the first question. It runs once, on arrival, and the
+   text is in place from the first frame for anything that reads the page
+   without drawing it. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes line-rise { from { opacity: 0; transform: translateY(.22em); } }
+  @keyframes part-rise { from { opacity: 0; transform: translateY(14px); } }
+  .hero h1 span { animation: line-rise var(--t-enter) var(--ease) backwards; }
+  .hero h1 span + span { animation-delay: .09s; }
+  .hero .intro { animation: part-rise var(--t-enter) var(--ease) .2s backwards; }
+  .hero .try { animation: part-rise var(--t-enter) var(--ease) .32s backwards; }
+}
+
+/* Sections further down arrive as they are scrolled to: each part rises a
+   little into place over the first stretch of its way onto the screen. A part
+   already on screen, jumped to or printed is simply there. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes scroll-rise { from { opacity: 0; transform: translateY(28px); } }
+    .sec > *, .talk-in > *, .closing-in > * { animation: scroll-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 180px; }
+  }
+}
+
+/* Moving between pages: the page leaving fades quickly and the one arriving
+   rises into place, while the header stays where it is (React's
+   <ViewTransition> in components/landing/PageTransition.tsx names the page;
+   browsers without view transitions change pages as before). */
+.top { view-transition-name: site-header; }
+::view-transition-group(site-header) { animation: none; z-index: 2; }
+::view-transition-old(site-header) { display: none; }
+::view-transition-new(site-header) { animation: none; }
+@keyframes page-out { to { opacity: 0; } }
+@keyframes page-in { from { opacity: 0; transform: translateY(10px); } }
+::view-transition-old(.page-out) { animation: .1s ease-in both page-out; }
+::view-transition-new(.page-in) { animation: .3s var(--ease) .1s both page-in; }
+/* What surrounds the page (the footer, docked bars) changes at once, so two
+   footers never show through each other. */
+::view-transition-old(root) { display: none; }
+::view-transition-new(root) { animation: none; }
+@media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }

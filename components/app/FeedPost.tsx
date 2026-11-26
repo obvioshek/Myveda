@@ -62,14 +62,14 @@ export default function FeedPost({ p }: { p: FeedEntry }) {
                   setMenu(false); setGone(true);
                   const r = await run(setHidden(p.type, p.id, true));
                   if (!r.ok) { setGone(false); return; }
-                  toast("Hidden. You'll see fewer posts like this.", async () => { await run(setHidden(p.type, p.id, false)); setGone(false); });
+                  toast("Hidden. You’ll see fewer posts like this.", async () => { await run(setHidden(p.type, p.id, false)); setGone(false); });
                 }}>Not interested</button>
                 {p.author && p.canFollow && (
                   <button role="menuitem" type="button" onClick={async () => {
                     setMenu(false); setGone(true);
                     const r = await run(setMute(p.author!.id, true));
                     if (!r.ok) { setGone(false); return; }
-                    toast(`Muted ${who}. They won't know.`, async () => { await run(setMute(p.author!.id, false)); setGone(false); });
+                    toast(`Muted ${who}. They won’t know.`, async () => { await run(setMute(p.author!.id, false)); setGone(false); });
                   }}>Mute {who}</button>
                 )}
                 {!p.mine && <button role="menuitem" type="button" className="danger" onClick={() => { setMenu(false); openReport(p.type, p.id); }}>Report</button>}

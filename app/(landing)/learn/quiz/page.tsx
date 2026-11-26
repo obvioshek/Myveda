@@ -28,7 +28,7 @@ export default function QuizPage() {
         <p className="lede">
           Choose questions from any chapter, give the quiz a title, and share one link. Students take it on their own phones, as practice with the answer after each question or as a test that shows nothing until they submit. Or print it, with an answer key on its own page.
         </p>
-        <p className="ci-fine">Nothing is sent to a server: the questions travel in the link, and each student&apos;s answers stay on their device. To practise on your own, go to <Link className="link" href={PRACTICE_PATH} prefetch={false}>Practice and review</Link>.</p>
+        <p className="ci-fine">Nothing is sent to a server: the questions travel in the link, and each student’s answers stay on their device. To practise on your own, go to <Link className="link" href={PRACTICE_PATH} prefetch={false}>Practice and review</Link>.</p>
       </header>
       <QuizBuilder />
     </PageShell>

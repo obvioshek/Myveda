@@ -103,7 +103,7 @@ export async function setQuestionFollow(questionId: string, field: "following" |
   return attempt(async () => {
     const me = await actingMember();
     const q = await visibleQuestion(me.id, questionId);
-    if (field === "same" && q.askerId === me.id) refuse("It's your question.");
+    if (field === "same" && q.askerId === me.id) refuse("It’s your question.");
     const where = { userId: me.id, questionId };
     const existing = await db.orm.public.QuestionFollow.where(where).first();
     if (existing) {

@@ -1135,3 +1135,17 @@ html[data-landing] .rv-ch, html[data-landing] .gl-sec, html[data-landing] .ls { 
 /* Similarity: links set in text draw their underline as .link does (see
    landing.css), a quarter of their text size below the words. */
 .ci-pl, .ch-crumbs a, .ch-legend-q, .gl-ch, .rb-terms p a, .rg-where a, .hi-list a, .tx-k a, .lp-about a, .ch-texts-l a, .pr-link, .prose a.gt, .mxp-c .more { text-underline-offset: .25em; }
+
+/* ---------- Finish (see "Finish" in README.md; timings in landing.css) ----------
+   An answer is felt as well as seen. The chosen option settles into its new
+   colour when it is right, and shakes its head once when it is not; the
+   colours and the words under it still carry the meaning on their own. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ans-right { 0% { transform: scale(.985); } 55% { transform: scale(1.012); } }
+  @keyframes ans-wrong { 20% { transform: translateX(-5px); } 45% { transform: translateX(4px); } 70% { transform: translateX(-2px); } }
+  .ck-opt.right, .ck-opt.chosen { animation: ans-right var(--t-move) var(--ease); }
+  .ck-opt.wrong { animation: ans-wrong var(--t-move) var(--ease-in-out); }
+  /* A concept marked done draws its red bar down its side. */
+  @keyframes done-bar { from { border-left-color: transparent; } }
+  .ls.done { animation: done-bar var(--t-enter) var(--ease); }
+}

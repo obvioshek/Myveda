@@ -112,7 +112,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
 
       {q.answers.length === 0 && (
         <div className="panel" style={{ fontSize: 15, lineHeight: 1.5 }}>
-          <b>Sent to people who know {q.topic}.</b> You&apos;ll hear in your Inbox when someone answers. If nobody has within a day, an editor from the house will.
+          <b>Sent to people who know {q.topic}.</b> You’ll hear in your Inbox when someone answers. If nobody has within a day, an editor from the house will.
         </div>
       )}
 
@@ -143,7 +143,7 @@ export default function QuestionView({ q }: { q: QuestionData }) {
           </div>
           {onAnswer && (
             <div className="muted" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
-              Building on {firstName(onAnswer.author.name)}&apos;s answer
+              Building on {firstName(onAnswer.author.name)}’s answer
               <button className="btn btn-ghost" type="button" aria-label="Remove" onClick={() => { setOnAnswer(null); setRelation("Answers"); }} style={{ padding: "2px 8px", color: "var(--soft)" }}>×</button>
             </div>
           )}

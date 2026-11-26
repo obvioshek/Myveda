@@ -45,7 +45,7 @@ export default function QuizBuilder() {
       .then(r => (r.ok ? r.json() as Promise<PracticeBank> : Promise.reject(new Error(String(r.status)))))
       .then(b => {
         if (!live) return;
-        setBank({ units: b.units, questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.q) })) });
+        setBank({ units: b.units, questions: b.questions.map(q => ({ ...q, id: questionId(q.c, q.b, q.k ?? q.q) })) });
         setUnit(b.units[0]?.id ?? "");
         setOrigin(window.location.origin);
       })

@@ -35,7 +35,7 @@ export default function CiteThis({ title, url, updated }: { title: string; url: 
           </li>
         ))}
       </ul>
-      <p className="ci-fine">Check the form your course asks for. The date is when this page&apos;s content last changed.</p>
+      <p className="ci-fine">Check the form your course asks for. The date is when this page’s content last changed.</p>
     </details>
   );
 }

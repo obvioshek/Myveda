@@ -28,7 +28,7 @@ export default function CorrectionsPage() {
         <span className="eyebrow"><i className="sq" aria-hidden="true" />Corrections</span>
         <h1><span>What changed,</span><span className="red">and when.</span></h1>
         <p className="lede">
-          A site that sets classical texts beside modern ideas will sometimes get a translation, a reference or an answer wrong. When a reader&apos;s report turns out to be right, the fix is made and listed here with its date, so anyone who quoted the page can check what changed.
+          A site that sets classical texts beside modern ideas will sometimes get a translation, a reference or an answer wrong. When a reader’s report turns out to be right, the fix is made and listed here with its date, so anyone who quoted the page can check what changed.
         </p>
       </header>
       <section className="wrap tx-sec" aria-labelledby="co-h">
@@ -46,8 +46,8 @@ export default function CorrectionsPage() {
       <section className="wrap tx-sec co-how" aria-labelledby="co-how-h">
         <h2 id="co-how-h" className="h-xs">How a report is handled</h2>
         <ul>
-          <li>Use “Report a problem” beside a question or a passage, or at the foot of any page. The report goes to the editors&apos; inbox, with the page&apos;s address. The site keeps no copy.</li>
-          <li>Each report is checked: a passage against the edition its text&apos;s page names (see <Link className="link" href={TEXTS_PATH} prefetch={false}>the texts</Link>), an answer against the chapter and its sources.</li>
+          <li>Use “Report a problem” beside a question or a passage, or at the foot of any page. The report goes to the editors’ inbox, with the page’s address. The site keeps no copy.</li>
+          <li>Each report is checked: a passage against the edition its text’s page names (see <Link className="link" href={TEXTS_PATH} prefetch={false}>the texts</Link>), an answer against the chapter and its sources.</li>
           <li>If the report is right, the page is fixed and the fix is listed above. If you left an email address, you get a reply either way.</li>
           <li>Where scholars disagree, the page says so rather than picking a side quietly.</li>
         </ul>

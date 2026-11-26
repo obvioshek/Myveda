@@ -63,12 +63,12 @@ export default function ProfileView({ pr, tab, topics }: { pr: ProfileData; tab:
                   <button role="menuitem" type="button" onClick={async () => {
                     setMenu(false);
                     const r = await run(setMute(pr.person.id, !pr.muted));
-                    if (r.ok) toast(pr.muted ? `Unmuted ${first}.` : `Muted ${first}. They won't know.`, pr.muted ? undefined : async () => { await run(setMute(pr.person.id, false)); });
+                    if (r.ok) toast(pr.muted ? `Unmuted ${first}.` : `Muted ${first}. They won’t know.`, pr.muted ? undefined : async () => { await run(setMute(pr.person.id, false)); });
                   }}>{pr.muted ? `Unmute ${first}` : `Mute ${first}`}</button>
                   <button role="menuitem" type="button" onClick={async () => {
                     setMenu(false);
                     const r = await run(setBlock(pr.person.id, !pr.blocked));
-                    if (r.ok) toast(pr.blocked ? `Unblocked ${first}.` : `Blocked ${first}. They can't see your posts or reply to you.`, pr.blocked ? undefined : async () => { await run(setBlock(pr.person.id, false)); });
+                    if (r.ok) toast(pr.blocked ? `Unblocked ${first}.` : `Blocked ${first}. They can’t see your posts or reply to you.`, pr.blocked ? undefined : async () => { await run(setBlock(pr.person.id, false)); });
                   }}>{pr.blocked ? `Unblock ${first}` : `Block ${first}`}</button>
                   <button role="menuitem" type="button" className="danger" onClick={() => { setMenu(false); openReport("profile", pr.person.id); }}>Report</button>
                 </div>

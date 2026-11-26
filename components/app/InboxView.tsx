@@ -39,7 +39,7 @@ export default function InboxView({ inbox, filter, filters }: { inbox: InboxData
               ))}
             </div>
           </div>
-          <div><b>Never</b><div className="muted" style={{ fontSize: 14 }}>Counts, milestones, “you&apos;re trending”. This one can&apos;t be turned on.</div></div>
+          <div><b>Never</b><div className="muted" style={{ fontSize: 14 }}>Counts, milestones, “you’re trending”. This one can’t be turned on.</div></div>
           <label className="check">
             <input type="checkbox" checked={quiet} onChange={async () => {
               const next = !quiet; setQuiet(next);

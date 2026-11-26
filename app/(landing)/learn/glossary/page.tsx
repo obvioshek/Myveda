@@ -57,7 +57,7 @@ export default function GlossaryPage() {
         <GlossaryList items={items} />
       </div>
       <div className="wrap gl-more">
-        <p className="ci-fine"><Link className="link" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise the terms as cards</Link> · Download them <a className="link" href="/glossary-anki.txt" download>for Anki</a> (File, then Import) or <a className="link" href="/glossary.csv" download>as a spreadsheet</a> · Unit 1&apos;s terms <Link className="link" href={HI_GLOSSARY_PATH} prefetch={false}>in Hindi</Link> (<span className="hi-ui" lang="hi">हिंदी में</span>)</p>
+        <p className="ci-fine"><Link className="link" href={`${PRACTICE_PATH}?mode=terms`} prefetch={false}>Practise the terms as cards</Link> · Download them <a className="link" href="/glossary-anki.txt" download>for Anki</a> (File, then Import) or <a className="link" href="/glossary.csv" download>as a spreadsheet</a> · Unit 1’s terms <Link className="link" href={HI_GLOSSARY_PATH} prefetch={false}>in Hindi</Link> (<span className="hi-ui" lang="hi">हिंदी में</span>)</p>
       </div>
     </PageShell>
   );

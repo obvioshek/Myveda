@@ -94,7 +94,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
   const markDone = () => {
     setDone(id, true);
     const before = [...doneSet].filter(x => x.startsWith(`${slug}#`) && x !== id).length;
-    showToast(before + 1 === total ? `That's every concept in ${chapter}. Well done.` : `${lesson.name}: marked as done.`);
+    showToast(before + 1 === total ? `That’s every concept in ${chapter}. Well done.` : `${lesson.name}: marked as done.`);
   };
   const noteKey = `${NOTE_PREFIX}${path}#${lesson.blockId}`;
   const note = useDevice(noteKey);
@@ -197,7 +197,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
             <div className="part-row">
               <Part>Check yourself</Part>
               <div className="ls-checks">
-                {lesson.check.map((c, i) => <Question key={c.q} check={c} n={i + 1} rid={questionId(slug, lesson.blockId, c.q)} mixups={mixups} onAnswer={ok => answered(i, ok)} />)}
+                {lesson.check.map((c, i) => <Question key={c.q} check={c} n={i + 1} rid={questionId(slug, lesson.blockId, c.k ?? c.q)} mixups={mixups} onAnswer={ok => answered(i, ok)} />)}
               </div>
             </div>
 
@@ -239,7 +239,7 @@ export default function LessonCard({ lesson, index, total, next = null, path, ch
                   </div>
                 </div>
                 <div className="btn-row">
-                  <button type="button" className={done ? "btn btn-secondary" : "btn btn-primary"} aria-pressed={done} onClick={() => { if (done) setDone(id, false); else markDone(); }}>
+                  <button type="button" data-haptic className={done ? "btn btn-secondary" : "btn btn-primary"} aria-pressed={done} onClick={() => { if (done) setDone(id, false); else markDone(); }}>
                     {done ? <><Tick />Done. Mark as not done</> : "Mark as done"}
                   </button>
                   {next ? (

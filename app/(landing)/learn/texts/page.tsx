@@ -44,7 +44,7 @@ export default function TextsPage() {
         <span className="eyebrow"><i className="sq" aria-hidden="true" />The classical texts</span>
         <h1><span>{TEXTS.length} texts and poets.</span><span className="red">Where every passage comes from.</span></h1>
         <p className="lede">
-          The chapters quote {total} passages from them. Each text&apos;s page says what it is, when it was composed and where to read it, with every passage the chapters use from it.
+          The chapters quote {total} passages from them. Each text’s page says what it is, when it was composed and where to read it, with every passage the chapters use from it.
         </p>
         <div className="btn-row">
           <Link className="btn btn-secondary" href={READING_GUIDE_PATH} prefetch={false}>Reading guide: names and terms<Arrow /></Link>
@@ -71,7 +71,7 @@ export default function TextsPage() {
       <section className="wrap tx-sec" aria-labelledby="tx-line-h">
         <h2 id="tx-line-h" className="h-xs">All of them, on one line</h2>
         <p className="ci-fine">
-          Oldest first, with the modern management books the chapters set beside them. Dates for the older texts are scholars&apos; estimates, often with a wide range; each sits at the middle of its range, and its page says how uncertain it is.
+          Oldest first, with the modern management books the chapters set beside them. Dates for the older texts are scholars’ estimates, often with a wide range; each sits at the middle of its range, and its page says how uncertain it is.
         </p>
         <ol className="tx-tl">
           {timeline().map(e => e.type === "text" ? (

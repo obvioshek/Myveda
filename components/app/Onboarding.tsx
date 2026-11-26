@@ -134,7 +134,7 @@ export default function Onboarding({ replay, topics, initial, people, circles }:
             {guess && (
               <p style={{ fontSize: 16, lineHeight: 1.55 }} aria-live="polite">
                 {guess === "told"
-                  ? "Right. It's widely said, and older than the records that could confirm it. That's what Told means here: worth keeping, and kept apart from what's recorded."
+                  ? "Right. It’s widely said, and older than the records that could confirm it. That’s what Told means here: worth keeping, and kept apart from what’s recorded."
                   : "Close. That the drawings get eaten is documented. That they began as a meal for ants is told — a good story, but not a checkable record."}
               </p>
             )}

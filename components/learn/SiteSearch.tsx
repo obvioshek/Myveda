@@ -8,7 +8,7 @@ import { useLayer } from "@/components/landing/layer";
 
 const LABEL: Record<SearchKind, string> = { page: "Page", setting: "Setting", concept: "Concept", term: "Glossary", chapter: "Chapter", passage: "Ancient lens", text: "Classical text" };
 const RANK: Record<SearchKind, number> = { page: 9, setting: 9, chapter: 8, text: 7, concept: 6, term: 5, passage: 3 };
-const START = ["Fayol's 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "SWOT Analysis", "Product Life Cycle"];
+const START = ["Fayol’s 14 principles", "Motivation", "Elasticity of Demand", "Leadership", "SWOT Analysis", "Product Life Cycle"];
 
 // Plain letters only, so "kautilya" finds Kauṭilya and "gita" finds Gītā.
 const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -163,7 +163,7 @@ export default function SiteSearch() {
               </button>
             </div>
             <span className="sr-only" role="status" aria-live="polite">{status}</span>
-            {!q.trim() && rows && <p className="srch-tip">Finds the chapters, every concept and term, the classical texts, and the site&apos;s own pages: try <button type="button" className="srch-try" onClick={() => tryQ("formula sheet")}>formula sheet</button>, <button type="button" className="srch-try" onClick={() => tryQ("mock test")}>mock test</button> or <button type="button" className="srch-try" onClick={() => tryQ("dark mode")}>dark mode</button>.</p>}
+            {!q.trim() && rows && <p className="srch-tip">Finds the chapters, every concept and term, the classical texts, and the site’s own pages: try <button type="button" className="srch-try" onClick={() => tryQ("formula sheet")}>formula sheet</button>, <button type="button" className="srch-try" onClick={() => tryQ("mock test")}>mock test</button> or <button type="button" className="srch-try" onClick={() => tryQ("dark mode")}>dark mode</button>.</p>}
             {!q.trim() && list.length > 0 && <span className="label srch-h">Start with</span>}
             <ul className="srch-list" id={listId} role="listbox" aria-label="Results">
               {list.map((r, i) => (

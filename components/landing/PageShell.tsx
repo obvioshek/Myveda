@@ -3,6 +3,7 @@ import { CONTACT_EMAIL, SITE_ABOUT } from "@/content/landing";
 import { ABOUT_LINKS, SITE_MAP } from "@/content/nav";
 import BrandMark from "./Brand";
 import BackToTop from "./BackToTop";
+import PageTransition from "./PageTransition";
 import SiteHeader from "./SiteHeader";
 import HashLanding from "./HashLanding";
 import CurrentLink from "./CurrentLink";
@@ -20,7 +21,7 @@ export default function PageShell({ children, wide = false, note = "Questions ab
     <>
       <a className="skip" href="#main">Skip to content</a>
       <SiteHeader />
-      <main id="main" tabIndex={-1} className={wide ? "page-wide" : "page"}>{children}</main>
+      <PageTransition><main id="main" tabIndex={-1} className={wide ? "page-wide" : "page"}>{children}</main></PageTransition>
       <BackToTop />
       <HashLanding />
       <footer className="foot">

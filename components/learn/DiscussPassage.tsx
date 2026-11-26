@@ -9,7 +9,7 @@ import { saveAsk } from "./ask";
 // Nothing is sent until the member posts.
 export default function DiscussPassage({ about, chapter }: { about: string; chapter: string }) {
   return (
-    <Link className="rp-btn" href="/home" prefetch={false} title="Ask the community about this passage. You'll sign in first if you haven't." onClick={() => saveAsk(about, chapter)}>
+    <Link className="rp-btn" href="/home" prefetch={false} title="Ask the community about this passage. You’ll sign in first if you haven’t." onClick={() => saveAsk(about, chapter)}>
       Discuss
     </Link>
   );

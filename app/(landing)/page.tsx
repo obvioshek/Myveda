@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SiteHeader from "@/components/landing/SiteHeader";
+import PageTransition from "@/components/landing/PageTransition";
 import BrandMark from "@/components/landing/Brand";
 import ContinueBand from "@/components/landing/ContinueBand";
 import HeroTry from "@/components/landing/HeroTry";
@@ -50,7 +51,7 @@ export default function LandingPage() {
       {
         "@type": "Organization", "@id": `${base}/#org`, name: "Veda Verse", alternateName: ["My Veda Verse", "myvedaverse.in"],
         url: `${base}/`, email: CONTACT_EMAIL, logo: { "@type": "ImageObject", url: `${base}/logo.png`, width: 512, height: 512 },
-        description: "An independent team in India explaining management concepts beside India's classical texts.",
+        description: "An independent team in India explaining management concepts beside India’s classical texts.",
         areaServed: "IN", knowsLanguage: ["en"],
       },
       {
@@ -58,9 +59,9 @@ export default function LandingPage() {
         url: `${base}/`, publisher: { "@id": `${base}/#org` }, inLanguage: "en-IN",
       },
       {
-        "@type": "WebPage", "@id": `${base}/#page`, url: `${base}/`, name: "Veda Verse: learn management beside India's classical texts",
+        "@type": "WebPage", "@id": `${base}/#page`, url: `${base}/`, name: "Veda Verse: learn management beside India’s classical texts",
         isPartOf: { "@id": `${base}/#site` }, about: { "@id": `${base}/#org` }, inLanguage: "en-IN",
-        description: "Management concepts in plain words, one idea at a time, each read beside a cited passage from India's classical texts, from the Arthashastra and the Thirukkural to Kabir and Basavanna, in their own languages.",
+        description: "Management concepts in plain words, one idea at a time, each read beside a cited passage from India’s classical texts, from the Arthashastra and the Thirukkural to Kabir and Basavanna, in their own languages.",
       },
     ],
   };
@@ -71,13 +72,14 @@ export default function LandingPage() {
       <a className="skip" href="#main">Skip to content</a>
       <SiteHeader />
 
+      <PageTransition>
       <main id="main" tabIndex={-1}>
         <ContinueBand />
 
         <section className="wrap hero" aria-labelledby="hero-h">
           <h1 id="hero-h"><span>Management is new.</span><span className="red">Its questions are not.</span></h1>
           <div className="split intro">
-            <p className="lede">Read each management concept in plain words, beside a cited passage from India&apos;s classical texts that met the same problem. Then ask about it, in a community where every answer says how the writer knows.</p>
+            <p className="lede">Read each management concept in plain words, beside a cited passage from India’s classical texts that met the same problem. Then ask about it, in a community where every answer says how the writer knows.</p>
             <div className="hero-actions">
               <div className="btn-row">
                 <Link href={LEARN_PATH} className="btn btn-primary btn-lg wide">Start reading<Arrow /></Link>
@@ -127,7 +129,7 @@ export default function LandingPage() {
             <div className="talk-head">
               <Eyebrow num="३">Community</Eyebrow>
               <h2 id="community-h">Ask, answer, and say how you know.</h2>
-              <p className="sub">No endless scrolling: notifications wait out the night, and each day&apos;s Edition ends.</p>
+              <p className="sub">No endless scrolling: notifications wait out the night, and each day’s Edition ends.</p>
             </div>
             <ThreadPreview />
             <div className="talk-notes">
@@ -163,6 +165,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+      </PageTransition>
 
       <footer className="foot" id="about">
         <div className="wrap foot-nav">

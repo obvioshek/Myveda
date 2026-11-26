@@ -40,10 +40,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   return (
     <div className="home-grid">
       <div className="col">
-        <h1 className="sr-only mob-only">{following ? "Following" : "Today's Edition"}</h1>
+        <h1 className="sr-only mob-only">{following ? "Following" : "Today’s Edition"}</h1>
         <div className="feed-head desk-only">
           <div>
-            <h1>{following ? "Following" : "Today's Edition"}</h1>
+            <h1>{following ? "Following" : "Today’s Edition"}</h1>
             <div className="sub">{following ? "Newest first, since your last visit" : `${editionDate(undefined, tz)} · picked for you, with a reason on each`}</div>
           </div>
           <nav className="seg" aria-label="Feed">
@@ -56,7 +56,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <Link aria-current={following ? "page" : undefined} href="/home?tab=following">Following</Link>
         </nav>
 
-        <h2 className="sr-only">{following ? "New since your last visit" : "Today's picks"}</h2>
+        <h2 className="sr-only">{following ? "New since your last visit" : "Today’s picks"}</h2>
         {[...top, ...rest].map((p, i) => (
           <div key={p.key}>
             {!following && i === top.length + 3 && moduleQs.length > 0 && <OpenQuestionsModule qs={moduleQs.slice(0, 2)} />}
@@ -71,9 +71,9 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         )}
 
         <div className="feed-end">
-          <h3>{following ? "You're up to date." : "That's today's Edition."}</h3>
+          <h3>{following ? "You’re up to date." : "That’s today’s Edition."}</h3>
           <p>{following
-            ? `That's everything since your last visit, ${visitPhrase(lastSeen, tz)}.`
+            ? `That’s everything since your last visit, ${visitPhrase(lastSeen, tz)}.`
             : "Tomorrow brings a new one. For more now, go deeper into a topic, or help with an open question."}</p>
           <div className="btns">
             {v.topicNames[0] && <Link className="btn btn-secondary" href={`/t/${encodeURIComponent(v.topicNames[0])}`}>Go deeper in {v.topicNames[0]}</Link>}
